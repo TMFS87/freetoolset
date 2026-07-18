@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Compressor - FreeToolset</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="../index.html" class="navbar-brand">
+      <span class="logo-icon">F</span>
+      FreeToolset
+    </a>
+    <a href="../index.html" class="navbar-back">← All Tools</a>
+  </nav>
+
+  <main class="main-content">
+
+    <div class="tool-header">
+      <h1>🖼️ Image Compressor</h1>
+      <p>Compress and resize images in your browser. No upload required — your images never leave your device.</p>
+    </div>
+
+    <div class="tool-card-layout">
+
+      <!-- Upload Area -->
+      <div class="form-row">
+        <div class="file-upload-area" id="uploadArea">
+          <div class="upload-icon">📁</div>
+          <p>Click to select an image or drag &amp; drop here</p>
+          <p style="font-size:0.8rem; margin-top:4px;">Supports: JPG, PNG, WebP</p>
+          <input type="file" id="fileInput" accept="image/*" style="display:none;">
+        </div>
+      </div>
+
+      <!-- Quality & Resize Controls -->
+      <div id="controls" style="display:none;">
+
+        <div class="form-row">
+          <label>Compression Quality: <span id="qualityValue" class="range-value">80%</span></label>
+          <div class="range-row">
+            <input type="range" id="qualitySlider" min="10" max="100" value="80">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label>Max Width (px) — leave empty for original</label>
+          <input type="number" id="maxWidth" placeholder="e.g. 1920" min="1">
+        </div>
+
+        <div class="form-row">
+          <label>Output Format</label>
+          <select id="outputFormat">
+            <option value="image/jpeg">JPEG (smaller size)</option>
+            <option value="image/png">PNG (lossless)</option>
+            <option value="image/webp">WebP (best compression)</option>
+          </select>
+        </div>
+
+        <div class="btn-group">
+          <button class="btn btn-primary" id="compressBtn">Compress Image</button>
+          <button class="btn btn-secondary" id="downloadBtn" style="display:none;">⬇ Download</button>
+        </div>
+
+        <!-- Preview -->
+        <div class="image-preview-container" id="previewContainer" style="display:none;">
+          <div class="image-preview">
+            <h4>Original</h4>
+            <img id="originalImg" alt="Original image">
+            <div class="image-info" id="originalInfo"></div>
+          </div>
+          <div class="image-preview">
+            <h4>Compressed</h4>
+            <img id="compressedImg" alt="Compressed image">
+            <div class="image-info" id="compressedInfo"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>FreeToolset — All tools run locally in your browser.</p>
+  </footer>
+
+  <script>
+    (function () {
+      var uploadArea = document.getElementById('uploadArea');
+      var fileInput = document.getElementById('fileInput');
+      var controls = document.getElementById('controls');
+      var qualitySlider = document.getElementById('qualitySlider');
+      var qualityValue = document.getElementById('qualityValue');
+      var maxWidthInput = document.getElementById('maxWidth');
+      var outputFormat = document.getElementById('outputFormat');
+      var compressBtn = document.getElementById('compressBtn');
+      var downloadBtn = document.getElementById('downloadBtn');
+      var previewContainer = document.getElementById('previewContainer');
+      var originalImg = document.getElementById('originalImg');
+      var compressedImg = document.getElementById('compressedImg');
+      var originalInfo = document.getElementById('originalInfo');
+      var compressedInfo = document.getElementById('compressedInfo');
+
+      var originalFile = null;
+      var compressedBlob = null;
+
+      // Format file size
+      function formatSize(bytes) {
+        if (bytes < 1024) return bytes + ' B';
+        if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+        return (bytes / (1024 * 1024)).toFixed(2) + ' MB';
+      }
+
+      // Click to upload
+      uploadArea.addEventListener('click', function () {
+        fileInput.click();
+      });
+
+      // File selected
+      fileInput.addEventListener('change', function (e) {
+        if (e.target.files[0]) handleFile(e.target.files[0]);
+      });
+
+      // Drag & drop
+      uploadArea.addEventListener('dragover', function (e) {
+        e.preventDefault();
+        uploadArea.classList.add('dragover');
+      });
+
+      uploadArea.addEventListener('dragleave', function () {
+        uploadArea.classList.remove('dragover');
+      });
+
+      uploadArea.addEventListener('drop', function (e) {
+        e.preventDefault();
+        uploadArea.classList.remove('dragover');
+        if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+      });
+
+      // Handle selected file
+      function handleFile(file) {
+        if (!file.type.startsWith('image/')) {
+          alert('Please select an image file.');
+          return;
+        }
+        originalFile = file;
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          originalImg.src = e.target.result;
+          originalInfo.textContent = formatSize(file.size) + ' • ' + file.type;
+        };
+        reader.readAsDataURL(file);
+        controls.style.display = 'block';
+        previewContainer.style.display = 'flex';
+        downloadBtn.style.display = 'none';
+      }
+
+      // Update quality label
+      qualitySlider.addEventListener('input', function () {
+        qualityValue.textContent = this.value + '%';
+      });
+
+      // Compress
+      compressBtn.addEventListener('click', function () {
+        if (!originalFile) return;
+
+        var img = new Image();
+        img.onload = function () {
+          var canvas = document.createElement('canvas');
+          var ctx = canvas.getContext('2d');
+
+          // Determine dimensions
+          var w = img.width;
+          var h = img.height;
+          var maxW = parseInt(maxWidthInput.value);
+
+          if (maxW && maxW > 0 && w > maxW) {
+            h = Math.round(h * (maxW / w));
+            w = maxW;
+          }
+
+          canvas.width = w;
+          canvas.height = h;
+
+          // If PNG output, fill white background (for transparency)
+          var format = outputFormat.value;
+          if (format === 'image/jpeg') {
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, w, h);
+          }
+
+          ctx.drawImage(img, 0, 0, w, h);
+
+          // Quality only applies to JPEG and WebP
+          var quality = parseInt(qualitySlider.value) / 100;
+
+          canvas.toBlob(function (blob) {
+            if (!blob) {
+              alert('Compression failed. Try a different format.');
+              return;
+            }
+            compressedBlob = blob;
+            var url = URL.createObjectURL(blob);
+            compressedImg.src = url;
+
+            var savings = ((1 - blob.size / originalFile.size) * 100).toFixed(1);
+            compressedInfo.textContent = formatSize(blob.size) + ' • Saved ' + savings + '%';
+
+            downloadBtn.style.display = 'inline-flex';
+          }, format, quality);
+        };
+        img.src = originalImg.src;
+      });
+
+      // Download
+      downloadBtn.addEventListener('click', function () {
+        if (!compressedBlob) return;
+        var ext = outputFormat.value === 'image/png' ? 'png' :
+                  outputFormat.value === 'image/webp' ? 'webp' : 'jpg';
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(compressedBlob);
+        a.download = 'compressed-' + Date.now() + '.' + ext;
+        a.click();
+      });
+    })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lorem Ipsum Generator - FreeToolset</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="../index.html" class="navbar-brand">
+      <span class="logo-icon">F</span>
+      FreeToolset
+    </a>
+    <a href="../index.html" class="navbar-back">← All Tools</a>
+  </nav>
+
+  <main class="main-content">
+
+    <div class="tool-header">
+      <h1>📄 Lorem Ipsum Generator</h1>
+      <p>Generate placeholder Lorem Ipsum text by paragraphs, sentences, or words. Great for mockups and design layouts.</p>
+    </div>
+
+    <div class="tool-card-layout">
+
+      <!-- Options -->
+      <div class="form-row">
+        <label>Generate Type</label>
+        <select id="genType">
+          <option value="paragraphs" selected>Paragraphs</option>
+          <option value="sentences">Sentences</option>
+          <option value="words">Words</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="amount">Amount</label>
+        <input type="number" id="amount" value="3" min="1" max="100">
+      </div>
+
+      <div class="form-row">
+        <label class="checkbox-item">
+          <input type="checkbox" id="startClassic" checked>
+          Start with "Lorem ipsum dolor sit amet..." (classic opening)
+        </label>
+      </div>
+
+      <div class="btn-group">
+        <button class="btn btn-primary" id="generateBtn">Generate</button>
+        <button class="btn btn-secondary" id="copyBtn">Copy Text</button>
+        <button class="btn btn-secondary" id="clearBtn">Clear</button>
+      </div>
+
+      <!-- Output -->
+      <div class="form-row" style="margin-top:20px;">
+        <label>Generated Text</label>
+        <textarea id="output" readonly style="min-height:280px;"></textarea>
+      </div>
+
+      <!-- Word count -->
+      <div id="wordInfo" style="margin-top:8px; font-size:0.85rem; color:var(--text-secondary);"></div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>FreeToolset — All tools run locally in your browser.</p>
+  </footer>
+
+  <script>
+    (function () {
+      // Classic Lorem Ipsum words
+      var WORDS = [
+        'lorem', 'ipsum', 'dolor', 'sit', 'amet', 'consectetur', 'adipiscing', 'elit',
+        'sed', 'do', 'eiusmod', 'tempor', 'incididunt', 'ut', 'labore', 'et', 'dolore',
+        'magna', 'aliqua', 'enim', 'ad', 'minim', 'veniam', 'quis', 'nostrud',
+        'exercitation', 'ullamco', 'laboris', 'nisi', 'aliquip', 'ex', 'ea', 'commodo',
+        'consequat', 'duis', 'aute', 'irure', 'in', 'reprehenderit', 'voluptate',
+        'velit', 'esse', 'cillum', 'eu', 'fugiat', 'nulla', 'pariatur', 'excepteur',
+        'sint', 'occaecat', 'cupidatat', 'non', 'proident', 'sunt', 'culpa', 'qui',
+        'officia', 'deserunt', 'mollit', 'anim', 'id', 'est', 'laborum', 'praesent',
+        'voluptatem', 'nesciunt', 'neque', 'porro', 'quisquam', 'est', 'qui', 'dolorem',
+        'adipisci', 'numquam', 'eius', 'modi', 'tempora', 'incidunt', 'magnam',
+        'quaerat', 'voluptatem', 'ut', 'enim', 'ipsam', 'voluptatem', 'quia', 'voluptas',
+        'aspernatur', 'aut', 'odit', 'fugit', 'sed', 'quia', 'consequuntur', 'magni',
+        'minima', 'nostrum', 'exercitationem', 'ullam', 'corporis', 'suscipit',
+        'laboriosam', 'nisi', 'aliquid', 'ex', 'ea', 'commodi', 'consequatur',
+        'autem', 'vel', 'eum', 'fugiat', 'quo', 'voluptas', 'nulla', 'pariatur',
+        'at', 'vero', 'eos', 'accusamus', 'iusto', 'odio', 'dignissimos', 'ducimus',
+        'blanditiis', 'praesentium', 'voluptatum', 'deleniti', 'atque', 'corrupti',
+        'quos', 'quas', 'molestias', 'excepturi', 'sint', 'obcaecati', 'cupiditate',
+        'non', 'provident', 'similique', 'sunt', 'in', 'culpa', 'officia', 'deserunt',
+        'mollitia', 'animi', 'laborum', 'dolorum', 'fuga', 'harum', 'quidem', 'rerum',
+        'facilis', 'expedita', 'distinctio', 'nam', 'libero', 'tempore', 'cum',
+        'soluta', 'nobis', 'eligendi', 'optio', 'cumque', 'nihil', 'impedit', 'quo',
+        'minus', 'id', 'quod', 'maxime', 'placeat', 'facere', 'possimus', 'omnis',
+        'voluptas', 'assumenda', 'est', 'omnis', 'repellendus', 'temporibus',
+        'quibusdam', 'officiis', 'debitis', 'rerum', 'necessitatibus', 'saepe',
+        'eveniet', 'voluptates', 'repudiandae', 'recusandae', 'itaque', 'earum',
+        'rerum', 'hic', 'tenetur', 'sapiente', 'delectus', 'reiciendis', 'voluptatibus'
+      ];
+
+      // Classic opening sentence
+      var CLASSIC_OPENING = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit';
+
+      // DOM elements
+      var genType = document.getElementById('genType');
+      var amount = document.getElementById('amount');
+      var startClassic = document.getElementById('startClassic');
+      var generateBtn = document.getElementById('generateBtn');
+      var copyBtn = document.getElementById('copyBtn');
+      var clearBtn = document.getElementById('clearBtn');
+      var output = document.getElementById('output');
+      var wordInfo = document.getElementById('wordInfo');
+
+      // Random integer helper
+      function randInt(max) {
+        return Math.floor(Math.random() * max);
+      }
+
+      // Generate a random sentence (4-16 words)
+      function generateSentence() {
+        var wordCount = 4 + randInt(13); // 4 to 16 words
+        var words = [];
+
+        for (var i = 0; i < wordCount; i++) {
+          words.push(WORDS[randInt(WORDS.length)]);
+        }
+
+        // Capitalize first letter
+        var sentence = words.join(' ');
+        sentence = sentence.charAt(0).toUpperCase() + sentence.slice(1);
+
+        // Randomly add comma in the middle
+        if (wordCount > 8 && Math.random() > 0.5) {
+          var commaPos = Math.floor(wordCount / 2);
+          var parts = sentence.split(' ');
+          parts[commaPos] = parts[commaPos] + ',';
+          sentence = parts.join(' ');
+        }
+
+        return sentence + '.';
+      }
+
+      // Generate a paragraph (3-7 sentences)
+      function generateParagraph() {
+        var sentenceCount = 3 + randInt(5); // 3 to 7 sentences
+        var sentences = [];
+
+        for (var i = 0; i < sentenceCount; i++) {
+          sentences.push(generateSentence());
+        }
+
+        return sentences.join(' ');
+      }
+
+      // Generate words
+      function generateWords(count) {
+        var words = [];
+        for (var i = 0; i < count; i++) {
+          words.push(WORDS[randInt(WORDS.length)]);
+        }
+        // Capitalize first letter
+        var text = words.join(' ');
+        return text.charAt(0).toUpperCase() + text.slice(1);
+      }
+
+      // Main generate function
+      function generate() {
+        var count = parseInt(amount.value) || 1;
+        if (count > 100) count = 100;
+        if (count < 1) count = 1;
+
+        var type = genType.value;
+        var result = '';
+        var useClassic = startClassic.checked;
+
+        if (type === 'paragraphs') {
+          var paragraphs = [];
+
+          for (var p = 0; p < count; p++) {
+            if (p === 0 && useClassic) {
+              // First paragraph starts with classic opening
+              var classicPara = CLASSIC_OPENING + ', ';
+              // Add more sentences
+              var extraSentences = 2 + randInt(4);
+              for (var s = 0; s < extraSentences; s++) {
+                classicPara += generateSentence() + ' ';
+              }
+              paragraphs.push(classicPara.trim());
+            } else {
+              paragraphs.push(generateParagraph());
+            }
+          }
+
+          // Join paragraphs with double newline
+          result = paragraphs.join('\n\n');
+
+        } else if (type === 'sentences') {
+          var sentences = [];
+
+          for (var i = 0; i < count; i++) {
+            if (i === 0 && useClassic) {
+              sentences.push(CLASSIC_OPENING + '.');
+            } else {
+              sentences.push(generateSentence());
+            }
+          }
+
+          result = sentences.join(' ');
+
+        } else if (type === 'words') {
+          if (useClassic) {
+            // First 6 words are classic
+            var classicWords = 'Lorem ipsum dolor sit amet consectetur';
+            if (count <= 6) {
+              result = classicWords.split(' ').slice(0, count).join(' ');
+            } else {
+              result = classicWords + ' ' + generateWords(count - 6);
+            }
+          } else {
+            result = generateWords(count);
+          }
+        }
+
+        output.value = result;
+
+        // Update word count info
+        var totalWords = result.trim() ? result.trim().split(/\s+/).length : 0;
+        wordInfo.textContent = totalWords + ' words • ' + result.length + ' characters';
+      }
+
+      // Event listeners
+      generateBtn.addEventListener('click', generate);
+
+      copyBtn.addEventListener('click', function () {
+        if (!output.value) return;
+        output.select();
+        document.execCommand('copy');
+        copyBtn.textContent = '✓ Copied!';
+        setTimeout(function () {
+          copyBtn.textContent = 'Copy Text';
+        }, 1500);
+      });
+
+      clearBtn.addEventListener('click', function () {
+        output.value = '';
+        wordInfo.textContent = '';
+      });
+
+      // Generate on load
+      generate();
+    })();
+  </script>
+
+</body>
+</html>

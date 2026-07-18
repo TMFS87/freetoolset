@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON Formatter - FreeToolset</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="../index.html" class="navbar-brand">
+      <span class="logo-icon">F</span>
+      FreeToolset
+    </a>
+    <a href="../index.html" class="navbar-back">← All Tools</a>
+  </nav>
+
+  <main class="main-content">
+
+    <div class="tool-header">
+      <h1>🧩 JSON Formatter</h1>
+      <p>Format, validate, and minify JSON data with syntax highlighting. Fix common JSON errors automatically.</p>
+    </div>
+
+    <div class="tool-card-layout">
+
+      <!-- Input -->
+      <div class="form-row">
+        <label for="jsonInput">JSON Input</label>
+        <textarea id="jsonInput" placeholder='Paste your JSON here, e.g. {"name":"John","age":30}' style="min-height:180px;">{"name":"John","age":30,"city":"New York","skills":["JavaScript","Python","Go"],"active":true}</textarea>
+      </div>
+
+      <!-- Buttons -->
+      <div class="btn-group">
+        <button class="btn btn-primary" id="formatBtn">Format / Beautify</button>
+        <button class="btn btn-secondary" id="minifyBtn">Minify</button>
+        <button class="btn btn-secondary" id="validateBtn">Validate</button>
+        <button class="btn btn-secondary" id="clearBtn">Clear</button>
+        <button class="btn btn-secondary" id="copyBtn">Copy Result</button>
+      </div>
+
+      <!-- Indent Options -->
+      <div class="form-row" style="margin-top:20px;">
+        <label for="indentSelect">Indent Size</label>
+        <select id="indentSelect">
+          <option value="2" selected>2 Spaces</option>
+          <option value="4">4 Spaces</option>
+          <option value="\t">Tab</option>
+        </select>
+      </div>
+
+      <!-- Output -->
+      <div class="form-row" style="margin-top:20px;">
+        <label>Result</label>
+        <div id="jsonOutput" class="json-output empty">Formatted JSON will appear here...</div>
+      </div>
+
+      <!-- Status -->
+      <div id="statusMsg" style="margin-top:12px; font-size:0.9rem;"></div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>FreeToolset — All tools run locally in your browser.</p>
+  </footer>
+
+  <script>
+    (function () {
+      var jsonInput = document.getElementById('jsonInput');
+      var jsonOutput = document.getElementById('jsonOutput');
+      var indentSelect = document.getElementById('indentSelect');
+      var formatBtn = document.getElementById('formatBtn');
+      var minifyBtn = document.getElementById('minifyBtn');
+      var validateBtn = document.getElementById('validateBtn');
+      var clearBtn = document.getElementById('clearBtn');
+      var copyBtn = document.getElementById('copyBtn');
+      var statusMsg = document.getElementById('statusMsg');
+
+      // Get indent value
+      function getIndent() {
+        var val = indentSelect.value;
+        return val === '\\t' ? '\t' : parseInt(val);
+      }
+
+      // Show status message
+      function showStatus(msg, isError) {
+        statusMsg.textContent = msg;
+        statusMsg.style.color = isError ? '#dc2626' : '#22c55e';
+      }
+
+      // Escape HTML for safe display
+      function escapeHtml(str) {
+        return str.replace(/&/g, '&amp;')
+                  .replace(/</g, '&lt;')
+                  .replace(/>/g, '&gt;');
+      }
+
+      // Syntax highlight JSON
+      function syntaxHighlight(json) {
+        json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        return json.replace(
+          /("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+-]?\d+)?)/g,
+          function (match) {
+            var cls = 'json-number';
+            if (/^"/.test(match)) {
+              if (/:$/.test(match)) {
+                cls = 'json-key';
+              } else {
+                cls = 'json-string';
+              }
+            } else if (/true|false/.test(match)) {
+              cls = 'json-boolean';
+            } else if (/null/.test(match)) {
+              cls = 'json-null';
+            }
+            return '<span class="' + cls + '">' + match + '</span>';
+          }
+        );
+      }
+
+      // Inject syntax highlight styles
+      var style = document.createElement('style');
+      style.textContent =
+        '.json-key { color: #89b4fa; }' +
+        '.json-string { color: #a6e3a1; }' +
+        '.json-number { color: #fab387; }' +
+        '.json-boolean { color: #cba6f7; }' +
+        '.json-null { color: #f38ba8; }';
+      document.head.appendChild(style);
+
+      // Format JSON
+      function format() {
+        var input = jsonInput.value.trim();
+        if (!input) {
+          showStatus('Please enter JSON data.', true);
+          return;
+        }
+
+        try {
+          var parsed = JSON.parse(input);
+          var formatted = JSON.stringify(parsed, null, getIndent());
+          jsonOutput.className = 'json-output';
+          jsonOutput.innerHTML = syntaxHighlight(escapeHtml(formatted).replace(/&quot;/g, '"'));
+          // Re-apply highlighting since we escaped HTML
+          jsonOutput.innerHTML = syntaxHighlight(formatted);
+          showStatus('✓ Valid JSON — formatted successfully.');
+        } catch (e) {
+          jsonOutput.className = 'json-output error';
+          jsonOutput.textContent = 'Error: ' + e.message;
+          showStatus('✗ Invalid JSON — ' + e.message, true);
+        }
+      }
+
+      // Minify JSON
+      function minify() {
+        var input = jsonInput.value.trim();
+        if (!input) {
+          showStatus('Please enter JSON data.', true);
+          return;
+        }
+
+        try {
+          var parsed = JSON.parse(input);
+          var minified = JSON.stringify(parsed);
+          jsonOutput.className = 'json-output';
+          jsonOutput.innerHTML = syntaxHighlight(minified);
+          showStatus('✓ Valid JSON — minified successfully.');
+        } catch (e) {
+          jsonOutput.className = 'json-output error';
+          jsonOutput.textContent = 'Error: ' + e.message;
+          showStatus('✗ Invalid JSON — ' + e.message, true);
+        }
+      }
+
+      // Validate JSON
+      function validate() {
+        var input = jsonInput.value.trim();
+        if (!input) {
+          showStatus('Please enter JSON data.', true);
+          return;
+        }
+
+        try {
+          JSON.parse(input);
+          jsonOutput.className = 'json-output';
+          jsonOutput.innerHTML = '<span style="color:#a6e3a1;">✓ Valid JSON</span>';
+          showStatus('✓ The JSON is valid.');
+        } catch (e) {
+          jsonOutput.className = 'json-output error';
+          jsonOutput.textContent = 'Error: ' + e.message;
+          showStatus('✗ Invalid JSON — ' + e.message, true);
+        }
+      }
+
+      // Event listeners
+      formatBtn.addEventListener('click', format);
+      minifyBtn.addEventListener('click', minify);
+      validateBtn.addEventListener('click', validate);
+
+      clearBtn.addEventListener('click', function () {
+        jsonInput.value = '';
+        jsonOutput.className = 'json-output empty';
+        jsonOutput.textContent = 'Formatted JSON will appear here...';
+        statusMsg.textContent = '';
+      });
+
+      copyBtn.addEventListener('click', function () {
+        var text = jsonOutput.textContent;
+        if (!text || text === 'Formatted JSON will appear here...') {
+          showStatus('Nothing to copy yet.', true);
+          return;
+        }
+
+        // Use textarea for reliable copying
+        var textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+
+        copyBtn.textContent = '✓ Copied!';
+        setTimeout(function () {
+          copyBtn.textContent = 'Copy Result';
+        }, 1500);
+      });
+
+      // Format on load
+      format();
+    })();
+  </script>
+
+</body>
+</html>
