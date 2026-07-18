@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FreeToolset - All-in-One Online Tools</title>
+  <meta name="description" content="Free online tools collection - image compressor, QR code generator, word counter, password generator, JSON formatter, color picker, Base64 encoder, and Lorem Ipsum generator.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">F</span>
+      FreeToolset
+    </a>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <!-- Hero -->
+    <section class="hero">
+      <h1>All-in-One Online Tools</h1>
+      <p>Free, fast, and privacy-friendly tools — everything runs in your browser.</p>
+
+      <!-- Search -->
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Search tools..." autocomplete="off">
+      </div>
+    </section>
+
+    <!-- Tool Grid -->
+    <div class="tool-grid" id="toolGrid">
+
+      <a href="tools/image-compressor.html" class="tool-card" data-name="image compressor compress photo">
+        <div class="card-icon">🖼️</div>
+        <h3>Image Compressor</h3>
+        <p>Compress and resize images directly in your browser with adjustable quality.</p>
+      </a>
+
+      <a href="tools/qr-code-generator.html" class="tool-card" data-name="qr code generator barcode">
+        <div class="card-icon">📱</div>
+        <h3>QR Code Generator</h3>
+        <p>Generate QR codes from any text or URL. Download as PNG image.</p>
+      </a>
+
+      <a href="tools/word-counter.html" class="tool-card" data-name="word counter character count">
+        <div class="card-icon">📝</div>
+        <h3>Word Counter</h3>
+        <p>Count words, characters, sentences, and paragraphs in real-time.</p>
+      </a>
+
+      <a href="tools/password-generator.html" class="tool-card" data-name="password generator random secure">
+        <div class="card-icon">🔐</div>
+        <h3>Password Generator</h3>
+        <p>Create strong, random passwords with customizable options.</p>
+      </a>
+
+      <a href="tools/json-formatter.html" class="tool-card" data-name="json formatter beautifier validator">
+        <div class="card-icon">🧩</div>
+        <h3>JSON Formatter</h3>
+        <p>Format, validate, and minify JSON data with syntax highlighting.</p>
+      </a>
+
+      <a href="tools/color-picker.html" class="tool-card" data-name="color picker hex rgb hsl converter">
+        <div class="card-icon">🎨</div>
+        <h3>Color Picker</h3>
+        <p>Pick colors and convert between HEX, RGB, and HSL formats.</p>
+      </a>
+
+      <a href="tools/base64-encoder.html" class="tool-card" data-name="base64 encode decode converter">
+        <div class="card-icon">🔄</div>
+        <h3>Base64 Encoder/Decoder</h3>
+        <p>Encode text to Base64 or decode Base64 back to text.</p>
+      </a>
+
+      <a href="tools/lorem-ipsum-generator.html" class="tool-card" data-name="lorem ipsum placeholder text generator">
+        <div class="card-icon">📄</div>
+        <h3>Lorem Ipsum Generator</h3>
+        <p>Generate placeholder Lorem Ipsum text by paragraphs, sentences, or words.</p>
+      </a>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>FreeToolset — All tools run locally in your browser. No data is uploaded.</p>
+  </footer>
+
+  <!-- Search Script -->
+  <script>
+    (function () {
+      var searchInput = document.getElementById('searchInput');
+      var toolCards = document.querySelectorAll('.tool-card');
+
+      searchInput.addEventListener('input', function () {
+        var query = this.value.toLowerCase().trim();
+        toolCards.forEach(function (card) {
+          var name = card.getAttribute('data-name') || '';
+          var title = card.querySelector('h3').textContent.toLowerCase();
+          var desc = card.querySelector('p').textContent.toLowerCase();
+          var haystack = name + ' ' + title + ' ' + desc;
+          if (haystack.indexOf(query) !== -1) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
