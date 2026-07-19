@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — FreeToolset</title>
+  <meta name="description" content="Get in touch with FreeToolset. Send us your feedback, tool suggestions, bug reports, or questions. We'd love to hear from you!">
+  <meta name="keywords" content="contact freetoolset, feedback, tool suggestions, bug report, support">
+  <meta property="og:title" content="Contact Us — FreeToolset">
+  <meta property="og:description" content="Send us your feedback, tool suggestions, or questions.">
+  <link rel="canonical" href="https://freetoolset.vercel.app/contact.html">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html#tools" class="nav-link">Tools</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="privacy-policy.html" class="nav-link">Privacy</a>
+      <button class="nav-lang" title="Switch Language" onclick="alert('Language switching coming soon!')">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content main-content-narrow">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <span class="current">Contact</span>
+    </nav>
+
+    <div class="page-content">
+      <h1>Contact Us</h1>
+      <p class="page-subtitle">Have feedback, a tool suggestion, or found a bug? We'd love to hear from you!</p>
+
+      <h2>Send Us a Message</h2>
+      <p>Fill out the form below and we'll get back to you as soon as possible. Please note that this form opens your email client — no data is submitted to any server.</p>
+
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <label for="contactName">Your Name</label>
+          <input type="text" id="contactName" placeholder="John Doe" required>
+        </div>
+        <div class="form-row">
+          <label for="contactEmail">Your Email</label>
+          <input type="email" id="contactEmail" placeholder="john@example.com" required>
+        </div>
+        <div class="form-row">
+          <label for="contactSubject">Subject</label>
+          <select id="contactSubject">
+            <option value="Feedback">General Feedback</option>
+            <option value="Tool Suggestion">Tool Suggestion</option>
+            <option value="Bug Report">Bug Report</option>
+            <option value="Feature Request">Feature Request</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="contactMessage">Message</label>
+          <textarea id="contactMessage" placeholder="Tell us what's on your mind..." style="min-height:160px;" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
+      </form>
+
+      <div id="formStatus" style="margin-top:16px; font-size:0.9rem; display:none;"></div>
+
+      <h2>Other Ways to Reach Us</h2>
+      <p>You can also reach us directly via email:</p>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:freetoolset@example.com">freetoolset@example.com</a></li>
+        <li><strong>GitHub:</strong> <a href="https://github.com/" target="_blank" rel="noopener">Report issues on GitHub</a></li>
+      </ul>
+
+      <h2>Response Time</h2>
+      <p>We typically respond to messages within 2–3 business days. For bug reports, please include as much detail as possible: the tool name, your browser and operating system, and steps to reproduce the issue.</p>
+
+      <div class="privacy-notice" style="margin-top:24px;">
+        <span class="pn-icon">🔒</span>
+        <span>This contact form opens your email client locally. No data is submitted to any server.</span>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var form = document.getElementById('contactForm');
+      var status = document.getElementById('formStatus');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        var name = document.getElementById('contactName').value;
+        var email = document.getElementById('contactEmail').value;
+        var subject = document.getElementById('contactSubject').value;
+        var message = document.getElementById('contactMessage').value;
+
+        var mailtoLink = 'mailto:freetoolset@example.com' +
+          '?subject=' + encodeURIComponent('[FreeToolset] ' + subject) +
+          '&body=' + encodeURIComponent(
+            'Name: ' + name + '\n' +
+            'Email: ' + email + '\n\n' +
+            'Message:\n' + message
+          );
+
+        window.location.href = mailtoLink;
+
+        status.style.display = 'block';
+        status.style.color = '#3fb950';
+        status.textContent = '✓ Your email client should have opened. If not, please email us directly at freetoolset@example.com';
+      });
+    })();
+  </script>
+
+</body>
+</html>

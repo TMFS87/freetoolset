@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Word Counter - FreeToolset</title>
+  <title>Word Counter — Free Online Word & Character Count Tool | FreeToolset</title>
+  <meta name="description" content="Count words, characters, sentences, and paragraphs in real-time. Includes reading time estimation. Perfect for essays, articles, and social media posts. Free and privacy-friendly.">
+  <meta name="keywords" content="word counter, character count, sentence counter, paragraph counter, reading time, text analysis, word count tool">
+  <meta property="og:title" content="Word Counter — FreeToolset">
+  <meta property="og:description" content="Count words, characters, sentences, and paragraphs in real-time.">
+  <link rel="canonical" href="https://freetoolset.vercel.app/word-counter.html">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -11,65 +16,197 @@
   <!-- Navbar -->
   <nav class="navbar">
     <a href="index.html" class="navbar-brand">
-      <span class="logo-icon">F</span>
+      <span class="logo-icon">⚡</span>
       FreeToolset
     </a>
-    <a href="index.html" class="navbar-back">← All Tools</a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="privacy-policy.html" class="nav-link">Privacy</a>
+      <button class="nav-lang" title="Switch Language" onclick="alert('Language switching coming soon!')">🌐</button>
+    </div>
   </nav>
 
   <main class="main-content">
 
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <span class="current">Word Counter</span>
+    </nav>
+
+    <!-- Tool Header -->
     <div class="tool-header">
       <h1>📝 Word Counter</h1>
       <p>Count words, characters, sentences, and paragraphs in real-time. Perfect for essays, articles, and social media posts.</p>
     </div>
 
-    <div class="tool-card-layout">
+    <!-- Two-column Layout -->
+    <div class="tool-layout">
 
-      <!-- Text Input -->
-      <div class="form-row">
-        <label for="textInput">Your Text</label>
-        <textarea id="textInput" placeholder="Start typing or paste your text here..." style="min-height:200px;"></textarea>
+      <!-- Tool Main -->
+      <div class="tool-main">
+
+        <!-- Text Input -->
+        <div class="form-row">
+          <label for="textInput">Your Text</label>
+          <textarea id="textInput" placeholder="Start typing or paste your text here..." style="min-height:220px;"></textarea>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-value" id="wordCount">0</div>
+            <div class="stat-label">Words</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" id="charCount">0</div>
+            <div class="stat-label">Characters</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" id="charNoSpace">0</div>
+            <div class="stat-label">No Spaces</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" id="sentenceCount">0</div>
+            <div class="stat-label">Sentences</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" id="paragraphCount">0</div>
+            <div class="stat-label">Paragraphs</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" id="readingTime">0</div>
+            <div class="stat-label">Min Read</div>
+          </div>
+        </div>
+
+        <div class="btn-group">
+          <button class="btn btn-secondary" id="clearBtn">Clear Text</button>
+          <button class="btn btn-secondary" id="copyBtn">Copy Text</button>
+        </div>
+
+        <!-- Privacy Notice -->
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+
       </div>
 
-      <!-- Stats Grid -->
-      <div class="stats-grid">
-        <div class="stat-item">
-          <div class="stat-value" id="wordCount">0</div>
-          <div class="stat-label">Words</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value" id="charCount">0</div>
-          <div class="stat-label">Characters</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value" id="charNoSpace">0</div>
-          <div class="stat-label">No Spaces</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value" id="sentenceCount">0</div>
-          <div class="stat-label">Sentences</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value" id="paragraphCount">0</div>
-          <div class="stat-label">Paragraphs</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value" id="readingTime">0</div>
-          <div class="stat-label">Min Read</div>
-        </div>
-      </div>
+      <!-- Sidebar -->
+      <aside class="tool-sidebar">
 
-      <div class="btn-group">
-        <button class="btn btn-secondary" id="clearBtn">Clear Text</button>
-        <button class="btn btn-secondary" id="copyBtn">Copy Text</button>
-      </div>
+        <!-- How to Use -->
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Type or paste your text into the input box above.</li>
+            <li>Watch the statistics update in real-time as you type.</li>
+            <li>Review word count, character count, sentences, and more.</li>
+            <li>Use "Clear" to reset or "Copy" to copy your text.</li>
+          </ol>
+        </div>
+
+        <!-- FAQ -->
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>What languages does the word counter support?</summary>
+            <p>The word counter works with any language. It counts words by splitting on whitespace, which works for most languages including English, Spanish, French, German, and more. For languages without spaces (like Chinese or Japanese), it counts characters instead.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Does it update in real-time?</summary>
+            <p>Yes! All statistics update instantly as you type or paste text. There's no need to click any button — the counts refresh on every keystroke.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can I export the counting results?</summary>
+            <p>You can copy your text using the "Copy Text" button. The statistics themselves are displayed on-screen and can be screenshotted or noted down. A dedicated export feature is planned for a future update.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How is reading time calculated?</summary>
+            <p>Reading time is estimated based on an average reading speed of 200 words per minute. If your text has fewer than 200 words, it will show "&lt;1" minute.</p>
+          </details>
+        </div>
+
+        <!-- Use Cases -->
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🎓</div>
+              <div class="uc-content">
+                <h4>Academic Writing</h4>
+                <p>Ensure your essays and papers meet word count requirements.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">📊</div>
+              <div class="uc-content">
+                <h4>SEO Content</h4>
+                <p>Monitor content length for SEO-optimized articles and blog posts.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🐦</div>
+              <div class="uc-content">
+                <h4>Social Media</h4>
+                <p>Stay within character limits for tweets, posts, and captions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Related Tools -->
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="port-lookup.html" class="related-tool-card">
+              <span class="rt-icon">🔌</span>
+              <span class="rt-name">Port Lookup</span>
+            </a>
+            <a href="lorem-ipsum-generator.html" class="related-tool-card">
+              <span class="rt-icon">📄</span>
+              <span class="rt-name">Lorem Ipsum Generator</span>
+            </a>
+            <a href="json-formatter.html" class="related-tool-card">
+              <span class="rt-icon">🧩</span>
+              <span class="rt-name">JSON Formatter</span>
+            </a>
+            <a href="password-generator.html" class="related-tool-card">
+              <span class="rt-icon">🔐</span>
+              <span class="rt-name">Password Generator</span>
+            </a>
+          </div>
+        </div>
+
+      </aside>
 
     </div>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
-    <p>FreeToolset — All tools run locally in your browser.</p>
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
   </footer>
 
   <script>
@@ -84,31 +221,23 @@
       var clearBtn = document.getElementById('clearBtn');
       var copyBtn = document.getElementById('copyBtn');
 
-      // Count and update stats
       function updateStats() {
         var text = textInput.value;
 
-        // Words: split by whitespace, filter empty
         var words = text.trim() ? text.trim().split(/\s+/) : [];
         wordCount.textContent = words.length;
 
-        // Characters (with spaces)
         charCount.textContent = text.length;
-
-        // Characters without spaces
         charNoSpace.textContent = text.replace(/\s/g, '').length;
 
-        // Sentences: count sentence-ending punctuation
         var sentences = text.trim() ? text.split(/[.!?]+/).filter(function (s) {
           return s.trim().length > 0;
         }) : [];
         sentenceCount.textContent = sentences.length;
 
-        // Paragraphs: split by double newlines
         var paragraphs = text.trim() ? text.split(/\n\s*\n/).filter(function (p) {
           return p.trim().length > 0;
         }) : [];
-        // If there's text but no double newlines, count as 1 paragraph
         if (paragraphs.length === 0 && text.trim().length > 0) {
           paragraphs = text.split(/\n/).filter(function (p) {
             return p.trim().length > 0;
@@ -116,24 +245,20 @@
         }
         paragraphCount.textContent = paragraphs.length;
 
-        // Reading time: ~200 words per minute
         var minutes = words.length / 200;
         readingTime.textContent = minutes < 1 && words.length > 0
           ? '<1'
           : Math.ceil(minutes);
       }
 
-      // Update on input
       textInput.addEventListener('input', updateStats);
 
-      // Clear button
       clearBtn.addEventListener('click', function () {
         textInput.value = '';
         updateStats();
         textInput.focus();
       });
 
-      // Copy button
       copyBtn.addEventListener('click', function () {
         if (!textInput.value) return;
         textInput.select();
@@ -144,7 +269,6 @@
         }, 1500);
       });
 
-      // Initial update
       updateStats();
     })();
   </script>

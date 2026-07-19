@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Port Lookup — TCP/UDP Port Number Reference | FreeToolset</title>
+  <meta name="description" content="Search TCP/UDP port numbers, protocols, services, and security risks. Comprehensive reference for common network ports including web, email, database, remote access, and more.">
+  <meta name="keywords" content="port lookup, tcp udp ports, port numbers, network ports, service ports, port reference, well known ports">
+  <meta property="og:title" content="Port Lookup — FreeToolset">
+  <meta property="og:description" content="Search TCP/UDP port numbers, protocols, services, and security risks.">
+  <link rel="canonical" href="https://freetoolset.vercel.app/port-lookup.html">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="privacy-policy.html" class="nav-link">Privacy</a>
+      <button class="nav-lang" title="Switch Language" onclick="alert('Language switching coming soon!')">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <span class="current">Port Lookup</span>
+    </nav>
+
+    <!-- Tool Header -->
+    <div class="tool-header">
+      <h1>🔌 Port Lookup</h1>
+      <p>Search TCP/UDP port numbers, protocols, services, and security risks. Click a port number to copy it.</p>
+    </div>
+
+    <!-- Two-column Layout -->
+    <div class="tool-layout">
+
+      <!-- Tool Main -->
+      <div class="tool-main">
+
+        <!-- Search -->
+        <div class="port-search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="portSearch" placeholder="Search by port number, service name, or description..." autocomplete="off">
+        </div>
+
+        <!-- Category Filter -->
+        <div class="port-filter-tags" id="portFilterTags">
+          <button class="port-filter-tag active" data-cat="all">All</button>
+          <button class="port-filter-tag" data-cat="Web">Web</button>
+          <button class="port-filter-tag" data-cat="Email">Email</button>
+          <button class="port-filter-tag" data-cat="Remote">Remote</button>
+          <button class="port-filter-tag" data-cat="File">File</button>
+          <button class="port-filter-tag" data-cat="Database">Database</button>
+          <button class="port-filter-tag" data-cat="Cache">Cache</button>
+          <button class="port-filter-tag" data-cat="Message Queue">Message Queue</button>
+          <button class="port-filter-tag" data-cat="Streaming">Streaming</button>
+          <button class="port-filter-tag" data-cat="DNS">DNS</button>
+          <button class="port-filter-tag" data-cat="Auth">Auth</button>
+          <button class="port-filter-tag" data-cat="Monitoring">Monitoring</button>
+          <button class="port-filter-tag" data-cat="DevOps">DevOps</button>
+        </div>
+
+        <!-- Count -->
+        <div class="port-count" id="portCount"></div>
+
+        <!-- Table -->
+        <div class="port-table-wrap">
+          <table class="port-table">
+            <thead>
+              <tr>
+                <th>Port</th>
+                <th>Protocol</th>
+                <th>Service</th>
+                <th>Category</th>
+                <th>Security</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody id="portTableBody"></tbody>
+          </table>
+        </div>
+
+        <div class="port-no-results" id="noResults" style="display:none;">No matching ports found. Try a different search term or category.</div>
+
+        <!-- Privacy Notice -->
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All data is stored locally in this page. No queries are sent to any server.</span>
+        </div>
+
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="tool-sidebar">
+
+        <!-- How to Use -->
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Type a port number, service name, or keyword in the search box.</li>
+            <li>Use the category tags to filter by service type (Web, Email, Database, etc.).</li>
+            <li>Review the protocol (TCP/UDP), category, and security risk for each port.</li>
+            <li>Click any port number to copy it to your clipboard.</li>
+            <li>Red badges indicate high-risk ports; green badges indicate TLS-secured ports.</li>
+          </ol>
+        </div>
+
+        <!-- FAQ -->
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>What are well-known ports?</summary>
+            <p>Well-known ports range from 0 to 1023 and are assigned by IANA (Internet Assigned Numbers Authority) to specific services and protocols. Examples include port 80 for HTTP, 443 for HTTPS, and 22 for SSH.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What is the difference between TCP and UDP?</summary>
+            <p>TCP (Transmission Control Protocol) is connection-oriented, ensuring reliable data delivery with error checking. UDP (User Datagram Protocol) is connectionless and faster but does not guarantee delivery. Some services use both protocols on the same port number.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What does "high risk" mean?</summary>
+            <p>High-risk ports are commonly targeted by attackers due to known vulnerabilities, weak authentication, or the sensitive nature of the data they handle. Examples include Telnet (23), FTP (21), and RDP (3389). These ports should be firewalled or secured with encryption where possible.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Why are some ports marked as TLS?</summary>
+            <p>TLS (Transport Layer Security) ports use encryption to protect data in transit. For example, HTTPS (443), IMAPS (993), and SMTPS (465) are TLS-secured versions of their plaintext counterparts. Using TLS-encrypted ports is strongly recommended.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How many ports are there in total?</summary>
+            <p>There are 65,535 TCP ports and 65,535 UDP ports. Ports 0–1023 are well-known ports, 1024–49151 are registered ports, and 49152–65535 are dynamic/private ports. This tool covers the most commonly used ports.</p>
+          </details>
+        </div>
+
+        <!-- Related Tools -->
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="json-formatter.html" class="related-tool-card">
+              <span class="rt-icon">🧩</span>
+              <span class="rt-name">JSON Formatter</span>
+            </a>
+            <a href="password-generator.html" class="related-tool-card">
+              <span class="rt-icon">🔐</span>
+              <span class="rt-name">Password Generator</span>
+            </a>
+            <a href="base64-encoder.html" class="related-tool-card">
+              <span class="rt-icon">🔄</span>
+              <span class="rt-name">Base64 Encoder</span>
+            </a>
+            <a href="color-picker.html" class="related-tool-card">
+              <span class="rt-icon">🎨</span>
+              <span class="rt-name">Color Picker</span>
+            </a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var PORTS = [
+        { port: 20, proto: 'tcp', service: 'FTP Data', cat: 'File', risk: 'high', desc: 'File Transfer Protocol data channel. Used for transferring files between client and server.' },
+        { port: 21, proto: 'tcp', service: 'FTP Control', cat: 'File', risk: 'high', desc: 'FTP control channel for commands and authentication. Credentials sent in plaintext.' },
+        { port: 22, proto: 'tcp', service: 'SSH', cat: 'Remote', risk: 'high', desc: 'Secure Shell for encrypted remote login and command execution.' },
+        { port: 23, proto: 'tcp', service: 'Telnet', cat: 'Remote', risk: 'high', desc: 'Unencrypted remote login protocol. Deprecated due to security risks.' },
+        { port: 25, proto: 'tcp', service: 'SMTP', cat: 'Email', risk: 'high', desc: 'Simple Mail Transfer Protocol for sending email between servers.' },
+        { port: 53, proto: 'tcpudp', service: 'DNS', cat: 'DNS', risk: 'medium', desc: 'Domain Name System resolves domain names to IP addresses.' },
+        { port: 67, proto: 'udp', service: 'DHCP Server', cat: 'DevOps', risk: 'safe', desc: 'Dynamic Host Configuration Protocol server port for IP assignment.' },
+        { port: 68, proto: 'udp', service: 'DHCP Client', cat: 'DevOps', risk: 'safe', desc: 'DHCP client port for requesting IP configuration.' },
+        { port: 69, proto: 'udp', service: 'TFTP', cat: 'File', risk: 'high', desc: 'Trivial File Transfer Protocol. No authentication, unencrypted.' },
+        { port: 80, proto: 'tcp', service: 'HTTP', cat: 'Web', risk: 'medium', desc: 'HyperText Transfer Protocol for unencrypted web traffic.' },
+        { port: 110, proto: 'tcp', service: 'POP3', cat: 'Email', risk: 'high', desc: 'Post Office Protocol v3 for retrieving email. Credentials in plaintext.' },
+        { port: 111, proto: 'tcpudp', service: 'RPCbind', cat: 'Remote', risk: 'high', desc: 'ONC RPC port mapper. Frequently targeted in amplification attacks.' },
+        { port: 119, proto: 'tcp', service: 'NNTP', cat: 'Web', risk: 'medium', desc: 'Network News Transfer Protocol for Usenet newsgroups.' },
+        { port: 123, proto: 'udp', service: 'NTP', cat: 'Monitoring', risk: 'medium', desc: 'Network Time Protocol for clock synchronization.' },
+        { port: 135, proto: 'tcp', service: 'MS RPC', cat: 'Remote', risk: 'high', desc: 'Microsoft RPC endpoint mapper. Targeted by many worms.' },
+        { port: 137, proto: 'udp', service: 'NetBIOS Name', cat: 'Remote', risk: 'high', desc: 'NetBIOS Name Service for Windows network name resolution.' },
+        { port: 138, proto: 'udp', service: 'NetBIOS Datagram', cat: 'Remote', risk: 'high', desc: 'NetBIOS Datagram Service for Windows browsing.' },
+        { port: 139, proto: 'tcp', service: 'NetBIOS Session', cat: 'Remote', risk: 'high', desc: 'NetBIOS Session Service for Windows file sharing.' },
+        { port: 143, proto: 'tcp', service: 'IMAP', cat: 'Email', risk: 'high', desc: 'Internet Message Access Protocol for email retrieval. Plaintext by default.' },
+        { port: 161, proto: 'udp', service: 'SNMP', cat: 'Monitoring', risk: 'high', desc: 'Simple Network Management Protocol for device monitoring. Often misconfigured.' },
+        { port: 162, proto: 'udp', service: 'SNMP Trap', cat: 'Monitoring', risk: 'medium', desc: 'SNMP Trap for asynchronous network alerts.' },
+        { port: 179, proto: 'tcp', service: 'BGP', cat: 'DevOps', risk: 'medium', desc: 'Border Gateway Protocol for internet routing between autonomous systems.' },
+        { port: 194, proto: 'tcp', service: 'IRC', cat: 'Web', risk: 'high', desc: 'Internet Relay Chat protocol. Often abused by botnets.' },
+        { port: 389, proto: 'tcp', service: 'LDAP', cat: 'Auth', risk: 'high', desc: 'Lightweight Directory Access Protocol for directory services. Plaintext.' },
+        { port: 443, proto: 'tcp', service: 'HTTPS', cat: 'Web', risk: 'tls', desc: 'HTTP over TLS/SSL. Encrypted web traffic.' },
+        { port: 445, proto: 'tcp', service: 'SMB', cat: 'File', risk: 'high', desc: 'Server Message Block for Windows file and printer sharing.' },
+        { port: 465, proto: 'tcp', service: 'SMTPS', cat: 'Email', risk: 'tls', desc: 'SMTP over SSL/TLS for secure email submission.' },
+        { port: 514, proto: 'udp', service: 'Syslog', cat: 'Monitoring', risk: 'medium', desc: 'System logging protocol for centralized log collection.' },
+        { port: 515, proto: 'tcp', service: 'LPD/LPR', cat: 'File', risk: 'medium', desc: 'Line Printer Daemon for network printing.' },
+        { port: 587, proto: 'tcp', service: 'SMTP Submission', cat: 'Email', risk: 'tls', desc: 'SMTP mail submission port with STARTTLS support.' },
+        { port: 631, proto: 'tcp', service: 'IPP/CUPS', cat: 'File', risk: 'medium', desc: 'Internet Printing Protocol for network printer management.' },
+        { port: 636, proto: 'tcp', service: 'LDAPS', cat: 'Auth', risk: 'tls', desc: 'LDAP over SSL/TLS for secure directory access.' },
+        { port: 873, proto: 'tcp', service: 'rsync', cat: 'File', risk: 'medium', desc: 'Rsync file synchronization protocol.' },
+        { port: 990, proto: 'tcp', service: 'FTPS', cat: 'File', risk: 'tls', desc: 'FTP over SSL/TLS for secure file transfer.' },
+        { port: 993, proto: 'tcp', service: 'IMAPS', cat: 'Email', risk: 'tls', desc: 'IMAP over SSL/TLS for secure email retrieval.' },
+        { port: 995, proto: 'tcp', service: 'POP3S', cat: 'Email', risk: 'tls', desc: 'POP3 over SSL/TLS for secure email retrieval.' },
+        { port: 1080, proto: 'tcp', service: 'SOCKS Proxy', cat: 'Web', risk: 'high', desc: 'SOCKS proxy server. Frequently abused for relay attacks.' },
+        { port: 1194, proto: 'udp', service: 'OpenVPN', cat: 'Remote', risk: 'tls', desc: 'OpenVPN virtual private network protocol.' },
+        { port: 1433, proto: 'tcp', service: 'MS SQL Server', cat: 'Database', risk: 'high', desc: 'Microsoft SQL Server database engine.' },
+        { port: 1434, proto: 'udp', service: 'MS SQL Monitor', cat: 'Database', risk: 'high', desc: 'Microsoft SQL Server browser service.' },
+        { port: 1521, proto: 'tcp', service: 'Oracle DB', cat: 'Database', risk: 'high', desc: 'Oracle Database listener port.' },
+        { port: 1723, proto: 'tcp', service: 'PPTP', cat: 'Remote', risk: 'high', desc: 'Point-to-Point Tunneling Protocol for VPNs. Weak encryption.' },
+        { port: 2049, proto: 'tcpudp', service: 'NFS', cat: 'File', risk: 'high', desc: 'Network File System for shared filesystems.' },
+        { port: 2375, proto: 'tcp', service: 'Docker', cat: 'DevOps', risk: 'high', desc: 'Docker daemon unencrypted API. Should never be exposed publicly.' },
+        { port: 2376, proto: 'tcp', service: 'Docker TLS', cat: 'DevOps', risk: 'tls', desc: 'Docker daemon API over TLS.' },
+        { port: 3000, proto: 'tcp', service: 'Node.js / Grafana', cat: 'Web', risk: 'medium', desc: 'Common port for Node.js apps, Grafana, and development servers.' },
+        { port: 3306, proto: 'tcp', service: 'MySQL / MariaDB', cat: 'Database', risk: 'high', desc: 'MySQL and MariaDB database server.' },
+        { port: 3389, proto: 'tcp', service: 'RDP', cat: 'Remote', risk: 'high', desc: 'Remote Desktop Protocol for Windows remote access.' },
+        { port: 5060, proto: 'tcpudp', service: 'SIP', cat: 'Streaming', risk: 'medium', desc: 'Session Initiation Protocol for VoIP and video calls.' },
+        { port: 5432, proto: 'tcp', service: 'PostgreSQL', cat: 'Database', risk: 'high', desc: 'PostgreSQL database server.' },
+        { port: 5601, proto: 'tcp', service: 'Kibana', cat: 'Monitoring', risk: 'medium', desc: 'Kibana visualization dashboard for Elasticsearch.' },
+        { port: 5672, proto: 'tcp', service: 'AMQP', cat: 'Message Queue', risk: 'medium', desc: 'RabbitMQ and other AMQP message brokers.' },
+        { port: 5900, proto: 'tcp', service: 'VNC', cat: 'Remote', risk: 'high', desc: 'Virtual Network Computing for remote desktop. Weak auth by default.' },
+        { port: 5984, proto: 'tcp', service: 'CouchDB', cat: 'Database', risk: 'high', desc: 'Apache CouchDB NoSQL database HTTP API.' },
+        { port: 6379, proto: 'tcp', service: 'Redis', cat: 'Cache', risk: 'high', desc: 'Redis in-memory data store. No auth by default.' },
+        { port: 6443, proto: 'tcp', service: 'Kubernetes API', cat: 'DevOps', risk: 'tls', desc: 'Kubernetes API server over HTTPS.' },
+        { port: 8000, proto: 'tcp', service: 'HTTP Alt', cat: 'Web', risk: 'medium', desc: 'Alternate HTTP port for development servers and proxies.' },
+        { port: 8080, proto: 'tcp', service: 'HTTP Proxy', cat: 'Web', risk: 'medium', desc: 'Common alternate HTTP port for proxies and app servers.' },
+        { port: 8086, proto: 'tcp', service: 'InfluxDB', cat: 'Database', risk: 'medium', desc: 'InfluxDB time-series database HTTP API.' },
+        { port: 8443, proto: 'tcp', service: 'HTTPS Alt', cat: 'Web', risk: 'tls', desc: 'Alternate HTTPS port with TLS encryption.' },
+        { port: 8888, proto: 'tcp', service: 'HTTP Alt', cat: 'Web', risk: 'medium', desc: 'Alternate HTTP port for JupyterHub and dev servers.' },
+        { port: 9000, proto: 'tcp', service: 'Portainer / PHP-FPM', cat: 'DevOps', risk: 'medium', desc: 'Portainer management UI or PHP-FPM fastcgi.' },
+        { port: 9042, proto: 'tcp', service: 'Cassandra', cat: 'Database', risk: 'medium', desc: 'Apache Cassandra CQL native transport.' },
+        { port: 9090, proto: 'tcp', service: 'Prometheus', cat: 'Monitoring', risk: 'medium', desc: 'Prometheus metrics and alerting server.' },
+        { port: 9092, proto: 'tcp', service: 'Kafka', cat: 'Message Queue', risk: 'medium', desc: 'Apache Kafka message broker.' },
+        { port: 9200, proto: 'tcp', service: 'Elasticsearch', cat: 'Database', risk: 'high', desc: 'Elasticsearch search engine HTTP API. No auth by default.' },
+        { port: 9300, proto: 'tcp', service: 'Elasticsearch', cat: 'Database', risk: 'medium', desc: 'Elasticsearch transport for cluster communication.' },
+        { port: 11211, proto: 'tcpudp', service: 'Memcached', cat: 'Cache', risk: 'high', desc: 'Memcached distributed memory caching. No auth by default.' },
+        { port: 15672, proto: 'tcp', service: 'RabbitMQ Mgmt', cat: 'Message Queue', risk: 'medium', desc: 'RabbitMQ management interface.' },
+        { port: 25565, proto: 'tcp', service: 'Minecraft', cat: 'Web', risk: 'safe', desc: 'Minecraft multiplayer game server.' },
+        { port: 27017, proto: 'tcp', service: 'MongoDB', cat: 'Database', risk: 'high', desc: 'MongoDB NoSQL database. No auth by default.' },
+        { port: 50070, proto: 'tcp', service: 'Hadoop NameNode', cat: 'DevOps', risk: 'medium', desc: 'Hadoop HDFS NameNode web interface.' }
+      ];
+
+      var searchInput = document.getElementById('portSearch');
+      var tableBody = document.getElementById('portTableBody');
+      var countEl = document.getElementById('portCount');
+      var noResults = document.getElementById('noResults');
+      var filterTags = document.querySelectorAll('.port-filter-tag');
+      var activeCat = 'all';
+      var currentQuery = '';
+
+      function protoBadge(proto) {
+        return '<span class="port-proto ' + proto + '">' + proto.toUpperCase() + '</span>';
+      }
+
+      function riskBadge(risk) {
+        var labels = { high: '⚠ High Risk', tls: '🔒 TLS', medium: '⚡ Medium', safe: '✓ Safe' };
+        return '<span class="port-risk ' + risk + '">' + (labels[risk] || risk) + '</span>';
+      }
+
+      function renderTable() {
+        var filtered = PORTS.filter(function (p) {
+          var matchCat = activeCat === 'all' || p.cat === activeCat;
+          var q = currentQuery.toLowerCase().trim();
+          var matchSearch = !q ||
+            String(p.port).indexOf(q) !== -1 ||
+            p.service.toLowerCase().indexOf(q) !== -1 ||
+            p.desc.toLowerCase().indexOf(q) !== -1 ||
+            p.cat.toLowerCase().indexOf(q) !== -1;
+          return matchCat && matchSearch;
+        });
+
+        countEl.textContent = filtered.length + ' port' + (filtered.length !== 1 ? 's' : '') + ' found';
+
+        if (filtered.length === 0) {
+          tableBody.innerHTML = '';
+          noResults.style.display = 'block';
+          return;
+        }
+
+        noResults.style.display = 'none';
+
+        var html = filtered.map(function (p) {
+          return '<tr>' +
+            '<td><span class="port-number" data-port="' + p.port + '">' + p.port + '</span></td>' +
+            '<td>' + protoBadge(p.proto) + '</td>' +
+            '<td style="color:var(--text);font-weight:600;">' + p.service + '</td>' +
+            '<td><span class="port-cat">' + p.cat + '</span></td>' +
+            '<td>' + riskBadge(p.risk) + '</td>' +
+            '<td>' + p.desc + '</td>' +
+            '</tr>';
+        }).join('');
+
+        tableBody.innerHTML = html;
+
+        // Add click-to-copy
+        tableBody.querySelectorAll('.port-number').forEach(function (el) {
+          el.addEventListener('click', function () {
+            var port = this.getAttribute('data-port');
+            var textarea = document.createElement('textarea');
+            textarea.value = port;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+
+            var original = this.textContent;
+            this.textContent = '✓ Copied!';
+            this.style.color = 'var(--success)';
+            var self = this;
+            setTimeout(function () {
+              self.textContent = original;
+              self.style.color = '';
+            }, 1200);
+          });
+        });
+      }
+
+      searchInput.addEventListener('input', function () {
+        currentQuery = this.value;
+        renderTable();
+      });
+
+      filterTags.forEach(function (tag) {
+        tag.addEventListener('click', function () {
+          filterTags.forEach(function (t) { t.classList.remove('active'); });
+          this.classList.add('active');
+          activeCat = this.getAttribute('data-cat');
+          renderTable();
+        });
+      });
+
+      renderTable();
+    })();
+  </script>
+
+</body>
+</html>

@@ -3,18 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FreeToolset - All-in-One Online Tools</title>
-  <meta name="description" content="Free online tools collection - image compressor, QR code generator, word counter, password generator, JSON formatter, color picker, Base64 encoder, and Lorem Ipsum generator.">
+  <title>FreeToolset — Free Online Tools for Developers & Everyday Users</title>
+  <meta name="description" content="Free online tools collection — port lookup, image compressor, QR code generator, word counter, password generator, JSON formatter, color picker, Base64 encoder, and Lorem Ipsum generator. All tools run in your browser.">
+  <meta name="keywords" content="free online tools, port lookup, image compressor, qr code generator, word counter, password generator, json formatter, color picker, base64 encoder, lorem ipsum generator">
+  <meta property="og:title" content="FreeToolset — Free Online Tools">
+  <meta property="og:description" content="9+ free, fast, privacy-friendly tools that run entirely in your browser. No ads, no tracking.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://freetoolset.vercel.app/">
   <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "FreeToolset",
+    "url": "https://freetoolset.vercel.app/",
+    "description": "Free online tools collection — port lookup, image compressor, QR code generator, word counter, password generator, JSON formatter, color picker, Base64 encoder, and Lorem Ipsum generator.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://freetoolset.vercel.app/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Port Lookup", "url": "https://freetoolset.vercel.app/port-lookup.html"},
+      {"@type": "ListItem", "position": 2, "name": "Image Compressor", "url": "https://freetoolset.vercel.app/image-compressor.html"},
+      {"@type": "ListItem", "position": 3, "name": "QR Code Generator", "url": "https://freetoolset.vercel.app/qr-code-generator.html"},
+      {"@type": "ListItem", "position": 4, "name": "Word Counter", "url": "https://freetoolset.vercel.app/word-counter.html"},
+      {"@type": "ListItem", "position": 5, "name": "Password Generator", "url": "https://freetoolset.vercel.app/password-generator.html"},
+      {"@type": "ListItem", "position": 6, "name": "JSON Formatter", "url": "https://freetoolset.vercel.app/json-formatter.html"},
+      {"@type": "ListItem", "position": 7, "name": "Color Picker", "url": "https://freetoolset.vercel.app/color-picker.html"},
+      {"@type": "ListItem", "position": 8, "name": "Base64 Encoder/Decoder", "url": "https://freetoolset.vercel.app/base64-encoder.html"},
+      {"@type": "ListItem", "position": 9, "name": "Lorem Ipsum Generator", "url": "https://freetoolset.vercel.app/lorem-ipsum-generator.html"}
+    ]
+  }
+  </script>
 </head>
 <body>
 
   <!-- Navbar -->
   <nav class="navbar">
     <a href="index.html" class="navbar-brand">
-      <span class="logo-icon">F</span>
+      <span class="logo-icon">⚡</span>
       FreeToolset
     </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="#tools" class="nav-link">Tools</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="privacy-policy.html" class="nav-link">Privacy</a>
+      <button class="nav-lang" title="Switch Language" onclick="alert('Language switching coming soon!')">🌐</button>
+    </div>
   </nav>
 
   <!-- Main Content -->
@@ -22,8 +66,8 @@
 
     <!-- Hero -->
     <section class="hero">
-      <h1>All-in-One Online Tools</h1>
-      <p>Free, fast, and privacy-friendly tools — everything runs in your browser.</p>
+      <h1>Free Online Tools</h1>
+      <p>Fast, secure, and privacy-first utilities for developers and everyday users.<br>No ads, no tracking.</p>
 
       <!-- Search -->
       <div class="search-box">
@@ -32,71 +76,124 @@
       </div>
     </section>
 
-    <!-- Tool Grid -->
-    <div class="tool-grid" id="toolGrid">
-
-      <a href="image-compressor.html" class="tool-card" data-name="image compressor compress photo">
-        <div class="card-icon">🖼️</div>
-        <h3>Image Compressor</h3>
-        <p>Compress and resize images directly in your browser with adjustable quality.</p>
-      </a>
-
-      <a href="qr-code-generator.html" class="tool-card" data-name="qr code generator barcode">
-        <div class="card-icon">📱</div>
-        <h3>QR Code Generator</h3>
-        <p>Generate QR codes from any text or URL. Download as PNG image.</p>
-      </a>
-
-      <a href="word-counter.html" class="tool-card" data-name="word counter character count">
-        <div class="card-icon">📝</div>
-        <h3>Word Counter</h3>
-        <p>Count words, characters, sentences, and paragraphs in real-time.</p>
-      </a>
-
-      <a href="password-generator.html" class="tool-card" data-name="password generator random secure">
-        <div class="card-icon">🔐</div>
-        <h3>Password Generator</h3>
-        <p>Create strong, random passwords with customizable options.</p>
-      </a>
-
-      <a href="json-formatter.html" class="tool-card" data-name="json formatter beautifier validator">
-        <div class="card-icon">🧩</div>
-        <h3>JSON Formatter</h3>
-        <p>Format, validate, and minify JSON data with syntax highlighting.</p>
-      </a>
-
-      <a href="color-picker.html" class="tool-card" data-name="color picker hex rgb hsl converter">
-        <div class="card-icon">🎨</div>
-        <h3>Color Picker</h3>
-        <p>Pick colors and convert between HEX, RGB, and HSL formats.</p>
-      </a>
-
-      <a href="base64-encoder.html" class="tool-card" data-name="base64 encode decode converter">
-        <div class="card-icon">🔄</div>
-        <h3>Base64 Encoder/Decoder</h3>
-        <p>Encode text to Base64 or decode Base64 back to text.</p>
-      </a>
-
-      <a href="lorem-ipsum-generator.html" class="tool-card" data-name="lorem ipsum placeholder text generator">
-        <div class="card-icon">📄</div>
-        <h3>Lorem Ipsum Generator</h3>
-        <p>Generate placeholder Lorem Ipsum text by paragraphs, sentences, or words.</p>
-      </a>
-
+    <!-- Category Filter -->
+    <div class="category-filter" id="categoryFilter">
+      <button class="category-btn active" data-category="all">All</button>
+      <button class="category-btn" data-category="network">Network</button>
+      <button class="category-btn" data-category="image">Image</button>
+      <button class="category-btn" data-category="text">Text</button>
+      <button class="category-btn" data-category="developer">Developer</button>
+      <button class="category-btn" data-category="security">Security</button>
     </div>
+
+    <!-- Tool Grid -->
+    <div id="tools">
+      <h2 class="section-title">All Tools</h2>
+      <div class="tool-grid" id="toolGrid">
+
+        <a href="port-lookup.html" class="tool-card" data-name="port lookup tcp udp network service" data-category="network">
+          <div class="card-icon">🔌</div>
+          <span class="card-badge badge-network">Network</span>
+          <h3>Port Lookup</h3>
+          <p>Search TCP/UDP port numbers, protocols, services, and security risks.</p>
+        </a>
+
+        <a href="image-compressor.html" class="tool-card" data-name="image compressor compress photo" data-category="image">
+          <span class="card-popular">Popular</span>
+          <div class="card-icon">🖼️</div>
+          <span class="card-badge badge-image">Image</span>
+          <h3>Image Compressor</h3>
+          <p>Compress and resize images directly in your browser.</p>
+        </a>
+
+        <a href="qr-code-generator.html" class="tool-card" data-name="qr code generator barcode" data-category="image">
+          <span class="card-popular">Popular</span>
+          <div class="card-icon">📱</div>
+          <span class="card-badge badge-image">Image</span>
+          <h3>QR Code Generator</h3>
+          <p>Generate QR codes from URLs and text. Customizable size and format.</p>
+        </a>
+
+        <a href="word-counter.html" class="tool-card" data-name="word counter character count" data-category="text">
+          <div class="card-icon">📝</div>
+          <span class="card-badge badge-text">Text</span>
+          <h3>Word Counter</h3>
+          <p>Count words, characters, sentences, and paragraphs in your text.</p>
+        </a>
+
+        <a href="password-generator.html" class="tool-card" data-name="password generator random secure" data-category="security">
+          <span class="card-popular">Popular</span>
+          <div class="card-icon">🔐</div>
+          <span class="card-badge badge-security">Security</span>
+          <h3>Password Generator</h3>
+          <p>Create strong, random passwords with adjustable length and complexity.</p>
+        </a>
+
+        <a href="json-formatter.html" class="tool-card" data-name="json formatter beautifier validator" data-category="developer">
+          <span class="card-popular">Popular</span>
+          <div class="card-icon">🧩</div>
+          <span class="card-badge badge-developer">Developer</span>
+          <h3>JSON Formatter</h3>
+          <p>Format, validate, and beautify JSON data instantly.</p>
+        </a>
+
+        <a href="color-picker.html" class="tool-card" data-name="color picker hex rgb hsl converter" data-category="developer">
+          <div class="card-icon">🎨</div>
+          <span class="card-badge badge-developer">Developer</span>
+          <h3>Color Picker</h3>
+          <p>Pick colors, convert between HEX, RGB, HSL formats.</p>
+        </a>
+
+        <a href="base64-encoder.html" class="tool-card" data-name="base64 encode decode converter" data-category="developer">
+          <div class="card-icon">🔄</div>
+          <span class="card-badge badge-developer">Developer</span>
+          <h3>Base64 Encoder/Decoder</h3>
+          <p>Encode or decode text with Base64 encoding.</p>
+        </a>
+
+        <a href="lorem-ipsum-generator.html" class="tool-card" data-name="lorem ipsum placeholder text generator" data-category="text">
+          <div class="card-icon">📄</div>
+          <span class="card-badge badge-text">Text</span>
+          <h3>Lorem Ipsum Generator</h3>
+          <p>Generate placeholder Lorem Ipsum text by paragraphs.</p>
+        </a>
+
+      </div>
+    </div>
+
   </main>
 
   <!-- Footer -->
   <footer class="footer">
-    <p>FreeToolset — All tools run locally in your browser. No data is uploaded.</p>
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server. Your privacy is our priority.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser. No data is uploaded.</p>
+    </div>
   </footer>
 
-  <!-- Search Script -->
+  <!-- Search & Filter Script -->
   <script>
     (function () {
       var searchInput = document.getElementById('searchInput');
       var toolCards = document.querySelectorAll('.tool-card');
+      var categoryBtns = document.querySelectorAll('.category-btn');
+      var activeCategory = 'all';
 
+      // Search functionality
       searchInput.addEventListener('input', function () {
         var query = this.value.toLowerCase().trim();
         toolCards.forEach(function (card) {
@@ -104,11 +201,30 @@
           var title = card.querySelector('h3').textContent.toLowerCase();
           var desc = card.querySelector('p').textContent.toLowerCase();
           var haystack = name + ' ' + title + ' ' + desc;
-          if (haystack.indexOf(query) !== -1) {
-            card.style.display = '';
-          } else {
-            card.style.display = 'none';
-          }
+          var matchesSearch = haystack.indexOf(query) !== -1;
+          var matchesCategory = activeCategory === 'all' || card.getAttribute('data-category') === activeCategory;
+          card.style.display = (matchesSearch && matchesCategory) ? '' : 'none';
+        });
+      });
+
+      // Category filter
+      categoryBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          categoryBtns.forEach(function (b) { b.classList.remove('active'); });
+          this.classList.add('active');
+          activeCategory = this.getAttribute('data-category');
+
+          var query = searchInput.value.toLowerCase().trim();
+          toolCards.forEach(function (card) {
+            var cardCategory = card.getAttribute('data-category');
+            var name = card.getAttribute('data-name') || '';
+            var title = card.querySelector('h3').textContent.toLowerCase();
+            var desc = card.querySelector('p').textContent.toLowerCase();
+            var haystack = name + ' ' + title + ' ' + desc;
+            var matchesSearch = haystack.indexOf(query) !== -1;
+            var matchesCategory = activeCategory === 'all' || cardCategory === activeCategory;
+            card.style.display = (matchesSearch && matchesCategory) ? '' : 'none';
+          });
         });
       });
     })();

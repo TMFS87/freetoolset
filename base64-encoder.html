@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Base64 Encoder/Decoder - FreeToolset</title>
+  <title>Base64 Encoder/Decoder — Free Online Base64 Tool | FreeToolset</title>
+  <meta name="description" content="Encode text to Base64 or decode Base64 back to readable text. Full UTF-8 support including Chinese and special characters. Live processing, no upload required.">
+  <meta name="keywords" content="base64 encoder, base64 decoder, base64 converter, encode base64, decode base64, utf-8 base64">
+  <meta property="og:title" content="Base64 Encoder/Decoder — FreeToolset">
+  <meta property="og:description" content="Encode text to Base64 or decode Base64 back to text. Full UTF-8 support.">
+  <link rel="canonical" href="https://freetoolset.vercel.app/base64-encoder.html">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -11,57 +16,190 @@
   <!-- Navbar -->
   <nav class="navbar">
     <a href="index.html" class="navbar-brand">
-      <span class="logo-icon">F</span>
+      <span class="logo-icon">⚡</span>
       FreeToolset
     </a>
-    <a href="index.html" class="navbar-back">← All Tools</a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="privacy-policy.html" class="nav-link">Privacy</a>
+      <button class="nav-lang" title="Switch Language" onclick="alert('Language switching coming soon!')">🌐</button>
+    </div>
   </nav>
 
   <main class="main-content">
 
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <span class="current">Base64 Encoder/Decoder</span>
+    </nav>
+
+    <!-- Tool Header -->
     <div class="tool-header">
       <h1>🔄 Base64 Encoder / Decoder</h1>
-      <p>Encode text to Base64 or decode Base64 back to readable text. Supports UTF-8 characters.</p>
+      <p>Encode text to Base64 or decode Base64 back to readable text. Supports UTF-8 characters including Chinese, Japanese, and emoji.</p>
     </div>
 
-    <div class="tool-card-layout">
+    <!-- Two-column Layout -->
+    <div class="tool-layout">
 
-      <!-- Mode Toggle -->
-      <div class="form-row">
-        <label>Mode</label>
-        <div class="btn-group">
-          <button class="btn btn-primary" id="encodeModeBtn">Encode (Text → Base64)</button>
-          <button class="btn btn-secondary" id="decodeModeBtn">Decode (Base64 → Text)</button>
+      <!-- Tool Main -->
+      <div class="tool-main">
+
+        <!-- Mode Toggle -->
+        <div class="form-row">
+          <label>Mode</label>
+          <div class="btn-group">
+            <button class="btn btn-primary" id="encodeModeBtn">Encode (Text → Base64)</button>
+            <button class="btn btn-secondary" id="decodeModeBtn">Decode (Base64 → Text)</button>
+          </div>
         </div>
+
+        <!-- Input -->
+        <div class="form-row">
+          <label for="inputText" id="inputLabel">Input Text</label>
+          <textarea id="inputText" placeholder="Enter text to encode..." style="min-height:140px;">Hello, World!</textarea>
+        </div>
+
+        <div class="btn-group">
+          <button class="btn btn-primary" id="processBtn">Encode</button>
+          <button class="btn btn-secondary" id="swapBtn">⇅ Swap</button>
+          <button class="btn btn-secondary" id="clearBtn">Clear</button>
+          <button class="btn btn-secondary" id="copyBtn">Copy Result</button>
+        </div>
+
+        <!-- Output -->
+        <div class="form-row" style="margin-top:20px;">
+          <label>Result</label>
+          <textarea id="outputText" readonly placeholder="Result will appear here..." style="min-height:140px;"></textarea>
+        </div>
+
+        <!-- Error message -->
+        <div id="errorMsg" style="margin-top:8px; font-size:0.9rem; color:#f85149; display:none;"></div>
+
+        <!-- Privacy Notice -->
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+
       </div>
 
-      <!-- Input -->
-      <div class="form-row">
-        <label for="inputText" id="inputLabel">Input Text</label>
-        <textarea id="inputText" placeholder="Enter text to encode..." style="min-height:140px;">Hello, World!</textarea>
-      </div>
+      <!-- Sidebar -->
+      <aside class="tool-sidebar">
 
-      <div class="btn-group">
-        <button class="btn btn-primary" id="processBtn">Encode</button>
-        <button class="btn btn-secondary" id="swapBtn">⇅ Swap</button>
-        <button class="btn btn-secondary" id="clearBtn">Clear</button>
-        <button class="btn btn-secondary" id="copyBtn">Copy Result</button>
-      </div>
+        <!-- How to Use -->
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Select the mode: "Encode" (text to Base64) or "Decode" (Base64 to text).</li>
+            <li>Type or paste your text into the input box.</li>
+            <li>The result updates automatically as you type (live mode).</li>
+            <li>Use "Swap" to move the result to the input and switch modes.</li>
+            <li>Click "Copy Result" to copy the output to your clipboard.</li>
+          </ol>
+        </div>
 
-      <!-- Output -->
-      <div class="form-row" style="margin-top:20px;">
-        <label>Result</label>
-        <textarea id="outputText" readonly placeholder="Result will appear here..." style="min-height:140px;"></textarea>
-      </div>
+        <!-- FAQ -->
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>Can it handle Chinese and other Unicode characters?</summary>
+            <p>Yes. The tool uses proper UTF-8 encoding and decoding, so it correctly handles Chinese, Japanese, Korean, emoji, and any other Unicode characters that standard Base64 implementations may struggle with.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can I encode files to Base64?</summary>
+            <p>Currently, the tool processes text input only. For file-to-Base64 conversion (e.g., creating Data URIs), you can use the browser's File API in combination with this tool. A dedicated file encoding feature is planned.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is there a size limit?</summary>
+            <p>The limit depends on your browser's available memory. In practice, you can process text up to several megabytes without issues. Very large inputs may cause the browser to become temporarily unresponsive.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What is Base64 used for?</summary>
+            <p>Base64 is commonly used to encode binary data as text, enabling it to be safely transmitted over text-based protocols like email, HTTP, and JSON. It's also used in Data URIs, JWT tokens, and Basic HTTP authentication.</p>
+          </details>
+        </div>
 
-      <!-- Error message -->
-      <div id="errorMsg" style="margin-top:8px; font-size:0.9rem; color:#dc2626; display:none;"></div>
+        <!-- Use Cases -->
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">📦</div>
+              <div class="uc-content">
+                <h4>Data URIs</h4>
+                <p>Encode images or files as Base64 Data URIs for inline embedding in HTML/CSS.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">📡</div>
+              <div class="uc-content">
+                <h4>API Transmission</h4>
+                <p>Encode binary data for safe transmission in JSON APIs and webhooks.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">📧</div>
+              <div class="uc-content">
+                <h4>Email Attachments</h4>
+                <p>Understand and debug Base64-encoded email attachment content.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Related Tools -->
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="port-lookup.html" class="related-tool-card">
+              <span class="rt-icon">🔌</span>
+              <span class="rt-name">Port Lookup</span>
+            </a>
+            <a href="json-formatter.html" class="related-tool-card">
+              <span class="rt-icon">🧩</span>
+              <span class="rt-name">JSON Formatter</span>
+            </a>
+            <a href="password-generator.html" class="related-tool-card">
+              <span class="rt-icon">🔐</span>
+              <span class="rt-name">Password Generator</span>
+            </a>
+            <a href="color-picker.html" class="related-tool-card">
+              <span class="rt-icon">🎨</span>
+              <span class="rt-name">Color Picker</span>
+            </a>
+          </div>
+        </div>
+
+      </aside>
 
     </div>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
-    <p>FreeToolset — All tools run locally in your browser.</p>
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
   </footer>
 
   <script>
@@ -77,9 +215,8 @@
       var copyBtn = document.getElementById('copyBtn');
       var errorMsg = document.getElementById('errorMsg');
 
-      var mode = 'encode'; // or 'decode'
+      var mode = 'encode';
 
-      // Switch to encode mode
       function setEncodeMode() {
         mode = 'encode';
         encodeModeBtn.className = 'btn btn-primary';
@@ -92,7 +229,6 @@
         hideError();
       }
 
-      // Switch to decode mode
       function setDecodeMode() {
         mode = 'decode';
         decodeModeBtn.className = 'btn btn-primary';
@@ -114,20 +250,16 @@
         errorMsg.style.display = 'none';
       }
 
-      // Encode text to Base64 (UTF-8 safe)
       function encodeBase64(text) {
-        // Handle UTF-8 characters properly
         var utf8 = unescape(encodeURIComponent(text));
         return btoa(utf8);
       }
 
-      // Decode Base64 to text (UTF-8 safe)
       function decodeBase64(base64) {
         var utf8 = atob(base64);
         return decodeURIComponent(escape(utf8));
       }
 
-      // Process (encode or decode)
       function process() {
         var input = inputText.value;
         hideError();
@@ -141,7 +273,6 @@
           if (mode === 'encode') {
             outputText.value = encodeBase64(input);
           } else {
-            // Clean input: remove whitespace/newlines
             var cleaned = input.replace(/\s/g, '');
             outputText.value = decodeBase64(cleaned);
           }
@@ -152,7 +283,6 @@
         }
       }
 
-      // Swap input and output
       function swap() {
         var temp = inputText.value;
         inputText.value = outputText.value;
@@ -160,14 +290,12 @@
         hideError();
       }
 
-      // Clear all
       function clear() {
         inputText.value = '';
         outputText.value = '';
         hideError();
       }
 
-      // Copy result
       function copyResult() {
         if (!outputText.value) {
           showError('Nothing to copy yet.');
@@ -181,7 +309,6 @@
         }, 1500);
       }
 
-      // Event listeners
       encodeModeBtn.addEventListener('click', setEncodeMode);
       decodeModeBtn.addEventListener('click', setDecodeMode);
       processBtn.addEventListener('click', process);
@@ -189,7 +316,6 @@
       clearBtn.addEventListener('click', clear);
       copyBtn.addEventListener('click', copyResult);
 
-      // Process on input (live)
       inputText.addEventListener('input', function () {
         if (inputText.value) {
           process();
@@ -199,7 +325,6 @@
         }
       });
 
-      // Initial encode
       process();
     })();
   </script>
