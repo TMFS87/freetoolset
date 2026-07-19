@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Generator - FreeToolset</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- QRCode.js library via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">F</span>
+      FreeToolset
+    </a>
+    <a href="index.html" class="navbar-back">← All Tools</a>
+  </nav>
+
+  <main class="main-content">
+
+    <div class="tool-header">
+      <h1>📱 QR Code Generator</h1>
+      <p>Generate QR codes from any text or URL. Download as a PNG image instantly.</p>
+    </div>
+
+    <div class="tool-card-layout">
+
+      <!-- Input -->
+      <div class="form-row">
+        <label for="qrInput">Text or URL</label>
+        <textarea id="qrInput" placeholder="Enter text or a URL (e.g. https://example.com)">https://freetoolset.example.com</textarea>
+      </div>
+
+      <!-- Options -->
+      <div class="form-row">
+        <label>Size: <span id="sizeValue" class="range-value">256px</span></label>
+        <div class="range-row">
+          <input type="range" id="sizeSlider" min="128" max="512" step="32" value="256">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label>Color (Dark)</label>
+        <input type="color" id="darkColor" value="#000000" style="width:100%; height:40px; border:2px solid var(--border); border-radius:8px; cursor:pointer;">
+      </div>
+
+      <div class="form-row">
+        <label>Background Color</label>
+        <input type="color" id="lightColor" value="#ffffff" style="width:100%; height:40px; border:2px solid var(--border); border-radius:8px; cursor:pointer;">
+      </div>
+
+      <div class="form-row">
+        <label>Error Correction Level</label>
+        <select id="errorLevel">
+          <option value="L">Low (7%)</option>
+          <option value="M" selected>Medium (15%)</option>
+          <option value="Q">Quartile (25%)</option>
+          <option value="H">High (30%)</option>
+        </select>
+      </div>
+
+      <div class="btn-group">
+        <button class="btn btn-primary" id="generateBtn">Generate QR Code</button>
+        <button class="btn btn-secondary" id="downloadBtn" style="display:none;">⬇ Download PNG</button>
+      </div>
+
+      <!-- QR Code Output -->
+      <div id="qrcode" style="margin-top:24px; text-align:center;"></div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>FreeToolset — All tools run locally in your browser.</p>
+  </footer>
+
+  <script>
+    (function () {
+      var qrInput = document.getElementById('qrInput');
+      var sizeSlider = document.getElementById('sizeSlider');
+      var sizeValue = document.getElementById('sizeValue');
+      var darkColor = document.getElementById('darkColor');
+      var lightColor = document.getElementById('lightColor');
+      var errorLevel = document.getElementById('errorLevel');
+      var generateBtn = document.getElementById('generateBtn');
+      var downloadBtn = document.getElementById('downloadBtn');
+      var qrcodeDiv = document.getElementById('qrcode');
+
+      var currentQR = null;
+
+      // Update size label
+      sizeSlider.addEventListener('input', function () {
+        sizeValue.textContent = this.value + 'px';
+      });
+
+      // Generate QR Code
+      function generate() {
+        var text = qrInput.value.trim();
+        if (!text) {
+          alert('Please enter some text or a URL.');
+          return;
+        }
+
+        var size = parseInt(sizeSlider.value);
+
+        // Clear previous QR code
+        qrcodeDiv.innerHTML = '';
+
+        // Create new QR code using qrcodejs
+        currentQR = new QRCode(qrcodeDiv, {
+          text: text,
+          width: size,
+          height: size,
+          colorDark: darkColor.value,
+          colorLight: lightColor.value,
+          correctLevel: QRCode.CorrectLevel[errorLevel.value]
+        });
+
+        downloadBtn.style.display = 'inline-flex';
+      }
+
+      generateBtn.addEventListener('click', generate);
+
+      // Auto-generate on input change (debounced)
+      var debounceTimer;
+      qrInput.addEventListener('input', function () {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(generate, 500);
+      });
+
+      // Download as PNG
+      downloadBtn.addEventListener('click', function () {
+        var canvas = qrcodeDiv.querySelector('canvas');
+        var img = qrcodeDiv.querySelector('img');
+
+        if (canvas) {
+          // Prefer canvas for download
+          var link = document.createElement('a');
+          link.download = 'qrcode-' + Date.now() + '.png';
+          link.href = canvas.toDataURL('image/png');
+          link.click();
+        } else if (img) {
+          // Fallback to img element
+          var link = document.createElement('a');
+          link.download = 'qrcode-' + Date.now() + '.png';
+          link.href = img.src;
+          link.click();
+        }
+      });
+
+      // Generate initial QR code
+      generate();
+    })();
+  </script>
+
+</body>
+</html>

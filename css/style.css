@@ -457,6 +457,7 @@ a:hover {
 .badge-developer { background: rgba(63, 185, 80, 0.12); color: var(--success); }
 .badge-security { background: rgba(210, 153, 34, 0.12); color: var(--warning); }
 .badge-network { background: rgba(167, 139, 250, 0.12); color: var(--primary); }
+.badge-ai { background: linear-gradient(135deg, rgba(167, 139, 250, 0.15), rgba(244, 114, 182, 0.15)); color: var(--primary); border: 1px solid rgba(167, 139, 250, 0.3); }
 
 /* Popular tag */
 .card-popular {

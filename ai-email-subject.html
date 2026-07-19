@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Email Subject Line Generator — Free Email Marketing Tool | FreeToolset</title>
+  <meta name="description" content="Generate 10 high-open-rate email subject lines with AI. Free online tool for email marketers and businesses.">
+  <meta name="keywords" content="ai email subject line, email subject generator, email marketing, open rate, subject line ideas">
+  <meta property="og:title" content="AI Email Subject Line Generator — FreeToolset">
+  <meta property="og:description" content="Generate 10 high-open-rate email subject lines with AI. Free online tool.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/ai-email-subject.html">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- AI Tool page-specific styles -->
+  <style>
+    .badge-ai { background: linear-gradient(135deg, rgba(167,139,250,0.15), rgba(244,114,182,0.15)); color: var(--primary); border: 1px solid rgba(167,139,250,0.3); }
+    .quota-info { display:flex; align-items:center; justify-content:space-between; margin-top:16px; padding:12px 16px; background:var(--bg); border:1px solid var(--border); border-radius:var(--radius-sm); font-size:0.875rem; }
+    .quota-remaining { font-weight:700; color:var(--primary); }
+    .upgrade-notice { margin-top:12px; padding:16px; background:linear-gradient(135deg, var(--primary-light), var(--card-bg)); border:1px solid var(--border); border-radius:var(--radius-sm); text-align:center; display:none; }
+    .upgrade-notice.show { display:block; }
+    .upgrade-notice p { margin-bottom:8px; color:var(--text); font-weight:600; font-size:0.9rem; }
+    .upgrade-notice a { display:inline-block; padding:8px 20px; background:linear-gradient(135deg, var(--primary), var(--primary-dark)); color:#fff; border-radius:var(--radius-sm); font-weight:600; font-size:0.85rem; transition:all var(--transition); }
+    .upgrade-notice a:hover { transform:translateY(-2px); box-shadow:0 4px 12px var(--primary-glow); color:#fff; }
+    .ai-result { margin-top:20px; padding:20px; background:var(--bg); border:1px solid var(--border); border-radius:var(--radius-sm); min-height:100px; white-space:pre-wrap; word-break:break-word; line-height:1.8; font-size:0.925rem; color:var(--text); }
+    .ai-result.empty { color:var(--text-secondary); font-style:italic; display:flex; align-items:center; justify-content:center; }
+    .loading-spinner { display:inline-block; width:16px; height:16px; border:2px solid rgba(255,255,255,0.3); border-top-color:#fff; border-radius:50%; animation:spin 0.8s linear infinite; margin-right:8px; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    .ai-error { margin-top:12px; padding:12px 16px; background:rgba(248,81,73,0.1); border:1px solid rgba(248,81,73,0.3); border-radius:var(--radius-sm); font-size:0.875rem; color:var(--danger); display:none; }
+    .ai-error.show { display:block; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="privacy-policy.html" class="nav-link">Privacy</a>
+      <button class="nav-lang" title="Switch Language" onclick="alert('Language switching coming soon!')">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <span class="current">AI Email Subject Line Generator</span>
+    </nav>
+
+    <!-- Tool Header -->
+    <div class="tool-header">
+      <h1>✉️ AI Email Subject Line Generator</h1>
+      <p>Generate 10 high-open-rate email subject lines in seconds. Mix curiosity, urgency, and benefit-driven styles with AI.</p>
+    </div>
+
+    <!-- Two-column Layout -->
+    <div class="tool-layout">
+
+      <!-- Tool Main -->
+      <div class="tool-main">
+
+        <!-- Email Topic -->
+        <div class="form-row">
+          <label for="topic">Email Topic</label>
+          <input type="text" id="topic" placeholder="e.g. Black Friday Sale Announcement">
+        </div>
+
+        <!-- Product/Offer -->
+        <div class="form-row">
+          <label for="product">Product / Offer</label>
+          <input type="text" id="product" placeholder="e.g. 50% off all premium plans">
+        </div>
+
+        <!-- Target Audience -->
+        <div class="form-row">
+          <label for="audience">Target Audience</label>
+          <input type="text" id="audience" placeholder="e.g. existing subscribers, SaaS users">
+        </div>
+
+        <!-- Generate Button -->
+        <div class="btn-group">
+          <button class="btn btn-primary" id="generateBtn">Generate Subject Lines</button>
+          <button class="btn btn-secondary" id="copyBtn" style="display:none;">Copy Result</button>
+        </div>
+
+        <!-- Error message -->
+        <div class="ai-error" id="errorMsg"></div>
+
+        <!-- Result -->
+        <div class="ai-result empty" id="resultArea">Your generated email subject lines will appear here.</div>
+
+        <!-- Quota Info -->
+        <div class="quota-info">
+          <span>🆓 Free daily limit</span>
+          <span class="quota-remaining" id="quotaDisplay">5 / 5 remaining</span>
+        </div>
+
+        <!-- Upgrade Notice -->
+        <div class="upgrade-notice" id="upgradeNotice">
+          <p>🚀 Upgrade to Pro for unlimited access</p>
+          <a href="#">Upgrade to Pro →</a>
+        </div>
+
+        <!-- Privacy Notice -->
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>AI generation is processed securely. Your inputs are not stored permanently.</span>
+        </div>
+
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="tool-sidebar">
+
+        <!-- How to Use -->
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Enter the topic of your email campaign.</li>
+            <li>Describe your product or offer in a few words.</li>
+            <li>Specify your target audience for tailored messaging.</li>
+            <li>Click "Generate Subject Lines" to get 10 variations.</li>
+            <li>Copy your favorite subject lines for your email campaign.</li>
+          </ol>
+        </div>
+
+        <!-- FAQ -->
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>What makes a good email subject line?</summary>
+            <p>The best subject lines are concise (30-50 characters), create curiosity or urgency, and clearly communicate value. Our AI generates a mix of styles so you can choose what fits your brand.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How many subject lines do I get?</summary>
+            <p>Each generation produces 10 subject lines in different styles: curiosity-driven, urgency-based, benefit-focused, and personalized. You can generate up to 5 times per day for free.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Should I A/B test subject lines?</summary>
+            <p>Yes! With 10 variations per generation, you can easily A/B test different styles. Start with 2-3 options and measure open rates to find what resonates with your audience.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can I use these for any email platform?</summary>
+            <p>Absolutely! The generated subject lines work with Mailchimp, SendGrid, ConvertKit, Gmail, Outlook, and any other email platform. Just copy and paste.</p>
+          </details>
+        </div>
+
+        <!-- Use Cases -->
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">📧</div>
+              <div class="uc-content">
+                <h4>Email Campaigns</h4>
+                <p>Craft compelling subject lines for newsletters and promotional emails.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🛒</div>
+              <div class="uc-content">
+                <h4>Sales Emails</h4>
+                <p>Boost open rates for product launches, sales, and special offers.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🔄</div>
+              <div class="uc-content">
+                <h4>Re-engagement</h4>
+                <p>Win back inactive subscribers with attention-grabbing subject lines.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Related Tools -->
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="ai-product-description.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Product Description</span>
+            </a>
+            <a href="ai-seo-meta-generator.html" class="related-tool-card">
+              <span class="rt-icon">🔍</span>
+              <span class="rt-name">AI SEO Meta Generator</span>
+            </a>
+            <a href="ai-blog-writer.html" class="related-tool-card">
+              <span class="rt-icon">📝</span>
+              <span class="rt-name">AI Blog Post Writer</span>
+            </a>
+            <a href="ai-content-rewriter.html" class="related-tool-card">
+              <span class="rt-icon">🔄</span>
+              <span class="rt-name">AI Content Rewriter</span>
+            </a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      /* ---------- Configuration ---------- */
+      var TOOL_NAME = 'email-subject';
+      var DAILY_LIMIT = 5;
+
+      /* ---------- DOM Elements ---------- */
+      var topic = document.getElementById('topic');
+      var product = document.getElementById('product');
+      var audience = document.getElementById('audience');
+      var generateBtn = document.getElementById('generateBtn');
+      var copyBtn = document.getElementById('copyBtn');
+      var resultArea = document.getElementById('resultArea');
+      var errorMsg = document.getElementById('errorMsg');
+      var quotaDisplay = document.getElementById('quotaDisplay');
+      var upgradeNotice = document.getElementById('upgradeNotice');
+
+      /* ---------- Quota Management (localStorage) ---------- */
+      function getQuotaKey() {
+        var today = new Date().toISOString().slice(0, 10);
+        return TOOL_NAME + '_' + today;
+      }
+
+      function getRemaining() {
+        var key = getQuotaKey();
+        var used = parseInt(localStorage.getItem(key) || '0', 10);
+        return Math.max(0, DAILY_LIMIT - used);
+      }
+
+      function incrementUsage() {
+        var key = getQuotaKey();
+        var used = parseInt(localStorage.getItem(key) || '0', 10);
+        localStorage.setItem(key, String(used + 1));
+      }
+
+      function updateQuotaDisplay() {
+        var remaining = getRemaining();
+        quotaDisplay.textContent = remaining + ' / ' + DAILY_LIMIT + ' remaining';
+        if (remaining === 0) {
+          upgradeNotice.classList.add('show');
+        } else {
+          upgradeNotice.classList.remove('show');
+        }
+      }
+
+      /* ---------- Error Handling ---------- */
+      function showError(msg) {
+        errorMsg.textContent = msg;
+        errorMsg.classList.add('show');
+      }
+
+      function hideError() {
+        errorMsg.classList.remove('show');
+      }
+
+      /* ---------- Generate ---------- */
+      async function generate() {
+        hideError();
+
+        // Validate required fields
+        if (!topic.value.trim()) { showError('Please enter an email topic.'); return; }
+        if (!product.value.trim()) { showError('Please describe your product or offer.'); return; }
+        if (!audience.value.trim()) { showError('Please specify the target audience.'); return; }
+
+        // Check quota
+        if (getRemaining() <= 0) {
+          showError('You have reached your daily free limit. Please come back tomorrow or upgrade to Pro.');
+          return;
+        }
+
+        // Set loading state
+        generateBtn.disabled = true;
+        generateBtn.innerHTML = '<span class="loading-spinner"></span>Generating...';
+        resultArea.className = 'ai-result empty';
+        resultArea.textContent = 'Generating your email subject lines...';
+        copyBtn.style.display = 'none';
+
+        try {
+          var response = await fetch('/api/ai-proxy', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              tool: TOOL_NAME,
+              data: {
+                topic: topic.value.trim(),
+                product: product.value.trim(),
+                audience: audience.value.trim()
+              }
+            })
+          });
+
+          var data = await response.json();
+
+          if (data.success) {
+            resultArea.className = 'ai-result';
+            resultArea.textContent = data.result;
+            copyBtn.style.display = '';
+            incrementUsage();
+            updateQuotaDisplay();
+          } else {
+            resultArea.className = 'ai-result empty';
+            resultArea.textContent = 'Your generated email subject lines will appear here.';
+            showError(data.error || 'Failed to generate subject lines. Please try again.');
+          }
+        } catch (e) {
+          resultArea.className = 'ai-result empty';
+          resultArea.textContent = 'Your generated email subject lines will appear here.';
+          showError('Unable to connect to the AI service. Please check your internet connection and try again.');
+        } finally {
+          generateBtn.disabled = false;
+          generateBtn.innerHTML = 'Generate Subject Lines';
+        }
+      }
+
+      /* ---------- Copy Result ---------- */
+      function copyResult() {
+        if (!resultArea.textContent || resultArea.classList.contains('empty')) return;
+        navigator.clipboard.writeText(resultArea.textContent).then(function () {
+          copyBtn.textContent = '✓ Copied!';
+          setTimeout(function () { copyBtn.textContent = 'Copy Result'; }, 1500);
+        }).catch(function () {
+          var range = document.createRange();
+          range.selectNode(resultArea);
+          window.getSelection().removeAllRanges();
+          window.getSelection().addRange(range);
+          document.execCommand('copy');
+          window.getSelection().removeAllRanges();
+          copyBtn.textContent = '✓ Copied!';
+          setTimeout(function () { copyBtn.textContent = 'Copy Result'; }, 1500);
+        });
+      }
+
+      /* ---------- Event Listeners ---------- */
+      generateBtn.addEventListener('click', generate);
+      copyBtn.addEventListener('click', copyResult);
+
+      /* ---------- Init ---------- */
+      updateQuotaDisplay();
+    })();
+  </script>
+
+</body>
+</html>
