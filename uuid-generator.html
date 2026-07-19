@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UUID Generator — Free Online UUID v4 Generator | FreeToolset</title>
+  <meta name="description" content="Generate random UUID v4 identifiers online for free. Supports batch generation of up to 100 UUIDs. Uses crypto.getRandomValues() for cryptographically secure randomness. Runs in your browser.">
+  <meta name="keywords" content="uuid generator, uuid v4, guid generator, random uuid, unique identifier, uuid online">
+  <meta property="og:title" content="UUID Generator — FreeToolset">
+  <meta property="og:description" content="Generate random UUID v4 identifiers. Batch generation up to 100.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://freetoolset.app/uuid-generator.html">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="privacy-policy.html" class="nav-link">Privacy</a>
+      <button class="nav-lang" title="Switch Language" onclick="alert('Language switching coming soon!')">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <span class="current">UUID Generator</span>
+    </nav>
+
+    <!-- Tool Header -->
+    <div class="tool-header">
+      <h1>🆔 UUID Generator</h1>
+      <p>Generate random UUID v4 identifiers. Supports batch generation of up to 100 UUIDs at once. Uses <code>crypto.getRandomValues()</code> for cryptographically secure randomness.</p>
+    </div>
+
+    <!-- Two-column Layout -->
+    <div class="tool-layout">
+
+      <!-- Tool Main -->
+      <div class="tool-main">
+
+        <!-- Quantity -->
+        <div class="form-row">
+          <label for="quantityInput">Number of UUIDs to Generate</label>
+          <div class="range-row">
+            <input type="range" id="quantitySlider" min="1" max="100" value="1">
+            <span id="quantityValue" class="range-value">1</span>
+          </div>
+        </div>
+
+        <!-- Uppercase toggle -->
+        <div class="form-row">
+          <label class="checkbox-item">
+            <input type="checkbox" id="uppercaseToggle">
+            Generate uppercase UUIDs
+          </label>
+        </div>
+
+        <!-- Buttons -->
+        <div class="btn-group">
+          <button class="btn btn-primary" id="generateBtn">Generate UUIDs</button>
+          <button class="btn btn-secondary" id="copyAllBtn">Copy All</button>
+          <button class="btn btn-secondary" id="clearBtn">Clear</button>
+        </div>
+
+        <!-- Output -->
+        <div class="form-row" style="margin-top:20px;">
+          <label>Generated UUIDs</label>
+          <textarea id="uuidOutput" readonly placeholder="Click 'Generate UUIDs' to create UUID v4 values..." style="min-height:180px; font-family:'SF Mono',Monaco,monospace; font-size:0.9rem;"></textarea>
+        </div>
+
+        <!-- Status -->
+        <div id="statusMsg" style="margin-top:8px; font-size:0.9rem;"></div>
+
+        <!-- Privacy Notice -->
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="tool-sidebar">
+
+        <!-- How to Use -->
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Use the slider to choose how many UUIDs to generate (1–100).</li>
+            <li>Optionally check "Generate uppercase UUIDs" for uppercase output.</li>
+            <li>Click "Generate UUIDs" to create the values.</li>
+            <li>Click "Copy All" to copy all generated UUIDs to your clipboard.</li>
+          </ol>
+        </div>
+
+        <!-- FAQ -->
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>What is a UUID?</summary>
+            <p>A UUID (Universally Unique Identifier) is a 128-bit identifier represented as a 36-character string in the format <code>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</code>, where each "x" is a hexadecimal digit. UUIDs are designed to be globally unique without requiring a central coordinating authority, making them ideal for distributed systems, databases, and APIs.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What is UUID v4?</summary>
+            <p>UUID version 4 (v4) uses random or pseudo-random numbers to generate the identifier. Except for the version and variant bits (which identify it as a v4 UUID), all 122 remaining bits are random. This tool uses the browser's <code>crypto.getRandomValues()</code> function, which provides cryptographically secure random values. UUID v4 is the most commonly used version in modern applications.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can UUIDs collide or repeat?</summary>
+            <p>The probability of a UUID v4 collision is astronomically small. With 122 random bits, there are 2¹²² (approximately 5.3 × 10³⁶) possible values. To have a 50% chance of a single collision, you would need to generate about 2.71 × 10¹⁸ UUIDs. In practice, UUID collisions are virtually impossible and can be safely ignored for any real-world application.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What are UUIDs used for?</summary>
+            <p>UUIDs are widely used as primary keys in databases, identifiers for distributed systems, session tokens, file names, API request IDs, and anywhere a globally unique identifier is needed without coordination between systems. They are especially useful in microservices architectures and event-driven systems.</p>
+          </details>
+        </div>
+
+        <!-- Use Cases -->
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🗄️</div>
+              <div class="uc-content">
+                <h4>Database Keys</h4>
+                <p>Use as primary keys or unique identifiers in database records.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🔗</div>
+              <div class="uc-content">
+                <h4>API Identifiers</h4>
+                <p>Generate unique IDs for API requests, sessions, or webhooks.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">📦</div>
+              <div class="uc-content">
+                <h4>Distributed Systems</h4>
+                <p>Create globally unique identifiers without a central coordinator.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Related Tools -->
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="password-generator.html" class="related-tool-card">
+              <span class="rt-icon">🔐</span>
+              <span class="rt-name">Password Generator</span>
+            </a>
+            <a href="hash-generator.html" class="related-tool-card">
+              <span class="rt-icon">#️⃣</span>
+              <span class="rt-name">Hash Generator</span>
+            </a>
+            <a href="base64-encoder.html" class="related-tool-card">
+              <span class="rt-icon">🔄</span>
+              <span class="rt-name">Base64 Encoder</span>
+            </a>
+            <a href="url-encoder.html" class="related-tool-card">
+              <span class="rt-icon">🔗</span>
+              <span class="rt-name">URL Encoder</span>
+            </a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var quantitySlider = document.getElementById('quantitySlider');
+      var quantityValue = document.getElementById('quantityValue');
+      var uppercaseToggle = document.getElementById('uppercaseToggle');
+      var generateBtn = document.getElementById('generateBtn');
+      var copyAllBtn = document.getElementById('copyAllBtn');
+      var clearBtn = document.getElementById('clearBtn');
+      var uuidOutput = document.getElementById('uuidOutput');
+      var statusMsg = document.getElementById('statusMsg');
+
+      function showStatus(msg, isError) {
+        statusMsg.textContent = msg;
+        statusMsg.style.color = isError ? '#f85149' : '#3fb950';
+      }
+
+      function generateUUIDv4() {
+        // Use crypto.getRandomValues for cryptographically secure randomness
+        var bytes = new Uint8Array(16);
+        crypto.getRandomValues(bytes);
+
+        // Set version (4) and variant (10xx) bits per RFC 4122
+        bytes[6] = (bytes[6] & 0x0f) | 0x40; // version 4
+        bytes[8] = (bytes[8] & 0x3f) | 0x80; // variant 10
+
+        // Convert to hex string in UUID format
+        var hex = [];
+        for (var i = 0; i < 16; i++) {
+          hex.push(('00' + bytes[i].toString(16)).slice(-2));
+        }
+
+        var uuid = hex[0] + hex[1] + hex[2] + hex[3] + '-' +
+                   hex[4] + hex[5] + '-' +
+                   hex[6] + hex[7] + '-' +
+                   hex[8] + hex[9] + '-' +
+                   hex[10] + hex[11] + hex[12] + hex[13] + hex[14] + hex[15];
+
+        return uppercaseToggle.checked ? uuid.toUpperCase() : uuid;
+      }
+
+      function generate() {
+        var count = parseInt(quantitySlider.value);
+        var uuids = [];
+        for (var i = 0; i < count; i++) {
+          uuids.push(generateUUIDv4());
+        }
+        uuidOutput.value = uuids.join('\n');
+        showStatus('✓ Generated ' + count + ' UUID' + (count > 1 ? 's' : '') + ' successfully.');
+      }
+
+      quantitySlider.addEventListener('input', function () {
+        quantityValue.textContent = this.value;
+      });
+
+      generateBtn.addEventListener('click', generate);
+
+      copyAllBtn.addEventListener('click', function () {
+        if (!uuidOutput.value) {
+          showStatus('Nothing to copy yet.', true);
+          return;
+        }
+        uuidOutput.select();
+        document.execCommand('copy');
+        copyAllBtn.textContent = '✓ Copied!';
+        setTimeout(function () {
+          copyAllBtn.textContent = 'Copy All';
+        }, 1500);
+      });
+
+      clearBtn.addEventListener('click', function () {
+        uuidOutput.value = '';
+        statusMsg.textContent = '';
+      });
+
+      // Generate initial UUID on load
+      generate();
+    })();
+  </script>
+
+</body>
+</html>

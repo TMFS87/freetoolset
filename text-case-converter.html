@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Case Converter — Free Online Case Conversion Tool | FreeToolset</title>
+  <meta name="description" content="Convert text between UPPERCASE, lowercase, Title Case, Sentence case, camelCase, snake_case, and kebab-case. Free, fast, and runs entirely in your browser. No data uploaded.">
+  <meta name="keywords" content="text case converter, uppercase, lowercase, title case, sentence case, camelcase, snake case, kebab case, case converter online">
+  <meta property="og:title" content="Text Case Converter — FreeToolset">
+  <meta property="og:description" content="Convert text between 7 different case formats instantly.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://freetoolset.app/text-case-converter.html">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="privacy-policy.html" class="nav-link">Privacy</a>
+      <button class="nav-lang" title="Switch Language" onclick="alert('Language switching coming soon!')">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <span class="current">Text Case Converter</span>
+    </nav>
+
+    <!-- Tool Header -->
+    <div class="tool-header">
+      <h1>🔤 Text Case Converter</h1>
+      <p>Convert text between UPPERCASE, lowercase, Title Case, Sentence case, camelCase, snake_case, and kebab-case. Instant conversion, all processing in your browser.</p>
+    </div>
+
+    <!-- Two-column Layout -->
+    <div class="tool-layout">
+
+      <!-- Tool Main -->
+      <div class="tool-main">
+
+        <!-- Input -->
+        <div class="form-row">
+          <label for="inputText">Input Text</label>
+          <textarea id="inputText" placeholder="Type or paste your text here..." style="min-height:140px;">The quick brown fox jumps over the lazy dog</textarea>
+        </div>
+
+        <!-- Conversion Buttons -->
+        <div class="form-row">
+          <label>Conversion Options</label>
+          <div class="btn-group">
+            <button class="btn btn-primary" data-case="upper">UPPERCASE</button>
+            <button class="btn btn-primary" data-case="lower">lowercase</button>
+            <button class="btn btn-primary" data-case="title">Title Case</button>
+            <button class="btn btn-primary" data-case="sentence">Sentence case</button>
+            <button class="btn btn-primary" data-case="camel">camelCase</button>
+            <button class="btn btn-primary" data-case="snake">snake_case</button>
+            <button class="btn btn-primary" data-case="kebab">kebab-case</button>
+          </div>
+        </div>
+
+        <!-- Output -->
+        <div class="form-row" style="margin-top:20px;">
+          <label>Result</label>
+          <textarea id="outputText" readonly placeholder="Converted text will appear here..." style="min-height:140px;"></textarea>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="btn-group" style="margin-top:16px;">
+          <button class="btn btn-secondary" id="copyBtn">Copy Result</button>
+          <button class="btn btn-secondary" id="swapBtn">⇅ Swap</button>
+          <button class="btn btn-secondary" id="clearBtn">Clear</button>
+        </div>
+
+        <!-- Status -->
+        <div id="statusMsg" style="margin-top:8px; font-size:0.9rem;"></div>
+
+        <!-- Privacy Notice -->
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="tool-sidebar">
+
+        <!-- How to Use -->
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Type or paste your text into the input box.</li>
+            <li>Click any conversion button (UPPERCASE, lowercase, Title Case, etc.).</li>
+            <li>The converted text appears in the result box instantly.</li>
+            <li>Use "Copy Result" to copy, or "Swap" to move the result back to input.</li>
+          </ol>
+        </div>
+
+        <!-- FAQ -->
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>What is Title Case?</summary>
+            <p>Title Case capitalizes the first letter of every word in the text. For example, "hello world" becomes "Hello World". It is commonly used for book titles, article headlines, and section headers. Some style guides exclude small words (articles, conjunctions, prepositions) from capitalization, but this tool applies a simple rule: capitalize the first letter of every word.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What is the difference between camelCase and snake_case?</summary>
+            <p><strong>camelCase</strong> capitalizes the first letter of each word except the first, and removes all spaces — e.g. "hello world" becomes "helloWorld". It is commonly used in JavaScript, Java, and C# variable names. <strong>snake_case</strong> uses underscores between words and keeps everything lowercase — e.g. "hello world" becomes "hello_world". It is commonly used in Python, Ruby, and database column names.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How do I convert to Sentence case?</summary>
+            <p>Sentence case capitalizes only the first letter of each sentence and leaves the rest lowercase. Click the "Sentence case" button to convert your text. The tool detects sentence boundaries using periods, exclamation marks, and question marks, then capitalizes the first letter following each boundary.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What is kebab-case used for?</summary>
+            <p>kebab-case uses hyphens between words in all lowercase — e.g. "hello world" becomes "hello-world". It is commonly used in URLs (slugs), CSS class names, and file names, as hyphens are URL-safe and more readable than underscores in web addresses.</p>
+          </details>
+        </div>
+
+        <!-- Use Cases -->
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">💻</div>
+              <div class="uc-content">
+                <h4>Programming</h4>
+                <p>Convert variable and function names between camelCase, snake_case, and kebab-case.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">✍️</div>
+              <div class="uc-content">
+                <h4>Writing & Editing</h4>
+                <p>Fix accidental caps lock or convert headlines to Title Case.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🔗</div>
+              <div class="uc-content">
+                <h4>URL Slugs</h4>
+                <p>Convert titles to kebab-case for SEO-friendly URL slugs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Related Tools -->
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="word-counter.html" class="related-tool-card">
+              <span class="rt-icon">📝</span>
+              <span class="rt-name">Word Counter</span>
+            </a>
+            <a href="lorem-ipsum-generator.html" class="related-tool-card">
+              <span class="rt-icon">📄</span>
+              <span class="rt-name">Lorem Ipsum Generator</span>
+            </a>
+            <a href="json-formatter.html" class="related-tool-card">
+              <span class="rt-icon">🧩</span>
+              <span class="rt-name">JSON Formatter</span>
+            </a>
+            <a href="base64-encoder.html" class="related-tool-card">
+              <span class="rt-icon">🔄</span>
+              <span class="rt-name">Base64 Encoder</span>
+            </a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var inputText = document.getElementById('inputText');
+      var outputText = document.getElementById('outputText');
+      var copyBtn = document.getElementById('copyBtn');
+      var swapBtn = document.getElementById('swapBtn');
+      var clearBtn = document.getElementById('clearBtn');
+      var statusMsg = document.getElementById('statusMsg');
+      var caseBtns = document.querySelectorAll('[data-case]');
+
+      function showStatus(msg, isError) {
+        statusMsg.textContent = msg;
+        statusMsg.style.color = isError ? '#f85149' : '#3fb950';
+      }
+
+      // Split text into words, handling various separators
+      function splitWords(text) {
+        // First, insert spaces at camelCase boundaries, then split
+        return text
+          .replace(/([a-z])([A-Z])/g, '$1 $2')     // camelCase boundary
+          .replace(/[_\-]+/g, ' ')                   // underscores/hyphens to spaces
+          .replace(/\s+/g, ' ')
+          .trim()
+          .split(' ')
+          .filter(function (w) { return w.length > 0; });
+      }
+
+      function convert(caseType, text) {
+        if (!text) return '';
+
+        var words, i, result;
+
+        switch (caseType) {
+          case 'upper':
+            return text.toUpperCase();
+
+          case 'lower':
+            return text.toLowerCase();
+
+          case 'title':
+            return text.replace(/\w\S*/g, function (word) {
+              return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+            });
+
+          case 'sentence':
+            // Lowercase everything, then capitalize first letter of each sentence
+            var lower = text.toLowerCase();
+            return lower.replace(/(^\s*\w|[.!?]\s*\w)/g, function (match) {
+              return match.toUpperCase();
+            });
+
+          case 'camel':
+            words = splitWords(text);
+            result = '';
+            for (i = 0; i < words.length; i++) {
+              if (i === 0) {
+                result += words[i].toLowerCase();
+              } else {
+                result += words[i].charAt(0).toUpperCase() + words[i].slice(1).toLowerCase();
+              }
+            }
+            return result;
+
+          case 'snake':
+            words = splitWords(text);
+            return words.map(function (w) { return w.toLowerCase(); }).join('_');
+
+          case 'kebab':
+            words = splitWords(text);
+            return words.map(function (w) { return w.toLowerCase(); }).join('-');
+
+          default:
+            return text;
+        }
+      }
+
+      caseBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var input = inputText.value;
+          if (!input) {
+            showStatus('Please enter some text first.', true);
+            return;
+          }
+          var caseType = this.getAttribute('data-case');
+          outputText.value = convert(caseType, input);
+          showStatus('✓ Converted to ' + this.textContent.trim() + '.');
+        });
+      });
+
+      copyBtn.addEventListener('click', function () {
+        if (!outputText.value) {
+          showStatus('Nothing to copy yet.', true);
+          return;
+        }
+        outputText.select();
+        document.execCommand('copy');
+        copyBtn.textContent = '✓ Copied!';
+        setTimeout(function () { copyBtn.textContent = 'Copy Result'; }, 1500);
+      });
+
+      swapBtn.addEventListener('click', function () {
+        var temp = inputText.value;
+        inputText.value = outputText.value;
+        outputText.value = temp;
+        statusMsg.textContent = '';
+      });
+
+      clearBtn.addEventListener('click', function () {
+        inputText.value = '';
+        outputText.value = '';
+        statusMsg.textContent = '';
+        inputText.focus();
+      });
+    })();
+  </script>
+
+</body>
+</html>

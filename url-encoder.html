@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Base64 Encoder/Decoder — Free Online Base64 Tool | FreeToolset</title>
-  <meta name="description" content="Encode text to Base64 or decode Base64 back to readable text. Full UTF-8 support including Chinese and special characters. Live processing, no upload required.">
-  <meta name="keywords" content="base64 encoder, base64 decoder, base64 converter, encode base64, decode base64, utf-8 base64">
-  <meta property="og:title" content="Base64 Encoder/Decoder — FreeToolset">
-  <meta property="og:description" content="Encode text to Base64 or decode Base64 back to text. Full UTF-8 support.">
+  <title>URL Encoder / Decoder — Free Online URL Encoding Tool | FreeToolset</title>
+  <meta name="description" content="Encode and decode URLs online for free. Supports both encodeURI and encodeURIComponent. Handle special characters, query parameters, and Unicode safely. Runs entirely in your browser.">
+  <meta name="keywords" content="url encoder, url decoder, encodeuri, encodeuricomponent, url encoding, percent encoding, decode url">
+  <meta property="og:title" content="URL Encoder / Decoder — FreeToolset">
+  <meta property="og:description" content="Encode and decode URLs with encodeURI and encodeURIComponent support.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://freetoolset.app/base64-encoder.html">
+  <link rel="canonical" href="https://freetoolset.app/url-encoder.html">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -35,13 +35,13 @@
     <nav class="breadcrumb">
       <a href="index.html">Home</a>
       <span class="separator">/</span>
-      <span class="current">Base64 Encoder/Decoder</span>
+      <span class="current">URL Encoder / Decoder</span>
     </nav>
 
     <!-- Tool Header -->
     <div class="tool-header">
-      <h1>🔄 Base64 Encoder / Decoder</h1>
-      <p>Encode text to Base64 or decode Base64 back to readable text. Supports UTF-8 characters including Chinese, Japanese, and emoji.</p>
+      <h1>🔗 URL Encoder / Decoder</h1>
+      <p>Encode URLs to percent-encoded format or decode them back to readable text. Supports both <code>encodeURI</code> and <code>encodeURIComponent</code> modes.</p>
     </div>
 
     <!-- Two-column Layout -->
@@ -54,15 +54,24 @@
         <div class="form-row">
           <label>Mode</label>
           <div class="btn-group">
-            <button class="btn btn-primary" id="encodeModeBtn">Encode (Text → Base64)</button>
-            <button class="btn btn-secondary" id="decodeModeBtn">Decode (Base64 → Text)</button>
+            <button class="btn btn-primary" id="encodeModeBtn">Encode</button>
+            <button class="btn btn-secondary" id="decodeModeBtn">Decode</button>
           </div>
+        </div>
+
+        <!-- Encoding Method (encode mode only) -->
+        <div class="form-row" id="methodRow">
+          <label for="methodSelect">Encoding Method</label>
+          <select id="methodSelect">
+            <option value="encodeURIComponent" selected>encodeURIComponent (recommended for query params)</option>
+            <option value="encodeURI">encodeURI (for full URLs)</option>
+          </select>
         </div>
 
         <!-- Input -->
         <div class="form-row">
           <label for="inputText" id="inputLabel">Input Text</label>
-          <textarea id="inputText" placeholder="Enter text to encode..." style="min-height:140px;">Hello, World!</textarea>
+          <textarea id="inputText" placeholder="Enter text or URL to encode..." style="min-height:140px;">https://example.com/search?q=hello world&lang=zh-CN</textarea>
         </div>
 
         <div class="btn-group">
@@ -96,10 +105,10 @@
         <div class="info-section">
           <h2>📋 How to Use</h2>
           <ol class="how-to-list">
-            <li>Select the mode: "Encode" (text to Base64) or "Decode" (Base64 to text).</li>
+            <li>Select the mode: "Encode" (text to URL-encoded) or "Decode" (URL-encoded to text).</li>
+            <li>When encoding, choose the method: <code>encodeURIComponent</code> for query parameters or <code>encodeURI</code> for full URLs.</li>
             <li>Type or paste your text into the input box.</li>
-            <li>The result updates automatically as you type (live mode).</li>
-            <li>Use "Swap" to move the result to the input and switch modes.</li>
+            <li>Click "Encode" or "Decode" to process, or use "Swap" to flip input and output.</li>
             <li>Click "Copy Result" to copy the output to your clipboard.</li>
           </ol>
         </div>
@@ -108,20 +117,20 @@
         <div class="info-section">
           <h2>❓ FAQ</h2>
           <details class="faq-item">
-            <summary>Can it handle Chinese and other Unicode characters?</summary>
-            <p>Yes. The tool uses proper UTF-8 encoding and decoding, so it correctly handles Chinese, Japanese, Korean, emoji, and any other Unicode characters that standard Base64 implementations may struggle with.</p>
+            <summary>What is URL encoding?</summary>
+            <p>URL encoding (also called percent encoding) converts characters that are not allowed in a URL — such as spaces, special symbols, and non-ASCII characters — into a format that can be safely transmitted. Each unsafe character is replaced with a percent sign followed by two hexadecimal digits, e.g. a space becomes <code>%20</code>.</p>
           </details>
           <details class="faq-item">
-            <summary>Can I encode files to Base64?</summary>
-            <p>Currently, the tool processes text input only. For file-to-Base64 conversion (e.g., creating Data URIs), you can use the browser's File API in combination with this tool. A dedicated file encoding feature is planned.</p>
+            <summary>Why do I need to encode URLs?</summary>
+            <p>URLs can only contain a limited set of ASCII characters. Characters like spaces, <code>&amp;</code>, <code>=</code>, <code>?</code>, and non-English letters must be encoded to avoid ambiguity and ensure the URL is interpreted correctly by servers, browsers, and APIs. Without encoding, special characters could break the URL structure or alter its meaning.</p>
           </details>
           <details class="faq-item">
-            <summary>Is there a size limit?</summary>
-            <p>The limit depends on your browser's available memory. In practice, you can process text up to several megabytes without issues. Very large inputs may cause the browser to become temporarily unresponsive.</p>
+            <summary>What is the difference between encodeURI and encodeURIComponent?</summary>
+            <p><code>encodeURI</code> is designed for encoding a complete URL. It preserves characters that have special meaning in a URL — such as <code>: / ? # &amp; = +</code> — so the URL structure stays intact. <code>encodeURIComponent</code> is meant for encoding individual query parameter values. It encodes <em>all</em> reserved characters, ensuring the value can be safely embedded in a query string. Use <code>encodeURI</code> for full URLs and <code>encodeURIComponent</code> for parameter values.</p>
           </details>
           <details class="faq-item">
-            <summary>What is Base64 used for?</summary>
-            <p>Base64 is commonly used to encode binary data as text, enabling it to be safely transmitted over text-based protocols like email, HTTP, and JSON. It's also used in Data URIs, JWT tokens, and Basic HTTP authentication.</p>
+            <summary>Does it support Unicode and emoji?</summary>
+            <p>Yes. Both <code>encodeURI</code> and <code>encodeURIComponent</code> in modern browsers handle UTF-8 encoding, so Chinese, Japanese, Korean characters, emoji, and any other Unicode text are correctly percent-encoded (e.g. "中" becomes <code>%E4%B8%AD</code>).</p>
           </details>
         </div>
 
@@ -130,24 +139,24 @@
           <h2>💡 Use Cases</h2>
           <div class="use-case-grid">
             <div class="use-case-item">
-              <div class="uc-icon">📦</div>
+              <div class="uc-icon">🌐</div>
               <div class="uc-content">
-                <h4>Data URIs</h4>
-                <p>Encode images or files as Base64 Data URIs for inline embedding in HTML/CSS.</p>
+                <h4>Query Parameters</h4>
+                <p>Safely embed user input or special characters in URL query strings.</p>
               </div>
             </div>
             <div class="use-case-item">
-              <div class="uc-icon">📡</div>
+              <div class="uc-icon">🔌</div>
               <div class="uc-content">
-                <h4>API Transmission</h4>
-                <p>Encode binary data for safe transmission in JSON APIs and webhooks.</p>
+                <h4>API Requests</h4>
+                <p>Encode parameters for REST API calls that accept URLs or special text.</p>
               </div>
             </div>
             <div class="use-case-item">
-              <div class="uc-icon">📧</div>
+              <div class="uc-icon">🐛</div>
               <div class="uc-content">
-                <h4>Email Attachments</h4>
-                <p>Understand and debug Base64-encoded email attachment content.</p>
+                <h4>Debugging</h4>
+                <p>Decode encoded URLs to inspect the actual parameter values being sent.</p>
               </div>
             </div>
           </div>
@@ -157,21 +166,21 @@
         <div class="info-section">
           <h2>🔗 Related Tools</h2>
           <div class="related-tools-grid">
-            <a href="port-lookup.html" class="related-tool-card">
-              <span class="rt-icon">🔌</span>
-              <span class="rt-name">Port Lookup</span>
+            <a href="base64-encoder.html" class="related-tool-card">
+              <span class="rt-icon">🔄</span>
+              <span class="rt-name">Base64 Encoder</span>
             </a>
             <a href="json-formatter.html" class="related-tool-card">
               <span class="rt-icon">🧩</span>
               <span class="rt-name">JSON Formatter</span>
             </a>
-            <a href="password-generator.html" class="related-tool-card">
-              <span class="rt-icon">🔐</span>
-              <span class="rt-name">Password Generator</span>
+            <a href="hash-generator.html" class="related-tool-card">
+              <span class="rt-icon">#️⃣</span>
+              <span class="rt-name">Hash Generator</span>
             </a>
-            <a href="image-to-base64.html" class="related-tool-card">
-              <span class="rt-icon">🖼️</span>
-              <span class="rt-name">Image to Base64</span>
+            <a href="uuid-generator.html" class="related-tool-card">
+              <span class="rt-icon">🆔</span>
+              <span class="rt-name">UUID Generator</span>
             </a>
           </div>
         </div>
@@ -207,6 +216,8 @@
     (function () {
       var encodeModeBtn = document.getElementById('encodeModeBtn');
       var decodeModeBtn = document.getElementById('decodeModeBtn');
+      var methodRow = document.getElementById('methodRow');
+      var methodSelect = document.getElementById('methodSelect');
       var inputLabel = document.getElementById('inputLabel');
       var inputText = document.getElementById('inputText');
       var outputText = document.getElementById('outputText');
@@ -222,8 +233,9 @@
         mode = 'encode';
         encodeModeBtn.className = 'btn btn-primary';
         decodeModeBtn.className = 'btn btn-secondary';
+        methodRow.style.display = '';
         inputLabel.textContent = 'Input Text';
-        inputText.placeholder = 'Enter text to encode...';
+        inputText.placeholder = 'Enter text or URL to encode...';
         processBtn.textContent = 'Encode';
         inputText.value = outputText.value || inputText.value;
         outputText.value = '';
@@ -234,8 +246,9 @@
         mode = 'decode';
         decodeModeBtn.className = 'btn btn-primary';
         encodeModeBtn.className = 'btn btn-secondary';
-        inputLabel.textContent = 'Base64 Input';
-        inputText.placeholder = 'Enter Base64 string to decode...';
+        methodRow.style.display = 'none';
+        inputLabel.textContent = 'URL-Encoded Input';
+        inputText.placeholder = 'Enter encoded URL to decode...';
         processBtn.textContent = 'Decode';
         inputText.value = outputText.value || inputText.value;
         outputText.value = '';
@@ -251,16 +264,6 @@
         errorMsg.style.display = 'none';
       }
 
-      function encodeBase64(text) {
-        var utf8 = unescape(encodeURIComponent(text));
-        return btoa(utf8);
-      }
-
-      function decodeBase64(base64) {
-        var utf8 = atob(base64);
-        return decodeURIComponent(escape(utf8));
-      }
-
       function process() {
         var input = inputText.value;
         hideError();
@@ -272,15 +275,25 @@
 
         try {
           if (mode === 'encode') {
-            outputText.value = encodeBase64(input);
+            if (methodSelect.value === 'encodeURI') {
+              outputText.value = encodeURI(input);
+            } else {
+              outputText.value = encodeURIComponent(input);
+            }
           } else {
-            var cleaned = input.replace(/\s/g, '');
-            outputText.value = decodeBase64(cleaned);
+            outputText.value = decodeURI(input);
           }
         } catch (e) {
-          showError(mode === 'decode'
-            ? 'Invalid Base64 string. Please check your input.'
-            : 'Encoding error: ' + e.message);
+          // If decodeURI fails, try decodeURIComponent
+          if (mode === 'decode') {
+            try {
+              outputText.value = decodeURIComponent(input);
+            } catch (e2) {
+              showError('Invalid encoded string. Please check your input.');
+            }
+          } else {
+            showError('Encoding error: ' + e.message);
+          }
         }
       }
 
@@ -325,6 +338,8 @@
           hideError();
         }
       });
+
+      methodSelect.addEventListener('change', process);
 
       process();
     })();

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image to Base64 — Free Online Image to Base64 Converter | FreeToolset</title>
+  <meta name="description" content="Convert images to Base64 encoded strings online for free. Upload any image (JPG, PNG, GIF, WebP) and get the Base64 Data URI instantly. Preview, copy, and use in your projects. Runs in your browser.">
+  <meta name="keywords" content="image to base64, base64 image converter, image to data uri, base64 encode image, inline image base64">
+  <meta property="og:title" content="Image to Base64 — FreeToolset">
+  <meta property="og:description" content="Convert images to Base64 Data URIs instantly in your browser.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://freetoolset.app/image-to-base64.html">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="privacy-policy.html" class="nav-link">Privacy</a>
+      <button class="nav-lang" title="Switch Language" onclick="alert('Language switching coming soon!')">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <span class="current">Image to Base64</span>
+    </nav>
+
+    <!-- Tool Header -->
+    <div class="tool-header">
+      <h1>🖼️ Image to Base64</h1>
+      <p>Upload an image and instantly convert it to a Base64 encoded Data URI. Perfect for embedding images in HTML, CSS, JSON, or API payloads. Uses the FileReader API — no upload required.</p>
+    </div>
+
+    <!-- Two-column Layout -->
+    <div class="tool-layout">
+
+      <!-- Tool Main -->
+      <div class="tool-main">
+
+        <!-- Upload Area -->
+        <div class="form-row">
+          <div class="file-upload-area" id="uploadArea">
+            <div class="upload-icon">📁</div>
+            <p>Click to select an image or drag &amp; drop here</p>
+            <p style="font-size:0.8rem; margin-top:4px;">Supports: JPG, PNG, GIF, WebP, SVG, BMP</p>
+            <input type="file" id="fileInput" accept="image/*" style="display:none;">
+          </div>
+        </div>
+
+        <!-- Preview & Output (hidden until file loaded) -->
+        <div id="resultArea" style="display:none;">
+
+          <!-- Image Preview -->
+          <div class="form-row">
+            <label>Image Preview</label>
+            <div class="image-preview-container" style="display:flex;">
+              <div class="image-preview" style="flex:1;">
+                <img id="previewImg" alt="Image preview">
+                <div class="image-info" id="imageInfo"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Options -->
+          <div class="form-row">
+            <label class="checkbox-item">
+              <input type="checkbox" id="includeDataUri" checked>
+              Include Data URI prefix (data:image/...;base64,)
+            </label>
+          </div>
+
+          <!-- Base64 Output -->
+          <div class="form-row">
+            <label>Base64 Output</label>
+            <textarea id="base64Output" readonly placeholder="Base64 string will appear here..." style="min-height:160px; font-family:'SF Mono',Monaco,monospace; font-size:0.85rem;"></textarea>
+          </div>
+
+          <!-- Buttons -->
+          <div class="btn-group">
+            <button class="btn btn-primary" id="copyBtn">Copy Base64</button>
+            <button class="btn btn-secondary" id="copyDataUriBtn">Copy as &lt;img&gt; Tag</button>
+            <button class="btn btn-secondary" id="resetBtn">Choose Another Image</button>
+          </div>
+
+        </div>
+
+        <!-- Error message -->
+        <div id="errorMsg" style="margin-top:8px; font-size:0.9rem; color:#f85149; display:none;"></div>
+
+        <!-- Privacy Notice -->
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="tool-sidebar">
+
+        <!-- How to Use -->
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Click the upload area or drag and drop an image file onto it.</li>
+            <li>The image preview and Base64 string appear automatically.</li>
+            <li>Toggle "Include Data URI prefix" to include or exclude the <code>data:image/...;base64,</code> header.</li>
+            <li>Click "Copy Base64" to copy the raw string, or "Copy as &lt;img&gt; Tag" for ready-to-use HTML.</li>
+          </ol>
+        </div>
+
+        <!-- FAQ -->
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>What is Base64?</summary>
+            <p>Base64 is an encoding scheme that converts binary data into a text string using 64 ASCII characters (A–Z, a–z, 0–9, +, /). It allows binary data — like images — to be represented as text, making it possible to embed images directly in HTML, CSS, JSON, XML, and other text-based formats.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What is converting images to Base64 useful for?</summary>
+            <p>Converting images to Base64 is useful for embedding images directly in HTML or CSS (as Data URIs), reducing HTTP requests on small images, including images in JSON API responses, sending images in email templates, and storing image data in text-based configuration files or databases.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Does Base64 make the file bigger?</summary>
+            <p>Yes. Base64 encoding increases file size by approximately 33% (every 3 bytes of binary data becomes 4 Base64 characters). For example, a 100KB image becomes roughly 133KB in Base64. For small icons or sprites this overhead is negligible, but for large images it's generally better to serve them as separate files to avoid inflating page size and blocking the main thread.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is there a file size limit?</summary>
+            <p>The limit depends on your browser's available memory. Most browsers can handle images up to several megabytes without issues. However, very large Base64 strings can slow down text editors and development tools, so we recommend using Base64 primarily for small images and icons.</p>
+          </details>
+        </div>
+
+        <!-- Use Cases -->
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🎨</div>
+              <div class="uc-content">
+                <h4>Inline CSS Images</h4>
+                <p>Embed small background images directly in CSS as Data URIs.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">📦</div>
+              <div class="uc-content">
+                <h4>API Payloads</h4>
+                <p>Include image data in JSON API requests or webhook payloads.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">📧</div>
+              <div class="uc-content">
+                <h4>Email Templates</h4>
+                <p>Embed images in HTML email templates without external references.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Related Tools -->
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="image-compressor.html" class="related-tool-card">
+              <span class="rt-icon">🖼️</span>
+              <span class="rt-name">Image Compressor</span>
+            </a>
+            <a href="base64-encoder.html" class="related-tool-card">
+              <span class="rt-icon">🔄</span>
+              <span class="rt-name">Base64 Encoder</span>
+            </a>
+            <a href="qr-code-generator.html" class="related-tool-card">
+              <span class="rt-icon">📱</span>
+              <span class="rt-name">QR Code Generator</span>
+            </a>
+            <a href="color-picker.html" class="related-tool-card">
+              <span class="rt-icon">🎨</span>
+              <span class="rt-name">Color Picker</span>
+            </a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var uploadArea = document.getElementById('uploadArea');
+      var fileInput = document.getElementById('fileInput');
+      var resultArea = document.getElementById('resultArea');
+      var previewImg = document.getElementById('previewImg');
+      var imageInfo = document.getElementById('imageInfo');
+      var base64Output = document.getElementById('base64Output');
+      var includeDataUri = document.getElementById('includeDataUri');
+      var copyBtn = document.getElementById('copyBtn');
+      var copyDataUriBtn = document.getElementById('copyDataUriBtn');
+      var resetBtn = document.getElementById('resetBtn');
+      var errorMsg = document.getElementById('errorMsg');
+
+      var currentBase64 = '';       // Full data URI
+      var currentRawBase64 = '';     // Raw base64 without prefix
+      var currentMimeType = '';
+
+      function showError(msg) {
+        errorMsg.textContent = msg;
+        errorMsg.style.display = 'block';
+      }
+
+      function hideError() {
+        errorMsg.style.display = 'none';
+      }
+
+      function formatFileSize(bytes) {
+        if (bytes < 1024) return bytes + ' B';
+        if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
+        return (bytes / 1048576).toFixed(1) + ' MB';
+      }
+
+      function handleFile(file) {
+        hideError();
+
+        if (!file) return;
+
+        if (!file.type.startsWith('image/')) {
+          showError('Please select an image file (JPG, PNG, GIF, WebP, etc.).');
+          return;
+        }
+
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          currentBase64 = e.target.result; // Full data URI
+          currentMimeType = file.type;
+
+          // Extract raw base64 (without data URI prefix)
+          var base64Prefix = 'data:' + currentMimeType + ';base64,';
+          currentRawBase64 = currentBase64.indexOf(base64Prefix) === 0
+            ? currentBase64.substring(base64Prefix.length)
+            : currentBase64;
+
+          // Show preview
+          previewImg.src = currentBase64;
+          imageInfo.textContent = file.name + ' — ' + formatFileSize(file.size) + ' — ' + file.type;
+
+          // Update output
+          updateOutput();
+
+          // Show result area
+          uploadArea.style.display = 'none';
+          resultArea.style.display = '';
+        };
+        reader.onerror = function () {
+          showError('Error reading the file. Please try again.');
+        };
+        reader.readAsDataURL(file);
+      }
+
+      function updateOutput() {
+        if (includeDataUri.checked) {
+          base64Output.value = currentBase64;
+        } else {
+          base64Output.value = currentRawBase64;
+        }
+      }
+
+      // Click to open file dialog
+      uploadArea.addEventListener('click', function () {
+        fileInput.click();
+      });
+
+      fileInput.addEventListener('change', function () {
+        if (this.files && this.files[0]) {
+          handleFile(this.files[0]);
+        }
+      });
+
+      // Drag and drop
+      uploadArea.addEventListener('dragover', function (e) {
+        e.preventDefault();
+        uploadArea.classList.add('dragover');
+      });
+      uploadArea.addEventListener('dragleave', function () {
+        uploadArea.classList.remove('dragover');
+      });
+      uploadArea.addEventListener('drop', function (e) {
+        e.preventDefault();
+        uploadArea.classList.remove('dragover');
+        if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+          handleFile(e.dataTransfer.files[0]);
+        }
+      });
+
+      // Update output when checkbox changes
+      includeDataUri.addEventListener('change', updateOutput);
+
+      // Copy raw base64
+      copyBtn.addEventListener('click', function () {
+        if (!base64Output.value) return;
+        base64Output.select();
+        document.execCommand('copy');
+        copyBtn.textContent = '✓ Copied!';
+        setTimeout(function () { copyBtn.textContent = 'Copy Base64'; }, 1500);
+      });
+
+      // Copy as <img> tag
+      copyDataUriBtn.addEventListener('click', function () {
+        if (!currentBase64) return;
+        var imgTag = '<img src="' + currentBase64 + '" alt="image">';
+        var textarea = document.createElement('textarea');
+        textarea.value = imgTag;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        copyDataUriBtn.textContent = '✓ Copied!';
+        setTimeout(function () { copyDataUriBtn.textContent = 'Copy as <img> Tag'; }, 1500);
+      });
+
+      // Reset
+      resetBtn.addEventListener('click', function () {
+        fileInput.value = '';
+        currentBase64 = '';
+        currentRawBase64 = '';
+        currentMimeType = '';
+        base64Output.value = '';
+        previewImg.src = '';
+        imageInfo.textContent = '';
+        resultArea.style.display = 'none';
+        uploadArea.style.display = '';
+        hideError();
+      });
+    })();
+  </script>
+
+</body>
+</html>
