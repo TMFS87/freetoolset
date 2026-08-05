@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calorie Calculator · 卡路里计算器 | FreeToolset</title>
+  <meta name="description" content="卡路里计算器（Calorie Calculator）：免费在线工具，无需注册下载，浏览器本地运行，数据不上传，保护隐私。">
+  <meta name="keywords" content="calorie calculator, tdee calculator, bmr calculator, daily calorie needs, maintenance calories">
+  <meta property="og:title" content="Calorie Calculator — FreeToolset">
+  <meta property="og:description" content="Estimate your daily calorie needs (TDEE) and basal metabolic rate (BMR) using the Mifflin-St Jeor equation, based on age, sex, height, weight and activity.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/calorie-calculator.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/calorie-calculator.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Calorie Calculator — FreeToolset">
+  <meta name="twitter:description" content="Estimate your daily calorie needs (TDEE) and basal metabolic rate (BMR) using the Mifflin-St Jeor equation, based on age, sex, height, weight and activity.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Calorie Calculator — Free Online BMR & TDEE Calorie Calculator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/calorie-calculator.html","description":"Estimate your daily calorie needs (TDEE) and basal metabolic rate (BMR) using the Mifflin-St Jeor equation, based on age, sex, height, weight and activity.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calorie Calculator",
+  "alternateName": "卡路里计算器",
+  "url": "https://www.freetoolset.app/calorie-calculator.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "卡路里计算器（Calorie Calculator）免费在线工具，无需注册，本地运行保护隐私。"
+}
+</script>
+  <!-- ft-faq-schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "卡路里计算器怎么估算每日消耗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "先按身高、体重、年龄、性别算出基础代谢率（BMR），再乘以你的活动系数，得到每天总消耗（TDEE）。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "想减肥每天吃多少卡路里？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "在 TDEE 基础上每天减少 300–500 大卡，可形成温和的热量缺口，约每周减 0.3–0.5 公斤，比较健康可持续。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "计算结果准确吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "基于 Mifflin-St Jeor 等国际通用公式，对普通人较准；个体代谢有差异，结果作为参考而非绝对标准。"
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active" data-i18n="Tools">Tools</a>
+      <a href="ai-studio.html" class="nav-link" data-i18n="✨ AI Studio">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>热量计算器用 Mifflin-St Jeor 公式，根据年龄、性别、身高、体重和活动水平，估算基础代谢率(BMR)和每日总消耗(TDEE)，是减脂增肌制定饮食计划的基础。</p>
+  </section>
+
+      <!-- ft-deep -->
+  <section class="tool-deep">
+    <h2>📖 深入了解 Calorie Calculator</h2>
+    <h2>为什么需要它</h2>
+    <ul>
+      <li>Weight Loss</li>
+      <li>Muscle Gain</li>
+      <li>Maintenance</li>
+    </ul>
+    <h2>背后的原理</h2>
+    <p>Calorie Calculator 把若干输入代入固定的数学公式，实时算出结果。相比手算或临时搭表格，在线工具省去记忆公式与处理单位的麻烦，输入即出，还能反向推导。</p>
+    <h2>一个例子</h2>
+    <p>例如使用 Calorie Calculator 时，把关键参数填入对应框，结果会即时更新；试着调整任一输入，就能直观看到输出如何变化，方便做「如果…会怎样」的推演。</p>
+    <h2>常见误区</h2>
+    <ul>
+      <li>只看单一结果、忽略适用条件与前提假设</li>
+      <li>把估算值当精确结论直接使用</li>
+      <li>忽略单位差异（公制/英制）导致量级错误</li>
+    </ul>
+  </section>
+    <nav class="breadcrumb"><!-- breadcrumb-cat -->
+      <a href="index.html" data-i18n="Home">Home</a>
+      <span class="separator">/</span>
+      <a href="calculators.html" data-i18n="catTitle_calculators">Calculators</a>
+      <span class="separator">/</span>
+      <span class="current" data-i18n="cardTitle_calorie-calculator">Calorie Calculator</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>🍎 Calorie Calculator</h1>
+      <p>Estimate your daily calorie needs (TDEE) and basal metabolic rate (BMR) using the Mifflin-St Jeor equation, based on age, sex, height, weight and activity.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="gen-row">
+          <div class="form-row"><label for="sex">Sex</label><select id="sex"><option value="m">Male</option><option value="f">Female</option></select></div>
+          <div class="form-row"><label for="age">Age</label><input type="number" id="age" placeholder="30" min="1"></div>
+        </div>
+        <div class="gen-row">
+          <div class="form-row"><label for="ht">Height (cm)</label><input type="number" id="ht" placeholder="175" min="1"></div>
+          <div class="form-row"><label for="wt">Weight (kg)</label><input type="number" id="wt" placeholder="70" min="1"></div>
+        </div>
+        <div class="form-row"><label for="act">Activity Level</label>
+          <select id="act">
+            <option value="1.2">Sedentary (little/no exercise)</option>
+            <option value="1.375">Light (1-3 days/week)</option>
+            <option value="1.55" selected>Moderate (3-5 days/week)</option>
+            <option value="1.725">Active (6-7 days/week)</option>
+            <option value="1.9">Very active (hard training/physical job)</option>
+          </select>
+        </div>
+        <div class="result-box empty" id="out">Enter your details to estimate calorie needs.</div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Select your sex and enter age, height and weight.</li>
+            <li>Choose your typical activity level.</li>
+            <li>See your BMR and daily maintenance calories (TDEE).</li>
+            <li>Use the loss/gain targets to plan your diet.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>What is TDEE?</summary>
+            <p>Total Daily Energy Expenditure is the number of calories you burn per day including activity. Eating at TDEE maintains weight.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How do I lose weight?</summary>
+            <p>A deficit of about 500 calories per day typically leads to roughly 0.45 kg (1 lb) of loss per week. Never go below your BMR without medical advice.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How accurate is this?</summary>
+            <p>The Mifflin-St Jeor equation is one of the most accurate estimates, but individual metabolism varies. Use it as a starting point.</p>
+          </details>
+        
+          <!-- ft-zh-faq -->
+          <details class="faq-item">
+            <summary>卡路里计算器怎么估算每日消耗？</summary>
+            <p>先按身高、体重、年龄、性别算出基础代谢率（BMR），再乘以你的活动系数，得到每天总消耗（TDEE）。</p>
+          </details>
+          <details class="faq-item">
+            <summary>想减肥每天吃多少卡路里？</summary>
+            <p>在 TDEE 基础上每天减少 300–500 大卡，可形成温和的热量缺口，约每周减 0.3–0.5 公斤，比较健康可持续。</p>
+          </details>
+          <details class="faq-item">
+            <summary>计算结果准确吗？</summary>
+            <p>基于 Mifflin-St Jeor 等国际通用公式，对普通人较准；个体代谢有差异，结果作为参考而非绝对标准。</p>
+          </details>
+</div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🥗</div>
+              <div class="uc-content">
+                <h4>Weight Loss</h4>
+                <p>Find your calorie deficit target.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">💪</div>
+              <div class="uc-content">
+                <h4>Muscle Gain</h4>
+                <p>Calculate a surplus for lean bulking.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">⚖️</div>
+              <div class="uc-content">
+                <h4>Maintenance</h4>
+                <p>Know exactly how much to eat to stay steady.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="bmi-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏋️</span>
+              <span class="rt-name">BMI Calculator</span>
+            </a>
+            <a href="age-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🎂</span>
+              <span class="rt-name">Age Calculator</span>
+            </a>
+            <a href="percentage-calculator.html" class="related-tool-card">
+              <span class="rt-icon">➗</span>
+              <span class="rt-name">Percentage Calculator</span>
+            </a>
+            <a href="loan-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏦</span>
+              <span class="rt-name">Loan Calculator</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+    <!-- More Tools Section -->
+    <section class="more-tools-section" aria-label="More tools">
+      <h2 class="more-tools-title" data-i18n="moreToolsTitle">🔍 Explore More Tools</h2>
+      <p class="more-tools-desc" data-i18n="moreToolsDesc">FreeToolset has 75+ free online tools. Browse more utilities to boost your productivity.</p>
+      <div class="more-tools-grid">
+        <a href="index.html" class="more-tool-card more-tool-home">
+          <span class="mt-icon">⚡</span>
+          <span class="mt-name" data-i18n="moreToolsAll">All 75+ Tools</span>
+        </a>
+        <a href="ai-studio.html" class="more-tool-card">
+          <span class="mt-icon">✨</span>
+          <span class="mt-name" data-i18n="✨ AI Studio">✨ AI Studio</span>
+        </a>
+        <a href="calculators.html" class="more-tool-card">
+          <span class="mt-icon">📂</span>
+          <span class="mt-name" data-i18n="catTitle_calculators">Calculators</span>
+        </a>
+        <a href="image-compressor.html" class="more-tool-card">
+          <span class="mt-icon">🖼️</span>
+          <span class="mt-name" data-i18n="cardTitle_image-compressor">🖼️ Image Compressor</span>
+        </a>
+        <a href="qr-code-generator.html" class="more-tool-card">
+          <span class="mt-icon">📱</span>
+          <span class="mt-name" data-i18n="cardTitle_qr-code-generator">📱 QR Code Generator</span>
+        </a>
+        <a href="password-generator.html" class="more-tool-card">
+          <span class="mt-icon">🔐</span>
+          <span class="mt-name" data-i18n="cardTitle_password-generator">🔐 Password Generator</span>
+        </a>
+        <a href="json-formatter.html" class="more-tool-card">
+          <span class="mt-icon">🧩</span>
+          <span class="mt-name" data-i18n="cardTitle_json-formatter">🧩 JSON Formatter</span>
+        </a>
+        <a href="word-counter.html" class="more-tool-card">
+          <span class="mt-icon">📝</span>
+          <span class="mt-name" data-i18n="cardTitle_word-counter">📝 Word Counter</span>
+        </a>
+      </div>
+    </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var ids=['sex','age','ht','wt','act'],out=document.getElementById('out');
+    function calc(){
+      var sex=document.getElementById('sex').value,age=parseFloat(document.getElementById('age').value),ht=parseFloat(document.getElementById('ht').value),wt=parseFloat(document.getElementById('wt').value),act=parseFloat(document.getElementById('act').value);
+      if(!age||!ht||!wt||age<=0||ht<=0||wt<=0){out.className='result-box empty';out.textContent='Enter your details to estimate calorie needs.';return;}
+      var bmr=10*wt+6.25*ht-5*age+(sex==='m'?5:-161);
+      var tdee=bmr*act;
+      function r(n){return Math.round(n).toLocaleString();}
+      out.className='result-box';
+      out.innerHTML='<div class="gen-big">'+r(tdee)+' <span style="font-size:1rem;color:var(--text-secondary)">kcal/day</span></div>'+
+        '<div style="margin-top:10px;color:var(--text-secondary);font-size:.92rem">BMR: <b>'+r(bmr)+'</b> kcal &nbsp;·&nbsp; Maintenance: <b>'+r(tdee)+'</b><br>Mild weight loss: <b>'+r(tdee-500)+'</b> &nbsp;·&nbsp; Weight gain: <b>'+r(tdee+500)+'</b></div>';
+    }
+    ids.forEach(function(id){var e=document.getElementById(id);e.addEventListener('input',calc);e.addEventListener('change',calc);});
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

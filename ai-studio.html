@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Content Studio · AI内容工作室 | FreeToolset</title>
+  <meta name="description" content="AI内容工作室（AI Content Studio）：免费在线工具，无需注册下载，浏览器本地运行，数据不上传，保护隐私。">
+  <meta name="keywords" content="ai content studio, ai writing assistant, ai writer, content generator, ai tool, free ai tool">
+  <meta property="og:title" content="AI Content Studio — FreeToolset">
+  <meta property="og:description" content="Your all-in-one AI writing assistant. Type what you need and let AI do the rest.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/ai-studio.html">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ---------- AI Studio Layout ---------- */
+    .studio-container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 0 40px;
+    }
+
+    /* Credit Bar */
+    .credit-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .credit-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.875rem;
+    }
+
+    .credit-balance {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .credit-balance .credit-num {
+      font-size: 1.1rem;
+    }
+
+    .credit-divider {
+      width: 1px;
+      height: 20px;
+      background: var(--border);
+    }
+
+    .credit-free {
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+    }
+
+    .credit-expiry {
+      color: #c2410c;
+      font-size: 0.72rem;
+      font-weight: 600;
+      margin-left: 8px;
+      align-self: center;
+    }
+
+    .credit-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-credits {
+      padding: 6px 16px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff;
+      border: none;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all var(--transition);
+      font-family: inherit;
+    }
+
+    .btn-credits:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px var(--primary-glow);
+    }
+
+    .btn-history {
+      padding: 6px 14px;
+      background: transparent;
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition);
+      font-family: inherit;
+    }
+
+    .btn-history:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* Model Selector */
+    .model-selector {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 16px;
+    }
+
+    .model-selector label {
+      margin: 0;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      font-weight: 600;
+    }
+
+    .model-options {
+      display: flex;
+      gap: 8px;
+    }
+
+    .model-option {
+      padding: 6px 14px;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition);
+      background: var(--bg);
+      color: var(--text-secondary);
+      font-family: inherit;
+    }
+
+    .model-option.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .model-option:hover:not(.active) {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .model-option .model-badge {
+      font-size: 0.7rem;
+      opacity: 0.8;
+      margin-left: 4px;
+    }
+
+    /* Chat Area */
+    .chat-area {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      min-height: 400px;
+      max-height: 500px;
+      overflow-y: auto;
+      padding: 24px;
+      margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .chat-area::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .chat-area::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .chat-area::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 3px;
+    }
+
+    .chat-welcome {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--text-secondary);
+    }
+
+    .chat-welcome .welcome-icon {
+      font-size: 3rem;
+      margin-bottom: 16px;
+    }
+
+    .chat-welcome h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .chat-welcome p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* Quick Prompts */
+    .quick-prompts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .quick-prompt {
+      padding: 8px 16px;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all var(--transition);
+      background: var(--bg);
+      color: var(--text-secondary);
+      font-family: inherit;
+    }
+
+    .quick-prompt:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    /* Chat Messages */
+    .chat-msg {
+      display: flex;
+      gap: 12px;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .chat-msg.user {
+      flex-direction: row-reverse;
+    }
+
+    .chat-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .chat-msg.ai .chat-avatar {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+    }
+
+    .chat-msg.user .chat-avatar {
+      background: var(--card-bg-hover);
+      border: 1px solid var(--border);
+    }
+
+    .chat-bubble {
+      max-width: 75%;
+      padding: 14px 18px;
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .chat-msg.ai .chat-bubble {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-top-left-radius: 4px;
+    }
+
+    .chat-msg.user .chat-bubble {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff;
+      border-top-right-radius: 4px;
+    }
+
+    .chat-msg.ai .chat-bubble .copy-chat-btn {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 4px 12px;
+      font-size: 0.75rem;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all var(--transition);
+      font-family: inherit;
+    }
+
+    .chat-msg.ai .chat-bubble .copy-chat-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .chat-meta {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .chat-msg.user .chat-meta {
+      text-align: right;
+    }
+
+    /* Loading dots */
+    .typing-indicator {
+      display: inline-flex;
+      gap: 4px;
+      padding: 4px 0;
+    }
+
+    .typing-indicator span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--text-muted);
+      animation: typing 1.4s infinite;
+    }
+
+    .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+    .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes typing {
+      0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+      30% { transform: translateY(-6px); opacity: 1; }
+    }
+
+    /* Input Area */
+    .input-area {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      transition: border-color var(--transition);
+    }
+
+    .input-area:focus-within {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px var(--primary-glow);
+    }
+
+    .input-area textarea {
+      width: 100%;
+      border: none;
+      background: transparent;
+      color: var(--text);
+      font-size: 0.95rem;
+      font-family: inherit;
+      resize: none;
+      outline: none;
+      min-height: 60px;
+      max-height: 200px;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    .input-area textarea::placeholder {
+      color: var(--text-muted);
+    }
+
+    .input-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 12px;
+    }
+
+    .input-hint {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .btn-send {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: none;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .btn-send:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px var(--primary-glow);
+    }
+
+    .btn-send:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* Input Buttons Group */
+    .input-buttons {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Attach Button */
+    .btn-attach {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .btn-attach:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* Inline Image Preview (inside input area) */
+    .inline-image-preview {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .inline-image-preview img {
+      max-height: 120px;
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .remove-inline-image {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      border: none;
+      font-size: 0.75rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Payment Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-overlay.show {
+      display: flex;
+    }
+
+    .modal {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      max-width: 480px;
+      width: 100%;
+      padding: 32px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .modal h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .modal p {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+
+    .credit-packs {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .pack-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: all var(--transition);
+      background: var(--bg);
+    }
+
+    .pack-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .pack-card.popular {
+      border-color: var(--primary);
+      position: relative;
+    }
+
+    .pack-card.popular::after {
+      content: 'Best Value';
+      position: absolute;
+      top: -10px;
+      right: 16px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 100px;
+      text-transform: uppercase;
+    }
+
+    .pack-info h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .pack-info p {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    .pack-price {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: color var(--transition);
+    }
+
+    .modal-close:hover {
+      color: var(--text);
+    }
+
+    .modal-footer {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .modal-footer a {
+      color: var(--primary);
+    }
+
+    /* History Panel */
+    .history-panel {
+      display: none;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 16px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    .history-panel.show {
+      display: block;
+    }
+
+    .history-panel h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .history-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.825rem;
+    }
+
+    .history-item:last-child {
+      border-bottom: none;
+    }
+
+    .history-item .hi-left {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .history-item .hi-tool {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .history-item .hi-time {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    .history-item .hi-cost {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 0.8rem;
+    }
+
+    .history-empty {
+      text-align: center;
+      color: var(--text-muted);
+      padding: 20px;
+      font-size: 0.85rem;
+    }
+
+    /* Studio Header */
+    .studio-header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .studio-header h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+      color: var(--text);
+    }
+
+    .studio-header h1 .studio-icon {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .studio-header p {
+      color: var(--text-secondary);
+      font-size: 1rem;
+    }
+
+    /* Mode Bar */
+    .mode-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 16px;
+    }
+    .mode-bar label {
+      margin: 0;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      font-weight: 600;
+    }
+    .mode-options {
+      display: flex;
+      gap: 8px;
+    }
+    .mode-option {
+      padding: 6px 14px;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition);
+      background: var(--bg);
+      color: var(--text-secondary);
+      font-family: inherit;
+    }
+    .mode-option.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+    .mode-option:hover:not(.active) {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* Image Upload Area */
+    .image-upload-area {
+      margin-bottom: 16px;
+    }
+    .upload-zone {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      border: 2px dashed var(--border);
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: all var(--transition);
+      background: var(--card-bg);
+      gap: 8px;
+    }
+    .upload-zone:hover, .upload-zone.dragover {
+      border-color: var(--primary);
+      background: var(--primary-light);
+    }
+    .upload-icon {
+      font-size: 2rem;
+    }
+    .upload-text {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+    .image-preview {
+      position: relative;
+      display: inline-block;
+      max-width: 200px;
+    }
+    .image-preview img {
+      max-width: 100%;
+      max-height: 200px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+    .remove-image {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      border: none;
+      font-size: 0.8rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .studio-header h1 { font-size: 1.6rem; }
+      .chat-bubble { max-width: 85%; }
+      .credit-bar { flex-direction: column; align-items: stretch; }
+      .credit-info { justify-content: space-between; }
+      .model-selector { flex-direction: column; align-items: flex-start; gap: 8px; }
+    }
+  </style>
+  <!-- ft-og-social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/ai-studio.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Content Studio — FreeToolset">
+  <meta name="twitter:description" content="Your all-in-one AI writing assistant. Type what you need and let AI do the rest.">
+  <!-- ft-schema -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"AI Content Studio — Free AI Writing Assistant","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/ai-studio.html","description":"Free AI Content Studio — your all-in-one writing assistant. Generate product descriptions, blog posts, SEO content, and more.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "AI Content Studio",
+  "alternateName": "AI内容工作室",
+  "url": "https://www.freetoolset.app/ai-studio.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "AI内容工作室（AI Content Studio）免费在线工具，无需注册，本地运行保护隐私。"
+}
+</script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="ai-studio.html" class="nav-link active" data-i18n="✨ AI Studio">AI Studio</a>
+      <a href="index.html#tools" class="nav-link" data-i18n="Tools">Tools</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <a href="privacy-policy.html" class="nav-link" data-i18n="Privacy">Privacy</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <!-- ft-zh-intro -->
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>AI 内容工作台是你的全能写作助手：输入任意需求，AI 即时生成商品描述、博客、邮件标题、SEO 文案等。每日免费额度、无需注册，纯网页即用，适合营销、运营与创作者高效产出内容。</p>
+  </section>
+
+    <div class="studio-container">
+
+      <!-- Header -->
+      <div class="studio-header">
+        <h1 data-i18n="✨ AI Content Studio"><span class="studio-icon">✨ AI Content Studio</span></h1>
+        <p>Your all-in-one AI writing assistant. Just type what you need.</p>
+      </div>
+
+      <!-- Credit Bar -->
+      <div class="credit-bar">
+        <div class="credit-info">
+          <div class="credit-balance">
+            <span>💎</span>
+            <span class="credit-num" id="creditNum">5.0</span>
+            <span>credits</span>
+          </div>
+          <div class="credit-divider"></div>
+          <div class="credit-free" id="creditFree">5.0 free today</div>
+          <div class="credit-expiry" id="creditExpiry"></div>
+        </div>
+        <div class="credit-actions">
+          <button class="btn-history" id="btnHistory">📊 History</button>
+          <button class="btn-credits" id="btnRecharge">💎 Get Credits</button>
+        </div>
+      </div>
+
+      <!-- Usage History Panel -->
+      <div class="history-panel" id="historyPanel">
+        <h3>Usage History</h3>
+        <div id="historyList">
+          <div class="history-empty">No usage history yet.</div>
+        </div>
+      </div>
+
+      <!-- Model Selector -->
+      <div class="model-selector">
+        <label>Model:</label>
+        <div class="model-options">
+          <button class="model-option active" data-model="glm">
+            GLM-4-Flash <span class="model-badge">0.5x</span>
+          </button>
+          <button class="model-option" data-model="deepseek">
+            DeepSeek <span class="model-badge">1x</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Chat Area -->
+      <div class="chat-area" id="chatArea">
+        <div class="chat-welcome" id="chatWelcome">
+          <div class="welcome-icon">✨</div>
+          <h2>Welcome to AI Content Studio</h2>
+          <p>Chat with AI, generate images, create QR codes, write content — all in one place. Just type what you need.</p>
+          <div class="quick-prompts">
+            <button class="quick-prompt" data-prompt="Write a product description for wireless noise-canceling headphones targeting music lovers, professional tone">📦 Product Description</button>
+            <button class="quick-prompt" data-prompt="Generate a QR code for https://www.freetoolset.app">🔲 QR Code</button>
+            <button class="quick-prompt" data-prompt="Generate an image of a futuristic city at sunset with flying cars and neon lights">🎨 Generate Image</button>
+            <button class="quick-prompt" data-prompt="Generate SEO meta title and description for a page about free online tools">🔍 SEO Meta Tags</button>
+            <button class="quick-prompt" data-prompt="Rewrite this text in a more engaging tone: Our tool helps you format JSON quickly and easily">🔄 Rewrite Content</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Input Area -->
+      <div class="input-area">
+        <div id="inlinePreview" style="display:none; margin-bottom:10px;"></div>
+        <textarea id="chatInput" placeholder="Type your request... e.g. Write a product description, generate a QR code, or draw an image" rows="2"></textarea>
+        <input type="file" id="fileInput" accept="image/*" style="display:none;">
+        <div class="input-actions">
+          <span class="input-hint">Press Enter to send · Shift+Enter for new line</span>
+          <div class="input-buttons">
+            <button class="btn-attach" id="btnAttach" title="Attach image">📎</button>
+            <button class="btn-send" id="btnSend" title="Send">➤</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Payment Modal -->
+  <div class="modal-overlay" id="paymentModal">
+    <div class="modal" style="position:relative;">
+      <button class="modal-close" id="modalClose">✕</button>
+      <h3>💎 Get More Credits</h3>
+      <p data-i18n="creditsValidNote">Credits valid for 2 months from purchase. Use them across all AI tools.</p>
+      <div class="credit-packs">
+        <div class="pack-card" data-pack="100" data-price="4.99">
+          <div class="pack-info">
+            <h4>100 Credits</h4>
+            <p>~100 DeepSeek or ~200 GLM calls</p>
+          </div>
+          <div class="pack-price">$4.99</div>
+        </div>
+        <div class="pack-card popular" data-pack="500" data-price="19.99">
+          <div class="pack-info">
+            <h4>500 Credits</h4>
+            <p>~500 DeepSeek or ~1000 GLM calls</p>
+          </div>
+          <div class="pack-price">$19.99</div>
+        </div>
+        <div class="pack-card" data-pack="1500" data-price="49.99">
+          <div class="pack-info">
+            <h4>1500 Credits</h4>
+            <p>~1500 DeepSeek or ~3000 GLM calls</p>
+          </div>
+          <div class="pack-price">$49.99</div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <p>Secure payment via NOWPayments · Crypto accepted (USDT, BTC, ETH and more)</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="ai-studio.html" data-i18n="✨ AI Studio">AI Studio</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      /* ---------- User ID (localStorage) ---------- */
+      var USER_ID_KEY = 'ft_user_id';
+      var userId = localStorage.getItem(USER_ID_KEY);
+      if (!userId) {
+        userId = 'u_' + Date.now() + '_' + Math.random().toString(36).substr(2, 8);
+        localStorage.setItem(USER_ID_KEY, userId);
+      }
+
+      /* ---------- State ---------- */
+      var selectedModel = 'glm';
+      var chatHistory = [];
+      var isGenerating = false;
+      var selectedImageBase64 = null;
+
+      /* ---------- DOM ---------- */
+      var chatArea = document.getElementById('chatArea');
+      var chatWelcome = document.getElementById('chatWelcome');
+      var chatInput = document.getElementById('chatInput');
+      var btnSend = document.getElementById('btnSend');
+      var creditNum = document.getElementById('creditNum');
+      var creditFree = document.getElementById('creditFree');
+      var btnRecharge = document.getElementById('btnRecharge');
+      var btnHistory = document.getElementById('btnHistory');
+      var historyPanel = document.getElementById('historyPanel');
+      var historyList = document.getElementById('historyList');
+      var paymentModal = document.getElementById('paymentModal');
+      var modalClose = document.getElementById('modalClose');
+      var modelSelector = document.querySelector('.model-selector');
+      var quickPromptsContainer = document.querySelector('.quick-prompts');
+      var btnAttach = document.getElementById('btnAttach');
+      var fileInput = document.getElementById('fileInput');
+      var inlinePreview = document.getElementById('inlinePreview');
+
+      /* ---------- Model Selector ---------- */
+      document.querySelectorAll('.model-option').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          document.querySelectorAll('.model-option').forEach(function (b) { b.classList.remove('active'); });
+          this.classList.add('active');
+          selectedModel = this.getAttribute('data-model');
+        });
+      });
+
+      /* ---------- Quick Prompts ---------- */
+      document.querySelectorAll('.quick-prompt').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          chatInput.value = this.getAttribute('data-prompt');
+          chatInput.focus();
+          autoResize();
+        });
+      });
+
+      /* ---------- Auto Resize Textarea ---------- */
+      function autoResize() {
+        chatInput.style.height = 'auto';
+        chatInput.style.height = Math.min(chatInput.scrollHeight, 200) + 'px';
+      }
+      chatInput.addEventListener('input', autoResize);
+
+      /* ---------- Image Attachment ---------- */
+      btnAttach.addEventListener('click', function () {
+        fileInput.click();
+      });
+
+      fileInput.addEventListener('change', function (e) {
+        if (e.target.files && e.target.files[0]) {
+          handleImageFile(e.target.files[0]);
+        }
+      });
+
+      chatInput.addEventListener('paste', function (e) {
+        var items = e.clipboardData.items;
+        for (var i = 0; i < items.length; i++) {
+          if (items[i].type.indexOf('image') !== -1) {
+            e.preventDefault();
+            handleImageFile(items[i].getAsFile());
+            break;
+          }
+        }
+      });
+
+      function handleImageFile(file) {
+        if (!file || !file.type.startsWith('image/')) return;
+        var reader = new FileReader();
+        reader.onload = function (ev) {
+          selectedImageBase64 = ev.target.result;
+          showInlinePreview(selectedImageBase64);
+        };
+        reader.readAsDataURL(file);
+      }
+
+      function showInlinePreview(src) {
+        inlinePreview.innerHTML = '<div class="inline-image-preview">' +
+          '<img src="' + src + '" alt="Uploaded image attached to chat">' +
+          '<button class="remove-inline-image" id="removeInline">✕</button>' +
+          '</div>';
+        inlinePreview.style.display = 'block';
+        document.getElementById('removeInline').addEventListener('click', clearInlineImage);
+      }
+
+      function clearInlineImage() {
+        selectedImageBase64 = null;
+        inlinePreview.innerHTML = '';
+        inlinePreview.style.display = 'none';
+        fileInput.value = '';
+      }
+
+      /* ---------- Send on Enter ---------- */
+      chatInput.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+          e.preventDefault();
+          sendMessage();
+        }
+      });
+      btnSend.addEventListener('click', sendMessage);
+
+      /* ---------- Image Request Detection ---------- */
+      function isImageRequest(text) {
+        var lower = text.toLowerCase();
+        var patterns = [
+          /generate.*(image|picture|photo|illustration|drawing|painting)/,
+          /create.*(image|picture|photo|illustration)/,
+          /draw (a |an |me )?/,
+          /make.*(image|picture|photo)/,
+          /render.*(image|picture)/,
+          /paint (a |an |me )?/,
+          /image of/,
+          /picture of/,
+          /photo of/,
+          /生成.*(图片|图像|画)/,
+          /画.*(一张|一个|张|个)?/,
+          /创建.*(图片|图像)/,
+          /制作.*(图片|图像)/
+        ];
+        return patterns.some(function (p) { return p.test(lower) || p.test(text); });
+      }
+
+      /* ---------- Process AI Response (QR/Image detection) ---------- */
+      function processAIResponse(text) {
+        // Check for QR_CODE marker
+        var qrMatch = text.match(/\[QR_CODE:([^\]]+)\]/);
+        if (qrMatch) {
+          var qrData = qrMatch[1].trim();
+          var qrImgUrl = 'https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=' + encodeURIComponent(qrData);
+          var cleanText = text.replace(/\[QR_CODE:[^\]]+\]/, '').trim();
+          return { type: 'qr', text: cleanText, imageUrl: qrImgUrl };
+        }
+
+        // Check for markdown image syntax ![alt](url)
+        var mdMatch = text.match(/!\[([^\]]*)\]\(([^)]+)\)/);
+        if (mdMatch) {
+          var imgUrl = mdMatch[2].trim();
+          var cleanText2 = text.replace(/!\[[^\]]*\]\([^)]+\)/, '').trim();
+          return { type: 'image', text: cleanText2, imageUrl: imgUrl };
+        }
+
+        return { type: 'text', text: text };
+      }
+
+      /* ---------- Send Message ---------- */
+      async function sendMessage() {
+        var text = chatInput.value.trim();
+        if (isGenerating) return;
+        if (!text && !selectedImageBase64) return;
+
+        // Hide welcome
+        if (chatWelcome) chatWelcome.style.display = 'none';
+
+        isGenerating = true;
+        btnSend.disabled = true;
+
+        // If image attached, send for vision analysis
+        if (selectedImageBase64) {
+          await sendVision(text || 'What is in this image?', selectedImageBase64);
+          clearInlineImage();
+        } else if (isImageRequest(text)) {
+          await sendImageGen(text);
+        } else {
+          await sendChat(text);
+        }
+
+        isGenerating = false;
+        btnSend.disabled = false;
+      }
+
+      /* ---------- Chat Mode ---------- */
+      async function sendChat(text) {
+        addMessage('user', text);
+        chatInput.value = '';
+        autoResize();
+
+        var apiMessages = chatHistory.map(function (m) {
+          return { role: m.role, content: m.content };
+        });
+        apiMessages.push({ role: 'user', content: text });
+
+        var typingEl = addTypingIndicator();
+
+        try {
+          var response = await fetch('/api/ai-proxy', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              mode: 'studio',
+              model: selectedModel,
+              messages: apiMessages,
+              userId: userId
+            })
+          });
+
+          var data = await response.json();
+          typingEl.remove();
+
+          if (data.success) {
+            if (data.toolResult) {
+              // Built-in tool executed server-side (QR code, etc.)
+              if (data.toolResult.type === 'qr') {
+                addImageMessage('ai', data.toolResult.imageUrl, false, data.creditsRemaining);
+              }
+              chatHistory.push({ role: 'user', content: text });
+              chatHistory.push({ role: 'assistant', content: '[Tool: ' + data.toolResult.type + ']' });
+              updateCredits(data.creditsRemaining);
+            } else {
+              var aiResult = data.result || '';
+              var processed = processAIResponse(aiResult);
+
+              if (processed.type === 'qr') {
+                if (processed.text) addMessage('ai', processed.text, selectedModel, data.creditsRemaining);
+                addImageMessage('ai', processed.imageUrl, false, data.creditsRemaining);
+              } else if (processed.type === 'image') {
+                if (processed.text) addMessage('ai', processed.text, selectedModel, data.creditsRemaining);
+                addImageMessage('ai', processed.imageUrl, false, data.creditsRemaining);
+              } else {
+                addMessage('ai', aiResult, selectedModel, data.creditsRemaining);
+              }
+
+              chatHistory.push({ role: 'user', content: text });
+              chatHistory.push({ role: 'assistant', content: aiResult });
+              updateCredits(data.creditsRemaining);
+            }
+          } else {
+            addMessage('ai', '⚠️ ' + (data.error || 'Something went wrong. Please try again.'));
+            if (data.needsCredits) showPaymentModal();
+          }
+        } catch (e) {
+          typingEl.remove();
+          addMessage('ai', '⚠️ Unable to connect to the AI service. Please check your internet connection.');
+        }
+      }
+
+      /* ---------- Image Generation Mode ---------- */
+      async function sendImageGen(text) {
+        addMessage('user', text);
+        chatInput.value = '';
+        autoResize();
+
+        var typingEl = addTypingIndicator();
+
+        try {
+          var response = await fetch('/api/ai-proxy', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              mode: 'image-gen',
+              prompt: text,
+              userId: userId
+            })
+          });
+
+          var data = await response.json();
+          typingEl.remove();
+
+          if (data.success) {
+            addImageMessage('ai', data.imageUrl, false, data.creditsRemaining);
+          } else {
+            addMessage('ai', '⚠️ ' + (data.error || 'Image generation failed.'));
+            if (data.needsCredits) showPaymentModal();
+          }
+        } catch (e) {
+          typingEl.remove();
+          addMessage('ai', '⚠️ Unable to connect to the AI service. Please check your internet connection.');
+        }
+      }
+
+      /* ---------- Vision Mode (Image Analysis) ---------- */
+      async function sendVision(text, imageBase64) {
+        addImageMessage('user', imageBase64, true);
+        if (text) addMessage('user', text);
+        chatInput.value = '';
+        autoResize();
+
+        var typingEl = addTypingIndicator();
+
+        try {
+          var response = await fetch('/api/ai-proxy', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              mode: 'vision',
+              prompt: text,
+              image: imageBase64,
+              userId: userId
+            })
+          });
+
+          var data = await response.json();
+          typingEl.remove();
+
+          if (data.success) {
+            addMessage('ai', data.result, selectedModel, data.creditsRemaining);
+            updateCredits(data.creditsRemaining);
+          } else {
+            addMessage('ai', '⚠️ ' + (data.error || 'Image analysis failed.'));
+            if (data.needsCredits) showPaymentModal();
+          }
+        } catch (e) {
+          typingEl.remove();
+          addMessage('ai', '⚠️ Unable to connect to the AI service. Please check your internet connection.');
+        }
+      }
+
+      /* ---------- Add Message to Chat ---------- */
+      function addMessage(role, content, model, creditsLeft) {
+        var msgEl = document.createElement('div');
+        msgEl.className = 'chat-msg ' + (role === 'user' ? 'user' : 'ai');
+
+        var avatar = document.createElement('div');
+        avatar.className = 'chat-avatar';
+        avatar.textContent = role === 'user' ? '👤' : '✨';
+
+        var bubble = document.createElement('div');
+        bubble.className = 'chat-bubble';
+        bubble.textContent = content;
+
+        if (role === 'ai') {
+          // Add copy button
+          var copyBtn = document.createElement('button');
+          copyBtn.className = 'copy-chat-btn';
+          copyBtn.textContent = '📋 Copy';
+          copyBtn.onclick = function () {
+            navigator.clipboard.writeText(content).then(function () {
+              copyBtn.textContent = '✓ Copied!';
+              setTimeout(function () { copyBtn.textContent = '📋 Copy'; }, 1500);
+            });
+          };
+          bubble.appendChild(copyBtn);
+
+          // Add meta
+          if (model || creditsLeft !== undefined) {
+            var meta = document.createElement('div');
+            meta.className = 'chat-meta';
+            var metaText = '';
+            if (model) metaText += model === 'glm' ? 'GLM-4-Flash' : 'DeepSeek';
+            if (creditsLeft !== undefined) metaText += ' · ' + creditsLeft + ' credits left';
+            meta.textContent = metaText;
+            bubble.appendChild(meta);
+          }
+        }
+
+        msgEl.appendChild(avatar);
+        msgEl.appendChild(bubble);
+        chatArea.appendChild(msgEl);
+        chatArea.scrollTop = chatArea.scrollHeight;
+      }
+
+      /* ---------- Add Image Message to Chat ---------- */
+      function addImageMessage(sender, imageSrc, isUserUpload, credits) {
+        if (chatWelcome) chatWelcome.style.display = 'none';
+
+        var msg = document.createElement('div');
+        msg.className = 'chat-msg ' + (sender === 'user' ? 'user' : 'ai');
+
+        var avatar = document.createElement('div');
+        avatar.className = 'chat-avatar';
+        avatar.textContent = sender === 'user' ? '🧑' : '✨';
+
+        var bubble = document.createElement('div');
+        bubble.className = 'chat-bubble';
+        bubble.style.padding = '8px';
+
+        var img = document.createElement('img');
+        img.src = imageSrc;
+        img.alt = sender === 'user' ? 'User uploaded image' : 'AI generated result image';
+        img.style.maxWidth = '100%';
+        img.style.borderRadius = '8px';
+        img.style.display = 'block';
+
+        if (sender === 'ai') {
+          var downloadBtn = document.createElement('a');
+          downloadBtn.href = imageSrc;
+          downloadBtn.download = 'freetoolset-generated.png';
+          downloadBtn.target = '_blank';
+          downloadBtn.className = 'copy-chat-btn';
+          downloadBtn.textContent = '⬇ Download';
+          downloadBtn.style.display = 'inline-block';
+          downloadBtn.style.marginTop = '8px';
+          bubble.appendChild(img);
+          bubble.appendChild(downloadBtn);
+        } else {
+          img.style.maxHeight = '200px';
+          bubble.appendChild(img);
+        }
+
+        msg.appendChild(avatar);
+        msg.appendChild(bubble);
+        chatArea.appendChild(msg);
+        chatArea.scrollTop = chatArea.scrollHeight;
+
+        if (credits !== undefined && credits !== null) {
+          updateCredits(credits);
+        }
+      }
+
+      /* ---------- Typing Indicator ---------- */
+      function addTypingIndicator() {
+        var msgEl = document.createElement('div');
+        msgEl.className = 'chat-msg ai';
+
+        var avatar = document.createElement('div');
+        avatar.className = 'chat-avatar';
+        avatar.textContent = '✨';
+
+        var bubble = document.createElement('div');
+        bubble.className = 'chat-bubble';
+
+        var typing = document.createElement('div');
+        typing.className = 'typing-indicator';
+        typing.innerHTML = '<span></span><span></span><span></span>';
+
+        bubble.appendChild(typing);
+        msgEl.appendChild(avatar);
+        msgEl.appendChild(bubble);
+        chatArea.appendChild(msgEl);
+        chatArea.scrollTop = chatArea.scrollHeight;
+
+        return msgEl;
+      }
+
+      /* ---------- Update Credits Display ---------- */
+      function updateCredits(remaining) {
+        if (remaining !== undefined) {
+          creditNum.textContent = parseFloat(remaining).toFixed(1);
+        }
+      }
+
+      /* ---------- Load Credits ---------- */
+      async function loadCredits() {
+        try {
+          var response = await fetch('/api/credits?userId=' + userId);
+          var data = await response.json();
+          if (data.success) {
+            updateCredits(data.data.totalCredits);
+            if (data.data.freeCredits !== undefined) {
+              creditFree.textContent = parseFloat(data.data.freeCredits).toFixed(1) + ' free today';
+            }
+            // Show paid-credit expiry (new purchases expire in 60 days)
+            if (data.data.paidExpiresAt) {
+              var exp = new Date(data.data.paidExpiresAt);
+              var now = new Date();
+              var days = Math.ceil((exp - now) / (24 * 60 * 60 * 1000));
+              var dateStr = exp.getFullYear() + '-' + String(exp.getMonth() + 1).padStart(2, '0') + '-' + String(exp.getDate()).padStart(2, '0');
+              creditExpiry.textContent = days > 0 ? ('Valid until ' + dateStr + ' (' + days + 'd)') : 'Expired';
+              creditExpiry.style.display = 'inline-block';
+            } else {
+              creditExpiry.textContent = '';
+              creditExpiry.style.display = 'none';
+            }
+          }
+        } catch (e) {
+          // Silent fail, default credits shown
+        }
+      }
+
+      /* ---------- History ---------- */
+      btnHistory.addEventListener('click', function () {
+        historyPanel.classList.toggle('show');
+        if (historyPanel.classList.contains('show')) {
+          loadHistory();
+        }
+      });
+
+      async function loadHistory() {
+        try {
+          var response = await fetch('/api/credits?userId=' + userId + '&action=history');
+          var data = await response.json();
+          if (data.success && data.data.history && data.data.history.length > 0) {
+            historyList.innerHTML = data.data.history.map(function (h) {
+              return '<div class="history-item">' +
+                '<div class="hi-left">' +
+                '<span class="hi-tool">' + (h.tool || 'AI Studio') + ' · ' + (h.model === 'glm' ? 'GLM' : 'DeepSeek') + '</span>' +
+                '<span class="hi-time">' + h.time + '</span>' +
+                '</div>' +
+                '<span class="hi-cost">-' + h.cost + ' credits</span>' +
+                '</div>';
+            }).join('');
+          } else {
+            historyList.innerHTML = '<div class="history-empty">No usage history yet.</div>';
+          }
+        } catch (e) {
+          historyList.innerHTML = '<div class="history-empty">Unable to load history.</div>';
+        }
+      }
+
+      /* ---------- Payment Modal ---------- */
+      btnRecharge.addEventListener('click', showPaymentModal);
+      modalClose.addEventListener('click', function () {
+        paymentModal.classList.remove('show');
+      });
+      paymentModal.addEventListener('click', function (e) {
+        if (e.target === paymentModal) paymentModal.classList.remove('show');
+      });
+
+      function showPaymentModal() {
+        paymentModal.classList.add('show');
+      }
+
+      /* ---------- Payment Pack Selection ---------- */
+      document.querySelectorAll('.pack-card').forEach(function (card) {
+        card.addEventListener('click', async function () {
+          var pack = this.getAttribute('data-pack');
+          var price = this.getAttribute('data-price');
+
+          this.style.opacity = '0.6';
+          this.style.pointerEvents = 'none';
+
+          try {
+            var response = await fetch('/api/create-payment', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ pack: pack, userId: userId })
+            });
+            var data = await response.json();
+
+            if (data.success && data.data.invoiceUrl) {
+              window.location.href = data.data.invoiceUrl;
+            } else {
+              alert('Unable to create payment. Please try again later.');
+            }
+          } catch (e) {
+            alert('Payment service unavailable. Please try again later.');
+          } finally {
+            this.style.opacity = '';
+            this.style.pointerEvents = '';
+          }
+        });
+      });
+
+      /* ---------- Check Payment Status ---------- */
+      var urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('payment') === 'success') {
+        addMessage('ai', '✅ Payment received! Your credits have been added. Enjoy creating!');
+        setTimeout(loadCredits, 1000);
+      }
+
+      /* ---------- Init ---------- */
+      loadCredits();
+    })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/ai-pet.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

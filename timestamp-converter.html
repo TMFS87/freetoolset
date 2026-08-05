@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timestamp Converter · 时间戳转换器 | FreeToolset</title>
+  <meta name="description" content="时间戳转换器（Timestamp Converter）：免费在线工具，无需注册下载，浏览器本地运行，数据不上传，保护隐私。">
+  <meta name="keywords" content="timestamp converter, unix timestamp, epoch converter, unix to date, date to unix, epoch time, utc converter">
+  <meta property="og:title" content="Timestamp Converter — FreeToolset">
+  <meta property="og:description" content="Convert Unix timestamps to dates and back. Supports seconds and milliseconds.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/timestamp-converter.html">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- ft-og-social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/timestamp-converter.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Timestamp Converter — FreeToolset">
+  <meta name="twitter:description" content="Convert Unix timestamps to dates and back. Supports seconds and milliseconds.">
+  <!-- ft-schema -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Timestamp Converter — Unix Epoch to Date & Time","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/timestamp-converter.html","description":"Convert Unix timestamps to human-readable dates and back. Supports seconds and milliseconds, UTC and local time. In-browser.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Timestamp Converter",
+  "alternateName": "时间戳转换器",
+  "url": "https://www.freetoolset.app/timestamp-converter.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "时间戳转换器（Timestamp Converter）免费在线工具，无需注册，本地运行保护隐私。"
+}
+</script>
+  <!-- ft-faq-schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "时间戳是什么？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "通常指 Unix 时间戳，是从 1970-01-01 00:00:00 UTC 起经过的秒数（或毫秒数）。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "时区怎么处理？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "时间戳本身是时区无关的；本工具可在 UTC 和你的本地时间之间双向转换。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "转换需要联网吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不需要。时间换算完全在浏览器本地进行。"
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active" data-i18n="Tools">Tools</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <a href="privacy-policy.html" class="nav-link" data-i18n="Privacy">Privacy</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <!-- ft-zh-intro -->
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>Unix 时间戳是系统记录时间的标准方式。本工具支持秒 / 毫秒时间戳与日期互转，显示 UTC 与本地时间，方便排查日志时间、接口时区问题，适合后端调试与跨时区协作。</p>
+  </section>
+
+
+    <!-- Breadcrumb -->
+      <!-- ft-deep -->
+  <section class="tool-deep">
+    <h2>📖 深入了解 Timestamp Converter — Unix Epoch to Date & Time</h2>
+    <h2>为什么需要它</h2>
+    <ul>
+      <li>跨制式沟通不再卡壳</li>
+      <li>烹饪、装修、学习时即时换算</li>
+      <li>避免记错系数导致的错误</li>
+    </ul>
+    <h2>背后的原理</h2>
+    <p>Timestamp Converter — Unix Epoch to Date & Time 基于单位间的固定换算系数做线性映射，输入一个值即得其他单位的等价量。要注意十进制与二进制系数不同（如存储单位），以及公制与英制的差异。</p>
+    <h2>一个例子</h2>
+    <p>例如把 1 个常用单位输入 Timestamp Converter — Unix Epoch to Date & Time，立刻看到其他单位的等价量；切换公制/英制时数值自动重算，无需手算系数。</p>
+    <h2>常见误区</h2>
+    <ul>
+      <li>混淆十进制与二进制单位（如 KB 与 KiB）</li>
+      <li>忽略英制与公制的换算系数</li>
+      <li>把近似换算当作精确值使用</li>
+    </ul>
+  </section>
+    <nav class="breadcrumb"><!-- breadcrumb-cat -->
+      <a href="index.html" data-i18n="Home">Home</a>
+      <span class="separator">/</span>
+      <a href="developer-tools.html" data-i18n="catTitle_developer-tools">Developer Tools</a>
+      <span class="separator">/</span>
+      <span class="current" data-i18n="cardTitle_timestamp-converter">Timestamp Converter</span>
+    </nav>
+
+    <!-- Tool Header -->
+    <div class="tool-header">
+      <h1 data-i18n="⏱️ Timestamp Converter">⏱️ Timestamp Converter</h1>
+      <p>Convert Unix timestamps (epoch) to readable dates and back. Supports seconds and milliseconds, shows both UTC and your local time.</p>
+    </div>
+
+    <!-- Two-column Layout -->
+    <div class="tool-layout">
+
+      <!-- Tool Main -->
+      <div class="tool-main">
+
+        <!-- Live Now -->
+        <div class="form-row">
+          <label>Current Unix Time</label>
+          <div class="result-box" id="nowTs" style="font-size:1.1rem;">—</div>
+        </div>
+
+        <!-- Timestamp -> Date -->
+        <div class="form-row">
+          <label for="tsInput">Unix Timestamp → Date</label>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <input type="text" id="tsInput" placeholder="e.g. 1753216800" style="flex:1; min-width:200px;">
+            <select id="tsUnit" style="width:auto;">
+              <option value="s">seconds</option>
+              <option value="ms">milliseconds</option>
+            </select>
+          </div>
+          <div style="margin-top:12px; display:grid; gap:10px;">
+            <div><span style="color:var(--text-secondary); font-size:0.85rem;">UTC</span><div class="result-box" id="utcOut">—</div></div>
+            <div><span style="color:var(--text-secondary); font-size:0.85rem;">Your Local Time</span><div class="result-box" id="localOut">—</div></div>
+            <div><span style="color:var(--text-secondary); font-size:0.85rem;">ISO 8601</span><div class="result-box" id="isoOut">—</div></div>
+            <div><span style="color:var(--text-secondary); font-size:0.85rem;">Relative</span><div class="result-box" id="relOut">—</div></div>
+          </div>
+        </div>
+
+        <!-- Date -> Timestamp -->
+        <div class="form-row">
+          <label for="dtInput">Date → Unix Timestamp</label>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <input type="datetime-local" id="dtInput" step="1" style="flex:1; min-width:200px;">
+            <button class="btn btn-secondary" id="nowBtn">Use Now</button>
+          </div>
+          <div style="margin-top:12px; display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+            <div><span style="color:var(--text-secondary); font-size:0.85rem;">Seconds</span><div class="result-box" id="secOut">—</div></div>
+            <div><span style="color:var(--text-secondary); font-size:0.85rem;">Milliseconds</span><div class="result-box" id="msOut">—</div></div>
+          </div>
+        </div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All conversions happen in your browser using the local clock. No data is uploaded to any server.</span>
+        </div>
+
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="tool-sidebar">
+
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>The "Current Unix Time" box shows the live epoch value (updated every second).</li>
+            <li>Paste a timestamp and pick seconds or milliseconds to see it as a date.</li>
+            <li>Pick a date/time with the picker (or "Use Now") to get its Unix value.</li>
+            <li>Copy any result with a click — results are plain text.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>What is a Unix timestamp?</summary>
+            <p>A Unix timestamp is the number of seconds (or milliseconds) elapsed since midnight UTC on January 1, 1970 (the "epoch"). It's a universal, timezone-free way to store time.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Seconds or milliseconds?</summary>
+            <p>Many systems use seconds (10 digits, e.g. 1753216800). JavaScript and some APIs use milliseconds (13 digits). Use the dropdown to match your source.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Why do UTC and local time differ?</summary>
+            <p>UTC is timezone-independent. "Your Local Time" is converted using your device's timezone setting, so it may differ from UTC by several hours.</p>
+          </details>
+        
+          <!-- ft-zh-faq -->
+          <details class="faq-item">
+            <summary>时间戳是什么？</summary>
+            <p>通常指 Unix 时间戳，是从 1970-01-01 00:00:00 UTC 起经过的秒数（或毫秒数）。</p>
+          </details>
+          <details class="faq-item">
+            <summary>时区怎么处理？</summary>
+            <p>时间戳本身是时区无关的；本工具可在 UTC 和你的本地时间之间双向转换。</p>
+          </details>
+          <details class="faq-item">
+            <summary>转换需要联网吗？</summary>
+            <p>不需要。时间换算完全在浏览器本地进行。</p>
+          </details>
+</div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🗄️</div>
+              <div class="uc-content">
+                <h4>Debugging Logs</h4>
+                <p>Turn epoch values from server logs into readable times.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">⏰</div>
+              <div class="uc-content">
+                <h4>Scheduling</h4>
+                <p>Convert between cron/epoch and human dates for jobs.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">📱</div>
+              <div class="uc-content">
+                <h4>API Responses</h4>
+                <p>Decode timestamp fields returned by REST APIs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="uuid-generator.html" class="related-tool-card">
+              <span class="rt-icon">🆔</span>
+              <span class="rt-name">UUID Generator</span>
+            </a>
+            <a href="base-converter.html" class="related-tool-card">
+              <span class="rt-icon">🔢</span>
+              <span class="rt-name">Base Converter</span>
+            </a>
+            <a href="json-formatter.html" class="related-tool-card">
+              <span class="rt-icon">🧩</span>
+              <span class="rt-name">JSON Formatter</span>
+            </a>
+            <a href="url-encoder.html" class="related-tool-card">
+              <span class="rt-icon">🔗</span>
+              <span class="rt-name">URL Encoder</span>
+            </a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+    <!-- More Tools Section -->
+    <section class="more-tools-section" aria-label="More tools">
+      <h2 class="more-tools-title" data-i18n="moreToolsTitle">🔍 Explore More Tools</h2>
+      <p class="more-tools-desc" data-i18n="moreToolsDesc">FreeToolset has 75+ free online tools. Browse more utilities to boost your productivity.</p>
+      <div class="more-tools-grid">
+        <a href="index.html" class="more-tool-card more-tool-home">
+          <span class="mt-icon">⚡</span>
+          <span class="mt-name" data-i18n="moreToolsAll">All 75+ Tools</span>
+        </a>
+        <a href="ai-studio.html" class="more-tool-card">
+          <span class="mt-icon">✨</span>
+          <span class="mt-name" data-i18n="✨ AI Studio">✨ AI Studio</span>
+        </a>
+        <a href="developer-tools.html" class="more-tool-card">
+          <span class="mt-icon">📂</span>
+          <span class="mt-name" data-i18n="catTitle_developer-tools">Developer Tools</span>
+        </a>
+        <a href="image-compressor.html" class="more-tool-card">
+          <span class="mt-icon">🖼️</span>
+          <span class="mt-name" data-i18n="cardTitle_image-compressor">🖼️ Image Compressor</span>
+        </a>
+        <a href="qr-code-generator.html" class="more-tool-card">
+          <span class="mt-icon">📱</span>
+          <span class="mt-name" data-i18n="cardTitle_qr-code-generator">📱 QR Code Generator</span>
+        </a>
+        <a href="password-generator.html" class="more-tool-card">
+          <span class="mt-icon">🔐</span>
+          <span class="mt-name" data-i18n="cardTitle_password-generator">🔐 Password Generator</span>
+        </a>
+        <a href="json-formatter.html" class="more-tool-card">
+          <span class="mt-icon">🧩</span>
+          <span class="mt-name" data-i18n="cardTitle_json-formatter">🧩 JSON Formatter</span>
+        </a>
+        <a href="word-counter.html" class="more-tool-card">
+          <span class="mt-icon">📝</span>
+          <span class="mt-name" data-i18n="cardTitle_word-counter">📝 Word Counter</span>
+        </a>
+      </div>
+    </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var nowTs = document.getElementById('nowTs');
+      var tsInput = document.getElementById('tsInput');
+      var tsUnit = document.getElementById('tsUnit');
+      var utcOut = document.getElementById('utcOut');
+      var localOut = document.getElementById('localOut');
+      var isoOut = document.getElementById('isoOut');
+      var relOut = document.getElementById('relOut');
+      var dtInput = document.getElementById('dtInput');
+      var nowBtn = document.getElementById('nowBtn');
+      var secOut = document.getElementById('secOut');
+      var msOut = document.getElementById('msOut');
+
+      function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+      function tick() {
+        var ms = Date.now();
+        nowTs.textContent = Math.floor(ms / 1000) + '  (' + ms + ' ms)';
+      }
+      setInterval(tick, 1000);
+      tick();
+
+      function timeAgo(d) {
+        var diff = Date.now() - d.getTime();
+        var future = diff < 0;
+        diff = Math.abs(diff);
+        var units = [
+          ['year', 31536000000], ['month', 2592000000], ['day', 86400000],
+          ['hour', 3600000], ['minute', 60000], ['second', 1000]
+        ];
+        for (var i = 0; i < units.length; i++) {
+          var v = Math.floor(diff / units[i][1]);
+          if (v >= 1) return (future ? 'in ' : '') + v + ' ' + units[i][0] + (v > 1 ? 's' : '') + (future ? '' : ' ago');
+        }
+        return 'just now';
+      }
+
+      function tsToDate() {
+        var v = tsInput.value.trim();
+        if (!v) { utcOut.textContent = localOut.textContent = isoOut.textContent = relOut.textContent = '—'; return; }
+        var num = Number(v);
+        if (isNaN(num)) { utcOut.textContent = localOut.textContent = isoOut.textContent = relOut.textContent = 'Invalid number'; return; }
+        var ms = tsUnit.value === 'ms' ? num : num * 1000;
+        var d = new Date(ms);
+        if (isNaN(d.getTime())) { utcOut.textContent = localOut.textContent = isoOut.textContent = relOut.textContent = 'Out of range'; return; }
+        utcOut.textContent = d.toUTCString();
+        localOut.textContent = d.toString();
+        isoOut.textContent = d.toISOString();
+        relOut.textContent = timeAgo(d);
+      }
+
+      function toLocalInputValue(d) {
+        return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()) +
+               'T' + pad(d.getHours()) + ':' + pad(d.getMinutes()) + ':' + pad(d.getSeconds());
+      }
+
+      function dateToTs() {
+        var v = dtInput.value;
+        if (!v) { secOut.textContent = msOut.textContent = '—'; return; }
+        var d = new Date(v);
+        if (isNaN(d.getTime())) { secOut.textContent = msOut.textContent = 'Invalid date'; return; }
+        secOut.textContent = Math.floor(d.getTime() / 1000);
+        msOut.textContent = d.getTime();
+      }
+
+      tsInput.addEventListener('input', tsToDate);
+      tsUnit.addEventListener('change', tsToDate);
+      dtInput.addEventListener('input', dateToTs);
+      nowBtn.addEventListener('click', function () {
+        dtInput.value = toLocalInputValue(new Date());
+        dateToTs();
+      });
+
+      tsToDate();
+      dateToTs();
+    })();
+  </script>
+
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

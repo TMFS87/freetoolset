@@ -3,14 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Word Counter — Free Online Word & Character Count Tool | FreeToolset</title>
-  <meta name="description" content="Count words, characters, sentences, and paragraphs in real-time. Includes reading time estimation. Perfect for essays, articles, and social media posts. Free and privacy-friendly.">
+  <title>Word Counter · 字数统计工具 | FreeToolset</title>
+  <meta name="description" content="字数统计工具（Word Counter）：免费在线工具，无需注册下载，浏览器本地运行，数据不上传，保护隐私。">
   <meta name="keywords" content="word counter, character count, sentence counter, paragraph counter, reading time, text analysis, word count tool">
   <meta property="og:title" content="Word Counter — FreeToolset">
   <meta property="og:description" content="Count words, characters, sentences, and paragraphs in real-time.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.freetoolset.app/word-counter.html">
   <link rel="stylesheet" href="css/style.css">
+  <!-- ft-og-social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/word-counter.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Word Counter — FreeToolset">
+  <meta name="twitter:description" content="Count words, characters, sentences, and paragraphs in real-time.">
+  <!-- ft-schema -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Word Counter — Free Online Word & Character Count Tool","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/word-counter.html","description":"Count words, characters, sentences, and paragraphs in real time. Includes reading time estimation. Free, privacy-friendly.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Word Counter",
+  "alternateName": "字数统计工具",
+  "url": "https://www.freetoolset.app/word-counter.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "字数统计工具（Word Counter）免费在线工具，无需注册，本地运行保护隐私。"
+}
+</script>
+  <!-- ft-faq-schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "字数统计准吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "准。会分别统计字符数、词数、段落数，中英文按各自规则计数，还能量化空格和标点。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "我的文章会被上传吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不会。所有统计在浏览器本地完成，长文也不会离开你的设备。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "能估算阅读时间吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。按平均阅读速度（约 200–300 字/分钟）估算，方便你控制篇幅。"
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -21,26 +87,54 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="index.html#tools" class="nav-link active">Tools</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="privacy-policy.html" class="nav-link">Privacy</a>
-      <button class="nav-lang" title="Switch Language" onclick="alert('Language switching coming soon!')">🌐</button>
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active" data-i18n="Tools">Tools</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <a href="privacy-policy.html" class="nav-link" data-i18n="Privacy">Privacy</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
     </div>
   </nav>
 
   <main class="main-content">
+  <!-- ft-zh-intro -->
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>字数统计是写作与 SEO 的基础。本工具实时统计字数、字符数、句子与段落，帮助作者控制篇幅、满足投稿与平台限制，适合写论文、公众号推文、论文摘要时快速核对长度。</p>
+  </section>
+
 
     <!-- Breadcrumb -->
-    <nav class="breadcrumb">
-      <a href="index.html">Home</a>
+      <!-- ft-deep -->
+  <section class="tool-deep">
+    <h2>📖 深入了解 Word Counter — Free Online Word & Character Count Tool</h2>
+    <h2>为什么需要它</h2>
+    <ul>
+      <li>把重复的文本操作自动化</li>
+      <li>清洗从别处复制来的杂乱文字</li>
+      <li>批量改词改格式省时间</li>
+    </ul>
+    <h2>背后的原理</h2>
+    <p>Word Counter — Free Online Word & Character Count Tool 在浏览器内对字符串做变换（反转、替换、清理、转换等），纯前端处理，文本不会离开你的设备，适合处理含隐私的文档。</p>
+    <h2>一个例子</h2>
+    <p>例如把一段带乱换行或多余空格的文字粘进 Word Counter — Free Online Word & Character Count Tool，点一下就能得到干净版本，再复制回原处即可。</p>
+    <h2>常见误区</h2>
+    <ul>
+      <li>处理敏感文档时用了需要上传的在线工具</li>
+      <li>没注意大小写或正则导致误替换</li>
+      <li>清理空白时破坏了原有的段落结构</li>
+    </ul>
+  </section>
+    <nav class="breadcrumb"><!-- breadcrumb-cat -->
+      <a href="index.html" data-i18n="Home">Home</a>
       <span class="separator">/</span>
-      <span class="current">Word Counter</span>
+      <a href="text-tools.html" data-i18n="catTitle_text-tools">Text Tools</a>
+      <span class="separator">/</span>
+      <span class="current" data-i18n="cardTitle_word-counter">Word Counter</span>
     </nav>
 
     <!-- Tool Header -->
     <div class="tool-header">
-      <h1>📝 Word Counter</h1>
+      <h1 data-i18n="📝 Word Counter">📝 Word Counter</h1>
       <p>Count words, characters, sentences, and paragraphs in real-time. Perfect for essays, articles, and social media posts.</p>
     </div>
 
@@ -130,7 +224,21 @@
             <summary>How is reading time calculated?</summary>
             <p>Reading time is estimated based on an average reading speed of 200 words per minute. If your text has fewer than 200 words, it will show "&lt;1" minute.</p>
           </details>
-        </div>
+        
+          <!-- ft-zh-faq -->
+          <details class="faq-item">
+            <summary>字数统计准吗？</summary>
+            <p>准。会分别统计字符数、词数、段落数，中英文按各自规则计数，还能量化空格和标点。</p>
+          </details>
+          <details class="faq-item">
+            <summary>我的文章会被上传吗？</summary>
+            <p>不会。所有统计在浏览器本地完成，长文也不会离开你的设备。</p>
+          </details>
+          <details class="faq-item">
+            <summary>能估算阅读时间吗？</summary>
+            <p>可以。按平均阅读速度（约 200–300 字/分钟）估算，方便你控制篇幅。</p>
+          </details>
+</div>
 
         <!-- Use Cases -->
         <div class="info-section">
@@ -198,6 +306,46 @@
   </main>
 
   <!-- Footer -->
+    <!-- More Tools Section -->
+    <section class="more-tools-section" aria-label="More tools">
+      <h2 class="more-tools-title" data-i18n="moreToolsTitle">🔍 Explore More Tools</h2>
+      <p class="more-tools-desc" data-i18n="moreToolsDesc">FreeToolset has 75+ free online tools. Browse more utilities to boost your productivity.</p>
+      <div class="more-tools-grid">
+        <a href="index.html" class="more-tool-card more-tool-home">
+          <span class="mt-icon">⚡</span>
+          <span class="mt-name" data-i18n="moreToolsAll">All 75+ Tools</span>
+        </a>
+        <a href="ai-studio.html" class="more-tool-card">
+          <span class="mt-icon">✨</span>
+          <span class="mt-name" data-i18n="✨ AI Studio">✨ AI Studio</span>
+        </a>
+        <a href="text-tools.html" class="more-tool-card">
+          <span class="mt-icon">📂</span>
+          <span class="mt-name" data-i18n="catTitle_text-tools">Text Tools</span>
+        </a>
+        <a href="image-compressor.html" class="more-tool-card">
+          <span class="mt-icon">🖼️</span>
+          <span class="mt-name" data-i18n="cardTitle_image-compressor">🖼️ Image Compressor</span>
+        </a>
+        <a href="qr-code-generator.html" class="more-tool-card">
+          <span class="mt-icon">📱</span>
+          <span class="mt-name" data-i18n="cardTitle_qr-code-generator">📱 QR Code Generator</span>
+        </a>
+        <a href="password-generator.html" class="more-tool-card">
+          <span class="mt-icon">🔐</span>
+          <span class="mt-name" data-i18n="cardTitle_password-generator">🔐 Password Generator</span>
+        </a>
+        <a href="json-formatter.html" class="more-tool-card">
+          <span class="mt-icon">🧩</span>
+          <span class="mt-name" data-i18n="cardTitle_json-formatter">🧩 JSON Formatter</span>
+        </a>
+        <a href="word-counter.html" class="more-tool-card">
+          <span class="mt-icon">📝</span>
+          <span class="mt-name" data-i18n="cardTitle_word-counter">📝 Word Counter</span>
+        </a>
+      </div>
+    </section>
+
   <footer class="footer">
     <div class="footer-content">
       <div>
@@ -205,13 +353,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html">Tools</a>
-        <a href="about.html">About</a>
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
 
 </div>
     </div>
@@ -285,5 +433,10 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
 </body>
 </html>

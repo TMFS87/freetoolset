@@ -3,14 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Text Case Converter — Free Online Case Conversion Tool | FreeToolset</title>
-  <meta name="description" content="Convert text between UPPERCASE, lowercase, Title Case, Sentence case, camelCase, snake_case, and kebab-case. Free, fast, and runs entirely in your browser. No data uploaded.">
+  <title>Text Case Converter · 文字大小写转换 | FreeToolset</title>
+  <meta name="description" content="文字大小写转换（Text Case Converter）：免费在线工具，无需注册下载，浏览器本地运行，数据不上传，保护隐私。">
   <meta name="keywords" content="text case converter, uppercase, lowercase, title case, sentence case, camelcase, snake case, kebab case, case converter online">
   <meta property="og:title" content="Text Case Converter — FreeToolset">
   <meta property="og:description" content="Convert text between 7 different case formats instantly.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.freetoolset.app/text-case-converter.html">
   <link rel="stylesheet" href="css/style.css">
+  <!-- ft-og-social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/text-case-converter.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Text Case Converter — FreeToolset">
+  <meta name="twitter:description" content="Convert text between 7 different case formats instantly.">
+  <!-- ft-schema -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Text Case Converter — Free Online Case Conversion Tool","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/text-case-converter.html","description":"Convert text between UPPERCASE, lowercase, Title Case, Sentence case, camelCase, snake_case, and kebab-case. Free, in-browser.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Text Case Converter",
+  "alternateName": "文字大小写转换",
+  "url": "https://www.freetoolset.app/text-case-converter.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "文字大小写转换（Text Case Converter）免费在线工具，无需注册，本地运行保护隐私。"
+}
+</script>
+  <!-- ft-faq-schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "文字大小写转换是免费的吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "是的，文字大小写转换（Text Case Converter）免费使用，无需注册，转换在你的浏览器本地完成，数据不上传。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "文字大小写转换支持哪些格式或单位？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "支持常见格式与单位之间的互相转换，输入即转换，操作简单。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "转换会泄露我的数据吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不会。所有处理都在本地浏览器进行，内容不上传任何服务器。"
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -21,26 +87,54 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="index.html#tools" class="nav-link active">Tools</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="privacy-policy.html" class="nav-link">Privacy</a>
-      <button class="nav-lang" title="Switch Language" onclick="alert('Language switching coming soon!')">🌐</button>
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active" data-i18n="Tools">Tools</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <a href="privacy-policy.html" class="nav-link" data-i18n="Privacy">Privacy</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
     </div>
   </nav>
 
   <main class="main-content">
+  <!-- ft-zh-intro -->
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>大小写转换在编程与文案中很常用。本工具支持大写、小写、首字母大写、驼峰（camelCase）、蛇形（snake_case）、短横（kebab-case）等多种格式互转，本地批量处理，适合变量命名、标题规范化与代码整理。</p>
+  </section>
+
 
     <!-- Breadcrumb -->
-    <nav class="breadcrumb">
-      <a href="index.html">Home</a>
+      <!-- ft-deep -->
+  <section class="tool-deep">
+    <h2>📖 深入了解 Text Case Converter — Free Online Case Conversion Tool</h2>
+    <h2>为什么需要它</h2>
+    <ul>
+      <li>把重复的文本操作自动化</li>
+      <li>清洗从别处复制来的杂乱文字</li>
+      <li>批量改词改格式省时间</li>
+    </ul>
+    <h2>背后的原理</h2>
+    <p>Text Case Converter — Free Online Case Conversion Tool 在浏览器内对字符串做变换（反转、替换、清理、转换等），纯前端处理，文本不会离开你的设备，适合处理含隐私的文档。</p>
+    <h2>一个例子</h2>
+    <p>例如把一段带乱换行或多余空格的文字粘进 Text Case Converter — Free Online Case Conversion Tool，点一下就能得到干净版本，再复制回原处即可。</p>
+    <h2>常见误区</h2>
+    <ul>
+      <li>处理敏感文档时用了需要上传的在线工具</li>
+      <li>没注意大小写或正则导致误替换</li>
+      <li>清理空白时破坏了原有的段落结构</li>
+    </ul>
+  </section>
+    <nav class="breadcrumb"><!-- breadcrumb-cat -->
+      <a href="index.html" data-i18n="Home">Home</a>
       <span class="separator">/</span>
-      <span class="current">Text Case Converter</span>
+      <a href="converters.html" data-i18n="catTitle_converters">Unit Converters</a>
+      <span class="separator">/</span>
+      <span class="current" data-i18n="cardTitle_text-case-converter">Text Case Converter</span>
     </nav>
 
     <!-- Tool Header -->
     <div class="tool-header">
-      <h1>🔤 Text Case Converter</h1>
+      <h1 data-i18n="🔤 Text Case Converter">🔤 Text Case Converter</h1>
       <p>Convert text between UPPERCASE, lowercase, Title Case, Sentence case, camelCase, snake_case, and kebab-case. Instant conversion, all processing in your browser.</p>
     </div>
 
@@ -127,7 +221,21 @@
             <summary>What is kebab-case used for?</summary>
             <p>kebab-case uses hyphens between words in all lowercase — e.g. "hello world" becomes "hello-world". It is commonly used in URLs (slugs), CSS class names, and file names, as hyphens are URL-safe and more readable than underscores in web addresses.</p>
           </details>
-        </div>
+        
+          <!-- ft-zh-faq -->
+          <details class="faq-item">
+            <summary>文字大小写转换是免费的吗？</summary>
+            <p>是的，文字大小写转换（Text Case Converter）免费使用，无需注册，转换在你的浏览器本地完成，数据不上传。</p>
+          </details>
+          <details class="faq-item">
+            <summary>文字大小写转换支持哪些格式或单位？</summary>
+            <p>支持常见格式与单位之间的互相转换，输入即转换，操作简单。</p>
+          </details>
+          <details class="faq-item">
+            <summary>转换会泄露我的数据吗？</summary>
+            <p>不会。所有处理都在本地浏览器进行，内容不上传任何服务器。</p>
+          </details>
+</div>
 
         <!-- Use Cases -->
         <div class="info-section">
@@ -195,6 +303,46 @@
   </main>
 
   <!-- Footer -->
+    <!-- More Tools Section -->
+    <section class="more-tools-section" aria-label="More tools">
+      <h2 class="more-tools-title" data-i18n="moreToolsTitle">🔍 Explore More Tools</h2>
+      <p class="more-tools-desc" data-i18n="moreToolsDesc">FreeToolset has 75+ free online tools. Browse more utilities to boost your productivity.</p>
+      <div class="more-tools-grid">
+        <a href="index.html" class="more-tool-card more-tool-home">
+          <span class="mt-icon">⚡</span>
+          <span class="mt-name" data-i18n="moreToolsAll">All 75+ Tools</span>
+        </a>
+        <a href="ai-studio.html" class="more-tool-card">
+          <span class="mt-icon">✨</span>
+          <span class="mt-name" data-i18n="✨ AI Studio">✨ AI Studio</span>
+        </a>
+        <a href="converters.html" class="more-tool-card">
+          <span class="mt-icon">📂</span>
+          <span class="mt-name" data-i18n="catTitle_converters">Unit Converters</span>
+        </a>
+        <a href="image-compressor.html" class="more-tool-card">
+          <span class="mt-icon">🖼️</span>
+          <span class="mt-name" data-i18n="cardTitle_image-compressor">🖼️ Image Compressor</span>
+        </a>
+        <a href="qr-code-generator.html" class="more-tool-card">
+          <span class="mt-icon">📱</span>
+          <span class="mt-name" data-i18n="cardTitle_qr-code-generator">📱 QR Code Generator</span>
+        </a>
+        <a href="password-generator.html" class="more-tool-card">
+          <span class="mt-icon">🔐</span>
+          <span class="mt-name" data-i18n="cardTitle_password-generator">🔐 Password Generator</span>
+        </a>
+        <a href="json-formatter.html" class="more-tool-card">
+          <span class="mt-icon">🧩</span>
+          <span class="mt-name" data-i18n="cardTitle_json-formatter">🧩 JSON Formatter</span>
+        </a>
+        <a href="word-counter.html" class="more-tool-card">
+          <span class="mt-icon">📝</span>
+          <span class="mt-name" data-i18n="cardTitle_word-counter">📝 Word Counter</span>
+        </a>
+      </div>
+    </section>
+
   <footer class="footer">
     <div class="footer-content">
       <div>
@@ -202,13 +350,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html">Tools</a>
-        <a href="about.html">About</a>
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
 
 </div>
     </div>
@@ -334,5 +482,10 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
 </body>
 </html>

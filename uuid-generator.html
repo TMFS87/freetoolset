@@ -3,14 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UUID Generator — Free Online UUID v4 Generator | FreeToolset</title>
-  <meta name="description" content="Generate random UUID v4 identifiers online for free. Supports batch generation of up to 100 UUIDs. Uses crypto.getRandomValues() for cryptographically secure randomness. Runs in your browser.">
+  <title>UUID Generator · UUID生成器 | FreeToolset</title>
+  <meta name="description" content="UUID生成器（UUID Generator）：免费在线工具，无需注册下载，浏览器本地运行，数据不上传，保护隐私。">
   <meta name="keywords" content="uuid generator, uuid v4, guid generator, random uuid, unique identifier, uuid online">
   <meta property="og:title" content="UUID Generator — FreeToolset">
   <meta property="og:description" content="Generate random UUID v4 identifiers. Batch generation up to 100.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.freetoolset.app/uuid-generator.html">
   <link rel="stylesheet" href="css/style.css">
+  <!-- ft-og-social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/uuid-generator.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="UUID Generator — FreeToolset">
+  <meta name="twitter:description" content="Generate random UUID v4 identifiers. Batch generation up to 100.">
+  <!-- ft-schema -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"UUID Generator — Free Online UUID v4 Generator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/uuid-generator.html","description":"Generate random UUID v4 identifiers online for free. Batch generate up to 100 UUIDs with cryptographically secure randomness.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "UUID Generator",
+  "alternateName": "UUID生成器",
+  "url": "https://www.freetoolset.app/uuid-generator.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "UUID生成器（UUID Generator）免费在线工具，无需注册，本地运行保护隐私。"
+}
+</script>
+  <!-- ft-faq-schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "UUID 会重复吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "本工具生成的是 v4 随机 UUID，组合数极大，实际重复的概率可以忽略不计。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "生成过程会上传数据吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不会。UUID 在你的浏览器本地随机生成，不上传任何信息。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "UUID 一般用来做什么？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "常作数据库主键、分布式系统请求 ID、会话标识、文件名等需要全局唯一标识的场景。"
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -21,26 +87,54 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="index.html#tools" class="nav-link active">Tools</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="privacy-policy.html" class="nav-link">Privacy</a>
-      <button class="nav-lang" title="Switch Language" onclick="alert('Language switching coming soon!')">🌐</button>
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active" data-i18n="Tools">Tools</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <a href="privacy-policy.html" class="nav-link" data-i18n="Privacy">Privacy</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
     </div>
   </nav>
 
   <main class="main-content">
+  <!-- ft-zh-intro -->
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>UUID（通用唯一标识符）常用于数据库主键、分布式系统 ID、会话标识与临时文件名。本工具一键生成符合 RFC 4122 的随机 UUID v4，支持批量生成最多 100 个，无需后端、本地即生成，适合开发测试与系统对接。</p>
+  </section>
+
 
     <!-- Breadcrumb -->
-    <nav class="breadcrumb">
-      <a href="index.html">Home</a>
+      <!-- ft-deep -->
+  <section class="tool-deep">
+    <h2>📖 深入了解 UUID Generator — Free Online UUID v4 Generator</h2>
+    <h2>为什么需要它</h2>
+    <ul>
+      <li>调试与格式转换无需安装环境</li>
+      <li>本地处理敏感数据更安全</li>
+      <li>把繁琐脚本变成一键操作</li>
+    </ul>
+    <h2>背后的原理</h2>
+    <p>UUID Generator — Free Online UUID v4 Generator 面向开发调试场景，在本地完成格式转换、压缩或解码，不把令牌、代码等敏感内容传到第三方服务器。</p>
+    <h2>一个例子</h2>
+    <p>例如把一段 JWT 或 CSV 粘进 UUID Generator — Free Online UUID v4 Generator，本地立即解析或转换，结果可直接复制使用，敏感数据全程不出浏览器。</p>
+    <h2>常见误区</h2>
+    <ul>
+      <li>把 JWT 等可解码内容误当加密</li>
+      <li>压缩后未保留可读源码，出问题难排查</li>
+      <li>用了需要上传的在线工具处理密钥/令牌</li>
+    </ul>
+  </section>
+    <nav class="breadcrumb"><!-- breadcrumb-cat -->
+      <a href="index.html" data-i18n="Home">Home</a>
       <span class="separator">/</span>
-      <span class="current">UUID Generator</span>
+      <a href="developer-tools.html" data-i18n="catTitle_developer-tools">Developer Tools</a>
+      <span class="separator">/</span>
+      <span class="current" data-i18n="cardTitle_uuid-generator">UUID Generator</span>
     </nav>
 
     <!-- Tool Header -->
     <div class="tool-header">
-      <h1>🆔 UUID Generator</h1>
+      <h1 data-i18n="🆔 UUID Generator">🆔 UUID Generator</h1>
       <p>Generate random UUID v4 identifiers. Supports batch generation of up to 100 UUIDs at once. Uses <code>crypto.getRandomValues()</code> for cryptographically secure randomness.</p>
     </div>
 
@@ -124,7 +218,21 @@
             <summary>What are UUIDs used for?</summary>
             <p>UUIDs are widely used as primary keys in databases, identifiers for distributed systems, session tokens, file names, API request IDs, and anywhere a globally unique identifier is needed without coordination between systems. They are especially useful in microservices architectures and event-driven systems.</p>
           </details>
-        </div>
+        
+          <!-- ft-zh-faq -->
+          <details class="faq-item">
+            <summary>UUID 会重复吗？</summary>
+            <p>本工具生成的是 v4 随机 UUID，组合数极大，实际重复的概率可以忽略不计。</p>
+          </details>
+          <details class="faq-item">
+            <summary>生成过程会上传数据吗？</summary>
+            <p>不会。UUID 在你的浏览器本地随机生成，不上传任何信息。</p>
+          </details>
+          <details class="faq-item">
+            <summary>UUID 一般用来做什么？</summary>
+            <p>常作数据库主键、分布式系统请求 ID、会话标识、文件名等需要全局唯一标识的场景。</p>
+          </details>
+</div>
 
         <!-- Use Cases -->
         <div class="info-section">
@@ -192,6 +300,46 @@
   </main>
 
   <!-- Footer -->
+    <!-- More Tools Section -->
+    <section class="more-tools-section" aria-label="More tools">
+      <h2 class="more-tools-title" data-i18n="moreToolsTitle">🔍 Explore More Tools</h2>
+      <p class="more-tools-desc" data-i18n="moreToolsDesc">FreeToolset has 75+ free online tools. Browse more utilities to boost your productivity.</p>
+      <div class="more-tools-grid">
+        <a href="index.html" class="more-tool-card more-tool-home">
+          <span class="mt-icon">⚡</span>
+          <span class="mt-name" data-i18n="moreToolsAll">All 75+ Tools</span>
+        </a>
+        <a href="ai-studio.html" class="more-tool-card">
+          <span class="mt-icon">✨</span>
+          <span class="mt-name" data-i18n="✨ AI Studio">✨ AI Studio</span>
+        </a>
+        <a href="developer-tools.html" class="more-tool-card">
+          <span class="mt-icon">📂</span>
+          <span class="mt-name" data-i18n="catTitle_developer-tools">Developer Tools</span>
+        </a>
+        <a href="image-compressor.html" class="more-tool-card">
+          <span class="mt-icon">🖼️</span>
+          <span class="mt-name" data-i18n="cardTitle_image-compressor">🖼️ Image Compressor</span>
+        </a>
+        <a href="qr-code-generator.html" class="more-tool-card">
+          <span class="mt-icon">📱</span>
+          <span class="mt-name" data-i18n="cardTitle_qr-code-generator">📱 QR Code Generator</span>
+        </a>
+        <a href="password-generator.html" class="more-tool-card">
+          <span class="mt-icon">🔐</span>
+          <span class="mt-name" data-i18n="cardTitle_password-generator">🔐 Password Generator</span>
+        </a>
+        <a href="json-formatter.html" class="more-tool-card">
+          <span class="mt-icon">🧩</span>
+          <span class="mt-name" data-i18n="cardTitle_json-formatter">🧩 JSON Formatter</span>
+        </a>
+        <a href="word-counter.html" class="more-tool-card">
+          <span class="mt-icon">📝</span>
+          <span class="mt-name" data-i18n="cardTitle_word-counter">📝 Word Counter</span>
+        </a>
+      </div>
+    </section>
+
   <footer class="footer">
     <div class="footer-content">
       <div>
@@ -199,13 +347,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html">Tools</a>
-        <a href="about.html">About</a>
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
 
 </div>
     </div>
@@ -294,5 +442,10 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
 </body>
 </html>

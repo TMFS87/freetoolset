@@ -3,14 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hash Generator — Free Online MD5, SHA-1, SHA-256, SHA-512 Tool | FreeToolset</title>
-  <meta name="description" content="Generate MD5, SHA-1, SHA-256, and SHA-512 hash values from any text input. Uses the Web Crypto API for SHA algorithms. Free, fast, and runs entirely in your browser.">
+  <title>Hash Generator · 哈希生成器 | FreeToolset</title>
+  <meta name="description" content="哈希生成器（Hash Generator）：免费在线工具，无需注册下载，浏览器本地运行，数据不上传，保护隐私。">
   <meta name="keywords" content="hash generator, md5 generator, sha-1 generator, sha-256 generator, sha-512 generator, hash calculator, checksum">
   <meta property="og:title" content="Hash Generator — FreeToolset">
   <meta property="og:description" content="Generate MD5, SHA-1, SHA-256, and SHA-512 hashes from any text.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.freetoolset.app/hash-generator.html">
   <link rel="stylesheet" href="css/style.css">
+  <!-- ft-og-social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/hash-generator.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hash Generator — FreeToolset">
+  <meta name="twitter:description" content="Generate MD5, SHA-1, SHA-256, and SHA-512 hashes from any text.">
+  <!-- ft-schema -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Hash Generator — Free Online MD5, SHA-1, SHA-256, SHA-512 Tool","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/hash-generator.html","description":"Generate MD5, SHA-1, SHA-256, and SHA-512 hashes from any text. Uses the Web Crypto API. Fast, free, browser-based.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Hash Generator",
+  "alternateName": "哈希生成器",
+  "url": "https://www.freetoolset.app/hash-generator.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "哈希生成器（Hash Generator）免费在线工具，无需注册，本地运行保护隐私。"
+}
+</script>
+  <!-- ft-faq-schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "哈希生成器需要联网吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不需要。所有处理都在你的浏览器本地完成，数据不上传服务器，离线也能用。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "哈希生成器支持大文件或批量吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "在浏览器性能范围内支持较大内容处理；具体上限取决于你的设备内存。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "哈希生成器是免费的吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "是的，完全免费，无需注册，打开即用。"
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -21,26 +87,54 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="index.html#tools" class="nav-link active">Tools</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="privacy-policy.html" class="nav-link">Privacy</a>
-      <button class="nav-lang" title="Switch Language" onclick="alert('Language switching coming soon!')">🌐</button>
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active" data-i18n="Tools">Tools</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <a href="privacy-policy.html" class="nav-link" data-i18n="Privacy">Privacy</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
     </div>
   </nav>
 
   <main class="main-content">
+  <!-- ft-zh-intro -->
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>哈希（Hash）可将任意文本映射为固定长度摘要，用于校验文件完整性、存储密码摘要、生成签名等。本工具支持 MD5、SHA-1、SHA-256、SHA-512，本地实时计算不依赖网络，适合验证下载文件是否被篡改、调试接口签名。</p>
+  </section>
+
 
     <!-- Breadcrumb -->
-    <nav class="breadcrumb">
-      <a href="index.html">Home</a>
+      <!-- ft-deep -->
+  <section class="tool-deep">
+    <h2>📖 深入了解 Hash Generator — Free Online MD5, SHA-1, SHA-256, SHA-512 Tool</h2>
+    <h2>为什么需要它</h2>
+    <ul>
+      <li>调试与格式转换无需安装环境</li>
+      <li>本地处理敏感数据更安全</li>
+      <li>把繁琐脚本变成一键操作</li>
+    </ul>
+    <h2>背后的原理</h2>
+    <p>Hash Generator — Free Online MD5, SHA-1, SHA-256, SHA-512 Tool 面向开发调试场景，在本地完成格式转换、压缩或解码，不把令牌、代码等敏感内容传到第三方服务器。</p>
+    <h2>一个例子</h2>
+    <p>例如把一段 JWT 或 CSV 粘进 Hash Generator — Free Online MD5, SHA-1, SHA-256, SHA-512 Tool，本地立即解析或转换，结果可直接复制使用，敏感数据全程不出浏览器。</p>
+    <h2>常见误区</h2>
+    <ul>
+      <li>把 JWT 等可解码内容误当加密</li>
+      <li>压缩后未保留可读源码，出问题难排查</li>
+      <li>用了需要上传的在线工具处理密钥/令牌</li>
+    </ul>
+  </section>
+    <nav class="breadcrumb"><!-- breadcrumb-cat -->
+      <a href="index.html" data-i18n="Home">Home</a>
       <span class="separator">/</span>
-      <span class="current">Hash Generator</span>
+      <a href="developer-tools.html" data-i18n="catTitle_developer-tools">Developer Tools</a>
+      <span class="separator">/</span>
+      <span class="current" data-i18n="cardTitle_hash-generator">Hash Generator</span>
     </nav>
 
     <!-- Tool Header -->
     <div class="tool-header">
-      <h1>#️⃣ Hash Generator</h1>
+      <h1 data-i18n="#️⃣ Hash Generator">#️⃣ Hash Generator</h1>
       <p>Generate MD5, SHA-1, SHA-256, and SHA-512 hash values from any text. SHA algorithms use the native Web Crypto API for maximum performance and accuracy.</p>
     </div>
 
@@ -138,7 +232,21 @@
             <summary>Which algorithm should I use?</summary>
             <p>For security-sensitive applications (password hashing, digital signatures, certificates), use SHA-256 or SHA-512. For simple file checksums or legacy compatibility, MD5 or SHA-1 may suffice. Note that SHA-1 is also deprecated for security use due to known vulnerabilities. When in doubt, choose SHA-256.</p>
           </details>
-        </div>
+        
+          <!-- ft-zh-faq -->
+          <details class="faq-item">
+            <summary>哈希生成器需要联网吗？</summary>
+            <p>不需要。所有处理都在你的浏览器本地完成，数据不上传服务器，离线也能用。</p>
+          </details>
+          <details class="faq-item">
+            <summary>哈希生成器支持大文件或批量吗？</summary>
+            <p>在浏览器性能范围内支持较大内容处理；具体上限取决于你的设备内存。</p>
+          </details>
+          <details class="faq-item">
+            <summary>哈希生成器是免费的吗？</summary>
+            <p>是的，完全免费，无需注册，打开即用。</p>
+          </details>
+</div>
 
         <!-- Use Cases -->
         <div class="info-section">
@@ -206,6 +314,46 @@
   </main>
 
   <!-- Footer -->
+    <!-- More Tools Section -->
+    <section class="more-tools-section" aria-label="More tools">
+      <h2 class="more-tools-title" data-i18n="moreToolsTitle">🔍 Explore More Tools</h2>
+      <p class="more-tools-desc" data-i18n="moreToolsDesc">FreeToolset has 75+ free online tools. Browse more utilities to boost your productivity.</p>
+      <div class="more-tools-grid">
+        <a href="index.html" class="more-tool-card more-tool-home">
+          <span class="mt-icon">⚡</span>
+          <span class="mt-name" data-i18n="moreToolsAll">All 75+ Tools</span>
+        </a>
+        <a href="ai-studio.html" class="more-tool-card">
+          <span class="mt-icon">✨</span>
+          <span class="mt-name" data-i18n="✨ AI Studio">✨ AI Studio</span>
+        </a>
+        <a href="developer-tools.html" class="more-tool-card">
+          <span class="mt-icon">📂</span>
+          <span class="mt-name" data-i18n="catTitle_developer-tools">Developer Tools</span>
+        </a>
+        <a href="image-compressor.html" class="more-tool-card">
+          <span class="mt-icon">🖼️</span>
+          <span class="mt-name" data-i18n="cardTitle_image-compressor">🖼️ Image Compressor</span>
+        </a>
+        <a href="qr-code-generator.html" class="more-tool-card">
+          <span class="mt-icon">📱</span>
+          <span class="mt-name" data-i18n="cardTitle_qr-code-generator">📱 QR Code Generator</span>
+        </a>
+        <a href="password-generator.html" class="more-tool-card">
+          <span class="mt-icon">🔐</span>
+          <span class="mt-name" data-i18n="cardTitle_password-generator">🔐 Password Generator</span>
+        </a>
+        <a href="json-formatter.html" class="more-tool-card">
+          <span class="mt-icon">🧩</span>
+          <span class="mt-name" data-i18n="cardTitle_json-formatter">🧩 JSON Formatter</span>
+        </a>
+        <a href="word-counter.html" class="more-tool-card">
+          <span class="mt-icon">📝</span>
+          <span class="mt-name" data-i18n="cardTitle_word-counter">📝 Word Counter</span>
+        </a>
+      </div>
+    </section>
+
   <footer class="footer">
     <div class="footer-content">
       <div>
@@ -213,13 +361,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html">Tools</a>
-        <a href="about.html">About</a>
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
 
 </div>
     </div>
@@ -431,5 +579,10 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
 </body>
 </html>

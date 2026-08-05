@@ -3,14 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Image to Base64 — Free Online Image to Base64 Converter | FreeToolset</title>
-  <meta name="description" content="Convert images to Base64 encoded strings online for free. Upload any image (JPG, PNG, GIF, WebP) and get the Base64 Data URI instantly. Preview, copy, and use in your projects. Runs in your browser.">
+  <title>Image to Base64 · 图片转Base64 | FreeToolset</title>
+  <meta name="description" content="图片转Base64（Image to Base64）：免费在线工具，无需注册下载，浏览器本地运行，数据不上传，保护隐私。">
   <meta name="keywords" content="image to base64, base64 image converter, image to data uri, base64 encode image, inline image base64">
   <meta property="og:title" content="Image to Base64 — FreeToolset">
   <meta property="og:description" content="Convert images to Base64 Data URIs instantly in your browser.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.freetoolset.app/image-to-base64.html">
   <link rel="stylesheet" href="css/style.css">
+  <!-- ft-og-social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/image-to-base64.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Image to Base64 — FreeToolset">
+  <meta name="twitter:description" content="Convert images to Base64 Data URIs instantly in your browser.">
+  <!-- ft-schema -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Image to Base64 — Free Online Image to Base64 Converter","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/image-to-base64.html","description":"Convert images to Base64 encoded strings online for free. Upload JPG, PNG, GIF, WebP and get Data URI instantly. In-browser.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Image to Base64",
+  "alternateName": "图片转Base64",
+  "url": "https://www.freetoolset.app/image-to-base64.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "图片转Base64（Image to Base64）免费在线工具，无需注册，本地运行保护隐私。"
+}
+</script>
+  <!-- ft-faq-schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "图片转Base64是免费的吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "是的，图片转Base64（Image to Base64）免费使用，无需注册，转换在你的浏览器本地完成，数据不上传。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "图片转Base64支持哪些格式或单位？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "支持常见格式与单位之间的互相转换，输入即转换，操作简单。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "转换会泄露我的数据吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不会。所有处理都在本地浏览器进行，内容不上传任何服务器。"
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -21,26 +87,54 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="index.html#tools" class="nav-link active">Tools</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="privacy-policy.html" class="nav-link">Privacy</a>
-      <button class="nav-lang" title="Switch Language" onclick="alert('Language switching coming soon!')">🌐</button>
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active" data-i18n="Tools">Tools</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <a href="privacy-policy.html" class="nav-link" data-i18n="Privacy">Privacy</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
     </div>
   </nav>
 
   <main class="main-content">
+  <!-- ft-zh-intro -->
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>将图片转为 Base64 Data URI 可直接内联进 HTML / CSS，减少请求数。本工具在本地把图片编码为 Data URI，支持一键复制，适合做小图标内联、邮件 HTML 嵌入图片，避免外链失效。</p>
+  </section>
+
 
     <!-- Breadcrumb -->
-    <nav class="breadcrumb">
-      <a href="index.html">Home</a>
+      <!-- ft-deep -->
+  <section class="tool-deep">
+    <h2>📖 深入了解 Image to Base64 — Free Online Image to Base64 Converter</h2>
+    <h2>为什么需要它</h2>
+    <ul>
+      <li>轻量趣味/效率，无需安装</li>
+      <li>本地随机与计时，即开即用</li>
+      <li>保护隐私，关掉不留痕</li>
+    </ul>
+    <h2>背后的原理</h2>
+    <p>Image to Base64 — Free Online Image to Base64 Converter 属于轻量趣味或效率工具，在浏览器本地生成随机结果或计时，无需安装，关掉页面不留痕。</p>
+    <h2>一个例子</h2>
+    <p>例如设定好范围或时长后一键启动 Image to Base64 — Free Online Image to Base64 Converter，过程全在本地完成，适合做决定、控场或放松。</p>
+    <h2>常见误区</h2>
+    <ul>
+      <li>把伪随机当真随机用于高安全场景</li>
+      <li>后台计时被浏览器节流导致不够准</li>
+      <li>用趣味结果做严肃决策时缺乏随机性保证</li>
+    </ul>
+  </section>
+    <nav class="breadcrumb"><!-- breadcrumb-cat -->
+      <a href="index.html" data-i18n="Home">Home</a>
       <span class="separator">/</span>
-      <span class="current">Image to Base64</span>
+      <a href="developer-tools.html" data-i18n="catTitle_developer-tools">Developer Tools</a>
+      <span class="separator">/</span>
+      <span class="current" data-i18n="cardTitle_image-to-base64">Image to Base64</span>
     </nav>
 
     <!-- Tool Header -->
     <div class="tool-header">
-      <h1>🖼️ Image to Base64</h1>
+      <h1 data-i18n="🖼️ Image to Base64">🖼️ Image to Base64</h1>
       <p>Upload an image and instantly convert it to a Base64 encoded Data URI. Perfect for embedding images in HTML, CSS, JSON, or API payloads. Uses the FileReader API — no upload required.</p>
     </div>
 
@@ -68,7 +162,7 @@
             <label>Image Preview</label>
             <div class="image-preview-container" style="display:flex;">
               <div class="image-preview" style="flex:1;">
-                <img id="previewImg" alt="Image preview">
+                <img id="previewImg" alt="Uploaded image preview before Base64 conversion">
                 <div class="image-info" id="imageInfo"></div>
               </div>
             </div>
@@ -141,7 +235,21 @@
             <summary>Is there a file size limit?</summary>
             <p>The limit depends on your browser's available memory. Most browsers can handle images up to several megabytes without issues. However, very large Base64 strings can slow down text editors and development tools, so we recommend using Base64 primarily for small images and icons.</p>
           </details>
-        </div>
+        
+          <!-- ft-zh-faq -->
+          <details class="faq-item">
+            <summary>图片转Base64是免费的吗？</summary>
+            <p>是的，图片转Base64（Image to Base64）免费使用，无需注册，转换在你的浏览器本地完成，数据不上传。</p>
+          </details>
+          <details class="faq-item">
+            <summary>图片转Base64支持哪些格式或单位？</summary>
+            <p>支持常见格式与单位之间的互相转换，输入即转换，操作简单。</p>
+          </details>
+          <details class="faq-item">
+            <summary>转换会泄露我的数据吗？</summary>
+            <p>不会。所有处理都在本地浏览器进行，内容不上传任何服务器。</p>
+          </details>
+</div>
 
         <!-- Use Cases -->
         <div class="info-section">
@@ -209,6 +317,46 @@
   </main>
 
   <!-- Footer -->
+    <!-- More Tools Section -->
+    <section class="more-tools-section" aria-label="More tools">
+      <h2 class="more-tools-title" data-i18n="moreToolsTitle">🔍 Explore More Tools</h2>
+      <p class="more-tools-desc" data-i18n="moreToolsDesc">FreeToolset has 75+ free online tools. Browse more utilities to boost your productivity.</p>
+      <div class="more-tools-grid">
+        <a href="index.html" class="more-tool-card more-tool-home">
+          <span class="mt-icon">⚡</span>
+          <span class="mt-name" data-i18n="moreToolsAll">All 75+ Tools</span>
+        </a>
+        <a href="ai-studio.html" class="more-tool-card">
+          <span class="mt-icon">✨</span>
+          <span class="mt-name" data-i18n="✨ AI Studio">✨ AI Studio</span>
+        </a>
+        <a href="developer-tools.html" class="more-tool-card">
+          <span class="mt-icon">📂</span>
+          <span class="mt-name" data-i18n="catTitle_developer-tools">Developer Tools</span>
+        </a>
+        <a href="image-compressor.html" class="more-tool-card">
+          <span class="mt-icon">🖼️</span>
+          <span class="mt-name" data-i18n="cardTitle_image-compressor">🖼️ Image Compressor</span>
+        </a>
+        <a href="qr-code-generator.html" class="more-tool-card">
+          <span class="mt-icon">📱</span>
+          <span class="mt-name" data-i18n="cardTitle_qr-code-generator">📱 QR Code Generator</span>
+        </a>
+        <a href="password-generator.html" class="more-tool-card">
+          <span class="mt-icon">🔐</span>
+          <span class="mt-name" data-i18n="cardTitle_password-generator">🔐 Password Generator</span>
+        </a>
+        <a href="json-formatter.html" class="more-tool-card">
+          <span class="mt-icon">🧩</span>
+          <span class="mt-name" data-i18n="cardTitle_json-formatter">🧩 JSON Formatter</span>
+        </a>
+        <a href="word-counter.html" class="more-tool-card">
+          <span class="mt-icon">📝</span>
+          <span class="mt-name" data-i18n="cardTitle_word-counter">📝 Word Counter</span>
+        </a>
+      </div>
+    </section>
+
   <footer class="footer">
     <div class="footer-content">
       <div>
@@ -216,13 +364,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html">Tools</a>
-        <a href="about.html">About</a>
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
 
 </div>
     </div>
@@ -352,7 +500,7 @@
       // Copy as <img> tag
       copyDataUriBtn.addEventListener('click', function () {
         if (!currentBase64) return;
-        var imgTag = '<img src="' + currentBase64 + '" alt="image">';
+        var imgTag = '<img src="' + currentBase64 + '" alt="Base64 encoded inline image">';
         var textarea = document.createElement('textarea');
         textarea.value = imgTag;
         document.body.appendChild(textarea);
@@ -380,5 +528,10 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
 </body>
 </html>

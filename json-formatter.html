@@ -3,14 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JSON Formatter — Free Online JSON Beautifier & Validator | FreeToolset</title>
-  <meta name="description" content="Format, validate, and minify JSON data with syntax highlighting. Supports nested JSON, multiple indent options, and error detection. Free, runs in your browser.">
+  <title>JSON Formatter · JSON格式化工具 | FreeToolset</title>
+  <meta name="description" content="JSON格式化工具（JSON Formatter）：免费在线工具，无需注册下载，浏览器本地运行，数据不上传，保护隐私。">
   <meta name="keywords" content="json formatter, json beautifier, json validator, json minifier, format json, pretty print json, json syntax highlighting">
   <meta property="og:title" content="JSON Formatter — FreeToolset">
   <meta property="og:description" content="Format, validate, and minify JSON data with syntax highlighting.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.freetoolset.app/json-formatter.html">
   <link rel="stylesheet" href="css/style.css">
+  <!-- ft-og-social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/json-formatter.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="JSON Formatter — FreeToolset">
+  <meta name="twitter:description" content="Format, validate, and minify JSON data with syntax highlighting.">
+  <!-- ft-schema -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"JSON Formatter — Free Online JSON Beautifier & Validator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/json-formatter.html","description":"Format, validate, and minify JSON data with syntax highlighting. Supports nested JSON, multiple indent options, and error detection. Free, runs in your browser.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "JSON Formatter",
+  "alternateName": "JSON格式化工具",
+  "url": "https://www.freetoolset.app/json-formatter.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "JSON格式化工具（JSON Formatter）免费在线工具，无需注册，本地运行保护隐私。"
+}
+</script>
+  <!-- ft-faq-schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "JSON 格式化会泄露我的数据吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不会。所有解析和格式化都在你的浏览器本地完成，数据不上传到任何服务器，私密安全。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "支持多大的 JSON 文件？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "在浏览器内存范围内都可处理，常见几 MB 的文件毫无压力；超大文件可能受设备内存限制。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "能帮我找出语法错误吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "能。当 JSON 格式不合法时，会提示大致的错误位置，方便你快速修正。"
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -21,26 +87,54 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="index.html#tools" class="nav-link active">Tools</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="privacy-policy.html" class="nav-link">Privacy</a>
-      <button class="nav-lang" title="Switch Language" onclick="alert('Language switching coming soon!')">🌐</button>
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active" data-i18n="Tools">Tools</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <a href="privacy-policy.html" class="nav-link" data-i18n="Privacy">Privacy</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
     </div>
   </nav>
 
   <main class="main-content">
+  <!-- ft-zh-intro -->
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>JSON 是前后端交互最常用的数据格式。本工具可一键美化、压缩、校验 JSON，自动高亮语法错误并定位行号，帮助开发者快速排查接口返回异常、整理配置文件。纯本地运行，数据不出浏览器，适合调试 API、查看日志、编辑 package.json 等。</p>
+  </section>
+
 
     <!-- Breadcrumb -->
-    <nav class="breadcrumb">
-      <a href="index.html">Home</a>
+      <!-- ft-deep -->
+  <section class="tool-deep">
+    <h2>📖 深入了解 JSON Formatter — Free Online JSON Beautifier & Validator</h2>
+    <h2>为什么需要它</h2>
+    <ul>
+      <li>调试与格式转换无需安装环境</li>
+      <li>本地处理敏感数据更安全</li>
+      <li>把繁琐脚本变成一键操作</li>
+    </ul>
+    <h2>背后的原理</h2>
+    <p>JSON Formatter — Free Online JSON Beautifier & Validator 面向开发调试场景，在本地完成格式转换、压缩或解码，不把令牌、代码等敏感内容传到第三方服务器。</p>
+    <h2>一个例子</h2>
+    <p>例如把一段 JWT 或 CSV 粘进 JSON Formatter — Free Online JSON Beautifier & Validator，本地立即解析或转换，结果可直接复制使用，敏感数据全程不出浏览器。</p>
+    <h2>常见误区</h2>
+    <ul>
+      <li>把 JWT 等可解码内容误当加密</li>
+      <li>压缩后未保留可读源码，出问题难排查</li>
+      <li>用了需要上传的在线工具处理密钥/令牌</li>
+    </ul>
+  </section>
+    <nav class="breadcrumb"><!-- breadcrumb-cat -->
+      <a href="index.html" data-i18n="Home">Home</a>
       <span class="separator">/</span>
-      <span class="current">JSON Formatter</span>
+      <a href="developer-tools.html" data-i18n="catTitle_developer-tools">Developer Tools</a>
+      <span class="separator">/</span>
+      <span class="current" data-i18n="cardTitle_json-formatter">JSON Formatter</span>
     </nav>
 
     <!-- Tool Header -->
     <div class="tool-header">
-      <h1>🧩 JSON Formatter</h1>
+      <h1 data-i18n="🧩 JSON Formatter">🧩 JSON Formatter</h1>
       <p>Format, validate, and minify JSON data with syntax highlighting. Fix common JSON errors and beautify your data instantly.</p>
     </div>
 
@@ -126,7 +220,21 @@
             <summary>What happens if my JSON is invalid?</summary>
             <p>The tool will display an error message with details about what went wrong, including the position of the error. This helps you quickly locate and fix syntax issues in your JSON.</p>
           </details>
-        </div>
+        
+          <!-- ft-zh-faq -->
+          <details class="faq-item">
+            <summary>JSON 格式化会泄露我的数据吗？</summary>
+            <p>不会。所有解析和格式化都在你的浏览器本地完成，数据不上传到任何服务器，私密安全。</p>
+          </details>
+          <details class="faq-item">
+            <summary>支持多大的 JSON 文件？</summary>
+            <p>在浏览器内存范围内都可处理，常见几 MB 的文件毫无压力；超大文件可能受设备内存限制。</p>
+          </details>
+          <details class="faq-item">
+            <summary>能帮我找出语法错误吗？</summary>
+            <p>能。当 JSON 格式不合法时，会提示大致的错误位置，方便你快速修正。</p>
+          </details>
+</div>
 
         <!-- Use Cases -->
         <div class="info-section">
@@ -194,6 +302,46 @@
   </main>
 
   <!-- Footer -->
+    <!-- More Tools Section -->
+    <section class="more-tools-section" aria-label="More tools">
+      <h2 class="more-tools-title" data-i18n="moreToolsTitle">🔍 Explore More Tools</h2>
+      <p class="more-tools-desc" data-i18n="moreToolsDesc">FreeToolset has 75+ free online tools. Browse more utilities to boost your productivity.</p>
+      <div class="more-tools-grid">
+        <a href="index.html" class="more-tool-card more-tool-home">
+          <span class="mt-icon">⚡</span>
+          <span class="mt-name" data-i18n="moreToolsAll">All 75+ Tools</span>
+        </a>
+        <a href="ai-studio.html" class="more-tool-card">
+          <span class="mt-icon">✨</span>
+          <span class="mt-name" data-i18n="✨ AI Studio">✨ AI Studio</span>
+        </a>
+        <a href="developer-tools.html" class="more-tool-card">
+          <span class="mt-icon">📂</span>
+          <span class="mt-name" data-i18n="catTitle_developer-tools">Developer Tools</span>
+        </a>
+        <a href="image-compressor.html" class="more-tool-card">
+          <span class="mt-icon">🖼️</span>
+          <span class="mt-name" data-i18n="cardTitle_image-compressor">🖼️ Image Compressor</span>
+        </a>
+        <a href="qr-code-generator.html" class="more-tool-card">
+          <span class="mt-icon">📱</span>
+          <span class="mt-name" data-i18n="cardTitle_qr-code-generator">📱 QR Code Generator</span>
+        </a>
+        <a href="password-generator.html" class="more-tool-card">
+          <span class="mt-icon">🔐</span>
+          <span class="mt-name" data-i18n="cardTitle_password-generator">🔐 Password Generator</span>
+        </a>
+        <a href="json-formatter.html" class="more-tool-card">
+          <span class="mt-icon">🧩</span>
+          <span class="mt-name" data-i18n="cardTitle_json-formatter">🧩 JSON Formatter</span>
+        </a>
+        <a href="word-counter.html" class="more-tool-card">
+          <span class="mt-icon">📝</span>
+          <span class="mt-name" data-i18n="cardTitle_word-counter">📝 Word Counter</span>
+        </a>
+      </div>
+    </section>
+
   <footer class="footer">
     <div class="footer-content">
       <div>
@@ -201,13 +349,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html">Tools</a>
-        <a href="about.html">About</a>
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
 
 </div>
     </div>
@@ -355,5 +503,10 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
 </body>
 </html>

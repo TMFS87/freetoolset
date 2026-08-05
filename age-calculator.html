@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Age Calculator · 年龄计算器 | FreeToolset</title>
+  <meta name="description" content="年龄计算器（Age Calculator）：免费在线工具，无需注册下载，浏览器本地运行，数据不上传，保护隐私。">
+  <meta name="keywords" content="age calculator, date of birth calculator, how old am i, age in days, birthday countdown">
+  <meta property="og:title" content="Age Calculator — FreeToolset">
+  <meta property="og:description" content="Calculate your exact age in years, months and days from your date of birth. See total days lived and days until your next birthday.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/age-calculator.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/age-calculator.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Age Calculator — FreeToolset">
+  <meta name="twitter:description" content="Calculate your exact age in years, months and days from your date of birth. See total days lived and days until your next birthday.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Age Calculator — Free Online Age & Birthday Calculator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/age-calculator.html","description":"Calculate your exact age in years, months and days from your date of birth. See total days lived and days until your next birthday.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Age Calculator",
+  "alternateName": "年龄计算器",
+  "url": "https://www.freetoolset.app/age-calculator.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "年龄计算器（Age Calculator）免费在线工具，无需注册，本地运行保护隐私。"
+}
+</script>
+  <!-- ft-faq-schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "年龄能精确到天吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。输入出生日期，工具会算出距今的多少年、多少个月、多少天，精确到天。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "算的是周岁还是虚岁？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "默认给出国际通用的周岁（精确到日）。虚岁按传统习俗通常在周岁基础上加 1，可自行换算。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "能算很久以前的日期吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以，支持任意历史日期，甚至百年前的出生日期也能准确计算。"
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active" data-i18n="Tools">Tools</a>
+      <a href="ai-studio.html" class="nav-link" data-i18n="✨ AI Studio">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>年龄计算器根据出生日期精确计算你的周岁、月数与天数，还能算出已经活了多少天、距离下次生日还有几天，适合填表、算工龄、生日提醒等场景。</p>
+  </section>
+
+      <!-- ft-deep -->
+  <section class="tool-deep">
+    <h2>📖 深入了解 Age Calculator</h2>
+    <h2>为什么需要它</h2>
+    <ul>
+      <li>Forms & Applications</li>
+      <li>Birthday Planning</li>
+      <li>Milestones</li>
+    </ul>
+    <h2>背后的原理</h2>
+    <p>Age Calculator 把若干输入代入固定的数学公式，实时算出结果。相比手算或临时搭表格，在线工具省去记忆公式与处理单位的麻烦，输入即出，还能反向推导。</p>
+    <h2>一个例子</h2>
+    <p>例如使用 Age Calculator 时，把关键参数填入对应框，结果会即时更新；试着调整任一输入，就能直观看到输出如何变化，方便做「如果…会怎样」的推演。</p>
+    <h2>常见误区</h2>
+    <ul>
+      <li>只看单一结果、忽略适用条件与前提假设</li>
+      <li>把估算值当精确结论直接使用</li>
+      <li>忽略单位差异（公制/英制）导致量级错误</li>
+    </ul>
+  </section>
+    <nav class="breadcrumb"><!-- breadcrumb-cat -->
+      <a href="index.html" data-i18n="Home">Home</a>
+      <span class="separator">/</span>
+      <a href="calculators.html" data-i18n="catTitle_calculators">Calculators</a>
+      <span class="separator">/</span>
+      <span class="current" data-i18n="cardTitle_age-calculator">Age Calculator</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>🎂 Age Calculator</h1>
+      <p>Calculate your exact age in years, months and days from your date of birth. See total days lived and days until your next birthday.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob">
+          </div>
+          <div class="form-row">
+            <label for="target">Age at Date</label>
+            <input type="date" id="target">
+          </div>
+        </div>
+        <div class="result-box empty" id="out">Select your date of birth to calculate your age.</div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Pick your date of birth.</li>
+            <li>Optionally change the &quot;age at&quot; date (defaults to today).</li>
+            <li>See your exact age broken down by years, months and days.</li>
+            <li>Check total days lived and the countdown to your next birthday.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>How is age calculated?</summary>
+            <p>We compute the difference between your birth date and the target date, accounting for varying month lengths and leap years, then express it as years, months and days.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can I calculate age on a future date?</summary>
+            <p>Yes. Change the &quot;Age at date&quot; field to any date to see how old you (or someone) will be then.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is my birth date stored anywhere?</summary>
+            <p>No. Everything is calculated locally in your browser and nothing is uploaded.</p>
+          </details>
+        
+          <!-- ft-zh-faq -->
+          <details class="faq-item">
+            <summary>年龄能精确到天吗？</summary>
+            <p>可以。输入出生日期，工具会算出距今的多少年、多少个月、多少天，精确到天。</p>
+          </details>
+          <details class="faq-item">
+            <summary>算的是周岁还是虚岁？</summary>
+            <p>默认给出国际通用的周岁（精确到日）。虚岁按传统习俗通常在周岁基础上加 1，可自行换算。</p>
+          </details>
+          <details class="faq-item">
+            <summary>能算很久以前的日期吗？</summary>
+            <p>可以，支持任意历史日期，甚至百年前的出生日期也能准确计算。</p>
+          </details>
+</div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">📝</div>
+              <div class="uc-content">
+                <h4>Forms &amp; Applications</h4>
+                <p>Get your exact age for visas, jobs and school forms.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🎉</div>
+              <div class="uc-content">
+                <h4>Birthday Planning</h4>
+                <p>Count down the days until the next celebration.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">👶</div>
+              <div class="uc-content">
+                <h4>Milestones</h4>
+                <p>Track a baby or child’s age in months and days.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="bmi-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏋️</span>
+              <span class="rt-name">BMI Calculator</span>
+            </a>
+            <a href="percentage-calculator.html" class="related-tool-card">
+              <span class="rt-icon">➗</span>
+              <span class="rt-name">Percentage Calculator</span>
+            </a>
+            <a href="loan-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏦</span>
+              <span class="rt-name">Loan Calculator</span>
+            </a>
+            <a href="mortgage-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏠</span>
+              <span class="rt-name">Mortgage Calculator</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+    <!-- More Tools Section -->
+    <section class="more-tools-section" aria-label="More tools">
+      <h2 class="more-tools-title" data-i18n="moreToolsTitle">🔍 Explore More Tools</h2>
+      <p class="more-tools-desc" data-i18n="moreToolsDesc">FreeToolset has 75+ free online tools. Browse more utilities to boost your productivity.</p>
+      <div class="more-tools-grid">
+        <a href="index.html" class="more-tool-card more-tool-home">
+          <span class="mt-icon">⚡</span>
+          <span class="mt-name" data-i18n="moreToolsAll">All 75+ Tools</span>
+        </a>
+        <a href="ai-studio.html" class="more-tool-card">
+          <span class="mt-icon">✨</span>
+          <span class="mt-name" data-i18n="✨ AI Studio">✨ AI Studio</span>
+        </a>
+        <a href="calculators.html" class="more-tool-card">
+          <span class="mt-icon">📂</span>
+          <span class="mt-name" data-i18n="catTitle_calculators">Calculators</span>
+        </a>
+        <a href="image-compressor.html" class="more-tool-card">
+          <span class="mt-icon">🖼️</span>
+          <span class="mt-name" data-i18n="cardTitle_image-compressor">🖼️ Image Compressor</span>
+        </a>
+        <a href="qr-code-generator.html" class="more-tool-card">
+          <span class="mt-icon">📱</span>
+          <span class="mt-name" data-i18n="cardTitle_qr-code-generator">📱 QR Code Generator</span>
+        </a>
+        <a href="password-generator.html" class="more-tool-card">
+          <span class="mt-icon">🔐</span>
+          <span class="mt-name" data-i18n="cardTitle_password-generator">🔐 Password Generator</span>
+        </a>
+        <a href="json-formatter.html" class="more-tool-card">
+          <span class="mt-icon">🧩</span>
+          <span class="mt-name" data-i18n="cardTitle_json-formatter">🧩 JSON Formatter</span>
+        </a>
+        <a href="word-counter.html" class="more-tool-card">
+          <span class="mt-icon">📝</span>
+          <span class="mt-name" data-i18n="cardTitle_word-counter">📝 Word Counter</span>
+        </a>
+      </div>
+    </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var dob=document.getElementById('dob'),target=document.getElementById('target'),out=document.getElementById('out');
+    target.value=new Date().toISOString().slice(0,10);
+    function calc(){
+      if(!dob.value){out.className='result-box empty';out.textContent='Select your date of birth to calculate your age.';return;}
+      var b=new Date(dob.value),t=target.value?new Date(target.value):new Date();
+      if(b>t){out.className='result-box empty';out.textContent='Birth date is after the target date.';return;}
+      var y=t.getFullYear()-b.getFullYear(),m=t.getMonth()-b.getMonth(),d=t.getDate()-b.getDate();
+      if(d<0){m--;d+=new Date(t.getFullYear(),t.getMonth(),0).getDate();}
+      if(m<0){y--;m+=12;}
+      var totalDays=Math.floor((t-b)/86400000);
+      var nb=new Date(t.getFullYear(),b.getMonth(),b.getDate());if(nb<t)nb.setFullYear(t.getFullYear()+1);
+      var untilBday=Math.ceil((nb-t)/86400000);
+      out.className='result-box';
+      out.innerHTML='<div class="gen-big">'+y+' <span style="font-size:1rem;color:var(--text-secondary)">years</span> '+m+' <span style="font-size:1rem;color:var(--text-secondary)">months</span> '+d+' <span style="font-size:1rem;color:var(--text-secondary)">days</span></div>'+
+        '<div style="margin-top:10px;color:var(--text-secondary);font-size:.92rem">Total: '+totalDays.toLocaleString()+' days &nbsp;·&nbsp; '+Math.floor(totalDays/7).toLocaleString()+' weeks<br>Next birthday in '+untilBday+' day'+(untilBday===1?'':'s')+'</div>';
+    }
+    dob.addEventListener('input',calc);target.addEventListener('input',calc);
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

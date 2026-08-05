@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL 编码原理：为什么网址里的中文会变成 %E4%... | FreeToolset 教程</title>
+  <meta name="description" content="讲清百分号编码（URL Encode）的作用与 encodeURI / encodeURIComponent 的区别，附在线编解码工具。">
+  <meta name="keywords" content="url 编码, urlencode, 百分号编码, encodeuri">
+  <meta property="og:title" content="URL 编码原理：为什么网址里的中文会变成 %E4%...">
+  <meta property="og:description" content="讲清百分号编码（URL Encode）的作用与 encodeURI / encodeURIComponent 的区别，附在线编解码工具。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.freetoolset.app/blog/url-encoding-explained.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="URL 编码原理：为什么网址里的中文会变成 %E4%...">
+  <meta name="twitter:description" content="讲清百分号编码（URL Encode）的作用与 encodeURI / encodeURIComponent 的区别，附在线编解码工具。">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/blog/url-encoding-explained.html">
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"URL 编码原理：为什么网址里的中文会变成 %E4%...","description":"讲清百分号编码（URL Encode）的作用与 encodeURI / encodeURIComponent 的区别，附在线编解码工具。","url":"https://www.freetoolset.app/blog/url-encoding-explained.html","mainEntityOfPage":"https://www.freetoolset.app/blog/url-encoding-explained.html","publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <!-- ft-faq-schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "这篇《URL 编码原理：为什么网址里的中文会变成 %E4%...》主要讲什么？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "本文系统讲解「URL 编码原理：为什么网址里的中文会变成 %E4%...」的核心方法与实操要点，并推荐配套的 FreeToolset 免费在线工具，帮助你在浏览器里快速完成，无需注册、数据本地处理。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "在哪里可以实操练习？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "文末「相关工具」列出了 FreeToolset 上对应的免费在线工具，打开即用，所有计算都在本地浏览器完成，保护隐私。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "这些工具要收费吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "FreeToolset 的全部工具均免费，在浏览器本地运行、不上传数据，可放心用于学习与工作。"
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="../index.html" class="navbar-brand"><span class="logo-icon">⚡</span> FreeToolset</a>
+    <div class="navbar-nav">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="../ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="../index.html#tools" class="nav-link">Tools</a>
+      <a href="../about.html" class="nav-link">About</a>
+      <a href="../privacy-policy.html" class="nav-link">Privacy</a>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <article class="article">
+      <p class="post-meta">FreeToolset · 实用教程</p>
+      <h1>URL 编码原理：为什么网址里的中文会变成 %E4%...</h1>
+    <p>当你在地址栏看到 %E4%B8%AD 这样的字符，那就是 URL 编码（百分号编码）的功劳。它让中文和特殊符号能安全地出现在网址里。</p>
+    <h2>为什么需要 URL 编码</h2>
+    <p>URL 只允许一部分 ASCII 字符。空格、中文、&、= 等字符会被误解，必须编码为 % 加两位十六进制。</p>
+    <h2>encodeURI 与 encodeURIComponent</h2>
+    <ul>
+      <li>encodeURI 保留 ? # / 等结构字符，用于整条网址</li>
+      <li>encodeURIComponent 编码得更彻底，用于单个参数值</li>
+      <li>拼接查询字符串时应使用后者</li>
+    </ul>
+    <h2>在线编解码</h2>
+    <p>FreeToolset URL 编码工具同时支持两种方式互转，方便调试接口参数。</p>
+    <div class="tip">💡 参数值里含有 & 时务必用 encodeURIComponent，否则会被当成新参数分隔符。</div>
+      <div class="related-posts">
+        <h3>🔗 相关工具</h3>
+      <a href="../url-encoder.html">URL 编码/解码</a>
+        <h3>📚 相关文章</h3>
+      <a href="what-is-base64.html">Base64 是什么？一文讲清编码原理与常见用途</a>
+      <a href="regex-for-beginners.html">正则表达式入门：30 分钟看懂匹配、分组与在线测试</a>
+      </div>
+          <!-- ft-zh-faq -->
+      <section class="info-section" style="margin-top:32px">
+        <h2>❓ 常见问题</h2>
+        <details class="faq-item">
+          <summary>这篇《URL 编码原理：为什么网址里的中文会变成 %E4%...》主要讲什么？</summary>
+          <p>本文系统讲解「URL 编码原理：为什么网址里的中文会变成 %E4%...」的核心方法与实操要点，并推荐配套的 FreeToolset 免费在线工具，帮助你在浏览器里快速完成，无需注册、数据本地处理。</p>
+        </details>
+        <details class="faq-item">
+          <summary>在哪里可以实操练习？</summary>
+          <p>文末「相关工具」列出了 FreeToolset 上对应的免费在线工具，打开即用，所有计算都在本地浏览器完成，保护隐私。</p>
+        </details>
+        <details class="faq-item">
+          <summary>这些工具要收费吗？</summary>
+          <p>FreeToolset 的全部工具均免费，在浏览器本地运行、不上传数据，可放心用于学习与工作。</p>
+        </details>
+      </section>
+</article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand"><span class="logo-icon">⚡</span> FreeToolset</div>
+        <p class="footer-desc">免费在线工具，全部在浏览器本地运行，数据不上传。</p>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html">Tools</a>
+        <a href="../ai-studio.html">AI Studio</a>
+        <a href="../about.html">About</a>
+        <a href="../privacy-policy.html">Privacy</a>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 FreeToolset. All tools run locally in your browser.</p></div>
+  </footer>
+
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

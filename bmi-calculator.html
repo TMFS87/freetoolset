@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Calculator · BMI计算器 | FreeToolset</title>
+  <meta name="description" content="BMI计算器（BMI Calculator）：免费在线工具，无需注册下载，浏览器本地运行，数据不上传，保护隐私。">
+  <meta name="keywords" content="bmi calculator, body mass index, healthy weight calculator, bmi chart, metric imperial bmi">
+  <meta property="og:title" content="BMI Calculator — FreeToolset">
+  <meta property="og:description" content="Calculate your Body Mass Index (BMI) instantly from height and weight. Supports metric and imperial units with a healthy-weight category breakdown.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/bmi-calculator.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/bmi-calculator.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BMI Calculator — FreeToolset">
+  <meta name="twitter:description" content="Calculate your Body Mass Index (BMI) instantly from height and weight. Supports metric and imperial units with a healthy-weight category breakdown.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"BMI Calculator — Free Online Body Mass Index Calculator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/bmi-calculator.html","description":"Calculate your Body Mass Index (BMI) instantly from height and weight. Supports metric and imperial units with a healthy-weight category breakdown.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "BMI Calculator",
+  "alternateName": "BMI计算器",
+  "url": "https://www.freetoolset.app/bmi-calculator.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "BMI计算器（BMI Calculator）免费在线工具，无需注册，本地运行保护隐私。"
+}
+</script>
+  <!-- ft-faq-schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "BMI 多少算正常？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "成年人的健康 BMI 范围通常是 18.5–24.9。低于 18.5 为偏瘦，25–29.9 为超重，30 及以上为肥胖。本工具会直接给出分级，但仅作健康参考，不作为医学诊断。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "为什么健身的人 BMI 偏高？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "BMI 不区分肌肉和脂肪。肌肉量高的人（如运动员）体重更大，BMI 可能显示「超重」但实际很健康。建议结合体脂率一起看。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "儿童可以用这个 BMI 计算器吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "本工具使用成人公式，适合 20 岁以上人群。儿童青少年应使用按年龄、性别分级的 BMI 百分位图表（儿科标准）。"
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active" data-i18n="Tools">Tools</a>
+      <a href="ai-studio.html" class="nav-link" data-i18n="✨ AI Studio">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>BMI（身体质量指数）是衡量体重是否健康的常用指标。本工具支持公制与英制，输入身高体重即可得出 BMI 数值与偏瘦/正常/超重/肥胖分级，适合健身、减脂、体检前自查。</p>
+  </section>
+
+      <!-- ft-deep -->
+  <section class="tool-deep">
+    <h2>📖 深入了解 BMI Calculator</h2>
+    <h2>为什么需要它</h2>
+    <ul>
+      <li>Health Checkups</li>
+      <li>Fitness Goals</li>
+      <li>Diet Planning</li>
+    </ul>
+    <h2>背后的原理</h2>
+    <p>BMI Calculator 把若干输入代入固定的数学公式，实时算出结果。相比手算或临时搭表格，在线工具省去记忆公式与处理单位的麻烦，输入即出，还能反向推导。</p>
+    <h2>一个例子</h2>
+    <p>例如使用 BMI Calculator 时，把关键参数填入对应框，结果会即时更新；试着调整任一输入，就能直观看到输出如何变化，方便做「如果…会怎样」的推演。</p>
+    <h2>常见误区</h2>
+    <ul>
+      <li>只看单一结果、忽略适用条件与前提假设</li>
+      <li>把估算值当精确结论直接使用</li>
+      <li>忽略单位差异（公制/英制）导致量级错误</li>
+    </ul>
+  </section>
+    <nav class="breadcrumb"><!-- breadcrumb-cat -->
+      <a href="index.html" data-i18n="Home">Home</a>
+      <span class="separator">/</span>
+      <a href="calculators.html" data-i18n="catTitle_calculators">Calculators</a>
+      <span class="separator">/</span>
+      <span class="current" data-i18n="cardTitle_bmi-calculator">BMI Calculator</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>🏋️ BMI Calculator</h1>
+      <p>Calculate your Body Mass Index (BMI) instantly from height and weight. Supports metric and imperial units with a healthy-weight category breakdown.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="form-row">
+          <label for="unit">Units</label>
+          <select id="unit">
+            <option value="metric">Metric (cm, kg)</option>
+            <option value="imperial">Imperial (in, lb)</option>
+          </select>
+        </div>
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="height">Height (<span id="hu">cm</span>)</label>
+            <input type="number" id="height" placeholder="170" min="1">
+          </div>
+          <div class="form-row">
+            <label for="weight">Weight (<span id="wu">kg</span>)</label>
+            <input type="number" id="weight" placeholder="65" min="1">
+          </div>
+        </div>
+        <div class="result-box empty" id="out">Enter your height and weight to see your BMI.</div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Choose metric (cm/kg) or imperial (in/lb) units.</li>
+            <li>Enter your height and weight.</li>
+            <li>Your BMI updates instantly below.</li>
+            <li>Read the category to see your healthy-weight status.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>What is a healthy BMI range?</summary>
+            <p>For most adults a BMI between 18.5 and 24.9 is considered healthy. Below 18.5 is underweight, 25–29.9 is overweight, and 30+ is obese.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is BMI accurate for athletes?</summary>
+            <p>BMI does not distinguish muscle from fat, so very muscular people may show a high BMI while being healthy. Use it as a general guide, not a diagnosis.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Does this work for children?</summary>
+            <p>This calculator uses the adult formula. Children and teens should use age- and sex-specific BMI percentiles from a pediatric chart.</p>
+          </details>
+        
+          <!-- ft-zh-faq -->
+          <details class="faq-item">
+            <summary>BMI 多少算正常？</summary>
+            <p>成年人的健康 BMI 范围通常是 18.5–24.9。低于 18.5 为偏瘦，25–29.9 为超重，30 及以上为肥胖。本工具会直接给出分级，但仅作健康参考，不作为医学诊断。</p>
+          </details>
+          <details class="faq-item">
+            <summary>为什么健身的人 BMI 偏高？</summary>
+            <p>BMI 不区分肌肉和脂肪。肌肉量高的人（如运动员）体重更大，BMI 可能显示「超重」但实际很健康。建议结合体脂率一起看。</p>
+          </details>
+          <details class="faq-item">
+            <summary>儿童可以用这个 BMI 计算器吗？</summary>
+            <p>本工具使用成人公式，适合 20 岁以上人群。儿童青少年应使用按年龄、性别分级的 BMI 百分位图表（儿科标准）。</p>
+          </details>
+</div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🩺</div>
+              <div class="uc-content">
+                <h4>Health Checkups</h4>
+                <p>Quickly self-assess weight status before a doctor visit.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🏃</div>
+              <div class="uc-content">
+                <h4>Fitness Goals</h4>
+                <p>Track how your BMI changes as you lose or gain weight.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">📋</div>
+              <div class="uc-content">
+                <h4>Diet Planning</h4>
+                <p>Use your category as a starting point for a nutrition plan.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="age-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🎂</span>
+              <span class="rt-name">Age Calculator</span>
+            </a>
+            <a href="percentage-calculator.html" class="related-tool-card">
+              <span class="rt-icon">➗</span>
+              <span class="rt-name">Percentage Calculator</span>
+            </a>
+            <a href="loan-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏦</span>
+              <span class="rt-name">Loan Calculator</span>
+            </a>
+            <a href="mortgage-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏠</span>
+              <span class="rt-name">Mortgage Calculator</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+    <!-- More Tools Section -->
+    <section class="more-tools-section" aria-label="More tools">
+      <h2 class="more-tools-title" data-i18n="moreToolsTitle">🔍 Explore More Tools</h2>
+      <p class="more-tools-desc" data-i18n="moreToolsDesc">FreeToolset has 75+ free online tools. Browse more utilities to boost your productivity.</p>
+      <div class="more-tools-grid">
+        <a href="index.html" class="more-tool-card more-tool-home">
+          <span class="mt-icon">⚡</span>
+          <span class="mt-name" data-i18n="moreToolsAll">All 75+ Tools</span>
+        </a>
+        <a href="ai-studio.html" class="more-tool-card">
+          <span class="mt-icon">✨</span>
+          <span class="mt-name" data-i18n="✨ AI Studio">✨ AI Studio</span>
+        </a>
+        <a href="calculators.html" class="more-tool-card">
+          <span class="mt-icon">📂</span>
+          <span class="mt-name" data-i18n="catTitle_calculators">Calculators</span>
+        </a>
+        <a href="image-compressor.html" class="more-tool-card">
+          <span class="mt-icon">🖼️</span>
+          <span class="mt-name" data-i18n="cardTitle_image-compressor">🖼️ Image Compressor</span>
+        </a>
+        <a href="qr-code-generator.html" class="more-tool-card">
+          <span class="mt-icon">📱</span>
+          <span class="mt-name" data-i18n="cardTitle_qr-code-generator">📱 QR Code Generator</span>
+        </a>
+        <a href="password-generator.html" class="more-tool-card">
+          <span class="mt-icon">🔐</span>
+          <span class="mt-name" data-i18n="cardTitle_password-generator">🔐 Password Generator</span>
+        </a>
+        <a href="json-formatter.html" class="more-tool-card">
+          <span class="mt-icon">🧩</span>
+          <span class="mt-name" data-i18n="cardTitle_json-formatter">🧩 JSON Formatter</span>
+        </a>
+        <a href="word-counter.html" class="more-tool-card">
+          <span class="mt-icon">📝</span>
+          <span class="mt-name" data-i18n="cardTitle_word-counter">📝 Word Counter</span>
+        </a>
+      </div>
+    </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var unit=document.getElementById('unit'),h=document.getElementById('height'),w=document.getElementById('weight'),out=document.getElementById('out'),hu=document.getElementById('hu'),wu=document.getElementById('wu');
+    function calc(){
+      var H=parseFloat(h.value),W=parseFloat(w.value);
+      if(!H||!W||H<=0||W<=0){out.className='result-box empty';out.textContent='Enter your height and weight to see your BMI.';return;}
+      var bmi;
+      if(unit.value==='metric'){var m=H/100;bmi=W/(m*m);}else{bmi=703*W/(H*H);}
+      bmi=Math.round(bmi*10)/10;
+      var cat,color;
+      if(bmi<18.5){cat='Underweight';color='#38bdf8';}
+      else if(bmi<25){cat='Healthy weight';color='var(--success)';}
+      else if(bmi<30){cat='Overweight';color='var(--warning)';}
+      else{cat='Obese';color='#f87171';}
+      out.className='result-box';
+      out.innerHTML='<div class="gen-big" style="color:'+color+'">'+bmi+'</div><div style="font-weight:600;margin-top:4px">'+cat+'</div><div style="color:var(--text-secondary);margin-top:8px;font-size:.9rem">Healthy range: 18.5 – 24.9</div>';
+    }
+    function ulabel(){if(unit.value==='metric'){hu.textContent='cm';wu.textContent='kg';}else{hu.textContent='in';wu.textContent='lb';}calc();}
+    unit.addEventListener('change',ulabel);h.addEventListener('input',calc);w.addEventListener('input',calc);
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

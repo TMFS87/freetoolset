@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Blog Post Writer — Free AI Blog Generator | FreeToolset</title>
-  <meta name="description" content="Write complete blog posts with AI. Generate well-structured, SEO-friendly articles on any topic. Free online AI blog writing tool.">
+  <title>AI Blog Post Writer · AI博客写作器 | FreeToolset</title>
+  <meta name="description" content="AI博客写作器（AI Blog Post Writer）：免费在线工具，无需注册下载，浏览器本地运行，数据不上传，保护隐私。">
   <meta name="keywords" content="ai blog writer, ai blog generator, blog post generator, ai content writer, article generator">
   <meta property="og:title" content="AI Blog Post Writer — FreeToolset">
   <meta property="og:description" content="Write complete blog posts with AI. Free online blog writing tool.">
@@ -27,7 +27,142 @@
     @keyframes spin { to { transform:rotate(360deg); } }
     .ai-error { margin-top:12px; padding:12px 16px; background:rgba(248,81,73,0.1); border:1px solid rgba(248,81,73,0.3); border-radius:var(--radius-sm); font-size:0.875rem; color:var(--danger); display:none; }
     .ai-error.show { display:block; }
+  
+    /* More Tools Section */
+    .more-tools-section {
+      margin: 48px 0 32px;
+      padding: 32px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+    }
+
+    .more-tools-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .more-tools-desc {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .more-tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 12px;
+    }
+
+    .more-tool-card {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 16px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all var(--transition);
+    }
+
+    .more-tool-card:hover {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    .more-tool-home {
+      background: linear-gradient(135deg, var(--primary-light), var(--bg));
+      border-color: var(--primary);
+    }
+
+    .mt-icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .mt-name {
+      line-height: 1.3;
+    }
+
+    @media (max-width: 640px) {
+      .more-tools-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
   </style>
+  <!-- ft-og-social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/ai-blog-writer.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Blog Post Writer — FreeToolset">
+  <meta name="twitter:description" content="Write complete blog posts with AI. Free online blog writing tool.">
+  <!-- ft-schema -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"AI Blog Post Writer — Free AI Blog Generator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/ai-blog-writer.html","description":"Write complete blog posts with AI. Generate well-structured, SEO-friendly articles on any topic. Free online AI blog writing tool.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "AI Blog Post Writer",
+  "alternateName": "AI博客写作器",
+  "url": "https://www.freetoolset.app/ai-blog-writer.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "AI博客写作器（AI Blog Post Writer）免费在线工具，无需注册，本地运行保护隐私。"
+}
+</script>
+  <!-- ft-faq-schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "AI 写博客免费吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "免费。每天有 5 次免费额度，GLM 模型每次消耗 0.5 额度、DeepSeek 每次 1 额度，额度用完可到 AI Studio 获取更多。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "生成的文章可以商用吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。工具生成的内容归你所有，可用于博客、公众号、营销等任何用途。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "支持中文写作吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "支持。可输入中文主题，生成中文或中英双语文章，也能指定语气和长度。"
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -38,26 +173,35 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="index.html#tools" class="nav-link active">Tools</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="privacy-policy.html" class="nav-link">Privacy</a>
-      <button class="nav-lang" title="Switch Language" onclick="alert('Language switching coming soon!')">🌐</button>
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="ai-studio.html" class="nav-link" data-i18n="✨ AI Studio">✨ AI Studio</a>
+      <a href="index.html#tools" class="nav-link active" data-i18n="Tools">Tools</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <a href="privacy-policy.html" class="nav-link" data-i18n="Privacy">Privacy</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
     </div>
   </nav>
 
   <main class="main-content">
+  <!-- ft-zh-intro -->
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>AI 博客写作助手可根据主题生成结构完整、可读性强的文章，自带小标题与要点，帮助内容创作者高效产出、保持更新频率，适合自媒体、企业博客与 SEO 内容矩阵。</p>
+  </section>
+
 
     <!-- Breadcrumb -->
-    <nav class="breadcrumb">
-      <a href="index.html">Home</a>
+    <nav class="breadcrumb"><!-- breadcrumb-cat -->
+      <a href="index.html" data-i18n="Home">Home</a>
       <span class="separator">/</span>
-      <span class="current">AI Blog Post Writer</span>
+      <a href="ai-tools.html" data-i18n="catTitle_ai-tools">AI Writing Tools</a>
+      <span class="separator">/</span>
+      <span class="current" data-i18n="cardTitle_ai-blog-writer">AI Blog Post Writer</span>
     </nav>
 
     <!-- Tool Header -->
     <div class="tool-header">
-      <h1>📝 AI Blog Post Writer</h1>
+      <h1 data-i18n="📝 AI Blog Post Writer">📝 AI Blog Post Writer</h1>
       <p>Generate complete, well-structured blog posts on any topic. SEO-friendly with clear headings and engaging content.</p>
     </div>
 
@@ -112,16 +256,29 @@
         <!-- Result -->
         <div class="ai-result empty" id="resultArea">Your generated blog post will appear here.</div>
 
+        <!-- Credit Bar -->
+        <div class="credit-bar" style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:16px;flex-wrap:wrap;gap:10px;">
+          <div style="display:flex;align-items:center;gap:12px;font-size:0.8rem;">
+            <span style="font-weight:700;color:var(--primary);">💎 <span id="creditNum">5.0</span> credits</span>
+            <span style="color:var(--text-muted);">·</span>
+            <span style="color:var(--text-secondary);" id="creditFree">5.0 free today</span>
+          </div>
+          <div style="display:flex;gap:6px;">
+            <button class="model-opt active" data-model="glm" style="padding:4px 12px;border:1px solid var(--border);border-radius:100px;font-size:0.75rem;font-weight:600;cursor:pointer;background:var(--primary);color:#fff;font-family:inherit;">GLM 0.5x</button>
+            <button class="model-opt" data-model="deepseek" style="padding:4px 12px;border:1px solid var(--border);border-radius:100px;font-size:0.75rem;font-weight:600;cursor:pointer;background:var(--bg);color:var(--text-secondary);font-family:inherit;">DeepSeek 1x</button>
+          </div>
+        </div>
+
         <!-- Quota Info -->
         <div class="quota-info">
-          <span>🆓 Free daily limit</span>
-          <span class="quota-remaining" id="quotaDisplay">2 / 2 remaining</span>
+          <span>🆓 Shared daily credits (all AI tools)</span>
+          <span class="quota-remaining" id="quotaDisplay">Loading...</span>
         </div>
 
         <!-- Upgrade Notice -->
         <div class="upgrade-notice" id="upgradeNotice">
-          <p>🚀 Upgrade to Pro for unlimited access</p>
-          <a href="#">Upgrade to Pro →</a>
+          <p>🚀 Out of free credits? Get more or try AI Studio</p>
+          <a href="ai-studio.html" style="display:inline-block;padding:8px 20px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;border-radius:var(--radius-sm);font-weight:600;font-size:0.85rem;">Open AI Studio →</a>
         </div>
 
         <!-- Privacy Notice -->
@@ -166,7 +323,21 @@
             <summary>Can I use the generated posts commercially?</summary>
             <p>Absolutely! The content is yours to use for your blog, website, or any commercial purpose. We recommend adding your own insights and editing for the best results.</p>
           </details>
-        </div>
+        
+          <!-- ft-zh-faq -->
+          <details class="faq-item">
+            <summary>AI 写博客免费吗？</summary>
+            <p>免费。每天有 5 次免费额度，GLM 模型每次消耗 0.5 额度、DeepSeek 每次 1 额度，额度用完可到 AI Studio 获取更多。</p>
+          </details>
+          <details class="faq-item">
+            <summary>生成的文章可以商用吗？</summary>
+            <p>可以。工具生成的内容归你所有，可用于博客、公众号、营销等任何用途。</p>
+          </details>
+          <details class="faq-item">
+            <summary>支持中文写作吗？</summary>
+            <p>支持。可输入中文主题，生成中文或中英双语文章，也能指定语气和长度。</p>
+          </details>
+</div>
 
         <!-- Use Cases -->
         <div class="info-section">
@@ -225,6 +396,46 @@
   </main>
 
   <!-- Footer -->
+    <!-- More Tools Section -->
+    <section class="more-tools-section" aria-label="More tools">
+      <h2 class="more-tools-title" data-i18n="moreToolsTitle">🔍 Explore More Tools</h2>
+      <p class="more-tools-desc" data-i18n="moreToolsDesc">FreeToolset has 75+ free online tools. Browse more utilities to boost your productivity.</p>
+      <div class="more-tools-grid">
+        <a href="index.html" class="more-tool-card more-tool-home">
+          <span class="mt-icon">⚡</span>
+          <span class="mt-name" data-i18n="moreToolsAll">All 75+ Tools</span>
+        </a>
+        <a href="ai-studio.html" class="more-tool-card">
+          <span class="mt-icon">✨</span>
+          <span class="mt-name" data-i18n="✨ AI Studio">✨ AI Studio</span>
+        </a>
+        <a href="ai-tools.html" class="more-tool-card">
+          <span class="mt-icon">📂</span>
+          <span class="mt-name" data-i18n="catTitle_ai-tools">AI Writing Tools</span>
+        </a>
+        <a href="image-compressor.html" class="more-tool-card">
+          <span class="mt-icon">🖼️</span>
+          <span class="mt-name" data-i18n="cardTitle_image-compressor">🖼️ Image Compressor</span>
+        </a>
+        <a href="qr-code-generator.html" class="more-tool-card">
+          <span class="mt-icon">📱</span>
+          <span class="mt-name" data-i18n="cardTitle_qr-code-generator">📱 QR Code Generator</span>
+        </a>
+        <a href="password-generator.html" class="more-tool-card">
+          <span class="mt-icon">🔐</span>
+          <span class="mt-name" data-i18n="cardTitle_password-generator">🔐 Password Generator</span>
+        </a>
+        <a href="json-formatter.html" class="more-tool-card">
+          <span class="mt-icon">🧩</span>
+          <span class="mt-name" data-i18n="cardTitle_json-formatter">🧩 JSON Formatter</span>
+        </a>
+        <a href="word-counter.html" class="more-tool-card">
+          <span class="mt-icon">📝</span>
+          <span class="mt-name" data-i18n="cardTitle_word-counter">📝 Word Counter</span>
+        </a>
+      </div>
+    </section>
+
   <footer class="footer">
     <div class="footer-content">
       <div>
@@ -232,13 +443,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html">Tools</a>
-        <a href="about.html">About</a>
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -250,7 +461,6 @@
     (function () {
       /* ---------- Configuration ---------- */
       var TOOL_NAME = 'blog-writer';
-      var DAILY_LIMIT = 2;
 
       /* ---------- DOM Elements ---------- */
       var topic = document.getElementById('topic');
@@ -264,32 +474,44 @@
       var quotaDisplay = document.getElementById('quotaDisplay');
       var upgradeNotice = document.getElementById('upgradeNotice');
 
-      /* ---------- Quota Management (localStorage) ---------- */
-      function getQuotaKey() {
-        var today = new Date().toISOString().slice(0, 10);
-        return TOOL_NAME + '_' + today;
+      /* ---------- User ID & Credits ---------- */
+      var USER_ID_KEY = 'ft_user_id';
+      var userId = localStorage.getItem(USER_ID_KEY);
+      if (!userId) {
+        userId = 'u_' + Date.now() + '_' + Math.random().toString(36).substr(2, 8);
+        localStorage.setItem(USER_ID_KEY, userId);
       }
 
-      function getRemaining() {
-        var key = getQuotaKey();
-        var used = parseInt(localStorage.getItem(key) || '0', 10);
-        return Math.max(0, DAILY_LIMIT - used);
-      }
+      // Model selector
+      var selectedModel = 'glm';
+      document.querySelectorAll('.model-opt').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.model-opt').forEach(function(b) {
+            b.classList.remove('active');
+            b.style.background = 'var(--bg)';
+            b.style.color = 'var(--text-secondary)';
+          });
+          this.classList.add('active');
+          this.style.background = 'var(--primary)';
+          this.style.color = '#fff';
+          selectedModel = this.getAttribute('data-model');
+        });
+      });
 
-      function incrementUsage() {
-        var key = getQuotaKey();
-        var used = parseInt(localStorage.getItem(key) || '0', 10);
-        localStorage.setItem(key, String(used + 1));
-      }
-
-      function updateQuotaDisplay() {
-        var remaining = getRemaining();
-        quotaDisplay.textContent = remaining + ' / ' + DAILY_LIMIT + ' remaining';
-        if (remaining === 0) {
-          upgradeNotice.classList.add('show');
-        } else {
-          upgradeNotice.classList.remove('show');
-        }
+      // Load credits
+      async function loadCredits() {
+        try {
+          var resp = await fetch('/api/credits?userId=' + userId);
+          var data = await resp.json();
+          if (data.success) {
+            document.getElementById('creditNum').textContent = parseFloat(data.data.totalCredits).toFixed(1);
+            document.getElementById('creditFree').textContent = parseFloat(data.data.freeCredits).toFixed(1) + ' free today';
+            document.getElementById('quotaDisplay').textContent = parseFloat(data.data.totalCredits).toFixed(1) + ' credits remaining';
+            if (data.data.totalCredits <= 0) {
+              document.getElementById('upgradeNotice').classList.add('show');
+            }
+          }
+        } catch(e) {}
       }
 
       /* ---------- Error Handling ---------- */
@@ -310,12 +532,6 @@
         if (!topic.value.trim()) { showError('Please enter a topic.'); return; }
         if (!keywords.value.trim()) { showError('Please enter keywords.'); return; }
 
-        // Check quota
-        if (getRemaining() <= 0) {
-          showError('You have reached your daily free limit. Please come back tomorrow or upgrade to Pro.');
-          return;
-        }
-
         // Set loading state
         generateBtn.disabled = true;
         generateBtn.innerHTML = '<span class="loading-spinner"></span>Writing...';
@@ -334,7 +550,9 @@
                 keywords: keywords.value.trim(),
                 tone: tone.value,
                 length: length.value
-              }
+              },
+              model: selectedModel,
+              userId: userId
             })
           });
 
@@ -344,8 +562,18 @@
             resultArea.className = 'ai-result';
             resultArea.textContent = data.result;
             copyBtn.style.display = '';
-            incrementUsage();
-            updateQuotaDisplay();
+            if (data.creditsRemaining !== undefined) {
+              document.getElementById('creditNum').textContent = parseFloat(data.creditsRemaining).toFixed(1);
+              document.getElementById('quotaDisplay').textContent = parseFloat(data.creditsRemaining).toFixed(1) + ' credits remaining';
+              if (data.creditsRemaining <= 0) {
+                document.getElementById('upgradeNotice').classList.add('show');
+              }
+            }
+          } else if (data.needsCredits) {
+            resultArea.className = 'ai-result empty';
+            resultArea.textContent = 'Your generated blog post will appear here.';
+            showError('You are out of free credits. Visit AI Studio to get more.');
+            document.getElementById('upgradeNotice').classList.add('show');
           } else {
             resultArea.className = 'ai-result empty';
             resultArea.textContent = 'Your generated blog post will appear here.';
@@ -384,10 +612,15 @@
       copyBtn.addEventListener('click', copyResult);
 
       /* ---------- Init ---------- */
-      updateQuotaDisplay();
+      loadCredits();
     })();
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
 </body>
 </html>

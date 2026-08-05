@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JWT Decoder · JWT解码器 | FreeToolset</title>
+  <meta name="description" content="JWT解码器（JWT Decoder）：免费在线工具，无需注册下载，浏览器本地运行，数据不上传，保护隐私。">
+  <meta name="keywords" content="jwt decoder, decode jwt, json web token decoder, jwt parser, jwt viewer">
+  <meta property="og:title" content="JWT Decoder — FreeToolset">
+  <meta property="og:description" content="Decode a JSON Web Token (JWT) to inspect its header and payload. Views claims like exp and iat locally without sending the token anywhere.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/jwt-decoder.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/jwt-decoder.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="JWT Decoder — FreeToolset">
+  <meta name="twitter:description" content="Decode a JSON Web Token (JWT) to inspect its header and payload. Views claims like exp and iat locally without sending the token anywhere.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"JWT Decoder — Free Online JWT Token Decoder","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/jwt-decoder.html","description":"Decode a JSON Web Token (JWT) to inspect its header and payload. Views claims like exp and iat locally without sending the token anywhere.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "JWT Decoder",
+  "alternateName": "JWT解码器",
+  "url": "https://www.freetoolset.app/jwt-decoder.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "JWT解码器（JWT Decoder）免费在线工具，无需注册，本地运行保护隐私。"
+}
+</script>
+  <!-- ft-faq-schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "JWT解码器需要联网吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不需要。所有处理都在你的浏览器本地完成，数据不上传服务器，离线也能用。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "JWT解码器支持大文件或批量吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "在浏览器性能范围内支持较大内容处理；具体上限取决于你的设备内存。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "JWT解码器是免费的吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "是的，完全免费，无需注册，打开即用。"
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active" data-i18n="Tools">Tools</a>
+      <a href="ai-studio.html" class="nav-link" data-i18n="✨ AI Studio">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>JWT 解码器可解析 JSON Web Token 的头部和载荷，查看 exp、iat 等声明，全部在浏览器本地完成、不上传令牌，适合调试登录鉴权。</p>
+  </section>
+
+      <!-- ft-deep -->
+  <section class="tool-deep">
+    <h2>📖 深入了解 JWT Decoder</h2>
+    <h2>为什么需要它</h2>
+    <ul>
+      <li>Auth Debugging</li>
+      <li>Expiry Checks</li>
+      <li>Testing</li>
+    </ul>
+    <h2>背后的原理</h2>
+    <p>JWT Decoder 面向开发调试场景，在本地完成格式转换、压缩或解码，不把令牌、代码等敏感内容传到第三方服务器。</p>
+    <h2>一个例子</h2>
+    <p>例如把一段 JWT 或 CSV 粘进 JWT Decoder，本地立即解析或转换，结果可直接复制使用，敏感数据全程不出浏览器。</p>
+    <h2>常见误区</h2>
+    <ul>
+      <li>把 JWT 等可解码内容误当加密</li>
+      <li>压缩后未保留可读源码，出问题难排查</li>
+      <li>用了需要上传的在线工具处理密钥/令牌</li>
+    </ul>
+  </section>
+    <nav class="breadcrumb"><!-- breadcrumb-cat -->
+      <a href="index.html" data-i18n="Home">Home</a>
+      <span class="separator">/</span>
+      <a href="developer-tools.html" data-i18n="catTitle_developer-tools">Developer Tools</a>
+      <span class="separator">/</span>
+      <span class="current" data-i18n="cardTitle_jwt-decoder">JWT Decoder</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>🔐 JWT Decoder</h1>
+      <p>Decode a JSON Web Token (JWT) to inspect its header and payload. Views claims like exp and iat locally without sending the token anywhere.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="form-row"><label for="inp">JWT</label><textarea id="inp" class="gen-mono" placeholder="eyJhbGciOi..."></textarea></div>
+        <div class="form-row"><label>Header</label><textarea id="head" class="gen-mono" readonly style="min-height:80px"></textarea></div>
+        <div class="form-row"><label>Payload <span id="exp" style="color:var(--text-secondary);font-weight:400"></span></label><textarea id="pay" class="gen-mono" readonly></textarea></div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Paste your JWT into the input box.</li>
+            <li>The header and payload are decoded instantly.</li>
+            <li>Review the claims and expiry time.</li>
+            <li>Nothing is uploaded — it is safe to inspect.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>Does it verify the signature?</summary>
+            <p>No. This tool only decodes the token for inspection. Signature verification requires your secret/key and should be done server-side.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is my token sent anywhere?</summary>
+            <p>No. Decoding is fully local in your browser, so it is safe for sensitive tokens.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What do exp and iat mean?</summary>
+            <p>exp is the expiration time and iat is the issued-at time, both as Unix timestamps; we show them in readable form.</p>
+          </details>
+        
+          <!-- ft-zh-faq -->
+          <details class="faq-item">
+            <summary>JWT解码器需要联网吗？</summary>
+            <p>不需要。所有处理都在你的浏览器本地完成，数据不上传服务器，离线也能用。</p>
+          </details>
+          <details class="faq-item">
+            <summary>JWT解码器支持大文件或批量吗？</summary>
+            <p>在浏览器性能范围内支持较大内容处理；具体上限取决于你的设备内存。</p>
+          </details>
+          <details class="faq-item">
+            <summary>JWT解码器是免费的吗？</summary>
+            <p>是的，完全免费，无需注册，打开即用。</p>
+          </details>
+</div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🔑</div>
+              <div class="uc-content">
+                <h4>Auth Debugging</h4>
+                <p>Inspect claims during development.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">⏰</div>
+              <div class="uc-content">
+                <h4>Expiry Checks</h4>
+                <p>See when a token expires.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🧪</div>
+              <div class="uc-content">
+                <h4>Testing</h4>
+                <p>Verify payload contents quickly.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="html-encoder.html" class="related-tool-card">
+              <span class="rt-icon"></></span>
+              <span class="rt-name">HTML Encoder / Decoder</span>
+            </a>
+            <a href="css-minifier.html" class="related-tool-card">
+              <span class="rt-icon">🎨</span>
+              <span class="rt-name">CSS Minifier</span>
+            </a>
+            <a href="json-minifier.html" class="related-tool-card">
+              <span class="rt-icon">🗜️</span>
+              <span class="rt-name">JSON Minifier</span>
+            </a>
+            <a href="html-minifier.html" class="related-tool-card">
+              <span class="rt-icon">📄</span>
+              <span class="rt-name">HTML Minifier</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+    <!-- More Tools Section -->
+    <section class="more-tools-section" aria-label="More tools">
+      <h2 class="more-tools-title" data-i18n="moreToolsTitle">🔍 Explore More Tools</h2>
+      <p class="more-tools-desc" data-i18n="moreToolsDesc">FreeToolset has 75+ free online tools. Browse more utilities to boost your productivity.</p>
+      <div class="more-tools-grid">
+        <a href="index.html" class="more-tool-card more-tool-home">
+          <span class="mt-icon">⚡</span>
+          <span class="mt-name" data-i18n="moreToolsAll">All 75+ Tools</span>
+        </a>
+        <a href="ai-studio.html" class="more-tool-card">
+          <span class="mt-icon">✨</span>
+          <span class="mt-name" data-i18n="✨ AI Studio">✨ AI Studio</span>
+        </a>
+        <a href="developer-tools.html" class="more-tool-card">
+          <span class="mt-icon">📂</span>
+          <span class="mt-name" data-i18n="catTitle_developer-tools">Developer Tools</span>
+        </a>
+        <a href="image-compressor.html" class="more-tool-card">
+          <span class="mt-icon">🖼️</span>
+          <span class="mt-name" data-i18n="cardTitle_image-compressor">🖼️ Image Compressor</span>
+        </a>
+        <a href="qr-code-generator.html" class="more-tool-card">
+          <span class="mt-icon">📱</span>
+          <span class="mt-name" data-i18n="cardTitle_qr-code-generator">📱 QR Code Generator</span>
+        </a>
+        <a href="password-generator.html" class="more-tool-card">
+          <span class="mt-icon">🔐</span>
+          <span class="mt-name" data-i18n="cardTitle_password-generator">🔐 Password Generator</span>
+        </a>
+        <a href="json-formatter.html" class="more-tool-card">
+          <span class="mt-icon">🧩</span>
+          <span class="mt-name" data-i18n="cardTitle_json-formatter">🧩 JSON Formatter</span>
+        </a>
+        <a href="word-counter.html" class="more-tool-card">
+          <span class="mt-icon">📝</span>
+          <span class="mt-name" data-i18n="cardTitle_word-counter">📝 Word Counter</span>
+        </a>
+      </div>
+    </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var inp=document.getElementById('inp'),head=document.getElementById('head'),pay=document.getElementById('pay'),exp=document.getElementById('exp');
+    function b64url(s){s=s.replace(/-/g,'+').replace(/_/g,'/');while(s.length%4)s+='=';return decodeURIComponent(escape(atob(s)));}
+    function calc(){var t=inp.value.trim();exp.textContent='';if(!t){head.value='';pay.value='';return;}var parts=t.split('.');if(parts.length<2){head.value='';pay.value='Invalid JWT (needs header.payload.signature)';return;}
+      try{var h=JSON.parse(b64url(parts[0]));head.value=JSON.stringify(h,null,2);}catch(e){head.value='Invalid header';}
+      try{var p=JSON.parse(b64url(parts[1]));pay.value=JSON.stringify(p,null,2);if(p.exp){var d=new Date(p.exp*1000),now=Date.now();exp.textContent='— expires '+d.toLocaleString()+(now>p.exp*1000?' (EXPIRED)':'');}}catch(e){pay.value='Invalid payload';}}
+    inp.addEventListener('input',calc);
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

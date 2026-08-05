@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>进制转换详解：二进制、八进制、十进制与十六进制 | FreeToolset 教程</title>
+  <meta name="description" content="搞懂计算机中的进制表示，掌握二/八/十/十六进制互转方法，附在线进制转换器。">
+  <meta name="keywords" content="进制转换, 二进制, 十六进制, 十进制">
+  <meta property="og:title" content="进制转换详解：二进制、八进制、十进制与十六进制">
+  <meta property="og:description" content="搞懂计算机中的进制表示，掌握二/八/十/十六进制互转方法，附在线进制转换器。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.freetoolset.app/blog/number-base-conversion.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="进制转换详解：二进制、八进制、十进制与十六进制">
+  <meta name="twitter:description" content="搞懂计算机中的进制表示，掌握二/八/十/十六进制互转方法，附在线进制转换器。">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/blog/number-base-conversion.html">
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"进制转换详解：二进制、八进制、十进制与十六进制","description":"搞懂计算机中的进制表示，掌握二/八/十/十六进制互转方法，附在线进制转换器。","url":"https://www.freetoolset.app/blog/number-base-conversion.html","mainEntityOfPage":"https://www.freetoolset.app/blog/number-base-conversion.html","publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <!-- ft-faq-schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "这篇《进制转换详解：二进制、八进制、十进制与十六进制》主要讲什么？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "本文系统讲解「进制转换详解：二进制、八进制、十进制与十六进制」的核心方法与实操要点，并推荐配套的 FreeToolset 免费在线工具，帮助你在浏览器里快速完成，无需注册、数据本地处理。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "在哪里可以实操练习？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "文末「相关工具」列出了 FreeToolset 上对应的免费在线工具，打开即用，所有计算都在本地浏览器完成，保护隐私。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "这些工具要收费吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "FreeToolset 的全部工具均免费，在浏览器本地运行、不上传数据，可放心用于学习与工作。"
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="../index.html" class="navbar-brand"><span class="logo-icon">⚡</span> FreeToolset</a>
+    <div class="navbar-nav">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="../ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="../index.html#tools" class="nav-link">Tools</a>
+      <a href="../about.html" class="nav-link">About</a>
+      <a href="../privacy-policy.html" class="nav-link">Privacy</a>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <article class="article">
+      <p class="post-meta">FreeToolset · 实用教程</p>
+      <h1>进制转换详解：二进制、八进制、十进制与十六进制</h1>
+    <p>计算机用二进制思考，人类用十进制，而颜色与内存地址常用十六进制。进制转换是理解底层的基础功。</p>
+    <h2>为什么有多种进制</h2>
+    <ul>
+      <li>二进制（0/1）是电路的自然语言</li>
+      <li>八进制/十六进制是二进制的紧凑写法</li>
+      <li>十进制是人类习惯</li>
+      <li>十六进制常用于颜色值（#RRGGBB）与内存地址</li>
+    </ul>
+    <h2>互转思路</h2>
+    <p>十进制转其他进制用「除基取余」，其他进制转十进制用「按权展开求和」。掌握原理后，用工具批量转换更高效。</p>
+    <h2>在线转换</h2>
+    <p>FreeToolset 进制转换器支持二/八/十/十六进制实时互转。</p>
+    <div class="tip">💡 看到 #ff8800 这类颜色值时，试着拆成 RGB 三个十六进制字节，调色更直观。</div>
+      <div class="related-posts">
+        <h3>🔗 相关工具</h3>
+      <a href="../base-converter.html">进制转换器</a>
+        <h3>📚 相关文章</h3>
+      <a href="unix-timestamp-guide.html">Unix 时间戳转换完全指南：秒、毫秒与日期互转</a>
+      </div>
+          <!-- ft-zh-faq -->
+      <section class="info-section" style="margin-top:32px">
+        <h2>❓ 常见问题</h2>
+        <details class="faq-item">
+          <summary>这篇《进制转换详解：二进制、八进制、十进制与十六进制》主要讲什么？</summary>
+          <p>本文系统讲解「进制转换详解：二进制、八进制、十进制与十六进制」的核心方法与实操要点，并推荐配套的 FreeToolset 免费在线工具，帮助你在浏览器里快速完成，无需注册、数据本地处理。</p>
+        </details>
+        <details class="faq-item">
+          <summary>在哪里可以实操练习？</summary>
+          <p>文末「相关工具」列出了 FreeToolset 上对应的免费在线工具，打开即用，所有计算都在本地浏览器完成，保护隐私。</p>
+        </details>
+        <details class="faq-item">
+          <summary>这些工具要收费吗？</summary>
+          <p>FreeToolset 的全部工具均免费，在浏览器本地运行、不上传数据，可放心用于学习与工作。</p>
+        </details>
+      </section>
+</article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand"><span class="logo-icon">⚡</span> FreeToolset</div>
+        <p class="footer-desc">免费在线工具，全部在浏览器本地运行，数据不上传。</p>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html">Tools</a>
+        <a href="../ai-studio.html">AI Studio</a>
+        <a href="../about.html">About</a>
+        <a href="../privacy-policy.html">Privacy</a>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 FreeToolset. All tools run locally in your browser.</p></div>
+  </footer>
+
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

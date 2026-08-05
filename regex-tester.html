@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regex Tester · 正则表达式测试器 | FreeToolset</title>
+  <meta name="description" content="正则表达式测试器（Regex Tester）：免费在线工具，无需注册下载，浏览器本地运行，数据不上传，保护隐私。">
+  <meta name="keywords" content="regex tester, regular expression, regex test, regex matcher, regex debugger, pattern tester">
+  <meta property="og:title" content="Regex Tester — FreeToolset">
+  <meta property="og:description" content="Test regular expressions live against your text with highlighted matches.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/regex-tester.html">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    mark.re-match {
+      background: rgba(167, 139, 250, 0.35);
+      color: var(--text);
+      border-radius: 3px;
+      padding: 0 2px;
+    }
+    #matchesOut {
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: "SF Mono", Monaco, "Cascadia Code", "Courier New", monospace;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      min-height: 120px;
+    }
+    #matchDetails {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0 0;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+    #matchDetails li {
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border);
+      word-break: break-all;
+    }
+    #matchDetails b { color: var(--primary); }
+  
+    /* More Tools Section */
+    .more-tools-section {
+      margin: 48px 0 32px;
+      padding: 32px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+    }
+
+    .more-tools-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .more-tools-desc {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .more-tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 12px;
+    }
+
+    .more-tool-card {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 16px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all var(--transition);
+    }
+
+    .more-tool-card:hover {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    .more-tool-home {
+      background: linear-gradient(135deg, var(--primary-light), var(--bg));
+      border-color: var(--primary);
+    }
+
+    .mt-icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .mt-name {
+      line-height: 1.3;
+    }
+
+    @media (max-width: 640px) {
+      .more-tools-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+  </style>
+  <!-- ft-og-social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/regex-tester.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Regex Tester — FreeToolset">
+  <meta name="twitter:description" content="Test regular expressions live against your text with highlighted matches.">
+  <!-- ft-schema -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Regex Tester — Online Regular Expression Tester","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/regex-tester.html","description":"Test regular expressions live against your text. See matches, groups, and positions highlighted in real time. Free, private, runs in your browser.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Regex Tester",
+  "alternateName": "正则表达式测试器",
+  "url": "https://www.freetoolset.app/regex-tester.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "正则表达式测试器（Regex Tester）免费在线工具，无需注册，本地运行保护隐私。"
+}
+</script>
+  <!-- ft-faq-schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "正则表达式测试器需要联网吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不需要。所有处理都在你的浏览器本地完成，数据不上传服务器，离线也能用。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "正则表达式测试器支持大文件或批量吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "在浏览器性能范围内支持较大内容处理；具体上限取决于你的设备内存。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "正则表达式测试器是免费的吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "是的，完全免费，无需注册，打开即用。"
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active" data-i18n="Tools">Tools</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <a href="privacy-policy.html" class="nav-link" data-i18n="Privacy">Privacy</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <!-- ft-zh-intro -->
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>正则表达式是文本匹配与提取的利器。本工具实时测试正则，高亮匹配结果、展示捕获组，帮助开发者验证邮箱、手机号等规则，适合表单校验、日志抽取与数据清洗。</p>
+  </section>
+
+
+    <!-- Breadcrumb -->
+      <!-- ft-deep -->
+  <section class="tool-deep">
+    <h2>📖 深入了解 Regex Tester — Online Regular Expression Tester</h2>
+    <h2>为什么需要它</h2>
+    <ul>
+      <li>调试与格式转换无需安装环境</li>
+      <li>本地处理敏感数据更安全</li>
+      <li>把繁琐脚本变成一键操作</li>
+    </ul>
+    <h2>背后的原理</h2>
+    <p>Regex Tester — Online Regular Expression Tester 面向开发调试场景，在本地完成格式转换、压缩或解码，不把令牌、代码等敏感内容传到第三方服务器。</p>
+    <h2>一个例子</h2>
+    <p>例如把一段 JWT 或 CSV 粘进 Regex Tester — Online Regular Expression Tester，本地立即解析或转换，结果可直接复制使用，敏感数据全程不出浏览器。</p>
+    <h2>常见误区</h2>
+    <ul>
+      <li>把 JWT 等可解码内容误当加密</li>
+      <li>压缩后未保留可读源码，出问题难排查</li>
+      <li>用了需要上传的在线工具处理密钥/令牌</li>
+    </ul>
+  </section>
+    <nav class="breadcrumb"><!-- breadcrumb-cat -->
+      <a href="index.html" data-i18n="Home">Home</a>
+      <span class="separator">/</span>
+      <a href="developer-tools.html" data-i18n="catTitle_developer-tools">Developer Tools</a>
+      <span class="separator">/</span>
+      <span class="current" data-i18n="cardTitle_regex-tester">Regex Tester</span>
+    </nav>
+
+    <!-- Tool Header -->
+    <div class="tool-header">
+      <h1 data-i18n="🔍 Regex Tester">🔍 Regex Tester</h1>
+      <p>Test regular expressions against your text in real time. Matches are highlighted and every capture group is listed.</p>
+    </div>
+
+    <!-- Two-column Layout -->
+    <div class="tool-layout">
+
+      <!-- Tool Main -->
+      <div class="tool-main">
+
+        <div class="form-row">
+          <label for="pattern">Regular Expression</label>
+          <div style="display:flex; gap:10px;">
+            <input type="text" id="pattern" placeholder="e.g. (\w+)@(\w+\.\w+)" style="flex:1; font-family:'SF Mono',monospace;">
+            <input type="text" id="flags" value="g" title="flags: g i m s u y" style="width:90px; font-family:'SF Mono',monospace;">
+          </div>
+          <div style="margin-top:6px; font-size:0.8rem; color:var(--text-muted);">Flags: g=global, i=ignore case, m=multiline, s=dotall, u=unicode, y=sticky</div>
+        </div>
+
+        <div class="form-row">
+          <label for="testStr">Test String</label>
+          <textarea id="testStr" placeholder="Paste or type the text to test against..." style="min-height:160px;">Contact us at hello@freetoolset.app or sales@freetoolset.app for help.</textarea>
+        </div>
+
+        <div class="form-row">
+          <label>Matches: <span id="matchCount" style="color:var(--primary);">0</span></label>
+          <div class="result-box" id="matchesOut"></div>
+          <ul id="matchDetails"></ul>
+        </div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>Everything runs locally in your browser. Nothing is sent to a server.</span>
+        </div>
+
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="tool-sidebar">
+
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Type a pattern in the "Regular Expression" box (no slashes needed).</li>
+            <li>Add flags like <code>gi</code> in the small box if needed.</li>
+            <li>Enter your test text below — matches highlight instantly.</li>
+            <li>Review the match list for positions and capture groups.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>Do I need the slashes?</summary>
+            <p>No. Enter just the pattern, e.g. <code>\d+</code>. Slashes (<code>/\d+/</code>) are a JavaScript literal syntax and are not used here.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Why no matches with a valid pattern?</summary>
+            <p>Check your flags. Without the <code>g</code> (global) flag only the first match is found; this tester always uses <code>g</code> internally so all matches show. Also confirm case sensitivity (<code>i</code>) and multiline (<code>m</code>).</p>
+          </details>
+          <details class="faq-item">
+            <summary>What are capture groups?</summary>
+            <p>Parentheses <code>( )</code> in a pattern capture sub-parts. The match list shows each group's value after the position, e.g. <code>groups: ["hello","freetoolset.app"]</code>.</p>
+          </details>
+        
+          <!-- ft-zh-faq -->
+          <details class="faq-item">
+            <summary>正则表达式测试器需要联网吗？</summary>
+            <p>不需要。所有处理都在你的浏览器本地完成，数据不上传服务器，离线也能用。</p>
+          </details>
+          <details class="faq-item">
+            <summary>正则表达式测试器支持大文件或批量吗？</summary>
+            <p>在浏览器性能范围内支持较大内容处理；具体上限取决于你的设备内存。</p>
+          </details>
+          <details class="faq-item">
+            <summary>正则表达式测试器是免费的吗？</summary>
+            <p>是的，完全免费，无需注册，打开即用。</p>
+          </details>
+</div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">✉️</div>
+              <div class="uc-content">
+                <h4>Email Extraction</h4>
+                <p>Match and pull emails or other patterns from text.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🧹</div>
+              <div class="uc-content">
+                <h4>Data Cleaning</h4>
+                <p>Validate or locate IDs, dates, and codes in logs.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">📝</div>
+              <div class="uc-content">
+                <h4>Form Validation</h4>
+                <p>Prototype patterns before using them in code.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="json-formatter.html" class="related-tool-card">
+              <span class="rt-icon">🧩</span>
+              <span class="rt-name">JSON Formatter</span>
+            </a>
+            <a href="text-case-converter.html" class="related-tool-card">
+              <span class="rt-icon">🔤</span>
+              <span class="rt-name">Text Case Converter</span>
+            </a>
+            <a href="base64-encoder.html" class="related-tool-card">
+              <span class="rt-icon">🔄</span>
+              <span class="rt-name">Base64 Encoder</span>
+            </a>
+            <a href="line-tools.html" class="related-tool-card">
+              <span class="rt-icon">📋</span>
+              <span class="rt-name">Line Tools</span>
+            </a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+    <!-- More Tools Section -->
+    <section class="more-tools-section" aria-label="More tools">
+      <h2 class="more-tools-title" data-i18n="moreToolsTitle">🔍 Explore More Tools</h2>
+      <p class="more-tools-desc" data-i18n="moreToolsDesc">FreeToolset has 75+ free online tools. Browse more utilities to boost your productivity.</p>
+      <div class="more-tools-grid">
+        <a href="index.html" class="more-tool-card more-tool-home">
+          <span class="mt-icon">⚡</span>
+          <span class="mt-name" data-i18n="moreToolsAll">All 75+ Tools</span>
+        </a>
+        <a href="ai-studio.html" class="more-tool-card">
+          <span class="mt-icon">✨</span>
+          <span class="mt-name" data-i18n="✨ AI Studio">✨ AI Studio</span>
+        </a>
+        <a href="developer-tools.html" class="more-tool-card">
+          <span class="mt-icon">📂</span>
+          <span class="mt-name" data-i18n="catTitle_developer-tools">Developer Tools</span>
+        </a>
+        <a href="image-compressor.html" class="more-tool-card">
+          <span class="mt-icon">🖼️</span>
+          <span class="mt-name" data-i18n="cardTitle_image-compressor">🖼️ Image Compressor</span>
+        </a>
+        <a href="qr-code-generator.html" class="more-tool-card">
+          <span class="mt-icon">📱</span>
+          <span class="mt-name" data-i18n="cardTitle_qr-code-generator">📱 QR Code Generator</span>
+        </a>
+        <a href="password-generator.html" class="more-tool-card">
+          <span class="mt-icon">🔐</span>
+          <span class="mt-name" data-i18n="cardTitle_password-generator">🔐 Password Generator</span>
+        </a>
+        <a href="json-formatter.html" class="more-tool-card">
+          <span class="mt-icon">🧩</span>
+          <span class="mt-name" data-i18n="cardTitle_json-formatter">🧩 JSON Formatter</span>
+        </a>
+        <a href="word-counter.html" class="more-tool-card">
+          <span class="mt-icon">📝</span>
+          <span class="mt-name" data-i18n="cardTitle_word-counter">📝 Word Counter</span>
+        </a>
+      </div>
+    </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var pattern = document.getElementById('pattern');
+      var flags = document.getElementById('flags');
+      var testStr = document.getElementById('testStr');
+      var matchesOut = document.getElementById('matchesOut');
+      var matchCount = document.getElementById('matchCount');
+      var matchDetails = document.getElementById('matchDetails');
+
+      function escapeHtml(s) {
+        return s.replace(/[&<>]/g, function (c) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c];
+        });
+      }
+
+      function run() {
+        var p = pattern.value;
+        var text = testStr.value;
+        if (!p) { matchesOut.textContent = text; matchCount.textContent = '0'; matchDetails.innerHTML = ''; return; }
+
+        var f = flags.value || '';
+        var re;
+        try {
+          re = new RegExp(p, f.indexOf('g') !== -1 ? f : f + 'g');
+        } catch (e) {
+          matchesOut.innerHTML = '<span style="color:var(--danger)">Invalid regex: ' + escapeHtml(e.message) + '</span>';
+          matchCount.textContent = '0';
+          matchDetails.innerHTML = '';
+          return;
+        }
+
+        var matches = [];
+        var m, guard = 0;
+        while ((m = re.exec(text)) !== null) {
+          matches.push(m);
+          if (m.index === re.lastIndex) re.lastIndex++;
+          if (++guard > 10000) break;
+        }
+
+        matchCount.textContent = matches.length;
+
+        if (matches.length === 0) {
+          matchesOut.textContent = text;
+        } else {
+          var html = '', last = 0;
+          matches.forEach(function (mm) {
+            html += escapeHtml(text.slice(last, mm.index));
+            html += '<mark class="re-match">' + escapeHtml(mm[0]) + '</mark>';
+            last = mm.index + mm[0].length;
+          });
+          html += escapeHtml(text.slice(last));
+          matchesOut.innerHTML = html;
+        }
+
+        matchDetails.innerHTML = matches.map(function (mm, i) {
+          var groups = mm.length > 1 ? '  groups: ' + JSON.stringify(mm.slice(1)) : '';
+          return '<li><b>#' + (i + 1) + '</b> @' + mm.index + ': ' + escapeHtml(mm[0]) + escapeHtml(groups) + '</li>';
+        }).join('') || '<li>No matches</li>';
+      }
+
+      pattern.addEventListener('input', run);
+      flags.addEventListener('input', run);
+      testStr.addEventListener('input', run);
+      run();
+    })();
+  </script>
+
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discount Calculator · 折扣计算器 | FreeToolset</title>
+  <meta name="description" content="折扣计算器（Discount Calculator）：免费在线工具，无需注册下载，浏览器本地运行，数据不上传，保护隐私。">
+  <meta name="keywords" content="discount calculator, sale price calculator, percentage off calculator, savings calculator">
+  <meta property="og:title" content="Discount Calculator — FreeToolset">
+  <meta property="og:description" content="Calculate the final price after a discount and see exactly how much you save. Supports single and stacked percentage discounts.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/discount-calculator.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/discount-calculator.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Discount Calculator — FreeToolset">
+  <meta name="twitter:description" content="Calculate the final price after a discount and see exactly how much you save. Supports single and stacked percentage discounts.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Discount Calculator — Free Online Discount & Sale Price Calculator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/discount-calculator.html","description":"Calculate the final price after a discount and see exactly how much you save. Supports single and stacked percentage discounts.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Discount Calculator",
+  "alternateName": "折扣计算器",
+  "url": "https://www.freetoolset.app/discount-calculator.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "折扣计算器（Discount Calculator）免费在线工具，无需注册，本地运行保护隐私。"
+}
+</script>
+  <!-- ft-faq-schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "打折后多少钱怎么算？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "用原价 ×(1 − 折扣率) 即可。例如 8 折就是原价 ×0.8。本工具直接输入原价和折扣率就出结果。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "满减和打折哪个更划算？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "分别算一遍再比较最稳妥。满减通常有门槛（如满 200 减 30），打折无门槛，小额订单打折往往更优。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "结果包含税费吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "本工具计算的是折扣后的商品价格，不含税、不含运费，税费请另外估算。"
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active" data-i18n="Tools">Tools</a>
+      <a href="ai-studio.html" class="nav-link" data-i18n="✨ AI Studio">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>折扣计算器输入原价和折扣百分比，立刻得出折后价与节省金额，还支持二次叠加折扣，适合网购、促销比价。</p>
+  </section>
+
+      <!-- ft-deep -->
+  <section class="tool-deep">
+    <h2>📖 深入了解 Discount Calculator</h2>
+    <h2>为什么需要它</h2>
+    <ul>
+      <li>Online Shopping</li>
+      <li>In-Store Sales</li>
+      <li>Pricing</li>
+    </ul>
+    <h2>背后的原理</h2>
+    <p>Discount Calculator 把若干输入代入固定的数学公式，实时算出结果。相比手算或临时搭表格，在线工具省去记忆公式与处理单位的麻烦，输入即出，还能反向推导。</p>
+    <h2>一个例子</h2>
+    <p>例如使用 Discount Calculator 时，把关键参数填入对应框，结果会即时更新；试着调整任一输入，就能直观看到输出如何变化，方便做「如果…会怎样」的推演。</p>
+    <h2>常见误区</h2>
+    <ul>
+      <li>只看单一结果、忽略适用条件与前提假设</li>
+      <li>把估算值当精确结论直接使用</li>
+      <li>忽略单位差异（公制/英制）导致量级错误</li>
+    </ul>
+  </section>
+    <nav class="breadcrumb"><!-- breadcrumb-cat -->
+      <a href="index.html" data-i18n="Home">Home</a>
+      <span class="separator">/</span>
+      <a href="calculators.html" data-i18n="catTitle_calculators">Calculators</a>
+      <span class="separator">/</span>
+      <span class="current" data-i18n="cardTitle_discount-calculator">Discount Calculator</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>🏷️ Discount Calculator</h1>
+      <p>Calculate the final price after a discount and see exactly how much you save. Supports single and stacked percentage discounts.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="form-row"><label for="orig">Original Price</label><input type="number" id="orig" placeholder="100" min="0" step="0.01"></div>
+        <div class="gen-row">
+          <div class="form-row"><label for="d1">Discount 1 (%)</label><input type="number" id="d1" placeholder="20" min="0"></div>
+          <div class="form-row"><label for="d2">Discount 2 (%) — optional</label><input type="number" id="d2" placeholder="0" min="0"></div>
+        </div>
+        <div class="result-box empty" id="out">Enter a price and discount to see the sale price.</div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Enter the original price.</li>
+            <li>Enter the discount percentage.</li>
+            <li>Optionally add a second stacked discount.</li>
+            <li>See the final price and total savings.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>How do stacked discounts work?</summary>
+            <p>A second discount is applied to the already-discounted price, not the original. For example, 50% then 20% off equals 60% off in total, not 70%.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can I calculate the original price from a sale price?</summary>
+            <p>This tool works forward from the original price. To reverse it, divide the sale price by (1 − discount/100).</p>
+          </details>
+          <details class="faq-item">
+            <summary>Does it handle tax?</summary>
+            <p>No, this calculates the discount only. Add sales tax afterwards with our Sales Tax Calculator.</p>
+          </details>
+        
+          <!-- ft-zh-faq -->
+          <details class="faq-item">
+            <summary>打折后多少钱怎么算？</summary>
+            <p>用原价 ×(1 − 折扣率) 即可。例如 8 折就是原价 ×0.8。本工具直接输入原价和折扣率就出结果。</p>
+          </details>
+          <details class="faq-item">
+            <summary>满减和打折哪个更划算？</summary>
+            <p>分别算一遍再比较最稳妥。满减通常有门槛（如满 200 减 30），打折无门槛，小额订单打折往往更优。</p>
+          </details>
+          <details class="faq-item">
+            <summary>结果包含税费吗？</summary>
+            <p>本工具计算的是折扣后的商品价格，不含税、不含运费，税费请另外估算。</p>
+          </details>
+</div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🛒</div>
+              <div class="uc-content">
+                <h4>Online Shopping</h4>
+                <p>Check the real price before you check out.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🏬</div>
+              <div class="uc-content">
+                <h4>In-Store Sales</h4>
+                <p>Instantly verify a clearance discount.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">📈</div>
+              <div class="uc-content">
+                <h4>Pricing</h4>
+                <p>Sellers can preview promotional pricing.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="bmi-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏋️</span>
+              <span class="rt-name">BMI Calculator</span>
+            </a>
+            <a href="age-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🎂</span>
+              <span class="rt-name">Age Calculator</span>
+            </a>
+            <a href="percentage-calculator.html" class="related-tool-card">
+              <span class="rt-icon">➗</span>
+              <span class="rt-name">Percentage Calculator</span>
+            </a>
+            <a href="loan-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏦</span>
+              <span class="rt-name">Loan Calculator</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+    <!-- More Tools Section -->
+    <section class="more-tools-section" aria-label="More tools">
+      <h2 class="more-tools-title" data-i18n="moreToolsTitle">🔍 Explore More Tools</h2>
+      <p class="more-tools-desc" data-i18n="moreToolsDesc">FreeToolset has 75+ free online tools. Browse more utilities to boost your productivity.</p>
+      <div class="more-tools-grid">
+        <a href="index.html" class="more-tool-card more-tool-home">
+          <span class="mt-icon">⚡</span>
+          <span class="mt-name" data-i18n="moreToolsAll">All 75+ Tools</span>
+        </a>
+        <a href="ai-studio.html" class="more-tool-card">
+          <span class="mt-icon">✨</span>
+          <span class="mt-name" data-i18n="✨ AI Studio">✨ AI Studio</span>
+        </a>
+        <a href="calculators.html" class="more-tool-card">
+          <span class="mt-icon">📂</span>
+          <span class="mt-name" data-i18n="catTitle_calculators">Calculators</span>
+        </a>
+        <a href="image-compressor.html" class="more-tool-card">
+          <span class="mt-icon">🖼️</span>
+          <span class="mt-name" data-i18n="cardTitle_image-compressor">🖼️ Image Compressor</span>
+        </a>
+        <a href="qr-code-generator.html" class="more-tool-card">
+          <span class="mt-icon">📱</span>
+          <span class="mt-name" data-i18n="cardTitle_qr-code-generator">📱 QR Code Generator</span>
+        </a>
+        <a href="password-generator.html" class="more-tool-card">
+          <span class="mt-icon">🔐</span>
+          <span class="mt-name" data-i18n="cardTitle_password-generator">🔐 Password Generator</span>
+        </a>
+        <a href="json-formatter.html" class="more-tool-card">
+          <span class="mt-icon">🧩</span>
+          <span class="mt-name" data-i18n="cardTitle_json-formatter">🧩 JSON Formatter</span>
+        </a>
+        <a href="word-counter.html" class="more-tool-card">
+          <span class="mt-icon">📝</span>
+          <span class="mt-name" data-i18n="cardTitle_word-counter">📝 Word Counter</span>
+        </a>
+      </div>
+    </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var orig=document.getElementById('orig'),d1=document.getElementById('d1'),d2=document.getElementById('d2'),out=document.getElementById('out');
+    function f(n){return n.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});}
+    function calc(){
+      var O=parseFloat(orig.value),A=parseFloat(d1.value)||0,B=parseFloat(d2.value)||0;
+      if(!O||O<=0){out.className='result-box empty';out.textContent='Enter a price and discount to see the sale price.';return;}
+      var p1=O*(1-A/100),fin=p1*(1-B/100),saved=O-fin,pct=O?saved/O*100:0;
+      out.className='result-box';
+      out.innerHTML='<div class="gen-big">'+f(fin)+'</div>'+
+        '<div style="margin-top:10px;color:var(--text-secondary);font-size:.92rem">You save <b style="color:var(--success)">'+f(saved)+'</b> ('+(Math.round(pct*10)/10)+'% off)</div>';
+    }
+    [orig,d1,d2].forEach(function(e){e.addEventListener('input',calc);});
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

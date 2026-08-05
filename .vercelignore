@@ -1,0 +1,11 @@
+# Internal workspace data — never deploy
+.workbuddy/
+
+# Secrets / local env
+.env
+.env.local
+.env.*.local
+
+# Dependencies / logs
+node_modules/
+*.log

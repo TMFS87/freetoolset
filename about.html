@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us — FreeToolset</title>
-  <meta name="description" content="Learn about FreeToolset — our mission to provide free, privacy-friendly online tools that run entirely in your browser. No sign-ups, no data collection, no tracking.">
+  <title>About Us · 关于我们 | FreeToolset</title>
+  <meta name="description" content="Learn about FreeToolset — free, privacy-friendly online tools that run in your browser. No sign-ups, no tracking.">
   <meta name="keywords" content="about freetoolset, free online tools, privacy-friendly tools, browser-based tools">
   <meta property="og:title" content="About Us — FreeToolset">
   <meta property="og:description" content="Free, privacy-friendly online tools that run entirely in your browser.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.freetoolset.app/about.html">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 </head>
 <body>
 
@@ -21,11 +24,12 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="index.html#tools" class="nav-link">Tools</a>
-      <a href="about.html" class="nav-link active">About</a>
-      <a href="privacy-policy.html" class="nav-link">Privacy</a>
-      <button class="nav-lang" title="Switch Language" onclick="alert('Language switching coming soon!')">🌐</button>
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="ai-studio.html" class="nav-link" data-i18n="✨ AI Studio">✨ AI Studio</a>
+      <a href="index.html#tools" class="nav-link" data-i18n="Tools">Tools</a>
+      <a href="about.html" class="nav-link active" data-i18n="About">About</a>
+      <a href="privacy-policy.html" class="nav-link" data-i18n="Privacy">Privacy</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
     </div>
   </nav>
 
@@ -33,13 +37,13 @@
 
     <!-- Breadcrumb -->
     <nav class="breadcrumb">
-      <a href="index.html">Home</a>
+      <a href="index.html" data-i18n="Home">Home</a>
       <span class="separator">/</span>
       <span class="current">About</span>
     </nav>
 
     <div class="page-content">
-      <h1>About FreeToolset</h1>
+      <h1 data-i18n="About FreeToolset">About FreeToolset</h1>
       <p class="page-subtitle">Free, fast, and privacy-friendly tools for everyone.</p>
 
       <h2>Our Mission</h2>
@@ -83,13 +87,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html">Tools</a>
-        <a href="about.html">About</a>
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -98,5 +102,10 @@
   </footer>
 
 <script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
 </body>
 </html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Base Converter · 进制转换器 | FreeToolset</title>
+  <meta name="description" content="进制转换器（Base Converter）：免费在线工具，无需注册下载，浏览器本地运行，数据不上传，保护隐私。">
+  <meta name="keywords" content="base converter, number base, binary converter, hex converter, decimal to binary, octal converter">
+  <meta property="og:title" content="Base Converter — FreeToolset">
+  <meta property="og:description" content="Convert numbers between binary, octal, decimal, and hexadecimal.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/base-converter.html">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- ft-og-social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/base-converter.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Base Converter — FreeToolset">
+  <meta name="twitter:description" content="Convert numbers between binary, octal, decimal, and hexadecimal.">
+  <!-- ft-schema -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Base Converter — Number Base Converter (2, 8, 10, 16)","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/base-converter.html","description":"Convert numbers between binary, octal, decimal, and hexadecimal instantly. Free, private, runs in your browser.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Base Converter",
+  "alternateName": "进制转换器",
+  "url": "https://www.freetoolset.app/base-converter.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "进制转换器（Base Converter）免费在线工具，无需注册，本地运行保护隐私。"
+}
+</script>
+  <!-- ft-faq-schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "进制转换器是免费的吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "是的，进制转换器（Base Converter）免费使用，无需注册，转换在你的浏览器本地完成，数据不上传。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "进制转换器支持哪些格式或单位？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "支持常见格式与单位之间的互相转换，输入即转换，操作简单。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "转换会泄露我的数据吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不会。所有处理都在本地浏览器进行，内容不上传任何服务器。"
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active" data-i18n="Tools">Tools</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <a href="privacy-policy.html" class="nav-link" data-i18n="Privacy">Privacy</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <!-- ft-zh-intro -->
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>进制转换是底层开发的常见需求。本工具支持二进制、八进制、十进制、十六进制互转，实时计算，适合学习计算机原理、调试内存地址、阅读颜色值与位运算结果。</p>
+  </section>
+
+
+    <!-- Breadcrumb -->
+      <!-- ft-deep -->
+  <section class="tool-deep">
+    <h2>📖 深入了解 Base Converter — Number Base Converter (2, 8, 10, 16)</h2>
+    <h2>为什么需要它</h2>
+    <ul>
+      <li>跨制式沟通不再卡壳</li>
+      <li>烹饪、装修、学习时即时换算</li>
+      <li>避免记错系数导致的错误</li>
+    </ul>
+    <h2>背后的原理</h2>
+    <p>Base Converter — Number Base Converter (2, 8, 10, 16) 基于单位间的固定换算系数做线性映射，输入一个值即得其他单位的等价量。要注意十进制与二进制系数不同（如存储单位），以及公制与英制的差异。</p>
+    <h2>一个例子</h2>
+    <p>例如把 1 个常用单位输入 Base Converter — Number Base Converter (2, 8, 10, 16)，立刻看到其他单位的等价量；切换公制/英制时数值自动重算，无需手算系数。</p>
+    <h2>常见误区</h2>
+    <ul>
+      <li>混淆十进制与二进制单位（如 KB 与 KiB）</li>
+      <li>忽略英制与公制的换算系数</li>
+      <li>把近似换算当作精确值使用</li>
+    </ul>
+  </section>
+    <nav class="breadcrumb"><!-- breadcrumb-cat -->
+      <a href="index.html" data-i18n="Home">Home</a>
+      <span class="separator">/</span>
+      <a href="developer-tools.html" data-i18n="catTitle_developer-tools">Developer Tools</a>
+      <span class="separator">/</span>
+      <span class="current" data-i18n="cardTitle_base-converter">Base Converter</span>
+    </nav>
+
+    <!-- Tool Header -->
+    <div class="tool-header">
+      <h1 data-i18n="🔢 Base Converter">🔢 Base Converter</h1>
+      <p>Convert a number between binary (2), octal (8), decimal (10), and hexadecimal (16) instantly. Enter the number in any base.</p>
+    </div>
+
+    <!-- Two-column Layout -->
+    <div class="tool-layout">
+
+      <!-- Tool Main -->
+      <div class="tool-main">
+
+        <div class="form-row">
+          <label for="numInput">Number</label>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <input type="text" id="numInput" placeholder="e.g. 255 or FF or 11111111" style="flex:1; min-width:200px; font-family:'SF Mono',monospace;">
+            <select id="baseFrom" style="width:auto;">
+              <option value="2">Base 2 (bin)</option>
+              <option value="8">Base 8 (oct)</option>
+              <option value="10" selected>Base 10 (dec)</option>
+              <option value="16">Base 16 (hex)</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display:grid; gap:12px;">
+          <div><span style="color:var(--text-secondary); font-size:0.85rem;">Binary (2)</span><div class="result-box" id="out2">—</div></div>
+          <div><span style="color:var(--text-secondary); font-size:0.85rem;">Octal (8)</span><div class="result-box" id="out8">—</div></div>
+          <div><span style="color:var(--text-secondary); font-size:0.85rem;">Decimal (10)</span><div class="result-box" id="out10">—</div></div>
+          <div><span style="color:var(--text-secondary); font-size:0.85rem;">Hexadecimal (16)</span><div class="result-box" id="out16">—</div></div>
+        </div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All math runs locally in your browser. No data leaves your device.</span>
+        </div>
+
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="tool-sidebar">
+
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Type a number in the input box.</li>
+            <li>Select the base it is currently in (2, 8, 10, or 16).</li>
+            <li>Read the equivalent values in all four bases below.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>What bases are supported?</summary>
+            <p>This tool converts between binary (2), octal (8), decimal (10), and hexadecimal (16) — the most common bases in programming.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Why is my input rejected?</summary>
+            <p>Each base only allows certain digits. Binary allows 0–1, octal 0–7, decimal 0–9, and hex 0–9 plus A–F. An invalid digit (like "2" in binary) produces an error.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is hex case-sensitive?</summary>
+            <p>Output is shown uppercase (e.g. FF). Input accepts both upper and lower case (ff = FF).</p>
+          </details>
+        
+          <!-- ft-zh-faq -->
+          <details class="faq-item">
+            <summary>进制转换器是免费的吗？</summary>
+            <p>是的，进制转换器（Base Converter）免费使用，无需注册，转换在你的浏览器本地完成，数据不上传。</p>
+          </details>
+          <details class="faq-item">
+            <summary>进制转换器支持哪些格式或单位？</summary>
+            <p>支持常见格式与单位之间的互相转换，输入即转换，操作简单。</p>
+          </details>
+          <details class="faq-item">
+            <summary>转换会泄露我的数据吗？</summary>
+            <p>不会。所有处理都在本地浏览器进行，内容不上传任何服务器。</p>
+          </details>
+</div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🎨</div>
+              <div class="uc-content">
+                <h4>Colors</h4>
+                <p>Convert hex color codes to decimal RGB values.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">💾</div>
+              <div class="uc-content">
+                <h4>Bitmasks</h4>
+                <p>Read permissions and flags stored as binary.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🧩</div>
+              <div class="uc-content">
+                <h4>Debugging</h4>
+                <p>Translate memory addresses and encodings.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="uuid-generator.html" class="related-tool-card">
+              <span class="rt-icon">🆔</span>
+              <span class="rt-name">UUID Generator</span>
+            </a>
+            <a href="hash-generator.html" class="related-tool-card">
+              <span class="rt-icon">#️⃣</span>
+              <span class="rt-name">Hash Generator</span>
+            </a>
+            <a href="timestamp-converter.html" class="related-tool-card">
+              <span class="rt-icon">⏱️</span>
+              <span class="rt-name">Timestamp Converter</span>
+            </a>
+            <a href="json-formatter.html" class="related-tool-card">
+              <span class="rt-icon">🧩</span>
+              <span class="rt-name">JSON Formatter</span>
+            </a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+    <!-- More Tools Section -->
+    <section class="more-tools-section" aria-label="More tools">
+      <h2 class="more-tools-title" data-i18n="moreToolsTitle">🔍 Explore More Tools</h2>
+      <p class="more-tools-desc" data-i18n="moreToolsDesc">FreeToolset has 75+ free online tools. Browse more utilities to boost your productivity.</p>
+      <div class="more-tools-grid">
+        <a href="index.html" class="more-tool-card more-tool-home">
+          <span class="mt-icon">⚡</span>
+          <span class="mt-name" data-i18n="moreToolsAll">All 75+ Tools</span>
+        </a>
+        <a href="ai-studio.html" class="more-tool-card">
+          <span class="mt-icon">✨</span>
+          <span class="mt-name" data-i18n="✨ AI Studio">✨ AI Studio</span>
+        </a>
+        <a href="developer-tools.html" class="more-tool-card">
+          <span class="mt-icon">📂</span>
+          <span class="mt-name" data-i18n="catTitle_developer-tools">Developer Tools</span>
+        </a>
+        <a href="image-compressor.html" class="more-tool-card">
+          <span class="mt-icon">🖼️</span>
+          <span class="mt-name" data-i18n="cardTitle_image-compressor">🖼️ Image Compressor</span>
+        </a>
+        <a href="qr-code-generator.html" class="more-tool-card">
+          <span class="mt-icon">📱</span>
+          <span class="mt-name" data-i18n="cardTitle_qr-code-generator">📱 QR Code Generator</span>
+        </a>
+        <a href="password-generator.html" class="more-tool-card">
+          <span class="mt-icon">🔐</span>
+          <span class="mt-name" data-i18n="cardTitle_password-generator">🔐 Password Generator</span>
+        </a>
+        <a href="json-formatter.html" class="more-tool-card">
+          <span class="mt-icon">🧩</span>
+          <span class="mt-name" data-i18n="cardTitle_json-formatter">🧩 JSON Formatter</span>
+        </a>
+        <a href="word-counter.html" class="more-tool-card">
+          <span class="mt-icon">📝</span>
+          <span class="mt-name" data-i18n="cardTitle_word-counter">📝 Word Counter</span>
+        </a>
+      </div>
+    </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var numInput = document.getElementById('numInput');
+      var baseFrom = document.getElementById('baseFrom');
+      var out2 = document.getElementById('out2');
+      var out8 = document.getElementById('out8');
+      var out10 = document.getElementById('out10');
+      var out16 = document.getElementById('out16');
+
+      function convert() {
+        var v = numInput.value.trim();
+        var from = parseInt(baseFrom.value, 10);
+        if (!v) { out2.textContent = out8.textContent = out10.textContent = out16.textContent = '—'; return; }
+        var dec;
+        try {
+          dec = parseInt(v, from);
+        } catch (e) {
+          dec = NaN;
+        }
+        if (isNaN(dec)) {
+          out2.textContent = out8.textContent = out10.textContent = out16.textContent = 'Invalid for base ' + from;
+          return;
+        }
+        out2.textContent = dec.toString(2);
+        out8.textContent = dec.toString(8);
+        out10.textContent = dec.toString(10);
+        out16.textContent = dec.toString(16).toUpperCase();
+      }
+
+      numInput.addEventListener('input', convert);
+      baseFrom.addEventListener('change', convert);
+      convert();
+    })();
+  </script>
+
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>
