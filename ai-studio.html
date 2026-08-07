@@ -1605,7 +1605,12 @@
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ pack: pack, userId: userId })
           });
+          if (!resp.ok) {
+            var errText = await resp.text().catch(function(){return '';});
+            throw new Error('API returned HTTP '+resp.status+': '+errText);
+          }
           var data = await resp.json();
+          console.log('[PayPal] order response:', JSON.stringify(data));
           if (!data.success) {
             alert(data.error || 'PayPal is not available right now. Please use crypto payment.');
             return;
@@ -1635,7 +1640,8 @@
             onError: function () { alert('PayPal encountered an error. Please try again.'); }
           }).render('#paypal-btn');
         } catch (e) {
-          alert('PayPal is unavailable. Please try again later or use crypto payment.');
+          console.error('[PayPal]', e);
+          alert('PayPal error: ' + (e && e.message ? e.message : String(e)) + '\nPlease try again or use crypto payment.');
         } finally {
           cardEl.style.opacity = '';
         }
