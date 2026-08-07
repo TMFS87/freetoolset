@@ -1588,9 +1588,10 @@
       function loadPaypalSdk(clientId, mode) {
         return new Promise(function (resolve, reject) {
           if (window.paypal && paypalSdkLoaded) return resolve();
-          var host = (mode === 'sandbox') ? 'https://www.sandbox.paypal.com' : 'https://www.paypal.com';
+          // Always use www.paypal.com for SDK — sandbox.paypal.com is blocked in China.
+          // Sandbox/Live behavior is determined by client-id + backend API, not SDK host.
           var s = document.createElement('script');
-          s.src = host + '/sdk/js?client-id=' + encodeURIComponent(clientId) + '&currency=USD';
+          s.src = 'https://www.paypal.com/sdk/js?client-id=' + encodeURIComponent(clientId) + '&currency=USD';
           s.onload = function () { paypalSdkLoaded = true; resolve(); };
           s.onerror = function () { reject(new Error('SDK load failed')); };
           document.head.appendChild(s);
