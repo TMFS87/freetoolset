@@ -1585,11 +1585,12 @@
       }
 
       var paypalSdkLoaded = false;
-      function loadPaypalSdk(clientId) {
+      function loadPaypalSdk(clientId, mode) {
         return new Promise(function (resolve, reject) {
           if (window.paypal && paypalSdkLoaded) return resolve();
+          var host = (mode === 'sandbox') ? 'https://www.sandbox.paypal.com' : 'https://www.paypal.com';
           var s = document.createElement('script');
-          s.src = 'https://www.paypal.com/sdk/js?client-id=' + encodeURIComponent(clientId) + '&currency=USD';
+          s.src = host + '/sdk/js?client-id=' + encodeURIComponent(clientId) + '&currency=USD';
           s.onload = function () { paypalSdkLoaded = true; resolve(); };
           s.onerror = function () { reject(new Error('SDK load failed')); };
           document.head.appendChild(s);
@@ -1609,7 +1610,7 @@
             alert(data.error || 'PayPal is not available right now. Please use crypto payment.');
             return;
           }
-          await loadPaypalSdk(data.clientId);
+          await loadPaypalSdk(data.clientId, data.mode);
           paypalContainer.style.display = 'block';
           paypalContainer.innerHTML = '<div id="paypal-btn"></div>';
           paypal.Buttons({

@@ -170,7 +170,8 @@ module.exports = async function (req, res) {
     res.end(JSON.stringify({
       success: true,
       orderID: paypalOrderId,
-      clientId: process.env.PAYPAL_CLIENT_ID
+      clientId: process.env.PAYPAL_CLIENT_ID,
+      mode: (process.env.PAYPAL_MODE || 'live').toLowerCase()
     }));
   } catch (error) {
     console.error('Create PayPal order error:', error);
