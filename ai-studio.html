@@ -1584,19 +1584,7 @@
         });
       }
 
-      var paypalSdkLoaded = false;
-      function loadPaypalSdk(clientId, mode) {
-        return new Promise(function (resolve, reject) {
-          if (window.paypal && paypalSdkLoaded) return resolve();
-          // Always use www.paypal.com for SDK — sandbox.paypal.com is blocked in China.
-          // Sandbox/Live behavior is determined by client-id + backend API, not SDK host.
-          var s = document.createElement('script');
-          s.src = 'https://www.paypal.com/sdk/js?client-id=' + encodeURIComponent(clientId) + '&currency=USD';
-          s.onload = function () { paypalSdkLoaded = true; resolve(); };
-          s.onerror = function () { reject(new Error('SDK load failed')); };
-          document.head.appendChild(s);
-        });
-      }
+      /* ---------- PayPal Redirect Flow (no JS SDK needed) ---------- */
 
       async function handlePaypalPurchase(pack, cardEl) {
         cardEl.style.opacity = '0.6';
@@ -1612,34 +1600,14 @@
           }
           var data = await resp.json();
           console.log('[PayPal] order response:', JSON.stringify(data));
-          if (!data.success) {
+          if (!data.success || !data.approvalUrl) {
             alert(data.error || 'PayPal is not available right now. Please use crypto payment.');
             return;
           }
-          await loadPaypalSdk(data.clientId, data.mode);
-          paypalContainer.style.display = 'block';
-          paypalContainer.innerHTML = '<div id="paypal-btn"></div>';
-          paypal.Buttons({
-            createOrder: function () { return data.orderID; },
-            onApprove: async function () {
-              try {
-                var cap = await fetch('/api/paypal-capture', {
-                  method: 'POST',
-                  headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify({ orderID: data.orderID, userId: userId })
-                });
-                var capData = await cap.json();
-                if (capData.success) {
-                  window.location.href = 'https://www.freetoolset.app/ai-studio.html?payment=success';
-                } else {
-                  alert('Payment could not be confirmed. Please contact support if credits are missing.');
-                }
-              } catch (e) {
-                alert('Payment confirmation failed. Please contact support.');
-              }
-            },
-            onError: function () { alert('PayPal encountered an error. Please try again.'); }
-          }).render('#paypal-btn');
+          // Store orderID for capture on return
+          localStorage.setItem('ft_paypal_pending_order', data.orderID);
+          // Redirect to PayPal checkout page (no external JS needed)
+          window.location.href = data.approvalUrl;
         } catch (e) {
           console.error('[PayPal]', e);
           alert('PayPal error: ' + (e && e.message ? e.message : String(e)) + '\nPlease try again or use crypto payment.');
@@ -1647,6 +1615,32 @@
           cardEl.style.opacity = '';
         }
       }
+
+      /* Auto-capture when returning from PayPal redirect */
+      (function checkPaypalReturn() {
+        var params = new URLSearchParams(window.location.search);
+        if (params.get('payment') === 'success') {
+          var pendingOrder = localStorage.getItem('ft_paypal_pending_order');
+          if (pendingOrder && userId) {
+            localStorage.removeItem('ft_paypal_pending_order');
+            fetch('/api/paypal-capture', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ orderID: pendingOrder, userId: userId })
+            }).then(function(r) { return r.json(); }).then(function(capData) {
+              if (capData.success) {
+                console.log('[PayPal] Payment captured, credits added.');
+                // Clean URL
+                window.history.replaceState({}, '', '/ai-studio.html');
+              } else {
+                console.warn('[PayPal] Capture result:', capData);
+              }
+            }).catch(function(e) {
+              console.warn('[PayPal] Auto-capture failed:', e);
+            });
+          }
+        }
+      })();
 
       /* ---------- Payment Pack Selection ---------- */
       document.querySelectorAll('.pack-card').forEach(function (card) {

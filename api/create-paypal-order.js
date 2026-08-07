@@ -153,6 +153,14 @@ module.exports = async function (req, res) {
     var order = await createResp.json();
     var paypalOrderId = order.id;
 
+    // Extract approval URL for redirect-based checkout (no JS SDK needed)
+    var approvalUrl = '';
+    if (order.links && Array.isArray(order.links)) {
+      for (var li = 0; li < order.links.length; li++) {
+        if (order.links[li].rel === 'approve') { approvalUrl = order.links[li].href; break; }
+      }
+    }
+
     // Store mapping in Redis
     var orderInfo = {
       internalOrderId: internalOrderId,
@@ -170,7 +178,7 @@ module.exports = async function (req, res) {
     res.end(JSON.stringify({
       success: true,
       orderID: paypalOrderId,
-      clientId: process.env.PAYPAL_CLIENT_ID,
+      approvalUrl: approvalUrl,
       mode: (process.env.PAYPAL_MODE || 'live').toLowerCase()
     }));
   } catch (error) {
