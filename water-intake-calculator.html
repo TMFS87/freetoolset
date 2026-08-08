@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Water Intake Calculator — Free Online Daily Water Needs Calculator | FreeToolset</title>
+  <meta name="description" content="Estimate how much water you should drink per day based on body weight, activity level and climate. A simple nudge toward better hydration.">
+  <meta name="keywords" content="water intake calculator, daily water needs, how much water, hydration calculator, water per day">
+  <meta property="og:title" content="Daily Water Intake Calculator — FreeToolset">
+  <meta property="og:description" content="Estimate how much water you should drink per day based on body weight, activity level and climate. A simple nudge toward better hydration.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/water-intake-calculator.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/water-intake-calculator.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Daily Water Intake Calculator — FreeToolset">
+  <meta name="twitter:description" content="Estimate how much water you should drink per day based on body weight, activity level and climate. A simple nudge toward better hydration.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Daily Water Intake Calculator — Free Online Daily Water Needs Calculator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/water-intake-calculator.html","description":"Estimate how much water you should drink per day based on body weight, activity level and climate. A simple nudge toward better hydration.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this a strict medical rule?","acceptedAnswer":{"@type":"Answer","text":"No. It is a general guideline based on weight and lifestyle. Individual needs vary with health, diet and environment."}},{"@type":"Question","name":"Does coffee or tea count?","acceptedAnswer":{"@type":"Answer","text":"Roughly yes, though caffeinated drinks have a mild diuretic effect. Most of your intake should be plain water."}},{"@type":"Question","name":"Why does activity increase needs?","acceptedAnswer":{"@type":"Answer","text":"Exercise and heat increase fluid loss through sweat, so the body needs more water to stay balanced."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Calculator","item":"https://www.freetoolset.app/calculators.html"},{"@type":"ListItem","position":3,"name":"Daily Water Intake Calculator","item":"https://www.freetoolset.app/water-intake-calculator.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>每日饮水量计算器根据体重、活动量与气候估算你每天该喝多少水，是保持良好水合的简便提醒，本地运行。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="calculators.html">Calculator</a>
+      <span class="separator">/</span>
+      <span class="current">Daily Water Intake Calculator</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>💧 Daily Water Intake Calculator</h1>
+      <p>Estimate how much water you should drink per day based on body weight, activity level and climate. A simple nudge toward better hydration.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="gen-row">
+          <div class="form-row"><label for="wt">Weight (kg)</label><input type="number" id="wt" placeholder="70" min="1"></div>
+          <div class="form-row"><label for="act">Activity</label><select id="act"><option value="0">Sedentary</option><option value="500" selected>Moderate</option><option value="1000">Intense</option></select></div>
+        </div>
+        <label style="display:flex;align-items:center;gap:6px;margin:8px 0"><input type="checkbox" id="hot"> Hot / humid climate</label>
+        <div class="result-box empty" id="out">Enter weight to estimate water needs.</div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Enter your body weight in kg.</li>
+            <li>Pick your activity level.</li>
+            <li>Toggle hot climate if applicable.</li>
+            <li>See your recommended daily water intake.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>Is this a strict medical rule?</summary>
+            <p>No. It is a general guideline based on weight and lifestyle. Individual needs vary with health, diet and environment.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Does coffee or tea count?</summary>
+            <p>Roughly yes, though caffeinated drinks have a mild diuretic effect. Most of your intake should be plain water.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Why does activity increase needs?</summary>
+            <p>Exercise and heat increase fluid loss through sweat, so the body needs more water to stay balanced.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>这是严格的医学标准吗？</summary>
+            <p>不是，它是基于体重与生活方式的通用建议，个体需求会因健康、饮食、环境而异。</p>
+          </details>
+          <details class="faq-item">
+            <summary>咖啡和茶算吗？</summary>
+            <p>大致算，但咖啡因有轻微利尿作用，主要摄入仍应以白水为主。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🏃</div>
+              <div class="uc-content">
+                <h4>Fitness</h4>
+                <p>Hydrate around workouts.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🌞</div>
+              <div class="uc-content">
+                <h4>Hot Weather</h4>
+                <p>Adjust for summer heat.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🩺</div>
+              <div class="uc-content">
+                <h4>Wellness</h4>
+                <p>Build a daily habit.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="bmi-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏋️</span>
+              <span class="rt-name">BMI Calculator</span>
+            </a>
+            <a href="age-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🎂</span>
+              <span class="rt-name">Age Calculator</span>
+            </a>
+            <a href="percentage-calculator.html" class="related-tool-card">
+              <span class="rt-icon">➗</span>
+              <span class="rt-name">Percentage Calculator</span>
+            </a>
+            <a href="loan-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏦</span>
+              <span class="rt-name">Loan Calculator</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Daily Water Intake Calculator</h2>
+    <h3>为什么需要饮水提醒</h3>
+    <p>很多人长期饮水不足，而渴觉往往滞后于身体需求。基于体重的估算能给出可执行的每天目标。</p>
+    <h3>背后的原理</h3>
+    <p>常用基线为体重(kg)×35ml，再根据活动量与炎热气候各上浮约 500ml，得到每日建议饮水量。</p>
+    <h3>一个例子</h3>
+    <p>体重 70kg、中等活动、非炎热：70×35=2450ml，加活动 500ml，建议约 3 升/天。</p>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var wt=document.getElementById('wt'),act=document.getElementById('act'),hot=document.getElementById('hot'),out=document.getElementById('out');
+    function calc(){
+      var w=parseFloat(wt.value);
+      if(!(w>0)){out.className='result-box empty';out.textContent='Enter a valid weight.';return;}
+      var ml=w*35+parseInt(act.value)+(hot.checked?500:0);
+      var L=(ml/1000).toFixed(2);
+      out.className='result-box';
+      out.innerHTML='<div class="gen-big">'+L+' <span style="font-size:1rem;color:var(--text-secondary)">L / day</span></div><div style="margin-top:6px;color:var(--text-secondary);font-size:.9rem">≈ '+Math.round(ml/250)+' cups (250 ml each)</div>';
+    }
+    [wt,act,hot].forEach(function(el){el.addEventListener('input',calc);el.addEventListener('change',calc);});
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL Formatter — Free Online SQL Query Beautifier | FreeToolset</title>
+  <meta name="description" content="Format and beautify raw SQL into readable, indented queries. Uppercase keywords, break lines at major clauses, and spot syntax issues faster.">
+  <meta name="keywords" content="sql formatter, format sql, sql beautifier, sql pretty print, indent sql">
+  <meta property="og:title" content="SQL Formatter — FreeToolset">
+  <meta property="og:description" content="Format and beautify raw SQL into readable, indented queries. Uppercase keywords, break lines at major clauses, and spot syntax issues faster.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/sql-formatter.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/sql-formatter.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SQL Formatter — FreeToolset">
+  <meta name="twitter:description" content="Format and beautify raw SQL into readable, indented queries. Uppercase keywords, break lines at major clauses, and spot syntax issues faster.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"SQL Formatter — Free Online SQL Query Beautifier","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/sql-formatter.html","description":"Format and beautify raw SQL into readable, indented queries. Uppercase keywords, break lines at major clauses, and spot syntax issues faster.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which SQL dialects are supported?","acceptedAnswer":{"@type":"Answer","text":"The formatter is dialect-agnostic for common ANSI keywords (SELECT, FROM, WHERE, JOIN, etc.). It beautifies layout without validating syntax."}},{"@type":"Question","name":"Does it change my query logic?","acceptedAnswer":{"@type":"Answer","text":"No. It only adjusts whitespace and keyword casing; the actual statement and meaning are preserved."}},{"@type":"Question","name":"Can it minify instead?","acceptedAnswer":{"@type":"Answer","text":"This tool focuses on beautifying. A minify mode may be added later."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Developer","item":"https://www.freetoolset.app/developer-tools.html"},{"@type":"ListItem","position":3,"name":"SQL Formatter","item":"https://www.freetoolset.app/sql-formatter.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>SQL 格式化工具把杂乱的 SQL 语句整理为带缩进、关键字大写的易读格式，方便审查与调试查询，浏览器本地运行。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="developer-tools.html">Developer</a>
+      <span class="separator">/</span>
+      <span class="current">SQL Formatter</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>🗄️ SQL Formatter</h1>
+      <p>Format and beautify raw SQL into readable, indented queries. Uppercase keywords, break lines at major clauses, and spot syntax issues faster.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="form-row">
+          <label for="sql">SQL</label>
+          <textarea id="sql" placeholder="select id,name from users where age>18 order by name;" style="min-height:200px;font-family:monospace"></textarea>
+        </div>
+        <div class="btn-group">
+          <button class="btn btn-primary" id="fmtBtn">Format</button>
+          <button class="btn btn-secondary" id="copyBtn">Copy</button>
+        </div>
+        <div class="result-box empty" id="out">Paste SQL and click Format.</div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Paste your SQL into the box.</li>
+            <li>Click &quot;Format&quot;.</li>
+            <li>Review the indented, keyword-uppercased output.</li>
+            <li>Copy it back into your editor.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>Which SQL dialects are supported?</summary>
+            <p>The formatter is dialect-agnostic for common ANSI keywords (SELECT, FROM, WHERE, JOIN, etc.). It beautifies layout without validating syntax.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Does it change my query logic?</summary>
+            <p>No. It only adjusts whitespace and keyword casing; the actual statement and meaning are preserved.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can it minify instead?</summary>
+            <p>This tool focuses on beautifying. A minify mode may be added later.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>支持哪些 SQL 方言？</summary>
+            <p>对常见 ANSI 关键字（SELECT、FROM、WHERE、JOIN 等）通用，只做排版美化，不校验语法。</p>
+          </details>
+          <details class="faq-item">
+            <summary>会改变查询逻辑吗？</summary>
+            <p>不会，只调整空白与关键字大小写，语句含义保持不变。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🔍</div>
+              <div class="uc-content">
+                <h4>Code Review</h4>
+                <p>Make teammate queries readable.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🐛</div>
+              <div class="uc-content">
+                <h4>Debug</h4>
+                <p>Spot missing clauses faster.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">📚</div>
+              <div class="uc-content">
+                <h4>Docs</h4>
+                <p>Pretty-print SQL in documentation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="html-encoder.html" class="related-tool-card">
+              <span class="rt-icon"></></span>
+              <span class="rt-name">HTML Encoder / Decoder</span>
+            </a>
+            <a href="css-minifier.html" class="related-tool-card">
+              <span class="rt-icon">🎨</span>
+              <span class="rt-name">CSS Minifier</span>
+            </a>
+            <a href="json-minifier.html" class="related-tool-card">
+              <span class="rt-icon">🗜️</span>
+              <span class="rt-name">JSON Minifier</span>
+            </a>
+            <a href="html-minifier.html" class="related-tool-card">
+              <span class="rt-icon">📄</span>
+              <span class="rt-name">HTML Minifier</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 SQL Formatter</h2>
+    <h3>为什么需要 SQL 格式化</h3>
+    <p>复制来的 SQL 常常挤成一行，review 和排查都费劲。统一缩进与关键字大写能显著降低阅读成本。</p>
+    <h3>背后的原理</h3>
+    <p>工具识别主要子句关键字，在其前插入换行并逐级缩进，同时把关键字统一大写；字符串与注释内容原样保留。</p>
+    <h3>一个例子</h3>
+    <p>一条 200 字符的 JOIN 查询粘进来，格式化后 SELECT/FROM/WHERE/JOIN 各占一行并缩进，结构一目了然。</p>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var sql=document.getElementById('sql'),out=document.getElementById('out'),fmtBtn=document.getElementById('fmtBtn'),copyBtn=document.getElementById('copyBtn');
+    function fmt(){
+      var s=sql.value;
+      if(!s.trim()){out.className='result-box empty';out.textContent='Paste SQL and click Format.';return;}
+      var kws=['select','from','where','and','or','join','left join','right join','inner join','outer join','on','group by','order by','having','limit','insert into','values','update','set','delete','create table','alter table','union','union all'];
+      kws.sort(function(a,b){return b.length-a.length;});
+      var re=new RegExp('\\b('+kws.join('|')+')\\b','gi');
+      s=s.replace(re,function(m){return '\n'+m.toUpperCase();});
+      s=s.replace(/\s*;\s*/g,';\n').replace(/\s*,\s*/g,', ').replace(/\s+/g,' ');
+      var lines=s.split('\n').map(function(l){return l.trim();}).filter(function(l){return l;});
+      var ind='';
+      lines=lines.map(function(l){
+        if(/^(FROM|WHERE|GROUP BY|ORDER BY|HAVING|LIMIT|SET|VALUES|ON)/.test(l))return ind+l;
+        if(/^(SELECT|INSERT INTO|UPDATE|DELETE|CREATE TABLE|ALTER TABLE)/.test(l))return (ind?ind.slice(0,ind.length-2):'')+l;
+        return ind+l;
+      });
+      s=lines.join('\n');
+      s=s.replace(/(FROM|WHERE|GROUP BY|ORDER BY|HAVING|LIMIT|JOIN|LEFT JOIN|RIGHT JOIN|INNER JOIN|ON|AND|OR)/g,'\n  $1');
+      out.className='result-box';
+      out.innerHTML='<textarea readonly style="width:100%;min-height:180px;background:var(--bg-secondary);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:8px;font-family:monospace" id="res">'+s.replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</textarea>';
+    }
+    fmtBtn.addEventListener('click',fmt);
+    copyBtn.addEventListener('click',function(){var r=document.getElementById('res');if(!r)return;r.select();document.execCommand('copy');copyBtn.textContent='✓ Copied';setTimeout(function(){copyBtn.textContent='Copy';},1500);});
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

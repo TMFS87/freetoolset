@@ -1,7 +1,14 @@
 /**
- * gen-tools.js — Batch generator for 50 new high-traffic client-side tools.
- * Produces one standalone HTML page per tool (matching the existing FreeToolset
+ * gen-tools.js — Batch generator for client-side tool pages.
+ * Produces one standalone HTML page per tool (matching the FreeToolset
  * design/structure), plus snippet files for index.html cards and sitemap.xml.
+ *
+ * SEO improvements over v1:
+ *  - FAQPage structured data (from t.faq)
+ *  - BreadcrumbList structured data (Home > Category > Tool)
+ *  - Category breadcrumb link in body
+ *  - tool-deep long-form Chinese content section (from t.deep)
+ *  - Chinese FAQ block (from t.zhfaq)
  *
  * Run:  node gen-tools.js
  */
@@ -17,14 +24,26 @@ const CAT_LABEL = {
   text: 'Text',
   developer: 'Developer',
   image: 'Image',
-  fun: 'Fun'
+  fun: 'Fun',
+  ai: 'AI'
+};
+
+// category -> category page (used by breadcrumb + breadcrumbList schema)
+const CAT_PAGE = {
+  calculator: 'calculators.html',
+  converter: 'converters.html',
+  text: 'text-tools.html',
+  developer: 'developer-tools.html',
+  fun: 'fun-tools.html',
+  image: 'image-tools.html',
+  ai: 'ai-tools.html'
 };
 
 function esc(s) {
   return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
-// Pick related tools: up to 4 from same category (excluding self), then fill with AI Studio + a classic tool.
+// Pick related tools: up to 4 from same category (excluding self), then AI Studio + All Tools.
 function relatedCards(t, all) {
   const sameCat = all.filter(x => x.category === t.category && x.slug !== t.slug).slice(0, 4);
   const cards = sameCat.map(x => ({ href: x.slug + '.html', icon: x.icon, name: x.title }));
@@ -38,11 +57,11 @@ function relatedCards(t, all) {
 }
 
 function howtoList(steps) {
-  return steps.map(s => `            <li>${esc(s)}</li>`).join('\n');
+  return (steps || []).map(s => `            <li>${esc(s)}</li>`).join('\n');
 }
 
 function faqList(faq) {
-  return faq.map(f =>
+  return (faq || []).map(f =>
     `          <details class="faq-item">\n` +
     `            <summary>${esc(f.q)}</summary>\n` +
     `            <p>${esc(f.a)}</p>\n` +
@@ -50,7 +69,7 @@ function faqList(faq) {
 }
 
 function useCaseList(ucs) {
-  return ucs.map(u =>
+  return (ucs || []).map(u =>
     `            <div class="use-case-item">\n` +
     `              <div class="uc-icon">${u.icon}</div>\n` +
     `              <div class="uc-content">\n` +
@@ -60,11 +79,62 @@ function useCaseList(ucs) {
     `            </div>`).join('\n');
 }
 
+function faqSchema(faq) {
+  if (!faq || !faq.length) return '';
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map(f => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a }
+    }))
+  };
+  return `  <script type="application/ld+json">\n  ${JSON.stringify(data)}\n  </script>`;
+}
+
+function breadcrumbSchema(t) {
+  const cat = CAT_LABEL[t.category] || 'Tool';
+  const page = CAT_PAGE[t.category] || 'index.html';
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: BASE },
+      { '@type': 'ListItem', position: 2, name: cat, item: BASE + page },
+      { '@type': 'ListItem', position: 3, name: t.title, item: BASE + t.slug + '.html' }
+    ]
+  };
+  return `  <script type="application/ld+json">\n  ${JSON.stringify(data)}\n  </script>`;
+}
+
+function deepSection(t) {
+  let html = `  <section class="tool-deep">\n    <h2>📖 深入了解 ${esc(t.title)}</h2>\n`;
+  if (t.deep) {
+    t.deep.split('\n').filter(Boolean).forEach(p => {
+      if (p.startsWith('## ')) html += `    <h3>${esc(p.slice(3))}</h3>\n`;
+      else if (p.startsWith('- ')) html += `    <li>${esc(p.slice(2))}</li>\n`;
+      else html += `    <p>${esc(p)}</p>\n`;
+    });
+  } else {
+    html += `    <p>${esc(t.zh || t.desc)}</p>\n`;
+    html += `    <p>${esc(t.title)} 是一款完全在浏览器本地运行的免费工具，无需注册、不上传数据，保护你的隐私。适合日常重复性的文本与数据处理任务，帮你节省时间、减少出错。</p>\n`;
+  }
+  html += `  </section>`;
+  return html;
+}
+
+function zhFaqSection(t) {
+  if (!t.zhfaq || !t.zhfaq.length) return '';
+  const items = t.zhfaq.map(f =>
+    `          <details class="faq-item">\n            <summary>${esc(f.q)}</summary>\n            <p>${esc(f.a)}</p>\n          </details>`).join('\n');
+  return `        <div class="info-section">\n          <h2>❓ 常见问题（中文）</h2>\n${items}\n        </div>`;
+}
+
 function template(t, all) {
   const url = BASE + t.slug + '.html';
   const badge = CAT_LABEL[t.category] || 'Tool';
-  const badgeClass = 'badge-' + t.category;
-  const popular = t.popular ? `      <span class="card-popular">${t.popular}</span>\n` : '';
+  const catPage = CAT_PAGE[t.category] || 'index.html';
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
@@ -103,6 +173,8 @@ function template(t, all) {
   <script type="application/ld+json">
   ${JSON.stringify(schema)}
   </script>
+${faqSchema(t.faq)}
+${breadcrumbSchema(t)}
 </head>
 <body>
 
@@ -128,6 +200,8 @@ function template(t, all) {
 
     <nav class="breadcrumb">
       <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="${catPage}">${esc(badge)}</a>
       <span class="separator">/</span>
       <span class="current">${esc(t.title)}</span>
     </nav>
@@ -160,6 +234,8 @@ ${howtoList(t.howto)}
 ${faqList(t.faq)}
         </div>
 
+${zhFaqSection(t)}
+
         <div class="info-section">
           <h2>💡 Use Cases</h2>
           <div class="use-case-grid">
@@ -175,6 +251,8 @@ ${relatedCards(t, all)}
         </div>
       </aside>
     </div>
+
+${deepSection(t)}
   </main>
 
   <footer class="footer">
@@ -216,7 +294,9 @@ ${t.js}
 }
 
 // ---- Run ----
-const TOOLS = require('./tools-data.js');
+const A = require('./tools-data.js');
+const B = require('./tools-extra.js');
+const TOOLS = A.concat(B);
 
 // sanity: unique slugs
 const seen = {};

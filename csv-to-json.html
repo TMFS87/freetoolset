@@ -3,13 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <meta name="theme-color" content="#8b5cf6">
-  <title>Csv To Json — 免费在线工具 | FreeToolset</title>
-  <meta name="description" content="免费在线csv to json工具：简单易用，无需注册，浏览器本地运行，数据安全有保障。FreeToolset 提供 75+ 个实用免费工具，立即体验。">
+  <title>CSV to JSON — Free Online CSV to JSON Converter | FreeToolset</title>
+  <meta name="description" content="Convert CSV data to a JSON array of objects. Handles quoted fields, commas inside values and custom delimiters.">
   <meta name="keywords" content="csv to json, convert csv to json, csv json converter, csv parser online">
-  <meta property="og:title" content="Csv To Json — 免费在线工具 | FreeToolset">
-  <meta property="og:description" content="免费在线csv to json工具：简单易用，无需注册，浏览器本地运行，数据安全有保障。FreeToolset 提供 75+ 个实用免费工具，立即体验。">
+  <meta property="og:title" content="CSV to JSON — FreeToolset">
+  <meta property="og:description" content="Convert CSV data to a JSON array of objects. Handles quoted fields, commas inside values and custom delimiters.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.freetoolset.app/csv-to-json.html">
   <link rel="stylesheet" href="css/style.css">
@@ -26,56 +24,11 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"CSV to JSON — Free Online CSV to JSON Converter","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/csv-to-json.html","description":"Convert CSV data to a JSON array of objects. Handles quoted fields, commas inside values and custom delimiters.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
   </script>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "CSV to JSON",
-  "alternateName": "CSV转JSON工具",
-  "url": "https://www.freetoolset.app/csv-to-json.html",
-  "applicationCategory": "UtilityApplication",
-  "operatingSystem": "Any",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "description": "CSV转JSON工具（CSV to JSON）免费在线工具，无需注册，本地运行保护隐私。"
-}
-</script>
-  <!-- ft-faq-schema -->
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does the first row become keys?","acceptedAnswer":{"@type":"Answer","text":"Yes. The first row is treated as the header, and each following row becomes an object using those keys."}},{"@type":"Question","name":"Are quoted fields supported?","acceptedAnswer":{"@type":"Answer","text":"Yes. Fields wrapped in double quotes may contain commas, quotes and line breaks."}},{"@type":"Question","name":"What delimiters work?","acceptedAnswer":{"@type":"Answer","text":"Comma, semicolon and tab are supported via the delimiter selector."}}]}
+  </script>
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "CSV转JSON工具是免费的吗？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "是的，CSV转JSON工具（CSV to JSON）免费使用，无需注册，转换在你的浏览器本地完成，数据不上传。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "CSV转JSON工具支持哪些格式或单位？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "支持常见格式与单位之间的互相转换，输入即转换，操作简单。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "转换会泄露我的数据吗？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "不会。所有处理都在本地浏览器进行，内容不上传任何服务器。"
-      }
-    }
-  ]
-}
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Developer","item":"https://www.freetoolset.app/developer-tools.html"},{"@type":"ListItem","position":3,"name":"CSV to JSON","item":"https://www.freetoolset.app/csv-to-json.html"}]}
   </script>
 </head>
 <body>
@@ -87,8 +40,8 @@
     </a>
     <div class="navbar-nav">
       <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
-      <a href="index.html#tools" class="nav-link active" data-i18n="Tools">Tools</a>
-      <a href="ai-studio.html" class="nav-link" data-i18n="✨ AI Studio">✨ AI Studio</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
       <a href="about.html" class="nav-link" data-i18n="About">About</a>
       <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
     </div>
@@ -100,32 +53,12 @@
     <p>CSV 转 JSON 工具可把表格 CSV 数据转成 JSON 对象数组，正确处理带引号的字段、字段内逗号和自定义分隔符，适合数据导入和接口调试。</p>
   </section>
 
-      <!-- ft-deep -->
-  <section class="tool-deep">
-    <h2>📖 深入了解 CSV to JSON</h2>
-    <h2>为什么需要它</h2>
-    <ul>
-      <li>Data Import</li>
-      <li>APIs</li>
-      <li>Testing</li>
-    </ul>
-    <h2>背后的原理</h2>
-    <p>CSV to JSON 面向开发调试场景，在本地完成格式转换、压缩或解码，不把令牌、代码等敏感内容传到第三方服务器。</p>
-    <h2>一个例子</h2>
-    <p>例如把一段 JWT 或 CSV 粘进 CSV to JSON，本地立即解析或转换，结果可直接复制使用，敏感数据全程不出浏览器。</p>
-    <h2>常见误区</h2>
-    <ul>
-      <li>把 JWT 等可解码内容误当加密</li>
-      <li>压缩后未保留可读源码，出问题难排查</li>
-      <li>用了需要上传的在线工具处理密钥/令牌</li>
-    </ul>
-  </section>
-    <nav class="breadcrumb"><!-- breadcrumb-cat -->
-      <a href="index.html" data-i18n="Home">Home</a>
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
       <span class="separator">/</span>
-      <a href="developer-tools.html" data-i18n="catTitle_developer-tools">Developer Tools</a>
+      <a href="developer-tools.html">Developer</a>
       <span class="separator">/</span>
-      <span class="current" data-i18n="cardTitle_csv-to-json">CSV to JSON</span>
+      <span class="current">CSV to JSON</span>
     </nav>
 
     <div class="tool-header">
@@ -175,21 +108,9 @@
             <summary>What delimiters work?</summary>
             <p>Comma, semicolon and tab are supported via the delimiter selector.</p>
           </details>
-        
-          <!-- ft-zh-faq -->
-          <details class="faq-item">
-            <summary>CSV转JSON工具是免费的吗？</summary>
-            <p>是的，CSV转JSON工具（CSV to JSON）免费使用，无需注册，转换在你的浏览器本地完成，数据不上传。</p>
-          </details>
-          <details class="faq-item">
-            <summary>CSV转JSON工具支持哪些格式或单位？</summary>
-            <p>支持常见格式与单位之间的互相转换，输入即转换，操作简单。</p>
-          </details>
-          <details class="faq-item">
-            <summary>转换会泄露我的数据吗？</summary>
-            <p>不会。所有处理都在本地浏览器进行，内容不上传任何服务器。</p>
-          </details>
-</div>
+        </div>
+
+
 
         <div class="info-section">
           <h2>💡 Use Cases</h2>
@@ -249,47 +170,13 @@
         </div>
       </aside>
     </div>
-  </main>
 
-    <!-- More Tools Section -->
-    <section class="more-tools-section" aria-label="More tools">
-      <h2 class="more-tools-title" data-i18n="moreToolsTitle">🔍 Explore More Tools</h2>
-      <p class="more-tools-desc" data-i18n="moreToolsDesc">FreeToolset has 75+ free online tools. Browse more utilities to boost your productivity.</p>
-      <div class="more-tools-grid">
-        <a href="index.html" class="more-tool-card more-tool-home">
-          <span class="mt-icon">⚡</span>
-          <span class="mt-name" data-i18n="moreToolsAll">All 75+ Tools</span>
-        </a>
-        <a href="ai-studio.html" class="more-tool-card">
-          <span class="mt-icon">✨</span>
-          <span class="mt-name" data-i18n="✨ AI Studio">✨ AI Studio</span>
-        </a>
-        <a href="developer-tools.html" class="more-tool-card">
-          <span class="mt-icon">📂</span>
-          <span class="mt-name" data-i18n="catTitle_developer-tools">Developer Tools</span>
-        </a>
-        <a href="image-compressor.html" class="more-tool-card">
-          <span class="mt-icon">🖼️</span>
-          <span class="mt-name" data-i18n="cardTitle_image-compressor">🖼️ Image Compressor</span>
-        </a>
-        <a href="qr-code-generator.html" class="more-tool-card">
-          <span class="mt-icon">📱</span>
-          <span class="mt-name" data-i18n="cardTitle_qr-code-generator">📱 QR Code Generator</span>
-        </a>
-        <a href="password-generator.html" class="more-tool-card">
-          <span class="mt-icon">🔐</span>
-          <span class="mt-name" data-i18n="cardTitle_password-generator">🔐 Password Generator</span>
-        </a>
-        <a href="json-formatter.html" class="more-tool-card">
-          <span class="mt-icon">🧩</span>
-          <span class="mt-name" data-i18n="cardTitle_json-formatter">🧩 JSON Formatter</span>
-        </a>
-        <a href="word-counter.html" class="more-tool-card">
-          <span class="mt-icon">📝</span>
-          <span class="mt-name" data-i18n="cardTitle_word-counter">📝 Word Counter</span>
-        </a>
-      </div>
-    </section>
+  <section class="tool-deep">
+    <h2>📖 深入了解 CSV to JSON</h2>
+    <p>CSV 转 JSON 工具可把表格 CSV 数据转成 JSON 对象数组，正确处理带引号的字段、字段内逗号和自定义分隔符，适合数据导入和接口调试。</p>
+    <p>CSV to JSON 是一款完全在浏览器本地运行的免费工具，无需注册、不上传数据，保护你的隐私。适合日常重复性的文本与数据处理任务，帮你节省时间、减少出错。</p>
+  </section>
+  </main>
 
   <footer class="footer">
     <div class="footer-content">

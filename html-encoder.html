@@ -3,13 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <meta name="theme-color" content="#8b5cf6">
-  <title>HTML 编码解码器 — HTML Entity 在线转义还原工具</title>
-  <meta name="description" content="免费 HTML 编码解码工具：将 HTML 特殊字符转为实体编码或反向还原。防止 XSS 注入、在网页上显示 HTML 源码、处理用户输入内容时必备。">
+  <title>HTML Encoder / Decoder — Free Online HTML Entity Encoder Decoder | FreeToolset</title>
+  <meta name="description" content="Encode text to HTML entities or decode HTML entities back to plain text. Safely escape &lt;, &gt;, &amp; and quotes for the web.">
   <meta name="keywords" content="html encoder, html decoder, html entities, escape html, encode special characters">
-  <meta property="og:title" content="HTML 编码解码器 — HTML Entity 在线转义还原工具">
-  <meta property="og:description" content="免费 HTML 编码解码工具：将 HTML 特殊字符转为实体编码或反向还原。防止 XSS 注入、在网页上显示 HTML 源码、处理用户输入内容时必备。">
+  <meta property="og:title" content="HTML Encoder / Decoder — FreeToolset">
+  <meta property="og:description" content="Encode text to HTML entities or decode HTML entities back to plain text. Safely escape &lt;, &gt;, &amp; and quotes for the web.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.freetoolset.app/html-encoder.html">
   <link rel="stylesheet" href="css/style.css">
@@ -26,56 +24,11 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"HTML Encoder / Decoder — Free Online HTML Entity Encoder Decoder","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/html-encoder.html","description":"Encode text to HTML entities or decode HTML entities back to plain text. Safely escape <, >, & and quotes for the web.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
   </script>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "HTML Encoder / Decoder",
-  "alternateName": "HTML编码解码器",
-  "url": "https://www.freetoolset.app/html-encoder.html",
-  "applicationCategory": "UtilityApplication",
-  "operatingSystem": "Any",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "description": "HTML编码解码器（HTML Encoder / Decoder）免费在线工具，无需注册，本地运行保护隐私。"
-}
-</script>
-  <!-- ft-faq-schema -->
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why encode HTML?","acceptedAnswer":{"@type":"Answer","text":"Encoding turns characters like < and & into entities so they display as text instead of being interpreted as markup — essential for showing code safely."}},{"@type":"Question","name":"Which characters are encoded?","acceptedAnswer":{"@type":"Answer","text":"The core special characters &, <, >, \" and ' are converted; decoding also understands named and numeric entities."}},{"@type":"Question","name":"Does it prevent XSS?","acceptedAnswer":{"@type":"Answer","text":"Escaping output is one important defense, but always combine it with proper server-side sanitization."}}]}
+  </script>
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "HTML编码解码器需要联网吗？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "不需要。所有处理都在你的浏览器本地完成，数据不上传服务器，离线也能用。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "HTML编码解码器支持大文件或批量吗？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "在浏览器性能范围内支持较大内容处理；具体上限取决于你的设备内存。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "HTML编码解码器是免费的吗？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "是的，完全免费，无需注册，打开即用。"
-      }
-    }
-  ]
-}
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Developer","item":"https://www.freetoolset.app/developer-tools.html"},{"@type":"ListItem","position":3,"name":"HTML Encoder / Decoder","item":"https://www.freetoolset.app/html-encoder.html"}]}
   </script>
 </head>
 <body>
@@ -87,8 +40,8 @@
     </a>
     <div class="navbar-nav">
       <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
-      <a href="index.html#tools" class="nav-link active" data-i18n="Tools">Tools</a>
-      <a href="ai-studio.html" class="nav-link" data-i18n="✨ AI Studio">✨ AI Studio</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
       <a href="about.html" class="nav-link" data-i18n="About">About</a>
       <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
     </div>
@@ -100,32 +53,12 @@
     <p>HTML 编码/解码工具可把文本转成 HTML 实体（转义 &lt;、&gt;、&amp; 和引号），也能把实体解码回普通文本，适合在网页里安全显示代码、防止 XSS 展示。</p>
   </section>
 
-      <!-- ft-deep -->
-  <section class="tool-deep">
-    <h2>📖 深入了解 HTML Encoder / Decoder</h2>
-    <h2>为什么需要它</h2>
-    <ul>
-      <li>Documentation</li>
-      <li>Security</li>
-      <li>Email</li>
-    </ul>
-    <h2>背后的原理</h2>
-    <p>HTML Encoder / Decoder 面向开发调试场景，在本地完成格式转换、压缩或解码，不把令牌、代码等敏感内容传到第三方服务器。</p>
-    <h2>一个例子</h2>
-    <p>例如把一段 JWT 或 CSV 粘进 HTML Encoder / Decoder，本地立即解析或转换，结果可直接复制使用，敏感数据全程不出浏览器。</p>
-    <h2>常见误区</h2>
-    <ul>
-      <li>把 JWT 等可解码内容误当加密</li>
-      <li>压缩后未保留可读源码，出问题难排查</li>
-      <li>用了需要上传的在线工具处理密钥/令牌</li>
-    </ul>
-  </section>
-    <nav class="breadcrumb"><!-- breadcrumb-cat -->
-      <a href="index.html" data-i18n="Home">Home</a>
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
       <span class="separator">/</span>
-      <a href="developer-tools.html" data-i18n="catTitle_developer-tools">Developer Tools</a>
+      <a href="developer-tools.html">Developer</a>
       <span class="separator">/</span>
-      <span class="current" data-i18n="cardTitle_html-encoder">HTML Encoder / Decoder</span>
+      <span class="current">HTML Encoder / Decoder</span>
     </nav>
 
     <div class="tool-header">
@@ -171,21 +104,9 @@
             <summary>Does it prevent XSS?</summary>
             <p>Escaping output is one important defense, but always combine it with proper server-side sanitization.</p>
           </details>
-        
-          <!-- ft-zh-faq -->
-          <details class="faq-item">
-            <summary>HTML编码解码器需要联网吗？</summary>
-            <p>不需要。所有处理都在你的浏览器本地完成，数据不上传服务器，离线也能用。</p>
-          </details>
-          <details class="faq-item">
-            <summary>HTML编码解码器支持大文件或批量吗？</summary>
-            <p>在浏览器性能范围内支持较大内容处理；具体上限取决于你的设备内存。</p>
-          </details>
-          <details class="faq-item">
-            <summary>HTML编码解码器是免费的吗？</summary>
-            <p>是的，完全免费，无需注册，打开即用。</p>
-          </details>
-</div>
+        </div>
+
+
 
         <div class="info-section">
           <h2>💡 Use Cases</h2>
@@ -245,47 +166,13 @@
         </div>
       </aside>
     </div>
-  </main>
 
-    <!-- More Tools Section -->
-    <section class="more-tools-section" aria-label="More tools">
-      <h2 class="more-tools-title" data-i18n="moreToolsTitle">🔍 Explore More Tools</h2>
-      <p class="more-tools-desc" data-i18n="moreToolsDesc">FreeToolset has 75+ free online tools. Browse more utilities to boost your productivity.</p>
-      <div class="more-tools-grid">
-        <a href="index.html" class="more-tool-card more-tool-home">
-          <span class="mt-icon">⚡</span>
-          <span class="mt-name" data-i18n="moreToolsAll">All 75+ Tools</span>
-        </a>
-        <a href="ai-studio.html" class="more-tool-card">
-          <span class="mt-icon">✨</span>
-          <span class="mt-name" data-i18n="✨ AI Studio">✨ AI Studio</span>
-        </a>
-        <a href="developer-tools.html" class="more-tool-card">
-          <span class="mt-icon">📂</span>
-          <span class="mt-name" data-i18n="catTitle_developer-tools">Developer Tools</span>
-        </a>
-        <a href="image-compressor.html" class="more-tool-card">
-          <span class="mt-icon">🖼️</span>
-          <span class="mt-name" data-i18n="cardTitle_image-compressor">🖼️ Image Compressor</span>
-        </a>
-        <a href="qr-code-generator.html" class="more-tool-card">
-          <span class="mt-icon">📱</span>
-          <span class="mt-name" data-i18n="cardTitle_qr-code-generator">📱 QR Code Generator</span>
-        </a>
-        <a href="password-generator.html" class="more-tool-card">
-          <span class="mt-icon">🔐</span>
-          <span class="mt-name" data-i18n="cardTitle_password-generator">🔐 Password Generator</span>
-        </a>
-        <a href="json-formatter.html" class="more-tool-card">
-          <span class="mt-icon">🧩</span>
-          <span class="mt-name" data-i18n="cardTitle_json-formatter">🧩 JSON Formatter</span>
-        </a>
-        <a href="word-counter.html" class="more-tool-card">
-          <span class="mt-icon">📝</span>
-          <span class="mt-name" data-i18n="cardTitle_word-counter">📝 Word Counter</span>
-        </a>
-      </div>
-    </section>
+  <section class="tool-deep">
+    <h2>📖 深入了解 HTML Encoder / Decoder</h2>
+    <p>HTML 编码/解码工具可把文本转成 HTML 实体（转义 &lt;、&gt;、&amp; 和引号），也能把实体解码回普通文本，适合在网页里安全显示代码、防止 XSS 展示。</p>
+    <p>HTML Encoder / Decoder 是一款完全在浏览器本地运行的免费工具，无需注册、不上传数据，保护你的隐私。适合日常重复性的文本与数据处理任务，帮你节省时间、减少出错。</p>
+  </section>
+  </main>
 
   <footer class="footer">
     <div class="footer-content">

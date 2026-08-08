@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Break-Even Calculator — Free Online Break-Even Point Calculator | FreeToolset</title>
+  <meta name="description" content="Find the break-even point for your product or service: how many units you must sell, and the revenue needed, to cover fixed and variable costs.">
+  <meta name="keywords" content="break even calculator, break even point, break even analysis, fixed cost variable cost, business calculator">
+  <meta property="og:title" content="Break-Even Calculator — FreeToolset">
+  <meta property="og:description" content="Find the break-even point for your product or service: how many units you must sell, and the revenue needed, to cover fixed and variable costs.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/break-even-calculator.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/break-even-calculator.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Break-Even Calculator — FreeToolset">
+  <meta name="twitter:description" content="Find the break-even point for your product or service: how many units you must sell, and the revenue needed, to cover fixed and variable costs.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Break-Even Calculator — Free Online Break-Even Point Calculator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/break-even-calculator.html","description":"Find the break-even point for your product or service: how many units you must sell, and the revenue needed, to cover fixed and variable costs.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the break-even point?","acceptedAnswer":{"@type":"Answer","text":"It is the sales volume at which total revenue equals total costs, so you neither profit nor lose. Below it you lose money; above it you earn."}},{"@type":"Question","name":"Why do I need variable cost?","acceptedAnswer":{"@type":"Answer","text":"Each unit sold adds a variable cost, reducing the contribution margin. Ignoring it makes the break-even point look falsely low."}},{"@type":"Question","name":"Can I include expected sales?","acceptedAnswer":{"@type":"Answer","text":"The calculator shows the break-even point; compare it to your expected sales to see your margin of safety."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Calculator","item":"https://www.freetoolset.app/calculators.html"},{"@type":"ListItem","position":3,"name":"Break-Even Calculator","item":"https://www.freetoolset.app/break-even-calculator.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>盈亏平衡计算器根据固定成本、单价与单位变动成本，算出需要卖多少件、多少销售额才能打平，适合创业与小生意测算，本地运行。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="calculators.html">Calculator</a>
+      <span class="separator">/</span>
+      <span class="current">Break-Even Calculator</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>📈 Break-Even Calculator</h1>
+      <p>Find the break-even point for your product or service: how many units you must sell, and the revenue needed, to cover fixed and variable costs.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="gen-row">
+          <div class="form-row"><label for="fc">Fixed costs</label><input type="number" id="fc" placeholder="10000" min="0"></div>
+          <div class="form-row"><label for="price">Price per unit</label><input type="number" id="price" placeholder="50" min="0"></div>
+        </div>
+        <div class="form-row"><label for="vc">Variable cost per unit</label><input type="number" id="vc" placeholder="30" min="0"></div>
+        <div class="result-box empty" id="out">Enter costs to see the break-even point.</div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Enter total fixed costs.</li>
+            <li>Enter the price per unit.</li>
+            <li>Enter the variable cost per unit.</li>
+            <li>See the break-even units and revenue instantly.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>What is the break-even point?</summary>
+            <p>It is the sales volume at which total revenue equals total costs, so you neither profit nor lose. Below it you lose money; above it you earn.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Why do I need variable cost?</summary>
+            <p>Each unit sold adds a variable cost, reducing the contribution margin. Ignoring it makes the break-even point look falsely low.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can I include expected sales?</summary>
+            <p>The calculator shows the break-even point; compare it to your expected sales to see your margin of safety.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>什么是盈亏平衡点？</summary>
+            <p>是总收入等于总成本、不赚不赔的销量点。低于它亏损，高于它开始盈利。</p>
+          </details>
+          <details class="faq-item">
+            <summary>为什么要输入单位变动成本？</summary>
+            <p>每卖一件都会增加变动成本，影响边际贡献；忽略它会让盈亏平衡点被低估。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🚀</div>
+              <div class="uc-content">
+                <h4>Startups</h4>
+                <p>Know when the business turns profitable.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🛒</div>
+              <div class="uc-content">
+                <h4>Pricing</h4>
+                <p>Test price vs cost scenarios.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">📊</div>
+              <div class="uc-content">
+                <h4>Planning</h4>
+                <p>Set realistic sales targets.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="bmi-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏋️</span>
+              <span class="rt-name">BMI Calculator</span>
+            </a>
+            <a href="age-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🎂</span>
+              <span class="rt-name">Age Calculator</span>
+            </a>
+            <a href="percentage-calculator.html" class="related-tool-card">
+              <span class="rt-icon">➗</span>
+              <span class="rt-name">Percentage Calculator</span>
+            </a>
+            <a href="loan-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏦</span>
+              <span class="rt-name">Loan Calculator</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Break-Even Calculator</h2>
+    <h3>为什么需要盈亏平衡分析</h3>
+    <p>创业或上新前，先知道「卖多少才能回本」是基本功。它能告诉你定价和成本的安全边界。</p>
+    <h3>背后的原理</h3>
+    <p>盈亏平衡点（件）= 固定成本 ÷（单价 − 单位变动成本），即单位边际贡献能摊掉多少固定成本；平衡销售额 = 平衡件数 × 单价。</p>
+    <h3>一个例子</h3>
+    <p>固定成本 1 万元、单价 50 元、变动成本 30 元，则每件贡献 20 元，需卖 500 件打平，对应销售额 2.5 万元。</p>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var fc=document.getElementById('fc'),price=document.getElementById('price'),vc=document.getElementById('vc'),out=document.getElementById('out');
+    function calc(){
+      var F=parseFloat(fc.value),P=parseFloat(price.value),V=parseFloat(vc.value);
+      if(!(F>=0)||!(P>0)||!(V>=0)){out.className='result-box empty';out.textContent='Enter valid costs (price > 0).';return;}
+      if(V>=P){out.className='result-box';out.innerHTML='<span style="color:#f87171">Variable cost must be below price, otherwise you never break even.</span>';return;}
+      var units=F/(P-V);
+      var rev=units*P;
+      out.className='result-box';
+      out.innerHTML='<div class="gen-big">'+Math.ceil(units).toLocaleString()+' <span style="font-size:1rem;color:var(--text-secondary)">units</span></div><div style="margin-top:8px;color:var(--text-secondary)">Break-even revenue: <b style="color:var(--text)">'+rev.toLocaleString(undefined,{style:'currency',currency:'USD'})+'</b></div><div style="margin-top:4px;color:var(--text-secondary);font-size:.9rem">Contribution margin per unit: '+(P-V).toLocaleString(undefined,{style:'currency',currency:'USD'})+'</div>';
+    }
+    fc.addEventListener('input',calc);price.addEventListener('input',calc);vc.addEventListener('input',calc);
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

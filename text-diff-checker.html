@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Diff Checker — Free Online Side-by-Side Text Comparison Tool | FreeToolset</title>
+  <meta name="description" content="Compare two versions of text and instantly spot the differences line by line. Perfect for tracking edits, code changes, and document revisions without installing anything.">
+  <meta name="keywords" content="text diff, compare text, diff checker, line comparison, text comparison tool">
+  <meta property="og:title" content="Text Diff Checker — FreeToolset">
+  <meta property="og:description" content="Compare two versions of text and instantly spot the differences line by line. Perfect for tracking edits, code changes, and document revisions without installing anything.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/text-diff-checker.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/text-diff-checker.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Text Diff Checker — FreeToolset">
+  <meta name="twitter:description" content="Compare two versions of text and instantly spot the differences line by line. Perfect for tracking edits, code changes, and document revisions without installing anything.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Text Diff Checker — Free Online Side-by-Side Text Comparison Tool","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/text-diff-checker.html","description":"Compare two versions of text and instantly spot the differences line by line. Perfect for tracking edits, code changes, and document revisions without installing anything.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this a character-level or line-level diff?","acceptedAnswer":{"@type":"Answer","text":"It compares line by line. Lines present only in the first text are marked removed, only in the second are added, and lines in both but different are flagged as changed."}},{"@type":"Question","name":"Can I compare code snippets?","acceptedAnswer":{"@type":"Answer","text":"Yes. It works great for short code or config snippets, though for very large files a dedicated merge tool may be more efficient."}},{"@type":"Question","name":"Is my text stored?","acceptedAnswer":{"@type":"Answer","text":"No. Comparison runs entirely in your browser."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Text","item":"https://www.freetoolset.app/text-tools.html"},{"@type":"ListItem","position":3,"name":"Text Diff Checker","item":"https://www.freetoolset.app/text-diff-checker.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>文本差异对比工具逐行比较两段文字，高亮新增、删除和修改的行，适合核对文章修订、代码改动、配置变更，纯前端运行，无需上传文件。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="text-tools.html">Text</a>
+      <span class="separator">/</span>
+      <span class="current">Text Diff Checker</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>🔍 Text Diff Checker</h1>
+      <p>Compare two versions of text and instantly spot the differences line by line. Perfect for tracking edits, code changes, and document revisions without installing anything.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="a">Original Text</label>
+            <textarea id="a" placeholder="Paste original text..." style="min-height:180px;"></textarea>
+          </div>
+          <div class="form-row">
+            <label for="b">Changed Text</label>
+            <textarea id="b" placeholder="Paste new text..." style="min-height:180px;"></textarea>
+          </div>
+        </div>
+        <div class="btn-group">
+          <button class="btn btn-primary" id="cmpBtn">Compare</button>
+          <button class="btn btn-secondary" id="clrBtn">Clear</button>
+        </div>
+        <div class="result-box empty" id="out">Paste two versions and click Compare.</div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Paste the original text in the left box.</li>
+            <li>Paste the new version in the right box.</li>
+            <li>Click &quot;Compare&quot; to see changed lines highlighted.</li>
+            <li>Review additions (green) and removals (red).</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>Is this a character-level or line-level diff?</summary>
+            <p>It compares line by line. Lines present only in the first text are marked removed, only in the second are added, and lines in both but different are flagged as changed.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can I compare code snippets?</summary>
+            <p>Yes. It works great for short code or config snippets, though for very large files a dedicated merge tool may be more efficient.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is my text stored?</summary>
+            <p>No. Comparison runs entirely in your browser.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>对比是按行还是按字符？</summary>
+            <p>按行对比。只在原文出现的行标为删除，只在新文出现的标为新增，两边都存在但内容不同的标为已修改。</p>
+          </details>
+          <details class="faq-item">
+            <summary>能对比代码吗？</summary>
+            <p>可以，适合短代码或配置片段的改动核对。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">📄</div>
+              <div class="uc-content">
+                <h4>Doc Revisions</h4>
+                <p>See exactly what changed between draft versions.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">💻</div>
+              <div class="uc-content">
+                <h4>Code Review</h4>
+                <p>Spot differences in small code or config edits.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">✍️</div>
+              <div class="uc-content">
+                <h4>Writing</h4>
+                <p>Compare two paragraphs before choosing one.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="reverse-text.html" class="related-tool-card">
+              <span class="rt-icon">🔄</span>
+              <span class="rt-name">Reverse Text</span>
+            </a>
+            <a href="text-repeater.html" class="related-tool-card">
+              <span class="rt-icon">🔁</span>
+              <span class="rt-name">Text Repeater</span>
+            </a>
+            <a href="find-and-replace.html" class="related-tool-card">
+              <span class="rt-icon">🔍</span>
+              <span class="rt-name">Find and Replace Text</span>
+            </a>
+            <a href="slug-generator.html" class="related-tool-card">
+              <span class="rt-icon">🔗</span>
+              <span class="rt-name">URL Slug Generator</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Text Diff Checker</h2>
+    <h3>为什么需要文本对比</h3>
+    <p>在写作、协作和开发中，我们经常需要确认「改了哪里」。逐行对比能直观呈现新增、删除和修改，比肉眼比较可靠得多。</p>
+    <h3>背后的原理</h3>
+    <p>工具把两段文本按换行切分为行数组，用集合运算找出仅出现在左侧（删除）、仅出现在右侧（新增）的行，并对两边都有的行做内容比较标记是否变化。</p>
+    <h3>一个例子</h3>
+    <p>把旧版文案放左边、新版放右边，点击对比后，新增的卖点句显示为绿色，删掉的过时表述显示为红色，一眼就能审稿。</p>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var a=document.getElementById('a'),b=document.getElementById('b'),out=document.getElementById('out'),cmpBtn=document.getElementById('cmpBtn'),clrBtn=document.getElementById('clrBtn');
+    function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+    function diff(){
+      var la=a.value.split('\n'),lb=b.value.split('\n');
+      var sa=new Set(la),sb=new Set(lb);
+      var html='<div style="font-family:monospace;font-size:.9rem">';
+      var max=Math.max(la.length,lb.length);
+      var adds=0,rems=0,chg=0;
+      for(var i=0;i<max;i++){
+        var x=la[i],y=lb[i];
+        if(x===undefined){html+='<div style="background:rgba(34,197,94,.15);padding:2px 6px">+ '+(y!==undefined?esc(y):'')+'</div>';adds++;}
+        else if(y===undefined){html+='<div style="background:rgba(239,68,68,.15);padding:2px 6px">- '+esc(x)+'</div>';rems++;}
+        else if(x!==y){html+='<div style="background:rgba(250,204,21,.15);padding:2px 6px">~ '+esc(x)+' <span style="color:var(--text-secondary)">→</span> '+esc(y)+'</div>';chg++;}
+      }
+      html+='</div>';
+      html='<div style="margin-bottom:8px;color:var(--text-secondary);font-size:.9rem">Added: '+adds+' &middot; Removed: '+rems+' &middot; Changed: '+chg+'</div>'+html;
+      out.className='result-box';
+      out.innerHTML=html;
+    }
+    cmpBtn.addEventListener('click',diff);
+    clrBtn.addEventListener('click',function(){a.value='';b.value='';out.className='result-box empty';out.textContent='Paste two versions and click Compare.';});
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>
