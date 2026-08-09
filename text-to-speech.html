@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,6 +30,18 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Text","item":"https://www.freetoolset.app/text-tools.html"},{"@type":"ListItem","position":3,"name":"Text to Speech","item":"https://www.freetoolset.app/text-to-speech.html"}]}
   </script>
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX', { send_page_view: true });
+</script>
+
+  <link rel="alternate" hreflang="zh-CN" href="https://www.freetoolset.app/text-to-speech.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.freetoolset.app/text-to-speech.html" />
 </head>
 <body>
 
@@ -213,7 +225,7 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/i18n.js"></script>
+<script src="/js/i18n.js" defer></script>
 <!-- BAIDU_AUTO_PUSH -->
 <script>
 (function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();

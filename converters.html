@@ -10,6 +10,18 @@
   <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX', { send_page_view: true });
+</script>
+
+  <link rel="alternate" hreflang="zh-CN" href="https://www.freetoolset.app/converters.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.freetoolset.app/converters.html" />
 </head>
 <body>
   <nav class="navbar">
@@ -63,7 +75,57 @@
         <a class="tool-card" href="text-case-converter.html">
           <h3>Text Case Converter · 文字大小写转换</h3>
         </a>
-    </div>
+
+    <section class="cat-about" aria-label="单位转换器介绍">
+      <h2>全面的单位换算工具——科学、烹饪、旅行全覆盖</h2>
+      <p>FreeToolset 提供 <strong>12 款单位转换器</strong>，覆盖长度、重量、温度、速度、面积、体积、时间、数据存储等常见维度。无论是厨房里的烘焙换算、出国旅行的货币/温度转换，还是程序员的数据单位换算，都能快速得到准确结果。</p>
+<p>转换算法基于国际标准定义，结果精确可靠。界面简洁直观，选择单位和输入数值后即时显示结果，无需等待。</p>
+    </section>
+
+    <section id="faq-section" class="cat-faq" aria-label="常见问题">
+      <h2>单位转换器常见问题</h2>
+      <dl class="faq-list">
+        <dt>支持哪些单位的转换？</dt>
+        <dd>覆盖公制（SI）、英制、美制、中国市制等单位制式。包括米/英尺/英寸、千克/磅/盎司、摄氏/华氏/开尔文等常见单位。</dd>
+        <dt>转换结果准确吗？</dt>
+        <dd>准确。我们使用标准换算系数，大部分转换精度可达小数点后 10 位以上。</dd>
+        <dt>可以反向转换吗？</dt>
+        <dd>可以。只需交换单位选择即可自动反向计算，非常方便。</dd>
+      </dl>
+    </section>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "支持哪些单位的转换？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "覆盖公制（SI）、英制、美制、中国市制等单位制式。包括米/英尺/英寸、千克/磅/盎司、摄氏/华氏/开尔文等常见单位。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "转换结果准确吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "准确。我们使用标准换算系数，大部分转换精度可达小数点后 10 位以上。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "可以反向转换吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。只需交换单位选择即可自动反向计算，非常方便。"
+      }
+    }
+  ]
+}
+    </script>
   </main>
   <footer class="site-footer">
     <div class="footer-inner">

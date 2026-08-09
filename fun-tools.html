@@ -10,6 +10,18 @@
   <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX', { send_page_view: true });
+</script>
+
+  <link rel="alternate" hreflang="zh-CN" href="https://www.freetoolset.app/fun-tools.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.freetoolset.app/fun-tools.html" />
 </head>
 <body>
   <nav class="navbar">
@@ -48,7 +60,57 @@
         <a class="tool-card" href="random-team-generator.html">
           <h3>Random Team Generator</h3>
         </a>
-    </div>
+
+    <section class="cat-about" aria-label="趣味小工具介绍">
+      <h2>轻松有趣的在线小工具——决策、娱乐、随机生成</h2>
+      <p>工作之余也需要放松一下。FreeToolset 的 <strong>7 款趣味小工具</strong>帮你做随机决策、生成有趣内容、给生活加点小惊喜。从抛硬币做决定到随机取名，从掷骰子到团队分组，让枯燥的日常多一点乐趣。</p>
+<p>所有趣味工具完全免费，界面简洁有趣，适合分享给朋友一起玩。最近新增了 <a href="coin-flip.html">抛硬币</a>、<a href="random-name-picker.html">随机名字抽取器</a> 和 <a href="random-team-generator.html">随机分组生成器</a>。</p>
+    </section>
+
+    <section id="faq-section" class="cat-faq" aria-label="常见问题">
+      <h2>趣味小工具常见问题</h2>
+      <dl class="faq-list">
+        <dt>抛硬币的结果是真正随机的吗？</dt>
+        <dd>是的。我们使用加密安全的随机数生成器（crypto.getRandomValues），每次结果都不可预测，公平公正。</dd>
+        <dt>随机名字抽取器支持自定义名单吗？</dt>
+        <dd>支持。你可以输入任意名字列表，工具会从中随机抽取一个或多个，适合课堂点名、抽奖等场景。</dd>
+        <dt>这些工具可以离线使用吗？</dt>
+        <dd>可以。一旦页面加载完成，即使断开网络也能继续使用所有随机功能。</dd>
+      </dl>
+    </section>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "抛硬币的结果是真正随机的吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "是的。我们使用加密安全的随机数生成器（crypto.getRandomValues），每次结果都不可预测，公平公正。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "随机名字抽取器支持自定义名单吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "支持。你可以输入任意名字列表，工具会从中随机抽取一个或多个，适合课堂点名、抽奖等场景。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "这些工具可以离线使用吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。一旦页面加载完成，即使断开网络也能继续使用所有随机功能。"
+      }
+    }
+  ]
+}
+    </script>
   </main>
   <footer class="site-footer">
     <div class="footer-inner">

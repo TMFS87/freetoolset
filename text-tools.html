@@ -10,6 +10,18 @@
   <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX', { send_page_view: true });
+</script>
+
+  <link rel="alternate" hreflang="zh-CN" href="https://www.freetoolset.app/text-tools.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.freetoolset.app/text-tools.html" />
 </head>
 <body>
   <nav class="navbar">
@@ -78,7 +90,67 @@
         <a class="tool-card" href="chinese-converter.html">
           <h3>Simplified-Traditional Chinese Converter</h3>
         </a>
-    </div>
+
+    <section class="cat-about" aria-label="文本处理工具介绍">
+      <h2>强大的在线文本处理——写作、SEO、数据分析必备</h2>
+      <p>FreeToolset 的 <strong>17 款文本处理工具</strong>满足从内容创作到技术文档的各种需求。无论你是 SEO 优化师需要统计词频、开发者需要对比文本差异，还是写作者需要排序去重，都能找到合适的工具。</p>
+<p>支持中文和英文文本处理，大文件也能流畅运行。所有操作在浏览器本地完成，<strong>你的文章内容不会外泄</strong>。最近新增了 <a href="word-frequency-counter.html">词频统计器</a>、<a href="text-diff-checker.html">文本差异对比</a>、<a href="duplicate-line-remover.html">重复行删除</a>、<a href="text-sorter.html">文本排序工具</a> 和 <a href="chinese-converter.html">中文转换（繁简/大小写）</a>。</p>
+    </section>
+
+    <section id="faq-section" class="cat-faq" aria-label="常见问题">
+      <h2>文本处理工具常见问题</h2>
+      <dl class="faq-list">
+        <dt>支持处理多长的文本？</dt>
+        <dd>大部分工具支持处理数万字以内的文本。词频统计器和文本差异对比工具针对大文件做了性能优化。</dd>
+        <dt>支持中文文本处理吗？</dt>
+        <dd>支持。词频统计器可分别统计英文单词和中文字符，中文转换工具支持繁简互换、大小写转换等。</dd>
+        <dt>处理后的文本如何保存？</dt>
+        <dd>可以直接复制结果，部分工具提供一键下载为 .txt 文件的功能。所有处理都在本地完成，无需上传。</dd>
+        <dt>这些工具对 SEO 有什么帮助？</dt>
+        <dd>词频统计器可以帮助分析关键词密度，文本排序和去重工具有助于整理结构化数据，都是 SEO 从业者的常用辅助工具。</dd>
+      </dl>
+    </section>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "支持处理多长的文本？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "大部分工具支持处理数万字以内的文本。词频统计器和文本差异对比工具针对大文件做了性能优化。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "支持中文文本处理吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "支持。词频统计器可分别统计英文单词和中文字符，中文转换工具支持繁简互换、大小写转换等。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "处理后的文本如何保存？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以直接复制结果，部分工具提供一键下载为 .txt 文件的功能。所有处理都在本地完成，无需上传。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "这些工具对 SEO 有什么帮助？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "词频统计器可以帮助分析关键词密度，文本排序和去重工具有助于整理结构化数据，都是 SEO 从业者的常用辅助工具。"
+      }
+    }
+  ]
+}
+    </script>
   </main>
   <footer class="site-footer">
     <div class="footer-inner">

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -79,6 +79,18 @@
   ]
 }
   </script>
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX', { send_page_view: true });
+</script>
+
+  <link rel="alternate" hreflang="zh-CN" href="https://www.freetoolset.app/timestamp-converter.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.freetoolset.app/timestamp-converter.html" />
 </head>
 <body>
 
@@ -295,7 +307,7 @@
       <div class="more-tools-grid">
         <a href="index.html" class="more-tool-card more-tool-home">
           <span class="mt-icon">⚡</span>
-          <span class="mt-name" data-i18n="moreToolsAll">All 75+ Tools</span>
+          <span class="mt-name" data-i18n="moreToolsAll">All 95+ Tools</span>
         </a>
         <a href="ai-studio.html" class="more-tool-card">
           <span class="mt-icon">✨</span>
@@ -428,7 +440,7 @@
     })();
   </script>
 
-<script src="/js/i18n.js"></script>
+<script src="/js/i18n.js" defer></script>
 <!-- BAIDU_AUTO_PUSH -->
 <script>
 (function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();

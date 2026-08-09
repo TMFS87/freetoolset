@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -876,6 +876,45 @@
   "description": "AI内容工作室（AI Content Studio）免费在线工具，无需注册，本地运行保护隐私。"
 }
 </script>
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX', { send_page_view: true });
+</script>
+
+  <link rel="alternate" hreflang="zh-CN" href="https://www.freetoolset.app/ai-studio.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.freetoolset.app/ai-studio.html" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "FreeToolset 首页",
+      "url": "https://www.freetoolset.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "首页",
+      "url": "https://www.freetoolset.app/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "AI Studio",
+      "url": "https://www.freetoolset.app/ai-studio.html"
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -1691,8 +1730,8 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/ai-pet.js"></script>
-<script src="/js/i18n.js"></script>
+<script src="/js/ai-pet.js" defer></script>
+<script src="/js/i18n.js" defer></script>
 <!-- BAIDU_AUTO_PUSH -->
 <script>
 (function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
