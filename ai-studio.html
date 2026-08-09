@@ -842,6 +842,70 @@
       .credit-info { justify-content: space-between; }
       .model-selector { flex-direction: column; align-items: flex-start; gap: 8px; }
     }
+
+    /* FAQ + Related Tools */
+    .studio-extra {
+      max-width: 900px;
+      margin: 32px auto 0;
+      padding: 0 16px;
+    }
+    .faq-block h2, .related-tools h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin: 28px 0 12px;
+      color: var(--text-strong, #1a1a1a);
+    }
+    .faq-item {
+      border: 1px solid var(--border, #e5e7eb);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      background: var(--bg-soft, #fafafa);
+    }
+    .faq-item h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 6px;
+      color: var(--text-strong, #1a1a1a);
+    }
+    .faq-item p {
+      margin: 0;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: var(--text-muted, #555);
+    }
+    .related-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted, #555);
+      margin: 0 0 12px;
+    }
+    .related-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .related-list li {
+      border: 1px solid var(--border, #e5e7eb);
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: var(--text-muted, #555);
+    }
+    .related-list a {
+      font-weight: 600;
+      color: var(--accent, #4f46e5);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .related-list a:hover { text-decoration: underline; }
+    @media (max-width: 640px) {
+      .related-list { grid-template-columns: 1fr; }
+    }
   </style>
   <!-- ft-og-social -->
   <meta property="og:type" content="website">
@@ -911,6 +975,54 @@
       "position": 3,
       "name": "AI Studio",
       "url": "https://www.freetoolset.app/ai-studio.html"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "什么是 FreeToolset AI Content Studio？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI Content Studio 是 FreeToolset 内置的免费 AI 工作台，集成了智能对话、图片生成、二维码生成、SEO 内容撰写等能力，无需注册即可使用每日免费额度。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "AI Studio 免费吗？每天有多少额度？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "基础功能每天赠送 5 个免费 Credits（50 积分），可用于对话、内容生成和图片创作。如需更多用量，可在页面内通过 PayPal 或微信支付购买 Credits 套餐，有效期 2 个月。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "AI Studio 支持哪些 AI 模型？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "当前内置 GLM-4-Flash 与 DeepSeek 两款模型，并预置了 GPT-4o-mini 与 Claude Haiku 的支持（需在后台配置对应 API Key 后启用）。不同模型消耗的 Credits 不同，GLM-4-Flash 最省。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Credits 和积分是什么关系？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1 Credit = 10 积分。每日免费额度为 50 积分（即 5 Credits）。一次普通对话通常消耗 0.5–1 Credit，一次图片生成消耗 1 Credit。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "AI Studio 生成的内容可以用于商业用途吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。你通过 AI Studio 生成的产品描述、博客、SEO 文案等内容归你所有，可用于个人和商业项目。但请注意 AI 生成内容建议人工审核后再发布。"
+      }
     }
   ]
 }
@@ -985,6 +1097,12 @@
           <button class="model-option" data-model="deepseek">
             DeepSeek <span class="model-badge">1x</span>
           </button>
+          <button class="model-option" data-model="gpt" title="Requires OPENAI_API_KEY">
+            GPT-4o-mini <span class="model-badge">1x</span>
+          </button>
+          <button class="model-option" data-model="claude" title="Requires ANTHROPIC_API_KEY">
+            Claude Haiku <span class="model-badge">1x</span>
+          </button>
         </div>
       </div>
 
@@ -1000,6 +1118,19 @@
             <button class="quick-prompt" data-prompt="Generate an image of a futuristic city at sunset with flying cars and neon lights">🎨 Generate Image</button>
             <button class="quick-prompt" data-prompt="Generate SEO meta title and description for a page about free online tools">🔍 SEO Meta Tags</button>
             <button class="quick-prompt" data-prompt="Rewrite this text in a more engaging tone: Our tool helps you format JSON quickly and easily">🔄 Rewrite Content</button>
+            <button class="quick-prompt" data-prompt="Write a professional outreach email to a potential client introducing our free online tool platform, keep it under 150 words">✉️ Write Email</button>
+            <button class="quick-prompt" data-prompt="Write a concise weekly work report covering progress, blockers, and next steps for a software project">📊 Weekly Report</button>
+            <button class="quick-prompt" data-prompt="Polish this paragraph for an academic essay, improve clarity and flow while keeping the meaning: Climate change impacts agriculture through shifting weather patterns.">🎓 Academic Polish</button>
+            <button class="quick-prompt" data-prompt="Explain this code snippet in plain English for a beginner: function debounce(fn, ms){let t;return(...a)=>{clearTimeout(t);t=setTimeout(()=>fn(...a),ms);}}">💻 Explain Code</button>
+            <button class="quick-prompt" data-prompt="Write 3 engaging social media posts (Twitter/X style, under 280 chars each) promoting a free JSON formatter tool">📱 Social Post</button>
+            <button class="quick-prompt" data-prompt="Translate the following to English naturally: 我们提供完全免费、无需注册的在线工具箱，涵盖计算器、格式转换和开发工具。">🌐 Translate</button>
+            <button class="quick-prompt" data-prompt="Create a detailed blog post outline about 'how to improve website SEO in 2026' with H2 and H3 headings">📝 Blog Outline</button>
+            <button class="quick-prompt" data-prompt="Summarize the key points of this text in 3 bullet points: Remote work increases flexibility but requires strong self-discipline and clear communication to avoid burnout.">📋 Summarize</button>
+            <button class="quick-prompt" data-prompt="Generate a JavaScript function that validates an email address using regex and returns a boolean">⚙️ Code Generator</button>
+            <button class="quick-prompt" data-prompt="Rewrite this resume bullet to be achievement-oriented with metrics: Responsible for managing the company social media accounts">💼 Resume Bullet</button>
+            <button class="quick-prompt" data-prompt="Write a YouTube script hook (first 30 seconds) for a video about '5 free AI tools everyone should use'">🎬 Video Hook</button>
+            <button class="quick-prompt" data-prompt="Generate 5 catchy slogans for a brand that sells eco-friendly reusable water bottles">💡 Slogan Ideas</button>
+            <button class="quick-prompt" data-prompt="Write a polite customer service reply to a complaint about a delayed order, offer a 10% discount as compensation">🤝 Support Reply</button>
           </div>
         </div>
       </div>
@@ -1019,6 +1150,46 @@
       </div>
 
     </div>
+
+    <!-- FAQ + Related Tools -->
+    <section class="studio-extra">
+      <div class="faq-block">
+        <h2>常见问题</h2>
+        <div class="faq-item">
+          <h3>什么是 FreeToolset AI Content Studio？</h3>
+          <p>AI Content Studio 是 FreeToolset 内置的免费 AI 工作台，集成了智能对话、图片生成、二维码生成、SEO 内容撰写等能力，无需注册即可使用每日免费额度。</p>
+        </div>
+        <div class="faq-item">
+          <h3>AI Studio 免费吗？每天有多少额度？</h3>
+          <p>基础功能每天赠送 5 个免费 Credits（50 积分），可用于对话、内容生成和图片创作。如需更多用量，可在页面内通过 PayPal 或微信支付购买 Credits 套餐，有效期 2 个月。</p>
+        </div>
+        <div class="faq-item">
+          <h3>AI Studio 支持哪些 AI 模型？</h3>
+          <p>当前内置 GLM-4-Flash 与 DeepSeek 两款模型，并预置了 GPT-4o-mini 与 Claude Haiku 的支持（需在后台配置对应 API Key 后启用）。不同模型消耗的 Credits 不同，GLM-4-Flash 最省。</p>
+        </div>
+        <div class="faq-item">
+          <h3>Credits 和积分是什么关系？</h3>
+          <p>1 Credit = 10 积分。每日免费额度为 50 积分（即 5 Credits）。一次普通对话通常消耗 0.5–1 Credit，一次图片生成消耗 1 Credit。</p>
+        </div>
+        <div class="faq-item">
+          <h3>AI Studio 生成的内容可以用于商业用途吗？</h3>
+          <p>可以。你通过 AI Studio 生成的产品描述、博客、SEO 文案等内容归你所有，可用于个人和商业项目。但请注意 AI 生成内容建议人工审核后再发布。</p>
+        </div>
+      </div>
+
+      <div class="related-tools">
+        <h2>配套免费工具</h2>
+        <p class="related-desc">AI Studio 与 FreeToolset 的 95+ 免费工具有机结合，让 AI 能力与实用工具形成闭环：</p>
+        <ul class="related-list">
+          <li><a href="qr-code-generator.html">🔲 二维码生成器</a> — 生成后可让 AI 直接识别或批量排版</li>
+          <li><a href="image-compressor.html">🖼️ 图片压缩工具</a> — AI 生成的图片可一键压缩优化</li>
+          <li><a href="json-formatter.html">🧩 JSON 格式化</a> — 让 AI 输出的 JSON 数据更易读</li>
+          <li><a href="password-generator.html">🔐 密码生成器</a> — 配合 AI 写作生成账号凭据更安全</li>
+          <li><a href="word-counter.html">📊 字数统计</a> — 统计 AI 生成文章的字数与时长</li>
+          <li><a href="text-case-converter.html">🔤 大小写转换</a> — 调整 AI 文案的命名规范</li>
+        </ul>
+      </div>
+    </section>
   </main>
 
   <!-- Payment Modal -->

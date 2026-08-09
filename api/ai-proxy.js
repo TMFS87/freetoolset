@@ -13,12 +13,18 @@ const DEEPSEEK_MODEL = 'deepseek-chat';
 const GLM_API_URL = 'https://open.bigmodel.cn/api/paas/v4/chat/completions';
 const GLM_MODEL = 'glm-4-flash';
 const GLM_VISION_MODEL = 'glm-4v';
+const OPENAI_API_URL = 'https://api.openai.com/v1/chat/completions';
+const OPENAI_MODEL = 'gpt-4o-mini';
+const ANTHROPIC_API_URL = 'https://api.anthropic.com/v1/messages';
+const ANTHROPIC_MODEL = 'claude-3-5-haiku-latest';
 const POLLINATIONS_BASE = 'https://image.pollinations.ai/prompt/';
 
 // Credits config: 1 credit = 10 points
 const FREE_DAILY_POINTS = 50;       // 5 credits/day for free users
 const GLM_COST_POINTS = 5;           // 0.5 credits per GLM call
 const DEEPSEEK_COST_POINTS = 10;    // 1 credit per DeepSeek call
+const OPENAI_COST_POINTS = 10;      // 1 credit per GPT call
+const ANTHROPIC_COST_POINTS = 10;   // 1 credit per Claude call
 const IMAGE_GEN_COST_POINTS = 10;   // 1 credit per image generation
 const VISION_COST_POINTS = 10;      // 1 credit per image recognition
 const MAX_USAGE_RECORDS = 50;
@@ -305,12 +311,21 @@ async function recordUsage(userId, toolLabel, model, cost) {
 /* ==================== AI Model Call ==================== */
 
 async function callAI(model, messages) {
-  var apiUrl, apiKey, modelName;
+  var apiUrl, apiKey, modelName, isAnthropic = false;
 
   if (model === 'glm') {
     apiUrl = GLM_API_URL;
     apiKey = process.env.GLM_API_KEY;
     modelName = GLM_MODEL;
+  } else if (model === 'gpt') {
+    apiUrl = OPENAI_API_URL;
+    apiKey = process.env.OPENAI_API_KEY;
+    modelName = OPENAI_MODEL;
+  } else if (model === 'claude') {
+    apiUrl = ANTHROPIC_API_URL;
+    apiKey = process.env.ANTHROPIC_API_KEY;
+    modelName = ANTHROPIC_MODEL;
+    isAnthropic = true;
   } else {
     apiUrl = DEEPSEEK_API_URL;
     apiKey = process.env.DEEPSEEK_API_KEY;
@@ -318,21 +333,43 @@ async function callAI(model, messages) {
   }
 
   if (!apiKey) {
-    throw new Error('AI service is not configured. Please try again later.');
+    throw new Error('This model is not configured yet. Please choose GLM-4-Flash or DeepSeek, or contact support to enable more models.');
   }
 
-  var response = await fetch(apiUrl, {
-    method: 'POST',
-    headers: {
+  var requestBody, headers;
+  if (isAnthropic) {
+    // Anthropic expects a different request shape
+    headers = {
+      'Content-Type': 'application/json',
+      'x-api-key': apiKey,
+      'anthropic-version': '2023-06-01'
+    };
+    requestBody = {
+      model: modelName,
+      max_tokens: 2000,
+      temperature: 0.7,
+      system: messages[0] && messages[0].role === 'system' ? messages[0].content : 'You are a helpful AI assistant on FreeToolset.',
+      messages: messages.filter(function (m) { return m.role !== 'system'; }).map(function (m) {
+        return { role: m.role === 'assistant' ? 'assistant' : 'user', content: m.content };
+      })
+    };
+  } else {
+    headers = {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + apiKey
-    },
-    body: JSON.stringify({
+    };
+    requestBody = {
       model: modelName,
       messages: messages,
       temperature: 0.7,
       max_tokens: 2000
-    })
+    };
+  }
+
+  var response = await fetch(apiUrl, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify(requestBody)
   });
 
   if (!response.ok) {
@@ -342,7 +379,12 @@ async function callAI(model, messages) {
   }
 
   var result = await response.json();
-  var content = (result.choices && result.choices[0] && result.choices[0].message && result.choices[0].message.content) || '';
+  var content;
+  if (isAnthropic) {
+    content = (result.content && result.content[0] && result.content[0].text) || '';
+  } else {
+    content = (result.choices && result.choices[0] && result.choices[0].message && result.choices[0].message.content) || '';
+  }
 
   if (!content) {
     throw new Error('No content was generated. Please try again.');
@@ -517,7 +559,10 @@ module.exports = async function (req, res) {
   var isImageGen = mode === 'image-gen';
   var isVision = mode === 'vision';
   var model = body.model || 'deepseek';
-  var cost = (model === 'glm') ? GLM_COST_POINTS : DEEPSEEK_COST_POINTS;
+  var cost = DEEPSEEK_COST_POINTS;
+  if (model === 'glm') cost = GLM_COST_POINTS;
+  else if (model === 'gpt') cost = OPENAI_COST_POINTS;
+  else if (model === 'claude') cost = ANTHROPIC_COST_POINTS;
   var toolLabel = '';
 
   /* ---------- Image Generation Mode (Pollinations) ---------- */

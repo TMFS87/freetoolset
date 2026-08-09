@@ -78,6 +78,14 @@
     <article class="article">
       <p class="post-meta">FreeToolset · 实用教程</p>
       <h1>Base64 是什么？一文讲清编码原理与常见用途</h1>
+    <div style="margin:18px 0 24px; padding:16px 20px; background:#eef2ff; border:1px solid #e0e7ff; border-radius:12px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px;">
+      <div>
+        <div style="font-weight:700; font-size:0.98rem; color:#3730a3; margin-bottom:2px;">✨ 用 AI 一键完成类似任务</div>
+        <div style="font-size:0.85rem; color:#4b5563;">FreeToolset AI Content Studio 免费可用，每日赠送 5 Credits，无需注册。</div>
+      </div>
+      <a href="../ai-studio.html" style="display:inline-block; padding:9px 18px; background:#4f46e5; color:#fff; border-radius:8px; text-decoration:none; font-weight:600; white-space:nowrap;">试用 AI Studio →</a>
+    </div>
+
     <p>Base64 是网络中随处可见的编码方式：邮件附件、JWT、Data URI 图片背后都有它的身影。它并不加密，而是把任意字节转成由 64 个安全字符组成的文本，方便在只认文本的协议里传输。</p>
     <h2>Base64 到底做了什么</h2>
     <p>Base64 把每 3 个字节（24 位）拆成 4 组 6 位，映射到 A–Z、a–z、0–9 以及 +、/ 共 64 个字符（不足补 =）。这样二进制数据就变成了纯 ASCII 文本，能安全地塞进 JSON、URL 或邮件头。</p>
