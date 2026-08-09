@@ -1,15 +1,15 @@
 /* inject-analytics.js — inject GA4 gtag.js snippet into all HTML pages.
-   Replace GA4_ID with your real Measurement ID (G-XXXXXXXXXX).
+   Replace GA4_ID with your real Measurement ID (G-HQJ9VZWMKE).
 */
 const fs = require('fs');
 const path = require('path');
 const ROOT = __dirname;
 
 // TODO: Replace with your real GA4 Measurement ID
-const GA4_ID = 'G-XXXXXXXXXX';
+const GA4_ID = 'G-HQJ9VZWMKE';
 
 // Don't inject if already present
-if (!GA4_ID || GA4_ID === 'G-XXXXXXXXXX') {
+if (!GA4_ID || GA4_ID === 'G-HQJ9VZWMKE') {
   console.log('WARNING: Using placeholder GA4_ID. Replace with real ID before deploying.');
   console.log('Get your ID: https://analytics.google.com/ → Admin → Create Property → Data Stream → Web');
 }
