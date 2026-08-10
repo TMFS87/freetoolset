@@ -108,7 +108,7 @@ const navBar = `  <nav class="navbar">
 
 const footer = `  <footer class="site-footer">
     <div class="footer-inner">
-      <p>© 2026 FreeToolset · 75 个免费在线工具，无需注册，本地运行保护隐私</p>
+      <p>© 2026 FreeToolset · 95+ 个免费在线工具，无需注册，本地运行保护隐私</p>
       <nav><a href="index.html">Home</a> · <a href="ai-studio.html">AI Studio</a> · <a href="about.html">About</a> · <a href="privacy-policy.html">Privacy</a> · <a href="contact.html">Contact</a></nav>
     </div>
   </footer>`;

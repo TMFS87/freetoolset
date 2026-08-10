@@ -15,7 +15,7 @@
   // key (usually the English text) -> Simplified Chinese
   var DICT = {
     // ---- Page titles ----
-    'homePageTitle': 'FreeToolset — 75+免费在线工具与AI写作助手、二维码、密码生成等 | 无需登录',
+    'homePageTitle': 'FreeToolset — 95+免费在线工具与AI写作助手、二维码、密码生成等 | 无需登录',
     // ---- AI Studio payment modal ----
     'creditsValidNote': '积分自购买起 2 个月内有效，可在全部 AI 工具中使用。',
     // ---- Shared chrome: navbar ----
@@ -215,15 +215,15 @@
     'featuredMini2': '📝 博客文章生成',
     'featuredMini3': '🔍 SEO Meta 生成',
     'featuredMini4': '✉️ 邮件标题生成',
-    'discoverMoreCard': '发现 75+ 免费工具',
+    'discoverMoreCard': '发现 95+ 免费工具',
 
     // ---- More Tools section (tool page bottom) ----
     'moreToolsTitle': '🔍 探索更多工具',
-    'moreToolsDesc': 'FreeToolset 还有 75+ 款免费在线工具，继续浏览提升效率。',
-    'moreToolsAll': '全部 75+ 工具',
+    'moreToolsDesc': 'FreeToolset 还有 95+ 款免费在线工具，继续浏览提升效率。',
+    'moreToolsAll': '全部 95+ 工具',
 
-    'heroTitle': 'FreeToolset — 75 款免费在线工具',
-    'heroSubtitle': '包含 AI 内容工作室在内的 75 款免费工具。AI 写作、计算器、转换器、开发工具，全部在浏览器中完成。',
+    'heroTitle': 'FreeToolset — 95+ 款免费在线工具',
+    'heroSubtitle': '包含 AI 内容工作室在内的 95+ 款免费工具。AI 写作、计算器、转换器、开发工具，全部在浏览器中完成。',
     'heroBadge': '每日 5 免费积分 · 无需注册',
     'heroOpenBtn': '打开 AI 工作室 →',
     'All Tools': '全部工具',

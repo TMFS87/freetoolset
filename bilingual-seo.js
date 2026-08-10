@@ -112,7 +112,7 @@ walk(".", (file) => {
 
   // 1) title 双语
   const newTitle = slug === "index"
-    ? "FreeToolset · 75个免费在线工具 | AI写作,计算器"
+    ? "FreeToolset · 95+个免费在线工具 | AI写作,计算器"
     : `${en} · ${zh} | FreeToolset`;
   html = html.replace(/<title>[^<]*<\/title>/, `<title>${newTitle}</title>`);
 
