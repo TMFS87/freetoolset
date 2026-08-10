@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors — Play against the computer | FreeToolset</title>
+  <meta name="description" content="Play Rock Paper Scissors against a randomly choosing computer. Tracks your win/loss/tie score.">
+  <meta name="keywords" content="rock paper scissors, rps game, play rps, paper scissors rock, online rps">
+  <meta property="og:title" content="Rock Paper Scissors — FreeToolset">
+  <meta property="og:description" content="Play Rock Paper Scissors against a randomly choosing computer. Tracks your win/loss/tie score.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/rock-paper-scissors.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/rock-paper-scissors.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rock Paper Scissors — FreeToolset">
+  <meta name="twitter:description" content="Play Rock Paper Scissors against a randomly choosing computer. Tracks your win/loss/tie score.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Rock Paper Scissors — Play against the computer","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/rock-paper-scissors.html","description":"Play Rock Paper Scissors against a randomly choosing computer. Tracks your win/loss/tie score.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the computer fair?","acceptedAnswer":{"@type":"Answer","text":"It picks uniformly at random each round, so over many games your win rate should approach one third."}},{"@type":"Question","name":"Does it learn my pattern?","acceptedAnswer":{"@type":"Answer","text":"No — it is purely random and has no memory between rounds."}},{"@type":"Question","name":"Can I reset the score?","acceptedAnswer":{"@type":"Answer","text":"Refresh the page to reset the scoreboard."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Fun","item":"https://www.freetoolset.app/fun-tools.html"},{"@type":"ListItem","position":3,"name":"Rock Paper Scissors","item":"https://www.freetoolset.app/rock-paper-scissors.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>石头剪刀布游戏让你和随机出招的电脑对战，并自动记录胜、负、平的比分。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="fun-tools.html">Fun</a>
+      <span class="separator">/</span>
+      <span class="current">Rock Paper Scissors</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>✊ Rock Paper Scissors</h1>
+      <p>Play Rock Paper Scissors against a randomly choosing computer. Tracks your win/loss/tie score.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="btn-row">
+          <button class="btn btn-secondary" id="rock">✊ Rock</button>
+          <button class="btn btn-secondary" id="paper">✋ Paper</button>
+          <button class="btn btn-secondary" id="scissors">✌️ Scissors</button>
+        </div>
+        <div id="out"></div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Click Rock, Paper or Scissors.</li>
+            <li>See the computer’s move and result.</li>
+            <li>Watch your score update.</li>
+            <li>Play best of luck!</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>Is the computer fair?</summary>
+            <p>It picks uniformly at random each round, so over many games your win rate should approach one third.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Does it learn my pattern?</summary>
+            <p>No — it is purely random and has no memory between rounds.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can I reset the score?</summary>
+            <p>Refresh the page to reset the scoreboard.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>电脑公平吗？</summary>
+            <p>每回合均匀随机出招，长期看你的胜率会趋近于三分之一。</p>
+          </details>
+          <details class="faq-item">
+            <summary>它会学我的套路吗？</summary>
+            <p>不会，完全随机且各回合之间无记忆。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">⚔️</div>
+              <div class="uc-content">
+                <h4>Versus</h4>
+                <p>Settle who goes first.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🎲</div>
+              <div class="uc-content">
+                <h4>Pass time</h4>
+                <p>Quick fun.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🏆</div>
+              <div class="uc-content">
+                <h4>Score</h4>
+                <p>Track your record.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="random-number-generator.html" class="related-tool-card">
+              <span class="rt-icon">🎲</span>
+              <span class="rt-name">Random Number Generator</span>
+            </a>
+            <a href="timer.html" class="related-tool-card">
+              <span class="rt-icon">⏱️</span>
+              <span class="rt-name">Online Countdown Timer</span>
+            </a>
+            <a href="stopwatch.html" class="related-tool-card">
+              <span class="rt-icon">⏱️</span>
+              <span class="rt-name">Online Stopwatch</span>
+            </a>
+            <a href="dice-roller.html" class="related-tool-card">
+              <span class="rt-icon">🎲</span>
+              <span class="rt-name">Dice Roller</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Rock Paper Scissors</h2>
+    <h3>规则</h3>
+    <p>石头胜剪刀，剪刀胜布，布胜石头，相同则平。</p>
+    <h3>说明</h3>
+    <p>电脑每回合均匀随机，无记忆。想清零比分刷新页面即可。</p>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var out=document.getElementById('out');
+    var score={w:0,l:0,t:0};
+    var map={rock:0,paper:1,scissors:2},emoji={0:'✊',1:'✋',2:'✌️'},name={0:'Rock',1:'Paper',2:'Scissors'};
+    function play(me){
+      var cpu=Math.floor(Math.random()*3);var m=map[me];
+      var res = m===cpu?'tie':((m+1)%3===cpu?'lose':'win');
+      if(res==='win')score.w++;else if(res==='lose')score.l++;else score.t++;
+      var col=res==='win'?'#22c55e':res==='lose'?'#ef4444':'#f59e0b';
+      var label=res==='win'?'You win!':res==='lose'?'You lose':'Tie';
+      out.innerHTML='<div style="margin-top:12px;text-align:center">'+
+        '<div style="font-size:2rem">You: '+emoji[m]+' &nbsp; vs &nbsp; CPU: '+emoji[cpu]+'</div>'+
+        '<div style="font-size:1.6rem;font-weight:800;color:'+col+';margin:8px 0">'+label+'</div>'+
+        '<div style="opacity:.75">Wins '+score.w+' · Losses '+score.l+' · Ties '+score.t+'</div></div>';
+    }
+    document.getElementById('rock').onclick=function(){play('rock');};
+    document.getElementById('paper').onclick=function(){play('paper');};
+    document.getElementById('scissors').onclick=function(){play('scissors');};
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

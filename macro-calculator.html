@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Macro Calculator — Daily Protein, Carbs &amp; Fat Targets | FreeToolset</title>
+  <meta name="description" content="Split your daily calorie target into protein, carbohydrate and fat grams based on your goal, with balanced, low-carb and high-protein presets.">
+  <meta name="keywords" content="macro calculator, macronutrient calculator, protein carbs fat calculator, iifym calculator, macro split">
+  <meta property="og:title" content="Macro Calculator — FreeToolset">
+  <meta property="og:description" content="Split your daily calorie target into protein, carbohydrate and fat grams based on your goal, with balanced, low-carb and high-protein presets.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/macro-calculator.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/macro-calculator.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Macro Calculator — FreeToolset">
+  <meta name="twitter:description" content="Split your daily calorie target into protein, carbohydrate and fat grams based on your goal, with balanced, low-carb and high-protein presets.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Macro Calculator — Daily Protein, Carbs & Fat Targets","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/macro-calculator.html","description":"Split your daily calorie target into protein, carbohydrate and fat grams based on your goal, with balanced, low-carb and high-protein presets.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many calories per gram?","acceptedAnswer":{"@type":"Answer","text":"Protein and carbohydrate provide 4 kcal per gram; fat provides 9 kcal per gram. That is why fat grams look small relative to its calorie share."}},{"@type":"Question","name":"How much protein do I need?","acceptedAnswer":{"@type":"Answer","text":"General guidance is 1.6–2.2 g per kg of bodyweight for people training regularly. Sedentary adults need less, around 0.8–1.2 g/kg."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Calculator","item":"https://www.freetoolset.app/calculators.html"},{"@type":"ListItem","position":3,"name":"Macro Calculator","item":"https://www.freetoolset.app/macro-calculator.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>三大营养素计算器把你的每日热量目标拆分成蛋白质、碳水和脂肪的具体克数，内置均衡、低碳水、高蛋白等多种配比方案，方便照着执行饮食计划。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="calculators.html">Calculator</a>
+      <span class="separator">/</span>
+      <span class="current">Macro Calculator</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>🥗 Macro Calculator</h1>
+      <p>Split your daily calorie target into protein, carbohydrate and fat grams based on your goal, with balanced, low-carb and high-protein presets.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="cals">Daily calorie target</label>
+            <input type="number" id="cals" value="2000" min="800" max="6000" step="50">
+          </div>
+          <div class="form-row">
+            <label for="preset">Macro split</label>
+            <select id="preset">
+              <option value="30,40,30" selected>Balanced — 30P / 40C / 30F</option>
+              <option value="40,35,25">High protein — 40P / 35C / 25F</option>
+              <option value="35,25,40">Low carb — 35P / 25C / 40F</option>
+              <option value="25,55,20">High carb — 25P / 55C / 20F</option>
+              <option value="custom">Custom…</option>
+            </select>
+          </div>
+        </div>
+        <div class="gen-row" id="customRow" style="display:none">
+          <div class="form-row"><label for="pp">Protein %</label><input type="number" id="pp" value="30" min="0" max="100"></div>
+          <div class="form-row"><label for="cc">Carbs %</label><input type="number" id="cc" value="40" min="0" max="100"></div>
+          <div class="form-row"><label for="ff">Fat %</label><input type="number" id="ff" value="30" min="0" max="100"></div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="calcBtn">Calculate</button>
+        </div>
+        <div id="out"></div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Enter your daily calorie target (use the BMR calculator if unsure).</li>
+            <li>Pick a macro split preset or set custom percentages.</li>
+            <li>Click Calculate.</li>
+            <li>Use the gram targets to plan meals.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>How many calories per gram?</summary>
+            <p>Protein and carbohydrate provide 4 kcal per gram; fat provides 9 kcal per gram. That is why fat grams look small relative to its calorie share.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How much protein do I need?</summary>
+            <p>General guidance is 1.6–2.2 g per kg of bodyweight for people training regularly. Sedentary adults need less, around 0.8–1.2 g/kg.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>各营养素每克多少热量？</summary>
+            <p>蛋白质和碳水每克 4 千卡，脂肪每克 9 千卡。所以同样占比下，脂肪的克数看起来会明显更少。</p>
+          </details>
+          <details class="faq-item">
+            <summary>蛋白质应该吃多少？</summary>
+            <p>规律训练的人群常见建议为每公斤体重 1.6–2.2 克；久坐人群约 0.8–1.2 克即可。具体请结合自身健康状况判断。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🏋️</div>
+              <div class="uc-content">
+                <h4>Bulking</h4>
+                <p>Hit protein targets while gaining.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🔥</div>
+              <div class="uc-content">
+                <h4>Cutting</h4>
+                <p>Keep protein high while in deficit.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🥑</div>
+              <div class="uc-content">
+                <h4>Low Carb</h4>
+                <p>Shift calories toward fat.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="bmi-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏋️</span>
+              <span class="rt-name">BMI Calculator</span>
+            </a>
+            <a href="age-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🎂</span>
+              <span class="rt-name">Age Calculator</span>
+            </a>
+            <a href="percentage-calculator.html" class="related-tool-card">
+              <span class="rt-icon">➗</span>
+              <span class="rt-name">Percentage Calculator</span>
+            </a>
+            <a href="loan-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏦</span>
+              <span class="rt-name">Loan Calculator</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Macro Calculator</h2>
+    <h3>什么是宏量营养素</h3>
+    <p>宏量营养素（macronutrients，简称「宏量」）指蛋白质、碳水化合物和脂肪三大供能物质。热量密度分别为：蛋白质 4 kcal/g、碳水 4 kcal/g、脂肪 9 kcal/g。</p>
+    <h3>常见配比方案</h3>
+    <li>**均衡型**（30/40/30）：适合大多数人日常维持</li>
+    <li>**低碳水**（35/25/40）：适合胰岛素敏感度较低或偏好高脂饮食的人</li>
+    <li>**高蛋白**（40/35/25）：适合力量训练期、减脂期保留肌肉</li>
+    <li>**高碳水**（25/55/20）：适合耐力运动员和大运动量人群</li>
+    <h3>一个换算例子</h3>
+    <p>每日目标 2000 千卡，采用 30/40/30：蛋白质 600 千卡 ÷ 4 = 150g；碳水 800 千卡 ÷ 4 = 200g；脂肪 600 千卡 ÷ 9 ≈ 67g。</p>
+    <h3>执行建议</h3>
+    <li>先保证蛋白质达标，它最影响饱腹感和肌肉保留</li>
+    <li>脂肪不应长期低于总热量的 20%，会影响激素水平</li>
+    <li>配比不必每天精确，一周平均达标即可</li>
+    <li>本工具仅供参考，特殊疾病人群请遵医嘱</li>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var cals=document.getElementById('cals'),preset=document.getElementById('preset'),cr=document.getElementById('customRow'),
+        pp=document.getElementById('pp'),cc=document.getElementById('cc'),ff=document.getElementById('ff'),
+        out=document.getElementById('out'),btn=document.getElementById('calcBtn');
+    preset.addEventListener('change',function(){
+      cr.style.display=preset.value==='custom'?'':'none';
+      if(preset.value!=='custom'){var p=preset.value.split(',');pp.value=p[0];cc.value=p[1];ff.value=p[2];}
+      calc();
+    });
+    function bar(label,pct,grams,kcal,color){
+      return '<div style="margin-bottom:12px"><div style="display:flex;justify-content:space-between;font-size:.92rem;margin-bottom:4px">'+
+        '<span><strong>'+label+'</strong> '+pct+'%</span><span><strong>'+grams+' g</strong> · '+kcal+' kcal</span></div>'+
+        '<div style="height:8px;border-radius:4px;background:rgba(255,255,255,.08);overflow:hidden"><div style="height:100%;width:'+pct+'%;background:'+color+'"></div></div></div>';
+    }
+    function calc(){
+      var C=+cals.value||0,P=+pp.value||0,Cb=+cc.value||0,F=+ff.value||0;
+      var sum=P+Cb+F;
+      var warn = Math.abs(sum-100)>0.5 ? '<p style="margin-top:10px;font-size:.86rem;color:var(--warning,#d29922)">⚠️ Percentages add up to '+sum+'%, not 100%. Results are scaled proportionally.</p>' : '';
+      if(sum<=0){out.className='result-box';out.textContent='Enter valid percentages.';return;}
+      var np=P/sum*100,nc=Cb/sum*100,nf=F/sum*100;
+      var gp=Math.round(C*np/100/4),gc=Math.round(C*nc/100/4),gf=Math.round(C*nf/100/9);
+      out.className='result-box';
+      out.innerHTML='<div style="font-size:1.35rem;font-weight:700;margin-bottom:14px">'+C+' kcal per day</div>'+
+        bar('Protein',np.toFixed(0),gp,Math.round(C*np/100),'#8b5cf6')+
+        bar('Carbs',nc.toFixed(0),gc,Math.round(C*nc/100),'#0ea5e9')+
+        bar('Fat',nf.toFixed(0),gf,Math.round(C*nf/100),'#f59e0b')+
+        '<p style="margin-top:8px;font-size:.86rem;opacity:.75">Protein & carbs = 4 kcal/g · Fat = 9 kcal/g</p>'+warn;
+    }
+    [cals,pp,cc,ff].forEach(function(e){e.addEventListener('input',calc);});
+    btn.addEventListener('click',calc);calc();
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

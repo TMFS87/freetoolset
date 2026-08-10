@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XML to JSON Converter — Convert XML into JSON | FreeToolset</title>
+  <meta name="description" content="Convert XML into JSON for easier parsing in JavaScript and other languages. Attributes, nested elements and text are preserved.">
+  <meta name="keywords" content="xml to json, xml2json, convert xml, xml parser, soap to json">
+  <meta property="og:title" content="XML to JSON Converter — FreeToolset">
+  <meta property="og:description" content="Convert XML into JSON for easier parsing in JavaScript and other languages. Attributes, nested elements and text are preserved.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/xml-to-json.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/xml-to-json.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="XML to JSON Converter — FreeToolset">
+  <meta name="twitter:description" content="Convert XML into JSON for easier parsing in JavaScript and other languages. Attributes, nested elements and text are preserved.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"XML to JSON Converter — Convert XML into JSON","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/xml-to-json.html","description":"Convert XML into JSON for easier parsing in JavaScript and other languages. Attributes, nested elements and text are preserved.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How are attributes handled?","acceptedAnswer":{"@type":"Answer","text":"Attributes are placed under an \"@attributes\" object on the element. Repeated sibling elements with the same tag become an array."}},{"@type":"Question","name":"What about the root element?","acceptedAnswer":{"@type":"Answer","text":"The root tag name is preserved as the top-level key in the output object."}},{"@type":"Question","name":"Does it need valid XML?","acceptedAnswer":{"@type":"Answer","text":"Yes — the XML must be well-formed (matched tags, quoted attributes). The browser parser will report errors otherwise."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Developer","item":"https://www.freetoolset.app/developer-tools.html"},{"@type":"ListItem","position":3,"name":"XML to JSON Converter","item":"https://www.freetoolset.app/xml-to-json.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>XML 转 JSON 工具把 XML 转换成 JSON，方便在 JavaScript 等语言中处理。属性、嵌套元素和文本内容都会被保留。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="developer-tools.html">Developer</a>
+      <span class="separator">/</span>
+      <span class="current">XML to JSON Converter</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>🔄 XML to JSON Converter</h1>
+      <p>Convert XML into JSON for easier parsing in JavaScript and other languages. Attributes, nested elements and text are preserved.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="form-row">
+          <label for="input">Paste XML here</label>
+          <textarea id="input" rows="10" placeholder="<note><to>Ada</to><from>Bob</from><body>Hi!</body></note>"></textarea>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="btn">Convert</button>
+          <button class="btn btn-secondary" id="copyBtn">Copy</button>
+          <button class="btn btn-secondary" id="clearBtn">Clear</button>
+        </div>
+        <div class="form-row">
+          <label for="out">Result</label>
+          <textarea id="out" rows="10" readonly placeholder="Result appears here"></textarea>
+        </div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Paste your XML.</li>
+            <li>Click Convert.</li>
+            <li>Copy the JSON result.</li>
+            <li>Fix any well-formedness error shown.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>How are attributes handled?</summary>
+            <p>Attributes are placed under an &quot;@attributes&quot; object on the element. Repeated sibling elements with the same tag become an array.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What about the root element?</summary>
+            <p>The root tag name is preserved as the top-level key in the output object.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Does it need valid XML?</summary>
+            <p>Yes — the XML must be well-formed (matched tags, quoted attributes). The browser parser will report errors otherwise.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>属性怎么处理？</summary>
+            <p>属性会放在该元素的 “@attributes” 对象下；同名同级元素会被合并成数组。</p>
+          </details>
+          <details class="faq-item">
+            <summary>根元素怎么保留？</summary>
+            <p>输出 JSON 的最外层键会保留根标签名。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">📡</div>
+              <div class="uc-content">
+                <h4>APIs</h4>
+                <p>SOAP/XML → JSON.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🗂️</div>
+              <div class="uc-content">
+                <h4>Config</h4>
+                <p>Parse XML feeds.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🧩</div>
+              <div class="uc-content">
+                <h4>Integration</h4>
+                <p>Bridge systems.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="html-encoder.html" class="related-tool-card">
+              <span class="rt-icon"></></span>
+              <span class="rt-name">HTML Encoder / Decoder</span>
+            </a>
+            <a href="css-minifier.html" class="related-tool-card">
+              <span class="rt-icon">🎨</span>
+              <span class="rt-name">CSS Minifier</span>
+            </a>
+            <a href="json-minifier.html" class="related-tool-card">
+              <span class="rt-icon">🗜️</span>
+              <span class="rt-name">JSON Minifier</span>
+            </a>
+            <a href="html-minifier.html" class="related-tool-card">
+              <span class="rt-icon">📄</span>
+              <span class="rt-name">HTML Minifier</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 XML to JSON Converter</h2>
+    <h3>为什么转换</h3>
+    <p>许多旧系统、银行接口、RSS 仍输出 XML，而现代前端更习惯 JSON。转换后更易处理。</p>
+    <h3>映射规则</h3>
+    <li>元素 → 对象键</li>
+    <li>属性 → “@attributes” 子对象</li>
+    <li>文本 → “#text”</li>
+    <li>同名兄弟元素 → 数组</li>
+    <h3>注意</h3>
+    <li>XML 必须格式良好（标签配对、属性加引号）</li>
+    <li>转换在浏览器本地完成，数据不上传</li>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var input=document.getElementById('input'),out=document.getElementById('out'),btn=document.getElementById('btn'),copyBtn=document.getElementById('copyBtn'),clearBtn=document.getElementById('clearBtn');
+    function xml2obj(el){
+      var result={};
+      if(el.attributes&&el.attributes.length){result['@attributes']={};for(var i=0;i<el.attributes.length;i++)result['@attributes'][el.attributes[i].name]=el.attributes[i].value;}
+      var childEls=[];for(var j=0;j<el.childNodes.length;j++){if(el.childNodes[j].nodeType===1)childEls.push(el.childNodes[j]);}
+      if(childEls.length===0){var txt=(el.textContent||'').trim();if(result['@attributes'])result['#text']=txt;else return txt;return result;}
+      var map={};
+      childEls.forEach(function(c){var name=c.tagName;var val=xml2obj(c);if(map[name]){if(!Array.isArray(map[name]))map[name]=[map[name]];map[name].push(val);}else map[name]=val;});
+      for(var k in map)result[k]=map[k];
+      return result;
+    }
+    function convert(){
+      var xml=input.value.trim();if(!xml){out.value='';return;}
+      try{
+        var doc=new DOMParser().parseFromString(xml,'application/xml');
+        var err=doc.querySelector('parsererror');if(err)throw new Error(err.textContent.slice(0,120));
+        var root=doc.documentElement;
+        var obj={};obj[root.tagName]=xml2obj(root);
+        out.value=JSON.stringify(obj,null,2);out.style.color='';
+      }catch(e){out.value='';out.style.color='#ef4444';out.value='XML error: '+e.message;}
+    }
+    btn.addEventListener('click',convert);
+    copyBtn.addEventListener('click',function(){if(out.value){out.select();document.execCommand('copy');}});
+    clearBtn.addEventListener('click',function(){input.value='';out.value='';});
+    convert();
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

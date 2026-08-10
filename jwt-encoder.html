@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JWT Encoder — Create HS256 JSON Web Tokens | FreeToolset</title>
+  <meta name="description" content="Build a signed JWT (header.payload.signature) using HMAC-SHA256. Enter a JSON payload and a secret — signing happens in your browser.">
+  <meta name="keywords" content="jwt encoder, create jwt, jwt generator, hs256 sign, json web token">
+  <meta property="og:title" content="JWT Encoder — FreeToolset">
+  <meta property="og:description" content="Build a signed JWT (header.payload.signature) using HMAC-SHA256. Enter a JSON payload and a secret — signing happens in your browser.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/jwt-encoder.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/jwt-encoder.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="JWT Encoder — FreeToolset">
+  <meta name="twitter:description" content="Build a signed JWT (header.payload.signature) using HMAC-SHA256. Enter a JSON payload and a secret — signing happens in your browser.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"JWT Encoder — Create HS256 JSON Web Tokens","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/jwt-encoder.html","description":"Build a signed JWT (header.payload.signature) using HMAC-SHA256. Enter a JSON payload and a secret — signing happens in your browser.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What algorithm does this use?","acceptedAnswer":{"@type":"Answer","text":"HMAC-SHA256 (HS256). The token is signed, not encrypted — anyone with the token can read the payload, only the secret proves it was signed by you."}},{"@type":"Question","name":"Is the secret sent anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. All signing uses the Web Crypto API in your browser; the secret never leaves your device."}},{"@type":"Question","name":"Can I verify a token here too?","acceptedAnswer":{"@type":"Answer","text":"This tool focuses on encoding/signing. For verification, compare the signature with your backend or a verify tool."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Developer","item":"https://www.freetoolset.app/developer-tools.html"},{"@type":"ListItem","position":3,"name":"JWT Encoder","item":"https://www.freetoolset.app/jwt-encoder.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>JWT 编码器用 HMAC-SHA256 生成签名的 JSON Web Token（header.payload.signature）。输入 JSON 载荷和密钥即可在浏览器本地完成签名，适合调试接口鉴权。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="developer-tools.html">Developer</a>
+      <span class="separator">/</span>
+      <span class="current">JWT Encoder</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>🔐 JWT Encoder</h1>
+      <p>Build a signed JWT (header.payload.signature) using HMAC-SHA256. Enter a JSON payload and a secret — signing happens in your browser.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="form-row">
+          <label for="payload">Payload (JSON)</label>
+          <textarea id="payload" rows="6" placeholder='{"sub":"123","name":"Ada","admin":true}'>{"sub":"1234567890","name":"FreeToolset","iat":1516239022}</textarea>
+        </div>
+        <div class="form-row">
+          <label for="secret">Secret</label>
+          <input type="text" id="secret" value="my-secret-key">
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="btn">Generate</button>
+          <button class="btn btn-secondary" id="copyBtn">Copy</button>
+        </div>
+        <div class="form-row">
+          <label for="out">Token</label>
+          <textarea id="out" rows="5" readonly placeholder="Signed JWT appears here"></textarea>
+        </div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Enter a JSON payload.</li>
+            <li>Enter a secret key.</li>
+            <li>Click Generate to sign with HS256.</li>
+            <li>Copy the resulting token.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>What algorithm does this use?</summary>
+            <p>HMAC-SHA256 (HS256). The token is signed, not encrypted — anyone with the token can read the payload, only the secret proves it was signed by you.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is the secret sent anywhere?</summary>
+            <p>No. All signing uses the Web Crypto API in your browser; the secret never leaves your device.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can I verify a token here too?</summary>
+            <p>This tool focuses on encoding/signing. For verification, compare the signature with your backend or a verify tool.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>用的是什么算法？</summary>
+            <p>HMAC-SHA256（HS256）。Token 是被“签名”而非“加密”——任何人都能读载荷，只有密钥能证明签名出自你。</p>
+          </details>
+          <details class="faq-item">
+            <summary>密钥会被上传吗？</summary>
+            <p>不会。签名全部用浏览器内置的 Web Crypto API 完成，密钥始终留在你的设备上。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🔑</div>
+              <div class="uc-content">
+                <h4>Auth debug</h4>
+                <p>Test API tokens.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🧪</div>
+              <div class="uc-content">
+                <h4> prototyping</h4>
+                <p>Mock auth flows.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">📚</div>
+              <div class="uc-content">
+                <h4>Learning</h4>
+                <p>See JWT structure.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="html-encoder.html" class="related-tool-card">
+              <span class="rt-icon"></></span>
+              <span class="rt-name">HTML Encoder / Decoder</span>
+            </a>
+            <a href="css-minifier.html" class="related-tool-card">
+              <span class="rt-icon">🎨</span>
+              <span class="rt-name">CSS Minifier</span>
+            </a>
+            <a href="json-minifier.html" class="related-tool-card">
+              <span class="rt-icon">🗜️</span>
+              <span class="rt-name">JSON Minifier</span>
+            </a>
+            <a href="html-minifier.html" class="related-tool-card">
+              <span class="rt-icon">📄</span>
+              <span class="rt-name">HTML Minifier</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 JWT Encoder</h2>
+    <h3>JWT 结构</h3>
+    <p>JWT 由三部分用点连接：header（算法与类型）、payload（声明数据）、signature（签名）。</p>
+    <h3>签名过程（HS256）</h3>
+    <p>1. base64url 编码 header 与 payload</p>
+    <p>2. 拼接 data = encHeader + &quot;.&quot; + encPayload</p>
+    <p>3. 用密钥对 data 做 HMAC-SHA256</p>
+    <p>4. base64url 编码签名，得到 token = data + &quot;.&quot; + sig</p>
+    <h3>重要提醒</h3>
+    <li>JWT 是“签名”不是“加密”，payload 可被任何人解码读取</li>
+    <li>不要把敏感信息放进 payload</li>
+    <li>本工具仅在本地浏览器签名，密钥不上传</li>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var payload=document.getElementById('payload'),secret=document.getElementById('secret'),out=document.getElementById('out'),btn=document.getElementById('btn'),copyBtn=document.getElementById('copyBtn');
+    function b64url(str){return btoa(unescape(encodeURIComponent(str))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');}
+    function b64urlBytes(bytes){var s='';bytes.forEach(function(b){s+=String.fromCharCode(b);});return btoa(s).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');}
+    async function gen(){
+      var p;try{p=JSON.parse(payload.value);}catch(e){out.value='Invalid JSON payload: '+e.message;out.style.color='#ef4444';return;}
+      out.style.color='';
+      var header={alg:'HS256',typ:'JWT'};
+      var data=b64url(JSON.stringify(header))+'.'+b64url(JSON.stringify(p));
+      try{
+        var key=await crypto.subtle.importKey('raw',new TextEncoder().encode(secret),{name:'HMAC',hash:'SHA-256'},false,['sign']);
+        var sig=await crypto.subtle.sign('HMAC',key,new TextEncoder().encode(data));
+        out.value=data+'.'+b64urlBytes(new Uint8Array(sig));
+      }catch(e){out.value='Signing failed (Web Crypto requires a secure/https context): '+e.message;out.style.color='#ef4444';}
+    }
+    btn.addEventListener('click',gen);
+    copyBtn.addEventListener('click',function(){if(out.value){out.select();document.execCommand('copy');}});
+    gen();
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

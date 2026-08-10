@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Angle Converter — Degrees, Radians, Gradians &amp; Turns | FreeToolset</title>
+  <meta name="description" content="Convert angle units including degrees, radians, gradians, turns, arcminutes, arcseconds and milliradians.">
+  <meta name="keywords" content="angle converter, degrees to radians, radians to degrees, gradian converter, arcminute arcsecond">
+  <meta property="og:title" content="Angle Converter — FreeToolset">
+  <meta property="og:description" content="Convert angle units including degrees, radians, gradians, turns, arcminutes, arcseconds and milliradians.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/angle-converter.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/angle-converter.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Angle Converter — FreeToolset">
+  <meta name="twitter:description" content="Convert angle units including degrees, radians, gradians, turns, arcminutes, arcseconds and milliradians.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Angle Converter — Degrees, Radians, Gradians & Turns","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/angle-converter.html","description":"Convert angle units including degrees, radians, gradians, turns, arcminutes, arcseconds and milliradians.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I convert degrees to radians?","acceptedAnswer":{"@type":"Answer","text":"Multiply by π/180. So 180° = π ≈ 3.14159 rad, and 90° = π/2 ≈ 1.5708 rad."}},{"@type":"Question","name":"Why do programming languages use radians?","acceptedAnswer":{"@type":"Answer","text":"Math functions like Math.sin() in JavaScript, Python and C all expect radians. Passing degrees directly is one of the most common bugs in graphics code."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Converter","item":"https://www.freetoolset.app/converters.html"},{"@type":"ListItem","position":3,"name":"Angle Converter","item":"https://www.freetoolset.app/angle-converter.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>角度单位换算器支持度、弧度、百分度（gon）、圈、角分、角秒、毫弧度等互转。写代码调用三角函数、做几何计算或看测量仪器读数时经常需要。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="converters.html">Converter</a>
+      <span class="separator">/</span>
+      <span class="current">Angle Converter</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>📐 Angle Converter</h1>
+      <p>Convert angle units including degrees, radians, gradians, turns, arcminutes, arcseconds and milliradians.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="form-row">
+          <label for="val">Value</label>
+          <input type="number" id="val" value="90" step="any">
+        </div>
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="from">From</label>
+            <select id="from"><option value="deg">Degree (°)</option><option value="rad">Radian (rad)</option><option value="grad">Gradian / gon</option><option value="turn">Turn (full circle)</option><option value="arcmin">Arcminute (′)</option><option value="arcsec">Arcsecond (″)</option><option value="mrad">Milliradian (mrad)</option><option value="quad">Quadrant (right angle)</option></select>
+          </div>
+          <div class="form-row">
+            <label for="to">To</label>
+            <select id="to"><option value="deg">Degree (°)</option><option value="rad">Radian (rad)</option><option value="grad">Gradian / gon</option><option value="turn">Turn (full circle)</option><option value="arcmin">Arcminute (′)</option><option value="arcsec">Arcsecond (″)</option><option value="mrad">Milliradian (mrad)</option><option value="quad">Quadrant (right angle)</option></select>
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="convBtn">Convert</button>
+          <button class="btn btn-secondary" id="swapBtn">⇅ Swap</button>
+        </div>
+        <div id="out"></div>
+        <div id="all" style="margin-top:18px"></div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Enter the angle value.</li>
+            <li>Choose the units to convert between.</li>
+            <li>The result updates live.</li>
+            <li>See every unit in the table below.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>How do I convert degrees to radians?</summary>
+            <p>Multiply by π/180. So 180° = π ≈ 3.14159 rad, and 90° = π/2 ≈ 1.5708 rad.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Why do programming languages use radians?</summary>
+            <p>Math functions like Math.sin() in JavaScript, Python and C all expect radians. Passing degrees directly is one of the most common bugs in graphics code.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>度和弧度怎么换算？</summary>
+            <p>弧度 = 度 × π/180。所以 180° = π ≈ 3.14159 弧度，90° = π/2 ≈ 1.5708 弧度。</p>
+          </details>
+          <details class="faq-item">
+            <summary>为什么编程里要用弧度？</summary>
+            <p>JavaScript、Python、C 等语言的 sin/cos 函数都接收弧度。直接传角度值是图形和游戏开发中最常见的 bug 之一。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">💻</div>
+              <div class="uc-content">
+                <h4>Coding</h4>
+                <p>Convert degrees before calling sin/cos.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">📏</div>
+              <div class="uc-content">
+                <h4>Surveying</h4>
+                <p>Work with gradians and arcseconds.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🎮</div>
+              <div class="uc-content">
+                <h4>Game Dev</h4>
+                <p>Handle rotation values correctly.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="unit-converter.html" class="related-tool-card">
+              <span class="rt-icon">📐</span>
+              <span class="rt-name">Unit Converter</span>
+            </a>
+            <a href="temperature-converter.html" class="related-tool-card">
+              <span class="rt-icon">🌡️</span>
+              <span class="rt-name">Temperature Converter</span>
+            </a>
+            <a href="length-converter.html" class="related-tool-card">
+              <span class="rt-icon">📏</span>
+              <span class="rt-name">Length Converter</span>
+            </a>
+            <a href="weight-converter.html" class="related-tool-card">
+              <span class="rt-icon">⚖️</span>
+              <span class="rt-name">Weight Converter</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Angle Converter</h2>
+    <h3>角度的几种表示法</h3>
+    <li>**度（°）**：把一圈分成 360 份，源自古巴比伦的六十进制，日常最常用</li>
+    <li>**弧度（rad）**：弧长等于半径时对应的圆心角，一圈为 2π，数学和编程的标准单位</li>
+    <li>**百分度（gon/grad）**：把一圈分成 400 份，直角正好是 100，测绘领域使用</li>
+    <li>**圈（turn）**：一整圈为 1，动画和旋转参数中直观好用</li>
+    <h3>关键换算关系</h3>
+    <li>1 圈 = 360° = 2π rad ≈ 6.28319 rad = 400 gon</li>
+    <li>1° = 60 角分（′）= 3600 角秒（″）</li>
+    <li>1 rad ≈ 57.2958°</li>
+    <h3>编程中的常见坑</h3>
+    <p>JavaScript 的 `Math.sin(90)` 不会返回 1，因为它把 90 当作弧度处理。正确写法是 `Math.sin(90 * Math.PI / 180)`。这个错误在 Canvas 绘图和 3D 旋转中尤其高发。</p>
+    <h3>角分角秒的用途</h3>
+    <p>经纬度坐标常写成「39°54′27″N」这种度分秒格式，天文观测和 GPS 定位也大量使用角秒作为精度单位。</p>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var U=[["deg","Degree (°)",1],["rad","Radian (rad)",57.29577951308232],["grad","Gradian / gon",0.9],["turn","Turn (full circle)",360],["arcmin","Arcminute (′)",0.016666666666667],["arcsec","Arcsecond (″)",0.00027777777777778],["mrad","Milliradian (mrad)",0.05729577951308],["quad","Quadrant (right angle)",90]];
+    var val=document.getElementById('val'),from=document.getElementById('from'),to=document.getElementById('to'),
+        out=document.getElementById('out'),all=document.getElementById('all'),
+        convBtn=document.getElementById('convBtn'),swapBtn=document.getElementById('swapBtn');
+    from.value='deg';to.value='rad';
+    function f(k){for(var i=0;i<U.length;i++){if(U[i][0]===k)return U[i][2];}return 1;}
+    function name(k){for(var i=0;i<U.length;i++){if(U[i][0]===k)return U[i][1];}return k;}
+    function fmt(x){
+      if(!isFinite(x))return '—';
+      var a=Math.abs(x);
+      if(a!==0&&(a<0.000001||a>=1e12))return x.toExponential(6);
+      return parseFloat(x.toPrecision(10)).toLocaleString(undefined,{maximumFractionDigits:10});
+    }
+    function calc(){
+      var v=parseFloat(val.value);
+      if(isNaN(v)){out.className='result-box';out.textContent='Enter a number to convert.';all.innerHTML='';return;}
+      var base=v*f(from.value);
+      var r=base/f(to.value);
+      out.className='result-box';
+      out.innerHTML='<div style="font-size:1.7rem;font-weight:700;word-break:break-all">'+fmt(r)+'</div>'+
+        '<div style="opacity:.75;margin-top:4px">'+fmt(v)+' '+name(from.value)+' = '+fmt(r)+' '+name(to.value)+'</div>';
+      all.innerHTML='<div style="font-size:.92rem;font-weight:600;margin-bottom:8px">All units</div>'+
+        U.map(function(u){
+          var x=base/u[2];
+          return '<div style="display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px solid var(--border);font-size:.9rem">'+
+            '<span style="opacity:.85">'+u[1]+'</span><strong style="word-break:break-all;text-align:right">'+fmt(x)+'</strong></div>';
+        }).join('');
+    }
+    swapBtn.addEventListener('click',function(){var t=from.value;from.value=to.value;to.value=t;calc();});
+    [val,from,to].forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc);});
+    convBtn.addEventListener('click',calc);calc();
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

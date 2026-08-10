@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debt Payoff Calculator — Months &amp; Interest to Clear a Loan | FreeToolset</title>
+  <meta name="description" content="See how long it takes to pay off a debt and how much interest you will pay, based on balance, APR and monthly payment.">
+  <meta name="keywords" content="debt payoff calculator, loan payoff, credit card payoff, interest paid, amortization">
+  <meta property="og:title" content="Debt Payoff Calculator — FreeToolset">
+  <meta property="og:description" content="See how long it takes to pay off a debt and how much interest you will pay, based on balance, APR and monthly payment.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/debt-payoff-calculator.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/debt-payoff-calculator.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Debt Payoff Calculator — FreeToolset">
+  <meta name="twitter:description" content="See how long it takes to pay off a debt and how much interest you will pay, based on balance, APR and monthly payment.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Debt Payoff Calculator — Months & Interest to Clear a Loan","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/debt-payoff-calculator.html","description":"See how long it takes to pay off a debt and how much interest you will pay, based on balance, APR and monthly payment.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does paying extra matter so much?","acceptedAnswer":{"@type":"Answer","text":"Extra payments reduce the principal faster, which means less interest accrues every month. On a long loan even small extra payments can cut months off the term."}},{"@type":"Question","name":"Does this handle credit cards?","acceptedAnswer":{"@type":"Answer","text":"Yes — treat the balance as your card debt and the APR as the card rate. Just know card minimum payments are often calculated differently by the issuer."}},{"@type":"Question","name":"What if my payment is too low?","acceptedAnswer":{"@type":"Answer","text":"If the monthly payment does not cover the monthly interest, the balance grows and the debt is never paid off. The calculator will warn you."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Calculator","item":"https://www.freetoolset.app/calculators.html"},{"@type":"ListItem","position":3,"name":"Debt Payoff Calculator","item":"https://www.freetoolset.app/debt-payoff-calculator.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>债务还清计算器输入欠款余额、年化利率（APR）和每月还款额，算出还清所需月数以及总共支付的利息。它能直观告诉你：每月多还一点，能省下多少利息、缩短多少时间。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="calculators.html">Calculator</a>
+      <span class="separator">/</span>
+      <span class="current">Debt Payoff Calculator</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>💳 Debt Payoff Calculator</h1>
+      <p>See how long it takes to pay off a debt and how much interest you will pay, based on balance, APR and monthly payment.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="bal">Balance ($)</label>
+            <input type="number" id="bal" value="5000" min="0" step="any">
+          </div>
+          <div class="form-row">
+            <label for="apr">APR (%)</label>
+            <input type="number" id="apr" value="19.9" min="0" step="any">
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="pay">Monthly payment ($)</label>
+          <input type="number" id="pay" value="250" min="0" step="any">
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="calcBtn">Calculate</button>
+        </div>
+        <div id="out"></div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Enter the current balance you owe.</li>
+            <li>Enter the annual interest rate (APR).</li>
+            <li>Enter how much you can pay each month.</li>
+            <li>Click Calculate to see months to payoff and total interest.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>Why does paying extra matter so much?</summary>
+            <p>Extra payments reduce the principal faster, which means less interest accrues every month. On a long loan even small extra payments can cut months off the term.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Does this handle credit cards?</summary>
+            <p>Yes — treat the balance as your card debt and the APR as the card rate. Just know card minimum payments are often calculated differently by the issuer.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What if my payment is too low?</summary>
+            <p>If the monthly payment does not cover the monthly interest, the balance grows and the debt is never paid off. The calculator will warn you.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>每月多还一点真的有用吗？</summary>
+            <p>非常有用。多还的钱直接冲减本金，下个月利息就按更低的本金计算，长期能省下可观利息、缩短还款时间。</p>
+          </details>
+          <details class="faq-item">
+            <summary>还款额低于月利息会怎样？</summary>
+            <p>本金不仅不会减少，还会越滚越大，永远还不清。本工具会在这种情况下给出提醒。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">💳</div>
+              <div class="uc-content">
+                <h4>Credit cards</h4>
+                <p>Plan how to clear balances fast.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🎓</div>
+              <div class="uc-content">
+                <h4>Student loans</h4>
+                <p>Compare standard vs accelerated.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🚗</div>
+              <div class="uc-content">
+                <h4>Car loans</h4>
+                <p>See interest saved by overpaying.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="bmi-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏋️</span>
+              <span class="rt-name">BMI Calculator</span>
+            </a>
+            <a href="age-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🎂</span>
+              <span class="rt-name">Age Calculator</span>
+            </a>
+            <a href="percentage-calculator.html" class="related-tool-card">
+              <span class="rt-icon">➗</span>
+              <span class="rt-name">Percentage Calculator</span>
+            </a>
+            <a href="loan-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏦</span>
+              <span class="rt-name">Loan Calculator</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Debt Payoff Calculator</h2>
+    <h3>债务怎么产生利息</h3>
+    <p>贷款每月按剩余本金计息。你还的钱先抵利息，剩下的才减本金。所以前期大部分还款都在付利息。</p>
+    <h3>计算公式</h3>
+    <p>月利率 r = APR/12。每月利息 = 剩余本金 × r；本金减少 = 月供 − 月利息。逐月循环直到本金归零，记录月数即为还清时间。</p>
+    <h3>提前还款的力量</h3>
+    <p>每多还一笔，本金下降更快，后续利息随之减少。对高利率的消费贷、信用卡尤其明显。</p>
+    <h3>注意</h3>
+    <li>本工具假设固定月供、固定利率</li>
+    <li>部分贷款有提前还款违约金，实际省息会打折</li>
+    <li>结果仅供参考，不构成理财建议</li>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var bal=document.getElementById('bal'),apr=document.getElementById('apr'),pay=document.getElementById('pay'),out=document.getElementById('out'),btn=document.getElementById('calcBtn');
+    function calc(){
+      var B=parseFloat(bal.value),a=parseFloat(apr.value),P=parseFloat(pay.value);
+      if(!(B>0&&P>0)){out.className='result-box';out.textContent='Enter a positive balance and payment.';return;}
+      var r=a/100/12, b=B, months=0, interest=0, minPay=b*r+0.01;
+      if(P<=minPay){out.className='result-box';out.innerHTML='<div style="color:#ef4444">⚠️ Your payment is too low to ever clear this debt (it does not cover the monthly interest). Increase the payment.</div>';return;}
+      while(b>0.005&&months<1200){var i=b*r;b-=(P-i);if(b<0)b=0;interest+=i;months++;}
+      var yrs=Math.floor(months/12), mos=months%12;
+      out.className='result-box';
+      out.innerHTML='<div style="display:grid;gap:10px">'+
+        '<div><div style="font-size:1.6rem;font-weight:700">'+months+' months</div><div style="opacity:.75">≈ '+yrs+' yr '+(mos?mos+' mo':'')+' to pay off</div></div>'+
+        '<div><div style="font-size:1.6rem;font-weight:700">$'+interest.toFixed(2)+'</div><div style="opacity:.75">Total interest paid</div></div>'+
+        '<div><div style="font-size:1.6rem;font-weight:700">$'+(B+interest).toFixed(2)+'</div><div style="opacity:.75">Total of all payments</div></div></div>';
+    }
+    btn.addEventListener('click',calc);calc();
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

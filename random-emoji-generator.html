@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Emoji Generator — Spin up a random emoji | FreeToolset</title>
+  <meta name="description" content="Generate a random emoji with one click. Great for adding a bit of flair to messages, posts and replies.">
+  <meta name="keywords" content="random emoji generator, emoji picker random, random emoticon, emoji spinner, emoji ideas">
+  <meta property="og:title" content="Random Emoji Generator — FreeToolset">
+  <meta property="og:description" content="Generate a random emoji with one click. Great for adding a bit of flair to messages, posts and replies.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/random-emoji-generator.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/random-emoji-generator.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Random Emoji Generator — FreeToolset">
+  <meta name="twitter:description" content="Generate a random emoji with one click. Great for adding a bit of flair to messages, posts and replies.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Random Emoji Generator — Spin up a random emoji","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/random-emoji-generator.html","description":"Generate a random emoji with one click. Great for adding a bit of flair to messages, posts and replies.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where do the emojis come from?","acceptedAnswer":{"@type":"Answer","text":"From a curated list of common emojis stored in the page — no download or network needed."}},{"@type":"Question","name":"Can I copy the emoji?","acceptedAnswer":{"@type":"Answer","text":"Yes — click the big emoji to copy it to your clipboard."}},{"@type":"Question","name":"Will it work everywhere?","acceptedAnswer":{"@type":"Answer","text":"Emoji rendering depends on your device OS and font, but the characters themselves are standard Unicode."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Fun","item":"https://www.freetoolset.app/fun-tools.html"},{"@type":"ListItem","position":3,"name":"Random Emoji Generator","item":"https://www.freetoolset.app/random-emoji-generator.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>随机表情生成器点一下就抽一个表情符号，给聊天、帖子或回复加点趣味。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="fun-tools.html">Fun</a>
+      <span class="separator">/</span>
+      <span class="current">Random Emoji Generator</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>😎 Random Emoji Generator</h1>
+      <p>Generate a random emoji with one click. Great for adding a bit of flair to messages, posts and replies.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="btn-row">
+          <button class="btn btn-primary" id="btn">Generate</button>
+        </div>
+        <div id="out"></div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Click Generate.</li>
+            <li>See your random emoji.</li>
+            <li>Click it to copy.</li>
+            <li>Roll again for more.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>Where do the emojis come from?</summary>
+            <p>From a curated list of common emojis stored in the page — no download or network needed.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can I copy the emoji?</summary>
+            <p>Yes — click the big emoji to copy it to your clipboard.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Will it work everywhere?</summary>
+            <p>Emoji rendering depends on your device OS and font, but the characters themselves are standard Unicode.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>表情从哪来？</summary>
+            <p>来自页面内置的一批常用表情列表，无需下载或联网。</p>
+          </details>
+          <details class="faq-item">
+            <summary>能复制表情吗？</summary>
+            <p>可以，点大表情即可复制到剪贴板。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">💬</div>
+              <div class="uc-content">
+                <h4>Chat</h4>
+                <p>React fast.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">📝</div>
+              <div class="uc-content">
+                <h4>Posts</h4>
+                <p>Add flair.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🎲</div>
+              <div class="uc-content">
+                <h4>Fun</h4>
+                <p>Roll one.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="random-number-generator.html" class="related-tool-card">
+              <span class="rt-icon">🎲</span>
+              <span class="rt-name">Random Number Generator</span>
+            </a>
+            <a href="timer.html" class="related-tool-card">
+              <span class="rt-icon">⏱️</span>
+              <span class="rt-name">Online Countdown Timer</span>
+            </a>
+            <a href="stopwatch.html" class="related-tool-card">
+              <span class="rt-icon">⏱️</span>
+              <span class="rt-name">Online Stopwatch</span>
+            </a>
+            <a href="dice-roller.html" class="related-tool-card">
+              <span class="rt-icon">🎲</span>
+              <span class="rt-name">Dice Roller</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Random Emoji Generator</h2>
+    <h3>用途</h3>
+    <p>快速给文字添个表情，增添趣味。</p>
+    <h3>用法</h3>
+    <p>点生成，点大表情复制。表情显示依赖设备字体，但字符本身是标准 Unicode。</p>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var out=document.getElementById('out'),btn=document.getElementById('btn');
+    var E=['😀','😎','🤩','😍','🥳','🤔','😴','🤯','🔥','💡','⭐','🌟','💥','🎉','🎈','🍕','🍔','🚀','🌈','⚡','🐱','🐶','🦄','🌸','🍀','💎','🎯','🧠','👍','🙌','💯','✨','🍀','🌻','🐢','🦊','🍉','🎮','🎵','☕'];
+    function gen(){
+      var e=E[Math.floor(Math.random()*E.length)];
+      out.innerHTML='<div onclick="(function(){var t=document.createElement(\'textarea\');t.value=\''+e+'\';document.body.appendChild(t);t.select();document.execCommand(\'copy\');t.remove();})(this)" style="margin-top:14px;text-align:center;font-size:5rem;cursor:pointer">'+e+'<div style="font-size:.8rem;opacity:.6">click to copy</div></div>';
+    }
+    btn.addEventListener('click',gen);gen();
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

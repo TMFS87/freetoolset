@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tile Calculator — How Many Tiles for Floor or Wall | FreeToolset</title>
+  <meta name="description" content="Work out how many tiles and boxes you need for a floor or wall, including grout gaps and a wastage allowance for cuts and breakage.">
+  <meta name="keywords" content="tile calculator, how many tiles do i need, floor tile calculator, tile quantity estimator, tiles per box">
+  <meta property="og:title" content="Tile Calculator — FreeToolset">
+  <meta property="og:description" content="Work out how many tiles and boxes you need for a floor or wall, including grout gaps and a wastage allowance for cuts and breakage.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/tile-calculator.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/tile-calculator.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tile Calculator — FreeToolset">
+  <meta name="twitter:description" content="Work out how many tiles and boxes you need for a floor or wall, including grout gaps and a wastage allowance for cuts and breakage.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Tile Calculator — How Many Tiles for Floor or Wall","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/tile-calculator.html","description":"Work out how many tiles and boxes you need for a floor or wall, including grout gaps and a wastage allowance for cuts and breakage.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much wastage should I allow?","acceptedAnswer":{"@type":"Answer","text":"Add 10% for a straight layout, 15% for diagonal or herringbone patterns, and up to 20% for small rooms with many cuts."}},{"@type":"Question","name":"Why buy from the same batch?","acceptedAnswer":{"@type":"Answer","text":"Tile colour varies slightly between production batches. Buying all boxes at once with the same batch number avoids visible colour differences."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Calculator","item":"https://www.freetoolset.app/calculators.html"},{"@type":"ListItem","position":3,"name":"Tile Calculator","item":"https://www.freetoolset.app/tile-calculator.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>瓷砖用量计算器根据铺贴面积、单块瓷砖尺寸、留缝宽度和损耗率，算出需要多少块砖、多少箱，避免施工中途断货或大量剩余。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="calculators.html">Calculator</a>
+      <span class="separator">/</span>
+      <span class="current">Tile Calculator</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>🧱 Tile Calculator</h1>
+      <p>Work out how many tiles and boxes you need for a floor or wall, including grout gaps and a wastage allowance for cuts and breakage.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="alen">Area length (m)</label>
+            <input type="number" id="alen" value="2.5" min="0.1" step="0.1">
+          </div>
+          <div class="form-row">
+            <label for="awid">Area width (m)</label>
+            <input type="number" id="awid" value="1.8" min="0.1" step="0.1">
+          </div>
+        </div>
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="tlen">Tile length (cm)</label>
+            <input type="number" id="tlen" value="30" min="1" step="0.5">
+          </div>
+          <div class="form-row">
+            <label for="twid">Tile width (cm)</label>
+            <input type="number" id="twid" value="30" min="1" step="0.5">
+          </div>
+        </div>
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="gap">Grout gap (mm)</label>
+            <input type="number" id="gap" value="2" min="0" max="20" step="0.5">
+          </div>
+          <div class="form-row">
+            <label for="waste">Wastage (%)</label>
+            <input type="number" id="waste" value="10" min="0" max="40">
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="perbox">Tiles per box</label>
+          <input type="number" id="perbox" value="11" min="1">
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="calcBtn">Calculate</button>
+        </div>
+        <div id="out"></div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Enter the area length and width.</li>
+            <li>Enter your tile dimensions in centimetres.</li>
+            <li>Set grout gap and wastage percentage.</li>
+            <li>Click Calculate to see tiles and boxes needed.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>How much wastage should I allow?</summary>
+            <p>Add 10% for a straight layout, 15% for diagonal or herringbone patterns, and up to 20% for small rooms with many cuts.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Why buy from the same batch?</summary>
+            <p>Tile colour varies slightly between production batches. Buying all boxes at once with the same batch number avoids visible colour differences.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>损耗率留多少合适？</summary>
+            <p>常规直铺留 10%，斜铺或人字拼留 15%，小房间切割多的可留到 20%。宁可多买一点，补货时容易出现色差。</p>
+          </details>
+          <details class="faq-item">
+            <summary>为什么要一次买齐？</summary>
+            <p>不同批次的瓷砖存在细微色差，同一批号（批次号印在箱体上）才能保证整体颜色一致。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🚿</div>
+              <div class="uc-content">
+                <h4>Bathroom</h4>
+                <p>Plan wall and floor tiling.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🍳</div>
+              <div class="uc-content">
+                <h4>Kitchen</h4>
+                <p>Estimate backsplash quantity.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">💵</div>
+              <div class="uc-content">
+                <h4>Quote Check</h4>
+                <p>Verify a contractor’s material list.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="bmi-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏋️</span>
+              <span class="rt-name">BMI Calculator</span>
+            </a>
+            <a href="age-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🎂</span>
+              <span class="rt-name">Age Calculator</span>
+            </a>
+            <a href="percentage-calculator.html" class="related-tool-card">
+              <span class="rt-icon">➗</span>
+              <span class="rt-name">Percentage Calculator</span>
+            </a>
+            <a href="loan-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏦</span>
+              <span class="rt-name">Loan Calculator</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Tile Calculator</h2>
+    <h3>计算方法</h3>
+    <p>先算铺贴面积：长 × 宽。再算单块瓷砖的有效占位面积（含留缝）：(砖长 + 缝宽) × (砖宽 + 缝宽)。所需块数 = 铺贴面积 ÷ 单砖占位面积 × (1 + 损耗率)。</p>
+    <h3>一个例子</h3>
+    <p>卫生间地面 2.5m × 1.8m = 4.5㎡，用 30cm × 30cm 的砖，留缝 2mm：单砖占位 0.302 × 0.302 ≈ 0.0912㎡，理论需要 49.3 块；加 10% 损耗后约 55 块。若每箱 11 块，需买 5 箱。</p>
+    <h3>留缝的意义</h3>
+    <p>瓷砖热胀冷缩需要伸缩空间，完全无缝铺贴容易在温差变化时起拱开裂。常规墙砖留 1–2mm，地砖留 2–3mm，仿古砖可留 3–5mm。</p>
+    <h3>实用提醒</h3>
+    <li>记下批次号，同批采购避免色差</li>
+    <li>留 2–3 块整砖备用，日后破损可更换</li>
+    <li>异形区域（管道、门槛）另行加量</li>
+    <li>本工具为估算，实际以现场放线测量为准</li>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var ids=['alen','awid','tlen','twid','gap','waste','perbox'],el={};ids.forEach(function(i){el[i]=document.getElementById(i);});
+    var out=document.getElementById('out'),btn=document.getElementById('calcBtn');
+    function calc(){
+      var A=(+el.alen.value||0)*(+el.awid.value||0);
+      var g=(+el.gap.value||0)/1000;
+      var tw=(+el.tlen.value||1)/100+g, th=(+el.twid.value||1)/100+g;
+      var unit=tw*th;
+      if(!(A>0&&unit>0)){out.className='result-box';out.textContent='Please enter valid dimensions.';return;}
+      var base=A/unit;
+      var waste=+el.waste.value||0;
+      var need=Math.ceil(base*(1+waste/100));
+      var pb=+el.perbox.value||1;
+      var boxes=Math.ceil(need/pb);
+      function row(a,b){return '<div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border)"><span>'+a+'</span><strong>'+b+'</strong></div>';}
+      out.className='result-box';
+      out.innerHTML='<div style="font-size:1.7rem;font-weight:700;margin-bottom:4px">'+need+' tiles</div>'+
+        '<div style="opacity:.75;margin-bottom:14px">= '+boxes+' box'+(boxes>1?'es':'')+' of '+pb+'</div>'+
+        row('Area to cover',A.toFixed(2)+' m²')+
+        row('Coverage per tile (incl. gap)',unit.toFixed(4)+' m²')+
+        row('Tiles without wastage',Math.ceil(base)+'')+
+        row('Wastage allowance','+'+waste+'%')+
+        row('Spare tiles in last box',(boxes*pb-need)+'');
+    }
+    btn.addEventListener('click',calc);calc();
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pregnancy Due Date Calculator — Estimate Your Baby’s Due Date | FreeToolset</title>
+  <meta name="description" content="Estimate your due date from the first day of your last menstrual period using Naegele’s rule, with current gestational age and trimester milestones.">
+  <meta name="keywords" content="due date calculator, pregnancy calculator, edd calculator, gestational age, naegele rule">
+  <meta property="og:title" content="Pregnancy Due Date Calculator — FreeToolset">
+  <meta property="og:description" content="Estimate your due date from the first day of your last menstrual period using Naegele’s rule, with current gestational age and trimester milestones.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/pregnancy-due-date-calculator.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/pregnancy-due-date-calculator.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pregnancy Due Date Calculator — FreeToolset">
+  <meta name="twitter:description" content="Estimate your due date from the first day of your last menstrual period using Naegele’s rule, with current gestational age and trimester milestones.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Pregnancy Due Date Calculator — Estimate Your Baby’s Due Date","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/pregnancy-due-date-calculator.html","description":"Estimate your due date from the first day of your last menstrual period using Naegele’s rule, with current gestational age and trimester milestones.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How accurate is a due date?","acceptedAnswer":{"@type":"Answer","text":"Only about 4% of babies arrive exactly on the estimated date. Roughly 80% are born within two weeks either side, which is why it is called an estimate."}},{"@type":"Question","name":"What if my cycle is not 28 days?","acceptedAnswer":{"@type":"Answer","text":"The calculator adjusts for that. A longer cycle usually means later ovulation, which pushes the due date later by the same number of days."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Calculator","item":"https://www.freetoolset.app/calculators.html"},{"@type":"ListItem","position":3,"name":"Pregnancy Due Date Calculator","item":"https://www.freetoolset.app/pregnancy-due-date-calculator.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>预产期计算器根据末次月经第一天，用内格勒法则（末次月经 + 280 天）推算预产期，并显示当前孕周、孕期阶段和各三个月的关键时间点。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="calculators.html">Calculator</a>
+      <span class="separator">/</span>
+      <span class="current">Pregnancy Due Date Calculator</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>👶 Pregnancy Due Date Calculator</h1>
+      <p>Estimate your due date from the first day of your last menstrual period using Naegele’s rule, with current gestational age and trimester milestones.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="form-row">
+          <label for="lmp">First day of last menstrual period</label>
+          <input type="date" id="lmp">
+        </div>
+        <div class="form-row">
+          <label for="cyc">Average cycle length (days)</label>
+          <input type="number" id="cyc" value="28" min="20" max="45">
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="calcBtn">Calculate</button>
+        </div>
+        <div id="out"></div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Enter the first day of your last menstrual period.</li>
+            <li>Adjust cycle length if yours is not 28 days.</li>
+            <li>Click Calculate.</li>
+            <li>Review your estimated due date and current gestational week.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>How accurate is a due date?</summary>
+            <p>Only about 4% of babies arrive exactly on the estimated date. Roughly 80% are born within two weeks either side, which is why it is called an estimate.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What if my cycle is not 28 days?</summary>
+            <p>The calculator adjusts for that. A longer cycle usually means later ovulation, which pushes the due date later by the same number of days.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>预产期准吗？</summary>
+            <p>只有约 4% 的宝宝正好在预产期当天出生，约 80% 在预产期前后两周内出生，所以它是一个估算范围而非确定日期。</p>
+          </details>
+          <details class="faq-item">
+            <summary>月经周期不是 28 天怎么办？</summary>
+            <p>工具会自动调整。周期偏长通常意味着排卵较晚，预产期也会相应推后同样天数。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">📅</div>
+              <div class="uc-content">
+                <h4>Plan Ahead</h4>
+                <p>Know when to book leave and appointments.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🩺</div>
+              <div class="uc-content">
+                <h4>Track Progress</h4>
+                <p>See your current gestational week.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🍼</div>
+              <div class="uc-content">
+                <h4>Prepare</h4>
+                <p>Line up trimester milestones.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="bmi-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏋️</span>
+              <span class="rt-name">BMI Calculator</span>
+            </a>
+            <a href="age-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🎂</span>
+              <span class="rt-name">Age Calculator</span>
+            </a>
+            <a href="percentage-calculator.html" class="related-tool-card">
+              <span class="rt-icon">➗</span>
+              <span class="rt-name">Percentage Calculator</span>
+            </a>
+            <a href="loan-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏦</span>
+              <span class="rt-name">Loan Calculator</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Pregnancy Due Date Calculator</h2>
+    <h3>预产期是怎么算的</h3>
+    <p>临床上最常用的是内格勒法则（Naegele’s rule）：从末次月经第一天起加 280 天（40 周）。它假设月经周期为 28 天、排卵发生在第 14 天。</p>
+    <h3>周期不规律怎么修正</h3>
+    <p>如果你的周期是 32 天，排卵大约推迟 4 天，预产期也相应推后 4 天。本工具已内置这一修正：预产期 = 末次月经 + 280 天 +（周期长度 − 28）。</p>
+    <h3>孕期三阶段</h3>
+    <li>孕早期：第 1–13 周，器官形成的关键期</li>
+    <li>孕中期：第 14–27 周，通常反应减轻、体感最舒适</li>
+    <li>孕晚期：第 28–40 周，胎儿体重快速增长</li>
+    <h3>重要提醒</h3>
+    <p>实际分娩时间受个体差异影响很大，超声波检查（尤其孕早期）比月经推算更准确。本工具结果仅供参考，产检安排请以医生诊断为准。</p>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var lmp=document.getElementById('lmp'),cyc=document.getElementById('cyc'),out=document.getElementById('out'),btn=document.getElementById('calcBtn');
+    var t=new Date();t.setDate(t.getDate()-70);lmp.value=t.toISOString().slice(0,10);
+    function fmt(d){return d.toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'});}
+    function calc(){
+      if(!lmp.value){out.className='result-box';out.textContent='Please pick a date.';return;}
+      var s=new Date(lmp.value+'T00:00:00'),c=parseInt(cyc.value,10)||28;
+      var due=new Date(s.getTime());due.setDate(due.getDate()+280+(c-28));
+      var days=Math.floor((Date.now()-s.getTime())/86400000);
+      var wk=Math.floor(days/7),dd=days%7;
+      var tri=wk<13?'First trimester':wk<28?'Second trimester':wk<=42?'Third trimester':'Past due';
+      var t1=new Date(s.getTime());t1.setDate(t1.getDate()+13*7);
+      var t2=new Date(s.getTime());t2.setDate(t2.getDate()+27*7);
+      var left=Math.ceil((due-Date.now())/86400000);
+      out.className='result-box';
+      out.innerHTML='<div style="font-size:1.6rem;font-weight:700;margin-bottom:4px">'+fmt(due)+'</div>'+
+        '<div style="opacity:.75;margin-bottom:14px">Estimated due date</div>'+
+        (days>=0&&days<310?'<div style="display:grid;gap:6px;font-size:.95rem;margin-bottom:12px">'+
+        '<div>Current: <strong>'+wk+' weeks '+dd+' days</strong> — '+tri+'</div>'+
+        (left>0?'<div><strong>'+left+'</strong> days to go</div>':'')+'</div>':'')+
+        '<div style="display:grid;gap:6px;font-size:.9rem;opacity:.85">'+
+        '<div>End of 1st trimester: '+fmt(t1)+'</div>'+
+        '<div>End of 2nd trimester: '+fmt(t2)+'</div></div>';
+    }
+    btn.addEventListener('click',calc);calc();
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Resizer — Resize images in your browser | FreeToolset</title>
+  <meta name="description" content="Resize a JPG/PNG/WEBP image to a target width or height. Processing is done locally with the Canvas API — your photo never leaves the device.">
+  <meta name="keywords" content="image resizer, resize photo, image size changer, shrink image, canvas resizer">
+  <meta property="og:title" content="Image Resizer — FreeToolset">
+  <meta property="og:description" content="Resize a JPG/PNG/WEBP image to a target width or height. Processing is done locally with the Canvas API — your photo never leaves the device.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/image-resizer.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/image-resizer.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Image Resizer — FreeToolset">
+  <meta name="twitter:description" content="Resize a JPG/PNG/WEBP image to a target width or height. Processing is done locally with the Canvas API — your photo never leaves the device.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Image Resizer — Resize images in your browser","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/image-resizer.html","description":"Resize a JPG/PNG/WEBP image to a target width or height. Processing is done locally with the Canvas API — your photo never leaves the device.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is my image uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The file is read and processed entirely in your browser via the Canvas API. Nothing is sent to a server."}},{"@type":"Question","name":"What formats are supported?","acceptedAnswer":{"@type":"Answer","text":"Input: most browsers accept JPG, PNG and WEBP. Output is PNG by default to avoid quality loss; you can switch to JPG."}},{"@type":"Question","name":"Will resizing reduce quality?","acceptedAnswer":{"@type":"Answer","text":"Downscaling generally looks good. Upscaling beyond the original size can look blurry because no new detail is invented."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Developer","item":"https://www.freetoolset.app/developer-tools.html"},{"@type":"ListItem","position":3,"name":"Image Resizer","item":"https://www.freetoolset.app/image-resizer.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>图片尺寸调整工具用 Canvas 在浏览器本地把 JPG/PNG/WEBP 图片缩放到指定宽度或高度，照片不会上传到任何服务器，保护隐私。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="developer-tools.html">Developer</a>
+      <span class="separator">/</span>
+      <span class="current">Image Resizer</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>🖼️ Image Resizer</h1>
+      <p>Resize a JPG/PNG/WEBP image to a target width or height. Processing is done locally with the Canvas API — your photo never leaves the device.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="form-row">
+          <label for="file">Choose image</label>
+          <input type="file" id="file" accept="image/*">
+        </div>
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="w">Width (px, blank = auto)</label>
+            <input type="number" id="w" placeholder="e.g. 800" min="1">
+          </div>
+          <div class="form-row">
+            <label for="h">Height (px, blank = auto)</label>
+            <input type="number" id="h" placeholder="e.g. 600" min="1">
+          </div>
+        </div>
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="fmt">Output format</label>
+            <select id="fmt"><option value="image/png">PNG</option><option value="image/jpeg">JPG</option><option value="image/webp">WEBP</option></select>
+          </div>
+          <div class="form-row">
+            <label for="q">JPG/WEBP quality</label>
+            <input type="number" id="q" value="0.9" min="0.1" max="1" step="0.1">
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="btn">Resize</button>
+        </div>
+        <div id="out"></div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Choose an image file.</li>
+            <li>Set a target width (height auto) or both.</li>
+            <li>Click Resize.</li>
+            <li>Download the result.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>Is my image uploaded?</summary>
+            <p>No. The file is read and processed entirely in your browser via the Canvas API. Nothing is sent to a server.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What formats are supported?</summary>
+            <p>Input: most browsers accept JPG, PNG and WEBP. Output is PNG by default to avoid quality loss; you can switch to JPG.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Will resizing reduce quality?</summary>
+            <p>Downscaling generally looks good. Upscaling beyond the original size can look blurry because no new detail is invented.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>图片会被上传吗？</summary>
+            <p>不会。文件通过 Canvas API 在你的浏览器本地读取和处理，不会发送到服务器。</p>
+          </details>
+          <details class="faq-item">
+            <summary>支持哪些格式？</summary>
+            <p>输入一般支持 JPG、PNG、WEBP；输出默认 PNG 以避免画质损失，也可选 JPG。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">📧</div>
+              <div class="uc-content">
+                <h4>Email</h4>
+                <p>Shrink attachments.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🌐</div>
+              <div class="uc-content">
+                <h4>Web</h4>
+                <p>Optimise for speed.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">📱</div>
+              <div class="uc-content">
+                <h4>Social</h4>
+                <p>Fit upload limits.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="html-encoder.html" class="related-tool-card">
+              <span class="rt-icon"></></span>
+              <span class="rt-name">HTML Encoder / Decoder</span>
+            </a>
+            <a href="css-minifier.html" class="related-tool-card">
+              <span class="rt-icon">🎨</span>
+              <span class="rt-name">CSS Minifier</span>
+            </a>
+            <a href="json-minifier.html" class="related-tool-card">
+              <span class="rt-icon">🗜️</span>
+              <span class="rt-name">JSON Minifier</span>
+            </a>
+            <a href="html-minifier.html" class="related-tool-card">
+              <span class="rt-icon">📄</span>
+              <span class="rt-name">HTML Minifier</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Image Resizer</h2>
+    <h3>工作原理</h3>
+    <p>读取图片文件 → 用 Canvas 按目标尺寸绘制 → 导出为图片。整个流程在你的浏览器内完成，隐私安全。</p>
+    <h3>使用建议</h3>
+    <li>只填宽度，高度会按比例自动计算</li>
+    <li>缩小图片用于网页可明显提速</li>
+    <li>放大超过原始尺寸会模糊</li>
+    <h3>隐私</h3>
+    <p>图片不上传，处理本地完成。</p>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var file=document.getElementById('file'),w=document.getElementById('w'),h=document.getElementById('h'),fmt=document.getElementById('fmt'),q=document.getElementById('q'),out=document.getElementById('out'),btn=document.getElementById('btn');
+    var img=null,srcUrl=null;
+    file.addEventListener('change',function(){var f=file.files[0];if(!f)return;if(srcUrl)URL.revokeObjectURL(srcUrl);srcUrl=URL.createObjectURL(f);img=new Image();img.onload=function(){w.placeholder=img.naturalWidth;h.placeholder=img.naturalHeight;};img.src=srcUrl;});
+    function resize(){
+      if(!img){out.innerHTML='<div style="color:#ef4444">Choose an image first.</div>';return;}
+      var W=parseInt(w.value)||0,H=parseInt(h.value)||0;
+      if(!W&&!H){W=img.naturalWidth;}
+      if(!W)W=Math.round(img.naturalWidth*(H/img.naturalHeight));
+      if(!H)H=Math.round(img.naturalHeight*(W/img.naturalWidth));
+      var c=document.createElement('canvas');c.width=W;c.height=H;var ctx=c.getContext('2d');ctx.drawImage(img,0,0,W,H);
+      var url=c.toDataURL(fmt.value,parseFloat(q.value));
+      var ext=fmt.value.split('/')[1];
+      out.innerHTML='<div style="margin:8px 0">Resized to '+W+' × '+H+' px</div>'+
+        '<img src="'+url+'" style="max-width:100%;border:1px solid var(--border);border-radius:8px;margin-bottom:10px">'+
+        '<br><a class="btn btn-secondary" download="resized.'+ext+'" href="'+url+'">Download</a>';
+    }
+    btn.addEventListener('click',resize);
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

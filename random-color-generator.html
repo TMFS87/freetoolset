@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Color Generator — Discover colors by chance | FreeToolset</title>
+  <meta name="description" content="Generate random colors with hex codes, preview them, and copy what you like. Useful for design inspiration and palettes.">
+  <meta name="keywords" content="random color generator, random hex, color picker random, random colour, color ideas">
+  <meta property="og:title" content="Random Color Generator — FreeToolset">
+  <meta property="og:description" content="Generate random colors with hex codes, preview them, and copy what you like. Useful for design inspiration and palettes.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/random-color-generator.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/random-color-generator.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Random Color Generator — FreeToolset">
+  <meta name="twitter:description" content="Generate random colors with hex codes, preview them, and copy what you like. Useful for design inspiration and palettes.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Random Color Generator — Discover colors by chance","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/random-color-generator.html","description":"Generate random colors with hex codes, preview them, and copy what you like. Useful for design inspiration and palettes.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I generate many at once?","acceptedAnswer":{"@type":"Answer","text":"This tool shows one large preview at a time for clarity; click New Color to cycle. For a full palette, try the Color Palette Generator."}},{"@type":"Question","name":"Is the color truly random?","acceptedAnswer":{"@type":"Answer","text":"It is a uniform random 24-bit RGB value, so every color is equally likely."}},{"@type":"Question","name":"How do I use the hex?","acceptedAnswer":{"@type":"Answer","text":"Paste it into CSS, design tools or anywhere a color is accepted."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Fun","item":"https://www.freetoolset.app/fun-tools.html"},{"@type":"ListItem","position":3,"name":"Random Color Generator","item":"https://www.freetoolset.app/random-color-generator.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>随机颜色生成器每次生成一个随机十六进制颜色并预览，喜欢的可以直接复制色值，适合做设计配色灵感。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="fun-tools.html">Fun</a>
+      <span class="separator">/</span>
+      <span class="current">Random Color Generator</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>🎨 Random Color Generator</h1>
+      <p>Generate random colors with hex codes, preview them, and copy what you like. Useful for design inspiration and palettes.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="btn-row">
+          <button class="btn btn-primary" id="btn">New Color</button>
+        </div>
+        <div id="out"></div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Click New Color.</li>
+            <li>See the swatch and hex code.</li>
+            <li>Click to copy the hex.</li>
+            <li>Keep clicking for more ideas.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>Can I generate many at once?</summary>
+            <p>This tool shows one large preview at a time for clarity; click New Color to cycle. For a full palette, try the Color Palette Generator.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is the color truly random?</summary>
+            <p>It is a uniform random 24-bit RGB value, so every color is equally likely.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How do I use the hex?</summary>
+            <p>Paste it into CSS, design tools or anywhere a color is accepted.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>能一次生成多个吗？</summary>
+            <p>本工具一次显示一个大方块更清晰；想要整组搭配可用“配色方案生成器”。</p>
+          </details>
+          <details class="faq-item">
+            <summary>颜色是真正随机的吗？</summary>
+            <p>是均匀随机的 24 位 RGB 值，每种颜色概率相同。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🎨</div>
+              <div class="uc-content">
+                <h4>Inspiration</h4>
+                <p>Break a block.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🖌️</div>
+              <div class="uc-content">
+                <h4>Design</h4>
+                <p>Quick swatches.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🌈</div>
+              <div class="uc-content">
+                <h4>Play</h4>
+                <p>Just for fun.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="random-number-generator.html" class="related-tool-card">
+              <span class="rt-icon">🎲</span>
+              <span class="rt-name">Random Number Generator</span>
+            </a>
+            <a href="timer.html" class="related-tool-card">
+              <span class="rt-icon">⏱️</span>
+              <span class="rt-name">Online Countdown Timer</span>
+            </a>
+            <a href="stopwatch.html" class="related-tool-card">
+              <span class="rt-icon">⏱️</span>
+              <span class="rt-name">Online Stopwatch</span>
+            </a>
+            <a href="dice-roller.html" class="related-tool-card">
+              <span class="rt-icon">🎲</span>
+              <span class="rt-name">Dice Roller</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Random Color Generator</h2>
+    <h3>用途</h3>
+    <p>无聊或卡顿时随机抽一个颜色，常能带来意外灵感。</p>
+    <h3>用法</h3>
+    <p>点“新颜色”刷新，点色块复制 hex。</p>
+    <h3>隐私</h3>
+    <p>随机在浏览器本地生成。</p>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var out=document.getElementById('out'),btn=document.getElementById('btn');
+    function hex(){var s=Math.floor(Math.random()*0xffffff).toString(16);while(s.length<6)s='0'+s;return '#'+s;}
+    function gen(){
+      var c=hex();
+      out.innerHTML='<div style="display:flex;gap:16px;align-items:center;margin-top:8px">'+
+        '<div onclick="(function(){var t=document.createElement(\'textarea\');t.value=\''+c+'\';document.body.appendChild(t);t.select();document.execCommand(\'copy\');t.remove();})(this)" style="width:120px;height:120px;border-radius:14px;background:'+c+';border:1px solid var(--border);cursor:pointer"></div>'+
+        '<div><div style="font-size:1.6rem;font-weight:800;font-family:monospace">'+c+'</div><div style="opacity:.6;font-size:.85rem">click swatch to copy</div></div></div>';
+    }
+    btn.addEventListener('click',gen);gen();
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

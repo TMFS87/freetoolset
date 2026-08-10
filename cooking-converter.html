@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cooking Measurement Converter — Cups, Tablespoons, Grams &amp; Millilitres | FreeToolset</title>
+  <meta name="description" content="Convert cooking measurements between cups, tablespoons, teaspoons, millilitres, grams and ounces — with ingredient-specific density for accurate weight conversion.">
+  <meta name="keywords" content="cooking converter, cups to grams, tablespoon to ml, recipe converter, baking measurement conversion">
+  <meta property="og:title" content="Cooking Measurement Converter — FreeToolset">
+  <meta property="og:description" content="Convert cooking measurements between cups, tablespoons, teaspoons, millilitres, grams and ounces — with ingredient-specific density for accurate weight conversion.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/cooking-converter.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/cooking-converter.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cooking Measurement Converter — FreeToolset">
+  <meta name="twitter:description" content="Convert cooking measurements between cups, tablespoons, teaspoons, millilitres, grams and ounces — with ingredient-specific density for accurate weight conversion.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Cooking Measurement Converter — Cups, Tablespoons, Grams & Millilitres","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/cooking-converter.html","description":"Convert cooking measurements between cups, tablespoons, teaspoons, millilitres, grams and ounces — with ingredient-specific density for accurate weight conversion.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does 1 cup of flour differ from 1 cup of sugar in grams?","acceptedAnswer":{"@type":"Answer","text":"Cups measure volume, grams measure weight. Flour is light and airy (about 125g per cup) while granulated sugar is denser (about 200g per cup)."}},{"@type":"Question","name":"Should I use cups or a scale for baking?","acceptedAnswer":{"@type":"Answer","text":"A kitchen scale is far more reliable. Scooping flour can vary by 20% depending on how packed it is, which is enough to change the texture of a cake."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Converter","item":"https://www.freetoolset.app/converters.html"},{"@type":"ListItem","position":3,"name":"Cooking Measurement Converter","item":"https://www.freetoolset.app/cooking-converter.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>烹饪单位换算器支持杯、汤匙、茶匙、毫升、克、盎司之间的换算，并针对面粉、糖、黄油、水等不同食材使用各自的密度，让「1 杯面粉等于多少克」这类问题有准确答案。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="converters.html">Converter</a>
+      <span class="separator">/</span>
+      <span class="current">Cooking Measurement Converter</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>🥄 Cooking Measurement Converter</h1>
+      <p>Convert cooking measurements between cups, tablespoons, teaspoons, millilitres, grams and ounces — with ingredient-specific density for accurate weight conversion.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="amt">Amount</label>
+            <input type="number" id="amt" value="1" step="any" min="0">
+          </div>
+          <div class="form-row">
+            <label for="unit">Unit</label>
+            <select id="unit">
+              <option value="cup">US cup</option>
+              <option value="tbsp">Tablespoon (15 mL)</option>
+              <option value="tsp">Teaspoon (5 mL)</option>
+              <option value="ml">Millilitre (mL)</option>
+              <option value="l">Litre</option>
+              <option value="floz">US fluid ounce</option>
+              <option value="g">Gram (weight)</option>
+              <option value="oz">Ounce (weight)</option>
+              <option value="lb">Pound (weight)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="ing">Ingredient (for weight ↔ volume)</label>
+          <select id="ing">
+            <option value="1">Water / most liquids — 1.00 g/mL</option>
+            <option value="0.529">All-purpose flour — 125 g per cup</option>
+            <option value="0.6">Bread flour — 142 g per cup</option>
+            <option value="0.845">Granulated sugar — 200 g per cup</option>
+            <option value="0.93">Brown sugar (packed) — 220 g per cup</option>
+            <option value="0.507">Powdered sugar — 120 g per cup</option>
+            <option value="0.959">Butter — 227 g per cup</option>
+            <option value="1.035">Milk — 245 g per cup</option>
+            <option value="0.913">Vegetable oil — 216 g per cup</option>
+            <option value="0.782">Uncooked rice — 185 g per cup</option>
+            <option value="0.423">Rolled oats — 100 g per cup</option>
+            <option value="1.4">Salt (table) — 331 g per cup</option>
+            <option value="0.37">Cocoa powder — 88 g per cup</option>
+          </select>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="convBtn">Convert</button>
+        </div>
+        <div id="out"></div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Enter the amount from your recipe.</li>
+            <li>Choose the unit it uses.</li>
+            <li>Pick the ingredient (density matters for weight).</li>
+            <li>Read the equivalent in every other unit.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>Why does 1 cup of flour differ from 1 cup of sugar in grams?</summary>
+            <p>Cups measure volume, grams measure weight. Flour is light and airy (about 125g per cup) while granulated sugar is denser (about 200g per cup).</p>
+          </details>
+          <details class="faq-item">
+            <summary>Should I use cups or a scale for baking?</summary>
+            <p>A kitchen scale is far more reliable. Scooping flour can vary by 20% depending on how packed it is, which is enough to change the texture of a cake.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>为什么 1 杯面粉和 1 杯糖的克数不一样？</summary>
+            <p>杯是体积单位，克是重量单位。面粉蓬松（约 125 克/杯），白砂糖密实（约 200 克/杯），同样体积重量差别很大。</p>
+          </details>
+          <details class="faq-item">
+            <summary>烘焙用量杯还是电子秤？</summary>
+            <p>强烈建议用电子秤。舀面粉的松紧程度能造成 20% 的重量差异，这足以改变蛋糕的口感和成败。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🍰</div>
+              <div class="uc-content">
+                <h4>Baking</h4>
+                <p>Convert US recipes to grams.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🌏</div>
+              <div class="uc-content">
+                <h4>Foreign Recipes</h4>
+                <p>Handle cups when you only own scales.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">📏</div>
+              <div class="uc-content">
+                <h4>Scaling</h4>
+                <p>Adjust batch sizes accurately.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="unit-converter.html" class="related-tool-card">
+              <span class="rt-icon">📐</span>
+              <span class="rt-name">Unit Converter</span>
+            </a>
+            <a href="temperature-converter.html" class="related-tool-card">
+              <span class="rt-icon">🌡️</span>
+              <span class="rt-name">Temperature Converter</span>
+            </a>
+            <a href="length-converter.html" class="related-tool-card">
+              <span class="rt-icon">📏</span>
+              <span class="rt-name">Length Converter</span>
+            </a>
+            <a href="weight-converter.html" class="related-tool-card">
+              <span class="rt-icon">⚖️</span>
+              <span class="rt-name">Weight Converter</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Cooking Measurement Converter</h2>
+    <h3>体积与重量的根本区别</h3>
+    <p>欧美食谱习惯用「杯」（cup）这种体积单位，而中文食谱和专业烘焙用「克」这种重量单位。两者之间没有固定换算关系 —— 必须知道食材的密度。</p>
+    <h3>常见食材的换算（1 美制杯 = 236.6 mL）</h3>
+    <li>水：约 237 克</li>
+    <li>中筋面粉：约 125 克</li>
+    <li>白砂糖：约 200 克</li>
+    <li>红糖（压实）：约 220 克</li>
+    <li>黄油：约 227 克</li>
+    <li>牛奶：约 245 克</li>
+    <li>大米（生）：约 185 克</li>
+    <h3>小匙具的标准值</h3>
+    <li>1 汤匙（tbsp）= 15 mL = 3 茶匙</li>
+    <li>1 茶匙（tsp）= 5 mL</li>
+    <li>1 美制杯 = 16 汤匙 = 236.6 mL</li>
+    <li>英制杯 = 250 mL，澳洲汤匙 = 20 mL，跨国食谱要留意</li>
+    <h3>为什么专业烘焙只认重量</h3>
+    <p>面粉的堆积密度受装填方式影响极大：直接舀取比先松散再刮平能多装 20% 以上。做面包和蛋糕时这种误差足以让成品失败，所以专业配方一律用克。</p>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var amt=document.getElementById('amt'),unit=document.getElementById('unit'),ing=document.getElementById('ing'),out=document.getElementById('out'),btn=document.getElementById('convBtn');
+    var ML={cup:236.588,tbsp:14.7868,tsp:4.92892,ml:1,l:1000,floz:29.5735};
+    var G={g:1,oz:28.3495,lb:453.592};
+    function fmt(x){
+      if(!isFinite(x))return '—';
+      if(x>=100)return x.toFixed(0);
+      if(x>=10)return x.toFixed(1);
+      if(x>=1)return x.toFixed(2);
+      return x.toFixed(3);
+    }
+    function calc(){
+      var v=parseFloat(amt.value),u=unit.value,d=parseFloat(ing.value)||1;
+      if(isNaN(v)||v<0){out.className='result-box';out.textContent='Enter an amount.';return;}
+      var ml,g;
+      if(ML[u]!==undefined){ml=v*ML[u];g=ml*d;}
+      else{g=v*G[u];ml=g/d;}
+      function row(a,b){return '<div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border);font-size:.95rem"><span>'+a+'</span><strong>'+b+'</strong></div>';}
+      var ingName=ing.options[ing.selectedIndex].text.split('—')[0].trim();
+      out.className='result-box';
+      out.innerHTML='<div style="font-size:1.55rem;font-weight:700;margin-bottom:4px">'+fmt(g)+' g &nbsp;·&nbsp; '+fmt(ml)+' mL</div>'+
+        '<div style="opacity:.75;margin-bottom:14px">'+v+' '+unit.options[unit.selectedIndex].text.split('(')[0].trim()+' of '+ingName+'</div>'+
+        '<div style="font-weight:600;font-size:.9rem;margin-bottom:4px">Volume</div>'+
+        row('US cups',fmt(ml/ML.cup))+row('Tablespoons',fmt(ml/ML.tbsp))+row('Teaspoons',fmt(ml/ML.tsp))+
+        row('Millilitres',fmt(ml))+row('US fluid ounces',fmt(ml/ML.floz))+
+        '<div style="font-weight:600;font-size:.9rem;margin:14px 0 4px">Weight</div>'+
+        row('Grams',fmt(g))+row('Ounces',fmt(g/G.oz))+row('Pounds',fmt(g/G.lb));
+    }
+    [amt,unit,ing].forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc);});
+    btn.addEventListener('click',calc);calc();
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

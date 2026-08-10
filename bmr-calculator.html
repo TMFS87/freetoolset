@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMR Calculator — Basal Metabolic Rate &amp; Daily Calorie Needs | FreeToolset</title>
+  <meta name="description" content="Calculate your Basal Metabolic Rate (BMR) using the Mifflin-St Jeor equation, plus your total daily energy expenditure (TDEE) based on activity level.">
+  <meta name="keywords" content="bmr calculator, basal metabolic rate, tdee calculator, daily calorie needs, metabolism calculator">
+  <meta property="og:title" content="BMR Calculator — FreeToolset">
+  <meta property="og:description" content="Calculate your Basal Metabolic Rate (BMR) using the Mifflin-St Jeor equation, plus your total daily energy expenditure (TDEE) based on activity level.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/bmr-calculator.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/bmr-calculator.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BMR Calculator — FreeToolset">
+  <meta name="twitter:description" content="Calculate your Basal Metabolic Rate (BMR) using the Mifflin-St Jeor equation, plus your total daily energy expenditure (TDEE) based on activity level.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"BMR Calculator — Basal Metabolic Rate & Daily Calorie Needs","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/bmr-calculator.html","description":"Calculate your Basal Metabolic Rate (BMR) using the Mifflin-St Jeor equation, plus your total daily energy expenditure (TDEE) based on activity level.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between BMR and TDEE?","acceptedAnswer":{"@type":"Answer","text":"BMR is what your body burns at complete rest, just keeping organs running. TDEE is BMR multiplied by an activity factor, representing everything you actually burn in a day."}},{"@type":"Question","name":"Which formula does this use?","acceptedAnswer":{"@type":"Answer","text":"Mifflin-St Jeor, which research generally finds more accurate for most people than the older Harris-Benedict equation."}},{"@type":"Question","name":"How accurate is it?","acceptedAnswer":{"@type":"Answer","text":"It is a population-based estimate, typically within about 10% for most adults. Body composition, genetics and medication can shift the real number."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Calculator","item":"https://www.freetoolset.app/calculators.html"},{"@type":"ListItem","position":3,"name":"BMR Calculator","item":"https://www.freetoolset.app/bmr-calculator.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>基础代谢率（BMR）计算器用 Mifflin-St Jeor 公式估算你静息状态下一天消耗的热量，再结合活动系数算出每日总消耗（TDEE），是制定增肌或减脂饮食计划的第一步。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="calculators.html">Calculator</a>
+      <span class="separator">/</span>
+      <span class="current">BMR Calculator</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>🔥 BMR Calculator</h1>
+      <p>Calculate your Basal Metabolic Rate (BMR) using the Mifflin-St Jeor equation, plus your total daily energy expenditure (TDEE) based on activity level.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="gender">Gender</label>
+            <select id="gender"><option value="m">Male</option><option value="f">Female</option></select>
+          </div>
+          <div class="form-row">
+            <label for="age">Age (years)</label>
+            <input type="number" id="age" value="30" min="10" max="100">
+          </div>
+        </div>
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="height">Height (cm)</label>
+            <input type="number" id="height" value="170" min="100" max="250">
+          </div>
+          <div class="form-row">
+            <label for="weight">Weight (kg)</label>
+            <input type="number" id="weight" value="65" min="20" max="300" step="0.1">
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="act">Activity Level</label>
+          <select id="act">
+            <option value="1.2">Sedentary — little or no exercise</option>
+            <option value="1.375" selected>Light — 1-3 days/week</option>
+            <option value="1.55">Moderate — 3-5 days/week</option>
+            <option value="1.725">Active — 6-7 days/week</option>
+            <option value="1.9">Very active — physical job or 2x training</option>
+          </select>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="calcBtn">Calculate</button>
+        </div>
+        <div id="out"></div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Enter your gender, age, height and weight.</li>
+            <li>Pick the activity level that matches your week.</li>
+            <li>Click Calculate to see BMR and TDEE.</li>
+            <li>Use TDEE as your maintenance calorie baseline.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>What is the difference between BMR and TDEE?</summary>
+            <p>BMR is what your body burns at complete rest, just keeping organs running. TDEE is BMR multiplied by an activity factor, representing everything you actually burn in a day.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Which formula does this use?</summary>
+            <p>Mifflin-St Jeor, which research generally finds more accurate for most people than the older Harris-Benedict equation.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How accurate is it?</summary>
+            <p>It is a population-based estimate, typically within about 10% for most adults. Body composition, genetics and medication can shift the real number.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>BMR 和 TDEE 有什么区别？</summary>
+            <p>BMR 是完全静息状态下维持心跳、呼吸、体温等基础生命活动的耗能；TDEE 是 BMR 乘以活动系数，代表你一天实际消耗的总热量。</p>
+          </details>
+          <details class="faq-item">
+            <summary>减脂应该吃多少？</summary>
+            <p>通常在 TDEE 基础上减 300–500 千卡形成温和缺口，过大的缺口容易掉肌肉且难以坚持。具体请结合自身情况或咨询营养师。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🥗</div>
+              <div class="uc-content">
+                <h4>Fat Loss Plan</h4>
+                <p>Set a calorie target below your TDEE.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">💪</div>
+              <div class="uc-content">
+                <h4>Muscle Gain</h4>
+                <p>Eat above TDEE for a controlled surplus.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">⚖️</div>
+              <div class="uc-content">
+                <h4>Maintenance</h4>
+                <p>Match TDEE to hold your current weight.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="bmi-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏋️</span>
+              <span class="rt-name">BMI Calculator</span>
+            </a>
+            <a href="age-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🎂</span>
+              <span class="rt-name">Age Calculator</span>
+            </a>
+            <a href="percentage-calculator.html" class="related-tool-card">
+              <span class="rt-icon">➗</span>
+              <span class="rt-name">Percentage Calculator</span>
+            </a>
+            <a href="loan-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏦</span>
+              <span class="rt-name">Loan Calculator</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 BMR Calculator</h2>
+    <h3>什么是基础代谢率</h3>
+    <p>基础代谢率（BMR）指人在完全清醒、静卧、空腹且环境温度舒适时，维持心跳、呼吸、体温和器官运转所消耗的最低能量。它通常占日常总消耗的 60%–70%，是所有饮食计划的基准线。</p>
+    <h3>计算公式</h3>
+    <p>本工具采用 Mifflin-St Jeor 公式：男性 BMR = 10×体重(kg) + 6.25×身高(cm) − 5×年龄 + 5；女性 BMR = 10×体重 + 6.25×身高 − 5×年龄 − 161。相比更早的 Harris-Benedict 公式，它在现代人群中误差更小。</p>
+    <h3>从 BMR 到 TDEE</h3>
+    <p>把 BMR 乘以活动系数即得每日总消耗：久坐 1.2、轻度活动 1.375、中等 1.55、高强度 1.725、运动员 1.9。举例：一位 30 岁、170cm、65kg 的女性 BMR 约 1379 千卡，若为轻度活动，TDEE 约 1896 千卡。</p>
+    <h3>使用时的注意点</h3>
+    <li>公式基于人群统计，个体差异可达 10% 以上</li>
+    <li>肌肉量高的人实际 BMR 会高于公式估算</li>
+    <li>长期极低热量饮食会让代谢适应性下降，数值不再准确</li>
+    <li>结果仅供参考，不能替代专业营养或医疗建议</li>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var g=document.getElementById('gender'),age=document.getElementById('age'),h=document.getElementById('height'),w=document.getElementById('weight'),act=document.getElementById('act'),out=document.getElementById('out'),btn=document.getElementById('calcBtn');
+    function calc(){
+      var A=parseFloat(age.value),H=parseFloat(h.value),W=parseFloat(w.value),F=parseFloat(act.value);
+      if(!(A>0&&H>0&&W>0)){out.className='result-box';out.textContent='Please enter valid age, height and weight.';return;}
+      var bmr=10*W+6.25*H-5*A+(g.value==='m'?5:-161);
+      var tdee=bmr*F;
+      out.className='result-box';
+      out.innerHTML='<div style="font-size:1.6rem;font-weight:700;margin-bottom:4px">'+Math.round(bmr)+' kcal/day</div>'+
+        '<div style="opacity:.75;margin-bottom:14px">Basal Metabolic Rate (at complete rest)</div>'+
+        '<div style="font-size:1.6rem;font-weight:700;margin-bottom:4px">'+Math.round(tdee)+' kcal/day</div>'+
+        '<div style="opacity:.75;margin-bottom:14px">TDEE — total daily energy expenditure</div>'+
+        '<div style="display:grid;gap:6px;font-size:.92rem">'+
+        '<div>🥗 Fat loss (−500): <strong>'+Math.round(tdee-500)+' kcal</strong></div>'+
+        '<div>⚖️ Maintain: <strong>'+Math.round(tdee)+' kcal</strong></div>'+
+        '<div>💪 Muscle gain (+300): <strong>'+Math.round(tdee+300)+' kcal</strong></div></div>';
+    }
+    btn.addEventListener('click',calc);calc();
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

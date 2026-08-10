@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Palette Generator — Build harmonious palettes | FreeToolset</title>
+  <meta name="description" content="Generate a harmonious color palette from a base color — tints, shades, complementary and analogous colors, with copy-ready hex codes.">
+  <meta name="keywords" content="color palette generator, palette from color, color scheme, hex palette, design colors">
+  <meta property="og:title" content="Color Palette Generator — FreeToolset">
+  <meta property="og:description" content="Generate a harmonious color palette from a base color — tints, shades, complementary and analogous colors, with copy-ready hex codes.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/color-palette-generator.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/color-palette-generator.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Color Palette Generator — FreeToolset">
+  <meta name="twitter:description" content="Generate a harmonious color palette from a base color — tints, shades, complementary and analogous colors, with copy-ready hex codes.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Color Palette Generator — Build harmonious palettes","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/color-palette-generator.html","description":"Generate a harmonious color palette from a base color — tints, shades, complementary and analogous colors, with copy-ready hex codes.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What harmonies does it produce?","acceptedAnswer":{"@type":"Answer","text":"It shows lighter tints and darker shades of your base, plus the complementary (opposite) color and two analogous neighbors on the color wheel."}},{"@type":"Question","name":"Are the colors accessible together?","acceptedAnswer":{"@type":"Answer","text":"Not automatically — pair them with the Color Contrast Checker if you need text/background combinations to meet WCAG."}},{"@type":"Question","name":"Can I use these in CSS?","acceptedAnswer":{"@type":"Answer","text":"Yes — every swatch shows a hex code you can paste straight into CSS or design tools."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Developer","item":"https://www.freetoolset.app/developer-tools.html"},{"@type":"ListItem","position":3,"name":"Color Palette Generator","item":"https://www.freetoolset.app/color-palette-generator.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>配色方案生成器从你选的基础色出发，自动生成同色系深浅（tint/shade）、互补色、邻近色等一组协调配色，并给出可直接复制的十六进制色值，适合设计网页和界面。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="developer-tools.html">Developer</a>
+      <span class="separator">/</span>
+      <span class="current">Color Palette Generator</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>🌈 Color Palette Generator</h1>
+      <p>Generate a harmonious color palette from a base color — tints, shades, complementary and analogous colors, with copy-ready hex codes.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="base">Base color</label>
+            <input type="color" id="base" value="#4f46e5">
+            <input type="text" id="baseHex" value="#4f46e5" style="margin-top:6px">
+          </div>
+          <div class="form-row">
+            <label for="count">Shades per row</label>
+            <input type="number" id="count" value="5" min="3" max="9">
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="btn">Generate</button>
+        </div>
+        <div id="out"></div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Pick or enter a base color.</li>
+            <li>Click Generate.</li>
+            <li>See the palette of tints, shades and harmonies.</li>
+            <li>Click any swatch to copy its hex.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>What harmonies does it produce?</summary>
+            <p>It shows lighter tints and darker shades of your base, plus the complementary (opposite) color and two analogous neighbors on the color wheel.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Are the colors accessible together?</summary>
+            <p>Not automatically — pair them with the Color Contrast Checker if you need text/background combinations to meet WCAG.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can I use these in CSS?</summary>
+            <p>Yes — every swatch shows a hex code you can paste straight into CSS or design tools.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>会生成哪些协调色？</summary>
+            <p>会显示基础色的浅色（tint）、深色（shade），以及互补色（色环对面）和两个邻近色。</p>
+          </details>
+          <details class="faq-item">
+            <summary>这些颜色搭配可读吗？</summary>
+            <p>不保证。若需文字/背景组合符合无障碍标准，请配合颜色对比度检查器使用。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🎨</div>
+              <div class="uc-content">
+                <h4>Web UI</h4>
+                <p>Theme colors.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🖌️</div>
+              <div class="uc-content">
+                <h4>Branding</h4>
+                <p>Quick schemes.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">📐</div>
+              <div class="uc-content">
+                <h4>Prototypes</h4>
+                <p>Mock palettes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="html-encoder.html" class="related-tool-card">
+              <span class="rt-icon"></></span>
+              <span class="rt-name">HTML Encoder / Decoder</span>
+            </a>
+            <a href="css-minifier.html" class="related-tool-card">
+              <span class="rt-icon">🎨</span>
+              <span class="rt-name">CSS Minifier</span>
+            </a>
+            <a href="json-minifier.html" class="related-tool-card">
+              <span class="rt-icon">🗜️</span>
+              <span class="rt-name">JSON Minifier</span>
+            </a>
+            <a href="html-minifier.html" class="related-tool-card">
+              <span class="rt-icon">📄</span>
+              <span class="rt-name">HTML Minifier</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Color Palette Generator</h2>
+    <h3>配色基础</h3>
+    <p>从基础色生成协调色，常见做法：</p>
+    <li>Tint：混入白色变浅</li>
+    <li>Shade：混入黑色变深</li>
+    <li>互补色：色环 180° 对面</li>
+    <li>邻近色：色环 ±30° 附近</li>
+    <h3>HSL 的优势</h3>
+    <p>在 HSL 空间里调亮度/饱和度比直接改 RGB 更直观，本工具就用 HSL 生成阶调。</p>
+    <h3>用法</h3>
+    <p>点色块即可复制 hex，直接用于 CSS 或设计稿。</p>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var base=document.getElementById('base'),baseHex=document.getElementById('baseHex'),count=document.getElementById('count'),out=document.getElementById('out'),btn=document.getElementById('btn');
+    function hex2hsl(h){h=h.replace('#','');if(h.length===3)h=h.split('').map(function(c){return c+c;}).join('');var r=parseInt(h.substr(0,2),16)/255,g=parseInt(h.substr(2,2),16)/255,b=parseInt(h.substr(4,2),16)/255;var mx=Math.max(r,g,b),mn=Math.min(r,g,b),l=(mx+mn)/2,s=0,hh=0;if(mx!==mn){var d=mx-mn;s=l>0.5?d/(2-mx-mn):d/(mx+mn);if(mx===r)hh=(g-b)/d+(g<b?6:0);else if(mx===g)hh=(b-r)/d+2;else hh=(r-g)/d+4;hh/=6;}return [hh*360,s*100,l*100];}
+    function hsl2hex(hh,s,l){hh/=360;s/=100;l/=100;var r,g,b;if(s===0){r=g=b=l;}else{var q=l<0.5?l*(1+s):l+s-l*s;var p=2*l-q;var hue=function(t){if(t<0)t+=1;if(t>1)t-=1;if(t<1/6)return p+(q-p)*6*t;if(t<1/2)return q;if(t<2/3)return p+(q-p)*(2/3-t)*6;return p;};r=hue(hh+1/3);g=hue(hh);b=hue(hh-1/3);}var to=function(x){return ('0'+Math.round(x*255).toString(16)).slice(-2);};return '#'+to(r)+to(g)+to(b);}
+    function row(arr,title){return '<div style="margin-bottom:14px"><div style="font-size:.85rem;opacity:.7;margin-bottom:6px">'+title+'</div><div style="display:flex;gap:8px;flex-wrap:wrap">'+arr.map(function(c){return '<div title="'+c+'" style="cursor:pointer;flex:1;min-width:60px;height:64px;border-radius:8px;background:'+c+';border:1px solid var(--border)" onclick="(function(){var t=document.createElement(\'textarea\');t.value=\''+c+'\';document.body.appendChild(t);t.select();document.execCommand(\'copy\');t.remove();})(this)"><div style="font-size:.7rem;padding:4px;color:'+(c+'').toLowerCase()+';mix-blend-mode:difference;filter:invert(1)">'+c+'</div></div>';}).join('')+'</div></div>';}
+    function gen(){
+      var hsl=hex2hsl(baseHex.value);var n=Math.max(3,Math.min(9,parseInt(count.value)||5));
+      var shades=[],tints=[];
+      for(var i=0;i<n;i++){var l=Math.round((i+1)/(n+1)*100);tints.push(hsl2hex(hsl[0],hsl[1],l));}
+      shades=[hsl2hex(hsl[0],hsl[1],Math.max(8,hsl[2]*0.8))];for(var j=1;j<n;j++)shades.push(hsl2hex(hsl[0],hsl[1],Math.max(4,hsl[2]*(1-j*0.18))));
+      var comp=hsl2hex((hsl[0]+180)%360,hsl[1],hsl[2]);
+      var ana1=hsl2hex((hsl[0]+30)%360,hsl[1],hsl[2]),ana2=hsl2hex((hsl[0]+330)%360,hsl[1],hsl[2]);
+      out.innerHTML=row([baseHex.value].concat(tints),'Base + Tints')+row(shades,'Shades')+row([comp,ana1,ana2],'Harmonies (complementary · analogous)');
+    }
+    base.addEventListener('input',function(){baseHex.value=base.value;gen();});
+    baseHex.addEventListener('input',function(){base.value=baseHex.value;gen();});
+    count.addEventListener('input',gen);btn.addEventListener('click',gen);gen();
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

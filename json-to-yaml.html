@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON to YAML Converter — Convert JSON into clean YAML | FreeToolset</title>
+  <meta name="description" content="Convert JSON into readable YAML instantly. Great for Kubernetes, Docker Compose, GitHub Actions and config files.">
+  <meta name="keywords" content="json to yaml, json2yaml, yaml converter, json yaml converter, config converter">
+  <meta property="og:title" content="JSON to YAML Converter — FreeToolset">
+  <meta property="og:description" content="Convert JSON into readable YAML instantly. Great for Kubernetes, Docker Compose, GitHub Actions and config files.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/json-to-yaml.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/json-to-yaml.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="JSON to YAML Converter — FreeToolset">
+  <meta name="twitter:description" content="Convert JSON into readable YAML instantly. Great for Kubernetes, Docker Compose, GitHub Actions and config files.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"JSON to YAML Converter — Convert JSON into clean YAML","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/json-to-yaml.html","description":"Convert JSON into readable YAML instantly. Great for Kubernetes, Docker Compose, GitHub Actions and config files.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does it preserve nesting and arrays?","acceptedAnswer":{"@type":"Answer","text":"Yes — objects, arrays, strings, numbers, booleans and null are all converted with correct indentation and list dashes."}},{"@type":"Question","name":"Why would I convert JSON to YAML?","acceptedAnswer":{"@type":"Answer","text":"YAML is far more readable for humans and is the preferred format for many DevOps config files, while JSON is stricter and machine-friendly."}},{"@type":"Question","name":"Is my data uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. Conversion runs entirely in your browser; nothing is sent to a server."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Developer","item":"https://www.freetoolset.app/developer-tools.html"},{"@type":"ListItem","position":3,"name":"JSON to YAML Converter","item":"https://www.freetoolset.app/json-to-yaml.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>JSON 转 YAML 工具把 JSON 数据一键转换成层次清晰的 YAML 文本，常用于 Kubernetes、Docker Compose、GitHub Actions 等配置文件。所有转换都在浏览器本地完成，不上传你的数据。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="developer-tools.html">Developer</a>
+      <span class="separator">/</span>
+      <span class="current">JSON to YAML Converter</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>📄 JSON to YAML Converter</h1>
+      <p>Convert JSON into readable YAML instantly. Great for Kubernetes, Docker Compose, GitHub Actions and config files.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="form-row">
+          <label for="input">Paste JSON here</label>
+          <textarea id="input" rows="10" placeholder="{
+  "name": "freetoolset",
+  "tools": ["json", "yaml"],
+  "free": true
+}"></textarea>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="btn">Convert</button>
+          <button class="btn btn-secondary" id="copyBtn">Copy</button>
+          <button class="btn btn-secondary" id="clearBtn">Clear</button>
+        </div>
+        <div class="form-row">
+          <label for="out">Result</label>
+          <textarea id="out" rows="10" readonly placeholder="Result appears here"></textarea>
+        </div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Paste your JSON into the input box.</li>
+            <li>Click Convert.</li>
+            <li>Copy the YAML result.</li>
+            <li>Fix any parse error shown in red.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>Does it preserve nesting and arrays?</summary>
+            <p>Yes — objects, arrays, strings, numbers, booleans and null are all converted with correct indentation and list dashes.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Why would I convert JSON to YAML?</summary>
+            <p>YAML is far more readable for humans and is the preferred format for many DevOps config files, while JSON is stricter and machine-friendly.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is my data uploaded?</summary>
+            <p>No. Conversion runs entirely in your browser; nothing is sent to a server.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>会保留嵌套和数组吗？</summary>
+            <p>会。对象、数组、字符串、数字、布尔和空值都会按正确缩进和列表符号转换。</p>
+          </details>
+          <details class="faq-item">
+            <summary>转换后的数据会上传吗？</summary>
+            <p>不会。转换完全在浏览器本地进行，不会发送到任何服务器。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">☸️</div>
+              <div class="uc-content">
+                <h4>Kubernetes</h4>
+                <p>Write manifests faster.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🐳</div>
+              <div class="uc-content">
+                <h4>Docker Compose</h4>
+                <p>Edit configs with ease.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">⚙️</div>
+              <div class="uc-content">
+                <h4>CI/CD</h4>
+                <p>GitHub Actions YAML.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="html-encoder.html" class="related-tool-card">
+              <span class="rt-icon"></></span>
+              <span class="rt-name">HTML Encoder / Decoder</span>
+            </a>
+            <a href="css-minifier.html" class="related-tool-card">
+              <span class="rt-icon">🎨</span>
+              <span class="rt-name">CSS Minifier</span>
+            </a>
+            <a href="json-minifier.html" class="related-tool-card">
+              <span class="rt-icon">🗜️</span>
+              <span class="rt-name">JSON Minifier</span>
+            </a>
+            <a href="html-minifier.html" class="related-tool-card">
+              <span class="rt-icon">📄</span>
+              <span class="rt-name">HTML Minifier</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 JSON to YAML Converter</h2>
+    <h3>为什么需要 JSON → YAML</h3>
+    <p>JSON 机器友好但可读性差；YAML 用缩进表达层级，人在写配置时更舒服。Kubernetes、Docker Compose、GitHub Actions 等几乎都用 YAML。</p>
+    <h3>本工具能处理什么</h3>
+    <li>对象（键值对）→ 缩进的 key: value</li>
+    <li>数组 → 以 “- ” 开头的列表</li>
+    <li>字符串、数字、布尔、null 均正确表达</li>
+    <li>需要加引号的字符串会自动加引号</li>
+    <h3>使用建议</h3>
+    <li>粘贴前确保 JSON 合法（可用 JSON 校验工具先检查）</li>
+    <li>结果可直接复制到 .yml 文件</li>
+    <h3>隐私</h3>
+    <p>所有解析都在你的浏览器本地完成，数据不上传。</p>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var input=document.getElementById('input'),out=document.getElementById('out'),btn=document.getElementById('btn'),copyBtn=document.getElementById('copyBtn'),clearBtn=document.getElementById('clearBtn');
+    function isObj(v){return v&&typeof v==='object'&&!Array.isArray(v);}
+    function scalar(v){if(v===null)return 'null';if(typeof v==='string'){if(/[:#\-\?\\[\]\{\}>,|!%@`"\n]/.test(v)||v===''||/^\s|\s$/.test(v))return JSON.stringify(v);return v;}return String(v);}
+    function serialize(val,indent){
+      indent=indent||'';
+      if(Array.isArray(val)){
+        if(!val.length)return indent+'[]\n';
+        var s='';
+        val.forEach(function(item){
+          if(isObj(item)||Array.isArray(item)){var inner=serialize(item,indent+'  ');s+=indent+'- '+inner.slice((indent+'  ').length);}
+          else s+=indent+'- '+scalar(item)+'\n';
+        });
+        return s;
+      }
+      if(isObj(val)){
+        var keys=Object.keys(val);
+        if(!keys.length)return indent+'{}\n';
+        var o='';
+        keys.forEach(function(k){var v=val[k];if(isObj(v)||Array.isArray(v))o+=indent+k+':\n'+serialize(v,indent+'  ');else o+=indent+k+': '+scalar(v)+'\n';});
+        return o;
+      }
+      return indent+scalar(val)+'\n';
+    }
+    function convert(){
+      var txt=input.value.trim();
+      if(!txt){out.value='';return;}
+      try{var obj=JSON.parse(txt);out.value=serialize(obj).replace(/\n$/,'')+'\n';out.style.color='';}
+      catch(e){out.value='';out.style.color='#ef4444';out.value='Invalid JSON: '+e.message;}
+    }
+    btn.addEventListener('click',convert);
+    copyBtn.addEventListener('click',function(){if(out.value){out.select();document.execCommand('copy');}});
+    clearBtn.addEventListener('click',function(){input.value='';out.value='';});
+    convert();
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

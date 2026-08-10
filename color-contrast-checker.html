@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Contrast Checker — WCAG AA / AAA compliance | FreeToolset</title>
+  <meta name="description" content="Check the contrast ratio between two colors and see if your text meets WCAG AA and AAA accessibility standards.">
+  <meta name="keywords" content="color contrast checker, wcag contrast, accessibility contrast, contrast ratio, color contrast tool">
+  <meta property="og:title" content="Color Contrast Checker — FreeToolset">
+  <meta property="og:description" content="Check the contrast ratio between two colors and see if your text meets WCAG AA and AAA accessibility standards.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/color-contrast-checker.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/color-contrast-checker.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Color Contrast Checker — FreeToolset">
+  <meta name="twitter:description" content="Check the contrast ratio between two colors and see if your text meets WCAG AA and AAA accessibility standards.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Color Contrast Checker — WCAG AA / AAA compliance","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/color-contrast-checker.html","description":"Check the contrast ratio between two colors and see if your text meets WCAG AA and AAA accessibility standards.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What contrast ratio is required?","acceptedAnswer":{"@type":"Answer","text":"WCAG AA needs 4.5:1 for normal text and 3:1 for large text (≥24px or ≥18.66px bold). AAA needs 7:1 and 4.5:1 respectively."}},{"@type":"Question","name":"How is the ratio calculated?","acceptedAnswer":{"@type":"Answer","text":"It uses the relative luminance of each color (sRGB → linear RGB → luminance) then (Llighter+0.05)/(Ddarker+0.05)."}},{"@type":"Question","name":"Does this apply to buttons and icons?","acceptedAnswer":{"@type":"Answer","text":"Contrast rules mainly target text and essential UI components. Non-text contrast (e.g. button borders) has a 3:1 guideline."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Developer","item":"https://www.freetoolset.app/developer-tools.html"},{"@type":"ListItem","position":3,"name":"Color Contrast Checker","item":"https://www.freetoolset.app/color-contrast-checker.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>颜色对比度检查器计算前景色与背景色之间的对比度比值，并判断是否符合 WCAG AA / AAA 无障碍标准。做网页、App 或海报配色时，确保文字清晰可读非常重要。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="developer-tools.html">Developer</a>
+      <span class="separator">/</span>
+      <span class="current">Color Contrast Checker</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>🎨 Color Contrast Checker</h1>
+      <p>Check the contrast ratio between two colors and see if your text meets WCAG AA and AAA accessibility standards.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="fg">Text (foreground) color</label>
+            <input type="color" id="fg" value="#222222">
+            <input type="text" id="fgHex" value="#222222" style="margin-top:6px">
+          </div>
+          <div class="form-row">
+            <label for="bg">Background color</label>
+            <input type="color" id="bg" value="#ffffff">
+            <input type="text" id="bgHex" value="#ffffff" style="margin-top:6px">
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="btn">Check</button>
+        </div>
+        <div id="out"></div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Pick or enter the foreground (text) color.</li>
+            <li>Pick or enter the background color.</li>
+            <li>Click Check.</li>
+            <li>Read the ratio and the AA / AAA pass/fail badges.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>What contrast ratio is required?</summary>
+            <p>WCAG AA needs 4.5:1 for normal text and 3:1 for large text (≥24px or ≥18.66px bold). AAA needs 7:1 and 4.5:1 respectively.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How is the ratio calculated?</summary>
+            <p>It uses the relative luminance of each color (sRGB → linear RGB → luminance) then (Llighter+0.05)/(Ddarker+0.05).</p>
+          </details>
+          <details class="faq-item">
+            <summary>Does this apply to buttons and icons?</summary>
+            <p>Contrast rules mainly target text and essential UI components. Non-text contrast (e.g. button borders) has a 3:1 guideline.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>需要多少对比度？</summary>
+            <p>WCAG AA 要求正文 4.5:1、大号文字（≥24px 或 ≥18.66px 粗体）3:1；AAA 要求 7:1 和 4.5:1。</p>
+          </details>
+          <details class="faq-item">
+            <summary>比值是怎么算的？</summary>
+            <p>用每种颜色的相对亮度（sRGB→线性 RGB→亮度），公式 (亮色+0.05)/(暗色+0.05)。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">♿</div>
+              <div class="uc-content">
+                <h4>Accessibility</h4>
+                <p>Meet WCAG rules.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🌐</div>
+              <div class="uc-content">
+                <h4>Web design</h4>
+                <p>Pick readable colors.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">📱</div>
+              <div class="uc-content">
+                <h4>UI</h4>
+                <p>Contrast for buttons.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="html-encoder.html" class="related-tool-card">
+              <span class="rt-icon"></></span>
+              <span class="rt-name">HTML Encoder / Decoder</span>
+            </a>
+            <a href="css-minifier.html" class="related-tool-card">
+              <span class="rt-icon">🎨</span>
+              <span class="rt-name">CSS Minifier</span>
+            </a>
+            <a href="json-minifier.html" class="related-tool-card">
+              <span class="rt-icon">🗜️</span>
+              <span class="rt-name">JSON Minifier</span>
+            </a>
+            <a href="html-minifier.html" class="related-tool-card">
+              <span class="rt-icon">📄</span>
+              <span class="rt-name">HTML Minifier</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Color Contrast Checker</h2>
+    <h3>为什么对比度重要</h3>
+    <p>足够的对比度让视力不佳、强光环境下或老年用户也能看清文字，是无障碍设计的基本要求。</p>
+    <h3>WCAG 标准</h3>
+    <li>AA 正常文字：≥ 4.5:1</li>
+    <li>AA 大号文字：≥ 3:1</li>
+    <li>AAA 正常文字：≥ 7:1</li>
+    <li>AAA 大号文字：≥ 4.5:1</li>
+    <h3>计算方法</h3>
+    <p>先把 sRGB 转成线性值，再算相对亮度 L = 0.2126R + 0.7152G + 0.0722B，最后比值 = (L1+0.05)/(L2+0.05)。</p>
+    <h3>提示</h3>
+    <p>纯黑配纯白约 21:1，已远超市面需求；浅灰文字配白底常不达标。</p>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var fg=document.getElementById('fg'),bg=document.getElementById('bg'),fgHex=document.getElementById('fgHex'),bgHex=document.getElementById('bgHex'),out=document.getElementById('out'),btn=document.getElementById('btn');
+    function hex2rgb(h){h=h.replace('#','');if(h.length===3)h=h.split('').map(function(c){return c+c;}).join('');var n=parseInt(h,16);return [(n>>16)&255,(n>>8)&255,n&255];}
+    function lum(rgb){var a=rgb.map(function(v){v/=255;return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4);});return 0.2126*a[0]+0.7152*a[1]+0.0722*a[2];}
+    function ratio(c1,c2){var L1=lum(c1),L2=lum(c2);var hi=Math.max(L1,L2),lo=Math.min(L1,L2);return (hi+0.05)/(lo+0.05);}
+    function badge(ok,label){return '<span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:.85rem;font-weight:700;color:#fff;background:'+(ok?'#22c55e':'#ef4444')+'">'+label+'</span>';}
+    function check(){
+      var c1,c2;
+      try{c1=hex2rgb(fgHex.value);c2=hex2rgb(bgHex.value);}catch(e){out.innerHTML='<div style="color:#ef4444">Enter valid hex colors like #336699</div>';return;}
+      var r=ratio(c1,c2);
+      out.innerHTML='<div style="display:flex;gap:16px;align-items:center;margin:6px 0 14px">'+
+        '<div style="flex:1;padding:24px;text-align:center;background:'+bgHex.value+';color:'+fgHex.value+';border-radius:10px;font-weight:700;border:1px solid var(--border)">Aa Sample Text</div>'+
+        '<div style="font-size:2rem;font-weight:800">'+r.toFixed(2)+':1</div></div>'+
+        '<div style="display:flex;gap:8px;flex-wrap:wrap">'+
+        badge(r>=4.5,'AA Normal')+badge(r>=3,'AA Large')+badge(r>=7,'AAA Normal')+badge(r>=4.5,'AAA Large')+'</div>';
+    }
+    fg.addEventListener('input',function(){fgHex.value=fg.value;check();});bg.addEventListener('input',function(){bgHex.value=bg.value;check();});
+    fgHex.addEventListener('input',function(){fg.value=fgHex.value;check();});bgHex.addEventListener('input',function(){bg.value=bgHex.value;check();});
+    btn.addEventListener('click',check);check();
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

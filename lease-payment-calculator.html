@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Lease Payment Calculator — Estimate Your Monthly Lease | FreeToolset</title>
+  <meta name="description" content="Estimate a car lease monthly payment from vehicle price, down payment, residual value, term and money factor (or APR).">
+  <meta name="keywords" content="lease payment calculator, car lease, monthly lease, residual value, money factor">
+  <meta property="og:title" content="Car Lease Payment Calculator — FreeToolset">
+  <meta property="og:description" content="Estimate a car lease monthly payment from vehicle price, down payment, residual value, term and money factor (or APR).">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/lease-payment-calculator.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/lease-payment-calculator.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Car Lease Payment Calculator — FreeToolset">
+  <meta name="twitter:description" content="Estimate a car lease monthly payment from vehicle price, down payment, residual value, term and money factor (or APR).">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Car Lease Payment Calculator — Estimate Your Monthly Lease","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/lease-payment-calculator.html","description":"Estimate a car lease monthly payment from vehicle price, down payment, residual value, term and money factor (or APR).","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is residual value?","acceptedAnswer":{"@type":"Answer","text":"The estimated worth of the car at the end of the lease, set by the leasing company. A higher residual lowers your monthly payment because you only finance the depreciation."}},{"@type":"Question","name":"Money factor vs APR — what is the link?","acceptedAnswer":{"@type":"Answer","text":"Money factor × 2400 ≈ equivalent APR. If a dealer quotes APR on a lease, divide by 2400 to get the money factor."}},{"@type":"Question","name":"Why is my lease payment split into two parts?","acceptedAnswer":{"@type":"Answer","text":"Part 1 covers depreciation (price − residual over the term); part 2 is the finance/rent charge on the average capitalized cost."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Calculator","item":"https://www.freetoolset.app/calculators.html"},{"@type":"ListItem","position":3,"name":"Car Lease Payment Calculator","item":"https://www.freetoolset.app/lease-payment-calculator.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>汽车租赁月供计算器输入车身价、首付、到期残值、租期和利率（资金系数或年化利率），估算每月租赁费用。它帮你提前知道大致月供，到店里谈价时心里有数，避免被各种附加费用绕晕。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="calculators.html">Calculator</a>
+      <span class="separator">/</span>
+      <span class="current">Car Lease Payment Calculator</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>🚗 Car Lease Payment Calculator</h1>
+      <p>Estimate a car lease monthly payment from vehicle price, down payment, residual value, term and money factor (or APR).</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="price">Vehicle price ($)</label>
+            <input type="number" id="price" value="30000" min="0" step="any">
+          </div>
+          <div class="form-row">
+            <label for="down">Down payment ($)</label>
+            <input type="number" id="down" value="3000" min="0" step="any">
+          </div>
+        </div>
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="res">Residual value ($)</label>
+            <input type="number" id="res" value="18000" min="0" step="any">
+          </div>
+          <div class="form-row">
+            <label for="term">Term (months)</label>
+            <input type="number" id="term" value="36" min="1" max="120">
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="apr">APR (%) — converts to money factor</label>
+          <input type="number" id="apr" value="6" min="0" step="any">
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="calcBtn">Calculate</button>
+        </div>
+        <div id="out"></div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Enter the vehicle price (MSRP or negotiated price).</li>
+            <li>Enter down payment and the residual value at lease end.</li>
+            <li>Enter term in months and the money factor (or APR).</li>
+            <li>Click Calculate to see the monthly payment.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>What is residual value?</summary>
+            <p>The estimated worth of the car at the end of the lease, set by the leasing company. A higher residual lowers your monthly payment because you only finance the depreciation.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Money factor vs APR — what is the link?</summary>
+            <p>Money factor × 2400 ≈ equivalent APR. If a dealer quotes APR on a lease, divide by 2400 to get the money factor.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Why is my lease payment split into two parts?</summary>
+            <p>Part 1 covers depreciation (price − residual over the term); part 2 is the finance/rent charge on the average capitalized cost.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>残值（residual value）是什么？</summary>
+            <p>租赁公司预估车辆租期结束时的价值。残值越高，你需要“摊销”的折旧越少，月供越低。</p>
+          </details>
+          <details class="faq-item">
+            <summary>资金系数和年化利率怎么换算？</summary>
+            <p>资金系数 × 2400 ≈ 对应的年化利率。如果车商给你的是年化利率，除以 2400 即得资金系数。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🚗</div>
+              <div class="uc-content">
+                <h4>New car shop</h4>
+                <p>Compare lease vs buy.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">📊</div>
+              <div class="uc-content">
+                <h4>Budget</h4>
+                <p>Know the monthly hit.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🤝</div>
+              <div class="uc-content">
+                <h4>Negotiate</h4>
+                <p>Spot a bad money factor.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="bmi-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏋️</span>
+              <span class="rt-name">BMI Calculator</span>
+            </a>
+            <a href="age-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🎂</span>
+              <span class="rt-name">Age Calculator</span>
+            </a>
+            <a href="percentage-calculator.html" class="related-tool-card">
+              <span class="rt-icon">➗</span>
+              <span class="rt-name">Percentage Calculator</span>
+            </a>
+            <a href="loan-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏦</span>
+              <span class="rt-name">Loan Calculator</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Car Lease Payment Calculator</h2>
+    <h3>租赁月供的构成</h3>
+    <p>租赁月供由两部分相加：折旧费 + 融资费。</p>
+    <h3>折旧费</h3>
+    <p>（净资本化成本 − 残值）÷ 租期月数。净资本化成本 = 车身价 − 首付（及其他抵扣）。</p>
+    <h3>融资费</h3>
+    <p>（净资本化成本 + 残值）× 资金系数。资金系数 = 年化利率 ÷ 2400。</p>
+    <h3>举例</h3>
+    <p>车身价 30000、首付 3000、残值 18000、租期 36 个月、资金系数 0.0025：</p>
+    <p>折旧费 = (27000 − 18000)/36 = 250；融资费 = (27000 + 18000) × 0.0025 = 112.5；月供 ≈ 362.5。</p>
+    <h3>注意</h3>
+    <li>实际租赁还有购置税、手续费、里程限制与超标费</li>
+    <li>不同州/地区税费差异大</li>
+    <li>结果仅供参考</li>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var price=document.getElementById('price'),down=document.getElementById('down'),res=document.getElementById('res'),term=document.getElementById('term'),apr=document.getElementById('apr'),out=document.getElementById('out'),btn=document.getElementById('calcBtn');
+    function calc(){
+      var P=parseFloat(price.value),D=parseFloat(down.value),R=parseFloat(res.value),T=parseFloat(term.value),a=parseFloat(apr.value);
+      if(!(P>0&&T>0&&a>=0&&R>=0&&D>=0)){out.className='result-box';out.textContent='Enter valid lease figures.';return;}
+      var netCap=P-D, mf=a/100/2400;
+      var dep=(netCap-R)/T, fin=(netCap+R)*mf, pay=dep+fin;
+      out.className='result-box';
+      out.innerHTML='<div style="display:grid;gap:10px">'+
+        '<div><div style="font-size:1.8rem;font-weight:700">$'+pay.toFixed(2)+' / mo</div><div style="opacity:.75">Estimated lease payment</div></div>'+
+        '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:.92rem">'+
+        '<div>Depreciation: <strong>$'+dep.toFixed(2)+'</strong></div>'+
+        '<div>Finance fee: <strong>$'+fin.toFixed(2)+'</strong></div>'+
+        '<div>Net cap cost: <strong>$'+netCap.toFixed(2)+'</strong></div>'+
+        '<div>Money factor: <strong>'+mf.toFixed(5)+'</strong></div></div>'+
+        '<div style="opacity:.7;font-size:.82rem">Excludes tax, title, registration and fees.</div></div>';
+    }
+    btn.addEventListener('click',calc);calc();
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

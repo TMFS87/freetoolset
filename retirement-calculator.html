@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retirement Calculator — Project Your Savings at Retirement | FreeToolset</title>
+  <meta name="description" content="Estimate how much your retirement nest egg will grow, given current savings, monthly contributions and an expected annual return.">
+  <meta name="keywords" content="retirement calculator, retirement savings, compound growth, 401k projection, nest egg">
+  <meta property="og:title" content="Retirement Calculator — FreeToolset">
+  <meta property="og:description" content="Estimate how much your retirement nest egg will grow, given current savings, monthly contributions and an expected annual return.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/retirement-calculator.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/retirement-calculator.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Retirement Calculator — FreeToolset">
+  <meta name="twitter:description" content="Estimate how much your retirement nest egg will grow, given current savings, monthly contributions and an expected annual return.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Retirement Calculator — Project Your Savings at Retirement","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/retirement-calculator.html","description":"Estimate how much your retirement nest egg will grow, given current savings, monthly contributions and an expected annual return.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What return rate should I use?","acceptedAnswer":{"@type":"Answer","text":"Historical stock/bond portfolios often average 5–8% after inflation over long periods, but returns vary year to year. Use a conservative number like 5–6% for planning."}},{"@type":"Question","name":"Does this include inflation?","acceptedAnswer":{"@type":"Answer","text":"No — the result is in today’s nominal dollars of growth. For purchasing power you can subtract ~2–3% annual inflation mentally, or use a lower real return."}},{"@type":"Question","name":"Is this a 401(k) or IRA calculator?","acceptedAnswer":{"@type":"Answer","text":"It models any tax-advantaged or taxable account the same way via compound growth; it does not model contribution limits or taxes."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Calculator","item":"https://www.freetoolset.app/calculators.html"},{"@type":"ListItem","position":3,"name":"Retirement Calculator","item":"https://www.freetoolset.app/retirement-calculator.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>退休金计算器输入你当前的存款、每月定投金额、预期年化收益率和投资年数，用复利公式估算退休时账户里大概有多少钱。它帮你判断现在的储蓄速度是否够用，以及多投一点能带来多大差别。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="calculators.html">Calculator</a>
+      <span class="separator">/</span>
+      <span class="current">Retirement Calculator</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>🌅 Retirement Calculator</h1>
+      <p>Estimate how much your retirement nest egg will grow, given current savings, monthly contributions and an expected annual return.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="age">Current age</label>
+            <input type="number" id="age" value="30" min="16" max="80">
+          </div>
+          <div class="form-row">
+            <label for="ret">Retire at</label>
+            <input type="number" id="ret" value="65" min="17" max="90">
+          </div>
+        </div>
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="save">Current savings ($)</label>
+            <input type="number" id="save" value="10000" min="0" step="any">
+          </div>
+          <div class="form-row">
+            <label for="mon">Monthly contribution ($)</label>
+            <input type="number" id="mon" value="500" min="0" step="any">
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="rate">Annual return (%)</label>
+          <input type="number" id="rate" value="6" min="0" step="any">
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="calcBtn">Calculate</button>
+        </div>
+        <div id="out"></div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Enter your current age and planned retirement age.</li>
+            <li>Enter current savings and monthly contribution.</li>
+            <li>Enter expected annual return (e.g. 6%).</li>
+            <li>Click Calculate to see the projected balance.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>What return rate should I use?</summary>
+            <p>Historical stock/bond portfolios often average 5–8% after inflation over long periods, but returns vary year to year. Use a conservative number like 5–6% for planning.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Does this include inflation?</summary>
+            <p>No — the result is in today’s nominal dollars of growth. For purchasing power you can subtract ~2–3% annual inflation mentally, or use a lower real return.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is this a 401(k) or IRA calculator?</summary>
+            <p>It models any tax-advantaged or taxable account the same way via compound growth; it does not model contribution limits or taxes.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>年化收益率填多少合适？</summary>
+            <p>长期股债组合的历史平均实际回报常在 5%–8%，但每年波动很大。做规划时建议保守一点，用 5%–6% 更稳妥。</p>
+          </details>
+          <details class="faq-item">
+            <summary>算出来的钱是现值还是未来值？</summary>
+            <p>本工具算的是名义增长，未按通胀折算。要估算实际购买力，可把年收益下调约 2%–3%。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">📈</div>
+              <div class="uc-content">
+                <h4>Goal check</h4>
+                <p>See if you are on track.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">💰</div>
+              <div class="uc-content">
+                <h4>Boost savings</h4>
+                <p>Test higher contributions.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🗓️</div>
+              <div class="uc-content">
+                <h4>Retire early?</h4>
+                <p>Model an earlier date.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="bmi-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏋️</span>
+              <span class="rt-name">BMI Calculator</span>
+            </a>
+            <a href="age-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🎂</span>
+              <span class="rt-name">Age Calculator</span>
+            </a>
+            <a href="percentage-calculator.html" class="related-tool-card">
+              <span class="rt-icon">➗</span>
+              <span class="rt-name">Percentage Calculator</span>
+            </a>
+            <a href="loan-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏦</span>
+              <span class="rt-name">Loan Calculator</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Retirement Calculator</h2>
+    <h3>复利是退休储蓄的核心</h3>
+    <p>你投入的钱每年产生收益，收益再产生收益，时间越长滚雪球效应越明显。</p>
+    <h3>计算公式</h3>
+    <p>未来值 FV = 当前存款 × (1+r)^n + 月供 × [((1+r/12)^(12n) − 1) / (r/12)]，其中 r 为年化收益率、n 为年数。</p>
+    <h3>早开始的优势</h3>
+    <p>25 岁和 35 岁开始，即使每月金额相同，最终差距可能高达数倍，因为前期投入享受的复利时间更长。</p>
+    <h3>注意</h3>
+    <li>结果为估算，市场实际回报不可预测</li>
+    <li>未考虑税费、通胀与提取规则</li>
+    <li>仅供参考，重大财务决策请咨询持牌顾问</li>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var age=document.getElementById('age'),ret=document.getElementById('ret'),save=document.getElementById('save'),mon=document.getElementById('mon'),rate=document.getElementById('rate'),out=document.getElementById('out'),btn=document.getElementById('calcBtn');
+    function calc(){
+      var A=parseFloat(age.value),R=parseFloat(ret.value),S=parseFloat(save.value),M=parseFloat(mon.value),r=parseFloat(rate.value)/100;
+      if(!(A>0&&R>A&&S>=0&&M>=0&&r>=0)){out.className='result-box';out.textContent='Enter valid ages (retire > current) and amounts.';return;}
+      var n=R-A, months=n*12, fv=S*Math.pow(1+r/12,months);
+      if(r>0) fv+=M*((Math.pow(1+r/12,months)-1)/(r/12)); else fv+=M*months;
+      var contributed=S+M*months;
+      out.className='result-box';
+      out.innerHTML='<div style="display:grid;gap:10px">'+
+        '<div><div style="font-size:1.8rem;font-weight:700">$'+Math.round(fv).toLocaleString()+'</div><div style="opacity:.75">Projected at age '+R+' ('+n+' years)</div></div>'+
+        '<div><div style="font-size:1.3rem;font-weight:700">$'+Math.round(contributed).toLocaleString()+'</div><div style="opacity:.75">Total you contribute</div></div>'+
+        '<div><div style="font-size:1.3rem;font-weight:700;color:#22c55e">$'+Math.round(fv-contributed).toLocaleString()+'</div><div style="opacity:.75">Growth from compounding</div></div></div>';
+    }
+    btn.addEventListener('click',calc);calc();
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

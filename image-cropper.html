@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Cropper — Crop to a ratio, locally | FreeToolset</title>
+  <meta name="description" content="Crop an image to a chosen aspect ratio (1:1, 4:3, 16:9 and more) or free size. All processing stays in your browser.">
+  <meta name="keywords" content="image cropper, crop photo, aspect ratio crop, picture cropper, canvas crop">
+  <meta property="og:title" content="Image Cropper — FreeToolset">
+  <meta property="og:description" content="Crop an image to a chosen aspect ratio (1:1, 4:3, 16:9 and more) or free size. All processing stays in your browser.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/image-cropper.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/image-cropper.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Image Cropper — FreeToolset">
+  <meta name="twitter:description" content="Crop an image to a chosen aspect ratio (1:1, 4:3, 16:9 and more) or free size. All processing stays in your browser.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Image Cropper — Crop to a ratio, locally","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/image-cropper.html","description":"Crop an image to a chosen aspect ratio (1:1, 4:3, 16:9 and more) or free size. All processing stays in your browser.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does it crop from the center?","acceptedAnswer":{"@type":"Answer","text":"Yes — the largest centered rectangle of the chosen ratio is used, so nothing important at the edges is lost unexpectedly."}},{"@type":"Question","name":"Can I crop a free rectangle?","acceptedAnswer":{"@type":"Answer","text":"This tool uses preset ratios for reliability. For pixel-precise cropping, choose Original (no change) and use an editor."}},{"@type":"Question","name":"Is my photo uploaded?","acceptedAnswer":{"@type":"Answer","text":"No — cropping is done locally with Canvas."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Developer","item":"https://www.freetoolset.app/developer-tools.html"},{"@type":"ListItem","position":3,"name":"Image Cropper","item":"https://www.freetoolset.app/image-cropper.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>图片裁剪工具在浏览器本地按预设比例（1:1、4:3、16:9 等）或自由尺寸裁剪图片，适合做头像、封面图。照片不上传。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="developer-tools.html">Developer</a>
+      <span class="separator">/</span>
+      <span class="current">Image Cropper</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>✂️ Image Cropper</h1>
+      <p>Crop an image to a chosen aspect ratio (1:1, 4:3, 16:9 and more) or free size. All processing stays in your browser.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="form-row">
+          <label for="file">Choose image</label>
+          <input type="file" id="file" accept="image/*">
+        </div>
+        <div class="form-row">
+          <label for="ratio">Aspect ratio</label>
+          <select id="ratio">
+            <option value="0">Original (no crop)</option>
+            <option value="1">1:1 Square</option>
+            <option value="1.3333">4:3</option>
+            <option value="0.75">3:4</option>
+            <option value="1.7778" selected>16:9</option>
+            <option value="0.5625">9:16</option>
+          </select>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="btn">Crop</button>
+        </div>
+        <div id="out"></div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Choose an image.</li>
+            <li>Pick an aspect ratio (or Original).</li>
+            <li>Click Crop to cut the centered region.</li>
+            <li>Download the result.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>Does it crop from the center?</summary>
+            <p>Yes — the largest centered rectangle of the chosen ratio is used, so nothing important at the edges is lost unexpectedly.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can I crop a free rectangle?</summary>
+            <p>This tool uses preset ratios for reliability. For pixel-precise cropping, choose Original (no change) and use an editor.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is my photo uploaded?</summary>
+            <p>No — cropping is done locally with Canvas.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>是从中心裁剪吗？</summary>
+            <p>是的。工具会取所选比例下最大的居中矩形，避免意外裁掉中心内容。</p>
+          </details>
+          <details class="faq-item">
+            <summary>能自由拖拽裁剪吗？</summary>
+            <p>为保证可靠，本工具采用预设比例。如需像素级自由裁剪可选 Original（不裁剪）再用其他编辑器。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🟣</div>
+              <div class="uc-content">
+                <h4>Avatars</h4>
+                <p>Square crops.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🖥️</div>
+              <div class="uc-content">
+                <h4>Covers</h4>
+                <p>16:9 banners.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">📷</div>
+              <div class="uc-content">
+                <h4>Social</h4>
+                <p>Perfect framing.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="html-encoder.html" class="related-tool-card">
+              <span class="rt-icon"></></span>
+              <span class="rt-name">HTML Encoder / Decoder</span>
+            </a>
+            <a href="css-minifier.html" class="related-tool-card">
+              <span class="rt-icon">🎨</span>
+              <span class="rt-name">CSS Minifier</span>
+            </a>
+            <a href="json-minifier.html" class="related-tool-card">
+              <span class="rt-icon">🗜️</span>
+              <span class="rt-name">JSON Minifier</span>
+            </a>
+            <a href="html-minifier.html" class="related-tool-card">
+              <span class="rt-icon">📄</span>
+              <span class="rt-name">HTML Minifier</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Image Cropper</h2>
+    <h3>工作原理</h3>
+    <p>按目标比例计算“最大居中矩形”，用 Canvas 把该区域绘制到新画布并导出。</p>
+    <h3>比例说明</h3>
+    <li>1:1 正方形（头像）</li>
+    <li>4:3 / 3:4 通用照片</li>
+    <li>16:9 / 9:16 横/竖封面</li>
+    <li>Original 不裁剪</li>
+    <h3>隐私</h3>
+    <p>本地处理，图片不上传。</p>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var file=document.getElementById('file'),ratio=document.getElementById('ratio'),out=document.getElementById('out'),btn=document.getElementById('btn'),img=null,srcUrl=null;
+    file.addEventListener('change',function(){var f=file.files[0];if(!f)return;if(srcUrl)URL.revokeObjectURL(srcUrl);srcUrl=URL.createObjectURL(f);img=new Image();img.onload=function(){out.innerHTML='Image loaded ('+img.naturalWidth+'×'+img.naturalHeight+'). Pick a ratio and Crop.';};img.src=srcUrl;});
+    function crop(){
+      if(!img){out.innerHTML='<div style="color:#ef4444">Choose an image first.</div>';return;}
+      var r=parseFloat(ratio.value);var W=img.naturalWidth,H=img.naturalHeight,cw=W,ch=H;
+      if(r>0){if(W/H>r){cw=Math.round(H*r);ch=H;}else{ch=Math.round(W/r);cw=W;}}
+      var sx=Math.round((W-cw)/2),sy=Math.round((H-ch)/2);
+      var c=document.createElement('canvas');c.width=cw;c.height=ch;c.getContext('2d').drawImage(img,sx,sy,cw,ch,0,0,cw,ch);
+      var url=c.toDataURL('image/png');
+      out.innerHTML='<div style="margin:8px 0">Cropped '+cw+' × '+ch+' px</div><img src="'+url+'" style="max-width:100%;border:1px solid var(--border);border-radius:8px;margin-bottom:10px"><br><a class="btn btn-secondary" download="cropped.png" href="'+url+'">Download</a>';
+    }
+    btn.addEventListener('click',crop);
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

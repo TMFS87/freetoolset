@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Power Converter — Watt, Horsepower, BTU/h &amp; More | FreeToolset</title>
+  <meta name="description" content="Convert power units: watt, kilowatt, megawatt, metric and mechanical horsepower, BTU per hour, and refrigeration tons.">
+  <meta name="keywords" content="power converter, watts to horsepower, kw to hp, btu per hour converter, hp to kw">
+  <meta property="og:title" content="Power Converter — FreeToolset">
+  <meta property="og:description" content="Convert power units: watt, kilowatt, megawatt, metric and mechanical horsepower, BTU per hour, and refrigeration tons.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/power-converter.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/power-converter.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Power Converter — FreeToolset">
+  <meta name="twitter:description" content="Convert power units: watt, kilowatt, megawatt, metric and mechanical horsepower, BTU per hour, and refrigeration tons.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Power Converter — Watt, Horsepower, BTU/h & More","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/power-converter.html","description":"Convert power units: watt, kilowatt, megawatt, metric and mechanical horsepower, BTU per hour, and refrigeration tons.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Metric or mechanical horsepower?","acceptedAnswer":{"@type":"Answer","text":"They differ slightly: metric hp (PS, used in Europe and Asia) = 735.5 W, mechanical hp (used in the US/UK) = 745.7 W. Car specs usually mean metric hp in China and Europe."}},{"@type":"Question","name":"How do air conditioner \"horses\" relate to watts?","acceptedAnswer":{"@type":"Answer","text":"In Chinese usage 1 \"匹\" is roughly 735 W of cooling capacity, so a 1.5-hp unit is about 1100 W input or ~12000 BTU/h cooling."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Converter","item":"https://www.freetoolset.app/converters.html"},{"@type":"ListItem","position":3,"name":"Power Converter","item":"https://www.freetoolset.app/power-converter.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>功率单位换算器支持瓦、千瓦、兆瓦、公制马力、英制马力、英热单位每小时（BTU/h）、冷吨等互转，看车辆参数、电器功率和空调制冷量时都会用到。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="converters.html">Converter</a>
+      <span class="separator">/</span>
+      <span class="current">Power Converter</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>🔌 Power Converter</h1>
+      <p>Convert power units: watt, kilowatt, megawatt, metric and mechanical horsepower, BTU per hour, and refrigeration tons.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="form-row">
+          <label for="val">Value</label>
+          <input type="number" id="val" value="150" step="any">
+        </div>
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="from">From</label>
+            <select id="from"><option value="w">Watt (W)</option><option value="kw">Kilowatt (kW)</option><option value="mw">Megawatt (MW)</option><option value="hp">Mechanical horsepower (hp)</option><option value="ps">Metric horsepower (PS / 匹)</option><option value="btuh">BTU per hour (BTU/h)</option><option value="ton">Ton of refrigeration (RT)</option><option value="ftlbs">Foot-pound per second</option><option value="kcalh">Kilocalorie per hour</option></select>
+          </div>
+          <div class="form-row">
+            <label for="to">To</label>
+            <select id="to"><option value="w">Watt (W)</option><option value="kw">Kilowatt (kW)</option><option value="mw">Megawatt (MW)</option><option value="hp">Mechanical horsepower (hp)</option><option value="ps">Metric horsepower (PS / 匹)</option><option value="btuh">BTU per hour (BTU/h)</option><option value="ton">Ton of refrigeration (RT)</option><option value="ftlbs">Foot-pound per second</option><option value="kcalh">Kilocalorie per hour</option></select>
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="convBtn">Convert</button>
+          <button class="btn btn-secondary" id="swapBtn">⇅ Swap</button>
+        </div>
+        <div id="out"></div>
+        <div id="all" style="margin-top:18px"></div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Enter the power value.</li>
+            <li>Select the unit you have and the unit you want.</li>
+            <li>Results appear immediately.</li>
+            <li>Use the full table to compare all units.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>Metric or mechanical horsepower?</summary>
+            <p>They differ slightly: metric hp (PS, used in Europe and Asia) = 735.5 W, mechanical hp (used in the US/UK) = 745.7 W. Car specs usually mean metric hp in China and Europe.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How do air conditioner &quot;horses&quot; relate to watts?</summary>
+            <p>In Chinese usage 1 &quot;匹&quot; is roughly 735 W of cooling capacity, so a 1.5-hp unit is about 1100 W input or ~12000 BTU/h cooling.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>公制马力和英制马力有什么区别？</summary>
+            <p>公制马力（PS，欧洲和亚洲常用）= 735.5 瓦；英制马力（hp，英美常用）= 745.7 瓦，相差约 1.4%。国内车辆参数一般指公制马力。</p>
+          </details>
+          <details class="faq-item">
+            <summary>空调「几匹」是什么意思？</summary>
+            <p>「1 匹」约对应 735 瓦制冷量。1.5 匹空调制冷量约 3500 瓦（12000 BTU/h），适合 16–26 平方米房间。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🚙</div>
+              <div class="uc-content">
+                <h4>Car Specs</h4>
+                <p>Convert kW to horsepower.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">❄️</div>
+              <div class="uc-content">
+                <h4>Air Con</h4>
+                <p>Match BTU/h to room size.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🏭</div>
+              <div class="uc-content">
+                <h4>Machinery</h4>
+                <p>Read motor ratings in any unit.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="unit-converter.html" class="related-tool-card">
+              <span class="rt-icon">📐</span>
+              <span class="rt-name">Unit Converter</span>
+            </a>
+            <a href="temperature-converter.html" class="related-tool-card">
+              <span class="rt-icon">🌡️</span>
+              <span class="rt-name">Temperature Converter</span>
+            </a>
+            <a href="length-converter.html" class="related-tool-card">
+              <span class="rt-icon">📏</span>
+              <span class="rt-name">Length Converter</span>
+            </a>
+            <a href="weight-converter.html" class="related-tool-card">
+              <span class="rt-icon">⚖️</span>
+              <span class="rt-name">Weight Converter</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Power Converter</h2>
+    <h3>功率与能量的区别</h3>
+    <p>功率是单位时间内做功或转换能量的速率，单位是瓦（W = J/s）。能量是总量，功率是速度 —— 一台 2000W 的热水器工作半小时，消耗的能量是 1 kWh。</p>
+    <h3>马力的两种定义</h3>
+    <li>**公制马力（PS/CV）**：735.49875 W，源自欧洲，中国、日本、欧洲车企常用</li>
+    <li>**英制马力（hp）**：745.69987 W，源自瓦特对马拉重物的测算，英美常用</li>
+    <p>两者相差约 1.4%，看外媒车评时要注意区分。</p>
+    <h3>空调的功率与制冷量</h3>
+    <p>空调标注的「制冷量」是输出的热量搬运能力，「输入功率」才是耗电。一台 1.5 匹空调制冷量约 3500 W，但输入功率通常只有 1100 W 左右 —— 因为空调是搬运热量而非直接产生冷量，能效比（COP）通常在 3 以上。</p>
+    <h3>换算示例</h3>
+    <p>一台电动车电机功率 150 kW，换算成公制马力：150000 ÷ 735.5 ≈ 204 PS。</p>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var U=[["w","Watt (W)",1],["kw","Kilowatt (kW)",1000],["mw","Megawatt (MW)",1000000],["hp","Mechanical horsepower (hp)",745.69987158],["ps","Metric horsepower (PS / 匹)",735.49875],["btuh","BTU per hour (BTU/h)",0.29307107],["ton","Ton of refrigeration (RT)",3516.8528421],["ftlbs","Foot-pound per second",1.35581795],["kcalh","Kilocalorie per hour",1.163]];
+    var val=document.getElementById('val'),from=document.getElementById('from'),to=document.getElementById('to'),
+        out=document.getElementById('out'),all=document.getElementById('all'),
+        convBtn=document.getElementById('convBtn'),swapBtn=document.getElementById('swapBtn');
+    from.value='kw';to.value='ps';
+    function f(k){for(var i=0;i<U.length;i++){if(U[i][0]===k)return U[i][2];}return 1;}
+    function name(k){for(var i=0;i<U.length;i++){if(U[i][0]===k)return U[i][1];}return k;}
+    function fmt(x){
+      if(!isFinite(x))return '—';
+      var a=Math.abs(x);
+      if(a!==0&&(a<0.000001||a>=1e12))return x.toExponential(6);
+      return parseFloat(x.toPrecision(10)).toLocaleString(undefined,{maximumFractionDigits:10});
+    }
+    function calc(){
+      var v=parseFloat(val.value);
+      if(isNaN(v)){out.className='result-box';out.textContent='Enter a number to convert.';all.innerHTML='';return;}
+      var base=v*f(from.value);
+      var r=base/f(to.value);
+      out.className='result-box';
+      out.innerHTML='<div style="font-size:1.7rem;font-weight:700;word-break:break-all">'+fmt(r)+'</div>'+
+        '<div style="opacity:.75;margin-top:4px">'+fmt(v)+' '+name(from.value)+' = '+fmt(r)+' '+name(to.value)+'</div>';
+      all.innerHTML='<div style="font-size:.92rem;font-weight:600;margin-bottom:8px">All units</div>'+
+        U.map(function(u){
+          var x=base/u[2];
+          return '<div style="display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px solid var(--border);font-size:.9rem">'+
+            '<span style="opacity:.85">'+u[1]+'</span><strong style="word-break:break-all;text-align:right">'+fmt(x)+'</strong></div>';
+        }).join('');
+    }
+    swapBtn.addEventListener('click',function(){var t=from.value;from.value=to.value;to.value=t;calc();});
+    [val,from,to].forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc);});
+    convBtn.addEventListener('click',calc);calc();
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paint Calculator — How Much Paint Do You Need | FreeToolset</title>
+  <meta name="description" content="Estimate how many litres of paint you need for a room, accounting for wall area, doors, windows, number of coats and paint coverage.">
+  <meta name="keywords" content="paint calculator, how much paint do i need, paint coverage calculator, wall paint estimator, room paint">
+  <meta property="og:title" content="Paint Calculator — FreeToolset">
+  <meta property="og:description" content="Estimate how many litres of paint you need for a room, accounting for wall area, doors, windows, number of coats and paint coverage.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/paint-calculator.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/paint-calculator.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Paint Calculator — FreeToolset">
+  <meta name="twitter:description" content="Estimate how many litres of paint you need for a room, accounting for wall area, doors, windows, number of coats and paint coverage.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Paint Calculator — How Much Paint Do You Need","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/paint-calculator.html","description":"Estimate how many litres of paint you need for a room, accounting for wall area, doors, windows, number of coats and paint coverage.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many coats do I need?","acceptedAnswer":{"@type":"Answer","text":"Two coats is standard. Use three when painting a light colour over a dark one, or when covering bare plaster."}},{"@type":"Question","name":"What coverage should I enter?","acceptedAnswer":{"@type":"Answer","text":"Most emulsion paints cover 10–12 m² per litre per coat. The exact figure is printed on the tin — rough or porous surfaces absorb more."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Calculator","item":"https://www.freetoolset.app/calculators.html"},{"@type":"ListItem","position":3,"name":"Paint Calculator","item":"https://www.freetoolset.app/paint-calculator.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>油漆用量计算器根据房间长宽高、门窗数量、涂刷遍数和油漆遮盖率，估算需要购买多少升涂料，避免买多浪费或买少断料。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="calculators.html">Calculator</a>
+      <span class="separator">/</span>
+      <span class="current">Paint Calculator</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>🎨 Paint Calculator</h1>
+      <p>Estimate how many litres of paint you need for a room, accounting for wall area, doors, windows, number of coats and paint coverage.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="len">Room length (m)</label>
+            <input type="number" id="len" value="4" min="0.5" step="0.1">
+          </div>
+          <div class="form-row">
+            <label for="wid">Room width (m)</label>
+            <input type="number" id="wid" value="3.5" min="0.5" step="0.1">
+          </div>
+        </div>
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="hgt">Wall height (m)</label>
+            <input type="number" id="hgt" value="2.8" min="1" step="0.1">
+          </div>
+          <div class="form-row">
+            <label for="coats">Number of coats</label>
+            <input type="number" id="coats" value="2" min="1" max="5">
+          </div>
+        </div>
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="doors">Doors</label>
+            <input type="number" id="doors" value="1" min="0" max="10">
+          </div>
+          <div class="form-row">
+            <label for="wins">Windows</label>
+            <input type="number" id="wins" value="1" min="0" max="20">
+          </div>
+        </div>
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="cov">Coverage (m² per litre per coat)</label>
+            <input type="number" id="cov" value="11" min="1" step="0.5">
+          </div>
+          <div class="form-row">
+            <label for="ceil">Include ceiling?</label>
+            <select id="ceil"><option value="0">No</option><option value="1">Yes</option></select>
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="calcBtn">Calculate</button>
+        </div>
+        <div id="out"></div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Enter room length, width and wall height.</li>
+            <li>Set how many doors and windows to subtract.</li>
+            <li>Choose number of coats and paint coverage.</li>
+            <li>Click Calculate.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>How many coats do I need?</summary>
+            <p>Two coats is standard. Use three when painting a light colour over a dark one, or when covering bare plaster.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What coverage should I enter?</summary>
+            <p>Most emulsion paints cover 10–12 m² per litre per coat. The exact figure is printed on the tin — rough or porous surfaces absorb more.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>要刷几遍？</summary>
+            <p>一般刷两遍即可。深色改浅色、或新墙面第一次上漆时建议刷三遍，遮盖才均匀。</p>
+          </details>
+          <details class="faq-item">
+            <summary>遮盖率填多少？</summary>
+            <p>大多数乳胶漆每升每遍可覆盖 10–12 平方米，具体数值印在包装桶上。粗糙或吸水性强的墙面用量会明显增加。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🏠</div>
+              <div class="uc-content">
+                <h4>Room Refresh</h4>
+                <p>Buy the right amount in one trip.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">💰</div>
+              <div class="uc-content">
+                <h4>Budget</h4>
+                <p>Estimate material cost before starting.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🧰</div>
+              <div class="uc-content">
+                <h4>Renovation</h4>
+                <p>Plan a multi-room repaint.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="bmi-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏋️</span>
+              <span class="rt-name">BMI Calculator</span>
+            </a>
+            <a href="age-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🎂</span>
+              <span class="rt-name">Age Calculator</span>
+            </a>
+            <a href="percentage-calculator.html" class="related-tool-card">
+              <span class="rt-icon">➗</span>
+              <span class="rt-name">Percentage Calculator</span>
+            </a>
+            <a href="loan-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏦</span>
+              <span class="rt-name">Loan Calculator</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Paint Calculator</h2>
+    <h3>计算逻辑</h3>
+    <p>先算四面墙的总面积：周长 × 层高 = 2 × (长 + 宽) × 高。再减去门窗面积（标准门约 1.8㎡，标准窗约 1.5㎡）。最后：所需油漆(L) = 净墙面积 × 涂刷遍数 ÷ 每升遮盖面积。</p>
+    <h3>一个例子</h3>
+    <p>一间 4m × 3.5m、层高 2.8m 的卧室：墙面周长 15m，总墙面积 42㎡；扣掉 1 扇门和 1 扇窗共 3.3㎡，净面积约 38.7㎡。刷两遍、遮盖率 11㎡/L，需要约 7.03 升，实际购买 2 桶 5L 装比较稳妥。</p>
+    <h3>别忘了这些</h3>
+    <li>**留 10% 余量**：补漆、修补和后期维护都需要</li>
+    <li>**底漆单独算**：新墙或大色差需要额外的底漆用量</li>
+    <li>**天花板另算**：面积 = 长 × 宽，通常用专门的顶漆</li>
+    <li>**深色更费漆**：鲜艳的红、蓝色系可能需要 3–4 遍才均匀</li>
+    <h3>使用提醒</h3>
+    <p>本工具为估算参考，实际用量受墙面材质、施工工具（滚筒比喷涂省漆）和个人手法影响，建议按计算结果上浮 10% 采购。</p>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var ids=['len','wid','hgt','coats','doors','wins','cov','ceil'],el={};ids.forEach(function(i){el[i]=document.getElementById(i);});
+    var out=document.getElementById('out'),btn=document.getElementById('calcBtn');
+    function calc(){
+      var L=+el.len.value||0,W=+el.wid.value||0,H=+el.hgt.value||0,C=+el.coats.value||1;
+      var D=+el.doors.value||0,N=+el.wins.value||0,CV=+el.cov.value||11,CE=el.ceil.value==='1';
+      var wall=2*(L+W)*H;
+      var deduct=D*1.8+N*1.5;
+      var net=wall-deduct; if(net<0) net=0;
+      if(CE) net+=L*W;
+      var litres=net*C/CV;
+      var withSpare=litres*1.1;
+      function row(a,b){return '<div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border)"><span>'+a+'</span><strong>'+b+'</strong></div>';}
+      out.className='result-box';
+      out.innerHTML='<div style="font-size:1.7rem;font-weight:700;margin-bottom:4px">'+withSpare.toFixed(1)+' litres</div>'+
+        '<div style="opacity:.75;margin-bottom:14px">recommended purchase (includes 10% spare)</div>'+
+        row('Total wall area',wall.toFixed(1)+' m²')+
+        row('Doors + windows deducted','−'+deduct.toFixed(1)+' m²')+
+        (CE?row('Ceiling added','+'+(L*W).toFixed(1)+' m²'):'')+
+        row('Paintable area',net.toFixed(1)+' m²')+
+        row('Bare requirement ('+C+' coats)',litres.toFixed(1)+' L');
+    }
+    btn.addEventListener('click',calc);calc();
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

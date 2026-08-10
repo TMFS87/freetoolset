@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heart Rate Zone Calculator — Training Zones from Max &amp; Resting Heart Rate | FreeToolset</title>
+  <meta name="description" content="Estimate your heart-rate training zones using the Karvonen formula, based on your max and resting heart rate. Perfect for runners, cyclists and HIIT training.">
+  <meta name="keywords" content="heart rate zone calculator, karvonen formula, target heart rate, training zones, max heart rate">
+  <meta property="og:title" content="Heart Rate Zone Calculator — FreeToolset">
+  <meta property="og:description" content="Estimate your heart-rate training zones using the Karvonen formula, based on your max and resting heart rate. Perfect for runners, cyclists and HIIT training.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/heart-rate-zone-calculator.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/heart-rate-zone-calculator.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Heart Rate Zone Calculator — FreeToolset">
+  <meta name="twitter:description" content="Estimate your heart-rate training zones using the Karvonen formula, based on your max and resting heart rate. Perfect for runners, cyclists and HIIT training.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Heart Rate Zone Calculator — Training Zones from Max & Resting Heart Rate","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/heart-rate-zone-calculator.html","description":"Estimate your heart-rate training zones using the Karvonen formula, based on your max and resting heart rate. Perfect for runners, cyclists and HIIT training.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the Karvonen formula?","acceptedAnswer":{"@type":"Answer","text":"Target HR = ((Max HR − Resting HR) × intensity%) + Resting HR. It personalises training zones using your resting heart rate, which the simpler 220−age method ignores."}},{"@type":"Question","name":"How do I find my resting heart rate?","acceptedAnswer":{"@type":"Answer","text":"Take your pulse first thing in the morning, still lying down, for 30–60 seconds. A typical adult resting rate is 60–80 bpm."}},{"@type":"Question","name":"Which zone should I train in?","acceptedAnswer":{"@type":"Answer","text":"Zone 2 (60–70%) builds aerobic base and burns fat; Zone 4–5 (80–90%+) improves speed and VO2 max but cannot be sustained long. Most people mix zones across the week."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Calculator","item":"https://www.freetoolset.app/calculators.html"},{"@type":"ListItem","position":3,"name":"Heart Rate Zone Calculator","item":"https://www.freetoolset.app/heart-rate-zone-calculator.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>心率区间计算器用 Karvonen（卡沃宁）公式，根据最大心率和静息心率算出你运动时的目标心率区间。它把强度分成 5 个区间，帮助你在区间 2–3 做燃脂、区间 4–5 做心肺提升，避免练得太轻或太猛。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="calculators.html">Calculator</a>
+      <span class="separator">/</span>
+      <span class="current">Heart Rate Zone Calculator</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>❤️ Heart Rate Zone Calculator</h1>
+      <p>Estimate your heart-rate training zones using the Karvonen formula, based on your max and resting heart rate. Perfect for runners, cyclists and HIIT training.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="age">Age (years)</label>
+            <input type="number" id="age" value="30" min="10" max="100">
+          </div>
+          <div class="form-row">
+            <label for="rhr">Resting HR (bpm)</label>
+            <input type="number" id="rhr" value="65" min="35" max="120">
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="calcBtn">Calculate</button>
+        </div>
+        <div id="out"></div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Enter your age (used to estimate max heart rate).</li>
+            <li>Measure and enter your resting heart rate (morning, before getting up works best).</li>
+            <li>Click Calculate to see all five zones.</li>
+            <li>Use the zone ranges to guide your workout intensity.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>What is the Karvonen formula?</summary>
+            <p>Target HR = ((Max HR − Resting HR) × intensity%) + Resting HR. It personalises training zones using your resting heart rate, which the simpler 220−age method ignores.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How do I find my resting heart rate?</summary>
+            <p>Take your pulse first thing in the morning, still lying down, for 30–60 seconds. A typical adult resting rate is 60–80 bpm.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Which zone should I train in?</summary>
+            <p>Zone 2 (60–70%) builds aerobic base and burns fat; Zone 4–5 (80–90%+) improves speed and VO2 max but cannot be sustained long. Most people mix zones across the week.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>卡沃宁公式和 220−年龄 有什么区别？</summary>
+            <p>220−年龄只估算最大心率，忽略了每个人的静息心率差异。卡沃宁公式把静息心率纳入计算，得到的目标区间更贴合个人体质。</p>
+          </details>
+          <details class="faq-item">
+            <summary>减脂应该练哪个区间？</summary>
+            <p>通常区间 2（约 60%–70% 强度）最适合燃脂和打有氧基础；区间 4–5 强度高、难以持久，主要提升速度和最大摄氧量。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🏃</div>
+              <div class="uc-content">
+                <h4>Fat-burn runs</h4>
+                <p>Hold Zone 2 for steady-state cardio.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🚴</div>
+              <div class="uc-content">
+                <h4>Interval training</h4>
+                <p>Push into Zone 4–5 for reps.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">💓</div>
+              <div class="uc-content">
+                <h4>Recovery</h4>
+                <p>Keep easy days below Zone 2.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="bmi-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏋️</span>
+              <span class="rt-name">BMI Calculator</span>
+            </a>
+            <a href="age-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🎂</span>
+              <span class="rt-name">Age Calculator</span>
+            </a>
+            <a href="percentage-calculator.html" class="related-tool-card">
+              <span class="rt-icon">➗</span>
+              <span class="rt-name">Percentage Calculator</span>
+            </a>
+            <a href="loan-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏦</span>
+              <span class="rt-name">Loan Calculator</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Heart Rate Zone Calculator</h2>
+    <h3>为什么用心率区间</h3>
+    <p>凭感觉练很容易要么太轻松、要么过度。心率区间把强度量化成 5 档，让你清楚知道每一段训练在练什么。</p>
+    <h3>卡沃宁公式</h3>
+    <p>目标心率 =（最大心率 − 静息心率）× 强度% + 静息心率。其中最大心率常用 220 − 年龄估算（也可用更精确的 208 − 0.7×年龄）。</p>
+    <h3>五个区间</h3>
+    <li>区间 1（50%–60%）：热身、恢复</li>
+    <li>区间 2（60%–70%）：燃脂、有氧基础</li>
+    <li>区间 3（70%–80%）：有氧耐力</li>
+    <li>区间 4（80%–90%）：无氧阈、速度</li>
+    <li>区间 5（90%–100%）：冲刺、最大输出</li>
+    <h3>注意事项</h3>
+    <li>公式给出的是估算值，服药、咖啡因、睡眠都会影响实际心率</li>
+    <li>戴心率带或手表测量比手机更准</li>
+    <li>结果仅供参考，开始新训练计划前请咨询专业人士</li>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var age=document.getElementById('age'),rhr=document.getElementById('rhr'),out=document.getElementById('out'),btn=document.getElementById('calcBtn');
+    var zones=[['Zone 1 · Warm up',0.5,0.6],['Zone 2 · Fat burn',0.6,0.7],['Zone 3 · Aerobic',0.7,0.8],['Zone 4 · Threshold',0.8,0.9],['Zone 5 · Max',0.9,1.0]];
+    function calc(){
+      var A=parseFloat(age.value),R=parseFloat(rhr.value);
+      if(!(A>0&&R>0)){out.className='result-box';out.textContent='Enter a valid age and resting HR.';return;}
+      var maxHR=220-A;
+      var h='<div style="margin-bottom:10px;opacity:.8;font-size:.92rem">Estimated max HR: <strong>'+Math.round(maxHR)+' bpm</strong> · Resting: <strong>'+Math.round(R)+' bpm</strong></div>';
+      h+='<div style="display:grid;gap:8px">';
+      zones.forEach(function(z){
+        var lo=Math.round((maxHR-R)*z[1]+R), hi=Math.round((maxHR-R)*z[2]+R);
+        h+='<div style="padding:10px 12px;border-radius:10px;background:var(--surface);border:1px solid var(--border)">'+
+           '<div style="font-weight:700">'+z[0]+'</div>'+
+           '<div style="font-size:1.25rem;font-weight:700">'+lo+' – '+hi+' bpm</div></div>';
+      });
+      h+='</div>';
+      out.className='result-box';out.innerHTML=h;
+    }
+    btn.addEventListener('click',calc);calc();
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

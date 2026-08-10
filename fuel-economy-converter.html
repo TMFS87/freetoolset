@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fuel Economy Converter — MPG, km/L, L/100km | FreeToolset</title>
+  <meta name="description" content="Convert fuel economy between MPG (US &amp; UK), km/L and L/100km — useful when comparing cars across regions.">
+  <meta name="keywords" content="fuel economy converter, mpg to l/100km, km/l converter, gas mileage, fuel efficiency">
+  <meta property="og:title" content="Fuel Economy Converter — FreeToolset">
+  <meta property="og:description" content="Convert fuel economy between MPG (US &amp; UK), km/L and L/100km — useful when comparing cars across regions.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/fuel-economy-converter.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/fuel-economy-converter.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fuel Economy Converter — FreeToolset">
+  <meta name="twitter:description" content="Convert fuel economy between MPG (US &amp; UK), km/L and L/100km — useful when comparing cars across regions.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Fuel Economy Converter — MPG, km/L, L/100km","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/fuel-economy-converter.html","description":"Convert fuel economy between MPG (US & UK), km/L and L/100km — useful when comparing cars across regions.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"MPG US vs MPG UK — why different?","acceptedAnswer":{"@type":"Answer","text":"A US gallon is ~3.785 L while a UK (imperial) gallon is ~4.546 L, so the same car shows a higher number in UK MPG. Always note which one."}},{"@type":"Question","name":"Why is L/100km the inverse of MPG?","acceptedAnswer":{"@type":"Answer","text":"MPG says distance per volume (more = better) while L/100km says volume per distance (less = better). They are reciprocals, so converting is not a simple factor."}},{"@type":"Question","name":"Which is better for comparing cars?","acceptedAnswer":{"@type":"Answer","text":"Either works as long as you keep the unit consistent. L/100km is linear and easier to subtract differences; MPG is intuitive for \"how far on a tank\"."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Converter","item":"https://www.freetoolset.app/converters.html"},{"@type":"ListItem","position":3,"name":"Fuel Economy Converter","item":"https://www.freetoolset.app/fuel-economy-converter.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>油耗转换器在 MPG（美制/英制）、km/L 和 L/100km 之间换算。美国用 MPG（越高越省），欧洲和中国常用 L/100km（越低越省），两者互为倒数关系，比较进口车参数时很容易搞混。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="converters.html">Converter</a>
+      <span class="separator">/</span>
+      <span class="current">Fuel Economy Converter</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>⛽ Fuel Economy Converter</h1>
+      <p>Convert fuel economy between MPG (US &amp; UK), km/L and L/100km — useful when comparing cars across regions.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="form-row">
+          <label for="val">Value</label>
+          <input type="number" id="val" value="8" step="any">
+        </div>
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="from">From</label>
+            <select id="from">
+              <option value="mpg_us">MPG (US)</option>
+              <option value="mpg_uk">MPG (UK)</option>
+              <option value="km_l">km/L</option>
+              <option value="l_100km">L/100km</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="to">To</label>
+            <select id="to">
+              <option value="mpg_us">MPG (US)</option>
+              <option value="mpg_uk">MPG (UK)</option>
+              <option value="km_l">km/L</option>
+              <option value="l_100km" selected>L/100km</option>
+            </select>
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="convBtn">Convert</button>
+          <button class="btn btn-secondary" id="swapBtn">⇅ Swap</button>
+        </div>
+        <div id="out"></div>
+        <div id="all" style="margin-top:18px"></div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Enter the fuel economy value.</li>
+            <li>Pick the source unit (MPG US/UK, km/L, L/100km).</li>
+            <li>Pick the target unit.</li>
+            <li>Read the result and the full comparison table.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>MPG US vs MPG UK — why different?</summary>
+            <p>A US gallon is ~3.785 L while a UK (imperial) gallon is ~4.546 L, so the same car shows a higher number in UK MPG. Always note which one.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Why is L/100km the inverse of MPG?</summary>
+            <p>MPG says distance per volume (more = better) while L/100km says volume per distance (less = better). They are reciprocals, so converting is not a simple factor.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Which is better for comparing cars?</summary>
+            <p>Either works as long as you keep the unit consistent. L/100km is linear and easier to subtract differences; MPG is intuitive for &quot;how far on a tank&quot;.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>美制 MPG 和英制 MPG 为什么不同？</summary>
+            <p>美制加仑约 3.785 升，英制加仑约 4.546 升，所以同一辆车英制 MPG 数字更大。一定要看清楚是哪种。</p>
+          </details>
+          <details class="faq-item">
+            <summary>L/100km 和 MPG 为什么是倒数关系？</summary>
+            <p>MPG 是“每单位体积跑多远”（越大越省），L/100km 是“每单位距离耗多少油”（越小越省），二者互为倒数，不是简单倍率。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🚗</div>
+              <div class="uc-content">
+                <h4>Import cars</h4>
+                <p>Compare US vs EU ratings.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">📊</div>
+              <div class="uc-content">
+                <h4>Trip budget</h4>
+                <p>Estimate fuel cost.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🌍</div>
+              <div class="uc-content">
+                <h4>Spec sheets</h4>
+                <p>Normalise units.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="unit-converter.html" class="related-tool-card">
+              <span class="rt-icon">📐</span>
+              <span class="rt-name">Unit Converter</span>
+            </a>
+            <a href="temperature-converter.html" class="related-tool-card">
+              <span class="rt-icon">🌡️</span>
+              <span class="rt-name">Temperature Converter</span>
+            </a>
+            <a href="length-converter.html" class="related-tool-card">
+              <span class="rt-icon">📏</span>
+              <span class="rt-name">Length Converter</span>
+            </a>
+            <a href="weight-converter.html" class="related-tool-card">
+              <span class="rt-icon">⚖️</span>
+              <span class="rt-name">Weight Converter</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Fuel Economy Converter</h2>
+    <h3>两种思维</h3>
+    <p>MPG（每加仑英里）是“体积→距离”，数字越大越省油；L/100km 是“距离→体积”，数字越小越省油。二者互为倒数关系。</p>
+    <h3>换算系数</h3>
+    <li>1 km/L = 2.352 MPG(US) = 2.825 MPG(UK)</li>
+    <li>1 L/100km = 100 / (km/L)</li>
+    <li>1 MPG(US) ≈ 0.425 km/L</li>
+    <h3>美制 vs 英制加仑</h3>
+    <p>美国加仑 = 3.785 L，英国加仑 = 4.546 L，所以英制 MPG 数值更大。</p>
+    <h3>注意</h3>
+    <li>实际油耗受驾驶习惯、路况、空调影响很大</li>
+    <li>结果仅供参考</li>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var val=document.getElementById('val'),from=document.getElementById('from'),to=document.getElementById('to'),
+        out=document.getElementById('out'),all=document.getElementById('all'),
+        convBtn=document.getElementById('convBtn'),swapBtn=document.getElementById('swapBtn');
+    from.value='km_l';to.value='l_100km';
+    function toKmPL(v,k){if(k==='km_l')return v;if(k==='mpg_us')return v/2.352145833;if(k==='mpg_uk')return v/2.824809363;if(k==='l_100km')return v>0?100/v:0;return v;}
+    function fromKmPL(kmpl,k){if(k==='km_l')return kmpl;if(k==='mpg_us')return kmpl*2.352145833;if(k==='mpg_uk')return kmpl*2.824809363;if(k==='l_100km')return kmpl>0?100/kmpl:0;return kmpl;}
+    function nm(k){return k==='mpg_us'?'MPG (US)':k==='mpg_uk'?'MPG (UK)':k==='km_l'?'km/L':'L/100km';}
+    function fmt(x){if(!isFinite(x)||x===0)return '—';var a=Math.abs(x);if(a<0.000001||a>=1e12)return x.toExponential(6);return parseFloat(x.toPrecision(10)).toLocaleString(undefined,{maximumFractionDigits:10});}
+    function calc(){
+      var v=parseFloat(val.value);
+      if(isNaN(v)||v<=0){out.className='result-box';out.textContent='Enter a positive number to convert.';all.innerHTML='';return;}
+      var kmpl=toKmPL(v,from.value),r=fromKmPL(kmpl,to.value);
+      out.className='result-box';
+      out.innerHTML='<div style="font-size:1.7rem;font-weight:700;word-break:break-all">'+fmt(r)+'</div>'+
+        '<div style="opacity:.75;margin-top:4px">'+fmt(v)+' '+nm(from.value)+' = '+fmt(r)+' '+nm(to.value)+'</div>';
+      var keys=['mpg_us','mpg_uk','km_l','l_100km'];
+      all.innerHTML='<div style="font-size:.92rem;font-weight:600;margin-bottom:8px">All units</div>'+keys.map(function(k){var x=fromKmPL(kmpl,k);return '<div style="display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px solid var(--border);font-size:.9rem"><span style="opacity:.85">'+nm(k)+'</span><strong style="word-break:break-all;text-align:right">'+(x>0?fmt(x):'—')+'</strong></div>';}).join('');
+    }
+    swapBtn.addEventListener('click',function(){var t=from.value;from.value=to.value;to.value=t;calc();});
+    [val,from,to].forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc);});
+    convBtn.addEventListener('click',calc);calc();
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

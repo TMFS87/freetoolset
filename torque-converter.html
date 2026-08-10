@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Torque Converter — N·m, lbf·ft, kgf·m, N·cm | FreeToolset</title>
+  <meta name="description" content="Convert torque and moment units between newton-metres, pound-force feet, kilogram-force metres and newton-centimetres.">
+  <meta name="keywords" content="torque converter, nm to lb ft, newton meter, pound force foot, kgf m">
+  <meta property="og:title" content="Torque Converter — FreeToolset">
+  <meta property="og:description" content="Convert torque and moment units between newton-metres, pound-force feet, kilogram-force metres and newton-centimetres.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/torque-converter.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/torque-converter.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Torque Converter — FreeToolset">
+  <meta name="twitter:description" content="Convert torque and moment units between newton-metres, pound-force feet, kilogram-force metres and newton-centimetres.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Torque Converter — N·m, lbf·ft, kgf·m, N·cm","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/torque-converter.html","description":"Convert torque and moment units between newton-metres, pound-force feet, kilogram-force metres and newton-centimetres.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between torque and power?","acceptedAnswer":{"@type":"Answer","text":"Torque is rotational force (N·m); power is how fast that force does work (kW or hp). Power = torque × angular speed."}},{"@type":"Question","name":"Is N·m the same as kgf·m?","acceptedAnswer":{"@type":"Answer","text":"No. 1 kgf·m ≈ 9.81 N·m because it uses the force of 1 kg under gravity. They are close but not equal."}},{"@type":"Question","name":"When do I use lbf·ft?","acceptedAnswer":{"@type":"Answer","text":"US automotive and engineering specs commonly quote engine and fastener torque in pound-force feet."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Converter","item":"https://www.freetoolset.app/converters.html"},{"@type":"ListItem","position":3,"name":"Torque Converter","item":"https://www.freetoolset.app/torque-converter.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>扭矩（力矩）转换器在牛·米（N·m）、磅力·英尺（lbf·ft）、千克力·米（kgf·m）和牛·厘米（N·cm）之间换算。汽车发动机扭矩、自行车力矩、机械设计里经常用到，单位不统一时很容易算错。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="converters.html">Converter</a>
+      <span class="separator">/</span>
+      <span class="current">Torque Converter</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>🔧 Torque Converter</h1>
+      <p>Convert torque and moment units between newton-metres, pound-force feet, kilogram-force metres and newton-centimetres.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="form-row">
+          <label for="val">Value</label>
+          <input type="number" id="val" value="100" step="any">
+        </div>
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="from">From</label>
+            <select id="from"><option value="Nm">N·m</option><option value="lbf-ft">lbf·ft</option><option value="kgf-m">kgf·m</option><option value="Ncm">N·cm</option></select>
+          </div>
+          <div class="form-row">
+            <label for="to">To</label>
+            <select id="to"><option value="Nm">N·m</option><option value="lbf-ft">lbf·ft</option><option value="kgf-m">kgf·m</option><option value="Ncm">N·cm</option></select>
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="convBtn">Convert</button>
+          <button class="btn btn-secondary" id="swapBtn">⇅ Swap</button>
+        </div>
+        <div id="out"></div>
+        <div id="all" style="margin-top:18px"></div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Enter the torque value.</li>
+            <li>Choose the source unit.</li>
+            <li>Choose the target unit.</li>
+            <li>Read the converted value and the full table.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>What is the difference between torque and power?</summary>
+            <p>Torque is rotational force (N·m); power is how fast that force does work (kW or hp). Power = torque × angular speed.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is N·m the same as kgf·m?</summary>
+            <p>No. 1 kgf·m ≈ 9.81 N·m because it uses the force of 1 kg under gravity. They are close but not equal.</p>
+          </details>
+          <details class="faq-item">
+            <summary>When do I use lbf·ft?</summary>
+            <p>US automotive and engineering specs commonly quote engine and fastener torque in pound-force feet.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>扭矩和功率有什么区别？</summary>
+            <p>扭矩是旋转力（N·m），功率是做功快慢（kW 或 hp）。功率 = 扭矩 × 角速度。</p>
+          </details>
+          <details class="faq-item">
+            <summary>N·m 和 kgf·m 一样吗？</summary>
+            <p>不一样。1 kgf·m ≈ 9.81 N·m（按 1 千克重力估算），数值接近但不相等。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🚗</div>
+              <div class="uc-content">
+                <h4>Engine specs</h4>
+                <p>Compare N·m to lbf·ft.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🔩</div>
+              <div class="uc-content">
+                <h4>Bolt torque</h4>
+                <p>Match workshop manuals.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🚲</div>
+              <div class="uc-content">
+                <h4>Bike fit</h4>
+                <p>Crank torque checks.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="unit-converter.html" class="related-tool-card">
+              <span class="rt-icon">📐</span>
+              <span class="rt-name">Unit Converter</span>
+            </a>
+            <a href="temperature-converter.html" class="related-tool-card">
+              <span class="rt-icon">🌡️</span>
+              <span class="rt-name">Temperature Converter</span>
+            </a>
+            <a href="length-converter.html" class="related-tool-card">
+              <span class="rt-icon">📏</span>
+              <span class="rt-name">Length Converter</span>
+            </a>
+            <a href="weight-converter.html" class="related-tool-card">
+              <span class="rt-icon">⚖️</span>
+              <span class="rt-name">Weight Converter</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Torque Converter</h2>
+    <h3>什么是扭矩</h3>
+    <p>扭矩（力矩）衡量使物体绕轴旋转的“力的大小 × 力臂长度”，国际单位是牛·米（N·m）。</p>
+    <h3>常用单位</h3>
+    <li>N·m：国际标准</li>
+    <li>lbf·ft：英制，美国汽车/机械常用</li>
+    <li>kgf·m：千克力·米，旧制，1 kgf·m ≈ 9.80665 N·m</li>
+    <li>N·cm：小力矩，1 N·m = 100 N·cm</li>
+    <h3>换算要点</h3>
+    <p>所有单位都线性换算到 N·m 再转目标单位。</p>
+    <h3>注意</h3>
+    <li>结果仅供参考，工程计算请以设计规范为准</li>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var U=[["Nm","N·m",1],["lbf-ft","lbf·ft",1.3558179483314003],["kgf-m","kgf·m",9.80665],["Ncm","N·cm",0.01]];
+    var val=document.getElementById('val'),from=document.getElementById('from'),to=document.getElementById('to'),
+        out=document.getElementById('out'),all=document.getElementById('all'),
+        convBtn=document.getElementById('convBtn'),swapBtn=document.getElementById('swapBtn');
+    from.value='Nm';to.value='lbf-ft';
+    function f(k){for(var i=0;i<U.length;i++){if(U[i][0]===k)return U[i][2];}return 1;}
+    function name(k){for(var i=0;i<U.length;i++){if(U[i][0]===k)return U[i][1];}return k;}
+    function fmt(x){if(!isFinite(x))return '—';var a=Math.abs(x);if(a!==0&&(a<0.000001||a>=1e12))return x.toExponential(6);return parseFloat(x.toPrecision(10)).toLocaleString(undefined,{maximumFractionDigits:10});}
+    function calc(){
+      var v=parseFloat(val.value);
+      if(isNaN(v)){out.className='result-box';out.textContent='Enter a number to convert.';all.innerHTML='';return;}
+      var base=v*f(from.value),r=base/f(to.value);
+      out.className='result-box';
+      out.innerHTML='<div style="font-size:1.7rem;font-weight:700;word-break:break-all">'+fmt(r)+'</div>'+
+        '<div style="opacity:.75;margin-top:4px">'+fmt(v)+' '+name(from.value)+' = '+fmt(r)+' '+name(to.value)+'</div>';
+      all.innerHTML='<div style="font-size:.92rem;font-weight:600;margin-bottom:8px">All units</div>'+U.map(function(u){var x=base/u[2];return '<div style="display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px solid var(--border);font-size:.9rem"><span style="opacity:.85">'+u[1]+'</span><strong style="word-break:break-all;text-align:right">'+fmt(x)+'</strong></div>';}).join('');
+    }
+    swapBtn.addEventListener('click',function(){var t=from.value;from.value=to.value;to.value=t;calc();});
+    [val,from,to].forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc);});
+    convBtn.addEventListener('click',calc);calc();
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

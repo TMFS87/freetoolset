@@ -1,0 +1,277 @@
+{
+ "map": {
+  "age-calculator": [
+   "age-calculator-guide.html",
+   "calculators-guide.html"
+  ],
+  "ai-product-description": [
+   "ai-product-description-conversion.html"
+  ],
+  "binary-text-converter": [
+   "binary-text-basics.html"
+  ],
+  "bmi-calculator": [
+   "bmi-health-guide.html",
+   "calculators-guide.html",
+   "privacy-local-tools.html"
+  ],
+  "percentage-calculator": [
+   "calculators-guide.html",
+   "percentage-in-life.html"
+  ],
+  "loan-calculator": [
+   "calculators-guide.html",
+   "loan-vs-mortgage.html"
+  ],
+  "mortgage-calculator": [
+   "calculators-guide.html",
+   "loan-vs-mortgage.html"
+  ],
+  "tip-calculator": [
+   "calculators-guide.html",
+   "discount-vs-tip.html"
+  ],
+  "discount-calculator": [
+   "calculators-guide.html",
+   "discount-vs-tip.html"
+  ],
+  "compound-interest-calculator": [
+   "calculators-guide.html",
+   "compound-interest-explained.html"
+  ],
+  "gpa-calculator": [
+   "calculators-guide.html"
+  ],
+  "calorie-calculator": [
+   "calculators-guide.html"
+  ],
+  "sales-tax-calculator": [
+   "calculators-guide.html"
+  ],
+  "salary-calculator": [
+   "calculators-guide.html",
+   "salary-vs-hourly.html"
+  ],
+  "fuel-cost-calculator": [
+   "calculators-guide.html"
+  ],
+  "roi-calculator": [
+   "calculators-guide.html",
+   "roi-explained.html"
+  ],
+  "date-difference-calculator": [
+   "calculators-guide.html"
+  ],
+  "unit-converter": [
+   "converters-guide.html",
+   "productivity-tools.html"
+  ],
+  "temperature-converter": [
+   "converters-guide.html",
+   "temperature-conversion.html"
+  ],
+  "length-converter": [
+   "converters-guide.html",
+   "length-conversion-tips.html"
+  ],
+  "weight-converter": [
+   "converters-guide.html"
+  ],
+  "speed-converter": [
+   "converters-guide.html"
+  ],
+  "area-converter": [
+   "converters-guide.html"
+  ],
+  "volume-converter": [
+   "converters-guide.html"
+  ],
+  "data-storage-converter": [
+   "converters-guide.html",
+   "data-storage-units.html"
+  ],
+  "time-unit-converter": [
+   "converters-guide.html"
+  ],
+  "roman-numeral-converter": [
+   "converters-guide.html",
+   "roman-numeral-basics.html"
+  ],
+  "password-generator": [
+   "create-strong-password.html",
+   "privacy-local-tools.html"
+  ],
+  "password-strength-checker": [
+   "create-strong-password.html"
+  ],
+  "cron-expression-generator": [
+   "cron-expression-guide.html",
+   "dev-tools-guide.html"
+  ],
+  "css-minifier": [
+   "css-minify-tips.html",
+   "dev-tools-guide.html"
+  ],
+  "html-minifier": [
+   "css-minify-tips.html",
+   "dev-tools-guide.html"
+  ],
+  "csv-to-json": [
+   "csv-json-convert.html",
+   "dev-tools-guide.html",
+   "productivity-tools.html"
+  ],
+  "json-to-csv": [
+   "csv-json-convert.html",
+   "dev-tools-guide.html"
+  ],
+  "html-encoder": [
+   "dev-tools-guide.html",
+   "privacy-local-tools.html"
+  ],
+  "json-minifier": [
+   "dev-tools-guide.html",
+   "privacy-local-tools.html"
+  ],
+  "markdown-to-html": [
+   "dev-tools-guide.html",
+   "markdown-to-html-guide.html"
+  ],
+  "jwt-decoder": [
+   "dev-tools-guide.html",
+   "jwt-explained.html",
+   "privacy-local-tools.html"
+  ],
+  "http-status-codes": [
+   "dev-tools-guide.html",
+   "http-status-codes.html"
+  ],
+  "image-compressor": [
+   "image-compression-guide.html"
+  ],
+  "image-to-base64": [
+   "image-compression-guide.html",
+   "what-is-base64.html"
+  ],
+  "json-formatter": [
+   "json-formatting-tips.html"
+  ],
+  "morse-code-translator": [
+   "morse-code-basics.html"
+  ],
+  "base-converter": [
+   "number-base-conversion.html"
+  ],
+  "number-to-words": [
+   "number-to-words-guide.html"
+  ],
+  "word-counter": [
+   "productivity-tools.html"
+  ],
+  "slug-generator": [
+   "productivity-tools.html",
+   "text-tools-guide.html"
+  ],
+  "timer": [
+   "productivity-tools.html"
+  ],
+  "stopwatch": [
+   "productivity-tools.html"
+  ],
+  "random-number-generator": [
+   "productivity-tools.html",
+   "random-number-use.html"
+  ],
+  "find-and-replace": [
+   "productivity-tools.html",
+   "text-tools-guide.html"
+  ],
+  "qr-code-generator": [
+   "qr-code-use-cases.html"
+  ],
+  "regex-tester": [
+   "regex-for-beginners.html"
+  ],
+  "reverse-text": [
+   "reverse-text-fun.html",
+   "text-tools-guide.html"
+  ],
+  "ai-seo-meta-generator": [
+   "seo-meta-tags-guide.html"
+  ],
+  "text-case-converter": [
+   "text-case-naming.html"
+  ],
+  "text-repeater": [
+   "text-tools-guide.html"
+  ],
+  "remove-line-breaks": [
+   "text-tools-guide.html"
+  ],
+  "whitespace-remover": [
+   "text-tools-guide.html"
+  ],
+  "text-to-speech": [
+   "text-tools-guide.html"
+  ],
+  "fancy-text-generator": [
+   "text-tools-guide.html"
+  ],
+  "uuid-generator": [
+   "understanding-uuid.html"
+  ],
+  "timestamp-converter": [
+   "unix-timestamp-guide.html"
+  ],
+  "url-encoder": [
+   "url-encoding-explained.html"
+  ],
+  "base64-encoder": [
+   "what-is-base64.html"
+  ]
+ },
+ "btitle": {
+  "age-calculator-guide.html": "年龄计算器：精确到天的纪念",
+  "ai-product-description-conversion.html": "用 AI 写商品描述：提升详情页转化的实战方法",
+  "binary-text-basics.html": "二进制与文本：字符编码入门",
+  "bmi-health-guide.html": "BMI 怎么算才准：分级、误区与实例",
+  "calculators-guide.html": "15 个必备在线计算器：从 BMI 到 ROI 一站搞定",
+  "compound-interest-explained.html": "复利的力量：一张表看懂利滚利",
+  "converters-guide.html": "单位换算完全指南：长度、重量、温度与数据存储",
+  "create-strong-password.html": "如何生成强密码：从长度到熵值的完整指南",
+  "cron-expression-guide.html": "Cron 表达式详解：定时任务排期",
+  "css-minify-tips.html": "CSS 压缩与优化：提速网页加载",
+  "csv-json-convert.html": "CSV 与 JSON 互转：表格数据搬家风",
+  "data-storage-units.html": "KB/MB/GB/TB：存储单位到底差多少",
+  "dev-tools-guide.html": "开发者必备的 10 个在线工具",
+  "discount-vs-tip.html": "折扣与小费：购物用餐别算错",
+  "http-status-codes.html": "HTTP 状态码速查：从 200 到 500",
+  "image-compression-guide.html": "图片压缩不损质：网页提速的实用方法",
+  "json-formatting-tips.html": "JSON 格式化与校验：开发者必备的 5 个技巧",
+  "jwt-explained.html": "JWT 是什么：令牌结构与安全要点",
+  "length-conversion-tips.html": "长度单位换算技巧：米、英尺与英寸",
+  "loan-vs-mortgage.html": "贷款与房贷计算：月供、利息一次搞懂",
+  "markdown-to-html-guide.html": "Markdown 转 HTML：写作与发布的桥梁",
+  "morse-code-basics.html": "摩斯密码入门：滴答之间传信息",
+  "number-base-conversion.html": "进制转换详解：二进制、八进制、十进制与十六进制",
+  "number-to-words-guide.html": "数字转中文大写：财务写作必会",
+  "percentage-in-life.html": "百分比在生活中的 8 个用法",
+  "privacy-local-tools.html": "免费工具如何保护隐私：本地计算的真相",
+  "productivity-tools.html": "提升效率的 10 个免费在线工具",
+  "qr-code-use-cases.html": "二维码生成的常见用途与最佳实践",
+  "random-number-use.html": "随机数的用途：从抽签到验证码",
+  "regex-for-beginners.html": "正则表达式入门：30 分钟看懂匹配、分组与在线测试",
+  "reverse-text-fun.html": "把文字反过来：回文与隐藏彩蛋",
+  "roi-explained.html": "ROI 是什么：投资回报率计算与决策",
+  "roman-numeral-basics.html": "罗马数字怎么读：从时钟到页码",
+  "salary-vs-hourly.html": "月薪时薪怎么算：换工作的账",
+  "seo-meta-tags-guide.html": "SEO Meta 标签优化：标题与描述怎么写才被点",
+  "temperature-conversion.html": "摄氏度华氏度怎么换：公式与速算",
+  "text-case-naming.html": "大小写与命名规范：camelCase 到 kebab",
+  "text-tools-guide.html": "文本处理工具大全：清洗、转换与排版一键完成",
+  "understanding-uuid.html": "UUID 是什么？v4 随机标识符的生成与应用",
+  "unix-timestamp-guide.html": "Unix 时间戳转换完全指南：秒、毫秒与日期互转",
+  "url-encoding-explained.html": "URL 编码原理：为什么网址里的中文会变成 %E4%...",
+  "what-is-base64.html": "Base64 是什么？一文讲清编码原理与常见用途"
+ }
+}

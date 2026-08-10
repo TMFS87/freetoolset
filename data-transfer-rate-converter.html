@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Transfer Rate Converter — bps, kbps, Mbps, Gbps, KB/s, MB/s | FreeToolset</title>
+  <meta name="description" content="Convert network and data-transfer speeds between bit-based (bps, Mbps, Gbps) and byte-based (KB/s, MB/s, GB/s) units.">
+  <meta name="keywords" content="data transfer rate converter, bandwidth converter, mbps to mb/s, gbps converter, internet speed">
+  <meta property="og:title" content="Data Transfer Rate Converter — FreeToolset">
+  <meta property="og:description" content="Convert network and data-transfer speeds between bit-based (bps, Mbps, Gbps) and byte-based (KB/s, MB/s, GB/s) units.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/data-transfer-rate-converter.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/data-transfer-rate-converter.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Data Transfer Rate Converter — FreeToolset">
+  <meta name="twitter:description" content="Convert network and data-transfer speeds between bit-based (bps, Mbps, Gbps) and byte-based (KB/s, MB/s, GB/s) units.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Data Transfer Rate Converter — bps, kbps, Mbps, Gbps, KB/s, MB/s","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/data-transfer-rate-converter.html","description":"Convert network and data-transfer speeds between bit-based (bps, Mbps, Gbps) and byte-based (KB/s, MB/s, GB/s) units.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why is 100 Mbps only ~12.5 MB/s?","acceptedAnswer":{"@type":"Answer","text":"ISPs quote bits per second (Mbps) while download managers show bytes per second (MB/s). Since 1 byte = 8 bits, divide the Mbps number by 8 to get MB/s."}},{"@type":"Question","name":"Does this use 1000 or 1024?","acceptedAnswer":{"@type":"Answer","text":"Network speeds use decimal (1000) factors: 1 Mbps = 1,000,000 bit/s. Storage tools sometimes use 1024, but transfer rates follow the decimal convention."}},{"@type":"Question","name":"What is a good home internet speed?","acceptedAnswer":{"@type":"Answer","text":"Roughly 25+ Mbps supports HD streaming; 100+ Mbps is comfortable for multiple 4K streams and video calls simultaneously."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Converter","item":"https://www.freetoolset.app/converters.html"},{"@type":"ListItem","position":3,"name":"Data Transfer Rate Converter","item":"https://www.freetoolset.app/data-transfer-rate-converter.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>数据传输速率转换器在比特单位（bps、Mbps、Gbps）和字节单位（KB/s、MB/s、GB/s）之间换算。注意 1 字节 = 8 比特，所以 100 Mbps 约等于 12.5 MB/s。常用来核对宽带、下载和接口速度。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="converters.html">Converter</a>
+      <span class="separator">/</span>
+      <span class="current">Data Transfer Rate Converter</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>📶 Data Transfer Rate Converter</h1>
+      <p>Convert network and data-transfer speeds between bit-based (bps, Mbps, Gbps) and byte-based (KB/s, MB/s, GB/s) units.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="form-row">
+          <label for="val">Value</label>
+          <input type="number" id="val" value="100" step="any">
+        </div>
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="from">From</label>
+            <select id="from"><option value="bps">bit/s</option><option value="kbps">kbit/s</option><option value="Mbps">Mbit/s</option><option value="Gbps">Gbit/s</option><option value="Bps">Byte/s</option><option value="KBps">KB/s</option><option value="MBps">MB/s</option><option value="GBps">GB/s</option></select>
+          </div>
+          <div class="form-row">
+            <label for="to">To</label>
+            <select id="to"><option value="bps">bit/s</option><option value="kbps">kbit/s</option><option value="Mbps">Mbit/s</option><option value="Gbps">Gbit/s</option><option value="Bps">Byte/s</option><option value="KBps">KB/s</option><option value="MBps">MB/s</option><option value="GBps">GB/s</option></select>
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="convBtn">Convert</button>
+          <button class="btn btn-secondary" id="swapBtn">⇅ Swap</button>
+        </div>
+        <div id="out"></div>
+        <div id="all" style="margin-top:18px"></div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Enter the speed value.</li>
+            <li>Pick the source unit (e.g. Mbps).</li>
+            <li>Pick the target unit (e.g. MB/s).</li>
+            <li>Read the result and the full unit table.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>Why is 100 Mbps only ~12.5 MB/s?</summary>
+            <p>ISPs quote bits per second (Mbps) while download managers show bytes per second (MB/s). Since 1 byte = 8 bits, divide the Mbps number by 8 to get MB/s.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Does this use 1000 or 1024?</summary>
+            <p>Network speeds use decimal (1000) factors: 1 Mbps = 1,000,000 bit/s. Storage tools sometimes use 1024, but transfer rates follow the decimal convention.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What is a good home internet speed?</summary>
+            <p>Roughly 25+ Mbps supports HD streaming; 100+ Mbps is comfortable for multiple 4K streams and video calls simultaneously.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>为什么 100 Mbps 只有约 12.5 MB/s？</summary>
+            <p>运营商标的是“比特/秒”（Mbps），而下载工具显示“字节/秒”（MB/s）。1 字节 = 8 比特，所以把 Mbps 除以 8 才是 MB/s。</p>
+          </details>
+          <details class="faq-item">
+            <summary>这里用 1000 还是 1024？</summary>
+            <p>网络速率采用十进制（1000）：1 Mbps = 1,000,000 bit/s。存储单位有时用 1024，但传输速率按十进制。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🌐</div>
+              <div class="uc-content">
+                <h4>ISP plans</h4>
+                <p>Compare Mbps offers.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">⬇️</div>
+              <div class="uc-content">
+                <h4>Downloads</h4>
+                <p>Convert to MB/s.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🔌</div>
+              <div class="uc-content">
+                <h4>Interfaces</h4>
+                <p>USB/Ethernet rates.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="unit-converter.html" class="related-tool-card">
+              <span class="rt-icon">📐</span>
+              <span class="rt-name">Unit Converter</span>
+            </a>
+            <a href="temperature-converter.html" class="related-tool-card">
+              <span class="rt-icon">🌡️</span>
+              <span class="rt-name">Temperature Converter</span>
+            </a>
+            <a href="length-converter.html" class="related-tool-card">
+              <span class="rt-icon">📏</span>
+              <span class="rt-name">Length Converter</span>
+            </a>
+            <a href="weight-converter.html" class="related-tool-card">
+              <span class="rt-icon">⚖️</span>
+              <span class="rt-name">Weight Converter</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Data Transfer Rate Converter</h2>
+    <h3>比特 vs 字节</h3>
+    <p>网络带宽几乎都用“比特每秒”（bit/s, bps）表示，而文件大小用“字节”（Byte, B），1 字节 = 8 比特。因此 100 Mbps 的宽带，理论最大下载速度约 12.5 MB/s。</p>
+    <h3>十进制换算</h3>
+    <p>传输速率遵循十进制：1 kbps = 1,000 bit/s，1 Mbps = 1,000,000 bit/s，1 Gbps = 10^9 bit/s。</p>
+    <h3>常见参考</h3>
+    <li>4G 峰值：约 100 Mbps</li>
+    <li>千兆宽带：1000 Mbps = 1 Gbps ≈ 125 MB/s</li>
+    <li>Wi-Fi 6：理论 9.6 Gbps</li>
+    <h3>注意</h3>
+    <li>实际速度受线路、拥塞、协议开销影响，低于理论值</li>
+    <li>结果仅供参考</li>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var U=[["bps","bit/s",1],["kbps","kbit/s",1000],["Mbps","Mbit/s",1000000],["Gbps","Gbit/s",1000000000],["Bps","Byte/s",8],["KBps","KB/s",8000],["MBps","MB/s",8000000],["GBps","GB/s",8000000000]];
+    var val=document.getElementById('val'),from=document.getElementById('from'),to=document.getElementById('to'),
+        out=document.getElementById('out'),all=document.getElementById('all'),
+        convBtn=document.getElementById('convBtn'),swapBtn=document.getElementById('swapBtn');
+    from.value='Mbps';to.value='MBps';
+    function f(k){for(var i=0;i<U.length;i++){if(U[i][0]===k)return U[i][2];}return 1;}
+    function name(k){for(var i=0;i<U.length;i++){if(U[i][0]===k)return U[i][1];}return k;}
+    function fmt(x){if(!isFinite(x))return '—';var a=Math.abs(x);if(a!==0&&(a<0.000001||a>=1e12))return x.toExponential(6);return parseFloat(x.toPrecision(10)).toLocaleString(undefined,{maximumFractionDigits:10});}
+    function calc(){
+      var v=parseFloat(val.value);
+      if(isNaN(v)){out.className='result-box';out.textContent='Enter a number to convert.';all.innerHTML='';return;}
+      var base=v*f(from.value),r=base/f(to.value);
+      out.className='result-box';
+      out.innerHTML='<div style="font-size:1.7rem;font-weight:700;word-break:break-all">'+fmt(r)+'</div>'+
+        '<div style="opacity:.75;margin-top:4px">'+fmt(v)+' '+name(from.value)+' = '+fmt(r)+' '+name(to.value)+'</div>';
+      all.innerHTML='<div style="font-size:.92rem;font-weight:600;margin-bottom:8px">All units</div>'+U.map(function(u){var x=base/u[2];return '<div style="display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px solid var(--border);font-size:.9rem"><span style="opacity:.85">'+u[1]+'</span><strong style="word-break:break-all;text-align:right">'+fmt(x)+'</strong></div>';}).join('');
+    }
+    swapBtn.addEventListener('click',function(){var t=from.value;from.value=to.value;to.value=t;calc();});
+    [val,from,to].forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc);});
+    convBtn.addEventListener('click',calc);calc();
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

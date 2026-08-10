@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Energy Converter — Joule, Calorie, kWh, BTU &amp; More | FreeToolset</title>
+  <meta name="description" content="Convert energy units including joule, kilojoule, calorie, kilocalorie, watt-hour, kilowatt-hour, BTU and electronvolt.">
+  <meta name="keywords" content="energy converter, joules to calories, kwh to joules, btu converter, kj to kcal, energy unit conversion">
+  <meta property="og:title" content="Energy Converter — FreeToolset">
+  <meta property="og:description" content="Convert energy units including joule, kilojoule, calorie, kilocalorie, watt-hour, kilowatt-hour, BTU and electronvolt.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/energy-converter.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/energy-converter.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Energy Converter — FreeToolset">
+  <meta name="twitter:description" content="Convert energy units including joule, kilojoule, calorie, kilocalorie, watt-hour, kilowatt-hour, BTU and electronvolt.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Energy Converter — Joule, Calorie, kWh, BTU & More","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/energy-converter.html","description":"Convert energy units including joule, kilojoule, calorie, kilocalorie, watt-hour, kilowatt-hour, BTU and electronvolt.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is a food calorie the same as a calorie?","acceptedAnswer":{"@type":"Answer","text":"No. The \"calorie\" on nutrition labels is actually a kilocalorie (kcal) — 1000 small calories. A 500 kcal meal is 500,000 calories in physics terms."}},{"@type":"Question","name":"How many joules in 1 kWh?","acceptedAnswer":{"@type":"Answer","text":"1 kilowatt-hour = 3,600,000 joules (3.6 MJ). That is one kilowatt sustained for one hour."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Converter","item":"https://www.freetoolset.app/converters.html"},{"@type":"ListItem","position":3,"name":"Energy Converter","item":"https://www.freetoolset.app/energy-converter.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>能量单位换算器支持焦耳、千焦、卡路里、千卡、瓦时、千瓦时、英热单位（BTU）、电子伏特等单位互转，食品热量、电费用电量、暖通制冷都用得上。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="converters.html">Converter</a>
+      <span class="separator">/</span>
+      <span class="current">Energy Converter</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>⚡ Energy Converter</h1>
+      <p>Convert energy units including joule, kilojoule, calorie, kilocalorie, watt-hour, kilowatt-hour, BTU and electronvolt.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="form-row">
+          <label for="val">Value</label>
+          <input type="number" id="val" value="1500" step="any">
+        </div>
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="from">From</label>
+            <select id="from"><option value="j">Joule (J)</option><option value="kj">Kilojoule (kJ)</option><option value="mj">Megajoule (MJ)</option><option value="cal">Calorie (cal)</option><option value="kcal">Kilocalorie / food Calorie (kcal)</option><option value="wh">Watt-hour (Wh)</option><option value="kwh">Kilowatt-hour (kWh)</option><option value="btu">British thermal unit (BTU)</option><option value="ftlb">Foot-pound (ft·lb)</option><option value="ev">Electronvolt (eV)</option><option value="therm">Therm</option></select>
+          </div>
+          <div class="form-row">
+            <label for="to">To</label>
+            <select id="to"><option value="j">Joule (J)</option><option value="kj">Kilojoule (kJ)</option><option value="mj">Megajoule (MJ)</option><option value="cal">Calorie (cal)</option><option value="kcal">Kilocalorie / food Calorie (kcal)</option><option value="wh">Watt-hour (Wh)</option><option value="kwh">Kilowatt-hour (kWh)</option><option value="btu">British thermal unit (BTU)</option><option value="ftlb">Foot-pound (ft·lb)</option><option value="ev">Electronvolt (eV)</option><option value="therm">Therm</option></select>
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="convBtn">Convert</button>
+          <button class="btn btn-secondary" id="swapBtn">⇅ Swap</button>
+        </div>
+        <div id="out"></div>
+        <div id="all" style="margin-top:18px"></div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Enter the energy value.</li>
+            <li>Choose source and target units.</li>
+            <li>Read the converted result instantly.</li>
+            <li>Check the full list below for all units at once.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>Is a food calorie the same as a calorie?</summary>
+            <p>No. The &quot;calorie&quot; on nutrition labels is actually a kilocalorie (kcal) — 1000 small calories. A 500 kcal meal is 500,000 calories in physics terms.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How many joules in 1 kWh?</summary>
+            <p>1 kilowatt-hour = 3,600,000 joules (3.6 MJ). That is one kilowatt sustained for one hour.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>食品上的「卡路里」和物理里的卡一样吗？</summary>
+            <p>不一样。营养标签上的「卡路里」实际是千卡（kcal），等于 1000 小卡。一份 500 大卡的餐食，在物理单位下是 500000 卡。</p>
+          </details>
+          <details class="faq-item">
+            <summary>1 度电等于多少焦耳？</summary>
+            <p>1 千瓦时（1 度电）= 3,600,000 焦耳 = 3.6 兆焦，即 1 千瓦功率持续工作 1 小时的能量。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🍔</div>
+              <div class="uc-content">
+                <h4>Nutrition</h4>
+                <p>Convert kJ on labels to kcal.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🔌</div>
+              <div class="uc-content">
+                <h4>Electricity</h4>
+                <p>Relate kWh on your bill to joules.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">❄️</div>
+              <div class="uc-content">
+                <h4>HVAC</h4>
+                <p>Work with BTU ratings.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="unit-converter.html" class="related-tool-card">
+              <span class="rt-icon">📐</span>
+              <span class="rt-name">Unit Converter</span>
+            </a>
+            <a href="temperature-converter.html" class="related-tool-card">
+              <span class="rt-icon">🌡️</span>
+              <span class="rt-name">Temperature Converter</span>
+            </a>
+            <a href="length-converter.html" class="related-tool-card">
+              <span class="rt-icon">📏</span>
+              <span class="rt-name">Length Converter</span>
+            </a>
+            <a href="weight-converter.html" class="related-tool-card">
+              <span class="rt-icon">⚖️</span>
+              <span class="rt-name">Weight Converter</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Energy Converter</h2>
+    <h3>能量的国际单位</h3>
+    <p>焦耳（J）是能量的国际标准单位，定义为一牛顿的力作用一米距离所做的功。所有其他能量单位都可以换算成焦耳。</p>
+    <h3>各领域常用单位</h3>
+    <li>**食品营养**：千卡（kcal）和千焦（kJ），1 kcal = 4.184 kJ</li>
+    <li>**电力**：千瓦时（kWh），1 kWh = 3.6 MJ</li>
+    <li>**暖通空调**：英热单位（BTU），1 BTU ≈ 1055 J</li>
+    <li>**微观物理**：电子伏特（eV），1 eV ≈ 1.602×10⁻¹⁹ J</li>
+    <h3>一个实用换算</h3>
+    <p>某食品标注每 100g 含 1500 kJ。换算成千卡：1500 ÷ 4.184 ≈ 358 kcal。中国营养标签通常直接标千焦，习惯看千卡的人需要除以 4.184。</p>
+    <h3>空调 BTU 的含义</h3>
+    <p>空调「制冷量 12000 BTU/h」约等于 3.5 kW，也就是俗称的「1.5 匹」。BTU 是每小时能量，换算时注意区分能量和功率。</p>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var U=[["j","Joule (J)",1],["kj","Kilojoule (kJ)",1000],["mj","Megajoule (MJ)",1000000],["cal","Calorie (cal)",4.184],["kcal","Kilocalorie / food Calorie (kcal)",4184],["wh","Watt-hour (Wh)",3600],["kwh","Kilowatt-hour (kWh)",3600000],["btu","British thermal unit (BTU)",1055.05585262],["ftlb","Foot-pound (ft·lb)",1.3558179483],["ev","Electronvolt (eV)",1.602176634e-19],["therm","Therm",105505585.262]];
+    var val=document.getElementById('val'),from=document.getElementById('from'),to=document.getElementById('to'),
+        out=document.getElementById('out'),all=document.getElementById('all'),
+        convBtn=document.getElementById('convBtn'),swapBtn=document.getElementById('swapBtn');
+    from.value='kj';to.value='kcal';
+    function f(k){for(var i=0;i<U.length;i++){if(U[i][0]===k)return U[i][2];}return 1;}
+    function name(k){for(var i=0;i<U.length;i++){if(U[i][0]===k)return U[i][1];}return k;}
+    function fmt(x){
+      if(!isFinite(x))return '—';
+      var a=Math.abs(x);
+      if(a!==0&&(a<0.000001||a>=1e12))return x.toExponential(6);
+      return parseFloat(x.toPrecision(10)).toLocaleString(undefined,{maximumFractionDigits:10});
+    }
+    function calc(){
+      var v=parseFloat(val.value);
+      if(isNaN(v)){out.className='result-box';out.textContent='Enter a number to convert.';all.innerHTML='';return;}
+      var base=v*f(from.value);
+      var r=base/f(to.value);
+      out.className='result-box';
+      out.innerHTML='<div style="font-size:1.7rem;font-weight:700;word-break:break-all">'+fmt(r)+'</div>'+
+        '<div style="opacity:.75;margin-top:4px">'+fmt(v)+' '+name(from.value)+' = '+fmt(r)+' '+name(to.value)+'</div>';
+      all.innerHTML='<div style="font-size:.92rem;font-weight:600;margin-bottom:8px">All units</div>'+
+        U.map(function(u){
+          var x=base/u[2];
+          return '<div style="display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px solid var(--border);font-size:.9rem">'+
+            '<span style="opacity:.85">'+u[1]+'</span><strong style="word-break:break-all;text-align:right">'+fmt(x)+'</strong></div>';
+        }).join('');
+    }
+    swapBtn.addEventListener('click',function(){var t=from.value;from.value=to.value;to.value=t;calc();});
+    [val,from,to].forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc);});
+    convBtn.addEventListener('click',calc);calc();
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

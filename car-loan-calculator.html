@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Loan Calculator — Auto Loan Monthly Payment &amp; Interest | FreeToolset</title>
+  <meta name="description" content="Calculate your car loan monthly payment, total interest and full cost including down payment, trade-in value and optional sales tax.">
+  <meta name="keywords" content="car loan calculator, auto loan calculator, car payment calculator, vehicle finance, monthly car payment">
+  <meta property="og:title" content="Car Loan Calculator — FreeToolset">
+  <meta property="og:description" content="Calculate your car loan monthly payment, total interest and full cost including down payment, trade-in value and optional sales tax.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/car-loan-calculator.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/car-loan-calculator.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Car Loan Calculator — FreeToolset">
+  <meta name="twitter:description" content="Calculate your car loan monthly payment, total interest and full cost including down payment, trade-in value and optional sales tax.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Car Loan Calculator — Auto Loan Monthly Payment & Interest","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/car-loan-calculator.html","description":"Calculate your car loan monthly payment, total interest and full cost including down payment, trade-in value and optional sales tax.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does a longer term save money?","acceptedAnswer":{"@type":"Answer","text":"It lowers the monthly payment but increases total interest. A 7-year loan can cost thousands more than a 4-year loan on the same car."}},{"@type":"Question","name":"Should I include sales tax in the loan?","acceptedAnswer":{"@type":"Answer","text":"Many buyers do finance the tax. This calculator lets you add a tax rate so the monthly figure reflects what you will actually pay."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Calculator","item":"https://www.freetoolset.app/calculators.html"},{"@type":"ListItem","position":3,"name":"Car Loan Calculator","item":"https://www.freetoolset.app/car-loan-calculator.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>车贷计算器根据车价、首付、置换抵扣、贷款年限和年利率，算出每月还款额、利息总额和购车总成本，帮你在签合同前看清真实花费。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="calculators.html">Calculator</a>
+      <span class="separator">/</span>
+      <span class="current">Car Loan Calculator</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>🚗 Car Loan Calculator</h1>
+      <p>Calculate your car loan monthly payment, total interest and full cost including down payment, trade-in value and optional sales tax.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="price">Vehicle price</label>
+            <input type="number" id="price" value="200000" min="0" step="1000">
+          </div>
+          <div class="form-row">
+            <label for="down">Down payment</label>
+            <input type="number" id="down" value="60000" min="0" step="1000">
+          </div>
+        </div>
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="trade">Trade-in value</label>
+            <input type="number" id="trade" value="0" min="0" step="1000">
+          </div>
+          <div class="form-row">
+            <label for="tax">Sales tax (%)</label>
+            <input type="number" id="tax" value="0" min="0" max="30" step="0.1">
+          </div>
+        </div>
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="years">Loan term (years)</label>
+            <input type="number" id="years" value="5" min="1" max="10">
+          </div>
+          <div class="form-row">
+            <label for="rate">Annual rate (%)</label>
+            <input type="number" id="rate" value="5" min="0" max="30" step="0.01">
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="calcBtn">Calculate</button>
+        </div>
+        <div id="out"></div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Enter the vehicle price.</li>
+            <li>Add your down payment and any trade-in value.</li>
+            <li>Set the loan term and annual interest rate.</li>
+            <li>Click Calculate to see the monthly payment breakdown.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>Does a longer term save money?</summary>
+            <p>It lowers the monthly payment but increases total interest. A 7-year loan can cost thousands more than a 4-year loan on the same car.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Should I include sales tax in the loan?</summary>
+            <p>Many buyers do finance the tax. This calculator lets you add a tax rate so the monthly figure reflects what you will actually pay.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>贷款年限越长越划算吗？</summary>
+            <p>年限拉长会降低月供，但利息总额显著增加。同一辆车做 7 年贷比 4 年贷可能多付好几万利息。</p>
+          </details>
+          <details class="faq-item">
+            <summary>4S 店说的「零利率」是真的吗？</summary>
+            <p>通常需要放弃现金优惠或搭售保险、装潢来抵消，实际综合成本未必更低。建议用本工具把两种方案的总支出都算出来对比。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🏷️</div>
+              <div class="uc-content">
+                <h4>Budget Check</h4>
+                <p>See if the monthly payment fits your income.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">⚖️</div>
+              <div class="uc-content">
+                <h4>Compare Terms</h4>
+                <p>Weigh 3-year vs 5-year total cost.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🤝</div>
+              <div class="uc-content">
+                <h4>Negotiate</h4>
+                <p>Know the real numbers before the dealership.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="bmi-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏋️</span>
+              <span class="rt-name">BMI Calculator</span>
+            </a>
+            <a href="age-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🎂</span>
+              <span class="rt-name">Age Calculator</span>
+            </a>
+            <a href="percentage-calculator.html" class="related-tool-card">
+              <span class="rt-icon">➗</span>
+              <span class="rt-name">Percentage Calculator</span>
+            </a>
+            <a href="loan-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏦</span>
+              <span class="rt-name">Loan Calculator</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Car Loan Calculator</h2>
+    <h3>车贷月供是怎么算的</h3>
+    <p>车贷属于等额本息分期贷款，月供公式为 M = P × r × (1+r)^n ÷ [(1+r)^n − 1]，其中 P 是贷款本金（车价 − 首付 − 置换抵扣 + 税费），r 是月利率（年利率 ÷ 12），n 是总月数。</p>
+    <h3>一个真实例子</h3>
+    <p>车价 20 万，首付 6 万，贷款 14 万，年利率 5%，期限 5 年：月供约 2642 元，利息总额约 1.85 万元，总支出约 21.85 万元。若期限改为 3 年，月供升至约 4196 元，但利息降到约 1.1 万元，省下约 7500 元。</p>
+    <h3>容易被忽略的成本</h3>
+    <li>手续费、GPS 费、服务费等一次性费用</li>
+    <li>全险要求：贷款期内通常强制购买全险</li>
+    <li>提前还款违约金：部分合同收取剩余本金的 1%–3%</li>
+    <h3>关于「月费率」的陷阱</h3>
+    <p>销售常报「月费率 0.3%」，听起来很低，但那是按原始本金算的，实际年化利率接近 6.5%，是名义值的两倍多。签约前务必要求提供年化利率（APR）书面说明。</p>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var ids=['price','down','trade','tax','years','rate'],el={};ids.forEach(function(i){el[i]=document.getElementById(i);});
+    var out=document.getElementById('out'),btn=document.getElementById('calcBtn');
+    function n(x){return (Math.round(x*100)/100).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});}
+    function calc(){
+      var P=+el.price.value||0,D=+el.down.value||0,TR=+el.trade.value||0,TX=+el.tax.value||0,Y=+el.years.value||1,R=+el.rate.value||0;
+      var taxAmt=P*TX/100, principal=P+taxAmt-D-TR;
+      if(principal<=0){out.className='result-box';out.textContent='No financing needed — down payment covers the price.';return;}
+      var mr=R/100/12,nm=Y*12,m;
+      m = mr===0 ? principal/nm : principal*mr*Math.pow(1+mr,nm)/(Math.pow(1+mr,nm)-1);
+      var total=m*nm, interest=total-principal;
+      function row(a,b){return '<div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border)"><span>'+a+'</span><strong>'+b+'</strong></div>';}
+      out.className='result-box';
+      out.innerHTML='<div style="font-size:1.7rem;font-weight:700;margin-bottom:4px">'+n(m)+' / month</div>'+
+        '<div style="opacity:.75;margin-bottom:14px">for '+nm+' months</div>'+
+        row('Amount financed',n(principal))+
+        (taxAmt>0?row('Sales tax included',n(taxAmt)):'')+
+        row('Total interest',n(interest))+
+        row('Total of payments',n(total))+
+        row('Total cost (incl. down payment)',n(total+D+TR));
+    }
+    btn.addEventListener('click',calc);calc();
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Username Generator — Get name ideas instantly | FreeToolset</title>
+  <meta name="description" content="Generate random, available-feeling usernames by mixing adjectives, nouns and numbers. Great for gaming tags, alt accounts and brainstorming.">
+  <meta name="keywords" content="random username generator, username ideas, gamertag generator, nickname generator, handle generator">
+  <meta property="og:title" content="Random Username Generator — FreeToolset">
+  <meta property="og:description" content="Generate random, available-feeling usernames by mixing adjectives, nouns and numbers. Great for gaming tags, alt accounts and brainstorming.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/random-username-generator.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/random-username-generator.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Random Username Generator — FreeToolset">
+  <meta name="twitter:description" content="Generate random, available-feeling usernames by mixing adjectives, nouns and numbers. Great for gaming tags, alt accounts and brainstorming.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Random Username Generator — Get name ideas instantly","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/random-username-generator.html","description":"Generate random, available-feeling usernames by mixing adjectives, nouns and numbers. Great for gaming tags, alt accounts and brainstorming.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are these usernames guaranteed available?","acceptedAnswer":{"@type":"Answer","text":"No — the tool only creates combinations; you still need to check availability on the specific platform."}},{"@type":"Question","name":"Can I make them longer or add numbers?","acceptedAnswer":{"@type":"Answer","text":"Each generated name already appends a random number by default. Generate again for variety."}},{"@type":"Question","name":"Is this useful for branding?","acceptedAnswer":{"@type":"Answer","text":"It is a good brainstorming start, but for a real brand you should check trademarks and domain availability too."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Fun","item":"https://www.freetoolset.app/fun-tools.html"},{"@type":"ListItem","position":3,"name":"Random Username Generator","item":"https://www.freetoolset.app/random-username-generator.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>随机用户名生成器把形容词、名词和数字随机组合，生成一堆可用的用户名点子，适合游戏 ID、小号、品牌昵称或起名灵感。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="fun-tools.html">Fun</a>
+      <span class="separator">/</span>
+      <span class="current">Random Username Generator</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>🎲 Random Username Generator</h1>
+      <p>Generate random, available-feeling usernames by mixing adjectives, nouns and numbers. Great for gaming tags, alt accounts and brainstorming.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="num">How many</label>
+            <input type="number" id="num" value="8" min="1" max="20">
+          </div>
+          <div class="form-row">
+            <label for="len">Max number digits</label>
+            <input type="number" id="len" value="3" min="0" max="6">
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="btn">Generate</button>
+        </div>
+        <div id="out"></div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Click Generate.</li>
+            <li>Pick a username you like.</li>
+            <li>Click it to copy.</li>
+            <li>Tweak the style with the options if available.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>Are these usernames guaranteed available?</summary>
+            <p>No — the tool only creates combinations; you still need to check availability on the specific platform.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can I make them longer or add numbers?</summary>
+            <p>Each generated name already appends a random number by default. Generate again for variety.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is this useful for branding?</summary>
+            <p>It is a good brainstorming start, but for a real brand you should check trademarks and domain availability too.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>这些用户名保证可用吗？</summary>
+            <p>不保证。工具只负责生成组合，具体是否可用还需在对应平台查询。</p>
+          </details>
+          <details class="faq-item">
+            <summary>能加长或加数字吗？</summary>
+            <p>默认每个名字都会带一个随机数字；再点一次生成可得到更多变化。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🎮</div>
+              <div class="uc-content">
+                <h4>Gaming</h4>
+                <p>Fresh gamertags.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">📱</div>
+              <div class="uc-content">
+                <h4>Social</h4>
+                <p>Alt handles.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">💡</div>
+              <div class="uc-content">
+                <h4>Ideas</h4>
+                <p>Brainstorm names.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="random-number-generator.html" class="related-tool-card">
+              <span class="rt-icon">🎲</span>
+              <span class="rt-name">Random Number Generator</span>
+            </a>
+            <a href="timer.html" class="related-tool-card">
+              <span class="rt-icon">⏱️</span>
+              <span class="rt-name">Online Countdown Timer</span>
+            </a>
+            <a href="stopwatch.html" class="related-tool-card">
+              <span class="rt-icon">⏱️</span>
+              <span class="rt-name">Online Stopwatch</span>
+            </a>
+            <a href="dice-roller.html" class="related-tool-card">
+              <span class="rt-icon">🎲</span>
+              <span class="rt-name">Dice Roller</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Random Username Generator</h2>
+    <h3>用途</h3>
+    <p>起名困难时，用“形容词 + 名词 + 数字”的组合快速产出一批候选用户名。</p>
+    <h3>小技巧</h3>
+    <li>多生成几次增加变化</li>
+    <li>选好后记得去目标平台查重</li>
+    <li>品牌用途还需查商标与域名</li>
+    <h3>隐私</h3>
+    <p>全部在浏览器本地随机生成，不上传。</p>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var num=document.getElementById('num'),len=document.getElementById('len'),out=document.getElementById('out'),btn=document.getElementById('btn');
+    var adj=['shadow','silent','crimson','lunar','frost','neon','iron','wild','cosmic','velvet','electric','midnight','golden','rapid','tiny','brave','hidden','lucky','calm','swift'];
+    var noun=['tiger','falcon','panda','comet','wolf','pixel','river','ember','otter','raven','maple','quartz','vortex','willow','cobra','sparrow','mango','nebula','cactus','breeze'];
+    function rnd(a){return a[Math.floor(Math.random()*a.length)];}
+    function gen(){
+      var n=Math.max(1,Math.min(20,parseInt(num.value)||8)),d=Math.max(0,Math.min(6,parseInt(len.value)||3)),html='';
+      for(var i=0;i<n;i++){var nm=rnd(adj)+'_'+rnd(noun);if(d>0)nm+=Math.floor(Math.random()*Math.pow(10,d));html+='<div class="copy-line" onclick="(function(){var t=document.createElement(\'textarea\');t.value=this.innerText;document.body.appendChild(t);t.select();document.execCommand(\'copy\');t.remove();})(this)" style="cursor:pointer;padding:10px 12px;background:var(--surface);border:1px solid var(--border);border-radius:8px;font-family:monospace;margin-bottom:6px">'+nm+' <span style="opacity:.5;font-size:.8rem">copy</span></div>';}
+      out.innerHTML=html;
+    }
+    btn.addEventListener('click',gen);gen();
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

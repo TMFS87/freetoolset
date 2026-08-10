@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Date Generator — Pick a random date in range | FreeToolset</title>
+  <meta name="description" content="Generate a random date between two dates (or within a year). Handy for giveaways, sampling, or just settling “which day”.">
+  <meta name="keywords" content="random date generator, random day, pick a date, date picker random, random calendar">
+  <meta property="og:title" content="Random Date Generator — FreeToolset">
+  <meta property="og:description" content="Generate a random date between two dates (or within a year). Handy for giveaways, sampling, or just settling “which day”.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/random-date-generator.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/random-date-generator.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Random Date Generator — FreeToolset">
+  <meta name="twitter:description" content="Generate a random date between two dates (or within a year). Handy for giveaways, sampling, or just settling “which day”.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Random Date Generator — Pick a random date in range","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/random-date-generator.html","description":"Generate a random date between two dates (or within a year). Handy for giveaways, sampling, or just settling “which day”.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I generate only weekdays?","acceptedAnswer":{"@type":"Answer","text":"This simple version picks any calendar day uniformly. For weekdays-only, just reroll if a weekend appears."}},{"@type":"Question","name":"What range can I use?","acceptedAnswer":{"@type":"Answer","text":"Any two dates; the start must be before the end. You can span years."}},{"@type":"Question","name":"Is it useful for giveaways?","acceptedAnswer":{"@type":"Answer","text":"Yes — picking a random date, then a random entry from that day, is a common fair-draw technique."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Fun","item":"https://www.freetoolset.app/fun-tools.html"},{"@type":"ListItem","position":3,"name":"Random Date Generator","item":"https://www.freetoolset.app/random-date-generator.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>随机日期生成器在指定起止日期（或某一年）之间随机抽一个日期，适合抽奖、抽样或“到底选哪天”的小决定。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="fun-tools.html">Fun</a>
+      <span class="separator">/</span>
+      <span class="current">Random Date Generator</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>📅 Random Date Generator</h1>
+      <p>Generate a random date between two dates (or within a year). Handy for giveaways, sampling, or just settling “which day”.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="start">Start date</label>
+            <input type="date" id="start" value="2026-01-01">
+          </div>
+          <div class="form-row">
+            <label for="end">End date</label>
+            <input type="date" id="end" value="2026-12-31">
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="btn">Generate</button>
+        </div>
+        <div id="out"></div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Set a start date.</li>
+            <li>Set an end date.</li>
+            <li>Click Generate.</li>
+            <li>Use the date or roll again.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>Can I generate only weekdays?</summary>
+            <p>This simple version picks any calendar day uniformly. For weekdays-only, just reroll if a weekend appears.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What range can I use?</summary>
+            <p>Any two dates; the start must be before the end. You can span years.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is it useful for giveaways?</summary>
+            <p>Yes — picking a random date, then a random entry from that day, is a common fair-draw technique.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>能只生成工作日吗？</summary>
+            <p>这个简易版对所有日历日均匀抽取；若只想工作日，抽到周末再点一次即可。</p>
+          </details>
+          <details class="faq-item">
+            <summary>能用什么范围？</summary>
+            <p>任意两个日期，开始须早于结束，可跨年。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🎁</div>
+              <div class="uc-content">
+                <h4>Giveaways</h4>
+                <p>Fair random draw.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">📊</div>
+              <div class="uc-content">
+                <h4>Sampling</h4>
+                <p>Pick a sample day.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🗓️</div>
+              <div class="uc-content">
+                <h4>Plan</h4>
+                <p>Decide a date.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="random-number-generator.html" class="related-tool-card">
+              <span class="rt-icon">🎲</span>
+              <span class="rt-name">Random Number Generator</span>
+            </a>
+            <a href="timer.html" class="related-tool-card">
+              <span class="rt-icon">⏱️</span>
+              <span class="rt-name">Online Countdown Timer</span>
+            </a>
+            <a href="stopwatch.html" class="related-tool-card">
+              <span class="rt-icon">⏱️</span>
+              <span class="rt-name">Online Stopwatch</span>
+            </a>
+            <a href="dice-roller.html" class="related-tool-card">
+              <span class="rt-icon">🎲</span>
+              <span class="rt-name">Dice Roller</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Random Date Generator</h2>
+    <h3>用途</h3>
+    <p>在两个日期之间均匀随机抽一天，常用于抽奖、抽样或做小决定。</p>
+    <h3>用法</h3>
+    <p>设好起止日期点生成；开始须早于结束。</p>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var start=document.getElementById('start'),end=document.getElementById('end'),out=document.getElementById('out'),btn=document.getElementById('btn');
+    function gen(){
+      var s=new Date(start.value),e=new Date(end.value);
+      if(isNaN(s)||isNaN(e)||s>=e){out.innerHTML='<div style="color:#ef4444">Start must be before end, both valid.</div>';return;}
+      var diff=e-s;var r=new Date(s.getTime()+Math.floor(Math.random()*diff));
+      var str=r.getFullYear()+'-'+('0'+(r.getMonth()+1)).slice(-2)+'-'+('0'+r.getDate()).slice(-2);
+      out.innerHTML='<div style="margin-top:14px;text-align:center;font-size:2rem;font-weight:800">'+str+'</div>';
+    }
+    btn.addEventListener('click',gen);gen();
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Base64 to Image — Decode base64 into an image | FreeToolset</title>
+  <meta name="description" content="Paste a base64 string (with or without the data: prefix) and preview the image, then download it. Decoding is local.">
+  <meta name="keywords" content="base64 to image, base64 image decoder, decode base64 image, data uri to image">
+  <meta property="og:title" content="Base64 to Image — FreeToolset">
+  <meta property="og:description" content="Paste a base64 string (with or without the data: prefix) and preview the image, then download it. Decoding is local.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/base64-to-image.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/base64-to-image.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Base64 to Image — FreeToolset">
+  <meta name="twitter:description" content="Paste a base64 string (with or without the data: prefix) and preview the image, then download it. Decoding is local.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Base64 to Image — Decode base64 into an image","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/base64-to-image.html","description":"Paste a base64 string (with or without the data: prefix) and preview the image, then download it. Decoding is local.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need the data: prefix?","acceptedAnswer":{"@type":"Answer","text":"No — paste either the raw base64 or a full data:image/png;base64,… URI; the tool detects both."}},{"@type":"Question","name":"What format is downloaded?","acceptedAnswer":{"@type":"Answer","text":"The extension is taken from the data URI mime type if present; otherwise it defaults to PNG."}},{"@type":"Question","name":"Is decoding private?","acceptedAnswer":{"@type":"Answer","text":"Yes — it runs entirely in your browser; nothing is uploaded."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Developer","item":"https://www.freetoolset.app/developer-tools.html"},{"@type":"ListItem","position":3,"name":"Base64 to Image","item":"https://www.freetoolset.app/base64-to-image.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>Base64 转图片工具把一段 base64 字符串（带不带 data: 前缀均可）解码成图片预览，并支持下载。解码在本地完成。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="developer-tools.html">Developer</a>
+      <span class="separator">/</span>
+      <span class="current">Base64 to Image</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>🖼️ Base64 to Image</h1>
+      <p>Paste a base64 string (with or without the data: prefix) and preview the image, then download it. Decoding is local.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="form-row">
+          <label for="input">Base64 image string</label>
+          <textarea id="input" rows="6" placeholder="data:image/png;base64,iVBORw0KGgo..."></textarea>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="btn">Decode</button>
+          <button class="btn btn-secondary" id="clearBtn">Clear</button>
+        </div>
+        <div id="out"></div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Paste a base64 image string.</li>
+            <li>Click Decode.</li>
+            <li>Preview the image.</li>
+            <li>Download it as a file.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>Do I need the data: prefix?</summary>
+            <p>No — paste either the raw base64 or a full data:image/png;base64,… URI; the tool detects both.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What format is downloaded?</summary>
+            <p>The extension is taken from the data URI mime type if present; otherwise it defaults to PNG.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is decoding private?</summary>
+            <p>Yes — it runs entirely in your browser; nothing is uploaded.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>需要 data: 前缀吗？</summary>
+            <p>不需要。无论粘贴原始 base64 还是完整的 data:image/png;base64,… URI 都能识别。</p>
+          </details>
+          <details class="faq-item">
+            <summary>下载成什么格式？</summary>
+            <p>若 data URI 里有 mime 类型，按它定扩展名；否则默认 PNG。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🔍</div>
+              <div class="uc-content">
+                <h4>Inspect</h4>
+                <p>View encoded img.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">💾</div>
+              <div class="uc-content">
+                <h4>Extract</h4>
+                <p>Save from base64.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🧪</div>
+              <div class="uc-content">
+                <h4>Debug</h4>
+                <p>Check API output.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="html-encoder.html" class="related-tool-card">
+              <span class="rt-icon"></></span>
+              <span class="rt-name">HTML Encoder / Decoder</span>
+            </a>
+            <a href="css-minifier.html" class="related-tool-card">
+              <span class="rt-icon">🎨</span>
+              <span class="rt-name">CSS Minifier</span>
+            </a>
+            <a href="json-minifier.html" class="related-tool-card">
+              <span class="rt-icon">🗜️</span>
+              <span class="rt-name">JSON Minifier</span>
+            </a>
+            <a href="html-minifier.html" class="related-tool-card">
+              <span class="rt-icon">📄</span>
+              <span class="rt-name">HTML Minifier</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Base64 to Image</h2>
+    <h3>用途</h3>
+    <p>接口返回、CSS 内联或数据库里常出现 base64 图片。这个工具帮你把它还原成可见、可下载的图片。</p>
+    <h3>解析规则</h3>
+    <li>自动识别 data:image/...;base64, 前缀</li>
+    <li>也支持纯 base64 文本（默认按 PNG）</li>
+    <li>根据 mime 决定下载扩展名</li>
+    <h3>隐私</h3>
+    <p>解码在浏览器本地完成。</p>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var input=document.getElementById('input'),out=document.getElementById('out'),btn=document.getElementById('btn'),clearBtn=document.getElementById('clearBtn');
+    function decode(){
+      var v=input.value.trim();if(!v){out.innerHTML='';return;}
+      var mime='image/png',ext='png',b64=v;
+      var m=v.match(/^data:([^;]+);base64,(.*)$/s);
+      if(m){mime=m[1];ext=(mime.split('/')[1]||'png').replace('+xml','');b64=m[2];}
+      var url='data:'+mime+';base64,'+b64;
+      var img=new Image();
+      img.onload=function(){out.innerHTML='<img src="'+url+'" style="max-width:100%;border:1px solid var(--border);border-radius:8px;margin-bottom:10px"><br><a class="btn btn-secondary" download="image.'+ext+'" href="'+url+'">Download</a>';};
+      img.onerror=function(){out.innerHTML='<div style="color:#ef4444">Could not decode — check the base64 string.</div>';};
+      img.src=url;
+    }
+    btn.addEventListener('click',decode);
+    clearBtn.addEventListener('click',function(){input.value='';out.innerHTML='';});
+    decode();
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

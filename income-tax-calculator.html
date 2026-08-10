@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Income Tax Calculator — Progressive Tax Bracket Estimator | FreeToolset</title>
+  <meta name="description" content="Estimate income tax using progressive brackets, showing the tax due in each band, total tax, effective rate and take-home pay.">
+  <meta name="keywords" content="income tax calculator, tax bracket calculator, effective tax rate, take home pay calculator, progressive tax">
+  <meta property="og:title" content="Income Tax Calculator — FreeToolset">
+  <meta property="og:description" content="Estimate income tax using progressive brackets, showing the tax due in each band, total tax, effective rate and take-home pay.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/income-tax-calculator.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/income-tax-calculator.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Income Tax Calculator — FreeToolset">
+  <meta name="twitter:description" content="Estimate income tax using progressive brackets, showing the tax due in each band, total tax, effective rate and take-home pay.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Income Tax Calculator — Progressive Tax Bracket Estimator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/income-tax-calculator.html","description":"Estimate income tax using progressive brackets, showing the tax due in each band, total tax, effective rate and take-home pay.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does moving into a higher bracket tax all my income?","acceptedAnswer":{"@type":"Answer","text":"No — this is the most common misunderstanding. Only the portion above each threshold is taxed at the higher rate. Earning one unit more never reduces your take-home pay."}},{"@type":"Question","name":"What is the effective tax rate?","acceptedAnswer":{"@type":"Answer","text":"Total tax divided by total income. It is always lower than your top marginal bracket, because the lower bands are taxed at lower rates."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Calculator","item":"https://www.freetoolset.app/calculators.html"},{"@type":"ListItem","position":3,"name":"Income Tax Calculator","item":"https://www.freetoolset.app/income-tax-calculator.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>个人所得税计算器按累进税率分档计算应纳税额，展示每一档的税款、合计税额、实际税负率和税后收入，帮你理解「跳档」到底影响多少。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="calculators.html">Calculator</a>
+      <span class="separator">/</span>
+      <span class="current">Income Tax Calculator</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>🧾 Income Tax Calculator</h1>
+      <p>Estimate income tax using progressive brackets, showing the tax due in each band, total tax, effective rate and take-home pay.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="income">Annual income</label>
+            <input type="number" id="income" value="200000" min="0" step="1000">
+          </div>
+          <div class="form-row">
+            <label for="deduct">Standard deduction / allowance</label>
+            <input type="number" id="deduct" value="0" min="0" step="1000">
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="brackets">Tax brackets (one per line: upper_limit,rate% — use blank upper limit for the top band)</label>
+          <textarea id="brackets" style="min-height:130px;font-family:var(--font-mono,monospace)">36000,3
+144000,10
+300000,20
+420000,25
+660000,30
+960000,35
+,45</textarea>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="calcBtn">Calculate</button>
+        </div>
+        <div id="out"></div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Enter your annual taxable income.</li>
+            <li>Adjust the deduction if applicable.</li>
+            <li>Choose or edit the bracket preset.</li>
+            <li>Click Calculate to see the band-by-band breakdown.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>Does moving into a higher bracket tax all my income?</summary>
+            <p>No — this is the most common misunderstanding. Only the portion above each threshold is taxed at the higher rate. Earning one unit more never reduces your take-home pay.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What is the effective tax rate?</summary>
+            <p>Total tax divided by total income. It is always lower than your top marginal bracket, because the lower bands are taxed at lower rates.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>跳到更高税率档，全部收入都按高税率交税吗？</summary>
+            <p>不是，这是最常见的误解。只有超过起征点的那部分按更高税率计算，多赚一块钱绝不会导致到手反而变少。</p>
+          </details>
+          <details class="faq-item">
+            <summary>实际税负率是什么？</summary>
+            <p>实际税负率 = 总税额 ÷ 总收入，它永远低于你所处的最高边际税率，因为低档部分是按低税率计税的。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">💼</div>
+              <div class="uc-content">
+                <h4>Job Offer</h4>
+                <p>Compare take-home across salaries.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">📊</div>
+              <div class="uc-content">
+                <h4>Tax Planning</h4>
+                <p>See the marginal cost of extra income.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🎓</div>
+              <div class="uc-content">
+                <h4>Learning</h4>
+                <p>Understand how brackets actually work.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="bmi-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏋️</span>
+              <span class="rt-name">BMI Calculator</span>
+            </a>
+            <a href="age-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🎂</span>
+              <span class="rt-name">Age Calculator</span>
+            </a>
+            <a href="percentage-calculator.html" class="related-tool-card">
+              <span class="rt-icon">➗</span>
+              <span class="rt-name">Percentage Calculator</span>
+            </a>
+            <a href="loan-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏦</span>
+              <span class="rt-name">Loan Calculator</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Income Tax Calculator</h2>
+    <h3>累进税率是怎么运作的</h3>
+    <p>累进税制把收入切成若干档，每一档适用不同税率，只有落入该档的那部分收入按该档税率计税。这就是为什么「多赚一元反而到手更少」在累进税制下不可能发生。</p>
+    <h3>一个具体例子</h3>
+    <p>假设税率为：0–36000 部分 3%，36000–144000 部分 10%，144000–300000 部分 20%。年应纳税所得额 20 万元时：</p>
+    <li>前 36000 元 × 3% = 1080 元</li>
+    <li>中间 108000 元 × 10% = 10800 元</li>
+    <li>剩余 56000 元 × 20% = 11200 元</li>
+    <li>合计 23080 元，实际税负率 11.5%，而非最高档的 20%</li>
+    <h3>边际税率 vs 实际税率</h3>
+    <p>**边际税率**是你最后一元收入适用的税率（上例为 20%）；**实际税率**是总税额除以总收入（上例为 11.5%）。做加薪、兼职决策时看边际税率，评估整体税负时看实际税率。</p>
+    <h3>使用说明</h3>
+    <p>本工具的默认档位为通用示例，你可以按所在地区的实际税率表自行修改。计算结果为估算，不包含专项附加扣除、社保公积金、税收抵免等因素，**不构成税务意见**，正式申报请以税务机关规定或专业人士意见为准。</p>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var income=document.getElementById('income'),deduct=document.getElementById('deduct'),brk=document.getElementById('brackets'),out=document.getElementById('out'),btn=document.getElementById('calcBtn');
+    function n(x){return (Math.round(x*100)/100).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});}
+    function calc(){
+      var gross=+income.value||0,ded=+deduct.value||0;
+      var taxable=gross-ded; if(taxable<0) taxable=0;
+      var bands=brk.value.split('\n').map(function(l){return l.trim();}).filter(Boolean).map(function(l){
+        var p=l.split(',');
+        return {lim:p[0].trim()===''?Infinity:parseFloat(p[0]),rate:parseFloat(p[1])||0};
+      }).filter(function(b){return !isNaN(b.rate);});
+      if(!bands.length){out.className='result-box';out.textContent='Please define at least one bracket.';return;}
+      var prev=0,total=0,rows='',marginal=0;
+      for(var i=0;i<bands.length;i++){
+        var b=bands[i];
+        if(taxable<=prev)break;
+        var upper=Math.min(taxable,b.lim);
+        var amt=upper-prev;
+        if(amt<=0){prev=b.lim;continue;}
+        var t=amt*b.rate/100;
+        total+=t;marginal=b.rate;
+        rows+='<div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border);font-size:.9rem">'+
+          '<span>'+n(prev)+' – '+(b.lim===Infinity?'above':n(b.lim))+' @ '+b.rate+'%</span><strong>'+n(t)+'</strong></div>';
+        prev=b.lim;
+        if(prev===Infinity)break;
+      }
+      var eff=gross>0?total/gross*100:0;
+      out.className='result-box';
+      out.innerHTML='<div style="font-size:1.7rem;font-weight:700;margin-bottom:4px">'+n(total)+'</div>'+
+        '<div style="opacity:.75;margin-bottom:14px">total tax on '+n(taxable)+' taxable income</div>'+
+        rows+
+        '<div style="display:grid;gap:6px;margin-top:12px;font-size:.93rem">'+
+        '<div>Effective tax rate: <strong>'+eff.toFixed(2)+'%</strong></div>'+
+        '<div>Marginal (top) rate: <strong>'+marginal+'%</strong></div>'+
+        '<div>Take-home: <strong>'+n(gross-total)+'</strong></div></div>';
+    }
+    btn.addEventListener('click',calc);calc();
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

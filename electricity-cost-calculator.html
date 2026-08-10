@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electricity Cost Calculator — Appliance Power Usage &amp; Running Cost | FreeToolset</title>
+  <meta name="description" content="Calculate what any appliance costs to run per day, month and year from its wattage, hours of use and your electricity tariff.">
+  <meta name="keywords" content="electricity cost calculator, power consumption calculator, kwh calculator, appliance running cost, energy cost">
+  <meta property="og:title" content="Electricity Cost Calculator — FreeToolset">
+  <meta property="og:description" content="Calculate what any appliance costs to run per day, month and year from its wattage, hours of use and your electricity tariff.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/electricity-cost-calculator.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/electricity-cost-calculator.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Electricity Cost Calculator — FreeToolset">
+  <meta name="twitter:description" content="Calculate what any appliance costs to run per day, month and year from its wattage, hours of use and your electricity tariff.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Electricity Cost Calculator — Appliance Power Usage & Running Cost","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/electricity-cost-calculator.html","description":"Calculate what any appliance costs to run per day, month and year from its wattage, hours of use and your electricity tariff.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where do I find the wattage?","acceptedAnswer":{"@type":"Answer","text":"Look at the rating label on the back or underside of the appliance, or in the manual. It is shown in W (watts) or sometimes as volts × amps."}},{"@type":"Question","name":"Does standby power matter?","acceptedAnswer":{"@type":"Answer","text":"Yes. Devices left on standby typically draw 1–5W each. Across a whole house that can add up to a noticeable share of the annual bill."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Calculator","item":"https://www.freetoolset.app/calculators.html"},{"@type":"ListItem","position":3,"name":"Electricity Cost Calculator","item":"https://www.freetoolset.app/electricity-cost-calculator.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>电费计算器根据电器功率（瓦）、每天使用时长和电价，算出该设备每天、每月、每年的耗电量和电费，帮你找出家里的「电老虎」。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="calculators.html">Calculator</a>
+      <span class="separator">/</span>
+      <span class="current">Electricity Cost Calculator</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>💡 Electricity Cost Calculator</h1>
+      <p>Calculate what any appliance costs to run per day, month and year from its wattage, hours of use and your electricity tariff.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="watt">Power (watts)</label>
+            <input type="number" id="watt" value="1100" min="0" step="1">
+          </div>
+          <div class="form-row">
+            <label for="hours">Hours used per day</label>
+            <input type="number" id="hours" value="8" min="0" max="24" step="0.5">
+          </div>
+        </div>
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="price">Price per kWh</label>
+            <input type="number" id="price" value="0.6" min="0" step="0.01">
+          </div>
+          <div class="form-row">
+            <label for="days">Days used per month</label>
+            <input type="number" id="days" value="30" min="1" max="31">
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="calcBtn">Calculate</button>
+        </div>
+        <div id="out"></div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Enter the appliance wattage (check the label).</li>
+            <li>Set daily hours of use.</li>
+            <li>Enter your electricity price per kWh.</li>
+            <li>Click Calculate to see daily, monthly and yearly cost.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>Where do I find the wattage?</summary>
+            <p>Look at the rating label on the back or underside of the appliance, or in the manual. It is shown in W (watts) or sometimes as volts × amps.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Does standby power matter?</summary>
+            <p>Yes. Devices left on standby typically draw 1–5W each. Across a whole house that can add up to a noticeable share of the annual bill.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>功率在哪里看？</summary>
+            <p>一般在电器背面或底部的铭牌上，标注为 W（瓦）；有些只标电压和电流，功率 = 电压 × 电流。</p>
+          </details>
+          <details class="faq-item">
+            <summary>待机耗电要紧吗？</summary>
+            <p>要紧。单个设备待机通常 1–5W，但全屋十几个设备长期待机，一年累计电费可能上百元。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">❄️</div>
+              <div class="uc-content">
+                <h4>Air Conditioner</h4>
+                <p>See the real cost of summer cooling.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🖥️</div>
+              <div class="uc-content">
+                <h4>Home Office</h4>
+                <p>Budget PC and monitor running costs.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🔍</div>
+              <div class="uc-content">
+                <h4>Find Waste</h4>
+                <p>Spot which device drives your bill.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="bmi-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏋️</span>
+              <span class="rt-name">BMI Calculator</span>
+            </a>
+            <a href="age-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🎂</span>
+              <span class="rt-name">Age Calculator</span>
+            </a>
+            <a href="percentage-calculator.html" class="related-tool-card">
+              <span class="rt-icon">➗</span>
+              <span class="rt-name">Percentage Calculator</span>
+            </a>
+            <a href="loan-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏦</span>
+              <span class="rt-name">Loan Calculator</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Electricity Cost Calculator</h2>
+    <h3>电费是怎么算的</h3>
+    <p>电费的基本单位是千瓦时（kWh，俗称「度」）。计算公式：耗电量(kWh) = 功率(W) × 使用小时数 ÷ 1000，电费 = 耗电量 × 电价。</p>
+    <h3>常见电器的功率参考</h3>
+    <li>LED 灯泡：约 10W</li>
+    <li>笔记本电脑：约 50W</li>
+    <li>台式机 + 显示器：约 200W</li>
+    <li>电饭煲：约 800W</li>
+    <li>空调（1.5 匹）：约 1100W</li>
+    <li>电热水器：约 2000W</li>
+    <h3>一个例子</h3>
+    <p>一台 1100W 的空调每天开 8 小时，电价 0.6 元/度：每天耗电 8.8 度、约 5.28 元，一个月约 158 元，整个夏天（3 个月）约 475 元。</p>
+    <h3>省电的实际建议</h3>
+    <li>空调温度每调高 1℃，耗电约降低 6%–8%</li>
+    <li>用插线板集中断电，消除待机功耗</li>
+    <li>关注能效标识：一级能效比三级能效通常省 20%–30%</li>
+    <li>峰谷电价地区，把洗衣、充电等安排到谷时段</li>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var watt=document.getElementById('watt'),hours=document.getElementById('hours'),price=document.getElementById('price'),days=document.getElementById('days'),out=document.getElementById('out'),btn=document.getElementById('calcBtn');
+    function n(x){return (Math.round(x*100)/100).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});}
+    function calc(){
+      var W=+watt.value||0,H=+hours.value||0,P=+price.value||0,D=+days.value||30;
+      var kwhD=W*H/1000, costD=kwhD*P;
+      var kwhM=kwhD*D, costM=costD*D;
+      var kwhY=kwhD*365, costY=costD*365;
+      function row(a,b,c){return '<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border)"><span>'+a+'</span><span>'+b+' kWh &nbsp;·&nbsp; <strong>'+c+'</strong></span></div>';}
+      out.className='result-box';
+      out.innerHTML='<div style="font-size:1.7rem;font-weight:700;margin-bottom:4px">'+n(costM)+' / month</div>'+
+        '<div style="opacity:.75;margin-bottom:14px">'+n(kwhM)+' kWh over '+D+' days</div>'+
+        row('Per day',n(kwhD),n(costD))+row('Per month',n(kwhM),n(costM))+row('Per year',n(kwhY),n(costY));
+    }
+    btn.addEventListener('click',calc);calc();
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

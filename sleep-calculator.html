@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sleep Calculator — Best Bedtime &amp; Wake-up Times by Sleep Cycle | FreeToolset</title>
+  <meta name="description" content="Find the best times to go to bed or wake up based on 90-minute sleep cycles, so you wake at the end of a cycle instead of mid-deep-sleep.">
+  <meta name="keywords" content="sleep calculator, sleep cycle calculator, bedtime calculator, best time to wake up, 90 minute sleep cycle">
+  <meta property="og:title" content="Sleep Calculator — FreeToolset">
+  <meta property="og:description" content="Find the best times to go to bed or wake up based on 90-minute sleep cycles, so you wake at the end of a cycle instead of mid-deep-sleep.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/sleep-calculator.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/sleep-calculator.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sleep Calculator — FreeToolset">
+  <meta name="twitter:description" content="Find the best times to go to bed or wake up based on 90-minute sleep cycles, so you wake at the end of a cycle instead of mid-deep-sleep.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Sleep Calculator — Best Bedtime & Wake-up Times by Sleep Cycle","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/sleep-calculator.html","description":"Find the best times to go to bed or wake up based on 90-minute sleep cycles, so you wake at the end of a cycle instead of mid-deep-sleep.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why 90 minutes?","acceptedAnswer":{"@type":"Answer","text":"A full sleep cycle averages around 90 minutes, moving through light, deep and REM sleep. Waking at the end of a cycle usually feels far less groggy than waking mid-cycle."}},{"@type":"Question","name":"How many cycles do I need?","acceptedAnswer":{"@type":"Answer","text":"Most adults do well on 5–6 cycles, which is 7.5–9 hours. Four cycles (6 hours) works short-term but is not sustainable for most people."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Calculator","item":"https://www.freetoolset.app/calculators.html"},{"@type":"ListItem","position":3,"name":"Sleep Calculator","item":"https://www.freetoolset.app/sleep-calculator.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>睡眠计算器基于 90 分钟一个睡眠周期的规律，帮你算出几点入睡或几点起床最合适，让你在浅睡阶段自然醒来，而不是被闹钟从深睡中打断。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="calculators.html">Calculator</a>
+      <span class="separator">/</span>
+      <span class="current">Sleep Calculator</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>😴 Sleep Calculator</h1>
+      <p>Find the best times to go to bed or wake up based on 90-minute sleep cycles, so you wake at the end of a cycle instead of mid-deep-sleep.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="form-row">
+          <label for="mode">I want to know</label>
+          <select id="mode">
+            <option value="bed">When to go to bed (I know my wake-up time)</option>
+            <option value="wake">When to wake up (I go to bed now / at a set time)</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="time">Time</label>
+          <input type="time" id="time" value="07:00">
+        </div>
+        <div class="form-row">
+          <label for="fall">Minutes to fall asleep</label>
+          <input type="number" id="fall" value="15" min="0" max="90">
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="calcBtn">Calculate</button>
+          <button class="btn btn-secondary" id="nowBtn">Use current time</button>
+        </div>
+        <div id="out"></div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Choose whether you know your wake-up time or bedtime.</li>
+            <li>Set the time.</li>
+            <li>Click Calculate.</li>
+            <li>Pick one of the suggested times — later options mean more cycles.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>Why 90 minutes?</summary>
+            <p>A full sleep cycle averages around 90 minutes, moving through light, deep and REM sleep. Waking at the end of a cycle usually feels far less groggy than waking mid-cycle.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How many cycles do I need?</summary>
+            <p>Most adults do well on 5–6 cycles, which is 7.5–9 hours. Four cycles (6 hours) works short-term but is not sustainable for most people.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>为什么是 90 分钟？</summary>
+            <p>一个完整睡眠周期平均约 90 分钟，依次经历浅睡、深睡和快速眼动期。在周期结束时醒来通常比在深睡中被叫醒清爽得多。</p>
+          </details>
+          <details class="faq-item">
+            <summary>一晚需要几个周期？</summary>
+            <p>多数成年人 5–6 个周期（7.5–9 小时）比较合适。4 个周期（6 小时）短期可行，但长期容易造成睡眠债。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">⏰</div>
+              <div class="uc-content">
+                <h4>Early Meeting</h4>
+                <p>Set a bedtime that avoids grogginess.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">✈️</div>
+              <div class="uc-content">
+                <h4>Jet Lag</h4>
+                <p>Rebuild a sleep schedule.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">📚</div>
+              <div class="uc-content">
+                <h4>Study Nights</h4>
+                <p>Choose the least damaging short sleep.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="bmi-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏋️</span>
+              <span class="rt-name">BMI Calculator</span>
+            </a>
+            <a href="age-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🎂</span>
+              <span class="rt-name">Age Calculator</span>
+            </a>
+            <a href="percentage-calculator.html" class="related-tool-card">
+              <span class="rt-icon">➗</span>
+              <span class="rt-name">Percentage Calculator</span>
+            </a>
+            <a href="loan-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏦</span>
+              <span class="rt-name">Loan Calculator</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Sleep Calculator</h2>
+    <h3>睡眠周期是什么</h3>
+    <p>人的睡眠不是均匀的，而是由 N1 浅睡、N2、N3 深睡和 REM 快速眼动期组成的循环，一个完整周期平均约 90 分钟。一夜通常经历 4–6 个周期。</p>
+    <h3>为什么在周期末醒来更舒服</h3>
+    <p>如果闹钟在深睡（N3）阶段响起，大脑需要较长时间才能恢复清醒，这种昏沉感被称为「睡眠惯性」，可能持续 15–30 分钟甚至更久。而在周期结束、接近浅睡时醒来，过渡会自然得多。</p>
+    <h3>计算方式</h3>
+    <p>本工具在目标时间基础上按 90 分钟递增或递减，并额外预留约 15 分钟的入睡时间（普通人从躺下到入睡的平均时长）。</p>
+    <h3>改善睡眠的实际建议</h3>
+    <li>固定作息时间比睡够时长更重要</li>
+    <li>睡前一小时避免强光和屏幕蓝光</li>
+    <li>咖啡因半衰期约 5–6 小时，下午后尽量不摄入</li>
+    <li>卧室温度 18–22℃ 通常最有利于入睡</li>
+    <h3>提醒</h3>
+    <p>90 分钟是人群平均值，个体周期在 70–110 分钟之间浮动。本工具仅供参考，长期失眠或睡眠呼吸问题请就医。</p>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var mode=document.getElementById('mode'),time=document.getElementById('time'),fall=document.getElementById('fall'),
+        out=document.getElementById('out'),btn=document.getElementById('calcBtn'),nowBtn=document.getElementById('nowBtn');
+    function fmt(d){var h=d.getHours(),m=d.getMinutes();var ap=h<12?'AM':'PM';var h12=h%12;if(h12===0)h12=12;return h12+':'+String(m).padStart(2,'0')+' '+ap;}
+    nowBtn.addEventListener('click',function(){var d=new Date();time.value=String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');calc();});
+    function calc(){
+      if(!time.value){out.className='result-box';out.textContent='Please pick a time.';return;}
+      var p=time.value.split(':');
+      var base=new Date();base.setHours(+p[0],+p[1],0,0);
+      var f=+fall.value||0;
+      var items=[];
+      for(var c=6;c>=3;c--){
+        var d=new Date(base.getTime());
+        if(mode.value==='bed'){d.setMinutes(d.getMinutes()-c*90-f);}
+        else{d.setMinutes(d.getMinutes()+f+c*90);}
+        var hrs=(c*90/60).toFixed(1).replace('.0','');
+        items.push({t:fmt(d),c:c,h:hrs});
+      }
+      if(mode.value==='wake') items.reverse();
+      var best=items.filter(function(x){return x.c===5||x.c===6;});
+      var rows=items.map(function(x){
+        var hl=(x.c===5||x.c===6);
+        return '<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;margin-bottom:6px;border-radius:8px;'+
+          (hl?'background:rgba(139,92,246,.12);border:1px solid rgba(139,92,246,.35)':'border:1px solid var(--border)')+'">'+
+          '<strong style="font-size:1.1rem">'+x.t+'</strong>'+
+          '<span style="font-size:.86rem;opacity:.8">'+x.c+' cycles · '+x.h+' h'+(hl?' ✓':'')+'</span></div>';
+      }).join('');
+      out.className='result-box';
+      out.innerHTML='<div style="font-size:1.05rem;font-weight:700;margin-bottom:10px">'+
+        (mode.value==='bed'?'Go to bed at one of these times:':'Wake up at one of these times:')+'</div>'+rows+
+        '<p style="margin-top:8px;font-size:.85rem;opacity:.75">Highlighted options give 5–6 full cycles, the range most adults do best on. '+f+' min to fall asleep is included.</p>';
+    }
+    mode.addEventListener('change',calc);btn.addEventListener('click',calc);calc();
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROT13 / Caesar Cipher — Shift letters by N positions | FreeToolset</title>
+  <meta name="description" content="Apply a Caesar cipher to text — shift every letter by a chosen number of positions (ROT13 = shift 13). Encode a message or decode a cipher.">
+  <meta name="keywords" content="rot13, caesar cipher, letter shift, text encrypt, cipher tool">
+  <meta property="og:title" content="ROT13 / Caesar Cipher — FreeToolset">
+  <meta property="og:description" content="Apply a Caesar cipher to text — shift every letter by a chosen number of positions (ROT13 = shift 13). Encode a message or decode a cipher.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/text-rot13.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/text-rot13.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ROT13 / Caesar Cipher — FreeToolset">
+  <meta name="twitter:description" content="Apply a Caesar cipher to text — shift every letter by a chosen number of positions (ROT13 = shift 13). Encode a message or decode a cipher.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"ROT13 / Caesar Cipher — Shift letters by N positions","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/text-rot13.html","description":"Apply a Caesar cipher to text — shift every letter by a chosen number of positions (ROT13 = shift 13). Encode a message or decode a cipher.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is ROT13?","acceptedAnswer":{"@type":"Answer","text":"A Caesar cipher with a shift of 13. Because the alphabet has 26 letters, applying it twice returns the original text — encode and decode are the same operation."}},{"@type":"Question","name":"Does it change numbers and punctuation?","acceptedAnswer":{"@type":"Answer","text":"No — only letters A–Z / a–z are shifted. Digits, spaces and symbols are left untouched."}},{"@type":"Question","name":"Is this real encryption?","acceptedAnswer":{"@type":"Answer","text":"No. ROT13 is trivially reversible and offers no security; it is for fun, puzzles and obfuscation, not protection."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Text","item":"https://www.freetoolset.app/text-tools.html"},{"@type":"ListItem","position":3,"name":"ROT13 / Caesar Cipher","item":"https://www.freetoolset.app/text-rot13.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>ROT13 / 凯撒密码工具把每个字母按指定位数平移（ROT13 即平移 13 位）。可用来对文字做简单“加密”或解码，纯字母变换、保留大小写与标点。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="text-tools.html">Text</a>
+      <span class="separator">/</span>
+      <span class="current">ROT13 / Caesar Cipher</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>🔡 ROT13 / Caesar Cipher</h1>
+      <p>Apply a Caesar cipher to text — shift every letter by a chosen number of positions (ROT13 = shift 13). Encode a message or decode a cipher.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="form-row">
+          <label for="input">Text</label>
+          <textarea id="input" rows="6" placeholder="Type or paste text to shift…">Hello World!</textarea>
+        </div>
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="shift">Shift (0–25)</label>
+            <input type="number" id="shift" value="13" min="0" max="25">
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="btn">Encode / Decode</button>
+          <button class="btn btn-secondary" id="copyBtn">Copy</button>
+        </div>
+        <div class="form-row">
+          <label for="out">Result</label>
+          <textarea id="out" rows="6" readonly></textarea>
+        </div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Type or paste your text.</li>
+            <li>Set the shift (13 for classic ROT13).</li>
+            <li>Click Encode / Decode.</li>
+            <li>Copy the result. (ROT13 is its own inverse.)</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>What is ROT13?</summary>
+            <p>A Caesar cipher with a shift of 13. Because the alphabet has 26 letters, applying it twice returns the original text — encode and decode are the same operation.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Does it change numbers and punctuation?</summary>
+            <p>No — only letters A–Z / a–z are shifted. Digits, spaces and symbols are left untouched.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is this real encryption?</summary>
+            <p>No. ROT13 is trivially reversible and offers no security; it is for fun, puzzles and obfuscation, not protection.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>什么是 ROT13？</summary>
+            <p>平移 13 位的凯撒密码。因为字母表有 26 个字母，平移两次会还原原文，所以“加密”和“解密”是同一操作。</p>
+          </details>
+          <details class="faq-item">
+            <summary>数字和标点会变吗？</summary>
+            <p>不会。只有 A–Z / a–z 被平移，数字、空格和符号保持不变。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🧩</div>
+              <div class="uc-content">
+                <h4>Puzzles</h4>
+                <p>Hide a spoiler.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🎓</div>
+              <div class="uc-content">
+                <h4>Learning</h4>
+                <p>See ciphers work.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🤫</div>
+              <div class="uc-content">
+                <h4>Obfuscate</h4>
+                <p>Light scramble.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="reverse-text.html" class="related-tool-card">
+              <span class="rt-icon">🔄</span>
+              <span class="rt-name">Reverse Text</span>
+            </a>
+            <a href="text-repeater.html" class="related-tool-card">
+              <span class="rt-icon">🔁</span>
+              <span class="rt-name">Text Repeater</span>
+            </a>
+            <a href="find-and-replace.html" class="related-tool-card">
+              <span class="rt-icon">🔍</span>
+              <span class="rt-name">Find and Replace Text</span>
+            </a>
+            <a href="slug-generator.html" class="related-tool-card">
+              <span class="rt-icon">🔗</span>
+              <span class="rt-name">URL Slug Generator</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 ROT13 / Caesar Cipher</h2>
+    <h3>凯撒密码原理</h3>
+    <p>把字母表中的每个字母向后移动 N 位（到末尾则回到开头）。ROT13 取 N=13，因 26 个字母，移两次即还原。</p>
+    <h3>规则</h3>
+    <li>仅平移 A–Z / a–z，保留大小写</li>
+    <li>数字、空格、标点原样保留</li>
+    <li>N=13 时编码=解码</li>
+    <h3>提醒</h3>
+    <p>这不是真正的加密，无任何安全性，只用于趣味与混淆。</p>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var input=document.getElementById('input'),shift=document.getElementById('shift'),out=document.getElementById('out'),btn=document.getElementById('btn'),copyBtn=document.getElementById('copyBtn');
+    function rot(t,n){
+      n=((parseInt(shift.value)||0)%26+26)%26;
+      var s='';
+      for(var i=0;i<t.length;i++){var c=t.charCodeAt(i);
+        if(c>=65&&c<=90)s+=String.fromCharCode((c-65+n)%26+65);
+        else if(c>=97&&c<=122)s+=String.fromCharCode((c-97+n)%26+97);
+        else s+=t[i];
+      }
+      return s;
+    }
+    function run(){out.value=rot(input.value,parseInt(shift.value)||0);}
+    btn.addEventListener('click',run);
+    copyBtn.addEventListener('click',function(){if(out.value){out.select();document.execCommand('copy');}});
+    run();
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

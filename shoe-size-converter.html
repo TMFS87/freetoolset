@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shoe Size Converter — US, UK, EU, CN &amp; Foot Length | FreeToolset</title>
+  <meta name="description" content="Convert shoe sizes between US, UK, EU, Chinese (mm) and Japanese systems for men, women and kids, based on actual foot length.">
+  <meta name="keywords" content="shoe size converter, us to eu shoe size, uk shoe size conversion, shoe size chart, foot length to shoe size">
+  <meta property="og:title" content="Shoe Size Converter — FreeToolset">
+  <meta property="og:description" content="Convert shoe sizes between US, UK, EU, Chinese (mm) and Japanese systems for men, women and kids, based on actual foot length.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/shoe-size-converter.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/shoe-size-converter.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Shoe Size Converter — FreeToolset">
+  <meta name="twitter:description" content="Convert shoe sizes between US, UK, EU, Chinese (mm) and Japanese systems for men, women and kids, based on actual foot length.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Shoe Size Converter — US, UK, EU, CN & Foot Length","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/shoe-size-converter.html","description":"Convert shoe sizes between US, UK, EU, Chinese (mm) and Japanese systems for men, women and kids, based on actual foot length.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I measure foot length correctly?","acceptedAnswer":{"@type":"Answer","text":"Stand on a sheet of paper against a wall in the evening (feet swell during the day), mark the longest toe, and measure from the wall. Measure both feet and use the larger one."}},{"@type":"Question","name":"Why do sizes vary between brands?","acceptedAnswer":{"@type":"Answer","text":"There is no enforced international standard, and each brand uses its own last shape. Foot length in millimetres is the only reliable reference — always check the brand’s own chart too."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Converter","item":"https://www.freetoolset.app/converters.html"},{"@type":"ListItem","position":3,"name":"Shoe Size Converter","item":"https://www.freetoolset.app/shoe-size-converter.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>鞋码换算器支持美码、英码、欧码、中国码（毫米）和日码之间的互转，区分男鞋、女鞋和童鞋，并以实际脚长为基准，海淘买鞋时不再纠结尺码。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="converters.html">Converter</a>
+      <span class="separator">/</span>
+      <span class="current">Shoe Size Converter</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>👟 Shoe Size Converter</h1>
+      <p>Convert shoe sizes between US, UK, EU, Chinese (mm) and Japanese systems for men, women and kids, based on actual foot length.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="gen-row">
+          <div class="form-row">
+            <label for="who">Category</label>
+            <select id="who">
+              <option value="men">Men</option>
+              <option value="women">Women</option>
+              <option value="kids">Kids</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="sys">I know my size in</label>
+            <select id="sys">
+              <option value="mm">Foot length (mm) / China</option>
+              <option value="eu">EU</option>
+              <option value="us">US</option>
+              <option value="uk">UK</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="val">Size / length</label>
+          <input type="number" id="val" value="260" step="0.5">
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="convBtn">Convert</button>
+        </div>
+        <div id="out"></div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Choose men’s, women’s or kids’ sizing.</li>
+            <li>Pick the size system you know.</li>
+            <li>Enter your size or measure your foot length in mm.</li>
+            <li>Read the equivalent sizes in all systems.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>How do I measure foot length correctly?</summary>
+            <p>Stand on a sheet of paper against a wall in the evening (feet swell during the day), mark the longest toe, and measure from the wall. Measure both feet and use the larger one.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Why do sizes vary between brands?</summary>
+            <p>There is no enforced international standard, and each brand uses its own last shape. Foot length in millimetres is the only reliable reference — always check the brand’s own chart too.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>怎么正确量脚长？</summary>
+            <p>傍晚时（脚会轻微肿胀）光脚贴墙站在纸上，标记最长脚趾的位置，量出到墙的距离。两只脚都量，按较大的那只选码。</p>
+          </details>
+          <details class="faq-item">
+            <summary>为什么不同品牌尺码差别很大？</summary>
+            <p>鞋码没有强制国际标准，各品牌鞋楦不同。以毫米为单位的脚长是唯一可靠参照，购买前最好再对照该品牌的官方尺码表。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🌍</div>
+              <div class="uc-content">
+                <h4>Overseas Shopping</h4>
+                <p>Convert US sizes when buying abroad.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">🎁</div>
+              <div class="uc-content">
+                <h4>Buying Gifts</h4>
+                <p>Work from a known size in another system.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">👶</div>
+              <div class="uc-content">
+                <h4>Kids Shoes</h4>
+                <p>Track growing feet by length.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="unit-converter.html" class="related-tool-card">
+              <span class="rt-icon">📐</span>
+              <span class="rt-name">Unit Converter</span>
+            </a>
+            <a href="temperature-converter.html" class="related-tool-card">
+              <span class="rt-icon">🌡️</span>
+              <span class="rt-name">Temperature Converter</span>
+            </a>
+            <a href="length-converter.html" class="related-tool-card">
+              <span class="rt-icon">📏</span>
+              <span class="rt-name">Length Converter</span>
+            </a>
+            <a href="weight-converter.html" class="related-tool-card">
+              <span class="rt-icon">⚖️</span>
+              <span class="rt-name">Weight Converter</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Shoe Size Converter</h2>
+    <h3>鞋码为什么这么混乱</h3>
+    <p>各国鞋码体系起源不同：英美用「巴黎点」的变体并以脚长英寸为基础，欧洲用「巴黎点」（每点 2/3 厘米），中国和日本直接用脚长毫米。三套体系起点和增量都不同，所以无法简单加减换算。</p>
+    <h3>以脚长为基准最可靠</h3>
+    <p>本工具的所有换算都以实际脚长（毫米）为中间基准：欧码 ≈ (脚长mm + 15) ÷ 6.67，中国码 = 脚长mm，美码男 ≈ (脚长mm − 208) ÷ 8.47 + 6。这样比「美码 + 33 = 欧码」这类粗略口诀准确得多。</p>
+    <h3>常见对照（男鞋）</h3>
+    <li>脚长 250mm ≈ 中国 250 / 欧码 40 / 美码 7.5 / 英码 6.5</li>
+    <li>脚长 260mm ≈ 中国 260 / 欧码 41.5 / 美码 8.5 / 英码 7.5</li>
+    <li>脚长 270mm ≈ 中国 270 / 欧码 43 / 美码 9.5 / 英码 9</li>
+    <h3>选鞋的实用建议</h3>
+    <li>运动鞋通常要比正装鞋大半码，给脚趾留出活动空间</li>
+    <li>男女鞋码在美制体系中相差约 1.5 码（女码 = 男码 + 1.5）</li>
+    <li>童鞋建议每 3 个月重新量一次脚长</li>
+    <li>本换算为通用参考，最终请以品牌官方尺码表为准</li>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var who=document.getElementById('who'),sys=document.getElementById('sys'),val=document.getElementById('val'),out=document.getElementById('out'),btn=document.getElementById('convBtn');
+    // all systems derived from foot length in mm
+    function fromMM(mm,cat){
+      var eu=(mm+15)/6.6667;
+      var us,uk;
+      if(cat==='men'){us=(mm-208)/8.466+6;uk=us-0.5;}
+      else if(cat==='women'){us=(mm-195)/8.466+6;uk=us-2.5;}
+      else{us=(mm-152)/8.466+8;uk=us-0.5;}
+      return {eu:eu,us:us,uk:uk,mm:mm,jp:mm/10};
+    }
+    function toMM(v,s,cat){
+      if(s==='mm')return v;
+      if(s==='eu')return v*6.6667-15;
+      if(s==='us'){
+        if(cat==='men')return (v-6)*8.466+208;
+        if(cat==='women')return (v-6)*8.466+195;
+        return (v-8)*8.466+152;
+      }
+      if(s==='uk'){
+        if(cat==='men')return (v+0.5-6)*8.466+208;
+        if(cat==='women')return (v+2.5-6)*8.466+195;
+        return (v+0.5-8)*8.466+152;
+      }
+      return v;
+    }
+    function half(x){return (Math.round(x*2)/2).toFixed(1);}
+    function calc(){
+      var v=parseFloat(val.value),cat=who.value;
+      if(isNaN(v)){out.className='result-box';out.textContent='Enter a size to convert.';return;}
+      var mm=toMM(v,sys.value,cat);
+      if(mm<100||mm>400){out.className='result-box';out.textContent='That gives a foot length of '+Math.round(mm)+'mm, which looks out of range. Check the selected system.';return;}
+      var r=fromMM(mm,cat);
+      function row(a,b){return '<div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--border)"><span>'+a+'</span><strong style="font-size:1.05rem">'+b+'</strong></div>';}
+      out.className='result-box';
+      out.innerHTML='<div style="font-size:1.6rem;font-weight:700;margin-bottom:4px">'+Math.round(mm)+' mm</div>'+
+        '<div style="opacity:.75;margin-bottom:14px">foot length · '+cat+'\u2019s sizing</div>'+
+        row('China (mm)',Math.round(mm))+
+        row('EU',half(r.eu))+
+        row('US',half(r.us))+
+        row('UK',half(r.uk))+
+        row('Japan (cm)',half(r.jp))+
+        '<p style="margin-top:12px;font-size:.85rem;opacity:.75">Sizes are rounded to the nearest half. Brands vary — check the maker\u2019s own chart before ordering.</p>';
+    }
+    [who,sys,val].forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc);});
+    btn.addEventListener('click',calc);calc();
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>

@@ -296,7 +296,16 @@ ${t.js}
 // ---- Run ----
 const A = require('./tools-data.js');
 const B = require('./tools-extra.js');
-const TOOLS = A.concat(B);
+const B3 = [].concat(
+  require('./tools-b3-calc.js'),
+  require('./tools-b3-conv.js'),
+  require('./tools-b3-calc2.js'),
+  require('./tools-b3-conv2.js'),
+  require('./tools-b3-dev.js'),
+  require('./tools-b3-fun.js'),
+  require('./tools-b3-text.js')
+);
+const TOOLS = A.concat(B).concat(B3);
 
 // sanity: unique slugs
 const seen = {};

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Running Pace Calculator — Pace, Time &amp; Distance for Runners | FreeToolset</title>
+  <meta name="description" content="Calculate running pace, finish time or distance — fill in any two and get the third, with split times for common race distances.">
+  <meta name="keywords" content="pace calculator, running pace calculator, marathon pace, race time calculator, min per km">
+  <meta property="og:title" content="Running Pace Calculator — FreeToolset">
+  <meta property="og:description" content="Calculate running pace, finish time or distance — fill in any two and get the third, with split times for common race distances.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/pace-calculator.html">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.freetoolset.app/pace-calculator.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Running Pace Calculator — FreeToolset">
+  <meta name="twitter:description" content="Calculate running pace, finish time or distance — fill in any two and get the third, with split times for common race distances.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Running Pace Calculator — Pace, Time & Distance for Runners","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/pace-calculator.html","description":"Calculate running pace, finish time or distance — fill in any two and get the third, with split times for common race distances.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a good pace?","acceptedAnswer":{"@type":"Answer","text":"It depends entirely on experience. Many recreational runners sit around 6:00–7:00 min/km for easy runs; the point is consistency, not comparison."}},{"@type":"Question","name":"How are the race predictions made?","acceptedAnswer":{"@type":"Answer","text":"They apply your entered pace evenly across each distance. Real races slow down over longer distances, so treat longer predictions as optimistic."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Calculator","item":"https://www.freetoolset.app/calculators.html"},{"@type":"ListItem","position":3,"name":"Running Pace Calculator","item":"https://www.freetoolset.app/pace-calculator.html"}]}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span class="logo-icon">⚡</span>
+      FreeToolset
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="about.html" class="nav-link" data-i18n="About">About</a>
+      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+  <section class="tool-intro">
+    <h2>📌 适用场景</h2>
+    <p>跑步配速计算器：在配速、时间、距离三者中填入任意两项，自动算出第三项，并给出 5K、10K、半马、全马等常见距离的预计完赛时间。</p>
+  </section>
+
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="calculators.html">Calculator</a>
+      <span class="separator">/</span>
+      <span class="current">Running Pace Calculator</span>
+    </nav>
+
+    <div class="tool-header">
+      <h1>🏃 Running Pace Calculator</h1>
+      <p>Calculate running pace, finish time or distance — fill in any two and get the third, with split times for common race distances.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="tool-main">
+        <div class="form-row">
+          <label for="mode">Calculate</label>
+          <select id="mode">
+            <option value="pace">Pace (from time + distance)</option>
+            <option value="time">Time (from pace + distance)</option>
+            <option value="dist">Distance (from pace + time)</option>
+          </select>
+        </div>
+        <div class="gen-row" id="rowTime">
+          <div class="form-row"><label for="hh">Hours</label><input type="number" id="hh" value="0" min="0" max="99"></div>
+          <div class="form-row"><label for="mm">Minutes</label><input type="number" id="mm" value="50" min="0" max="59"></div>
+          <div class="form-row"><label for="ss">Seconds</label><input type="number" id="ss" value="0" min="0" max="59"></div>
+        </div>
+        <div class="gen-row">
+          <div class="form-row" id="rowDist">
+            <label for="dist">Distance (km)</label>
+            <input type="number" id="dist" value="10" min="0.1" step="0.01">
+          </div>
+          <div class="form-row" id="rowPace" style="display:none">
+            <label for="pmin">Pace min/km</label>
+            <div style="display:flex;gap:8px">
+              <input type="number" id="pmin" value="5" min="0" max="59" style="flex:1">
+              <input type="number" id="psec" value="0" min="0" max="59" style="flex:1">
+            </div>
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="calcBtn">Calculate</button>
+        </div>
+        <div id="out"></div>
+
+        <div class="privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <span>All processing happens in your browser. No data is uploaded to any server.</span>
+        </div>
+      </div>
+
+      <aside class="tool-sidebar">
+        <div class="info-section">
+          <h2>📋 How to Use</h2>
+          <ol class="how-to-list">
+            <li>Choose what you want to calculate.</li>
+            <li>Fill in the two values you know.</li>
+            <li>Click Calculate.</li>
+            <li>Check the race predictions table below the result.</li>
+          </ol>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ FAQ</h2>
+          <details class="faq-item">
+            <summary>What is a good pace?</summary>
+            <p>It depends entirely on experience. Many recreational runners sit around 6:00–7:00 min/km for easy runs; the point is consistency, not comparison.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How are the race predictions made?</summary>
+            <p>They apply your entered pace evenly across each distance. Real races slow down over longer distances, so treat longer predictions as optimistic.</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>❓ 常见问题（中文）</h2>
+          <details class="faq-item">
+            <summary>多快的配速算好？</summary>
+            <p>完全取决于训练水平。大众跑者轻松跑常见于 6:00–7:00 分/公里，重要的是稳定而非和别人比较。</p>
+          </details>
+          <details class="faq-item">
+            <summary>完赛预测准吗？</summary>
+            <p>预测按你输入的配速匀速推算。实际比赛距离越长掉速越明显，全马预测通常偏乐观，建议在此基础上留出余量。</p>
+          </details>
+        </div>
+
+        <div class="info-section">
+          <h2>💡 Use Cases</h2>
+          <div class="use-case-grid">
+            <div class="use-case-item">
+              <div class="uc-icon">🏅</div>
+              <div class="uc-content">
+                <h4>Race Goal</h4>
+                <p>Find the pace needed for a target time.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">📉</div>
+              <div class="uc-content">
+                <h4>Training</h4>
+                <p>Set easy and tempo run paces.</p>
+              </div>
+            </div>
+            <div class="use-case-item">
+              <div class="uc-icon">⏱️</div>
+              <div class="uc-content">
+                <h4>Splits</h4>
+                <p>Check per-kilometre targets.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2>🔗 Related Tools</h2>
+          <div class="related-tools-grid">
+            <a href="bmi-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏋️</span>
+              <span class="rt-name">BMI Calculator</span>
+            </a>
+            <a href="age-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🎂</span>
+              <span class="rt-name">Age Calculator</span>
+            </a>
+            <a href="percentage-calculator.html" class="related-tool-card">
+              <span class="rt-icon">➗</span>
+              <span class="rt-name">Percentage Calculator</span>
+            </a>
+            <a href="loan-calculator.html" class="related-tool-card">
+              <span class="rt-icon">🏦</span>
+              <span class="rt-name">Loan Calculator</span>
+            </a>
+            <a href="ai-studio.html" class="related-tool-card">
+              <span class="rt-icon">✨</span>
+              <span class="rt-name">AI Content Studio</span>
+            </a>
+            <a href="index.html" class="related-tool-card">
+              <span class="rt-icon">⚡</span>
+              <span class="rt-name">All Tools</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  <section class="tool-deep">
+    <h2>📖 深入了解 Running Pace Calculator</h2>
+    <h3>配速的定义</h3>
+    <p>配速指跑完每公里所需的时间，通常写作「分:秒 / 公里」。它比速度（km/h）更直观：看到 5:30 就知道每公里要 5 分 30 秒。</p>
+    <h3>三者的换算关系</h3>
+    <p>配速 = 总时间 ÷ 距离；总时间 = 配速 × 距离；距离 = 总时间 ÷ 配速。三个量知道任意两个就能求第三个，这正是本工具的核心逻辑。</p>
+    <h3>常见比赛距离参考</h3>
+    <p>以 6:00 分/公里的配速为例：5 公里约 30 分钟，10 公里约 1 小时，半程马拉松（21.0975km）约 2 小时 07 分，全程马拉松（42.195km）约 4 小时 13 分。</p>
+    <h3>训练中的配速分区</h3>
+    <li>**轻松跑**：能正常说话的强度，占总训练量 70%–80%</li>
+    <li>**节奏跑**：略感吃力但可维持 20–40 分钟</li>
+    <li>**间歇跑**：接近极限，短时间重复</li>
+    <p>盲目每次都跑快，是业余跑者最常见的错误，也是伤病的主要来源。</p>
+    <h3>提醒</h3>
+    <p>本工具为匀速换算，实际成绩受地形、天气、补给和体能分配影响，请结合自身情况使用。</p>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          FreeToolset
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="Tools">Tools</a>
+        <a href="about.html" data-i18n="About">About</a>
+        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
+        <a href="contact.html" data-i18n="Contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FreeToolset. All tools run locally in your browser.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var mode=document.getElementById('mode'),hh=document.getElementById('hh'),mm=document.getElementById('mm'),ss=document.getElementById('ss'),
+        dist=document.getElementById('dist'),pmin=document.getElementById('pmin'),psec=document.getElementById('psec'),
+        rowTime=document.getElementById('rowTime'),rowDist=document.getElementById('rowDist'),rowPace=document.getElementById('rowPace'),
+        out=document.getElementById('out'),btn=document.getElementById('calcBtn');
+    function sync(){
+      var m=mode.value;
+      rowTime.style.display=(m==='pace'||m==='dist')?'':'none';
+      rowDist.style.display=(m==='pace'||m==='time')?'':'none';
+      rowPace.style.display=(m==='time'||m==='dist')?'':'none';
+    }
+    function hms(sec){
+      sec=Math.round(sec);
+      var h=Math.floor(sec/3600),m=Math.floor(sec%3600/60),s=sec%60;
+      return (h>0?h+':'+String(m).padStart(2,'0'):m)+':'+String(s).padStart(2,'0');
+    }
+    function calc(){
+      var T=(+hh.value||0)*3600+(+mm.value||0)*60+(+ss.value||0);
+      var D=+dist.value||0;
+      var P=(+pmin.value||0)*60+(+psec.value||0);
+      var main='',sub='',paceSec=0;
+      if(mode.value==='pace'){
+        if(!(D>0&&T>0)){out.className='result-box';out.textContent='Enter both time and distance.';return;}
+        paceSec=T/D;main=hms(paceSec)+' /km';sub='over '+D+' km in '+hms(T);
+      } else if(mode.value==='time'){
+        if(!(D>0&&P>0)){out.className='result-box';out.textContent='Enter both pace and distance.';return;}
+        paceSec=P;main=hms(P*D);sub=D+' km at '+hms(P)+' /km';
+      } else {
+        if(!(T>0&&P>0)){out.className='result-box';out.textContent='Enter both time and pace.';return;}
+        paceSec=P;main=(T/P).toFixed(2)+' km';sub='in '+hms(T)+' at '+hms(P)+' /km';
+      }
+      var races=[['5K',5],['10K',10],['Half marathon',21.0975],['Marathon',42.195]];
+      var rows=races.map(function(r){
+        return '<div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border)"><span>'+r[0]+'</span><strong>'+hms(paceSec*r[1])+'</strong></div>';
+      }).join('');
+      out.className='result-box';
+      out.innerHTML='<div style="font-size:1.8rem;font-weight:700;margin-bottom:4px">'+main+'</div>'+
+        '<div style="opacity:.75;margin-bottom:14px">'+sub+'</div>'+
+        '<div style="font-size:.9rem;font-weight:600;margin-bottom:6px">At this pace:</div>'+rows+
+        '<div style="margin-top:10px;font-size:.85rem;opacity:.7">Speed: '+(3600/paceSec).toFixed(2)+' km/h</div>';
+    }
+    mode.addEventListener('change',function(){sync();calc();});
+    btn.addEventListener('click',calc);sync();calc();
+  })();
+  </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="/js/i18n.js"></script>
+<!-- BAIDU_AUTO_PUSH -->
+<script>
+(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
+</script>
+</body>
+</html>
