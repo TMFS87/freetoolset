@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Base64 vs URL Encoding vs Hex: When to Use Each | FreeToolset Guides</title>
+  <meta name="description" content="Base64, URL (percent) encoding, and hexadecimal all turn data into text — but for different reasons. Learn what each is for and which free encoder to use.">
+  <meta name="keywords" content="base64 vs url encoding, base64 vs hex, percent encoding, what is base64, url encoder, hex converter">
+  <meta property="og:title" content="Base64 vs URL Encoding vs Hex: When to Use Each">
+  <meta property="og:description" content="Base64, URL encoding, and hexadecimal all turn data into text — but for different reasons. Learn which to use.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.freetoolset.app/blog/base64-vs-url-encoding.html">
+  <meta property="og:site_name" content="FreeToolset">
+  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Base64 vs URL Encoding vs Hex: When to Use Each">
+  <meta name="twitter:description" content="Base64, URL encoding, and hexadecimal all turn data into text — but for different reasons.">
+  <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.freetoolset.app/blog/base64-vs-url-encoding.html">
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Base64 vs URL Encoding vs Hex: When to Use Each","description":"Base64, URL (percent) encoding, and hexadecimal all turn data into text — but for different reasons. Learn what each is for and which free encoder to use.","url":"https://www.freetoolset.app/blog/base64-vs-url-encoding.html","mainEntityOfPage":"https://www.freetoolset.app/blog/base64-vs-url-encoding.html","publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="../index.html" class="navbar-brand"><span class="logo-icon">⚡</span> FreeToolset</a>
+    <div class="navbar-nav">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="../ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="../index.html#tools" class="nav-link">Tools</a>
+      <a href="../about.html" class="nav-link">About</a>
+      <a href="../privacy-policy.html" class="nav-link">Privacy</a>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <article class="article">
+      <p class="post-meta">FreeToolset · Practical Guides</p>
+      <h1>Base64 vs URL Encoding vs Hex: When to Use Each</h1>
+      <p>Three encodings show up constantly in web work, and they are easy to confuse because they all "turn bytes into text." They solve different problems, though. Use the wrong one and your data gets mangled or rejected.</p>
+
+      <h2>At a glance</h2>
+      <table class="guide-table">
+        <caption>What each encoding is actually for</caption>
+        <thead>
+          <tr><th>Encoding</th><th>What it does</th><th>Reversible?</th><th>Typical use</th><th>FreeToolset tool</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Base64</strong></td><td>Packs binary into safe ASCII text</td><td class="yes">Yes</td><td>Embedding images in HTML/CSS, email attachments, data URIs</td><td><a href="../base64-encoder.html">Base64 Encoder</a>, <a href="../base64-to-image.html">Base64 → Image</a></td></tr>
+          <tr><td><strong>URL encoding</strong></td><td>Escapes unsafe characters in a URL</td><td class="yes">Yes</td><td>Query strings, paths with spaces/symbols</td><td><a href="../url-encoder.html">URL Encoder</a>, <a href="../html-encoder.html">HTML Encoder</a></td></tr>
+          <tr><td><strong>Hex</strong></td><td>Represents each byte as two digits</td><td class="yes">Yes</td><td>Debugging, hashes, color codes, low-level data</td><td><a href="../base-converter.html">Base Converter</a>, <a href="../color-converter.html">Color Converter</a></td></tr>
+        </tbody>
+      </table>
+
+      <h2>Base64 — binary inside text channels</h2>
+      <p>Base64 converts any binary (an image, a file) into letters, digits, <code>+</code>, <code>/</code>, and <code>=</code> so it can travel through systems that only handle text — like embedding an image directly in a stylesheet or an email. It makes data about 33% larger, so don't use it for storage you can avoid.</p>
+
+      <h2>URL (percent) encoding — safe URLs</h2>
+      <p>URL encoding replaces unsafe characters (spaces, <code>&amp;</code>, <code>=</code>, non-ASCII) with a <code>%</code> followed by hex. Without it, a space or an ampersand breaks the request. Use it whenever you build a query string or put user input into a link.</p>
+
+      <h2>Hexadecimal — bytes laid bare</h2>
+      <p>Hex shows raw bytes as base-16 pairs. Programmers use it to read memory, hashes, and color values (<code>#FF8800</code>). It is not for transport — it is for inspection.</p>
+
+      <div class="warn">⚠️ Encoding is not encryption. Base64 especially is often mistaken for "hiding" data — it does not. Anyone can decode it instantly. Never put a password or secret in Base64 and call it secure.</div>
+
+      <div class="tip">💡 Quick pick: embedding a file in text → <a href="../base64-encoder.html">Base64</a>; putting a value in a link → <a href="../url-encoder.html">URL encode</a>; reading raw bytes/colors → <a href="../base-converter.html">Hex via Base Converter</a>.</div>
+
+      <div class="related_posts">
+        <h3>🔗 Related Tools</h3>
+        <a href="../base64-encoder.html">Base64 Encoder</a>
+        <a href="../base64-to-image.html">Base64 to Image</a>
+        <a href="../image-to-base64.html">Image to Base64</a>
+        <a href="../url-encoder.html">URL Encoder</a>
+        <a href="../html-encoder.html">HTML Encoder</a>
+        <a href="../base-converter.html">Base Converter</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>© 2026 FreeToolset · 145+ free online tools — no sign-up required, runs locally to protect your privacy</p>
+      <nav><a href="../index.html">Home</a> · <a href="../ai-studio.html">AI Studio</a> · <a href="../about.html">About</a> · <a href="../privacy-policy.html">Privacy</a> · <a href="../contact.html">Contact</a></nav>
+    </div>
+  </footer>
+</body>
+</html>
