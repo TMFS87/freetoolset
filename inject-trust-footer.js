@@ -1,7 +1,7 @@
 /**
  * inject-trust-footer.js
- * 1) 全站页脚加上运营者署名（E-E-A-T 的 "Who" 信号），根目录与 blog/ 使用不同相对路径
- * 2) 修复 contact.html 指向空 github.com/ 的死链
+ * 1) Add the operator byline to the site-wide footer (the "Who" signal for E-E-A-T); root and blog/ use different relative paths
+ * 2) Fix the dead contact.html link pointing to an empty github.com/
  */
 const fs = require('fs');
 const path = require('path');
@@ -31,7 +31,7 @@ const blogDir = path.join(ROOT, 'blog');
 const b = fs.existsSync(blogDir) ? walk(blogDir, NEW_BLOG) : 0;
 console.log(`footer updated -> root:${a} blog:${b}`);
 
-// 修复 contact.html 的空 GitHub 链接
+// Fix contact.html's empty GitHub link
 const contact = path.join(ROOT, 'contact.html');
 if (fs.existsSync(contact)) {
   let html = fs.readFileSync(contact, 'utf8');

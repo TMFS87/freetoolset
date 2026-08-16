@@ -39,8 +39,8 @@ font_small = load(30)
 d.rectangle([80, 170, 110, 250], fill=(244, 114, 182))
 
 d.text((130, 180), "FreeToolset", font=font_big, fill=(255, 255, 255))
-d.text((84, 300), "25 个免费在线工具 · 即开即用", font=font_mid, fill=(230, 237, 243))
-d.text((84, 372), "AI 写作 · 开发工具 · 图片处理 · 文本转换", font=font_small, fill=(157, 167, 179))
+d.text((84, 300), "95+ free online tools · ready to use", font=font_mid, fill=(230, 237, 243))
+d.text((84, 372), "AI Writing · Developer Tools · Image Tools · Text Conversion", font=font_small, fill=(157, 167, 179))
 d.text((84, 470), "freetoolset.app", font=font_small, fill=(167, 139, 250))
 
 img.save("og-image.png")

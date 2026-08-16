@@ -1,7 +1,7 @@
 /* gen-categories.js
- * 1) 增强 75 个工具页面包屑为三级 (Home / 分类 / 当前页)
- * 2) 生成 6 个分类聚合页 (ai-tools / calculators / converters / text-tools / developer-tools / fun-tools)
- * 3) 把分类页写入 sitemap.xml
+ * 1) Enhance breadcrumbs of 75 tool pages to three levels (Home / Category / Current)
+ * 2) Generate 6 category aggregation pages (ai-tools / calculators / converters / text-tools / developer-tools / fun-tools)
+ * 3) Add category pages to sitemap.xml
  */
 const fs = require("fs");
 const path = require("path");
@@ -9,7 +9,7 @@ const ROOT = ".";
 
 const SITE = "https://www.freetoolset.app";
 
-// slug -> 分类 key
+// slug -> category key
 const CAT = {
   "ai-studio": "ai-tools", "ai-product-description": "ai-tools", "ai-seo-meta-generator": "ai-tools",
   "ai-blog-writer": "ai-tools", "ai-email-subject": "ai-tools", "ai-content-rewriter": "ai-tools",
@@ -39,33 +39,29 @@ const CAT = {
 };
 
 const CATMETA = {
-  "ai-tools": { name: "AI 写作工具", en: "AI Writing Tools",
-    desc: "AI 一键生成产品描述、博客、邮件标题与 SEO 文案，免费使用，无需注册，浏览器本地运行保护隐私。",
-    title: "AI 写作工具 · 6 个免费 AI 文案生成器 | FreeToolset" },
-  "calculators": { name: "计算器", en: "Calculators",
-    desc: "各类免费在线计算器：BMI、年龄、贷款、房贷、折扣、复利、薪资、ROI 等，输入即出结果。",
-    title: "计算器 · 15 个免费在线计算器 | FreeToolset" },
-  "converters": { name: "单位转换器", en: "Converters",
-    desc: "免费在线单位换算与编码转换：温度、长度、重量、进制、罗马数字、文本编码等。",
-    title: "单位转换器 · 12 个免费在线转换工具 | FreeToolset" },
-  "text-tools": { name: "文本处理工具", en: "Text Tools",
-    desc: "免费文本工具：字数统计、大小写转换、去空格、文本重复、Slug 生成、替换查找等。",
-    title: "文本处理工具 · 12 个免费文本工具 | FreeToolset" },
-  "developer-tools": { name: "开发者工具", en: "Developer Tools",
-    desc: "程序员必备免费工具：JSON 格式化、Base64、URL 编码、正则测试、哈希、JWT 解析、Cron 等。",
-    title: "开发者工具 · 26 个免费开发工具 | FreeToolset" },
-  "fun-tools": { name: "趣味小工具", en: "Fun Tools",
-    desc: "休闲好玩的免费小工具：摩斯密码翻译、计时器、秒表、骰子。",
-    title: "趣味小工具 · 4 个免费趣味工具 | FreeToolset" }
+  "ai-tools": { en: "AI Writing Tools",
+    desc: "Generate product descriptions, blog posts, email subjects, and SEO copy with AI—free, no registration, runs locally in your browser to protect privacy.",
+    title: "AI Writing Tools · 6 Free AI Copy Generators | FreeToolset" },
+  "calculators": { en: "Calculators",
+    desc: "Free online calculators: BMI, age, loan, mortgage, discount, compound interest, salary, ROI, and more—results appear as you type.",
+    title: "Calculators · 15 Free Online Calculators | FreeToolset" },
+  "converters": { en: "Converters",
+    desc: "Free unit and encoding converters: temperature, length, weight, base/radix, Roman numerals, text encoding, and more.",
+    title: "Converters · 12 Free Online Conversion Tools | FreeToolset" },
+  "text-tools": { en: "Text Tools",
+    desc: "Free text tools: word count, case conversion, whitespace removal, text repeat, slug generation, find & replace, and more.",
+    title: "Text Tools · 12 Free Text Tools | FreeToolset" },
+  "developer-tools": { en: "Developer Tools",
+    desc: "Essential free tools for programmers: JSON formatter, Base64, URL encoding, regex tester, hash, JWT decoder, Cron, and more.",
+    title: "Developer Tools · 26 Free Dev Tools | FreeToolset" },
+  "fun-tools": { en: "Fun Tools",
+    desc: "Relaxing and playful free mini-tools: Morse code translator, timer, stopwatch, dice roller.",
+    title: "Fun Tools · 4 Free Fun Tools | FreeToolset" }
 };
-
-const BAIDU_PUSH = `<script>
-(function(){var bp=document.createElement('script');var curProtocol=window.location.protocol.split(':')[0];if(curProtocol==='https'){bp.src='https://zz.bdstatic.com/linksubmit/push.js';}else{bp.src='http://push.zhanzhang.baidu.com/push.js';}var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>`;
 
 function detectEol(s){ return s.includes("\r\n") ? "\r\n" : "\n"; }
 
-// 取工具页标题（去 | FreeToolset 后缀）
+// Get a tool page title (strip the " | FreeToolset" suffix)
 function pageTitle(slug){
   const f = path.join(ROOT, slug + ".html");
   if(!fs.existsSync(f)) return slug;
@@ -77,7 +73,7 @@ function pageTitle(slug){
 
 let breadcrumbFixed = 0;
 
-// ---- 1) 增强面包屑 ----
+// ---- 1) Enhance breadcrumbs ----
 for(const slug of Object.keys(CAT)){
   const f = path.join(ROOT, slug + ".html");
   if(!fs.existsSync(f)) continue;
@@ -85,17 +81,17 @@ for(const slug of Object.keys(CAT)){
   const re = /(>Home<\/a>\s*<span class="separator">\/<\/span>\s*)(<span class="current">)/;
   if(re.test(html) && !html.includes("breadcrumb-cat")){
     const cat = CATMETA[CAT[slug]];
-    const ins = `<a href="${CAT[slug]}.html">${cat.name}</a>` + "\n      <span class=\"separator\">/</span>\n      ";
+    const ins = `<a href="${CAT[slug]}.html">${cat.en}</a>` + "\n      <span class=\"separator\">/</span>\n      ";
     html = html.replace(re, "$1" + ins + "$2");
-    // 标记避免重复
+    // mark to avoid duplication
     html = html.replace(/(<nav class="breadcrumb">)/, '$1<!-- breadcrumb-cat -->');
     fs.writeFileSync(f, html, "utf8");
     breadcrumbFixed++;
   }
 }
-console.log("面包屑增强完成: " + breadcrumbFixed + " 页");
+console.log("breadcrumbs enhanced: " + breadcrumbFixed + " pages");
 
-// ---- 2) 生成分类页 ----
+// ---- 2) Generate category pages ----
 const navBar = `  <nav class="navbar">
     <a href="index.html" class="navbar-brand"><span class="logo-icon">⚡</span> FreeToolset</a>
     <div class="navbar-nav">
@@ -108,7 +104,7 @@ const navBar = `  <nav class="navbar">
 
 const footer = `  <footer class="site-footer">
     <div class="footer-inner">
-      <p>© 2026 FreeToolset · 95+ 个免费在线工具，无需注册，本地运行保护隐私</p>
+      <p>© 2026 FreeToolset · 95+ free online tools, no registration, runs locally to protect your privacy</p>
       <nav><a href="index.html">Home</a> · <a href="ai-studio.html">AI Studio</a> · <a href="about.html">About</a> · <a href="privacy-policy.html">Privacy</a> · <a href="contact.html">Contact</a></nav>
     </div>
   </footer>`;
@@ -122,7 +118,7 @@ for(const key of Object.keys(CATMETA)){
         </a>`).join("\n");
   const html =
 `<!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>${meta.title}</title>
@@ -136,7 +132,7 @@ for(const key of Object.keys(CATMETA)){
 ${navBar}
   <main class="main-content">
     <section class="tool-intro">
-      <h1>${meta.name} · 共 ${items.length} 个免费在线工具</h1>
+      <h1>${meta.en} · ${items.length} free online tools</h1>
       <p>${meta.desc}</p>
     </section>
     <div class="tool-grid">
@@ -144,15 +140,14 @@ ${cards}
     </div>
   </main>
 ${footer}
-${BAIDU_PUSH}
 </body>
 </html>
 `;
   fs.writeFileSync(path.join(ROOT, key + ".html"), html, "utf8");
-  console.log("生成分类页: " + key + ".html (" + items.length + " 个工具)");
+  console.log("generated category page: " + key + ".html (" + items.length + " tools)");
 }
 
-// ---- 3) 更新 sitemap ----
+// ---- 3) Update sitemap ----
 const smPath = path.join(ROOT, "sitemap.xml");
 let sm = fs.readFileSync(smPath, "utf8");
 for(const key of Object.keys(CATMETA)){
@@ -164,5 +159,5 @@ for(const key of Object.keys(CATMETA)){
 }
 fs.writeFileSync(smPath, sm, "utf8");
 const total = (sm.match(/<loc>/g) || []).length;
-console.log("sitemap 更新完成, 总 URL: " + total);
-console.log("全部完成 ✅");
+console.log("sitemap updated, total URLs: " + total);
+console.log("all done");

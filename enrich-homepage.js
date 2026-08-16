@@ -14,41 +14,41 @@ if (html.includes('id="home-faq"')) {
 
 const NEW_CONTENT = `
     <!-- SEO Content Sections -->
-    <section class="home-why" aria-label="为什么选择 FreeToolset">
-      <h2>为什么选择 FreeToolset？</h2>
+    <section class="home-why" aria-label="Why choose FreeToolset">
+      <h2>Why choose FreeToolset?</h2>
       <div class="why-grid">
         <div class="why-item">
-          <h3>🔒 隐私优先</h3>
-          <p>所有工具在浏览器本地运行，你的数据不会上传到任何服务器。处理敏感代码、财务数据或个人文本时也能放心使用。</p>
+          <h3>🔒 Privacy First</h3>
+          <p>All tools run locally in your browser, so your data is never uploaded to any server. Use them with confidence even for sensitive code, financial data, or personal text.</p>
         </div>
         <div class="why-item">
-          <h3>⚡ 即开即用</h3>
-          <p>无需注册、下载或安装。打开网页即可使用 95+ 款免费在线工具，支持桌面端和手机浏览器。</p>
+          <h3>⚡ Ready to Use</h3>
+          <p>No registration, download, or install needed. Open the page and use 95+ free online tools, on both desktop and mobile browsers.</p>
         </div>
         <div class="why-item">
-          <h3>🛠️ 覆盖全面</h3>
-          <p>从 JSON 格式化、正则测试等<strong>开发者工具</strong>，到 BMI、房贷等<strong>计算器</strong>，再到词频统计、文本对比等<strong>文本处理工具</strong>，一站式满足日常需求。</p>
+          <h3>🛠️ Comprehensive Coverage</h3>
+          <p>From <strong>developer tools</strong> like JSON formatting and regex testing, to <strong>calculators</strong> for BMI and mortgage, to <strong>text tools</strong> for word frequency and text comparison—one stop for everyday needs.</p>
         </div>
         <div class="why-item">
-          <h3>📱 响应式设计</h3>
-          <p>所有工具适配各种屏幕尺寸。在电脑前深度工作，或在手机上快速查询，都有流畅体验。</p>
+          <h3>📱 Responsive Design</h3>
+          <p>All tools adapt to any screen size. Enjoy a smooth experience whether you're deep-working at a computer or quickly checking on your phone.</p>
         </div>
       </div>
     </section>
 
-    <section id="home-faq" class="home-faq-section" aria-label="常见问题">
-      <h2>常见问题</h2>
+    <section id="home-faq" class="home-faq-section" aria-label="FAQ">
+      <h2>FAQ</h2>
       <dl class="faq-list">
-        <dt>FreeToolset 的工具真的完全免费吗？</dt>
-        <dd>是的，所有 95+ 个工具完全免费使用，无需注册账号，没有隐藏收费，也没有广告干扰。</dd>
-        <dt>我的数据安全吗？</dt>
-        <dd>绝对安全。所有数据处理都在你的浏览器中完成，不会上传到我们的服务器。你甚至可以断网后继续使用大部分工具。</dd>
-        <dt>支持中文吗？</dt>
-        <dd>支持。我们的界面提供中英文双语，部分工具（如词频统计、中文转换）专门针对中文文本优化。</dd>
-        <dt>可以在手机上使用吗？</dt>
-        <dd>可以。所有工具采用响应式设计，在手机浏览器上同样可以流畅操作。</dd>
-        <dt>如何获取帮助或反馈建议？</dt>
-        <dd>请访问我们的 <a href="contact.html">联系页面</a> 提交反馈，我们会持续改进和新增工具。</dd>
+        <dt>Are FreeToolset's tools really completely free?</dt>
+        <dd>Yes, all 95+ tools are completely free to use—no account registration, no hidden charges, and no ad interruptions.</dd>
+        <dt>Is my data safe?</dt>
+        <dd>Absolutely safe. All data processing happens in your browser and is never uploaded to our servers. You can even keep using most tools after going offline.</dd>
+        <dt>Which languages do the tools support?</dt>
+        <dd>The interface is in English. Text tools work with both English and Chinese input—for example, the Word Frequency Counter counts English words and Chinese characters, and the Chinese Converter handles Traditional/Simplified conversion.</dd>
+        <dt>Can I use them on my phone?</dt>
+        <dd>Yes. All tools are responsive and work smoothly in mobile browsers.</dd>
+        <dt>How do I get help or send feedback?</dt>
+        <dd>Visit our <a href="contact.html">contact page</a> to send feedback; we keep improving and adding tools.</dd>
       </dl>
     </section>
 
@@ -59,28 +59,28 @@ const NEW_CONTENT = `
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "FreeToolset 的工具真的完全免费吗？",
-      "acceptedAnswer": { "@type": "Answer", "text": "是的，所有 95+ 个工具完全免费使用，无需注册账号，没有隐藏收费，也没有广告干扰。" }
+      "name": "Are FreeToolset's tools really completely free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, all 95+ tools are completely free to use—no account registration, no hidden charges, and no ad interruptions." }
     },
     {
       "@type": "Question",
-      "name": "我的数据安全吗？",
-      "acceptedAnswer": { "@type": "Answer", "text": "绝对安全。所有数据处理都在你的浏览器中完成，不会上传到我们的服务器。你甚至可以断网后继续使用大部分工具。" }
+      "name": "Is my data safe?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Absolutely safe. All data processing happens in your browser and is never uploaded to our servers. You can even keep using most tools after going offline." }
     },
     {
       "@type": "Question",
-      "name": "支持中文吗？",
-      "acceptedAnswer": { "@type": "Answer", "text": "支持。我们的界面提供中英文双语，部分工具（如词频统计、中文转换）专门针对中文文本优化。" }
+      "name": "Which languages do the tools support?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The interface is in English. Text tools work with both English and Chinese input—for example, the Word Frequency Counter counts English words and Chinese characters, and the Chinese Converter handles Traditional/Simplified conversion." }
     },
     {
       "@type": "Question",
-      "name": "可以在手机上使用吗？",
-      "acceptedAnswer": { "@type": "Answer", "text": "可以。所有工具采用响应式设计，在手机浏览器上同样可以流畅操作。" }
+      "name": "Can I use them on my phone?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. All tools are responsive and work smoothly in mobile browsers." }
     },
     {
       "@type": "Question",
-      "name": "如何获取帮助或反馈建议？",
-      "acceptedAnswer": { "@type": "Answer", "text": "请访问我们的联系页面提交反馈，我们会持续改进和新增工具。" }
+      "name": "How do I get help or send feedback?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Visit our contact page to send feedback; we keep improving and adding tools." }
     }
   ]
 }

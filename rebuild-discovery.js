@@ -1,6 +1,6 @@
 /* rebuild-discovery.js — wire the 50 new batch-3 tools into the discovery layer:
  *  1) index.html   - append new cards before the "Discover" card, bump counts 95+ -> 145+, extend ItemList
- *  2) 6 category hubs - append any missing tool cards, bump the "共 N 个" / title counts
+ *  2) 6 category hubs - append any missing tool cards, bump the "N Free Online Tools" / title counts
  *  3) sitemap.xml  - merge the 50 new tool URLs
  * Idempotent: re-running is safe.
  */
@@ -114,10 +114,10 @@ HUB.forEach(h=>{
   }
   // bump counts
   const total = slugs.length;
-  html = html.replace(/共 \d+ 个免费在线工具/, '共 '+total+' 个免费在线工具');
-  html = html.replace(/— \d+ 个免费[^<]*/, '— '+total+' 个免费在线工具');
-  html = html.replace(/ \d+ 款免费在线计算器/, ' '+total+' 款免费在线计算器');
-  html = html.replace(/<strong>\d+ 款免费在线计算器/, '<strong>'+total+' 款免费在线计算器');
+  html = html.replace(/·\s*\d+\s*Free Online Tools/, '· '+total+' Free Online Tools');
+  html = html.replace(/—\s*\d+\s*Free Online Tools/, '— '+total+' Free Online Tools');
+  html = html.replace(/\d+\s*free online calculators/, total+' free online calculators');
+  html = html.replace(/<strong>\d+\s*free online calculators/, '<strong>'+total+' free online calculators');
   fs.writeFileSync(fp,html,'utf8');
 });
 

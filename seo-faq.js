@@ -194,9 +194,9 @@ for (const f of files) {
   const faqs = CUSTOM_FAQ[f] || tpl(categoryOf(f), cn, en);
   const eol = detectEol(html);
 
-  // 中文 FAQ HTML
+  // English FAQ HTML
   const faqHtml = [
-    '          <!-- ft-zh-faq -->',
+    '          <!-- ft-faq -->',
     '          <details class="faq-item">',
     '            <summary>' + faqs[0][0] + '</summary>',
     '            <p>' + faqs[0][1] + '</p>',
@@ -211,7 +211,7 @@ for (const f of files) {
     '          </details>'
   ].join(eol);
 
-  // 注入到 FAQ info-section 结束前（FAQ section 内无 div，第一个 </div> 即 section 结束）
+  // Inject before the end of the FAQ info-section (the FAQ section has no div; the first </div> marks its end)
   const faqRe = /(<h2>❓ FAQ<\/h2>[\s\S]*?)(<\/div>)/;
   if (!faqRe.test(html)) { skipped++; continue; }
   html = html.replace(faqRe, "$1" + eol + faqHtml + eol + "$2");
@@ -234,7 +234,7 @@ for (const f of files) {
   done++;
 }
 
-// 博客页：无 FAQ section，直接在 </article> 前插入中文 FAQ section
+// Blog pages: no FAQ section, so insert the English FAQ section directly before </article>
 const blogDir = path.join(ROOT, "blog");
 if (fs.existsSync(blogDir)) {
   const bfiles = fs.readdirSync(blogDir).filter(f => f.endsWith(".html"));

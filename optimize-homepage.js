@@ -3,7 +3,6 @@ const path = require('path');
 
 const ROOT = __dirname;
 const INDEX = path.join(ROOT, 'index.html');
-const I18N = path.join(ROOT, 'js', 'i18n.js');
 
 let html = fs.readFileSync(INDEX, 'utf8');
 
@@ -236,28 +235,3 @@ if (!html.includes('card-discover-more')) {
 
 fs.writeFileSync(INDEX, html);
 console.log('Wrote index.html');
-
-// 4. Add i18n dictionary entries
-let i18n = fs.readFileSync(I18N, 'utf8');
-const newEntries = `
-    // ---- Featured AI Studio ----
-    'featuredBadge': '⭐ 精选工具',
-    'featuredTitle': 'AI 内容工作室',
-    'featuredDesc': '我们最受欢迎的 AI 工具——输入任意需求，即可生成产品描述、博客文章、SEO 标签、邮件标题等。无需注册，免费使用。',
-    'featuredPrimaryBtn': '✨ 打开 AI 工作室 →',
-    'featuredSecondaryBtn': '浏览 AI 工具',
-    'featuredMini1': '📦 产品描述生成',
-    'featuredMini2': '📝 博客文章生成',
-    'featuredMini3': '🔍 SEO Meta 生成',
-    'featuredMini4': '✉️ 邮件标题生成',
-    'discoverMoreCard': '发现 75+ 免费工具',
-`;
-
-if (!i18n.includes('featuredBadge')) {
-  // Insert before the first key after // ---- Index hero ----
-  i18n = i18n.replace("    // ---- Index hero ----\n", "    // ---- Index hero ----\n" + newEntries);
-  fs.writeFileSync(I18N, i18n);
-  console.log('Added i18n entries');
-} else {
-  console.log('i18n entries already exist');
-}
