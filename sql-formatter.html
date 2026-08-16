@@ -39,18 +39,17 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html" class="nav-link">Home</a>
       <a href="index.html#tools" class="nav-link active">Tools</a>
       <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
-      <a href="about.html" class="nav-link" data-i18n="About">About</a>
-      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+      <a href="about.html" class="nav-link">About</a>
     </div>
   </nav>
 
   <main class="main-content">
   <section class="tool-intro">
-    <h2>📌 适用场景</h2>
-    <p>SQL 格式化工具把杂乱的 SQL 语句整理为带缩进、关键字大写的易读格式，方便审查与调试查询，浏览器本地运行。</p>
+    <h2>📌 Overview</h2>
+    <p>Format and beautify raw SQL into readable, indented queries. Uppercase keywords, break lines at major clauses, and spot syntax issues faster.</p>
   </section>
 
     <nav class="breadcrumb">
@@ -112,14 +111,14 @@
         </div>
 
         <div class="info-section">
-          <h2>❓ 常见问题（中文）</h2>
+          <h2>❓ More Questions</h2>
           <details class="faq-item">
-            <summary>支持哪些 SQL 方言？</summary>
-            <p>对常见 ANSI 关键字（SELECT、FROM、WHERE、JOIN 等）通用，只做排版美化，不校验语法。</p>
+            <summary>Which SQL dialects are supported?</summary>
+            <p>It is general for common ANSI keywords (SELECT, FROM, WHERE, JOIN, etc.). It only beautifies layout and does not validate syntax.</p>
           </details>
           <details class="faq-item">
-            <summary>会改变查询逻辑吗？</summary>
-            <p>不会，只调整空白与关键字大小写，语句含义保持不变。</p>
+            <summary>Does it change query logic?</summary>
+            <p>No - it only adjusts whitespace and keyword casing; the meaning of the statement stays the same.</p>
           </details>
         </div>
 
@@ -183,13 +182,13 @@
     </div>
 
   <section class="tool-deep">
-    <h2>📖 深入了解 SQL Formatter</h2>
-    <h3>为什么需要 SQL 格式化</h3>
-    <p>复制来的 SQL 常常挤成一行，review 和排查都费劲。统一缩进与关键字大写能显著降低阅读成本。</p>
-    <h3>背后的原理</h3>
-    <p>工具识别主要子句关键字，在其前插入换行并逐级缩进，同时把关键字统一大写；字符串与注释内容原样保留。</p>
-    <h3>一个例子</h3>
-    <p>一条 200 字符的 JOIN 查询粘进来，格式化后 SELECT/FROM/WHERE/JOIN 各占一行并缩进，结构一目了然。</p>
+    <h2>📖 Deep Dive: SQL Formatter</h2>
+    <h3>Why format SQL</h3>
+    <p>SQL copied from somewhere is often crammed onto one line, making review and debugging painful. Consistent indentation and uppercase keywords sharply lower reading cost.</p>
+    <h3>How it works</h3>
+    <p>The tool recognizes major clause keywords, inserts a line break and indents before each, and uppercases keywords; string and comment content is preserved as-is.</p>
+    <h3>A quick example</h3>
+    <p>Paste a 200-character JOIN query and after formatting SELECT, FROM, WHERE, and JOIN each occupy their own indented line - the structure becomes clear at a glance.</p>
   </section>
   </main>
 
@@ -200,13 +199,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html" data-i18n="Tools">Tools</a>
-        <a href="about.html" data-i18n="About">About</a>
-        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
-        <a href="contact.html" data-i18n="Contact">Contact</a>
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -243,10 +242,6 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/i18n.js"></script>
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
+<script></script>
 </body>
 </html>

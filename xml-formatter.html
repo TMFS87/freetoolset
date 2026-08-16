@@ -39,18 +39,17 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html" class="nav-link">Home</a>
       <a href="index.html#tools" class="nav-link active">Tools</a>
       <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
-      <a href="about.html" class="nav-link" data-i18n="About">About</a>
-      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+      <a href="about.html" class="nav-link">About</a>
     </div>
   </nav>
 
   <main class="main-content">
   <section class="tool-intro">
-    <h2>📌 适用场景</h2>
-    <p>XML 格式化工具对 XML 做缩进美化与基本校验，帮助发现标签不匹配，让配置文件、RSS 更易读，本地运行。</p>
+    <h2>📌 Overview</h2>
+    <p>Pretty-print and validate XML with proper indentation. Spot mismatched tags quickly and make config or RSS files human-readable.</p>
   </section>
 
     <nav class="breadcrumb">
@@ -112,14 +111,14 @@
         </div>
 
         <div class="info-section">
-          <h2>❓ 常见问题（中文）</h2>
+          <h2>❓ More Questions</h2>
           <details class="faq-item">
-            <summary>会校验 XML 吗？</summary>
-            <p>使用浏览器 DOM 解析，遇到未闭合或不匹配的标签会报错而非输出。</p>
+            <summary>Does it validate XML?</summary>
+            <p>It uses the browser DOM parser and reports an error on unclosed or mismatched tags instead of producing output.</p>
           </details>
           <details class="faq-item">
-            <summary>属性会保留吗？</summary>
-            <p>会，属性名与值都原样保留。</p>
+            <summary>Are attributes preserved?</summary>
+            <p>Yes - attribute names and values are kept exactly as-is.</p>
           </details>
         </div>
 
@@ -183,13 +182,13 @@
     </div>
 
   <section class="tool-deep">
-    <h2>📖 深入了解 XML Formatter</h2>
-    <h3>为什么需要 XML 格式化</h3>
-    <p>XML 常用于配置与数据交换，但压缩成一行的 XML 极难阅读。美化缩进能快速暴露标签结构问题。</p>
-    <h3>背后的原理</h3>
-    <p>工具用浏览器 XML 解析器把文档转为节点树，再按层级序列化输出，每层缩进两格；解析失败则说明结构有误。</p>
-    <h3>一个例子</h3>
-    <p>一段压平的接口返回 XML 粘进来，格式化后每个标签层次分明，未闭合的节点也能立刻被发现。</p>
+    <h2>📖 Deep Dive: XML Formatter</h2>
+    <h3>Why format XML</h3>
+    <p>XML is common for config and data exchange, but XML flattened into one line is very hard to read. Pretty-printing with indentation quickly exposes structural issues.</p>
+    <h3>How it works</h3>
+    <p>The tool uses the browser's XML parser to turn the document into a node tree, then serializes it back with two spaces of indentation per level; a parse failure means the structure is wrong.</p>
+    <h3>A quick example</h3>
+    <p>Paste a flattened API-response XML and after formatting every tag is neatly nested; unclosed nodes are spotted immediately.</p>
   </section>
   </main>
 
@@ -200,13 +199,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html" data-i18n="Tools">Tools</a>
-        <a href="about.html" data-i18n="About">About</a>
-        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
-        <a href="contact.html" data-i18n="Contact">Contact</a>
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -247,10 +246,6 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/i18n.js"></script>
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
+<script></script>
 </body>
 </html>

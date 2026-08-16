@@ -39,18 +39,17 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html" class="nav-link">Home</a>
       <a href="index.html#tools" class="nav-link active">Tools</a>
       <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
-      <a href="about.html" class="nav-link" data-i18n="About">About</a>
-      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+      <a href="about.html" class="nav-link">About</a>
     </div>
   </nav>
 
   <main class="main-content">
   <section class="tool-intro">
-    <h2>📌 适用场景</h2>
-    <p>退休金计算器输入你当前的存款、每月定投金额、预期年化收益率和投资年数，用复利公式估算退休时账户里大概有多少钱。它帮你判断现在的储蓄速度是否够用，以及多投一点能带来多大差别。</p>
+    <h2>📌 Overview</h2>
+    <p>Estimate how much your retirement nest egg will grow, given current savings, monthly contributions and an expected annual return.</p>
   </section>
 
     <nav class="breadcrumb">
@@ -131,14 +130,14 @@
         </div>
 
         <div class="info-section">
-          <h2>❓ 常见问题（中文）</h2>
+          <h2>❓ More Questions</h2>
           <details class="faq-item">
-            <summary>年化收益率填多少合适？</summary>
-            <p>长期股债组合的历史平均实际回报常在 5%–8%，但每年波动很大。做规划时建议保守一点，用 5%–6% 更稳妥。</p>
+            <summary>What annual return should I use?</summary>
+            <p>Long-term stock/bond portfolios have historically averaged around 5%–8% real return, but returns vary year to year. For planning, a conservative 5%–6% is safer.</p>
           </details>
           <details class="faq-item">
-            <summary>算出来的钱是现值还是未来值？</summary>
-            <p>本工具算的是名义增长，未按通胀折算。要估算实际购买力，可把年收益下调约 2%–3%。</p>
+            <summary>Is the result in today’s dollars or future dollars?</summary>
+            <p>This tool shows nominal growth, not inflation-adjusted. To estimate purchasing power, mentally subtract about 2%–3% annual inflation, or use a lower real return.</p>
           </details>
         </div>
 
@@ -202,17 +201,17 @@
     </div>
 
   <section class="tool-deep">
-    <h2>📖 深入了解 Retirement Calculator</h2>
-    <h3>复利是退休储蓄的核心</h3>
-    <p>你投入的钱每年产生收益，收益再产生收益，时间越长滚雪球效应越明显。</p>
-    <h3>计算公式</h3>
-    <p>未来值 FV = 当前存款 × (1+r)^n + 月供 × [((1+r/12)^(12n) − 1) / (r/12)]，其中 r 为年化收益率、n 为年数。</p>
-    <h3>早开始的优势</h3>
-    <p>25 岁和 35 岁开始，即使每月金额相同，最终差距可能高达数倍，因为前期投入享受的复利时间更长。</p>
-    <h3>注意</h3>
-    <li>结果为估算，市场实际回报不可预测</li>
-    <li>未考虑税费、通胀与提取规则</li>
-    <li>仅供参考，重大财务决策请咨询持牌顾问</li>
+    <h2>📖 Deep Dive: Retirement Calculator</h2>
+    <h3>Compound growth is the core of retirement saving</h3>
+    <p>Your money earns returns each year, and those returns earn returns — the longer the horizon, the stronger the snowball.</p>
+    <h3>The formula</h3>
+    <p>Future value FV = current savings × (1+r)^n + monthly contribution × [((1+r/12)^(12n) − 1) / (r/12)], where r is the annual return and n is years.</p>
+    <h3>The advantage of starting early</h3>
+    <p>Starting at 25 vs 35, even with the same monthly amount, the final gap can be several times larger because early contributions enjoy far more compounding time.</p>
+    <h3>Notes</h3>
+    <li>Results are estimates; real market returns are unpredictable</li>
+    <li>Taxes, inflation and withdrawal rules are not modelled</li>
+    <li>For reference only; consult a licensed adviser for major decisions</li>
   </section>
   </main>
 
@@ -223,13 +222,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html" data-i18n="Tools">Tools</a>
-        <a href="about.html" data-i18n="About">About</a>
-        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
-        <a href="contact.html" data-i18n="Contact">Contact</a>
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -257,10 +256,6 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/i18n.js"></script>
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
+<script></script>
 </body>
 </html>

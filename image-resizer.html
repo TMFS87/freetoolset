@@ -39,18 +39,17 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html" class="nav-link">Home</a>
       <a href="index.html#tools" class="nav-link active">Tools</a>
       <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
-      <a href="about.html" class="nav-link" data-i18n="About">About</a>
-      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+      <a href="about.html" class="nav-link">About</a>
     </div>
   </nav>
 
   <main class="main-content">
   <section class="tool-intro">
-    <h2>📌 适用场景</h2>
-    <p>图片尺寸调整工具用 Canvas 在浏览器本地把 JPG/PNG/WEBP 图片缩放到指定宽度或高度，照片不会上传到任何服务器，保护隐私。</p>
+    <h2>📌 Overview</h2>
+    <p>Resize a JPG/PNG/WEBP image to a target width or height. Processing is done locally with the Canvas API — your photo never leaves the device.</p>
   </section>
 
     <nav class="breadcrumb">
@@ -131,14 +130,14 @@
         </div>
 
         <div class="info-section">
-          <h2>❓ 常见问题（中文）</h2>
+          <h2>❓ More Questions</h2>
           <details class="faq-item">
-            <summary>图片会被上传吗？</summary>
-            <p>不会。文件通过 Canvas API 在你的浏览器本地读取和处理，不会发送到服务器。</p>
+            <summary>Are images uploaded?</summary>
+            <p>No. Files are read and processed locally in your browser via the Canvas API and are never sent to a server.</p>
           </details>
           <details class="faq-item">
-            <summary>支持哪些格式？</summary>
-            <p>输入一般支持 JPG、PNG、WEBP；输出默认 PNG 以避免画质损失，也可选 JPG。</p>
+            <summary>Which formats are supported?</summary>
+            <p>Inputs usually support JPG, PNG, and WEBP; output defaults to PNG to avoid quality loss, with JPG also available.</p>
           </details>
         </div>
 
@@ -202,15 +201,15 @@
     </div>
 
   <section class="tool-deep">
-    <h2>📖 深入了解 Image Resizer</h2>
-    <h3>工作原理</h3>
-    <p>读取图片文件 → 用 Canvas 按目标尺寸绘制 → 导出为图片。整个流程在你的浏览器内完成，隐私安全。</p>
-    <h3>使用建议</h3>
-    <li>只填宽度，高度会按比例自动计算</li>
-    <li>缩小图片用于网页可明显提速</li>
-    <li>放大超过原始尺寸会模糊</li>
-    <h3>隐私</h3>
-    <p>图片不上传，处理本地完成。</p>
+    <h2>📖 Deep Dive: Image Resizer</h2>
+    <h3>How it works</h3>
+    <p>Read the image file, draw it on a Canvas at the target size, then export as an image. The whole flow happens in your browser, so it is private.</p>
+    <h3>Usage tips</h3>
+    <li>Fill in only the width and the height is calculated proportionally.</li>
+    <li>Shrinking images for the web noticeably speeds up pages.</li>
+    <li>Enlarging beyond the original size gets blurry.</li>
+    <h3>Privacy</h3>
+    <p>Images are not uploaded; processing is local.</p>
   </section>
   </main>
 
@@ -221,13 +220,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html" data-i18n="Tools">Tools</a>
-        <a href="about.html" data-i18n="About">About</a>
-        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
-        <a href="contact.html" data-i18n="Contact">Contact</a>
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -258,10 +257,6 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/i18n.js"></script>
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
+<script></script>
 </body>
 </html>

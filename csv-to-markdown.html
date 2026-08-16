@@ -39,18 +39,17 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html" class="nav-link">Home</a>
       <a href="index.html#tools" class="nav-link active">Tools</a>
       <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
-      <a href="about.html" class="nav-link" data-i18n="About">About</a>
-      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+      <a href="about.html" class="nav-link">About</a>
     </div>
   </nav>
 
   <main class="main-content">
   <section class="tool-intro">
-    <h2>📌 适用场景</h2>
-    <p>CSV 转 Markdown 表格工具把 CSV 文件或粘贴的文本转换成 Markdown 表格，能正确处理带引号、含逗号或换行的内容，适合把表格数据写进文档。</p>
+    <h2>📌 Overview</h2>
+    <p>Convert a CSV file or pasted text into a Markdown table. Handles quoted fields, commas and embedded newlines.</p>
   </section>
 
     <nav class="breadcrumb">
@@ -116,14 +115,14 @@
         </div>
 
         <div class="info-section">
-          <h2>❓ 常见问题（中文）</h2>
+          <h2>❓ More Questions</h2>
           <details class="faq-item">
-            <summary>能处理带引号的逗号吗？</summary>
-            <p>能。被引号包裹、内含逗号或换行的字段会被正确解析。</p>
+            <summary>Can it handle commas inside quotes?</summary>
+            <p>Yes. Fields wrapped in quotes that contain commas or newlines are parsed correctly.</p>
           </details>
           <details class="faq-item">
-            <summary>表头是哪一行？</summary>
-            <p>CSV 的第一行作为表头，之后的每一行作为表格的一行。</p>
+            <summary>Which row is the header?</summary>
+            <p>The first row of the CSV is the header; each following row becomes a table row.</p>
           </details>
         </div>
 
@@ -187,16 +186,16 @@
     </div>
 
   <section class="tool-deep">
-    <h2>📖 深入了解 CSV to Markdown Table</h2>
-    <h3>用途</h3>
-    <p>把表格数据从 CSV 转成 Markdown 表格，便于放进文档、Wiki 或 README。</p>
-    <h3>解析规则</h3>
-    <li>逗号分隔字段</li>
-    <li>双引号包裹的字段可含逗号与换行</li>
-    <li>两个引号连续表示一个引号字符</li>
-    <li>首行作表头</li>
-    <h3>隐私</h3>
-    <p>解析在浏览器本地完成。</p>
+    <h2>📖 Deep Dive: CSV to Markdown Table</h2>
+    <h3>Purpose</h3>
+    <p>Convert tabular data from CSV into a Markdown table, handy for docs, wikis, or READMEs.</p>
+    <h3>Parsing rules</h3>
+    <li>Fields are separated by commas.</li>
+    <li>Quoted fields may contain commas and newlines.</li>
+    <li>Two consecutive quotes represent one quote character.</li>
+    <li>The first row is the header.</li>
+    <h3>Privacy</h3>
+    <p>Parsing happens locally in your browser.</p>
   </section>
   </main>
 
@@ -207,13 +206,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html" data-i18n="Tools">Tools</a>
-        <a href="about.html" data-i18n="About">About</a>
-        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
-        <a href="contact.html" data-i18n="Contact">Contact</a>
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -259,10 +258,6 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/i18n.js"></script>
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
+<script></script>
 </body>
 </html>

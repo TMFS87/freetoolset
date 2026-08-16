@@ -39,18 +39,17 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html" class="nav-link">Home</a>
       <a href="index.html#tools" class="nav-link active">Tools</a>
       <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
-      <a href="about.html" class="nav-link" data-i18n="About">About</a>
-      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+      <a href="about.html" class="nav-link">About</a>
     </div>
   </nav>
 
   <main class="main-content">
   <section class="tool-intro">
-    <h2>📌 适用场景</h2>
-    <p>油耗转换器在 MPG（美制/英制）、km/L 和 L/100km 之间换算。美国用 MPG（越高越省），欧洲和中国常用 L/100km（越低越省），两者互为倒数关系，比较进口车参数时很容易搞混。</p>
+    <h2>📌 Overview</h2>
+    <p>Convert fuel economy between MPG (US &amp; UK), km/L and L/100km — useful when comparing cars across regions.</p>
   </section>
 
     <nav class="breadcrumb">
@@ -133,14 +132,14 @@
         </div>
 
         <div class="info-section">
-          <h2>❓ 常见问题（中文）</h2>
+          <h2>❓ More Questions</h2>
           <details class="faq-item">
-            <summary>美制 MPG 和英制 MPG 为什么不同？</summary>
-            <p>美制加仑约 3.785 升，英制加仑约 4.546 升，所以同一辆车英制 MPG 数字更大。一定要看清楚是哪种。</p>
+            <summary>Why do US MPG and UK MPG differ?</summary>
+            <p>The US gallon is about 3.785 L while the imperial gallon is about 4.546 L, so the same car shows a larger number in imperial MPG. Always check which one it is.</p>
           </details>
           <details class="faq-item">
-            <summary>L/100km 和 MPG 为什么是倒数关系？</summary>
-            <p>MPG 是“每单位体积跑多远”（越大越省），L/100km 是“每单位距离耗多少油”（越小越省），二者互为倒数，不是简单倍率。</p>
+            <summary>Why are L/100km and MPG inverse?</summary>
+            <p>MPG is distance per volume (higher is thriftier), while L/100km is volume per distance (lower is thriftier); the two are reciprocals, not a simple multiple.</p>
           </details>
         </div>
 
@@ -204,18 +203,18 @@
     </div>
 
   <section class="tool-deep">
-    <h2>📖 深入了解 Fuel Economy Converter</h2>
-    <h3>两种思维</h3>
-    <p>MPG（每加仑英里）是“体积→距离”，数字越大越省油；L/100km 是“距离→体积”，数字越小越省油。二者互为倒数关系。</p>
-    <h3>换算系数</h3>
+    <h2>📖 Deep Dive: Fuel Economy Converter</h2>
+    <h3>Two ways of thinking</h3>
+    <p>MPG (miles per gallon) is volume to distance, where a larger number means better economy; L/100km is distance to volume, where a smaller number means better economy. The two are reciprocal.</p>
+    <h3>Conversion factors</h3>
     <li>1 km/L = 2.352 MPG(US) = 2.825 MPG(UK)</li>
     <li>1 L/100km = 100 / (km/L)</li>
-    <li>1 MPG(US) ≈ 0.425 km/L</li>
-    <h3>美制 vs 英制加仑</h3>
-    <p>美国加仑 = 3.785 L，英国加仑 = 4.546 L，所以英制 MPG 数值更大。</p>
-    <h3>注意</h3>
-    <li>实际油耗受驾驶习惯、路况、空调影响很大</li>
-    <li>结果仅供参考</li>
+    <li>1 MPG(US) is about 0.425 km/L</li>
+    <h3>US vs imperial gallon</h3>
+    <p>The US gallon is 3.785 L, the imperial gallon is 4.546 L, so imperial MPG shows a larger number.</p>
+    <h3>Notes</h3>
+    <li>Real fuel use varies a lot with driving habits, road conditions, and air conditioning.</li>
+    <li>Results are for reference only.</li>
   </section>
   </main>
 
@@ -226,13 +225,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html" data-i18n="Tools">Tools</a>
-        <a href="about.html" data-i18n="About">About</a>
-        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
-        <a href="contact.html" data-i18n="Contact">Contact</a>
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -267,10 +266,6 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/i18n.js"></script>
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
+<script></script>
 </body>
 </html>

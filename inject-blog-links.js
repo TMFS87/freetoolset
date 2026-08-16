@@ -20,7 +20,7 @@ const blogFiles = fs.readdirSync(path.join(ROOT, 'blog'))
   .filter(f => f.endsWith('.html') && f !== 'index.html');
 
 const map = {};      // toolSlug -> [blogFile]
-const btitle = {};   // blogFile -> clean Chinese title
+const btitle = {};   // blogFile -> clean title (English)
 const linkCount = {}; // blogFile -> how many tools it links (hub articles link many)
 
 blogFiles.forEach(b => {
@@ -115,12 +115,12 @@ fs.readdirSync(ROOT).filter(f => f.endsWith('.html')).forEach(f => {
 
   const block =
 `  <section class="further-reading">
-    <h2>📚 延伸阅读</h2>
-    <p class="fr-lead">想更深入了解相关知识？这些教程配合本工具一起看效果更好。</p>
+    <h2>📚 Further Reading</h2>
+    <p class="fr-lead">Want to go deeper? These tutorials pair well with this tool.</p>
     <div class="fr-grid">
 ${items}
     </div>
-    <a class="fr-all" href="blog/index.html">浏览全部教程 →</a>
+    <a class="fr-all" href="blog/index.html">Browse all tutorials →</a>
   </section>
 
 `;

@@ -67,7 +67,6 @@ function linearConv(units, defFrom, defTo, defVal) {
     cardDesc: 'Convert bandwidth and download speeds across bit and byte units.',
     keywords: 'data transfer rate converter, bandwidth converter, mbps to mb/s, gbps converter, internet speed',
     searchTerms: 'data transfer rate bandwidth mbps mb/s gbps converter',
-    zh: '数据传输速率转换器在比特单位（bps、Mbps、Gbps）和字节单位（KB/s、MB/s、GB/s）之间换算。注意 1 字节 = 8 比特，所以 100 Mbps 约等于 12.5 MB/s。常用来核对宽带、下载和接口速度。',
     howto: ['Enter the speed value.', 'Pick the source unit (e.g. Mbps).', 'Pick the target unit (e.g. MB/s).', 'Read the result and the full unit table.'],
     faq: [
       { q: 'Why is 100 Mbps only ~12.5 MB/s?', a: 'ISPs quote bits per second (Mbps) while download managers show bytes per second (MB/s). Since 1 byte = 8 bits, divide the Mbps number by 8 to get MB/s.' },
@@ -75,15 +74,15 @@ function linearConv(units, defFrom, defTo, defVal) {
       { q: 'What is a good home internet speed?', a: 'Roughly 25+ Mbps supports HD streaming; 100+ Mbps is comfortable for multiple 4K streams and video calls simultaneously.' }
     ],
     zhfaq: [
-      { q: '为什么 100 Mbps 只有约 12.5 MB/s？', a: '运营商标的是“比特/秒”（Mbps），而下载工具显示“字节/秒”（MB/s）。1 字节 = 8 比特，所以把 Mbps 除以 8 才是 MB/s。' },
-      { q: '这里用 1000 还是 1024？', a: '网络速率采用十进制（1000）：1 Mbps = 1,000,000 bit/s。存储单位有时用 1024，但传输速率按十进制。' }
-    ],
+    { q: 'Why is 100 Mbps only about 12.5 MB/s?', a: 'ISPs advertise bits per second (Mbps), while download tools show bytes per second (MB/s). 1 byte = 8 bits, so divide Mbps by 8 to get MB/s.' },
+    { q: 'Should I use 1000 or 1024 here?', a: 'Network rates use decimal (1000): 1 Mbps = 1,000,000 bit/s. Storage units sometimes use 1024, but transfer rates are decimal.' }
+  ],
     usecases: [
       { icon: '🌐', title: 'ISP plans', text: 'Compare Mbps offers.' },
       { icon: '⬇️', title: 'Downloads', text: 'Convert to MB/s.' },
       { icon: '🔌', title: 'Interfaces', text: 'USB/Ethernet rates.' }
     ],
-    deep: '## 比特 vs 字节\n网络带宽几乎都用“比特每秒”（bit/s, bps）表示，而文件大小用“字节”（Byte, B），1 字节 = 8 比特。因此 100 Mbps 的宽带，理论最大下载速度约 12.5 MB/s。\n## 十进制换算\n传输速率遵循十进制：1 kbps = 1,000 bit/s，1 Mbps = 1,000,000 bit/s，1 Gbps = 10^9 bit/s。\n## 常见参考\n- 4G 峰值：约 100 Mbps\n- 千兆宽带：1000 Mbps = 1 Gbps ≈ 125 MB/s\n- Wi-Fi 6：理论 9.6 Gbps\n## 注意\n- 实际速度受线路、拥塞、协议开销影响，低于理论值\n- 结果仅供参考',
+    deep: '## Bit vs byte\nNetwork bandwidth is almost always given in bits per second (bit/s, bps), while file sizes use bytes (Byte, B), where 1 byte = 8 bits. So a 100 Mbps connection has a theoretical max download speed of about 12.5 MB/s.\n## Decimal conversion\nTransfer rates follow the decimal system: 1 kbps = 1,000 bit/s, 1 Mbps = 1,000,000 bit/s, 1 Gbps = 10 to the 9th bit/s.\n## Common references\n- 4G peak: about 100 Mbps\n- Gigabit broadband: 1000 Mbps = 1 Gbps is about 125 MB/s\n- Wi-Fi 6: theoretical 9.6 Gbps\n## Notes\n- Actual speed is lower than theoretical due to line quality, congestion, and protocol overhead.\n- Results are for reference only.',
     body: c.body, js: c.js
   });
 })();
@@ -104,7 +103,6 @@ function linearConv(units, defFrom, defTo, defVal) {
     cardDesc: 'Convert torque between N·m, lbf·ft, kgf·m and N·cm.',
     keywords: 'torque converter, nm to lb ft, newton meter, pound force foot, kgf m',
     searchTerms: 'torque converter nm lbf ft kgf m newton meter',
-    zh: '扭矩（力矩）转换器在牛·米（N·m）、磅力·英尺（lbf·ft）、千克力·米（kgf·m）和牛·厘米（N·cm）之间换算。汽车发动机扭矩、自行车力矩、机械设计里经常用到，单位不统一时很容易算错。',
     howto: ['Enter the torque value.', 'Choose the source unit.', 'Choose the target unit.', 'Read the converted value and the full table.'],
     faq: [
       { q: 'What is the difference between torque and power?', a: 'Torque is rotational force (N·m); power is how fast that force does work (kW or hp). Power = torque × angular speed.' },
@@ -112,15 +110,15 @@ function linearConv(units, defFrom, defTo, defVal) {
       { q: 'When do I use lbf·ft?', a: 'US automotive and engineering specs commonly quote engine and fastener torque in pound-force feet.' }
     ],
     zhfaq: [
-      { q: '扭矩和功率有什么区别？', a: '扭矩是旋转力（N·m），功率是做功快慢（kW 或 hp）。功率 = 扭矩 × 角速度。' },
-      { q: 'N·m 和 kgf·m 一样吗？', a: '不一样。1 kgf·m ≈ 9.81 N·m（按 1 千克重力估算），数值接近但不相等。' }
-    ],
+    { q: 'What is the difference between torque and power?', a: 'Torque is rotational force (N m), power is how fast work is done (kW or hp). Power = torque times angular velocity.' },
+    { q: 'Are N m and kgf m the same?', a: 'No. 1 kgf m is about 9.81 N m (by 1 kg of gravity), so the numbers are close but not equal.' }
+  ],
     usecases: [
       { icon: '🚗', title: 'Engine specs', text: 'Compare N·m to lbf·ft.' },
       { icon: '🔩', title: 'Bolt torque', text: 'Match workshop manuals.' },
       { icon: '🚲', title: 'Bike fit', text: 'Crank torque checks.' }
     ],
-    deep: '## 什么是扭矩\n扭矩（力矩）衡量使物体绕轴旋转的“力的大小 × 力臂长度”，国际单位是牛·米（N·m）。\n## 常用单位\n- N·m：国际标准\n- lbf·ft：英制，美国汽车/机械常用\n- kgf·m：千克力·米，旧制，1 kgf·m ≈ 9.80665 N·m\n- N·cm：小力矩，1 N·m = 100 N·cm\n## 换算要点\n所有单位都线性换算到 N·m 再转目标单位。\n## 注意\n- 结果仅供参考，工程计算请以设计规范为准',
+    deep: '## What is torque\nTorque (moment of force) measures the rotational effect of force times lever arm, with the international unit newton-meter (N m).\n## Common units\n- N m: international standard.\n- lbf ft: imperial, common in US automotive and machinery.\n- kgf m: kilogram-force meter, old system, 1 kgf m is about 9.80665 N m.\n- N cm: small torque, 1 N m = 100 N cm.\n## Conversion note\nAll units are linearly converted to N m first, then to the target unit.\n## Note\n- Results are for reference only; for engineering use the design specification.',
     body: c.body, js: c.js
   });
 })();
@@ -185,7 +183,6 @@ function linearConv(units, defFrom, defTo, defVal) {
     cardDesc: 'Convert fuel economy between MPG, km/L and L/100km.',
     keywords: 'fuel economy converter, mpg to l/100km, km/l converter, gas mileage, fuel efficiency',
     searchTerms: 'fuel economy mpg km/l l 100km converter mileage',
-    zh: '油耗转换器在 MPG（美制/英制）、km/L 和 L/100km 之间换算。美国用 MPG（越高越省），欧洲和中国常用 L/100km（越低越省），两者互为倒数关系，比较进口车参数时很容易搞混。',
     howto: ['Enter the fuel economy value.', 'Pick the source unit (MPG US/UK, km/L, L/100km).', 'Pick the target unit.', 'Read the result and the full comparison table.'],
     faq: [
       { q: 'MPG US vs MPG UK — why different?', a: 'A US gallon is ~3.785 L while a UK (imperial) gallon is ~4.546 L, so the same car shows a higher number in UK MPG. Always note which one.' },
@@ -193,15 +190,15 @@ function linearConv(units, defFrom, defTo, defVal) {
       { q: 'Which is better for comparing cars?', a: 'Either works as long as you keep the unit consistent. L/100km is linear and easier to subtract differences; MPG is intuitive for "how far on a tank".' }
     ],
     zhfaq: [
-      { q: '美制 MPG 和英制 MPG 为什么不同？', a: '美制加仑约 3.785 升，英制加仑约 4.546 升，所以同一辆车英制 MPG 数字更大。一定要看清楚是哪种。' },
-      { q: 'L/100km 和 MPG 为什么是倒数关系？', a: 'MPG 是“每单位体积跑多远”（越大越省），L/100km 是“每单位距离耗多少油”（越小越省），二者互为倒数，不是简单倍率。' }
-    ],
+    { q: 'Why do US MPG and UK MPG differ?', a: 'The US gallon is about 3.785 L while the imperial gallon is about 4.546 L, so the same car shows a larger number in imperial MPG. Always check which one it is.' },
+    { q: 'Why are L/100km and MPG inverse?', a: 'MPG is distance per volume (higher is thriftier), while L/100km is volume per distance (lower is thriftier); the two are reciprocals, not a simple multiple.' }
+  ],
     usecases: [
       { icon: '🚗', title: 'Import cars', text: 'Compare US vs EU ratings.' },
       { icon: '📊', title: 'Trip budget', text: 'Estimate fuel cost.' },
       { icon: '🌍', title: 'Spec sheets', text: 'Normalise units.' }
     ],
-    deep: '## 两种思维\nMPG（每加仑英里）是“体积→距离”，数字越大越省油；L/100km 是“距离→体积”，数字越小越省油。二者互为倒数关系。\n## 换算系数\n- 1 km/L = 2.352 MPG(US) = 2.825 MPG(UK)\n- 1 L/100km = 100 / (km/L)\n- 1 MPG(US) ≈ 0.425 km/L\n## 美制 vs 英制加仑\n美国加仑 = 3.785 L，英国加仑 = 4.546 L，所以英制 MPG 数值更大。\n## 注意\n- 实际油耗受驾驶习惯、路况、空调影响很大\n- 结果仅供参考',
+    deep: '## Two ways of thinking\nMPG (miles per gallon) is volume to distance, where a larger number means better economy; L/100km is distance to volume, where a smaller number means better economy. The two are reciprocal.\n## Conversion factors\n- 1 km/L = 2.352 MPG(US) = 2.825 MPG(UK)\n- 1 L/100km = 100 / (km/L)\n- 1 MPG(US) is about 0.425 km/L\n## US vs imperial gallon\nThe US gallon is 3.785 L, the imperial gallon is 4.546 L, so imperial MPG shows a larger number.\n## Notes\n- Real fuel use varies a lot with driving habits, road conditions, and air conditioning.\n- Results are for reference only.',
     body: body, js: js
   });
 })();

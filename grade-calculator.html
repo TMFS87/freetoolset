@@ -39,18 +39,17 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html" class="nav-link">Home</a>
       <a href="index.html#tools" class="nav-link active">Tools</a>
       <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
-      <a href="about.html" class="nav-link" data-i18n="About">About</a>
-      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+      <a href="about.html" class="nav-link">About</a>
     </div>
   </nav>
 
   <main class="main-content">
   <section class="tool-intro">
-    <h2>📌 适用场景</h2>
-    <p>加权成绩计算器根据各项作业、考试的分值与权重算出最终成绩，可动态增删行以匹配你的课程大纲，本地运行。</p>
+    <h2>📌 Overview</h2>
+    <p>Calculate your final weighted grade from assignments, exams and their weights. Add or remove rows to match your syllabus exactly.</p>
   </section>
 
     <nav class="breadcrumb">
@@ -109,14 +108,14 @@
         </div>
 
         <div class="info-section">
-          <h2>❓ 常见问题（中文）</h2>
+          <h2>❓ More Questions</h2>
           <details class="faq-item">
-            <summary>权重一定要加起来等于 100 吗？</summary>
-            <p>不必，计算器会按总权重归一化，但凑成 100% 最直观。</p>
+            <summary>Do the weights have to add up to 100?</summary>
+            <p>Not necessarily - the calculator normalizes by total weight, but making them sum to 100% is the most intuitive.</p>
           </details>
           <details class="faq-item">
-            <summary>分数尺度能混用吗？</summary>
-            <p>请保持同一尺度（如都 0–100），加权均值才有意义。</p>
+            <summary>Can I mix score scales?</summary>
+            <p>Keep the same scale (e.g. all 0-100); only then does the weighted average make sense.</p>
           </details>
         </div>
 
@@ -180,13 +179,13 @@
     </div>
 
   <section class="tool-deep">
-    <h2>📖 深入了解 Weighted Grade Calculator</h2>
-    <h3>为什么需要加权成绩计算</h3>
-    <p>课程成绩由多项按不同权重组成，手算加权均值容易出错。动态表格能精确匹配大纲。</p>
-    <h3>背后的原理</h3>
-    <p>最终成绩 = Σ(各项分数 × 权重) ÷ Σ权重。权重归一化后乘以分数再求和，得到综合百分比。</p>
-    <h3>一个例子</h3>
-    <p>平时 30%（得 90）、期中 30%（得 80）、期末 40%（得 70），加权 = (90×30+80×30+70×40)÷100 = 79 分。</p>
+    <h2>📖 Deep Dive: Weighted Grade Calculator</h2>
+    <h3>Why a weighted grade calculator</h3>
+    <p>Course grades are made of several components with different weights, and hand-calculating the weighted average is error-prone. A dynamic table matches the syllabus precisely.</p>
+    <h3>How it works</h3>
+    <p>Final grade equals the sum of (component score times weight) divided by the sum of weights. Weights are normalized, multiplied by scores and summed to get the overall percentage.</p>
+    <h3>A quick example</h3>
+    <p>Participation 30% (score 90), midterm 30% (80), final 40% (70) - weighted equals (90 times 30 plus 80 times 30 plus 70 times 40) divided by 100, which is 79.</p>
   </section>
   </main>
 
@@ -197,13 +196,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html" data-i18n="Tools">Tools</a>
-        <a href="about.html" data-i18n="About">About</a>
-        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
-        <a href="contact.html" data-i18n="Contact">Contact</a>
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -230,10 +229,6 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/i18n.js"></script>
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
+<script></script>
 </body>
 </html>

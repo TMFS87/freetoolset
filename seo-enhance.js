@@ -1,8 +1,8 @@
 /**
- * FreeToolset SEO enhancer (idempotent).
+ * FreeToolset SEO enhancer (English-only, replace mode).
  * For each tool page: completes Open Graph / Twitter tags, adds JSON-LD
- * SoftwareApplication schema, and inserts a Chinese "适用场景" intro block.
- * Re-running is safe (guarded by HTML marker comments).
+ * SoftwareApplication schema, and (re)inserts an English "Use Cases" intro block.
+ * Re-running replaces existing content so previously-Chinese blocks become English.
  */
 const fs = require("fs");
 const path = require("path");
@@ -20,32 +20,32 @@ const TOOLS = [
   "ai-content-rewriter.html"
 ];
 
-const ZH = {
-  "base64-encoder.html": "Base64 是一种将二进制数据编码为纯文本的通用格式，广泛用于邮件附件、API 数据传输、Data URI 内联图片以及 JWT / 基础认证等场景。本工具完全在浏览器本地运行，支持 UTF-8（含中文、emoji），无需上传数据即可即时编解码，兼顾安全与速度，适合开发调试与日常文本转换。",
-  "json-formatter.html": "JSON 是前后端交互最常用的数据格式。本工具可一键美化、压缩、校验 JSON，自动高亮语法错误并定位行号，帮助开发者快速排查接口返回异常、整理配置文件。纯本地运行，数据不出浏览器，适合调试 API、查看日志、编辑 package.json 等。",
-  "password-generator.html": "强密码是账号安全的第一道防线。本工具可生成高强度随机密码，自定义长度并包含大小写字母、数字与符号，支持批量生成。所有计算在本地完成，不上传任何信息，适合为邮箱、网银、服务器等敏感账户创建难以破解的凭据。",
-  "uuid-generator.html": "UUID（通用唯一标识符）常用于数据库主键、分布式系统 ID、会话标识与临时文件名。本工具一键生成符合 RFC 4122 的随机 UUID v4，支持批量生成最多 100 个，无需后端、本地即生成，适合开发测试与系统对接。",
-  "hash-generator.html": "哈希（Hash）可将任意文本映射为固定长度摘要，用于校验文件完整性、存储密码摘要、生成签名等。本工具支持 MD5、SHA-1、SHA-256、SHA-512，本地实时计算不依赖网络，适合验证下载文件是否被篡改、调试接口签名。",
-  "url-encoder.html": "URL 编码（百分号编码）用于在网址中安全传输特殊字符。本工具支持 encodeURI 与 encodeURIComponent 两种方式互转，帮助开发者正确处理中文参数、空格与符号，避免接口 400 错误，适合前端拼接链接与调试查询字符串。",
-  "color-picker.html": "取色器可快速获取颜色并转换 HEX、RGB、HSL 等格式，是前端与 UI 设计必备。本工具支持点击色板取色、输入值互转、复制结果，纯本地运行，适合配色校对、CSS 变量提取与设计稿还原。",
-  "image-compressor.html": "图片体积过大会拖慢网页加载。本工具在浏览器内直接压缩与缩放图片，支持常见格式，无需上传服务器即可减小体积、提升页面速度，兼顾画质与性能，适合站长优化站点、压缩电商图片。",
-  "qr-code-generator.html": "二维码可把网址、文本、WiFi 等信息编码为一图，方便手机扫码。本工具支持自定义尺寸与格式，本地生成、即时下载，适合制作名片二维码、活动海报、公众号关注码等推广素材。",
-  "word-counter.html": "字数统计是写作与 SEO 的基础。本工具实时统计字数、字符数、句子与段落，帮助作者控制篇幅、满足投稿与平台限制，适合写论文、公众号推文、论文摘要时快速核对长度。",
-  "lorem-ipsum-generator.html": "Lorem Ipsum 是设计与排版常用的占位文本。本工具可按段落、句子或单词批量生成占位文字，方便在未定稿前搭建页面布局、演示组件效果，适合前端原型设计与 UI 稿填充。",
-  "image-to-base64.html": "将图片转为 Base64 Data URI 可直接内联进 HTML / CSS，减少请求数。本工具在本地把图片编码为 Data URI，支持一键复制，适合做小图标内联、邮件 HTML 嵌入图片，避免外链失效。",
-  "text-case-converter.html": "大小写转换在编程与文案中很常用。本工具支持大写、小写、首字母大写、驼峰（camelCase）、蛇形（snake_case）、短横（kebab-case）等多种格式互转，本地批量处理，适合变量命名、标题规范化与代码整理。",
-  "timestamp-converter.html": "Unix 时间戳是系统记录时间的标准方式。本工具支持秒 / 毫秒时间戳与日期互转，显示 UTC 与本地时间，方便排查日志时间、接口时区问题，适合后端调试与跨时区协作。",
-  "regex-tester.html": "正则表达式是文本匹配与提取的利器。本工具实时测试正则，高亮匹配结果、展示捕获组，帮助开发者验证邮箱、手机号等规则，适合表单校验、日志抽取与数据清洗。",
-  "base-converter.html": "进制转换是底层开发的常见需求。本工具支持二进制、八进制、十进制、十六进制互转，实时计算，适合学习计算机原理、调试内存地址、阅读颜色值与位运算结果。",
-  "line-tools.html": "行处理工具可批量整理文本：排序、去重、乱序、去空行、裁剪与改大小写。本工具纯本地运行，适合清洗 CSV 数据、整理名单、处理日志，提升文本编辑效率。",
-  "port-lookup.html": "端口是网络服务的出入口。本工具可查询 TCP / UDP 端口对应的协议、服务与安全风险，帮助运维快速识别开放端口、排查防火墙与端口冲突，适合服务器安全加固与排障。",
-  "password-strength-checker.html": "密码强度检查器可评估口令熵值、预估破解时间并给出改进建议。本工具本地运行，不上传密码，帮助你在注册时判断口令是否足够安全，适合个人与企业提升账户防护。",
-  "ai-studio.html": "AI 内容工作台是你的全能写作助手：输入任意需求，AI 即时生成商品描述、博客、邮件标题、SEO 文案等。每日免费额度、无需注册，纯网页即用，适合营销、运营与创作者高效产出内容。",
-  "ai-product-description.html": "用 AI 一键生成高转化商品描述：输入产品信息，自动产出卖点清晰、符合电商调性的文案，支持多语言与风格切换，帮助卖家提升详情页转化，适合淘宝、独立站与跨境店铺。",
-  "ai-seo-meta-generator.html": "AI SEO 元数据生成器可根据页面主题自动产出优化的标题与描述，控制字符数、嵌入关键词，提升搜索点击率，适合站长批量优化落地页 meta 标签、提高收录排名。",
-  "ai-blog-writer.html": "AI 博客写作助手可根据主题生成结构完整、可读性强的文章，自带小标题与要点，帮助内容创作者高效产出、保持更新频率，适合自媒体、企业博客与 SEO 内容矩阵。",
-  "ai-email-subject.html": "AI 邮件标题生成器一次产出 10 条高打开率标题，支持 A / B 风格切换，帮助营销邮件提升打开率，适合 Newsletter、促销与冷启动触达。",
-  "ai-content-rewriter.html": "AI 内容改写器可重写、润色文本，调整语气与改写强度，避免重复、激发灵感，适合伪原创、文案优化与多平台分发，本地提交、AI 即时返回。"
+const EN = {
+  "base64-encoder.html": "Base64 is a universal format for encoding binary data as plain text, widely used for email attachments, API data transfer, Data-URI inline images, and JWT / Basic Auth. This tool runs entirely in your browser, supports UTF-8 (including Chinese and emoji), and encodes and decodes instantly without uploading your data — balancing security and speed, ideal for development debugging and everyday text conversion.",
+  "json-formatter.html": "JSON is the most common data format for front-end and back-end communication. This tool beautifies, minifies, and validates JSON in one click, automatically highlights syntax errors and pinpoints line numbers, helping developers quickly troubleshoot abnormal API responses and organize config files. It runs locally, so your data never leaves the browser — great for debugging APIs, inspecting logs, and editing package.json.",
+  "password-generator.html": "A strong password is the first line of defense for account security. This tool generates high-strength random passwords, with customizable length and inclusion of uppercase and lowercase letters, numbers, and symbols, and supports batch generation. All computation happens locally with no data uploaded, making it ideal for creating hard-to-crack credentials for email, online banking, servers, and other sensitive accounts.",
+  "uuid-generator.html": "UUIDs (Universally Unique Identifiers) are commonly used as database primary keys, distributed-system IDs, session identifiers, and temporary file names. This tool generates random UUID v4 compliant with RFC 4122 in one click, supports batch generation of up to 100, requires no backend, and runs locally — ideal for development testing and system integration.",
+  "hash-generator.html": "A hash maps any text to a fixed-length digest, used to verify file integrity, store password digests, and generate signatures. This tool supports MD5, SHA-1, SHA-256, and SHA-512, computing in real time locally without network dependency — ideal for verifying whether downloaded files have been tampered with and debugging API signatures.",
+  "url-encoder.html": "URL encoding (percent-encoding) is used to safely transmit special characters in web addresses. This tool converts between encodeURI and encodeURIComponent, helping developers correctly handle Chinese parameters, spaces, and symbols, avoid 400 errors, and is ideal for front-end link building and debugging query strings.",
+  "color-picker.html": "A color picker quickly grabs colors and converts between HEX, RGB, HSL, and other formats — essential for front-end and UI design. This tool supports clicking a palette to pick, converting input values, and copying results, all locally — ideal for color proofing, extracting CSS variables, and recreating designs.",
+  "image-compressor.html": "Oversized images slow down page loading. This tool compresses and resizes images directly in the browser, supports common formats, and reduces size without uploading to a server — improving page speed while balancing quality and performance, ideal for webmasters optimizing sites and compressing e-commerce images.",
+  "qr-code-generator.html": "QR codes encode URLs, text, WiFi, and other info into an image for easy mobile scanning. This tool supports custom sizes and formats, generates locally for instant download — ideal for creating business-card QR codes, event posters, and official-account follow codes for promotion.",
+  "word-counter.html": "Word counting is the foundation of writing and SEO. This tool counts characters, words, sentences, and paragraphs in real time, helping authors control length and meet submission and platform limits — ideal for checking the length of papers, official-account posts, and abstracts quickly.",
+  "lorem-ipsum-generator.html": "Lorem Ipsum is placeholder text commonly used in design and typesetting. This tool generates placeholder text by paragraph, sentence, or word in batches, making it easy to build page layouts and demonstrate component effects before finalizing content — ideal for front-end prototyping and UI mockups.",
+  "image-to-base64.html": "Converting images to Base64 Data URIs lets you inline them directly into HTML / CSS, reducing requests. This tool encodes images into Data URIs locally with one-click copy — ideal for inlining small icons and embedding images in email HTML, avoiding broken external links.",
+  "text-case-converter.html": "Case conversion is common in programming and copywriting. This tool supports uppercase, lowercase, title case, camelCase, snake_case, kebab-case, and more, processing batches locally — ideal for variable naming, title normalization, and code organization.",
+  "timestamp-converter.html": "Unix timestamps are the standard way systems record time. This tool converts between second / millisecond timestamps and dates, showing UTC and local time, making it easy to troubleshoot log times and interface timezone issues — ideal for back-end debugging and cross-timezone collaboration.",
+  "regex-tester.html": "Regular expressions are powerful for text matching and extraction. This tool tests regex in real time, highlights matches, and shows capture groups, helping developers validate rules like emails and phone numbers — ideal for form validation, log extraction, and data cleaning.",
+  "base-converter.html": "Base conversion is a common need in low-level development. This tool converts between binary, octal, decimal, and hexadecimal in real time — ideal for learning computer fundamentals, debugging memory addresses, and reading color values and bitwise results.",
+  "line-tools.html": "Line tools batch-organize text: sort, dedupe, shuffle, remove blank lines, trim, and change case. This tool runs entirely locally — ideal for cleaning CSV data, organizing name lists, and processing logs, boosting text-editing efficiency.",
+  "port-lookup.html": "Ports are the entry and exit points of network services. This tool queries the protocol, service, and security risks behind TCP / UDP ports, helping ops quickly identify open ports and troubleshoot firewall and port conflicts — ideal for server hardening and troubleshooting.",
+  "password-strength-checker.html": "A password strength checker evaluates entropy, estimates crack time, and gives improvement suggestions. This tool runs locally without uploading your password, helping you judge whether a passphrase is secure enough when registering — ideal for individuals and businesses improving account protection.",
+  "ai-studio.html": "The AI Content Studio is your all-in-one writing assistant: enter any need and AI instantly generates product descriptions, blog posts, email subjects, SEO copy, and more. Free daily quota, no registration, works right in the browser — ideal for marketing, operations, and creators producing content efficiently.",
+  "ai-product-description.html": "Generate high-converting product descriptions in one click with AI: enter product info and it automatically produces clear, e-commerce-friendly copy with adjustable language and tone, helping sellers improve detail-page conversion — ideal for Taobao, independent sites, and cross-border stores.",
+  "ai-seo-meta-generator.html": "The AI SEO meta generator automatically produces optimized titles and descriptions based on your page topic, controlling character counts and embedding keywords to improve search click-through rates — ideal for webmasters batch-optimizing landing-page meta tags and improving indexing and ranking.",
+  "ai-blog-writer.html": "The AI blog writing assistant generates well-structured, readable articles from a topic, with built-in subheadings and key points, helping content creators produce efficiently and maintain posting frequency — ideal for self-media, corporate blogs, and SEO content matrices.",
+  "ai-email-subject.html": "The AI email subject generator produces 10 high-open-rate subjects at once, with A/B style switching, helping marketing emails improve open rates — ideal for newsletters, promotions, and cold outreach.",
+  "ai-content-rewriter.html": "The AI content rewriter rewrites and polishes text, adjusting tone and rewrite strength to avoid duplication and spark inspiration — ideal for spinning, copy optimization, and multi-platform distribution, with local submission and instant AI return."
 };
 
 function escRe(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
@@ -85,7 +85,7 @@ TOOLS.forEach(file => {
   if (!canonical) canonical = "https://www.freetoolset.app/" + file;
   const name = title.replace(/[—\-|]\s*FreeToolset[\s\S]*$/i, "").trim();
 
-  // 1) Complete Open Graph / Twitter tags
+  // 1) Complete Open Graph / Twitter tags (only if missing)
   if (!html.includes("<!-- ft-og-social -->")) {
     const img = hasImage
       ? '  <meta property="og:image" content="https://www.freetoolset.app/og-image.png">\n' +
@@ -105,7 +105,7 @@ TOOLS.forEach(file => {
     html = html.replace("</head>", social + "</head>");
   }
 
-  // 2) JSON-LD SoftwareApplication schema
+  // 2) JSON-LD SoftwareApplication schema (only if missing)
   if (!html.includes("<!-- ft-schema -->")) {
     const schema = {
       "@context": "https://schema.org",
@@ -122,13 +122,14 @@ TOOLS.forEach(file => {
     html = html.replace("</head>", s + "</head>");
   }
 
-  // 3) Chinese "适用场景" intro block
-  if (!html.includes("<!-- ft-zh-intro -->") && ZH[file]) {
+  // 3) English "Use Cases" intro block — replace existing ft-zh-intro if present
+  if (EN[file]) {
+    html = html.replace(/<!-- ft-zh-intro -->[\s\S]*?<\/section>\n?/, "");
     const block =
       "  <!-- ft-zh-intro -->\n" +
       '  <section class="tool-intro">\n' +
-      "    <h2>📌 适用场景</h2>\n" +
-      "    <p>" + ZH[file] + "</p>\n" +
+      "    <h2>📌 Use Cases</h2>\n" +
+      "    <p>" + EN[file] + "</p>\n" +
       "  </section>\n";
     html = html.replace('<main class="main-content">', '<main class="main-content">\n' + block);
   }

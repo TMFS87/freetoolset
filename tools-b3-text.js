@@ -9,7 +9,6 @@ T.push({
   cardDesc: 'Live-count characters, words, lines and paragraphs.',
   keywords: 'character counter, letter count, word count, char counter, text counter',
   searchTerms: 'character counter count characters words lines',
-  zh: '字符计数器实时统计文本中的字符数（含/不含空格）、词数、行数和段落数，写文章、发推特或控制元描述长度时非常实用。',
   howto: ['Type or paste your text.', 'Watch the counts update live.', 'Use the numbers to stay within limits.', 'No button needed — it is instant.'],
   faq: [
     { q: 'What counts as a word?', a: 'A word is a run of characters separated by spaces or line breaks. This is a simple heuristic, good for estimates.' },
@@ -17,15 +16,15 @@ T.push({
     { q: 'Is there a limit on input size?', a: 'It handles typical pastes fine; extremely large texts may feel slower but still work since everything runs locally.' }
   ],
   zhfaq: [
-    { q: '什么叫一个“词”？', a: '词是以空格或换行分隔的一段连续字符。这是简单启发式，适合估算。' },
-    { q: '会统计空格吗？', a: '会。提供两个数字：含空格的总字符数，以及不含空格的字符数，按需取用。' }
+    { q: 'What counts as a word?', a: 'A word is a run of characters separated by spaces or line breaks. This is a simple heuristic, good for estimates.' },
+    { q: 'Does it count spaces?', a: 'Yes — it shows two figures: total characters including spaces, and characters excluding spaces, so you can use whichever you need.' }
   ],
   usecases: [
     { icon: '🐦', title: 'Tweets', text: 'Stay under limits.' },
     { icon: '📝', title: 'Essays', text: 'Track length.' },
     { icon: '🔍', title: 'SEO', text: 'Meta description size.' }
   ],
-  deep: '## 用途\n写推特、标题、元描述时常有字数限制，实时计数能帮你把控长度。\n## 指标说明\n- 字符数（含空格）：所有字符总和\n- 字符数（不含空格）：去掉空格后的长度\n- 词数：以空白分隔的段数\n- 行数：换行 + 1\n## 隐私\n统计在浏览器本地实时完成。',
+  deep: '## Why it is useful\nTwitter, headlines and meta descriptions all have character limits; live counting helps you stay within them.\n## The metrics\n- Characters (with spaces): total count of every character\n- Characters (without spaces): length after removing spaces\n- Words: segments separated by whitespace\n- Lines: newlines + 1\n## Privacy\nCounting happens instantly in your browser, locally.',
   body: `        <div class="form-row">
           <label for="input">Your text</label>
           <textarea id="input" rows="10" placeholder="Type or paste text here…"></textarea>
@@ -55,7 +54,6 @@ T.push({
   cardDesc: 'Shift letters with a Caesar cipher (ROT13 by default).',
   keywords: 'rot13, caesar cipher, letter shift, text encrypt, cipher tool',
   searchTerms: 'rot13 caesar cipher shift letters encode decode',
-  zh: 'ROT13 / 凯撒密码工具把每个字母按指定位数平移（ROT13 即平移 13 位）。可用来对文字做简单“加密”或解码，纯字母变换、保留大小写与标点。',
   howto: ['Type or paste your text.', 'Set the shift (13 for classic ROT13).', 'Click Encode / Decode.', 'Copy the result. (ROT13 is its own inverse.)'],
   faq: [
     { q: 'What is ROT13?', a: 'A Caesar cipher with a shift of 13. Because the alphabet has 26 letters, applying it twice returns the original text — encode and decode are the same operation.' },
@@ -63,15 +61,15 @@ T.push({
     { q: 'Is this real encryption?', a: 'No. ROT13 is trivially reversible and offers no security; it is for fun, puzzles and obfuscation, not protection.' }
   ],
   zhfaq: [
-    { q: '什么是 ROT13？', a: '平移 13 位的凯撒密码。因为字母表有 26 个字母，平移两次会还原原文，所以“加密”和“解密”是同一操作。' },
-    { q: '数字和标点会变吗？', a: '不会。只有 A–Z / a–z 被平移，数字、空格和符号保持不变。' }
+    { q: 'What is ROT13?', a: 'A Caesar cipher with a shift of 13. Because the alphabet has 26 letters, applying it twice restores the original, so encoding and decoding are the same step.' },
+    { q: 'Do numbers and punctuation change?', a: 'No. Only A–Z / a–z are shifted; digits, spaces and symbols stay as they are.' }
   ],
   usecases: [
     { icon: '🧩', title: 'Puzzles', text: 'Hide a spoiler.' },
     { icon: '🎓', title: 'Learning', text: 'See ciphers work.' },
     { icon: '🤫', title: 'Obfuscate', text: 'Light scramble.' }
   ],
-  deep: '## 凯撒密码原理\n把字母表中的每个字母向后移动 N 位（到末尾则回到开头）。ROT13 取 N=13，因 26 个字母，移两次即还原。\n## 规则\n- 仅平移 A–Z / a–z，保留大小写\n- 数字、空格、标点原样保留\n- N=13 时编码=解码\n## 提醒\n这不是真正的加密，无任何安全性，只用于趣味与混淆。',
+  deep: '## How the Caesar cipher works\nEach letter in the alphabet is shifted N places forward (wrapping back to the start at the end). ROT13 uses N=13; since there are 26 letters, shifting twice returns the original text.\n## Rules\n- Only A–Z / a–z are shifted, preserving case\n- Digits, spaces and punctuation are left unchanged\n- With N=13, encoding and decoding are the same operation\n## Reminder\nThis is not real encryption — it provides no security and is only for fun and light obfuscation.',
   body: `        <div class="form-row">
           <label for="input">Text</label>
           <textarea id="input" rows="6" placeholder="Type or paste text to shift…">Hello World!</textarea>

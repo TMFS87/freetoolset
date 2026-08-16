@@ -7,13 +7,13 @@ const ROOT = __dirname;
 
 // Pages that should have breadcrumbs: map filename -> {label, parentUrl}
 const PAGES = {
-  'ai-blog-writer.html':     { label: 'AI Blog Post Writer',    parent: 'ai-tools.html', parentLabel: 'AI 工具' },
-  'ai-content-rewriter.html': { label: 'AI Content Rewriter',    parent: 'ai-tools.html', parentLabel: 'AI 工具' },
-  'ai-email-subject.html':   { label: 'AI Email Subject',       parent: 'ai-tools.html', parentLabel: 'AI 工具' },
-  'ai-product-description.html': { label: 'AI Product Description', parent: 'ai-tools.html', parentLabel: 'AI 工具' },
-  'ai-seo-meta-generator.html': { label: 'AI SEO Meta Generator', parent: 'ai-tools.html', parentLabel: 'AI 工具' },
-  'ai-studio.html':          { label: 'AI Studio',              parent: 'index.html',    parentLabel: '首页' },
-  'ai-tools.html':           { label: 'AI 工具',                parent: 'index.html',    parentLabel: '首页' },
+  'ai-blog-writer.html':     { label: 'AI Blog Post Writer',    parent: 'ai-tools.html', parentLabel: 'AI Tools' },
+  'ai-content-rewriter.html': { label: 'AI Content Rewriter',    parent: 'ai-tools.html', parentLabel: 'AI Tools' },
+  'ai-email-subject.html':   { label: 'AI Email Subject',       parent: 'ai-tools.html', parentLabel: 'AI Tools' },
+  'ai-product-description.html': { label: 'AI Product Description', parent: 'ai-tools.html', parentLabel: 'AI Tools' },
+  'ai-seo-meta-generator.html': { label: 'AI SEO Meta Generator', parent: 'ai-tools.html', parentLabel: 'AI Tools' },
+  'ai-studio.html':          { label: 'AI Studio',              parent: 'index.html',    parentLabel: 'Home' },
+  'ai-tools.html':           { label: 'AI Tools',               parent: 'index.html',    parentLabel: 'Home' },
 };
 
 const BASE = 'https://www.freetoolset.app/';
@@ -32,7 +32,7 @@ for (const [filename, info] of Object.entries(PAGES)) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'FreeToolset 首页', url: BASE },
+      { '@type': 'ListItem', position: 1, name: 'FreeToolset Home', url: BASE },
       { '@type': 'ListItem', position: 2, name: info.parentLabel, url: parentUrl },
       { '@type': 'ListItem', position: 3, name: info.label, url: pageUrl }
     ]

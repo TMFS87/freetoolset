@@ -69,22 +69,21 @@ T.push(Object.assign({
   cardDesc: 'Convert pascal, bar, psi, atm and other pressure units.',
   keywords: 'pressure converter, psi to bar, kpa to psi, bar to pascal, atm converter, mmhg converter',
   searchTerms: 'pressure psi bar pascal kpa atm mmhg torr convert',
-  zh: '压力单位换算器支持帕斯卡、千帕、兆帕、巴、磅每平方英寸（psi）、标准大气压、托、毫米汞柱等常用压力单位互转，输入一个数值即可同时看到全部单位的对应值。',
   howto: ['Type the value you want to convert.', 'Pick the source and target units.', 'The result updates as you type.', 'Scroll down to see the value in every supported unit.'],
   faq: [
     { q: 'How many psi is 1 bar?', a: '1 bar equals 14.5038 psi. Car tyre pressures are often quoted in both, which is why 2.2 bar and 32 psi appear interchangeably.' },
     { q: 'What is standard atmospheric pressure?', a: '1 atm = 101,325 Pa = 1.01325 bar = 14.6959 psi = 760 mmHg. It is the average air pressure at sea level.' }
   ],
   zhfaq: [
-    { q: '1 巴等于多少 psi？', a: '1 bar = 14.5038 psi。汽车胎压常见 2.2 bar 或 32 psi，说的其实是差不多的压力。' },
-    { q: '标准大气压是多少？', a: '1 标准大气压 = 101325 帕 = 1.01325 巴 = 14.6959 psi = 760 毫米汞柱，即海平面的平均气压。' }
+    { q: 'How many psi in 1 bar?', a: '1 bar = 14.5038 psi. Car tire pressure is commonly 2.2 bar or 32 psi - they describe roughly the same pressure.' },
+    { q: 'What is standard atmospheric pressure?', a: '1 standard atmosphere = 101325 pascals = 1.01325 bar = 14.6959 psi = 760 mmHg, which is the average sea-level pressure.' }
   ],
   usecases: [
     { icon: '🚗', title: 'Tyre Pressure', text: 'Convert bar to psi at the air pump.' },
     { icon: '🔧', title: 'Engineering', text: 'Switch between kPa and MPa in specs.' },
     { icon: '🩺', title: 'Medical', text: 'Read blood pressure in mmHg or kPa.' }
   ],
-  deep: '## 压力单位为什么这么多\n压力的国际单位是帕斯卡（Pa），定义为每平方米一牛顿的力。但由于帕斯卡数值太小，工程、医疗、气象等领域各自发展出了更顺手的单位，于是形成了今天并存的局面。\n## 常用单位对照\n- 1 bar = 100,000 Pa = 100 kPa\n- 1 psi = 6,894.76 Pa\n- 1 atm = 101,325 Pa = 760 mmHg\n- 1 MPa = 1,000,000 Pa（常见于液压系统）\n## 各领域的使用习惯\n- **汽车胎压**：欧洲用 bar，美国用 psi，中国两者混用\n- **医疗血压**：全球通用 mmHg（毫米汞柱），如 120/80\n- **气象气压**：用百帕（hPa），标准海平面为 1013.25 hPa\n- **液压工程**：多用 MPa\n## 一个换算例子\n轮胎标注 2.4 bar，换算成 psi：2.4 × 14.5038 ≈ 34.8 psi。所以充到 35 psi 基本符合要求。',
+  deep: '## Why so many pressure units\nThe international unit of pressure is the pascal (Pa), defined as one newton of force per square meter. But because pascals are so small in everyday numbers, engineering, medicine, and meteorology each developed more convenient units, which is why so many coexist today.\n## Common unit reference\n- 1 bar = 100,000 Pa = 100 kPa\n- 1 psi = 6,894.76 Pa\n- 1 atm = 101,325 Pa = 760 mmHg\n- 1 MPa = 1,000,000 Pa (common in hydraulic systems)\n## Usage by field\n- Car tire pressure: Europe uses bar, the US uses psi, China mixes both.\n- Medical blood pressure: mmHg (millimeters of mercury) worldwide, e.g. 120/80.\n- Weather pressure: hectopascals (hPa); standard sea level is 1013.25 hPa.\n- Hydraulic engineering: mostly MPa.\n## A conversion example\nA tire marked 2.4 bar converts to psi: 2.4 times 14.5038 is about 34.8 psi. So inflating to 35 psi basically meets the spec.',
   usecasesNote: ''
 }, linearConv([
   ['pa', 'Pascal (Pa)', 1],
@@ -109,22 +108,21 @@ T.push(Object.assign({
   cardDesc: 'Convert joules, calories, kWh, BTU and more.',
   keywords: 'energy converter, joules to calories, kwh to joules, btu converter, kj to kcal, energy unit conversion',
   searchTerms: 'energy joule calorie kwh btu kj kcal convert',
-  zh: '能量单位换算器支持焦耳、千焦、卡路里、千卡、瓦时、千瓦时、英热单位（BTU）、电子伏特等单位互转，食品热量、电费用电量、暖通制冷都用得上。',
   howto: ['Enter the energy value.', 'Choose source and target units.', 'Read the converted result instantly.', 'Check the full list below for all units at once.'],
   faq: [
     { q: 'Is a food calorie the same as a calorie?', a: 'No. The "calorie" on nutrition labels is actually a kilocalorie (kcal) — 1000 small calories. A 500 kcal meal is 500,000 calories in physics terms.' },
     { q: 'How many joules in 1 kWh?', a: '1 kilowatt-hour = 3,600,000 joules (3.6 MJ). That is one kilowatt sustained for one hour.' }
   ],
   zhfaq: [
-    { q: '食品上的「卡路里」和物理里的卡一样吗？', a: '不一样。营养标签上的「卡路里」实际是千卡（kcal），等于 1000 小卡。一份 500 大卡的餐食，在物理单位下是 500000 卡。' },
-    { q: '1 度电等于多少焦耳？', a: '1 千瓦时（1 度电）= 3,600,000 焦耳 = 3.6 兆焦，即 1 千瓦功率持续工作 1 小时的能量。' }
+    { q: 'Is the calorie on food labels the same as the physics calorie?', a: 'No. The calorie on nutrition labels is actually a kilocalorie (kcal), equal to 1000 small calories. A 500-calorie meal is 500,000 small calories in physics units.' },
+    { q: 'How many joules in 1 kWh of electricity?', a: '1 kilowatt-hour (1 degree of electricity) = 3,600,000 joules = 3.6 megajoules, i.e. the energy of 1 kilowatt running for 1 hour.' }
   ],
   usecases: [
     { icon: '🍔', title: 'Nutrition', text: 'Convert kJ on labels to kcal.' },
     { icon: '🔌', title: 'Electricity', text: 'Relate kWh on your bill to joules.' },
     { icon: '❄️', title: 'HVAC', text: 'Work with BTU ratings.' }
   ],
-  deep: '## 能量的国际单位\n焦耳（J）是能量的国际标准单位，定义为一牛顿的力作用一米距离所做的功。所有其他能量单位都可以换算成焦耳。\n## 各领域常用单位\n- **食品营养**：千卡（kcal）和千焦（kJ），1 kcal = 4.184 kJ\n- **电力**：千瓦时（kWh），1 kWh = 3.6 MJ\n- **暖通空调**：英热单位（BTU），1 BTU ≈ 1055 J\n- **微观物理**：电子伏特（eV），1 eV ≈ 1.602×10⁻¹⁹ J\n## 一个实用换算\n某食品标注每 100g 含 1500 kJ。换算成千卡：1500 ÷ 4.184 ≈ 358 kcal。中国营养标签通常直接标千焦，习惯看千卡的人需要除以 4.184。\n## 空调 BTU 的含义\n空调「制冷量 12000 BTU/h」约等于 3.5 kW，也就是俗称的「1.5 匹」。BTU 是每小时能量，换算时注意区分能量和功率。',
+  deep: '## The international unit of energy\nThe joule (J) is the international standard unit of energy, defined as the work done by one newton of force acting over one meter. Every other energy unit can be converted into joules.\n## Common units by field\n- Food nutrition: kilocalorie (kcal) and kilojoule (kJ), 1 kcal = 4.184 kJ.\n- Electricity: kilowatt-hour (kWh), 1 kWh = 3.6 MJ.\n- HVAC: British thermal unit (BTU), 1 BTU is about 1055 J.\n- Microphysics: electronvolt (eV), 1 eV is about 1.602 times 10 to the power of -19 J.\n## A practical conversion\nA food labeled 1500 kJ per 100g converts to kcal: 1500 divided by 4.184 is about 358 kcal. Chinese nutrition labels usually show kilojoules directly, so people used to kcal need to divide by 4.184.\n## What air-conditioner BTU means\nAn air conditioner rated 12000 BTU/h is about 3.5 kW, commonly called a 1.5-horsepower unit. BTU is energy per hour, so keep energy and power distinct when converting.',
   usecasesNote: ''
 }, linearConv([
   ['j', 'Joule (J)', 1],
@@ -148,29 +146,29 @@ T.push(Object.assign({
   cardDesc: 'Convert watts, horsepower, BTU/h and other power units.',
   keywords: 'power converter, watts to horsepower, kw to hp, btu per hour converter, hp to kw',
   searchTerms: 'power watt kilowatt horsepower hp btu convert',
-  zh: '功率单位换算器支持瓦、千瓦、兆瓦、公制马力、英制马力、英热单位每小时（BTU/h）、冷吨等互转，看车辆参数、电器功率和空调制冷量时都会用到。',
   howto: ['Enter the power value.', 'Select the unit you have and the unit you want.', 'Results appear immediately.', 'Use the full table to compare all units.'],
   faq: [
     { q: 'Metric or mechanical horsepower?', a: 'They differ slightly: metric hp (PS, used in Europe and Asia) = 735.5 W, mechanical hp (used in the US/UK) = 745.7 W. Car specs usually mean metric hp in China and Europe.' },
-    { q: 'How do air conditioner "horses" relate to watts?', a: 'In Chinese usage 1 "匹" is roughly 735 W of cooling capacity, so a 1.5-hp unit is about 1100 W input or ~12000 BTU/h cooling.' }
+    { q: 'How do air conditioner "horses" relate to watts?', a: 'In HVAC usage 1 horsepower is roughly 735 W of cooling capacity, so a 1.5-hp unit is about 1100 W input or ~12000 BTU/h cooling.' }
   ],
   zhfaq: [
-    { q: '公制马力和英制马力有什么区别？', a: '公制马力（PS，欧洲和亚洲常用）= 735.5 瓦；英制马力（hp，英美常用）= 745.7 瓦，相差约 1.4%。国内车辆参数一般指公制马力。' },
-    { q: '空调「几匹」是什么意思？', a: '「1 匹」约对应 735 瓦制冷量。1.5 匹空调制冷量约 3500 瓦（12000 BTU/h），适合 16–26 平方米房间。' }
+    { q: 'How do air conditioner "horses" relate to watts?', a: 'In HVAC usage 1 horsepower is roughly 735 W of cooling capacity, so a 1.5-hp unit is about 1100 W input or ~12000 BTU/h cooling.' },
+    { q: 'What is the difference between metric and imperial horsepower?', a: 'Metric horsepower (PS, common in Europe and Asia) = 735.5 W; imperial horsepower (hp, common in UK/US) = 745.7 W, a difference of about 1.4%. Domestic vehicle specs usually refer to metric horsepower.' },
+    { q: 'What does air-conditioner horsepower mean?', a: '1 horsepower corresponds to about 735 W of cooling capacity. A 1.5-horsepower unit provides about 3500 W (12000 BTU/h) of cooling, suitable for a 16-26 square meter room.' }
   ],
   usecases: [
     { icon: '🚙', title: 'Car Specs', text: 'Convert kW to horsepower.' },
     { icon: '❄️', title: 'Air Con', text: 'Match BTU/h to room size.' },
     { icon: '🏭', title: 'Machinery', text: 'Read motor ratings in any unit.' }
   ],
-  deep: '## 功率与能量的区别\n功率是单位时间内做功或转换能量的速率，单位是瓦（W = J/s）。能量是总量，功率是速度 —— 一台 2000W 的热水器工作半小时，消耗的能量是 1 kWh。\n## 马力的两种定义\n- **公制马力（PS/CV）**：735.49875 W，源自欧洲，中国、日本、欧洲车企常用\n- **英制马力（hp）**：745.69987 W，源自瓦特对马拉重物的测算，英美常用\n两者相差约 1.4%，看外媒车评时要注意区分。\n## 空调的功率与制冷量\n空调标注的「制冷量」是输出的热量搬运能力，「输入功率」才是耗电。一台 1.5 匹空调制冷量约 3500 W，但输入功率通常只有 1100 W 左右 —— 因为空调是搬运热量而非直接产生冷量，能效比（COP）通常在 3 以上。\n## 换算示例\n一台电动车电机功率 150 kW，换算成公制马力：150000 ÷ 735.5 ≈ 204 PS。',
+  deep: '## Power vs energy\nPower is the rate of doing work or converting energy per unit time, measured in watts (W = J/s). Energy is the total amount; power is the speed - a 2000W water heater running for half an hour consumes 1 kWh of energy.\n## The two definitions of horsepower\n- Metric horsepower (PS/CV): 735.49875 W, from Europe, used by Chinese, Japanese, and European carmakers.\n- Imperial horsepower (hp): 745.69987 W, from Watt\'s measurement of a horse lifting weight, used in UK/US.\nThey differ by about 1.4%; keep this in mind when reading foreign car reviews.\n## Air-conditioner power vs cooling capacity\nThe cooling capacity printed on an AC is the heat it moves; the input power is what it actually consumes. A 1.5-horsepower unit has about 3500 W of cooling capacity but usually only about 1100 W of input power - because an AC moves heat rather than generating cold, its COP is typically above 3.\n## A conversion example\nAn EV motor rated 150 kW converts to metric horsepower: 150000 divided by 735.5 is about 204 PS.',
   usecasesNote: ''
 }, linearConv([
   ['w', 'Watt (W)', 1],
   ['kw', 'Kilowatt (kW)', 1000],
   ['mw', 'Megawatt (MW)', 1000000],
   ['hp', 'Mechanical horsepower (hp)', 745.69987158],
-  ['ps', 'Metric horsepower (PS / 匹)', 735.49875],
+  ['ps', 'Metric horsepower (PS)', 735.49875],
   ['btuh', 'BTU per hour (BTU/h)', 0.29307107],
   ['ton', 'Ton of refrigeration (RT)', 3516.8528421],
   ['ftlbs', 'Foot-pound per second', 1.35581795],
@@ -185,22 +183,21 @@ T.push(Object.assign({
   cardDesc: 'Convert degrees, radians, gradians and turns.',
   keywords: 'angle converter, degrees to radians, radians to degrees, gradian converter, arcminute arcsecond',
   searchTerms: 'angle degree radian gradian turn arcminute convert',
-  zh: '角度单位换算器支持度、弧度、百分度（gon）、圈、角分、角秒、毫弧度等互转。写代码调用三角函数、做几何计算或看测量仪器读数时经常需要。',
   howto: ['Enter the angle value.', 'Choose the units to convert between.', 'The result updates live.', 'See every unit in the table below.'],
   faq: [
     { q: 'How do I convert degrees to radians?', a: 'Multiply by π/180. So 180° = π ≈ 3.14159 rad, and 90° = π/2 ≈ 1.5708 rad.' },
     { q: 'Why do programming languages use radians?', a: 'Math functions like Math.sin() in JavaScript, Python and C all expect radians. Passing degrees directly is one of the most common bugs in graphics code.' }
   ],
   zhfaq: [
-    { q: '度和弧度怎么换算？', a: '弧度 = 度 × π/180。所以 180° = π ≈ 3.14159 弧度，90° = π/2 ≈ 1.5708 弧度。' },
-    { q: '为什么编程里要用弧度？', a: 'JavaScript、Python、C 等语言的 sin/cos 函数都接收弧度。直接传角度值是图形和游戏开发中最常见的 bug 之一。' }
+    { q: 'How do degrees and radians convert?', a: 'radians = degrees times pi/180. So 180 degrees = pi is about 3.14159 radians, and 90 degrees = pi/2 is about 1.5708 radians.' },
+    { q: 'Why do programming languages use radians?', a: 'The sin/cos functions in JavaScript, Python, C and others take radians. Passing degrees directly is one of the most common bugs in graphics and game development.' }
   ],
   usecases: [
     { icon: '💻', title: 'Coding', text: 'Convert degrees before calling sin/cos.' },
     { icon: '📏', title: 'Surveying', text: 'Work with gradians and arcseconds.' },
     { icon: '🎮', title: 'Game Dev', text: 'Handle rotation values correctly.' }
   ],
-  deep: '## 角度的几种表示法\n- **度（°）**：把一圈分成 360 份，源自古巴比伦的六十进制，日常最常用\n- **弧度（rad）**：弧长等于半径时对应的圆心角，一圈为 2π，数学和编程的标准单位\n- **百分度（gon/grad）**：把一圈分成 400 份，直角正好是 100，测绘领域使用\n- **圈（turn）**：一整圈为 1，动画和旋转参数中直观好用\n## 关键换算关系\n- 1 圈 = 360° = 2π rad ≈ 6.28319 rad = 400 gon\n- 1° = 60 角分（′）= 3600 角秒（″）\n- 1 rad ≈ 57.2958°\n## 编程中的常见坑\nJavaScript 的 `Math.sin(90)` 不会返回 1，因为它把 90 当作弧度处理。正确写法是 `Math.sin(90 * Math.PI / 180)`。这个错误在 Canvas 绘图和 3D 旋转中尤其高发。\n## 角分角秒的用途\n经纬度坐标常写成「39°54′27″N」这种度分秒格式，天文观测和 GPS 定位也大量使用角秒作为精度单位。',
+  deep: '## Ways to express angles\n- Degree (deg): a circle split into 360 parts, from ancient Babylonian base-60, the most common in daily life.\n- Radian (rad): the central angle whose arc equals the radius; a full circle is 2pi, the standard unit in math and programming.\n- Gradian (gon/grad): a circle split into 400 parts, with a right angle exactly 100, used in surveying.\n- Turn: a full circle equals 1, intuitive for animation and rotation parameters.\n## Key conversions\n- 1 turn = 360 deg = 2pi rad is about 6.28319 rad = 400 gon.\n- 1 deg = 60 arcminutes = 3600 arcseconds.\n- 1 rad is about 57.2958 deg.\n## A common programming pitfall\nJavaScript\'s Math.sin(90) does not return 1 because it treats 90 as radians. The correct form is Math.sin(90 * Math.PI / 180). This mistake is especially common in Canvas drawing and 3D rotation.\n## Uses of arcminutes and arcseconds\nLatitude and longitude coordinates are often written in degrees-minutes-seconds like 39 deg 54\' 27" N, and astronomical observation and GPS positioning rely heavily on arcseconds as a precision unit.',
   usecasesNote: ''
 }, linearConv([
   ['deg', 'Degree (°)', 1],
@@ -221,22 +218,21 @@ T.push(Object.assign({
   cardDesc: 'Convert Hz, kHz, MHz, GHz and RPM.',
   keywords: 'frequency converter, hz to khz, mhz to ghz, rpm to hz, frequency unit conversion',
   searchTerms: 'frequency hertz hz khz mhz ghz rpm convert',
-  zh: '频率单位换算器支持赫兹、千赫、兆赫、吉赫、太赫以及转每分钟（RPM）等单位互转。看 CPU 主频、无线电频段、电机转速、音频采样率时都用得上。',
   howto: ['Type the frequency value.', 'Select the two units.', 'Read the converted value instantly.', 'Compare all units in the list below.'],
   faq: [
     { q: 'How many Hz is 2.4 GHz Wi-Fi?', a: '2.4 GHz = 2,400,000,000 Hz. The 2.4 GHz band is crowded because Wi-Fi, Bluetooth and microwave ovens all share it.' },
     { q: 'How do RPM and Hz relate?', a: 'One revolution per second is 1 Hz, so 60 RPM = 1 Hz. A motor at 3000 RPM is spinning at 50 Hz.' }
   ],
   zhfaq: [
-    { q: '2.4 GHz Wi-Fi 是多少赫兹？', a: '2.4 GHz = 24 亿赫兹。这个频段之所以拥挤，是因为 Wi-Fi、蓝牙和微波炉都在使用它。' },
-    { q: '转速（RPM）和赫兹怎么换算？', a: '每秒转一圈就是 1 赫兹，所以 60 RPM = 1 Hz。电机 3000 转/分即 50 Hz。' }
+    { q: 'How many hertz is 2.4 GHz Wi-Fi?', a: '2.4 GHz = 2.4 billion hertz. This band is crowded because Wi-Fi, Bluetooth, and microwave ovens all use it.' },
+    { q: 'How do RPM and hertz convert?', a: 'One revolution per second is 1 hertz, so 60 RPM = 1 Hz. A motor at 3000 RPM runs at 50 Hz.' }
   ],
   usecases: [
     { icon: '💻', title: 'CPU Specs', text: 'Compare GHz clock speeds.' },
     { icon: '📻', title: 'Radio', text: 'Switch between kHz and MHz bands.' },
     { icon: '⚙️', title: 'Motors', text: 'Convert RPM to Hz for drives.' }
   ],
-  deep: '## 频率的定义\n频率表示单位时间内周期性事件重复的次数，国际单位是赫兹（Hz），即每秒一次。这个单位以发现电磁波的德国物理学家海因里希·赫兹命名。\n## 常见量级参考\n- **人耳听觉范围**：20 Hz – 20 kHz\n- **市电频率**：中国和欧洲 50 Hz，美国和日本部分地区 60 Hz\n- **AM 广播**：约 530–1700 kHz\n- **FM 广播**：88–108 MHz\n- **Wi-Fi**：2.4 GHz 和 5 GHz\n- **CPU 主频**：现代处理器普遍 3–5 GHz\n## 转速与频率\n机械领域常用「转每分钟」（RPM）。换算很简单：Hz = RPM ÷ 60。一台 1500 RPM 的电机运行频率为 25 Hz，这也是变频器调速的基本依据。\n## 一个换算例子\n音频采样率 44.1 kHz 意味着每秒采样 44100 次。根据奈奎斯特定理，它能完整还原最高 22.05 kHz 的声音，刚好覆盖人耳听觉上限。',
+  deep: '## What frequency means\nFrequency is the number of times a periodic event repeats per unit time. The international unit is the hertz (Hz), one per second. It is named after German physicist Heinrich Hertz, who discovered electromagnetic waves.\n## Common magnitudes\n- Human hearing range: 20 Hz to 20 kHz.\n- Mains frequency: 50 Hz in China and Europe, 60 Hz in the US and parts of Japan.\n- AM radio: about 530-1700 kHz.\n- FM radio: 88-108 MHz.\n- Wi-Fi: 2.4 GHz and 5 GHz.\n- CPU clock: modern processors are generally 3-5 GHz.\n## Rotation and frequency\nMechanics often use revolutions per minute (RPM). The conversion is simple: Hz = RPM divided by 60. A 1500 RPM motor runs at 25 Hz, which is also the basis of variable-frequency drive speed control.\n## A conversion example\nAn audio sample rate of 44.1 kHz means 44100 samples per second. By the Nyquist theorem it can fully reproduce sounds up to 22.05 kHz, just covering the upper limit of human hearing.',
   usecasesNote: ''
 }, linearConv([
   ['hz', 'Hertz (Hz)', 1],
@@ -258,22 +254,21 @@ T.push(Object.assign({
   cardDesc: 'Convert newtons, pound-force and kilogram-force.',
   keywords: 'force converter, newton to pound force, kgf to n, force unit conversion, kn to lbf',
   searchTerms: 'force newton pound kgf dyne convert physics',
-  zh: '力的单位换算器支持牛顿、千牛、磅力、千克力、达因、磅达、吨力等单位互转。物理作业、工程结构计算和进口设备参数换算时都会用到。',
   howto: ['Enter the force value.', 'Pick your source and target units.', 'The conversion updates as you type.', 'Review all units in the table.'],
   faq: [
     { q: 'What is the difference between kg and kgf?', a: 'Kilogram is mass; kilogram-force is the weight that mass has under standard gravity. 1 kgf = 9.80665 N. On the Moon the same kg would produce far less force.' },
     { q: 'How many newtons is 1 pound-force?', a: '1 lbf = 4.44822 N. US equipment specs often use lbf where metric specs use N or kN.' }
   ],
   zhfaq: [
-    { q: '千克和千克力有什么区别？', a: '千克是质量单位，千克力是该质量在标准重力下产生的力，1 kgf = 9.80665 N。同样的质量在月球上产生的力要小得多。' },
-    { q: '1 磅力等于多少牛顿？', a: '1 lbf = 4.44822 N。美国设备参数常用磅力，公制参数则用牛顿或千牛。' }
+    { q: 'What is the difference between kilogram and kilogram-force?', a: 'The kilogram is a unit of mass; kilogram-force is the force that mass produces under standard gravity, 1 kgf = 9.80665 N. The same mass produces much less force on the moon.' },
+    { q: 'How many newtons in 1 pound-force?', a: '1 lbf = 4.44822 N. US equipment specs commonly use pound-force, while metric specs use newtons or kilonewtons.' }
   ],
   usecases: [
     { icon: '🏗️', title: 'Structural', text: 'Convert kN in load specs.' },
     { icon: '🔬', title: 'Physics', text: 'Check homework unit conversions.' },
     { icon: '📦', title: 'Imports', text: 'Read foreign equipment ratings.' }
   ],
-  deep: '## 力的国际单位\n牛顿（N）是力的国际单位，定义为使 1 千克质量产生 1 m/s² 加速度所需的力，即 1 N = 1 kg·m/s²。\n## 质量与力的混淆\n日常说「这个东西重 5 公斤」其实混用了质量和重力。严格来说 5 kg 是质量，它在地球表面产生的重力约为 5 × 9.80665 = 49.03 N，也就是 5 kgf。工程图纸中区分这两者很重要。\n## 常用换算\n- 1 N = 0.10197 kgf = 0.22481 lbf\n- 1 kgf = 9.80665 N\n- 1 lbf = 4.44822 N\n- 1 kN = 1000 N ≈ 102 kgf\n## 工程中的实际应用\n建筑结构荷载通常用 kN 表示：一个 5 kN 的集中荷载约相当于 510 kg 物体的重量。螺栓预紧力、起重设备额定载荷也都用力的单位标注，采购进口设备时需要在 lbf 和 kN 之间换算。',
+  deep: '## The international unit of force\nThe newton (N) is the international unit of force, defined as the force needed to give 1 kg of mass an acceleration of 1 m/s squared, i.e. 1 N = 1 kg times m/s squared.\n## Confusing mass and force\nIn daily speech "this weighs 5 kilos" mixes up mass and gravity. Strictly, 5 kg is mass; the gravity it produces at Earth\'s surface is about 5 times 9.80665 = 49.03 N, or 5 kgf. Distinguishing the two matters in engineering drawings.\n## Common conversions\n- 1 N = 0.10197 kgf = 0.22481 lbf.\n- 1 kgf = 9.80665 N.\n- 1 lbf = 4.44822 N.\n- 1 kN = 1000 N is about 102 kgf.\n## Practical use in engineering\nBuilding loads are usually given in kN: a 5 kN point load is about the weight of a 510 kg object. Bolt preload and crane rated capacity are also labeled in force units, so importing equipment requires converting between lbf and kN.',
   usecasesNote: ''
 }, linearConv([
   ['n', 'Newton (N)', 1],
@@ -296,22 +291,21 @@ T.push(Object.assign({
   cardDesc: 'Convert kg/m³, g/cm³, lb/ft³ and other density units.',
   keywords: 'density converter, kg/m3 to g/cm3, density unit conversion, lb/ft3 converter, specific gravity',
   searchTerms: 'density kg m3 g cm3 lb ft3 convert material',
-  zh: '密度单位换算器支持千克每立方米、克每立方厘米、克每毫升、千克每升、磅每立方英尺、磅每立方英寸等互转，材料选型、化学实验和工程计算常用。',
   howto: ['Enter the density value.', 'Select source and target units.', 'Read the result instantly.', 'Use the full table for a quick overview.'],
   faq: [
     { q: 'What is the density of water?', a: 'Pure water at 4°C is 1000 kg/m³ = 1 g/cm³ = 1 g/mL. This is the reference point for specific gravity.' },
     { q: 'Why is g/cm³ so common?', a: 'Because water is exactly 1 g/cm³, any material\u2019s number immediately tells you whether it floats (below 1) or sinks (above 1).' }
   ],
   zhfaq: [
-    { q: '水的密度是多少？', a: '4℃ 的纯水密度为 1000 kg/m³ = 1 g/cm³ = 1 g/mL，这是比重（相对密度）的参照基准。' },
-    { q: '为什么常用 g/cm³？', a: '因为水正好是 1 g/cm³，看到某材料的数值就能立刻判断它在水中是浮（小于 1）还是沉（大于 1）。' }
+    { q: 'What is the density of water?', a: 'Pure water at 4 C has a density of 1000 kg/m3 = 1 g/cm3 = 1 g/mL, which is the reference baseline for specific gravity.' },
+    { q: 'Why is g/cm3 commonly used?', a: 'Because water is exactly 1 g/cm3, you can immediately tell whether a material floats (below 1) or sinks (above 1) in water.' }
   ],
   usecases: [
     { icon: '🏭', title: 'Materials', text: 'Compare metal and plastic densities.' },
     { icon: '🧪', title: 'Chemistry', text: 'Convert lab measurement units.' },
     { icon: '🚢', title: 'Shipping', text: 'Estimate cargo weight from volume.' }
   ],
-  deep: '## 密度的定义\n密度是单位体积内的质量，公式为 ρ = m / V。国际单位是千克每立方米（kg/m³），但实验室更常用克每立方厘米（g/cm³）。\n## 关键换算关系\n1 g/cm³ = 1000 kg/m³ = 1 g/mL = 1 kg/L。这四个表述数值上完全等价，只是单位组合不同。\n## 常见材料密度参考（g/cm³）\n- 软木：约 0.24\n- 水：1.00\n- 混凝土：约 2.4\n- 铝：2.70\n- 钢铁：7.85\n- 铜：8.96\n- 铅：11.34\n- 金：19.32\n## 实际应用\n知道密度就能在质量和体积之间换算。例如一块 20cm × 10cm × 5cm 的钢板，体积 1000 cm³，密度 7.85 g/cm³，质量约 7.85 kg。物流报价、材料采购和结构自重计算都依赖这一关系。',
+  deep: '## Definition of density\nDensity is mass per unit volume, with the formula rho = m / V. The international unit is kilograms per cubic meter (kg/m3), but labs more often use grams per cubic centimeter (g/cm3).\n## Key conversions\n1 g/cm3 = 1000 kg/m3 = 1 g/mL = 1 kg/L. These four expressions are numerically identical, just different unit combinations.\n## Common material densities (g/cm3)\n- Cork: about 0.24\n- Water: 1.00\n- Concrete: about 2.4\n- Aluminum: 2.70\n- Steel: 7.85\n- Copper: 8.96\n- Lead: 11.34\n- Gold: 19.32\n## Practical use\nKnowing density lets you convert between mass and volume. For example, a steel plate 20cm by 10cm by 5cm has a volume of 1000 cm3 and, at 7.85 g/cm3, a mass of about 7.85 kg. Shipping quotes, material purchasing, and structural self-weight calculations all rely on this relationship.',
   usecasesNote: ''
 }, linearConv([
   ['kgm3', 'Kilogram per cubic metre (kg/m³)', 1],
@@ -334,22 +328,21 @@ T.push({
   cardDesc: 'Convert shoe sizes between US, UK, EU and CN.',
   keywords: 'shoe size converter, us to eu shoe size, uk shoe size conversion, shoe size chart, foot length to shoe size',
   searchTerms: 'shoe size us uk eu cn foot length convert chart',
-  zh: '鞋码换算器支持美码、英码、欧码、中国码（毫米）和日码之间的互转，区分男鞋、女鞋和童鞋，并以实际脚长为基准，海淘买鞋时不再纠结尺码。',
   howto: ['Choose men\u2019s, women\u2019s or kids\u2019 sizing.', 'Pick the size system you know.', 'Enter your size or measure your foot length in mm.', 'Read the equivalent sizes in all systems.'],
   faq: [
     { q: 'How do I measure foot length correctly?', a: 'Stand on a sheet of paper against a wall in the evening (feet swell during the day), mark the longest toe, and measure from the wall. Measure both feet and use the larger one.' },
     { q: 'Why do sizes vary between brands?', a: 'There is no enforced international standard, and each brand uses its own last shape. Foot length in millimetres is the only reliable reference — always check the brand\u2019s own chart too.' }
   ],
   zhfaq: [
-    { q: '怎么正确量脚长？', a: '傍晚时（脚会轻微肿胀）光脚贴墙站在纸上，标记最长脚趾的位置，量出到墙的距离。两只脚都量，按较大的那只选码。' },
-    { q: '为什么不同品牌尺码差别很大？', a: '鞋码没有强制国际标准，各品牌鞋楦不同。以毫米为单位的脚长是唯一可靠参照，购买前最好再对照该品牌的官方尺码表。' }
+    { q: 'How do I measure foot length correctly?', a: 'In the evening (feet swell slightly), stand barefoot with heels against a wall on a sheet of paper, mark the longest toe, and measure the distance to the wall. Measure both feet and size to the larger one.' },
+    { q: 'Why do sizes vary so much between brands?', a: 'There is no mandatory international standard for shoe sizes, and each brand has a different last. Foot length in millimeters is the only reliable reference; also check the brand\'s official size chart before buying.' }
   ],
   usecases: [
     { icon: '🌍', title: 'Overseas Shopping', text: 'Convert US sizes when buying abroad.' },
     { icon: '🎁', title: 'Buying Gifts', text: 'Work from a known size in another system.' },
     { icon: '👶', title: 'Kids Shoes', text: 'Track growing feet by length.' }
   ],
-  deep: '## 鞋码为什么这么混乱\n各国鞋码体系起源不同：英美用「巴黎点」的变体并以脚长英寸为基础，欧洲用「巴黎点」（每点 2/3 厘米），中国和日本直接用脚长毫米。三套体系起点和增量都不同，所以无法简单加减换算。\n## 以脚长为基准最可靠\n本工具的所有换算都以实际脚长（毫米）为中间基准：欧码 ≈ (脚长mm + 15) ÷ 6.67，中国码 = 脚长mm，美码男 ≈ (脚长mm − 208) ÷ 8.47 + 6。这样比「美码 + 33 = 欧码」这类粗略口诀准确得多。\n## 常见对照（男鞋）\n- 脚长 250mm ≈ 中国 250 / 欧码 40 / 美码 7.5 / 英码 6.5\n- 脚长 260mm ≈ 中国 260 / 欧码 41.5 / 美码 8.5 / 英码 7.5\n- 脚长 270mm ≈ 中国 270 / 欧码 43 / 美码 9.5 / 英码 9\n## 选鞋的实用建议\n- 运动鞋通常要比正装鞋大半码，给脚趾留出活动空间\n- 男女鞋码在美制体系中相差约 1.5 码（女码 = 男码 + 1.5）\n- 童鞋建议每 3 个月重新量一次脚长\n- 本换算为通用参考，最终请以品牌官方尺码表为准',
+  deep: '## Why shoe sizes are so messy\nShoe-size systems have different origins: the UK/US use a variant of the Paris point based on foot length in inches, Europe uses the Paris point (each point is 2/3 cm), and China and Japan use foot length in millimeters directly. The three systems differ in both starting point and increment, so they cannot be converted by simple addition or subtraction.\n## Foot length is the most reliable base\nAll conversions in this tool use actual foot length (mm) as the intermediate base: EU size is about (footLengthMm + 15) / 6.67, CN size = footLengthMm, US men\'s is about (footLengthMm - 208) / 8.47 + 6. This is far more accurate than rough rules like US + 33 = EU.\n## Common reference (men\'s shoes)\n- Foot 250mm is about CN 250 / EU 40 / US 7.5 / UK 6.5.\n- Foot 260mm is about CN 260 / EU 41.5 / US 8.5 / UK 7.5.\n- Foot 270mm is about CN 270 / EU 43 / US 9.5 / UK 9.\n## Practical shoe-buying tips\n- Sneakers usually run half a size larger than dress shoes; leave room for toes.\n- Men\'s and women\'s US sizes differ by about 1.5 (women\'s = men\'s + 1.5).\n- Remeasure children\'s feet every 3 months.\n- This conversion is a general reference; always defer to the brand\'s official size chart.',
   body: `        <div class="gen-row">
           <div class="form-row">
             <label for="who">Category</label>
@@ -432,22 +425,21 @@ T.push({
   cardDesc: 'Convert cups, spoons, grams and ml for recipes.',
   keywords: 'cooking converter, cups to grams, tablespoon to ml, recipe converter, baking measurement conversion',
   searchTerms: 'cooking baking cups grams ml tablespoon recipe convert',
-  zh: '烹饪单位换算器支持杯、汤匙、茶匙、毫升、克、盎司之间的换算，并针对面粉、糖、黄油、水等不同食材使用各自的密度，让「1 杯面粉等于多少克」这类问题有准确答案。',
   howto: ['Enter the amount from your recipe.', 'Choose the unit it uses.', 'Pick the ingredient (density matters for weight).', 'Read the equivalent in every other unit.'],
   faq: [
     { q: 'Why does 1 cup of flour differ from 1 cup of sugar in grams?', a: 'Cups measure volume, grams measure weight. Flour is light and airy (about 125g per cup) while granulated sugar is denser (about 200g per cup).' },
     { q: 'Should I use cups or a scale for baking?', a: 'A kitchen scale is far more reliable. Scooping flour can vary by 20% depending on how packed it is, which is enough to change the texture of a cake.' }
   ],
   zhfaq: [
-    { q: '为什么 1 杯面粉和 1 杯糖的克数不一样？', a: '杯是体积单位，克是重量单位。面粉蓬松（约 125 克/杯），白砂糖密实（约 200 克/杯），同样体积重量差别很大。' },
-    { q: '烘焙用量杯还是电子秤？', a: '强烈建议用电子秤。舀面粉的松紧程度能造成 20% 的重量差异，这足以改变蛋糕的口感和成败。' }
+    { q: 'Why do 1 cup of flour and 1 cup of sugar weigh differently?', a: 'A cup is a volume unit, a gram is weight. Flour is fluffy (about 125 g/cup) while white sugar is dense (about 200 g/cup), so the same volume weighs very differently.' },
+    { q: 'Should I use a measuring cup or a digital scale for baking?', a: 'Strongly prefer a digital scale. How tightly you scoop flour can vary the weight by 20%, enough to change a cake\'s texture and success.' }
   ],
   usecases: [
     { icon: '🍰', title: 'Baking', text: 'Convert US recipes to grams.' },
     { icon: '🌏', title: 'Foreign Recipes', text: 'Handle cups when you only own scales.' },
     { icon: '📏', title: 'Scaling', text: 'Adjust batch sizes accurately.' }
   ],
-  deep: '## 体积与重量的根本区别\n欧美食谱习惯用「杯」（cup）这种体积单位，而中文食谱和专业烘焙用「克」这种重量单位。两者之间没有固定换算关系 —— 必须知道食材的密度。\n## 常见食材的换算（1 美制杯 = 236.6 mL）\n- 水：约 237 克\n- 中筋面粉：约 125 克\n- 白砂糖：约 200 克\n- 红糖（压实）：约 220 克\n- 黄油：约 227 克\n- 牛奶：约 245 克\n- 大米（生）：约 185 克\n## 小匙具的标准值\n- 1 汤匙（tbsp）= 15 mL = 3 茶匙\n- 1 茶匙（tsp）= 5 mL\n- 1 美制杯 = 16 汤匙 = 236.6 mL\n- 英制杯 = 250 mL，澳洲汤匙 = 20 mL，跨国食谱要留意\n## 为什么专业烘焙只认重量\n面粉的堆积密度受装填方式影响极大：直接舀取比先松散再刮平能多装 20% 以上。做面包和蛋糕时这种误差足以让成品失败，所以专业配方一律用克。',
+  deep: '## Volume vs weight, fundamentally\nWestern recipes use volume units like the cup, while Chinese recipes and professional baking use weight in grams. There is no fixed conversion between them - you must know the ingredient\'s density.\n## Common ingredient conversions (1 US cup = 236.6 mL)\n- Water: about 237 g\n- All-purpose flour: about 125 g\n- White sugar: about 200 g\n- Brown sugar (packed): about 220 g\n- Butter: about 227 g\n- Milk: about 245 g\n- Rice (raw): about 185 g\n## Standard spoon measures\n- 1 tablespoon (tbsp) = 15 mL = 3 teaspoons\n- 1 teaspoon (tsp) = 5 mL\n- 1 US cup = 16 tablespoons = 236.6 mL\n- Imperial cup = 250 mL, Australian tablespoon = 20 mL; watch out in cross-country recipes\n## Why pros use weight only\nFlour\'s bulk density depends heavily on how it is packed: scooping directly can hold over 20% more than loosening then leveling. In bread and cake making that error is enough to ruin the result, so professional recipes always use grams.',
   body: `        <div class="gen-row">
           <div class="form-row">
             <label for="amt">Amount</label>

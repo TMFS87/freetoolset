@@ -39,18 +39,17 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html" class="nav-link">Home</a>
       <a href="index.html#tools" class="nav-link active">Tools</a>
       <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
-      <a href="about.html" class="nav-link" data-i18n="About">About</a>
-      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+      <a href="about.html" class="nav-link">About</a>
     </div>
   </nav>
 
   <main class="main-content">
   <section class="tool-intro">
-    <h2>📌 适用场景</h2>
-    <p>鞋码换算器支持美码、英码、欧码、中国码（毫米）和日码之间的互转，区分男鞋、女鞋和童鞋，并以实际脚长为基准，海淘买鞋时不再纠结尺码。</p>
+    <h2>📌 Overview</h2>
+    <p>Convert shoe sizes between US, UK, EU, Chinese (mm) and Japanese systems for men, women and kids, based on actual foot length.</p>
   </section>
 
     <nav class="breadcrumb">
@@ -126,14 +125,14 @@
         </div>
 
         <div class="info-section">
-          <h2>❓ 常见问题（中文）</h2>
+          <h2>❓ More Questions</h2>
           <details class="faq-item">
-            <summary>怎么正确量脚长？</summary>
-            <p>傍晚时（脚会轻微肿胀）光脚贴墙站在纸上，标记最长脚趾的位置，量出到墙的距离。两只脚都量，按较大的那只选码。</p>
+            <summary>How do I measure foot length correctly?</summary>
+            <p>In the evening (feet swell slightly), stand barefoot with heels against a wall on a sheet of paper, mark the longest toe, and measure the distance to the wall. Measure both feet and size to the larger one.</p>
           </details>
           <details class="faq-item">
-            <summary>为什么不同品牌尺码差别很大？</summary>
-            <p>鞋码没有强制国际标准，各品牌鞋楦不同。以毫米为单位的脚长是唯一可靠参照，购买前最好再对照该品牌的官方尺码表。</p>
+            <summary>Why do sizes vary so much between brands?</summary>
+            <p>There is no mandatory international standard for shoe sizes, and each brand has a different last. Foot length in millimeters is the only reliable reference; also check the brand's official size chart before buying.</p>
           </details>
         </div>
 
@@ -197,20 +196,20 @@
     </div>
 
   <section class="tool-deep">
-    <h2>📖 深入了解 Shoe Size Converter</h2>
-    <h3>鞋码为什么这么混乱</h3>
-    <p>各国鞋码体系起源不同：英美用「巴黎点」的变体并以脚长英寸为基础，欧洲用「巴黎点」（每点 2/3 厘米），中国和日本直接用脚长毫米。三套体系起点和增量都不同，所以无法简单加减换算。</p>
-    <h3>以脚长为基准最可靠</h3>
-    <p>本工具的所有换算都以实际脚长（毫米）为中间基准：欧码 ≈ (脚长mm + 15) ÷ 6.67，中国码 = 脚长mm，美码男 ≈ (脚长mm − 208) ÷ 8.47 + 6。这样比「美码 + 33 = 欧码」这类粗略口诀准确得多。</p>
-    <h3>常见对照（男鞋）</h3>
-    <li>脚长 250mm ≈ 中国 250 / 欧码 40 / 美码 7.5 / 英码 6.5</li>
-    <li>脚长 260mm ≈ 中国 260 / 欧码 41.5 / 美码 8.5 / 英码 7.5</li>
-    <li>脚长 270mm ≈ 中国 270 / 欧码 43 / 美码 9.5 / 英码 9</li>
-    <h3>选鞋的实用建议</h3>
-    <li>运动鞋通常要比正装鞋大半码，给脚趾留出活动空间</li>
-    <li>男女鞋码在美制体系中相差约 1.5 码（女码 = 男码 + 1.5）</li>
-    <li>童鞋建议每 3 个月重新量一次脚长</li>
-    <li>本换算为通用参考，最终请以品牌官方尺码表为准</li>
+    <h2>📖 Deep Dive: Shoe Size Converter</h2>
+    <h3>Why shoe sizes are so messy</h3>
+    <p>Shoe-size systems have different origins: the UK/US use a variant of the Paris point based on foot length in inches, Europe uses the Paris point (each point is 2/3 cm), and China and Japan use foot length in millimeters directly. The three systems differ in both starting point and increment, so they cannot be converted by simple addition or subtraction.</p>
+    <h3>Foot length is the most reliable base</h3>
+    <p>All conversions in this tool use actual foot length (mm) as the intermediate base: EU size is about (footLengthMm + 15) / 6.67, CN size = footLengthMm, US men's is about (footLengthMm - 208) / 8.47 + 6. This is far more accurate than rough rules like US + 33 = EU.</p>
+    <h3>Common reference (men's shoes)</h3>
+    <li>Foot 250mm is about CN 250 / EU 40 / US 7.5 / UK 6.5.</li>
+    <li>Foot 260mm is about CN 260 / EU 41.5 / US 8.5 / UK 7.5.</li>
+    <li>Foot 270mm is about CN 270 / EU 43 / US 9.5 / UK 9.</li>
+    <h3>Practical shoe-buying tips</h3>
+    <li>Sneakers usually run half a size larger than dress shoes; leave room for toes.</li>
+    <li>Men's and women's US sizes differ by about 1.5 (women's = men's + 1.5).</li>
+    <li>Remeasure children's feet every 3 months.</li>
+    <li>This conversion is a general reference; always defer to the brand's official size chart.</li>
   </section>
   </main>
 
@@ -221,13 +220,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html" data-i18n="Tools">Tools</a>
-        <a href="about.html" data-i18n="About">About</a>
-        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
-        <a href="contact.html" data-i18n="Contact">Contact</a>
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -286,10 +285,6 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/i18n.js"></script>
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
+<script></script>
 </body>
 </html>

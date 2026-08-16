@@ -39,18 +39,17 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html" class="nav-link">Home</a>
       <a href="index.html#tools" class="nav-link active">Tools</a>
       <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
-      <a href="about.html" class="nav-link" data-i18n="About">About</a>
-      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+      <a href="about.html" class="nav-link">About</a>
     </div>
   </nav>
 
   <main class="main-content">
   <section class="tool-intro">
-    <h2>📌 适用场景</h2>
-    <p>债务还清计算器输入欠款余额、年化利率（APR）和每月还款额，算出还清所需月数以及总共支付的利息。它能直观告诉你：每月多还一点，能省下多少利息、缩短多少时间。</p>
+    <h2>📌 Overview</h2>
+    <p>See how long it takes to pay off a debt and how much interest you will pay, based on balance, APR and monthly payment.</p>
   </section>
 
     <nav class="breadcrumb">
@@ -121,14 +120,14 @@
         </div>
 
         <div class="info-section">
-          <h2>❓ 常见问题（中文）</h2>
+          <h2>❓ More Questions</h2>
           <details class="faq-item">
-            <summary>每月多还一点真的有用吗？</summary>
-            <p>非常有用。多还的钱直接冲减本金，下个月利息就按更低的本金计算，长期能省下可观利息、缩短还款时间。</p>
+            <summary>Does paying a little extra really help?</summary>
+            <p>Greatly. Extra payments reduce the principal directly, so next month’s interest is calculated on a smaller balance — saving meaningful interest and shortening the term over time.</p>
           </details>
           <details class="faq-item">
-            <summary>还款额低于月利息会怎样？</summary>
-            <p>本金不仅不会减少，还会越滚越大，永远还不清。本工具会在这种情况下给出提醒。</p>
+            <summary>What if my payment is lower than the monthly interest?</summary>
+            <p>The balance will not shrink — it will grow, and the debt is never paid off. This tool warns you in that case.</p>
           </details>
         </div>
 
@@ -192,17 +191,17 @@
     </div>
 
   <section class="tool-deep">
-    <h2>📖 深入了解 Debt Payoff Calculator</h2>
-    <h3>债务怎么产生利息</h3>
-    <p>贷款每月按剩余本金计息。你还的钱先抵利息，剩下的才减本金。所以前期大部分还款都在付利息。</p>
-    <h3>计算公式</h3>
-    <p>月利率 r = APR/12。每月利息 = 剩余本金 × r；本金减少 = 月供 − 月利息。逐月循环直到本金归零，记录月数即为还清时间。</p>
-    <h3>提前还款的力量</h3>
-    <p>每多还一笔，本金下降更快，后续利息随之减少。对高利率的消费贷、信用卡尤其明显。</p>
-    <h3>注意</h3>
-    <li>本工具假设固定月供、固定利率</li>
-    <li>部分贷款有提前还款违约金，实际省息会打折</li>
-    <li>结果仅供参考，不构成理财建议</li>
+    <h2>📖 Deep Dive: Debt Payoff Calculator</h2>
+    <h3>How debt accrues interest</h3>
+    <p>A loan charges interest each month on the remaining principal. Your payment first covers interest; only the remainder reduces principal, so early payments are mostly interest.</p>
+    <h3>The calculation</h3>
+    <p>Monthly rate r = APR/12. Monthly interest = remaining principal × r; principal reduction = payment − monthly interest. Repeat monthly until the balance hits zero — the month count is your payoff time.</p>
+    <h3>The power of prepayment</h3>
+    <p>Every extra payment lowers the principal faster, so subsequent interest shrinks too. This is especially noticeable on high-rate consumer loans and credit cards.</p>
+    <h3>Notes</h3>
+    <li>Assumes fixed monthly payments and a fixed rate</li>
+    <li>Some loans charge prepayment penalties, reducing real savings</li>
+    <li>For reference only, not financial advice</li>
   </section>
   </main>
 
@@ -213,13 +212,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html" data-i18n="Tools">Tools</a>
-        <a href="about.html" data-i18n="About">About</a>
-        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
-        <a href="contact.html" data-i18n="Contact">Contact</a>
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -248,10 +247,6 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/i18n.js"></script>
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
+<script></script>
 </body>
 </html>

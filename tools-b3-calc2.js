@@ -8,7 +8,6 @@ T.push({
   cardDesc: 'Find your five heart-rate training zones for effective cardio workouts.',
   keywords: 'heart rate zone calculator, karvonen formula, target heart rate, training zones, max heart rate',
   searchTerms: 'heart rate zone karvonen target training max resting',
-  zh: '心率区间计算器用 Karvonen（卡沃宁）公式，根据最大心率和静息心率算出你运动时的目标心率区间。它把强度分成 5 个区间，帮助你在区间 2–3 做燃脂、区间 4–5 做心肺提升，避免练得太轻或太猛。',
   howto: ['Enter your age (used to estimate max heart rate).', 'Measure and enter your resting heart rate (morning, before getting up works best).', 'Click Calculate to see all five zones.', 'Use the zone ranges to guide your workout intensity.'],
   faq: [
     { q: 'What is the Karvonen formula?', a: 'Target HR = ((Max HR − Resting HR) × intensity%) + Resting HR. It personalises training zones using your resting heart rate, which the simpler 220−age method ignores.' },
@@ -16,15 +15,15 @@ T.push({
     { q: 'Which zone should I train in?', a: 'Zone 2 (60–70%) builds aerobic base and burns fat; Zone 4–5 (80–90%+) improves speed and VO2 max but cannot be sustained long. Most people mix zones across the week.' }
   ],
   zhfaq: [
-    { q: '卡沃宁公式和 220−年龄 有什么区别？', a: '220−年龄只估算最大心率，忽略了每个人的静息心率差异。卡沃宁公式把静息心率纳入计算，得到的目标区间更贴合个人体质。' },
-    { q: '减脂应该练哪个区间？', a: '通常区间 2（约 60%–70% 强度）最适合燃脂和打有氧基础；区间 4–5 强度高、难以持久，主要提升速度和最大摄氧量。' }
+    { q: 'How does the Karvonen formula differ from 220 − age?', a: 'The 220 − age method only estimates max heart rate and ignores each person’s resting heart rate. The Karvonen formula incorporates resting HR, giving target zones that better match your personal fitness.' },
+    { q: 'Which zone should I train in to burn fat?', a: 'Zone 2 (about 60%–70% intensity) is best for fat-burning and building an aerobic base; Zones 4–5 are high-intensity and hard to sustain, mainly improving speed and VO2 max.' }
   ],
   usecases: [
     { icon: '🏃', title: 'Fat-burn runs', text: 'Hold Zone 2 for steady-state cardio.' },
     { icon: '🚴', title: 'Interval training', text: 'Push into Zone 4–5 for reps.' },
     { icon: '💓', title: 'Recovery', text: 'Keep easy days below Zone 2.' }
   ],
-  deep: '## 为什么用心率区间\n凭感觉练很容易要么太轻松、要么过度。心率区间把强度量化成 5 档，让你清楚知道每一段训练在练什么。\n## 卡沃宁公式\n目标心率 =（最大心率 − 静息心率）× 强度% + 静息心率。其中最大心率常用 220 − 年龄估算（也可用更精确的 208 − 0.7×年龄）。\n## 五个区间\n- 区间 1（50%–60%）：热身、恢复\n- 区间 2（60%–70%）：燃脂、有氧基础\n- 区间 3（70%–80%）：有氧耐力\n- 区间 4（80%–90%）：无氧阈、速度\n- 区间 5（90%–100%）：冲刺、最大输出\n## 注意事项\n- 公式给出的是估算值，服药、咖啡因、睡眠都会影响实际心率\n- 戴心率带或手表测量比手机更准\n- 结果仅供参考，开始新训练计划前请咨询专业人士',
+  deep: '## Why use heart-rate zones\nTraining by feel alone makes it easy to train too lightly or too hard. Heart-rate zones quantify intensity into five bands so you know exactly what each session is training.\n## The Karvonen formula\nTarget HR = (Max HR − Resting HR) × intensity% + Resting HR. Max HR is commonly estimated as 220 − age (a more precise option is 208 − 0.7 × age).\n## The five zones\n- Zone 1 (50%–60%): warm-up, recovery\n- Zone 2 (60%–70%): fat-burn, aerobic base\n- Zone 3 (70%–80%): aerobic endurance\n- Zone 4 (80%–90%): anaerobic threshold, speed\n- Zone 5 (90%–100%): sprint, max output\n## Cautions\n- The formula gives estimates; medication, caffeine and sleep all affect actual heart rate\n- A chest strap or watch is more accurate than a phone\n- For reference only; consult a professional before starting a new program',
   body: `        <div class="gen-row">
           <div class="form-row">
             <label for="age">Age (years)</label>
@@ -66,7 +65,6 @@ T.push({
   cardDesc: 'Find the payoff time and total interest for any loan or credit balance.',
   keywords: 'debt payoff calculator, loan payoff, credit card payoff, interest paid, amortization',
   searchTerms: 'debt payoff loan credit card interest balance apr',
-  zh: '债务还清计算器输入欠款余额、年化利率（APR）和每月还款额，算出还清所需月数以及总共支付的利息。它能直观告诉你：每月多还一点，能省下多少利息、缩短多少时间。',
   howto: ['Enter the current balance you owe.', 'Enter the annual interest rate (APR).', 'Enter how much you can pay each month.', 'Click Calculate to see months to payoff and total interest.'],
   faq: [
     { q: 'Why does paying extra matter so much?', a: 'Extra payments reduce the principal faster, which means less interest accrues every month. On a long loan even small extra payments can cut months off the term.' },
@@ -74,15 +72,15 @@ T.push({
     { q: 'What if my payment is too low?', a: 'If the monthly payment does not cover the monthly interest, the balance grows and the debt is never paid off. The calculator will warn you.' }
   ],
   zhfaq: [
-    { q: '每月多还一点真的有用吗？', a: '非常有用。多还的钱直接冲减本金，下个月利息就按更低的本金计算，长期能省下可观利息、缩短还款时间。' },
-    { q: '还款额低于月利息会怎样？', a: '本金不仅不会减少，还会越滚越大，永远还不清。本工具会在这种情况下给出提醒。' }
+    { q: 'Does paying a little extra really help?', a: 'Greatly. Extra payments reduce the principal directly, so next month’s interest is calculated on a smaller balance — saving meaningful interest and shortening the term over time.' },
+    { q: 'What if my payment is lower than the monthly interest?', a: 'The balance will not shrink — it will grow, and the debt is never paid off. This tool warns you in that case.' }
   ],
   usecases: [
     { icon: '💳', title: 'Credit cards', text: 'Plan how to clear balances fast.' },
     { icon: '🎓', title: 'Student loans', text: 'Compare standard vs accelerated.' },
     { icon: '🚗', title: 'Car loans', text: 'See interest saved by overpaying.' }
   ],
-  deep: '## 债务怎么产生利息\n贷款每月按剩余本金计息。你还的钱先抵利息，剩下的才减本金。所以前期大部分还款都在付利息。\n## 计算公式\n月利率 r = APR/12。每月利息 = 剩余本金 × r；本金减少 = 月供 − 月利息。逐月循环直到本金归零，记录月数即为还清时间。\n## 提前还款的力量\n每多还一笔，本金下降更快，后续利息随之减少。对高利率的消费贷、信用卡尤其明显。\n## 注意\n- 本工具假设固定月供、固定利率\n- 部分贷款有提前还款违约金，实际省息会打折\n- 结果仅供参考，不构成理财建议',
+  deep: '## How debt accrues interest\nA loan charges interest each month on the remaining principal. Your payment first covers interest; only the remainder reduces principal, so early payments are mostly interest.\n## The calculation\nMonthly rate r = APR/12. Monthly interest = remaining principal × r; principal reduction = payment − monthly interest. Repeat monthly until the balance hits zero — the month count is your payoff time.\n## The power of prepayment\nEvery extra payment lowers the principal faster, so subsequent interest shrinks too. This is especially noticeable on high-rate consumer loans and credit cards.\n## Notes\n- Assumes fixed monthly payments and a fixed rate\n- Some loans charge prepayment penalties, reducing real savings\n- For reference only, not financial advice',
   body: `        <div class="gen-row">
           <div class="form-row">
             <label for="bal">Balance ($)</label>
@@ -125,7 +123,6 @@ T.push({
   cardDesc: 'Project your future retirement savings with compound growth.',
   keywords: 'retirement calculator, retirement savings, compound growth, 401k projection, nest egg',
   searchTerms: 'retirement savings compound projection 401k future value',
-  zh: '退休金计算器输入你当前的存款、每月定投金额、预期年化收益率和投资年数，用复利公式估算退休时账户里大概有多少钱。它帮你判断现在的储蓄速度是否够用，以及多投一点能带来多大差别。',
   howto: ['Enter your current age and planned retirement age.', 'Enter current savings and monthly contribution.', 'Enter expected annual return (e.g. 6%).', 'Click Calculate to see the projected balance.'],
   faq: [
     { q: 'What return rate should I use?', a: 'Historical stock/bond portfolios often average 5–8% after inflation over long periods, but returns vary year to year. Use a conservative number like 5–6% for planning.' },
@@ -133,15 +130,15 @@ T.push({
     { q: 'Is this a 401(k) or IRA calculator?', a: 'It models any tax-advantaged or taxable account the same way via compound growth; it does not model contribution limits or taxes.' }
   ],
   zhfaq: [
-    { q: '年化收益率填多少合适？', a: '长期股债组合的历史平均实际回报常在 5%–8%，但每年波动很大。做规划时建议保守一点，用 5%–6% 更稳妥。' },
-    { q: '算出来的钱是现值还是未来值？', a: '本工具算的是名义增长，未按通胀折算。要估算实际购买力，可把年收益下调约 2%–3%。' }
+    { q: 'What annual return should I use?', a: 'Long-term stock/bond portfolios have historically averaged around 5%–8% real return, but returns vary year to year. For planning, a conservative 5%–6% is safer.' },
+    { q: 'Is the result in today’s dollars or future dollars?', a: 'This tool shows nominal growth, not inflation-adjusted. To estimate purchasing power, mentally subtract about 2%–3% annual inflation, or use a lower real return.' }
   ],
   usecases: [
     { icon: '📈', title: 'Goal check', text: 'See if you are on track.' },
     { icon: '💰', title: 'Boost savings', text: 'Test higher contributions.' },
     { icon: '🗓️', title: 'Retire early?', text: 'Model an earlier date.' }
   ],
-  deep: '## 复利是退休储蓄的核心\n你投入的钱每年产生收益，收益再产生收益，时间越长滚雪球效应越明显。\n## 计算公式\n未来值 FV = 当前存款 × (1+r)^n + 月供 × [((1+r/12)^(12n) − 1) / (r/12)]，其中 r 为年化收益率、n 为年数。\n## 早开始的优势\n25 岁和 35 岁开始，即使每月金额相同，最终差距可能高达数倍，因为前期投入享受的复利时间更长。\n## 注意\n- 结果为估算，市场实际回报不可预测\n- 未考虑税费、通胀与提取规则\n- 仅供参考，重大财务决策请咨询持牌顾问',
+  deep: '## Compound growth is the core of retirement saving\nYour money earns returns each year, and those returns earn returns — the longer the horizon, the stronger the snowball.\n## The formula\nFuture value FV = current savings × (1+r)^n + monthly contribution × [((1+r/12)^(12n) − 1) / (r/12)], where r is the annual return and n is years.\n## The advantage of starting early\nStarting at 25 vs 35, even with the same monthly amount, the final gap can be several times larger because early contributions enjoy far more compounding time.\n## Notes\n- Results are estimates; real market returns are unpredictable\n- Taxes, inflation and withdrawal rules are not modelled\n- For reference only; consult a licensed adviser for major decisions',
   body: `        <div class="gen-row">
           <div class="form-row">
             <label for="age">Current age</label>
@@ -193,7 +190,6 @@ T.push({
   cardDesc: 'Estimate your monthly car lease payment before you visit the dealer.',
   keywords: 'lease payment calculator, car lease, monthly lease, residual value, money factor',
   searchTerms: 'car lease payment monthly residual money factor apr',
-  zh: '汽车租赁月供计算器输入车身价、首付、到期残值、租期和利率（资金系数或年化利率），估算每月租赁费用。它帮你提前知道大致月供，到店里谈价时心里有数，避免被各种附加费用绕晕。',
   howto: ['Enter the vehicle price (MSRP or negotiated price).', 'Enter down payment and the residual value at lease end.', 'Enter term in months and the money factor (or APR).', 'Click Calculate to see the monthly payment.'],
   faq: [
     { q: 'What is residual value?', a: 'The estimated worth of the car at the end of the lease, set by the leasing company. A higher residual lowers your monthly payment because you only finance the depreciation.' },
@@ -201,15 +197,15 @@ T.push({
     { q: 'Why is my lease payment split into two parts?', a: 'Part 1 covers depreciation (price − residual over the term); part 2 is the finance/rent charge on the average capitalized cost.' }
   ],
   zhfaq: [
-    { q: '残值（residual value）是什么？', a: '租赁公司预估车辆租期结束时的价值。残值越高，你需要“摊销”的折旧越少，月供越低。' },
-    { q: '资金系数和年化利率怎么换算？', a: '资金系数 × 2400 ≈ 对应的年化利率。如果车商给你的是年化利率，除以 2400 即得资金系数。' }
+    { q: 'What is residual value?', a: 'The leasing company’s estimate of the car’s worth at the end of the lease. A higher residual means less depreciation to amortise, so your monthly payment is lower.' },
+    { q: 'How do I convert money factor to APR?', a: 'Money factor × 2400 ≈ the equivalent APR. If a dealer quotes APR on a lease, divide by 2400 to get the money factor.' }
   ],
   usecases: [
     { icon: '🚗', title: 'New car shop', text: 'Compare lease vs buy.' },
     { icon: '📊', title: 'Budget', text: 'Know the monthly hit.' },
     { icon: '🤝', title: 'Negotiate', text: 'Spot a bad money factor.' }
   ],
-  deep: '## 租赁月供的构成\n租赁月供由两部分相加：折旧费 + 融资费。\n## 折旧费\n（净资本化成本 − 残值）÷ 租期月数。净资本化成本 = 车身价 − 首付（及其他抵扣）。\n## 融资费\n（净资本化成本 + 残值）× 资金系数。资金系数 = 年化利率 ÷ 2400。\n## 举例\n车身价 30000、首付 3000、残值 18000、租期 36 个月、资金系数 0.0025：\n折旧费 = (27000 − 18000)/36 = 250；融资费 = (27000 + 18000) × 0.0025 = 112.5；月供 ≈ 362.5。\n## 注意\n- 实际租赁还有购置税、手续费、里程限制与超标费\n- 不同州/地区税费差异大\n- 结果仅供参考',
+  deep: '## What makes up a lease payment\nA lease payment is the sum of two parts: depreciation + rent charge.\n## Depreciation fee\n(Net capitalized cost − residual value) ÷ lease term in months. Net capitalized cost = vehicle price − down payment (and other reductions).\n## Rent charge\n(Net capitalized cost + residual value) × money factor. Money factor = APR ÷ 2400.\n## Example\nPrice 30,000, down 3,000, residual 18,000, term 36 months, money factor 0.0025:\ndepreciation = (27,000 − 18,000)/36 = 250; rent = (27,000 + 18,000) × 0.0025 = 112.5; payment ≈ 362.5.\n## Notes\n- Real leases also include tax, fees, mileage limits and over-mileage charges\n- Taxes vary widely by state/region\n- For reference only',
   body: `        <div class="gen-row">
           <div class="form-row">
             <label for="price">Vehicle price ($)</label>

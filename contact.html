@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <meta name="theme-color" content="#8b5cf6">
-  <title>联系我们 — FreeToolset 反馈与建议 | 在线联系表单</title>
-  <meta name="description" content="联系 FreeToolset 团队：提交功能建议、报告 Bug 问题、商务合作咨询。我们重视每一条反馈，通常在 24 小时内回复。也可通过 GitHub Issues 提交开源贡献。">
+  <title>Contact Us | FreeToolset</title>
+  <meta name="description" content="Contact the FreeToolset team: submit feature suggestions, report bugs, or ask about partnerships. We value every piece of feedback and usually reply within 24 hours. You can also contribute via GitHub Issues.">
   <meta name="keywords" content="contact freetoolset, feedback, tool suggestions, bug report, support">
-  <meta property="og:title" content="联系我们 — FreeToolset 反馈与建议 | 在线联系表单">
-  <meta property="og:description" content="联系 FreeToolset 团队：提交功能建议、报告 Bug 问题、商务合作咨询。我们重视每一条反馈，通常在 24 小时内回复。也可通过 GitHub Issues 提交开源贡献。">
+  <meta property="og:title" content="Contact Us | FreeToolset">
+  <meta property="og:description" content="Contact the FreeToolset team: submit feature suggestions, report bugs, or ask about partnerships. We value every piece of feedback and usually reply within 24 hours.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.freetoolset.app/contact.html">
   <meta property="og:image" content="https://www.freetoolset.app/og-image.png">
@@ -26,7 +26,7 @@
   gtag('config', 'G-HQJ9VZWMKE', { send_page_view: true });
 </script>
 
-  <link rel="alternate" hreflang="zh-CN" href="https://www.freetoolset.app/contact.html" />
+  <link rel="alternate" hreflang="en" href="https://www.freetoolset.app/contact.html" />
   <link rel="alternate" hreflang="x-default" href="https://www.freetoolset.app/contact.html" />
 </head>
 <body>
@@ -38,12 +38,11 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
-      <a href="ai-studio.html" class="nav-link" data-i18n="✨ AI Studio">✨ AI Studio</a>
-      <a href="index.html#tools" class="nav-link" data-i18n="Tools">Tools</a>
-      <a href="about.html" class="nav-link" data-i18n="About">About</a>
-      <a href="privacy-policy.html" class="nav-link" data-i18n="Privacy">Privacy</a>
-      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
+      <a href="index.html#tools" class="nav-link">Tools</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="privacy-policy.html" class="nav-link">Privacy</a>
     </div>
   </nav>
 
@@ -51,59 +50,59 @@
 
     <!-- Breadcrumb -->
     <nav class="breadcrumb">
-      <a href="index.html" data-i18n="Home">Home</a>
+      <a href="index.html">Home</a>
       <span class="separator">/</span>
       <span class="current">Contact</span>
     </nav>
 
     <div class="page-content">
-      <h1 data-i18n="Contact Us">Contact Us</h1>
-      <p class="page-subtitle" data-i18n="contactSubtitle">Have feedback, a tool suggestion, or found a bug? We'd love to hear from you!</p>
+      <h1>Contact Us</h1>
+      <p class="page-subtitle">Have feedback, a tool suggestion, or found a bug? We'd love to hear from you!</p>
 
-      <h2 data-i18n="Send Us a Message">Send Us a Message</h2>
-      <p data-i18n="contactIntro">Fill out the form below and we'll get back to you as soon as possible. Your message is delivered to our team via our server; if the server is unreachable we fall back to opening your email client.</p>
+      <h2>Send Us a Message</h2>
+      <p>Fill out the form below and we'll get back to you as soon as possible. Your message is delivered to our team via our server; if the server is unreachable we fall back to opening your email client.</p>
 
       <form class="contact-form" id="contactForm">
         <div class="form-row">
-          <label for="contactName" data-i18n="Your Name">Your Name</label>
+          <label for="contactName">Your Name</label>
           <input type="text" id="contactName" placeholder="John Doe" required>
         </div>
         <div class="form-row">
-          <label for="contactEmail" data-i18n="Your Email">Your Email</label>
+          <label for="contactEmail">Your Email</label>
           <input type="email" id="contactEmail" placeholder="john@example.com" required>
         </div>
         <div class="form-row">
-          <label for="contactSubject" data-i18n="Subject">Subject</label>
+          <label for="contactSubject">Subject</label>
           <select id="contactSubject">
-            <option value="Feedback" data-i18n="General Feedback">General Feedback</option>
-            <option value="Tool Suggestion" data-i18n="Tool Suggestion">Tool Suggestion</option>
-            <option value="Bug Report" data-i18n="Bug Report">Bug Report</option>
-            <option value="Feature Request" data-i18n="Feature Request">Feature Request</option>
-            <option value="Other" data-i18n="Other">Other</option>
+            <option value="Feedback">General Feedback</option>
+            <option value="Tool Suggestion">Tool Suggestion</option>
+            <option value="Bug Report">Bug Report</option>
+            <option value="Feature Request">Feature Request</option>
+            <option value="Other">Other</option>
           </select>
         </div>
         <div class="form-row">
-          <label for="contactMessage" data-i18n="Message">Message</label>
+          <label for="contactMessage">Message</label>
           <textarea id="contactMessage" placeholder="Tell us what's on your mind..." style="min-height:160px;" required></textarea>
         </div>
-        <button type="submit" class="btn btn-primary" style="width:100%;" data-i18n="Send Message">Send Message</button>
+        <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
       </form>
 
       <div id="formStatus" style="margin-top:16px; font-size:0.9rem; display:none;"></div>
 
-      <h2 data-i18n="Other Ways to Reach Us">Other Ways to Reach Us</h2>
-      <p data-i18n="contactEmailLine">You can also reach us directly via email:</p>
+      <h2>Other Ways to Reach Us</h2>
+      <p>You can also reach us directly via email:</p>
       <ul>
-        <li><strong data-i18n="Email:">Email:</strong> <a href="mailto:billyjaydenbilly@gmail.com">billyjaydenbilly@gmail.com</a></li>
-        <li><strong>问题反馈：</strong> 工具报错或结果异常，请发邮件至 <a href="mailto:freetoolset.app@gmail.com">freetoolset.app@gmail.com</a>，并附上页面地址与你的输入，我会尽快修复。</li>
+        <li><strong>General:</strong> <a href="mailto:billyjaydenbilly@gmail.com">billyjaydenbilly@gmail.com</a></li>
+        <li><strong>Bug reports:</strong> for tool errors or incorrect results, email <a href="mailto:freetoolset.app@gmail.com">freetoolset.app@gmail.com</a> with the page URL and your input, and we'll fix it as soon as possible.</li>
       </ul>
 
-      <h2 data-i18n="Response Time">Response Time</h2>
-      <p data-i18n="responseTimeText">We typically respond to messages within 2–3 business days. For bug reports, please include as much detail as possible: the tool name, your browser and operating system, and steps to reproduce the issue.</p>
+      <h2>Response Time</h2>
+      <p>We typically respond to messages within 2–3 business days. For bug reports, please include as much detail as possible: the tool name, your browser and operating system, and steps to reproduce the issue.</p>
 
       <div class="privacy-notice" style="margin-top:24px;">
         <span class="pn-icon">🔒</span>
-        <span data-i18n="contactPrivacyNote">Your message is sent to our server so we can follow up. If submission fails, your email client opens as a backup.</span>
+        <span>Your message is sent to our server so we can follow up. If submission fails, your email client opens as a backup.</span>
       </div>
     </div>
 
@@ -117,17 +116,17 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html" data-i18n="Tools">Tools</a>
-        <a href="about.html" data-i18n="About">About</a>
-        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
-        <a href="contact.html" data-i18n="Contact">Contact</a>
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 FreeToolset · 由独立站长 <a href="about.html">TMFS</a> 独立开发与维护 · 所有工具均在浏览器本地运行，不上传任何数据</p>
+      <p>© 2025 FreeToolset · independently developed and maintained by <a href="about.html">TMFS</a> · All tools run locally in your browser; no data is uploaded.</p>
     </div>
   </footer>
 
@@ -135,8 +134,6 @@
     (function () {
       var form = document.getElementById('contactForm');
       var status = document.getElementById('formStatus');
-
-      function zh() { return document.documentElement.lang === 'zh-CN'; }
 
       function show(msg, ok) {
         status.style.display = 'block';
@@ -160,7 +157,7 @@
         var message = document.getElementById('contactMessage').value.trim();
 
         if (!name || !email || !message) {
-          show(zh() ? '请填写姓名、邮箱和留言内容。' : 'Please fill in your name, email and message.', false);
+          show('Please fill in your name, email and message.', false);
           return;
         }
 
@@ -174,26 +171,22 @@
           .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
           .then(function (res) {
             if (res.ok && res.d && res.d.success) {
-              show(zh() ? '✓ 留言已发送！我们会尽快回复你。' : '✓ Message sent! We will get back to you soon.', true);
+              show('✓ Message sent! We will get back to you soon.', true);
               form.reset();
             } else {
               fallbackMailto(name, email, subject, message);
-              show(zh() ? '✓ 已尝试打开你的邮件客户端。若未弹出，请直接邮件联系 billyjaydenbilly@gmail.com' : '✓ Tried to open your email client. If it didn\'t open, email us at billyjaydenbilly@gmail.com', true);
+              show("✓ Tried to open your email client. If it didn't open, email us at billyjaydenbilly@gmail.com", true);
             }
           })
           .catch(function () {
             fallbackMailto(name, email, subject, message);
-            show(zh() ? '✓ 已尝试打开你的邮件客户端。若未弹出，请直接邮件联系 billyjaydenbilly@gmail.com' : '✓ Tried to open your email client. If it didn\'t open, email us at billyjaydenbilly@gmail.com', true);
+            show("✓ Tried to open your email client. If it didn't open, email us at billyjaydenbilly@gmail.com", true);
           });
       });
     })();
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/i18n.js" defer></script>
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
+<script></script>
 </body>
 </html>

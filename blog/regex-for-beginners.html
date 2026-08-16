@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <meta name="theme-color" content="#8b5cf6">
-  <title>正则表达式入门：30 分钟看懂匹配、分组与在线测试 | FreeToolset 教程</title>
-  <meta name="description" content="了解blog\regex for beginners的完整指南。FreeToolset 免费提供相关在线工具和详细教程，帮助您快速掌握技巧。无需注册，即学即用。">
-  <meta name="keywords" content="正则表达式, 正则入门, regex, 文本匹配">
-  <meta property="og:title" content="正则表达式入门：30 分钟看懂匹配、分组与在线测试">
-  <meta property="og:description" content="了解blog\regex for beginners的完整指南。FreeToolset 免费提供相关在线工具和详细教程，帮助您快速掌握技巧。无需注册，即学即用。">
+  <title>Regular Expressions for Beginners: Patterns, Groups & Online Testing in 30 Minutes | FreeToolset Guides</title>
+  <meta name="description" content="From metacharacters to capture groups, regex is a powerhouse for text. This intro gets you started and recommends a live online tester.">
+  <meta name="keywords" content="regular expression, regex intro, regex, text matching">
+  <meta property="og:title" content="Regular Expressions for Beginners: Patterns, Groups & Online Testing in 30 Minutes">
+  <meta property="og:description" content="From metacharacters to capture groups, regex is a powerhouse for text. This intro gets you started and recommends a live online tester.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://www.freetoolset.app/blog/regex-for-beginners.html">
   <meta property="og:site_name" content="FreeToolset">
@@ -17,57 +15,16 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="正则表达式入门：30 分钟看懂匹配、分组与在线测试">
-  <meta name="twitter:description" content="从元字符到捕获组，正则表达式是文本处理的利器。本文带你入门并推荐在线实时测试工具。">
+  <meta name="twitter:title" content="Regular Expressions for Beginners: Patterns, Groups & Online Testing in 30 Minutes">
+  <meta name="twitter:description" content="From metacharacters to capture groups, regex is a powerhouse for text. This intro gets you started and recommends a live online tester.">
   <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.freetoolset.app/blog/regex-for-beginners.html">
   <link rel="stylesheet" href="../css/style.css">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Article","headline":"正则表达式入门：30 分钟看懂匹配、分组与在线测试","description":"从元字符到捕获组，正则表达式是文本处理的利器。本文带你入门并推荐在线实时测试工具。","url":"https://www.freetoolset.app/blog/regex-for-beginners.html","mainEntityOfPage":"https://www.freetoolset.app/blog/regex-for-beginners.html","publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  {"@context":"https://schema.org","@type":"Article","headline":"Regular Expressions for Beginners: Patterns, Groups & Online Testing in 30 Minutes","description":"From metacharacters to capture groups, regex is a powerhouse for text. This intro gets you started and recommends a live online tester.","url":"https://www.freetoolset.app/blog/regex-for-beginners.html","mainEntityOfPage":"https://www.freetoolset.app/blog/regex-for-beginners.html","publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
   </script>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <!-- ft-faq-schema -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "这篇《正则表达式入门：30 分钟看懂匹配、分组与在线测试》主要讲什么？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "本文系统讲解「正则表达式入门：30 分钟看懂匹配、分组与在线测试」的核心方法与实操要点，并推荐配套的 FreeToolset 免费在线工具，帮助你在浏览器里快速完成，无需注册、数据本地处理。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "在哪里可以实操练习？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "文末「相关工具」列出了 FreeToolset 上对应的免费在线工具，打开即用，所有计算都在本地浏览器完成，保护隐私。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "这些工具要收费吗？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "FreeToolset 的全部工具均免费，在浏览器本地运行、不上传数据，可放心用于学习与工作。"
-      }
-    }
-  ]
-}
-  </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HQJ9VZWMKE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-HQJ9VZWMKE', { send_page_view: true });
-</script>
-    </head>
+</head>
 <body>
 
   <nav class="navbar">
@@ -83,60 +40,36 @@
 
   <main class="main-content">
     <article class="article">
-      <p class="post-meta">FreeToolset · 实用教程</p>
-      <h1>正则表达式入门：30 分钟看懂匹配、分组与在线测试</h1>
-    <div style="margin:18px 0 24px; padding:16px 20px; background:#eef2ff; border:1px solid #e0e7ff; border-radius:12px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px;">
-      <div>
-        <div style="font-weight:700; font-size:0.98rem; color:#3730a3; margin-bottom:2px;">✨ 用 AI 一键完成类似任务</div>
-        <div style="font-size:0.85rem; color:#4b5563;">FreeToolset AI Content Studio 免费可用，每日赠送 5 Credits，无需注册。</div>
-      </div>
-      <a href="../ai-studio.html" style="display:inline-block; padding:9px 18px; background:#4f46e5; color:#fff; border-radius:8px; text-decoration:none; font-weight:600; white-space:nowrap;">试用 AI Studio →</a>
-    </div>
-
-    <p>正则表达式（Regex）是用一行「模式」完成复杂文本匹配的工具，表单校验、日志提取都离不开它。</p>
-    <h2>核心元字符</h2>
+      <p class="post-meta">FreeToolset · Practical Guides</p>
+      <h1>Regular Expressions for Beginners: Patterns, Groups & Online Testing in 30 Minutes</h1>
+    <p>A regular expression (Regex) is a one-line 'pattern' for complex text matching — form validation and log extraction both rely on it.</p>
+    <h2>Core metacharacters</h2>
     <ul>
-      <li>\d 数字，\w 单词字符，. 任意字符</li>
-      <li>* 0 次以上，+ 1 次以上，? 0 或 1 次</li>
-      <li>[] 字符集合，() 捕获分组</li>
-      <li>^ 开头，$ 结尾</li>
+      <li>\d digit, \w word char, . any char</li>
+      <li>* 0+, + 1+, ? 0 or 1</li>
+      <li>[] character set, () capture group</li>
+      <li>^ start, $ end</li>
     </ul>
-    <h2>从例子学</h2>
-    <p>匹配邮箱可用 ^\S+@\S+\.\S+$，提取日期可用 \d{4}-\d{2}-\d{2}。先写小例子，再逐步加条件。</p>
-    <h2>边写边测</h2>
-    <p>FreeToolset 正则测试器可实时高亮匹配、展示捕获组，是上手正则的最佳练习场。</p>
-    <div class="tip">💡 正则不要一次写太复杂，拆成小片段逐步验证，可读性与可维护性都更好。</div>
+    <h2>Learn from examples</h2>
+    <p>Match email with ^\S+@\S+\.\S+$; extract a date with \d{4}-\d{2}-\d{2}. Write small examples first, then add conditions step by step.</p>
+    <h2>Write and test together</h2>
+    <p>FreeToolset's regex tester highlights matches live and shows capture groups — the best playground to pick up regex.</p>
+    <div class="tip">💡 Don't write regex too complex at once. Break it into small pieces and verify each — better readability and maintainability.</div>
       <div class="related-posts">
-        <h3>🔗 相关工具</h3>
-      <a href="../regex-tester.html">正则测试器</a>
-        <h3>📚 相关文章</h3>
-      <a href="json-formatting-tips.html">JSON 格式化与校验：开发者必备的 5 个技巧</a>
-      <a href="url-encoding-explained.html">URL 编码原理：为什么网址里的中文会变成 %E4%...</a>
+        <h3>🔗 Related Tools</h3>
+      <a href="../regex-tester.html">Regex Tester</a>
+        <h3>📚 Related Articles</h3>
+      <a href="json-formatting-tips.html">JSON Formatting & Validation: 5 Tips Every Developer Needs</a>
+      <a href="url-encoding-explained.html">How URL Encoding Works: Why Chinese Characters Become %E4%...</a>
       </div>
-          <!-- ft-zh-faq -->
-      <section class="info-section" style="margin-top:32px">
-        <h2>❓ 常见问题</h2>
-        <details class="faq-item">
-          <summary>这篇《正则表达式入门：30 分钟看懂匹配、分组与在线测试》主要讲什么？</summary>
-          <p>本文系统讲解「正则表达式入门：30 分钟看懂匹配、分组与在线测试」的核心方法与实操要点，并推荐配套的 FreeToolset 免费在线工具，帮助你在浏览器里快速完成，无需注册、数据本地处理。</p>
-        </details>
-        <details class="faq-item">
-          <summary>在哪里可以实操练习？</summary>
-          <p>文末「相关工具」列出了 FreeToolset 上对应的免费在线工具，打开即用，所有计算都在本地浏览器完成，保护隐私。</p>
-        </details>
-        <details class="faq-item">
-          <summary>这些工具要收费吗？</summary>
-          <p>FreeToolset 的全部工具均免费，在浏览器本地运行、不上传数据，可放心用于学习与工作。</p>
-        </details>
-      </section>
-</article>
+    </article>
   </main>
 
   <footer class="footer">
     <div class="footer-content">
       <div>
         <div class="footer-brand"><span class="logo-icon">⚡</span> FreeToolset</div>
-        <p class="footer-desc">免费在线工具，全部在浏览器本地运行，数据不上传。</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser — your data never leaves your device.</p>
       </div>
       <div class="footer-links">
         <a href="../index.html">Tools</a>
@@ -145,12 +78,8 @@
         <a href="../privacy-policy.html">Privacy</a>
       </div>
     </div>
-    <div class="footer-bottom"><p>© 2025 FreeToolset · 由独立站长 <a href="../about.html">TMFS</a> 独立开发与维护 · 所有工具均在浏览器本地运行，不上传任何数据</p></div>
+    <div class="footer-bottom"><p>© 2025 FreeToolset. All tools run locally in your browser.</p></div>
   </footer>
 
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
 </body>
 </html>

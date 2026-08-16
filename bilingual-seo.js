@@ -1,90 +1,94 @@
-/* bilingual-seo.js — 给全站工具页注入中英双语 title + meta description + WebApplication Schema。 */
+/* bilingual-seo.js — inject an English title + meta description + WebApplication
+ * schema into every tool page. English-only (no Chinese), per site requirements. */
 const fs = require("fs");
 const path = require("path");
 
-const ZH = {
-  "about": "关于我们",
-  "contact": "联系我们",
-  "privacy-policy": "隐私政策",
-  "age-calculator": "年龄计算器",
-  "ai-blog-writer": "AI博客写作器",
-  "ai-content-rewriter": "AI内容改写器",
-  "ai-email-subject": "AI邮件标题生成器",
-  "ai-product-description": "AI产品描述生成器",
-  "ai-seo-meta-generator": "AI SEO元标签生成器",
-  "ai-studio": "AI内容工作室",
-  "area-converter": "面积转换器",
-  "base-converter": "进制转换器",
-  "base64-encoder": "Base64编码解码器",
-  "binary-text-converter": "文本二进制转换器",
-  "bmi-calculator": "BMI计算器",
-  "calorie-calculator": "卡路里计算器",
-  "color-picker": "颜色选择器",
-  "compound-interest-calculator": "复利计算器",
-  "cron-expression-generator": "Cron表达式生成器",
-  "css-minifier": "CSS压缩工具",
-  "csv-to-json": "CSV转JSON工具",
-  "data-storage-converter": "数据存储单位转换器",
-  "date-difference-calculator": "日期差计算器",
-  "dice-roller": "骰子模拟器",
-  "discount-calculator": "折扣计算器",
-  "fancy-text-generator": "花式文字生成器",
-  "find-and-replace": "查找替换工具",
-  "fuel-cost-calculator": "油费计算器",
-  "gpa-calculator": "GPA计算器",
-  "hash-generator": "哈希生成器",
-  "html-encoder": "HTML编码解码器",
-  "html-minifier": "HTML压缩工具",
-  "http-status-codes": "HTTP状态码查询",
-  "image-compressor": "图片压缩工具",
-  "image-to-base64": "图片转Base64",
-  "json-formatter": "JSON格式化工具",
-  "json-minifier": "JSON压缩工具",
-  "json-to-csv": "JSON转CSV",
-  "jwt-decoder": "JWT解码器",
-  "length-converter": "长度转换器",
-  "line-tools": "行处理工具",
-  "loan-calculator": "贷款计算器",
-  "lorem-ipsum-generator": "Lorem Ipsum生成器",
-  "markdown-to-html": "Markdown转HTML",
-  "morse-code-translator": "摩斯密码翻译器",
-  "mortgage-calculator": "房贷计算器",
-  "number-to-words": "数字转英文",
-  "password-generator": "密码生成器",
-  "password-strength-checker": "密码强度检测",
-  "percentage-calculator": "百分比计算器",
-  "port-lookup": "端口查询",
-  "qr-code-generator": "二维码生成器",
-  "random-number-generator": "随机数生成器",
-  "regex-tester": "正则表达式测试器",
-  "remove-line-breaks": "去除换行符",
-  "reverse-text": "文字翻转工具",
-  "roi-calculator": "投资回报率计算器",
-  "roman-numeral-converter": "罗马数字转换器",
-  "salary-calculator": "工资计算器",
-  "sales-tax-calculator": "销售税计算器",
-  "slug-generator": "URL别名生成器",
-  "speed-converter": "速度转换器",
-  "stopwatch": "在线秒表",
-  "temperature-converter": "温度转换器",
-  "text-case-converter": "文字大小写转换",
-  "text-repeater": "文字重复工具",
-  "text-to-speech": "文字转语音",
-  "time-unit-converter": "时间单位转换器",
-  "timer": "倒计时器",
-  "timestamp-converter": "时间戳转换器",
-  "tip-calculator": "小费计算器",
-  "unit-converter": "单位转换器",
-  "url-encoder": "URL编码解码器",
-  "uuid-generator": "UUID生成器",
-  "volume-converter": "体积转换器",
-  "weight-converter": "重量转换器",
-  "whitespace-remover": "空白字符清除器",
-  "word-counter": "字数统计工具"
+// slug -> English tool name (single source of truth)
+const EN = {
+  "about": "About Us",
+  "contact": "Contact Us",
+  "privacy-policy": "Privacy Policy",
+  "age-calculator": "Age Calculator",
+  "ai-blog-writer": "AI Blog Writer",
+  "ai-content-rewriter": "AI Content Rewriter",
+  "ai-email-subject": "AI Email Subject Line Generator",
+  "ai-product-description": "AI Product Description Generator",
+  "ai-seo-meta-generator": "AI SEO Meta Tag Generator",
+  "ai-studio": "AI Content Studio",
+  "area-converter": "Area Converter",
+  "base-converter": "Base Converter",
+  "base64-encoder": "Base64 Encoder / Decoder",
+  "binary-text-converter": "Binary Text Converter",
+  "bmi-calculator": "BMI Calculator",
+  "calorie-calculator": "Calorie Calculator",
+  "color-picker": "Color Picker",
+  "compound-interest-calculator": "Compound Interest Calculator",
+  "cron-expression-generator": "Cron Expression Generator",
+  "css-minifier": "CSS Minifier",
+  "csv-to-json": "CSV to JSON Converter",
+  "data-storage-converter": "Data Storage Converter",
+  "date-difference-calculator": "Date Difference Calculator",
+  "dice-roller": "Dice Roller",
+  "discount-calculator": "Discount Calculator",
+  "fancy-text-generator": "Fancy Text Generator",
+  "find-and-replace": "Find and Replace",
+  "fuel-cost-calculator": "Fuel Cost Calculator",
+  "gpa-calculator": "GPA Calculator",
+  "hash-generator": "Hash Generator",
+  "html-encoder": "HTML Encoder / Decoder",
+  "html-minifier": "HTML Minifier",
+  "http-status-codes": "HTTP Status Code Lookup",
+  "image-compressor": "Image Compressor",
+  "image-to-base64": "Image to Base64",
+  "json-formatter": "JSON Formatter",
+  "json-minifier": "JSON Minifier",
+  "json-to-csv": "JSON to CSV",
+  "jwt-decoder": "JWT Decoder",
+  "length-converter": "Length Converter",
+  "line-tools": "Line Tools",
+  "loan-calculator": "Loan Calculator",
+  "lorem-ipsum-generator": "Lorem Ipsum Generator",
+  "markdown-to-html": "Markdown to HTML",
+  "morse-code-translator": "Morse Code Translator",
+  "mortgage-calculator": "Mortgage Calculator",
+  "number-to-words": "Number to Words",
+  "password-generator": "Password Generator",
+  "password-strength-checker": "Password Strength Checker",
+  "percentage-calculator": "Percentage Calculator",
+  "port-lookup": "Port Lookup",
+  "qr-code-generator": "QR Code Generator",
+  "random-number-generator": "Random Number Generator",
+  "regex-tester": "Regex Tester",
+  "remove-line-breaks": "Remove Line Breaks",
+  "reverse-text": "Reverse Text",
+  "roi-calculator": "ROI Calculator",
+  "roman-numeral-converter": "Roman Numeral Converter",
+  "salary-calculator": "Salary Calculator",
+  "sales-tax-calculator": "Sales Tax Calculator",
+  "slug-generator": "Slug Generator",
+  "speed-converter": "Speed Converter",
+  "stopwatch": "Stopwatch",
+  "temperature-converter": "Temperature Converter",
+  "text-case-converter": "Text Case Converter",
+  "text-repeater": "Text Repeater",
+  "text-to-speech": "Text to Speech",
+  "time-unit-converter": "Time Unit Converter",
+  "timer": "Timer",
+  "timestamp-converter": "Timestamp Converter",
+  "tip-calculator": "Tip Calculator",
+  "unit-converter": "Unit Converter",
+  "url-encoder": "URL Encoder / Decoder",
+  "uuid-generator": "UUID Generator",
+  "volume-converter": "Volume Converter",
+  "weight-converter": "Weight Converter",
+  "whitespace-remover": "Whitespace Remover",
+  "word-counter": "Word Counter"
 };
 
 const EXCLUDE_DIRS = new Set([".vercel", ".git", "node_modules", "_promote_backup", ".workbuddy", "blog"]);
 const NO_SCHEMA = new Set(["index", "about", "contact", "privacy-policy"]);
+
+function hasHan(s) { return /[一-鿿]/.test(s); }
 
 function walk(dir, cb) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -94,11 +98,8 @@ function walk(dir, cb) {
   }
 }
 
-function enMain(title) {
-  let base = title.split("|")[0].trim();
-  base = base.split(/ — | - /)[0].trim();
-  return base;
-}
+const GEN_DESC = (en) =>
+  `${en}: a free online tool that runs entirely in your browser — no sign-up required and your data never leaves your device, so your privacy is always protected.`;
 
 let missing = [];
 walk(".", (file) => {
@@ -106,46 +107,82 @@ walk(".", (file) => {
   const tm = html.match(/<title>([^<]*)<\/title>/);
   if (!tm) return;
   const slug = path.basename(file, ".html");
-  const zh = ZH[slug];
-  if (!zh) { missing.push(slug); return; }
-  const en = enMain(tm[1]);
+  const en = EN[slug];
+  if (!en) { missing.push(slug); return; }
 
-  // 1) title 双语
-  const newTitle = slug === "index"
-    ? "FreeToolset · 95+个免费在线工具 | AI写作,计算器"
-    : `${en} · ${zh} | FreeToolset`;
-  html = html.replace(/<title>[^<]*<\/title>/, `<title>${newTitle}</title>`);
+  // 1) title — only replace if it currently contains Chinese (keep good English titles)
+  const curTitle = tm[1];
+  if (hasHan(curTitle)) {
+    const newTitle = slug === "index"
+      ? "FreeToolset · 95+ Free Online Tools | AI Writing, Calculators"
+      : `${en} | FreeToolset`;
+    html = html.replace(/<title>[^<]*<\/title>/, `<title>${newTitle}</title>`);
+  }
 
-  // 2) description 双语（NO_SCHEMA 页面保留原 description）
+  // 2) description — only replace if it currently contains Chinese; keep good English ones
   if (!NO_SCHEMA.has(slug)) {
-    const desc = `${zh}（${en}）：免费在线工具，无需注册下载，浏览器本地运行，数据不上传，保护隐私。`;
     const eol = html.includes("\r\n") ? "\r\n" : "\n";
-    if (/<meta name=["']description["'][^>]*>/i.test(html)) {
-      html = html.replace(/<meta name=["']description["'][^>]*>/i, `<meta name="description" content="${desc}">`);
-    } else {
-      html = html.replace(/(<\/title>)/i, `$1${eol}  <meta name="description" content="${desc}">`);
+    const m = html.match(/<meta name=["']description["'][^>]*content=["']([^"']*)["']/i);
+    const needsFix = !m || hasHan(m[1]);
+    if (needsFix) {
+      const desc = GEN_DESC(en);
+      if (m) {
+        html = html.replace(/<meta name=["']description["'][^>]*>/i, `<meta name="description" content="${desc}">`);
+      } else {
+        html = html.replace(/(<\/title>)/i, `$1${eol}  <meta name="description" content="${desc}">`);
+      }
     }
   }
 
-  // 3) WebApplication Schema（工具页）
+  // 2b) keywords — strip any Chinese tokens so the attribute stays English-only
+  html = html.replace(/<meta name=["']keywords["'][^>]*content=["']([^"']*)["']/i, (mm, kw) => {
+    const cleaned = kw.split(",").map(s => s.trim()).filter(s => s && !hasHan(s)).join(", ");
+    return `<meta name="keywords" content="${cleaned}">`;
+  });
+
+  // 3) WebApplication schema (tool pages)
   if (!NO_SCHEMA.has(slug) && !html.includes("WebApplication")) {
     const schema = {
       "@context": "https://schema.org",
       "@type": "WebApplication",
       "name": en,
-      "alternateName": zh,
       "url": "https://www.freetoolset.app/" + slug + ".html",
       "applicationCategory": "UtilityApplication",
       "operatingSystem": "Any",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-      "description": `${zh}（${en}）免费在线工具，无需注册，本地运行保护隐私。`
+      "description": GEN_DESC(en)
     };
     const eol = html.includes("\r\n") ? "\r\n" : "\n";
     html = html.replace(/<\/head>/i, `  <script type="application/ld+json">${eol}${JSON.stringify(schema, null, 2)}${eol}</script>${eol}</head>`);
+  }
+
+  // 4) Clean existing Open Graph tags if they contain Chinese
+  const enTitleForOg = (html.match(/<title>([^<]*)<\/title>/) || [,""])[1];
+  html = html.replace(/<meta property=["']og:title["'][^>]*content=["']([^"']*)["']/i, (mm, c) =>
+    hasHan(c) ? `<meta property="og:title" content="${enTitleForOg}">` : mm);
+  html = html.replace(/<meta property=["']og:description["'][^>]*content=["']([^"']*)["']/i, (mm, c) => {
+    if (!hasHan(c)) return mm;
+    const d = GEN_DESC(en);
+    return `<meta property="og:description" content="${d}">`;
+  });
+
+  // 5) Fix an existing WebApplication schema that still contains Chinese
+  if (html.includes("WebApplication")) {
+    html = html.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g, (mm, body) => {
+      if (!body.includes("WebApplication")) return mm;
+      if (!hasHan(body)) return mm;
+      try {
+        const obj = JSON.parse(body);
+        obj.name = en;
+        delete obj.alternateName;
+        obj.description = GEN_DESC(en);
+        return `<script type="application/ld+json">\n${JSON.stringify(obj, null, 2)}\n</script>`;
+      } catch (e) { return mm; }
+    });
   }
 
   fs.writeFileSync(file, html, "utf8");
   console.log("updated", slug);
 });
 
-if (missing.length) console.log("MISSING ZH:", missing.join(", "));
+if (missing.length) console.log("MISSING EN:", missing.join(", "));

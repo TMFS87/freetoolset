@@ -39,18 +39,17 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html" class="nav-link">Home</a>
       <a href="index.html#tools" class="nav-link active">Tools</a>
       <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
-      <a href="about.html" class="nav-link" data-i18n="About">About</a>
-      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+      <a href="about.html" class="nav-link">About</a>
     </div>
   </nav>
 
   <main class="main-content">
   <section class="tool-intro">
-    <h2>📌 适用场景</h2>
-    <p>ROT13 / 凯撒密码工具把每个字母按指定位数平移（ROT13 即平移 13 位）。可用来对文字做简单“加密”或解码，纯字母变换、保留大小写与标点。</p>
+    <h2>📌 Overview</h2>
+    <p>Apply a Caesar cipher to text — shift every letter by a chosen number of positions (ROT13 = shift 13). Encode a message or decode a cipher.</p>
   </section>
 
     <nav class="breadcrumb">
@@ -121,14 +120,14 @@
         </div>
 
         <div class="info-section">
-          <h2>❓ 常见问题（中文）</h2>
+          <h2>❓ More Questions</h2>
           <details class="faq-item">
-            <summary>什么是 ROT13？</summary>
-            <p>平移 13 位的凯撒密码。因为字母表有 26 个字母，平移两次会还原原文，所以“加密”和“解密”是同一操作。</p>
+            <summary>What is ROT13?</summary>
+            <p>A Caesar cipher with a shift of 13. Because the alphabet has 26 letters, applying it twice restores the original, so encoding and decoding are the same step.</p>
           </details>
           <details class="faq-item">
-            <summary>数字和标点会变吗？</summary>
-            <p>不会。只有 A–Z / a–z 被平移，数字、空格和符号保持不变。</p>
+            <summary>Do numbers and punctuation change?</summary>
+            <p>No. Only A–Z / a–z are shifted; digits, spaces and symbols stay as they are.</p>
           </details>
         </div>
 
@@ -192,15 +191,15 @@
     </div>
 
   <section class="tool-deep">
-    <h2>📖 深入了解 ROT13 / Caesar Cipher</h2>
-    <h3>凯撒密码原理</h3>
-    <p>把字母表中的每个字母向后移动 N 位（到末尾则回到开头）。ROT13 取 N=13，因 26 个字母，移两次即还原。</p>
-    <h3>规则</h3>
-    <li>仅平移 A–Z / a–z，保留大小写</li>
-    <li>数字、空格、标点原样保留</li>
-    <li>N=13 时编码=解码</li>
-    <h3>提醒</h3>
-    <p>这不是真正的加密，无任何安全性，只用于趣味与混淆。</p>
+    <h2>📖 Deep Dive: ROT13 / Caesar Cipher</h2>
+    <h3>How the Caesar cipher works</h3>
+    <p>Each letter in the alphabet is shifted N places forward (wrapping back to the start at the end). ROT13 uses N=13; since there are 26 letters, shifting twice returns the original text.</p>
+    <h3>Rules</h3>
+    <li>Only A–Z / a–z are shifted, preserving case</li>
+    <li>Digits, spaces and punctuation are left unchanged</li>
+    <li>With N=13, encoding and decoding are the same operation</li>
+    <h3>Reminder</h3>
+    <p>This is not real encryption — it provides no security and is only for fun and light obfuscation.</p>
   </section>
   </main>
 
@@ -211,13 +210,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html" data-i18n="Tools">Tools</a>
-        <a href="about.html" data-i18n="About">About</a>
-        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
-        <a href="contact.html" data-i18n="Contact">Contact</a>
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -246,10 +245,6 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/i18n.js"></script>
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
+<script></script>
 </body>
 </html>

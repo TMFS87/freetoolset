@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <meta name="theme-color" content="#8b5cf6">
-  <title>大小写与命名规范：camelCase 到 kebab | FreeToolset 教程</title>
-  <meta name="description" content="了解blog\text case naming的完整指南。FreeToolset 免费提供相关在线工具和详细教程，帮助您快速掌握技巧。无需注册，即学即用。">
-  <meta name="keywords" content="大小写转换, camelcase, snake_case, kebab-case, 命名规范">
-  <meta property="og:title" content="大小写与命名规范：camelCase 到 kebab">
-  <meta property="og:description" content="了解blog\text case naming的完整指南。FreeToolset 免费提供相关在线工具和详细教程，帮助您快速掌握技巧。无需注册，即学即用。">
+  <title>Case & Naming Conventions: camelCase to kebab | FreeToolset Guides</title>
+  <meta name="description" content="Straighten out naming styles in programming and copywriting with a case converter — variable naming and title normalization in one go.">
+  <meta name="keywords" content="case conversion, camelCase, snake_case, kebab-case, naming conventions">
+  <meta property="og:title" content="Case & Naming Conventions: camelCase to kebab">
+  <meta property="og:description" content="Straighten out naming styles in programming and copywriting with a case converter — variable naming and title normalization in one go.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://www.freetoolset.app/blog/text-case-naming.html">
   <meta property="og:site_name" content="FreeToolset">
@@ -17,57 +15,16 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="大小写与命名规范：camelCase 到 kebab">
-  <meta name="twitter:description" content="理清编程与文案中的命名风格，附大小写转换工具，变量命名、标题规范化一次搞定。">
+  <meta name="twitter:title" content="Case & Naming Conventions: camelCase to kebab">
+  <meta name="twitter:description" content="Straighten out naming styles in programming and copywriting with a case converter — variable naming and title normalization in one go.">
   <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.freetoolset.app/blog/text-case-naming.html">
   <link rel="stylesheet" href="../css/style.css">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Article","headline":"大小写与命名规范：camelCase 到 kebab","description":"理清编程与文案中的命名风格，附大小写转换工具，变量命名、标题规范化一次搞定。","url":"https://www.freetoolset.app/blog/text-case-naming.html","mainEntityOfPage":"https://www.freetoolset.app/blog/text-case-naming.html","publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  {"@context":"https://schema.org","@type":"Article","headline":"Case & Naming Conventions: camelCase to kebab","description":"Straighten out naming styles in programming and copywriting with a case converter — variable naming and title normalization in one go.","url":"https://www.freetoolset.app/blog/text-case-naming.html","mainEntityOfPage":"https://www.freetoolset.app/blog/text-case-naming.html","publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
   </script>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <!-- ft-faq-schema -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "这篇《大小写与命名规范：camelCase 到 kebab》主要讲什么？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "本文系统讲解「大小写与命名规范：camelCase 到 kebab」的核心方法与实操要点，并推荐配套的 FreeToolset 免费在线工具，帮助你在浏览器里快速完成，无需注册、数据本地处理。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "在哪里可以实操练习？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "文末「相关工具」列出了 FreeToolset 上对应的免费在线工具，打开即用，所有计算都在本地浏览器完成，保护隐私。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "这些工具要收费吗？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "FreeToolset 的全部工具均免费，在浏览器本地运行、不上传数据，可放心用于学习与工作。"
-      }
-    }
-  ]
-}
-  </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HQJ9VZWMKE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-HQJ9VZWMKE', { send_page_view: true });
-</script>
-    </head>
+</head>
 <body>
 
   <nav class="navbar">
@@ -83,57 +40,33 @@
 
   <main class="main-content">
     <article class="article">
-      <p class="post-meta">FreeToolset · 实用教程</p>
-      <h1>大小写与命名规范：camelCase 到 kebab</h1>
-    <div style="margin:18px 0 24px; padding:16px 20px; background:#eef2ff; border:1px solid #e0e7ff; border-radius:12px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px;">
-      <div>
-        <div style="font-weight:700; font-size:0.98rem; color:#3730a3; margin-bottom:2px;">✨ 用 AI 一键完成类似任务</div>
-        <div style="font-size:0.85rem; color:#4b5563;">FreeToolset AI Content Studio 免费可用，每日赠送 5 Credits，无需注册。</div>
-      </div>
-      <a href="../ai-studio.html" style="display:inline-block; padding:9px 18px; background:#4f46e5; color:#fff; border-radius:8px; text-decoration:none; font-weight:600; white-space:nowrap;">试用 AI Studio →</a>
-    </div>
-
-    <p>不同场景用不同命名：JS 变量用 camelCase（myVar），常量用 UPPER_SNAKE，CSS 类名用 kebab-case（my-class），Python 用 snake_case。</p>
-    <h2>常见风格</h2>
+      <p class="post-meta">FreeToolset · Practical Guides</p>
+      <h1>Case & Naming Conventions: camelCase to kebab</h1>
+    <p>Different contexts use different casing: JS variables use camelCase (myVar), constants use UPPER_SNAKE, CSS classes use kebab-case (my-class), Python uses snake_case.</p>
+    <h2>Common styles</h2>
     <ul>
-      <li>camelCase：首词小写，其后首字母大写</li>
-      <li>snake_case：全小写，下划线分隔</li>
-      <li>kebab-case：全小写，短横分隔</li>
-      <li>PascalCase：每词首字母大写</li>
+      <li>camelCase: first word lowercase, then capitalize</li>
+      <li>snake_case: all lowercase, underscore-separated</li>
+      <li>kebab-case: all lowercase, hyphen-separated</li>
+      <li>PascalCase: every word capitalized</li>
     </ul>
-    <h2>怎么选</h2>
-    <p>跟着语言或平台的惯例走，团队统一比个人偏好更重要。</p>
-    <div class="tip">💡 批量改命名时，用大小写转换工具一次处理整段文本，避免手改出错。</div>
-      <div class="related-posts">
-        <h3>🔗 相关工具</h3>
-      <a href="../text-case-converter.html">大小写转换</a>
-        <h3>📚 相关文章</h3>
-      <a href="text-tools-guide.html">文本处理工具大全：清洗、转换与排版一键完成</a>
+    <h2>How to choose</h2>
+    <p>Follow the language or platform's convention — team consistency matters more than personal preference.</p>
+    <div class="tip">💡 When renaming in bulk, a case converter handles a whole block at once, avoiding manual errors.</div>
+      <div class="related_posts">
+        <h3>🔗 Related Tools</h3>
+      <a href="../text-case-converter.html">Case Converter</a>
+        <h3>📚 Related Articles</h3>
+      <a href="text-tools-guide.html">The Text Toolkit: Clean, Convert & Format in One Click</a>
       </div>
-          <!-- ft-zh-faq -->
-      <section class="info-section" style="margin-top:32px">
-        <h2>❓ 常见问题</h2>
-        <details class="faq-item">
-          <summary>这篇《大小写与命名规范：camelCase 到 kebab》主要讲什么？</summary>
-          <p>本文系统讲解「大小写与命名规范：camelCase 到 kebab」的核心方法与实操要点，并推荐配套的 FreeToolset 免费在线工具，帮助你在浏览器里快速完成，无需注册、数据本地处理。</p>
-        </details>
-        <details class="faq-item">
-          <summary>在哪里可以实操练习？</summary>
-          <p>文末「相关工具」列出了 FreeToolset 上对应的免费在线工具，打开即用，所有计算都在本地浏览器完成，保护隐私。</p>
-        </details>
-        <details class="faq-item">
-          <summary>这些工具要收费吗？</summary>
-          <p>FreeToolset 的全部工具均免费，在浏览器本地运行、不上传数据，可放心用于学习与工作。</p>
-        </details>
-      </section>
-</article>
+    </article>
   </main>
 
   <footer class="footer">
     <div class="footer-content">
       <div>
         <div class="footer-brand"><span class="logo-icon">⚡</span> FreeToolset</div>
-        <p class="footer-desc">免费在线工具，全部在浏览器本地运行，数据不上传。</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser — your data never leaves your device.</p>
       </div>
       <div class="footer-links">
         <a href="../index.html">Tools</a>
@@ -142,12 +75,9 @@
         <a href="../privacy-policy.html">Privacy</a>
       </div>
     </div>
-    <div class="footer-bottom"><p>© 2025 FreeToolset · 由独立站长 <a href="../about.html">TMFS</a> 独立开发与维护 · 所有工具均在浏览器本地运行，不上传任何数据</p></div>
+    <div class="footer-bottom"><p>© 2025 FreeToolset. All tools run locally in your browser.</p></div>
   </footer>
 
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
+<script></script>
 </body>
 </html>

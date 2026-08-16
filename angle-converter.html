@@ -39,18 +39,17 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html" class="nav-link">Home</a>
       <a href="index.html#tools" class="nav-link active">Tools</a>
       <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
-      <a href="about.html" class="nav-link" data-i18n="About">About</a>
-      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+      <a href="about.html" class="nav-link">About</a>
     </div>
   </nav>
 
   <main class="main-content">
   <section class="tool-intro">
-    <h2>📌 适用场景</h2>
-    <p>角度单位换算器支持度、弧度、百分度（gon）、圈、角分、角秒、毫弧度等互转。写代码调用三角函数、做几何计算或看测量仪器读数时经常需要。</p>
+    <h2>📌 Overview</h2>
+    <p>Convert angle units including degrees, radians, gradians, turns, arcminutes, arcseconds and milliradians.</p>
   </section>
 
     <nav class="breadcrumb">
@@ -119,14 +118,14 @@
         </div>
 
         <div class="info-section">
-          <h2>❓ 常见问题（中文）</h2>
+          <h2>❓ More Questions</h2>
           <details class="faq-item">
-            <summary>度和弧度怎么换算？</summary>
-            <p>弧度 = 度 × π/180。所以 180° = π ≈ 3.14159 弧度，90° = π/2 ≈ 1.5708 弧度。</p>
+            <summary>How do degrees and radians convert?</summary>
+            <p>radians = degrees times pi/180. So 180 degrees = pi is about 3.14159 radians, and 90 degrees = pi/2 is about 1.5708 radians.</p>
           </details>
           <details class="faq-item">
-            <summary>为什么编程里要用弧度？</summary>
-            <p>JavaScript、Python、C 等语言的 sin/cos 函数都接收弧度。直接传角度值是图形和游戏开发中最常见的 bug 之一。</p>
+            <summary>Why do programming languages use radians?</summary>
+            <p>The sin/cos functions in JavaScript, Python, C and others take radians. Passing degrees directly is one of the most common bugs in graphics and game development.</p>
           </details>
         </div>
 
@@ -190,20 +189,20 @@
     </div>
 
   <section class="tool-deep">
-    <h2>📖 深入了解 Angle Converter</h2>
-    <h3>角度的几种表示法</h3>
-    <li>**度（°）**：把一圈分成 360 份，源自古巴比伦的六十进制，日常最常用</li>
-    <li>**弧度（rad）**：弧长等于半径时对应的圆心角，一圈为 2π，数学和编程的标准单位</li>
-    <li>**百分度（gon/grad）**：把一圈分成 400 份，直角正好是 100，测绘领域使用</li>
-    <li>**圈（turn）**：一整圈为 1，动画和旋转参数中直观好用</li>
-    <h3>关键换算关系</h3>
-    <li>1 圈 = 360° = 2π rad ≈ 6.28319 rad = 400 gon</li>
-    <li>1° = 60 角分（′）= 3600 角秒（″）</li>
-    <li>1 rad ≈ 57.2958°</li>
-    <h3>编程中的常见坑</h3>
-    <p>JavaScript 的 `Math.sin(90)` 不会返回 1，因为它把 90 当作弧度处理。正确写法是 `Math.sin(90 * Math.PI / 180)`。这个错误在 Canvas 绘图和 3D 旋转中尤其高发。</p>
-    <h3>角分角秒的用途</h3>
-    <p>经纬度坐标常写成「39°54′27″N」这种度分秒格式，天文观测和 GPS 定位也大量使用角秒作为精度单位。</p>
+    <h2>📖 Deep Dive: Angle Converter</h2>
+    <h3>Ways to express angles</h3>
+    <li>Degree (deg): a circle split into 360 parts, from ancient Babylonian base-60, the most common in daily life.</li>
+    <li>Radian (rad): the central angle whose arc equals the radius; a full circle is 2pi, the standard unit in math and programming.</li>
+    <li>Gradian (gon/grad): a circle split into 400 parts, with a right angle exactly 100, used in surveying.</li>
+    <li>Turn: a full circle equals 1, intuitive for animation and rotation parameters.</li>
+    <h3>Key conversions</h3>
+    <li>1 turn = 360 deg = 2pi rad is about 6.28319 rad = 400 gon.</li>
+    <li>1 deg = 60 arcminutes = 3600 arcseconds.</li>
+    <li>1 rad is about 57.2958 deg.</li>
+    <h3>A common programming pitfall</h3>
+    <p>JavaScript's Math.sin(90) does not return 1 because it treats 90 as radians. The correct form is Math.sin(90 * Math.PI / 180). This mistake is especially common in Canvas drawing and 3D rotation.</p>
+    <h3>Uses of arcminutes and arcseconds</h3>
+    <p>Latitude and longitude coordinates are often written in degrees-minutes-seconds like 39 deg 54' 27&quot; N, and astronomical observation and GPS positioning rely heavily on arcseconds as a precision unit.</p>
   </section>
   </main>
 
@@ -214,13 +213,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html" data-i18n="Tools">Tools</a>
-        <a href="about.html" data-i18n="About">About</a>
-        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
-        <a href="contact.html" data-i18n="Contact">Contact</a>
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -265,10 +264,6 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/i18n.js"></script>
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
+<script></script>
 </body>
 </html>

@@ -39,18 +39,17 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html" class="nav-link">Home</a>
       <a href="index.html#tools" class="nav-link active">Tools</a>
       <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
-      <a href="about.html" class="nav-link" data-i18n="About">About</a>
-      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+      <a href="about.html" class="nav-link">About</a>
     </div>
   </nav>
 
   <main class="main-content">
   <section class="tool-intro">
-    <h2>📌 适用场景</h2>
-    <p>数据传输速率转换器在比特单位（bps、Mbps、Gbps）和字节单位（KB/s、MB/s、GB/s）之间换算。注意 1 字节 = 8 比特，所以 100 Mbps 约等于 12.5 MB/s。常用来核对宽带、下载和接口速度。</p>
+    <h2>📌 Overview</h2>
+    <p>Convert network and data-transfer speeds between bit-based (bps, Mbps, Gbps) and byte-based (KB/s, MB/s, GB/s) units.</p>
   </section>
 
     <nav class="breadcrumb">
@@ -123,14 +122,14 @@
         </div>
 
         <div class="info-section">
-          <h2>❓ 常见问题（中文）</h2>
+          <h2>❓ More Questions</h2>
           <details class="faq-item">
-            <summary>为什么 100 Mbps 只有约 12.5 MB/s？</summary>
-            <p>运营商标的是“比特/秒”（Mbps），而下载工具显示“字节/秒”（MB/s）。1 字节 = 8 比特，所以把 Mbps 除以 8 才是 MB/s。</p>
+            <summary>Why is 100 Mbps only about 12.5 MB/s?</summary>
+            <p>ISPs advertise bits per second (Mbps), while download tools show bytes per second (MB/s). 1 byte = 8 bits, so divide Mbps by 8 to get MB/s.</p>
           </details>
           <details class="faq-item">
-            <summary>这里用 1000 还是 1024？</summary>
-            <p>网络速率采用十进制（1000）：1 Mbps = 1,000,000 bit/s。存储单位有时用 1024，但传输速率按十进制。</p>
+            <summary>Should I use 1000 or 1024 here?</summary>
+            <p>Network rates use decimal (1000): 1 Mbps = 1,000,000 bit/s. Storage units sometimes use 1024, but transfer rates are decimal.</p>
           </details>
         </div>
 
@@ -194,18 +193,18 @@
     </div>
 
   <section class="tool-deep">
-    <h2>📖 深入了解 Data Transfer Rate Converter</h2>
-    <h3>比特 vs 字节</h3>
-    <p>网络带宽几乎都用“比特每秒”（bit/s, bps）表示，而文件大小用“字节”（Byte, B），1 字节 = 8 比特。因此 100 Mbps 的宽带，理论最大下载速度约 12.5 MB/s。</p>
-    <h3>十进制换算</h3>
-    <p>传输速率遵循十进制：1 kbps = 1,000 bit/s，1 Mbps = 1,000,000 bit/s，1 Gbps = 10^9 bit/s。</p>
-    <h3>常见参考</h3>
-    <li>4G 峰值：约 100 Mbps</li>
-    <li>千兆宽带：1000 Mbps = 1 Gbps ≈ 125 MB/s</li>
-    <li>Wi-Fi 6：理论 9.6 Gbps</li>
-    <h3>注意</h3>
-    <li>实际速度受线路、拥塞、协议开销影响，低于理论值</li>
-    <li>结果仅供参考</li>
+    <h2>📖 Deep Dive: Data Transfer Rate Converter</h2>
+    <h3>Bit vs byte</h3>
+    <p>Network bandwidth is almost always given in bits per second (bit/s, bps), while file sizes use bytes (Byte, B), where 1 byte = 8 bits. So a 100 Mbps connection has a theoretical max download speed of about 12.5 MB/s.</p>
+    <h3>Decimal conversion</h3>
+    <p>Transfer rates follow the decimal system: 1 kbps = 1,000 bit/s, 1 Mbps = 1,000,000 bit/s, 1 Gbps = 10 to the 9th bit/s.</p>
+    <h3>Common references</h3>
+    <li>4G peak: about 100 Mbps</li>
+    <li>Gigabit broadband: 1000 Mbps = 1 Gbps is about 125 MB/s</li>
+    <li>Wi-Fi 6: theoretical 9.6 Gbps</li>
+    <h3>Notes</h3>
+    <li>Actual speed is lower than theoretical due to line quality, congestion, and protocol overhead.</li>
+    <li>Results are for reference only.</li>
   </section>
   </main>
 
@@ -216,13 +215,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html" data-i18n="Tools">Tools</a>
-        <a href="about.html" data-i18n="About">About</a>
-        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
-        <a href="contact.html" data-i18n="Contact">Contact</a>
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -256,10 +255,6 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/i18n.js"></script>
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
+<script></script>
 </body>
 </html>

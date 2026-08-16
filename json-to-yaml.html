@@ -39,18 +39,17 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html" class="nav-link">Home</a>
       <a href="index.html#tools" class="nav-link active">Tools</a>
       <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
-      <a href="about.html" class="nav-link" data-i18n="About">About</a>
-      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+      <a href="about.html" class="nav-link">About</a>
     </div>
   </nav>
 
   <main class="main-content">
   <section class="tool-intro">
-    <h2>📌 适用场景</h2>
-    <p>JSON 转 YAML 工具把 JSON 数据一键转换成层次清晰的 YAML 文本，常用于 Kubernetes、Docker Compose、GitHub Actions 等配置文件。所有转换都在浏览器本地完成，不上传你的数据。</p>
+    <h2>📌 Overview</h2>
+    <p>Convert JSON into readable YAML instantly. Great for Kubernetes, Docker Compose, GitHub Actions and config files.</p>
   </section>
 
     <nav class="breadcrumb">
@@ -120,14 +119,14 @@
         </div>
 
         <div class="info-section">
-          <h2>❓ 常见问题（中文）</h2>
+          <h2>❓ More Questions</h2>
           <details class="faq-item">
-            <summary>会保留嵌套和数组吗？</summary>
-            <p>会。对象、数组、字符串、数字、布尔和空值都会按正确缩进和列表符号转换。</p>
+            <summary>Are nesting and arrays preserved?</summary>
+            <p>Yes. Objects, arrays, strings, numbers, booleans, and null are all converted with correct indentation and list markers.</p>
           </details>
           <details class="faq-item">
-            <summary>转换后的数据会上传吗？</summary>
-            <p>不会。转换完全在浏览器本地进行，不会发送到任何服务器。</p>
+            <summary>Are the converted data uploaded?</summary>
+            <p>No. Conversion runs entirely locally in your browser and is never sent to any server.</p>
           </details>
         </div>
 
@@ -191,19 +190,19 @@
     </div>
 
   <section class="tool-deep">
-    <h2>📖 深入了解 JSON to YAML Converter</h2>
-    <h3>为什么需要 JSON → YAML</h3>
-    <p>JSON 机器友好但可读性差；YAML 用缩进表达层级，人在写配置时更舒服。Kubernetes、Docker Compose、GitHub Actions 等几乎都用 YAML。</p>
-    <h3>本工具能处理什么</h3>
-    <li>对象（键值对）→ 缩进的 key: value</li>
-    <li>数组 → 以 “- ” 开头的列表</li>
-    <li>字符串、数字、布尔、null 均正确表达</li>
-    <li>需要加引号的字符串会自动加引号</li>
-    <h3>使用建议</h3>
-    <li>粘贴前确保 JSON 合法（可用 JSON 校验工具先检查）</li>
-    <li>结果可直接复制到 .yml 文件</li>
-    <h3>隐私</h3>
-    <p>所有解析都在你的浏览器本地完成，数据不上传。</p>
+    <h2>📖 Deep Dive: JSON to YAML Converter</h2>
+    <h3>Why convert JSON to YAML</h3>
+    <p>JSON is machine-friendly but hard to read; YAML uses indentation to express hierarchy, which is more comfortable when writing config. Kubernetes, Docker Compose, and GitHub Actions almost all use YAML.</p>
+    <h3>What this tool handles</h3>
+    <li>Objects (key-value pairs) become indented key: value.</li>
+    <li>Arrays become lists starting with a dash.</li>
+    <li>Strings, numbers, booleans, and null are all expressed correctly.</li>
+    <li>Strings that need quotes get them automatically.</li>
+    <h3>Usage tips</h3>
+    <li>Make sure the JSON is valid before pasting (use a JSON validator first).</li>
+    <li>The result can be copied straight into a .yml file.</li>
+    <h3>Privacy</h3>
+    <p>All parsing happens locally in your browser; data is not uploaded.</p>
   </section>
   </main>
 
@@ -214,13 +213,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html" data-i18n="Tools">Tools</a>
-        <a href="about.html" data-i18n="About">About</a>
-        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
-        <a href="contact.html" data-i18n="Contact">Contact</a>
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -267,10 +266,6 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/i18n.js"></script>
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
+<script></script>
 </body>
 </html>

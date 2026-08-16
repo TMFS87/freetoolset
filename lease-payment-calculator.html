@@ -39,18 +39,17 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html" class="nav-link">Home</a>
       <a href="index.html#tools" class="nav-link active">Tools</a>
       <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
-      <a href="about.html" class="nav-link" data-i18n="About">About</a>
-      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+      <a href="about.html" class="nav-link">About</a>
     </div>
   </nav>
 
   <main class="main-content">
   <section class="tool-intro">
-    <h2>📌 适用场景</h2>
-    <p>汽车租赁月供计算器输入车身价、首付、到期残值、租期和利率（资金系数或年化利率），估算每月租赁费用。它帮你提前知道大致月供，到店里谈价时心里有数，避免被各种附加费用绕晕。</p>
+    <h2>📌 Overview</h2>
+    <p>Estimate a car lease monthly payment from vehicle price, down payment, residual value, term and money factor (or APR).</p>
   </section>
 
     <nav class="breadcrumb">
@@ -131,14 +130,14 @@
         </div>
 
         <div class="info-section">
-          <h2>❓ 常见问题（中文）</h2>
+          <h2>❓ More Questions</h2>
           <details class="faq-item">
-            <summary>残值（residual value）是什么？</summary>
-            <p>租赁公司预估车辆租期结束时的价值。残值越高，你需要“摊销”的折旧越少，月供越低。</p>
+            <summary>What is residual value?</summary>
+            <p>The leasing company’s estimate of the car’s worth at the end of the lease. A higher residual means less depreciation to amortise, so your monthly payment is lower.</p>
           </details>
           <details class="faq-item">
-            <summary>资金系数和年化利率怎么换算？</summary>
-            <p>资金系数 × 2400 ≈ 对应的年化利率。如果车商给你的是年化利率，除以 2400 即得资金系数。</p>
+            <summary>How do I convert money factor to APR?</summary>
+            <p>Money factor × 2400 ≈ the equivalent APR. If a dealer quotes APR on a lease, divide by 2400 to get the money factor.</p>
           </details>
         </div>
 
@@ -202,20 +201,20 @@
     </div>
 
   <section class="tool-deep">
-    <h2>📖 深入了解 Car Lease Payment Calculator</h2>
-    <h3>租赁月供的构成</h3>
-    <p>租赁月供由两部分相加：折旧费 + 融资费。</p>
-    <h3>折旧费</h3>
-    <p>（净资本化成本 − 残值）÷ 租期月数。净资本化成本 = 车身价 − 首付（及其他抵扣）。</p>
-    <h3>融资费</h3>
-    <p>（净资本化成本 + 残值）× 资金系数。资金系数 = 年化利率 ÷ 2400。</p>
-    <h3>举例</h3>
-    <p>车身价 30000、首付 3000、残值 18000、租期 36 个月、资金系数 0.0025：</p>
-    <p>折旧费 = (27000 − 18000)/36 = 250；融资费 = (27000 + 18000) × 0.0025 = 112.5；月供 ≈ 362.5。</p>
-    <h3>注意</h3>
-    <li>实际租赁还有购置税、手续费、里程限制与超标费</li>
-    <li>不同州/地区税费差异大</li>
-    <li>结果仅供参考</li>
+    <h2>📖 Deep Dive: Car Lease Payment Calculator</h2>
+    <h3>What makes up a lease payment</h3>
+    <p>A lease payment is the sum of two parts: depreciation + rent charge.</p>
+    <h3>Depreciation fee</h3>
+    <p>(Net capitalized cost − residual value) ÷ lease term in months. Net capitalized cost = vehicle price − down payment (and other reductions).</p>
+    <h3>Rent charge</h3>
+    <p>(Net capitalized cost + residual value) × money factor. Money factor = APR ÷ 2400.</p>
+    <h3>Example</h3>
+    <p>Price 30,000, down 3,000, residual 18,000, term 36 months, money factor 0.0025:</p>
+    <p>depreciation = (27,000 − 18,000)/36 = 250; rent = (27,000 + 18,000) × 0.0025 = 112.5; payment ≈ 362.5.</p>
+    <h3>Notes</h3>
+    <li>Real leases also include tax, fees, mileage limits and over-mileage charges</li>
+    <li>Taxes vary widely by state/region</li>
+    <li>For reference only</li>
   </section>
   </main>
 
@@ -226,13 +225,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html" data-i18n="Tools">Tools</a>
-        <a href="about.html" data-i18n="About">About</a>
-        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
-        <a href="contact.html" data-i18n="Contact">Contact</a>
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -263,10 +262,6 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/i18n.js"></script>
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
+<script></script>
 </body>
 </html>

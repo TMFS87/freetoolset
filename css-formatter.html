@@ -39,18 +39,17 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html" class="nav-link">Home</a>
       <a href="index.html#tools" class="nav-link active">Tools</a>
       <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
-      <a href="about.html" class="nav-link" data-i18n="About">About</a>
-      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+      <a href="about.html" class="nav-link">About</a>
     </div>
   </nav>
 
   <main class="main-content">
   <section class="tool-intro">
-    <h2>📌 适用场景</h2>
-    <p>CSS 格式化工具把杂乱的 CSS 整理为带缩进的清晰规则，也可压缩用于生产环境，方便阅读与减小体积，本地运行。</p>
+    <h2>📌 Overview</h2>
+    <p>Beautify messy CSS into clean, indented rules or minify it for production. Keep stylesheets readable and shrink file size in one click.</p>
   </section>
 
     <nav class="breadcrumb">
@@ -113,14 +112,14 @@
         </div>
 
         <div class="info-section">
-          <h2>❓ 常见问题（中文）</h2>
+          <h2>❓ More Questions</h2>
           <details class="faq-item">
-            <summary>会保留媒体查询和选择器吗？</summary>
-            <p>会，格式化只调整空白与缩进，选择器、嵌套块和媒体查询都原样保留。</p>
+            <summary>Are media queries and selectors preserved?</summary>
+            <p>Yes - formatting only adjusts whitespace and indentation; selectors, nested blocks, and media queries are kept as-is.</p>
           </details>
           <details class="faq-item">
-            <summary>压缩后的 CSS 还能用吗？</summary>
-            <p>能，压缩只去掉注释与多余空白，规则功能不变。</p>
+            <summary>Is minified CSS still usable?</summary>
+            <p>Yes - minifying only removes comments and extra whitespace; the rules keep working.</p>
           </details>
         </div>
 
@@ -184,13 +183,13 @@
     </div>
 
   <section class="tool-deep">
-    <h2>📖 深入了解 CSS Formatter</h2>
-    <h3>为什么需要 CSS 格式化</h3>
-    <p>从别处复制的 CSS 往往挤在一起，难以维护和排查。统一缩进能大幅提升可读性；上线时压缩则能减小体积、加快加载。</p>
-    <h3>背后的原理</h3>
-    <p>工具在花括号与分号处断行并逐级缩进实现美化，压缩时则去掉注释与多余空白，但都保持选择器与声明不变。</p>
-    <h3>一个例子</h3>
-    <p>一段 30 行的压缩 CSS 粘进来，点「格式化」后得到层级清晰的规则，定位某个类变得轻而易举。</p>
+    <h2>📖 Deep Dive: CSS Formatter</h2>
+    <h3>Why format CSS</h3>
+    <p>CSS copied from elsewhere is often jammed together, hard to maintain and debug. Consistent indentation greatly improves readability; minifying on release shrinks size and speeds up loading.</p>
+    <h3>How it works</h3>
+    <p>The tool breaks lines at braces and semicolons and indents level by level to beautify; when minifying it strips comments and extra whitespace, but always keeps selectors and declarations intact.</p>
+    <h3>A quick example</h3>
+    <p>Paste a 30-line minified CSS, click Format, and you get clearly nested rules - locating a class becomes effortless.</p>
   </section>
   </main>
 
@@ -201,13 +200,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html" data-i18n="Tools">Tools</a>
-        <a href="about.html" data-i18n="About">About</a>
-        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
-        <a href="contact.html" data-i18n="Contact">Contact</a>
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -234,10 +233,6 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/i18n.js"></script>
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
+<script></script>
 </body>
 </html>

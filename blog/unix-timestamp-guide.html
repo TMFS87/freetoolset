@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <meta name="theme-color" content="#8b5cf6">
-  <title>Unix 时间戳转换完全指南：秒、毫秒与日期互转 | FreeToolset 教程</title>
-  <meta name="description" content="了解blog\unix timestamp guide的完整指南。FreeToolset 免费提供相关在线工具和详细教程，帮助您快速掌握技巧。无需注册，即学即用。">
-  <meta name="keywords" content="时间戳, unix 时间戳, 时间转换, 时区">
-  <meta property="og:title" content="Unix 时间戳转换完全指南：秒、毫秒与日期互转">
-  <meta property="og:description" content="了解blog\unix timestamp guide的完整指南。FreeToolset 免费提供相关在线工具和详细教程，帮助您快速掌握技巧。无需注册，即学即用。">
+  <title>The Complete Unix Timestamp Guide: Seconds, Milliseconds & Dates | FreeToolset Guides</title>
+  <meta name="description" content="Understand Unix timestamps, the difference between seconds and milliseconds, UTC vs local time, and quickly troubleshoot time-zone issues with an online tool.">
+  <meta name="keywords" content="timestamp, unix timestamp, time conversion, timezone">
+  <meta property="og:title" content="The Complete Unix Timestamp Guide: Seconds, Milliseconds & Dates">
+  <meta property="og:description" content="Understand Unix timestamps, the difference between seconds and milliseconds, UTC vs local time, and quickly troubleshoot time-zone issues with an online tool.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://www.freetoolset.app/blog/unix-timestamp-guide.html">
   <meta property="og:site_name" content="FreeToolset">
@@ -17,57 +15,16 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Unix 时间戳转换完全指南：秒、毫秒与日期互转">
-  <meta name="twitter:description" content="理解 Unix 时间戳，掌握秒与毫秒的区别、UTC 与本地时间转换，用在线工具快速排查时区问题。">
+  <meta name="twitter:title" content="The Complete Unix Timestamp Guide: Seconds, Milliseconds & Dates">
+  <meta name="twitter:description" content="Understand Unix timestamps, the difference between seconds and milliseconds, UTC vs local time, and quickly troubleshoot time-zone issues with an online tool.">
   <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.freetoolset.app/blog/unix-timestamp-guide.html">
   <link rel="stylesheet" href="../css/style.css">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Article","headline":"Unix 时间戳转换完全指南：秒、毫秒与日期互转","description":"理解 Unix 时间戳，掌握秒与毫秒的区别、UTC 与本地时间转换，用在线工具快速排查时区问题。","url":"https://www.freetoolset.app/blog/unix-timestamp-guide.html","mainEntityOfPage":"https://www.freetoolset.app/blog/unix-timestamp-guide.html","publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  {"@context":"https://schema.org","@type":"Article","headline":"The Complete Unix Timestamp Guide: Seconds, Milliseconds & Dates","description":"Understand Unix timestamps, the difference between seconds and milliseconds, UTC vs local time, and quickly troubleshoot time-zone issues with an online tool.","url":"https://www.freetoolset.app/blog/unix-timestamp-guide.html","mainEntityOfPage":"https://www.freetoolset.app/blog/unix-timestamp-guide.html","publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
   </script>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <!-- ft-faq-schema -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "这篇《Unix 时间戳转换完全指南：秒、毫秒与日期互转》主要讲什么？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "本文系统讲解「Unix 时间戳转换完全指南：秒、毫秒与日期互转」的核心方法与实操要点，并推荐配套的 FreeToolset 免费在线工具，帮助你在浏览器里快速完成，无需注册、数据本地处理。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "在哪里可以实操练习？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "文末「相关工具」列出了 FreeToolset 上对应的免费在线工具，打开即用，所有计算都在本地浏览器完成，保护隐私。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "这些工具要收费吗？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "FreeToolset 的全部工具均免费，在浏览器本地运行、不上传数据，可放心用于学习与工作。"
-      }
-    }
-  ]
-}
-  </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HQJ9VZWMKE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-HQJ9VZWMKE', { send_page_view: true });
-</script>
-    </head>
+</head>
 <body>
 
   <nav class="navbar">
@@ -83,58 +40,34 @@
 
   <main class="main-content">
     <article class="article">
-      <p class="post-meta">FreeToolset · 实用教程</p>
-      <h1>Unix 时间戳转换完全指南：秒、毫秒与日期互转</h1>
-    <div style="margin:18px 0 24px; padding:16px 20px; background:#eef2ff; border:1px solid #e0e7ff; border-radius:12px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px;">
-      <div>
-        <div style="font-weight:700; font-size:0.98rem; color:#3730a3; margin-bottom:2px;">✨ 用 AI 一键完成类似任务</div>
-        <div style="font-size:0.85rem; color:#4b5563;">FreeToolset AI Content Studio 免费可用，每日赠送 5 Credits，无需注册。</div>
-      </div>
-      <a href="../ai-studio.html" style="display:inline-block; padding:9px 18px; background:#4f46e5; color:#fff; border-radius:8px; text-decoration:none; font-weight:600; white-space:nowrap;">试用 AI Studio →</a>
-    </div>
-
-    <p>Unix 时间戳是从 1970-01-01 起的秒数，被几乎所有系统用来记录时间。理解它，排查时区与日志问题就轻松了。</p>
-    <h2>秒还是毫秒</h2>
-    <p>很多系统用秒（10 位），而 JavaScript 的 Date.now() 返回毫秒（13 位）。差 1000 倍，混淆会导致时间显示为 1970 年。</p>
-    <h2>UTC 与本地时间</h2>
+      <p class="post-meta">FreeToolset · Practical Guides</p>
+      <h1>The Complete Unix Timestamp Guide: Seconds, Milliseconds & Dates</h1>
+    <p>A Unix timestamp is the number of seconds since 1970-01-01, used by almost every system to record time. Understand it and time-zone and log issues become easy.</p>
+    <h2>Seconds or milliseconds</h2>
+    <p>Many systems use seconds (10 digits), while JavaScript's Date.now() returns milliseconds (13 digits). 1000× apart — confusing them shows the time as 1970.</p>
+    <h2>UTC vs local time</h2>
     <ul>
-      <li>UTC 是世界协调时，不随时区变化</li>
-      <li>本地时间 = UTC ± 时区偏移</li>
-      <li>存储建议统一用 UTC，展示时再转换</li>
+      <li>UTC is Coordinated Universal Time, independent of time zone</li>
+      <li>Local time = UTC ± zone offset</li>
+      <li>Store in UTC, convert only when displaying</li>
     </ul>
-    <h2>在线转换</h2>
-    <p>FreeToolset 时间戳工具支持秒/毫秒互转，并显示 UTC 与本地时间，方便核对。</p>
-    <div class="tip">💡 日志时间对不上时，先确认是秒还是毫秒，再看时区设置。</div>
+    <h2>Convert online</h2>
+    <p>FreeToolset's timestamp tool converts seconds/milliseconds both ways and shows UTC and local time for easy checking.</p>
+    <div class="tip">💡 When log times don't match, first confirm seconds vs milliseconds, then check the time-zone setting.</div>
       <div class="related-posts">
-        <h3>🔗 相关工具</h3>
-      <a href="../timestamp-converter.html">时间戳转换</a>
-        <h3>📚 相关文章</h3>
-      <a href="number-base-conversion.html">进制转换详解：二进制、八进制、十进制与十六进制</a>
+        <h3>🔗 Related Tools</h3>
+      <a href="../timestamp-converter.html">Timestamp Converter</a>
+        <h3>📚 Related Articles</h3>
+      <a href="number-base-conversion.html">Number Base Conversion Explained: Binary, Octal, Decimal & Hexadecimal</a>
       </div>
-          <!-- ft-zh-faq -->
-      <section class="info-section" style="margin-top:32px">
-        <h2>❓ 常见问题</h2>
-        <details class="faq-item">
-          <summary>这篇《Unix 时间戳转换完全指南：秒、毫秒与日期互转》主要讲什么？</summary>
-          <p>本文系统讲解「Unix 时间戳转换完全指南：秒、毫秒与日期互转」的核心方法与实操要点，并推荐配套的 FreeToolset 免费在线工具，帮助你在浏览器里快速完成，无需注册、数据本地处理。</p>
-        </details>
-        <details class="faq-item">
-          <summary>在哪里可以实操练习？</summary>
-          <p>文末「相关工具」列出了 FreeToolset 上对应的免费在线工具，打开即用，所有计算都在本地浏览器完成，保护隐私。</p>
-        </details>
-        <details class="faq-item">
-          <summary>这些工具要收费吗？</summary>
-          <p>FreeToolset 的全部工具均免费，在浏览器本地运行、不上传数据，可放心用于学习与工作。</p>
-        </details>
-      </section>
-</article>
+    </article>
   </main>
 
   <footer class="footer">
     <div class="footer-content">
       <div>
         <div class="footer-brand"><span class="logo-icon">⚡</span> FreeToolset</div>
-        <p class="footer-desc">免费在线工具，全部在浏览器本地运行，数据不上传。</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser — your data never leaves your device.</p>
       </div>
       <div class="footer-links">
         <a href="../index.html">Tools</a>
@@ -143,12 +76,8 @@
         <a href="../privacy-policy.html">Privacy</a>
       </div>
     </div>
-    <div class="footer-bottom"><p>© 2025 FreeToolset · 由独立站长 <a href="../about.html">TMFS</a> 独立开发与维护 · 所有工具均在浏览器本地运行，不上传任何数据</p></div>
+    <div class="footer-bottom"><p>© 2025 FreeToolset. All tools run locally in your browser.</p></div>
   </footer>
 
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
 </body>
 </html>

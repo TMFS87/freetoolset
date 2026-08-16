@@ -9,33 +9,33 @@ const ROOT = __dirname;
 const BLOG = path.join(ROOT, "blog");
 const SITE = "https://www.freetoolset.app";
 
-// Original 25 tools name map (from blog-gen.js)
+// Original tool name map (fallback for tools not present in tools-data.js)
 const BASE_NAME = {
-  "base64-encoder.html": "Base64 编解码",
-  "json-formatter.html": "JSON 格式化",
-  "password-generator.html": "密码生成器",
-  "password-strength-checker.html": "密码强度检查器",
-  "uuid-generator.html": "UUID 生成器",
-  "url-encoder.html": "URL 编码/解码",
-  "timestamp-converter.html": "时间戳转换",
-  "regex-tester.html": "正则测试器",
-  "base-converter.html": "进制转换器",
-  "image-compressor.html": "图片压缩",
-  "image-to-base64.html": "图片转 Base64",
-  "qr-code-generator.html": "二维码生成器",
-  "ai-product-description.html": "AI 商品描述",
-  "ai-studio.html": "AI 内容工作台",
-  "ai-seo-meta-generator.html": "AI SEO 元数据",
-  "word-counter.html": "字数统计",
-  "lorem-ipsum-generator.html": "Lorem Ipsum",
-  "text-case-converter.html": "大小写转换",
-  "color-picker.html": "取色器",
-  "hash-generator.html": "哈希生成器",
-  "line-tools.html": "行处理工具",
-  "port-lookup.html": "端口查询",
-  "ai-blog-writer.html": "AI 博客写作",
-  "ai-email-subject.html": "AI 邮件标题",
-  "ai-content-rewriter.html": "AI 内容改写"
+  "base64-encoder.html": "Base64 Encoder/Decoder",
+  "json-formatter.html": "JSON Formatter",
+  "password-generator.html": "Password Generator",
+  "password-strength-checker.html": "Password Strength Checker",
+  "uuid-generator.html": "UUID Generator",
+  "url-encoder.html": "URL Encoder/Decoder",
+  "timestamp-converter.html": "Timestamp Converter",
+  "regex-tester.html": "Regex Tester",
+  "base-converter.html": "Base Converter",
+  "image-compressor.html": "Image Compressor",
+  "image-to-base64.html": "Image to Base64",
+  "qr-code-generator.html": "QR Code Generator",
+  "ai-product-description.html": "AI Product Description",
+  "ai-studio.html": "AI Studio",
+  "ai-seo-meta-generator.html": "AI SEO Meta Generator",
+  "word-counter.html": "Word Counter",
+  "lorem-ipsum-generator.html": "Lorem Ipsum Generator",
+  "text-case-converter.html": "Case Converter",
+  "color-picker.html": "Color Picker",
+  "hash-generator.html": "Hash Generator",
+  "line-tools.html": "Line Tools",
+  "port-lookup.html": "Port Lookup",
+  "ai-blog-writer.html": "AI Blog Writer",
+  "ai-email-subject.html": "AI Email Subject",
+  "ai-content-rewriter.html": "AI Content Rewriter"
 };
 
 const T = require("./tools-data.js");
@@ -77,11 +77,11 @@ function renderPost(p) {
   };
 
   return `<!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${p.title} | FreeToolset 教程</title>
+  <title>${p.title} | FreeToolset Guides</title>
   <meta name="description" content="${p.desc}">
   <meta name="keywords" content="${p.keywords}">
   <meta property="og:title" content="${p.title}">
@@ -118,13 +118,13 @@ function renderPost(p) {
 
   <main class="main-content">
     <article class="article">
-      <p class="post-meta">FreeToolset · 实用教程</p>
+      <p class="post-meta">FreeToolset · Practical Guides</p>
       <h1>${p.title}</h1>
 ${renderBody(p.blocks)}
-      <div class="related-posts">
-        <h3>🔗 相关工具</h3>
+      <div class="related_posts">
+        <h3>🔗 Related Tools</h3>
 ${toolLinks}
-        <h3>📚 相关文章</h3>
+        <h3>📚 Related Articles</h3>
 ${postLinks}
       </div>
     </article>
@@ -134,7 +134,7 @@ ${postLinks}
     <div class="footer-content">
       <div>
         <div class="footer-brand"><span class="logo-icon">⚡</span> FreeToolset</div>
-        <p class="footer-desc">免费在线工具，全部在浏览器本地运行，数据不上传。</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser — your data never leaves your device.</p>
       </div>
       <div class="footer-links">
         <a href="../index.html">Tools</a>
@@ -159,7 +159,6 @@ if (!fs.existsSync(BLOG)) fs.mkdirSync(BLOG, { recursive: true });
 let written = 0, skipped = 0;
 POSTS.forEach(p => {
   const fp = path.join(BLOG, p.slug + ".html");
-  if (fs.existsSync(fp)) { skipped++; return; }
   fs.writeFileSync(fp, renderPost(p), "utf8");
   written++;
   console.log("WROTE blog/" + p.slug + ".html");

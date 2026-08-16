@@ -1,6 +1,6 @@
 /**
  * FreeToolset blog generator (idempotent).
- * Renders 12 Chinese tutorial pages into /blog/, cross-links tools + posts,
+ * Renders 12 tutorial pages into /blog/, cross-links tools + posts,
  * and appends the new URLs to sitemap.xml.
  */
 const fs = require("fs");
@@ -10,238 +10,238 @@ const BLOG = path.join(ROOT, "blog");
 const SITE = "https://www.freetoolset.app";
 
 const TOOLNAME = {
-  "base64-encoder.html": "Base64 编解码",
-  "json-formatter.html": "JSON 格式化",
-  "password-generator.html": "密码生成器",
-  "password-strength-checker.html": "密码强度检查器",
-  "uuid-generator.html": "UUID 生成器",
-  "url-encoder.html": "URL 编码/解码",
-  "timestamp-converter.html": "时间戳转换",
-  "regex-tester.html": "正则测试器",
-  "base-converter.html": "进制转换器",
-  "image-compressor.html": "图片压缩",
-  "image-to-base64.html": "图片转 Base64",
-  "qr-code-generator.html": "二维码生成器",
-  "ai-product-description.html": "AI 商品描述",
-  "ai-studio.html": "AI 内容工作台",
-  "ai-seo-meta-generator.html": "AI SEO 元数据"
+  "base64-encoder.html": "Base64 Encoder/Decoder",
+  "json-formatter.html": "JSON Formatter",
+  "password-generator.html": "Password Generator",
+  "password-strength-checker.html": "Password Strength Checker",
+  "uuid-generator.html": "UUID Generator",
+  "url-encoder.html": "URL Encoder/Decoder",
+  "timestamp-converter.html": "Timestamp Converter",
+  "regex-tester.html": "Regex Tester",
+  "base-converter.html": "Base Converter",
+  "image-compressor.html": "Image Compressor",
+  "image-to-base64.html": "Image to Base64",
+  "qr-code-generator.html": "QR Code Generator",
+  "ai-product-description.html": "AI Product Description",
+  "ai-studio.html": "AI Studio",
+  "ai-seo-meta-generator.html": "AI SEO Meta Generator"
 };
 
 const POSTS = [
   {
     slug: "what-is-base64",
-    title: "Base64 是什么？一文讲清编码原理与常见用途",
-    desc: "Base64 编码原理、使用场景与在线工具实践，帮你快速搞懂为什么需要 Base64，以及如何在开发中表示二进制数据。",
-    keywords: "base64, base64 原理, base64 用途, base64 在线工具",
+    title: "What Is Base64? Encoding Principles and Common Uses Explained",
+    desc: "Base64 encoding principles, use cases, and hands-on practice with an online tool — understand why Base64 exists and how to represent binary data in development.",
+    keywords: "base64, base64 explained, base64 uses, base64 online tool",
     tools: ["base64-encoder.html", "image-to-base64.html"],
     posts: ["url-encoding-explained", "json-formatting-tips"],
     blocks: [
-      { tag: "p", text: "Base64 是网络中随处可见的编码方式：邮件附件、JWT、Data URI 图片背后都有它的身影。它并不加密，而是把任意字节转成由 64 个安全字符组成的文本，方便在只认文本的协议里传输。" },
-      { tag: "h2", text: "Base64 到底做了什么" },
-      { tag: "p", text: "Base64 把每 3 个字节（24 位）拆成 4 组 6 位，映射到 A–Z、a–z、0–9 以及 +、/ 共 64 个字符（不足补 =）。这样二进制数据就变成了纯 ASCII 文本，能安全地塞进 JSON、URL 或邮件头。" },
-      { tag: "h2", text: "常见使用场景" },
-      { tag: "ul", text: "在 HTML/CSS 中内联小图标（Data URI），减少请求数\n在 JWT、Basic 认证里编码凭证\n邮件附件（MIME）编码二进制内容\nAPI 中传输含特殊字符的二进制数据" },
-      { tag: "h2", text: "在线实践" },
-      { tag: "p", text: "需要编解码时，直接用 FreeToolset 的 Base64 工具即可，纯浏览器运行、支持中文 UTF-8，无需上传数据。" },
-      { tag: "tip", text: "Base64 不是加密！它只做编码，任何人都能解码。敏感数据请先加密再用 Base64 传输。" }
+      { tag: "p", text: "Base64 is an encoding you see everywhere on the web: email attachments, JWTs, and Data URI images all rely on it. It doesn't encrypt — it converts arbitrary bytes into text made of 64 safe characters, so it can travel through text-only protocols." },
+      { tag: "h2", text: "What Base64 actually does" },
+      { tag: "p", text: "Base64 splits every 3 bytes (24 bits) into 4 groups of 6 bits, mapped to 64 characters: A–Z, a–z, 0–9, plus + and / (with = padding when short). Binary data thus becomes pure ASCII text that safely fits inside JSON, URLs, or email headers." },
+      { tag: "h2", text: "Common use cases" },
+      { tag: "ul", text: "Inline small icons in HTML/CSS (Data URI) to cut requests\nEncode credentials in JWT and Basic auth\nEncode binary content in email attachments (MIME)\nCarry binary data with special characters in APIs" },
+      { tag: "h2", text: "Try it online" },
+      { tag: "p", text: "When you need to encode or decode, just use FreeToolset's Base64 tool — pure browser runtime, UTF-8 for Chinese supported, no upload required." },
+      { tag: "tip", text: "Base64 is NOT encryption! It only encodes; anyone can decode it. Encrypt sensitive data before Base64 transport." }
     ]
   },
   {
     slug: "json-formatting-tips",
-    title: "JSON 格式化与校验：开发者必备的 5 个技巧",
-    desc: "掌握 JSON 美化、压缩、校验错误的实用技巧，用在线格式化工具快速定位接口异常，提升日常调试效率。",
-    keywords: "json 格式化, json 校验, json 美化, 接口调试",
+    title: "JSON Formatting & Validation: 5 Tips Every Developer Needs",
+    desc: "Master practical techniques for JSON beautifying, minifying, and catching validation errors with an online formatter to locate API anomalies fast.",
+    keywords: "json formatting, json validation, json beautify, api debugging",
     tools: ["json-formatter.html"],
     posts: ["regex-for-beginners", "understanding-uuid"],
     blocks: [
-      { tag: "p", text: "JSON 是前后端通信的事实标准，但压缩成一行的 JSON 极难阅读。格式化与校验是开发者每天都会用到的能力。" },
-      { tag: "h2", text: "为什么需要格式化" },
-      { tag: "p", text: "格式化（美化）通过缩进让层级一目了然，便于排查字段缺失、类型错误；压缩则在传输时减小体积。" },
-      { tag: "h2", text: "5 个实用技巧" },
-      { tag: "ul", text: "用 FreeToolset JSON 格式化工具一键美化/压缩\n利用实时校验定位语法错误所在行\n对比两份 JSON 找出差异\n格式化后端日志便于排查\n把常用结构保存为模板" },
-      { tag: "h2", text: "常见错误" },
-      { tag: "p", text: "最常见的是尾随逗号、键名用了单引号、或忘记给键名加双引号。格式化工具会直接高亮这些错误。" },
-      { tag: "tip", text: "拿到接口返回先美化再读结构，是排查联调问题最快的第一步。" }
+      { tag: "p", text: "JSON is the de facto standard for frontend-backend communication, but JSON compressed to one line is nearly unreadable. Formatting and validation are daily skills for developers." },
+      { tag: "h2", text: "Why format" },
+      { tag: "p", text: "Formatting (beautifying) uses indentation to make hierarchy obvious, helping you spot missing fields and type errors; minifying shrinks size during transport." },
+      { tag: "h2", text: "5 practical tips" },
+      { tag: "ul", text: "One-click beautify/minify with FreeToolset's JSON formatter\nUse live validation to pinpoint the line of a syntax error\nDiff two JSONs to find differences\nBeautify backend logs for easier troubleshooting\nSave common structures as templates" },
+      { tag: "h2", text: "Common errors" },
+      { tag: "p", text: "The most common are trailing commas, single-quoted keys, or forgetting double quotes around keys. A formatter highlights these errors directly." },
+      { tag: "tip", text: "Beautify an API response before reading its structure — the fastest first step in integration debugging." }
     ]
   },
   {
     slug: "create-strong-password",
-    title: "如何生成强密码：从长度到熵值的完整指南",
-    desc: "理解密码强度与熵值的关系，学会用随机密码生成器创建难以破解的凭据，并搭配强度检查器自查。",
-    keywords: "强密码, 密码生成器, 密码强度, 账户安全",
+    title: "How to Generate a Strong Password: From Length to Entropy",
+    desc: "Understand the link between password strength and entropy, learn to create hard-to-crack credentials with a random password generator, and self-check with a strength checker.",
+    keywords: "strong password, password generator, password strength, account security",
     tools: ["password-generator.html", "password-strength-checker.html"],
     posts: ["understanding-uuid"],
     blocks: [
-      { tag: "p", text: "弱密码是账号被盗的头号原因。一个强密码应当足够长、随机且难以被猜测或暴力破解。" },
-      { tag: "h2", text: "密码强度由什么决定" },
-      { tag: "p", text: "核心是「熵值」——可能的组合数。长度比复杂字符集更关键：12 位以上的随机密码通常就足够安全。" },
-      { tag: "h2", text: "生成强密码的做法" },
-      { tag: "ul", text: "长度至少 12–16 位\n混合大小写字母、数字与符号\n避免字典词、姓名、生日\n每个账户使用不同密码\n用密码管理器统一保存" },
-      { tag: "h2", text: "用工具落地" },
-      { tag: "p", text: "FreeToolset 密码生成器可在本地随机生成高强度密码，配合密码强度检查器评估破解时间，全程不上传。" },
-      { tag: "tip", text: "别用「Pa$$w0rd」这类看似复杂实则常见的变形，它们早已在破解字典中。" }
+      { tag: "p", text: "Weak passwords are the number-one cause of account takeovers. A strong password should be long, random, and hard to guess or brute-force." },
+      { tag: "h2", text: "What determines strength" },
+      { tag: "p", text: "The core is 'entropy' — the number of possible combinations. Length matters more than a complex character set: 12+ random characters are usually safe enough." },
+      { tag: "h2", text: "How to generate strong passwords" },
+      { tag: "ul", text: "At least 12–16 characters\nMix upper/lowercase letters, digits, and symbols\nAvoid dictionary words, names, birthdays\nUse a different password per account\nStore them in a password manager" },
+      { tag: "h2", text: "Make it concrete with a tool" },
+      { tag: "p", text: "FreeToolset's password generator creates high-strength passwords locally at random, and the strength checker estimates crack time — all without upload." },
+      { tag: "tip", text: "Avoid 'Pa$$w0rd'-style 'complex' but common variations — they're already in crack dictionaries." }
     ]
   },
   {
     slug: "understanding-uuid",
-    title: "UUID 是什么？v4 随机标识符的生成与应用",
-    desc: "UUID 通用唯一标识符的原理、版本差异与典型应用场景，附在线批量生成 v4 的方法。",
-    keywords: "uuid, uuid v4, 唯一标识符, guid",
+    title: "What Is a UUID? Generating and Using v4 Random Identifiers",
+    desc: "The principles, version differences, and typical use cases of UUIDs (universally unique identifiers), plus how to batch-generate v4 online.",
+    keywords: "uuid, uuid v4, unique identifier, guid",
     tools: ["uuid-generator.html"],
     posts: ["create-strong-password", "json-formatting-tips"],
     blocks: [
-      { tag: "p", text: "UUID（Universally Unique Identifier）是分布式系统中生成唯一 ID 的标准方式，你几乎在每台服务器、每张数据库表里都见过它。" },
-      { tag: "h2", text: "UUID 是什么" },
-      { tag: "p", text: "UUID 是一个 128 位的标识符，标准文本形如 550e8400-e29b-41d4-a716-446655440000，由连字符分成五段。" },
-      { tag: "h2", text: "为什么用 UUID v4" },
-      { tag: "ul", text: "足够随机，碰撞概率极低\n不依赖中心服务，适合分布式系统\n比自增 ID 更难被遍历猜测\n便于合并多来源数据而不冲突" },
-      { tag: "h2", text: "在线生成" },
-      { tag: "p", text: "FreeToolset UUID 生成器可一次性批量生成最多 100 个 v4，本地即生成，适合测试与系统对接。" },
-      { tag: "tip", text: "主键需要有序时，UUID v4 不是最佳选择；可考虑带时间戳前缀的变体。" }
+      { tag: "p", text: "A UUID (Universally Unique Identifier) is the standard way to generate unique IDs in distributed systems — you've seen it in nearly every server and database table." },
+      { tag: "h2", text: "What is a UUID" },
+      { tag: "p", text: "A UUID is a 128-bit identifier, standard text form 550e8400-e29b-41d4-a716-446655440000, split into five segments by hyphens." },
+      { tag: "h2", text: "Why UUID v4" },
+      { tag: "ul", text: "Random enough that collisions are vanishingly rare\nNo central service needed — fits distributed systems\nHarder to enumerate/guess than auto-increment IDs\nEasy to merge multi-source data without conflicts" },
+      { tag: "h2", text: "Generate online" },
+      { tag: "p", text: "FreeToolset's UUID generator can batch-generate up to 100 v4 IDs at once, locally — great for testing and system integration." },
+      { tag: "tip", text: "When a primary key needs ordering, v4 isn't the best choice; consider a timestamp-prefixed variant." }
     ]
   },
   {
     slug: "url-encoding-explained",
-    title: "URL 编码原理：为什么网址里的中文会变成 %E4%...",
-    desc: "讲清百分号编码（URL Encode）的作用与 encodeURI / encodeURIComponent 的区别，附在线编解码工具。",
-    keywords: "url 编码, urlencode, 百分号编码, encodeuri",
+    title: "How URL Encoding Works: Why Chinese Characters Become %E4%...",
+    desc: "Explain percent-encoding (URL Encode) and the difference between encodeURI and encodeURIComponent, with an online encode/decode tool.",
+    keywords: "url encoding, urlencode, percent encoding, encodeuri",
     tools: ["url-encoder.html"],
     posts: ["what-is-base64", "regex-for-beginners"],
     blocks: [
-      { tag: "p", text: "当你在地址栏看到 %E4%B8%AD 这样的字符，那就是 URL 编码（百分号编码）的功劳。它让中文和特殊符号能安全地出现在网址里。" },
-      { tag: "h2", text: "为什么需要 URL 编码" },
-      { tag: "p", text: "URL 只允许一部分 ASCII 字符。空格、中文、&、= 等字符会被误解，必须编码为 % 加两位十六进制。" },
-      { tag: "h2", text: "encodeURI 与 encodeURIComponent" },
-      { tag: "ul", text: "encodeURI 保留 ? # / 等结构字符，用于整条网址\nencodeURIComponent 编码得更彻底，用于单个参数值\n拼接查询字符串时应使用后者" },
-      { tag: "h2", text: "在线编解码" },
-      { tag: "p", text: "FreeToolset URL 编码工具同时支持两种方式互转，方便调试接口参数。" },
-      { tag: "tip", text: "参数值里含有 & 时务必用 encodeURIComponent，否则会被当成新参数分隔符。" }
+      { tag: "p", text: "When you see %E4%B8%AD in the address bar, that's URL encoding (percent-encoding) at work. It lets Chinese characters and special symbols appear safely in a URL." },
+      { tag: "h2", text: "Why encode URLs" },
+      { tag: "p", text: "URLs only allow a subset of ASCII characters. Spaces, Chinese, &, = and the like would be misinterpreted and must be encoded as % plus two hex digits." },
+      { tag: "h2", text: "encodeURI vs encodeURIComponent" },
+      { tag: "ul", text: "encodeURI keeps structural chars like ? # / — for whole URLs\nencodeURIComponent encodes more thoroughly — for a single parameter value\nUse the latter when concatenating query strings" },
+      { tag: "h2", text: "Encode/decode online" },
+      { tag: "p", text: "FreeToolset's URL tool converts both ways, handy for debugging API parameters." },
+      { tag: "tip", text: "When a parameter value contains &, always use encodeURIComponent, or it'll be treated as a new parameter separator." }
     ]
   },
   {
     slug: "unix-timestamp-guide",
-    title: "Unix 时间戳转换完全指南：秒、毫秒与日期互转",
-    desc: "理解 Unix 时间戳，掌握秒与毫秒的区别、UTC 与本地时间转换，用在线工具快速排查时区问题。",
-    keywords: "时间戳, unix 时间戳, 时间转换, 时区",
+    title: "The Complete Unix Timestamp Guide: Seconds, Milliseconds & Dates",
+    desc: "Understand Unix timestamps, the difference between seconds and milliseconds, UTC vs local time, and quickly troubleshoot time-zone issues with an online tool.",
+    keywords: "timestamp, unix timestamp, time conversion, timezone",
     tools: ["timestamp-converter.html"],
     posts: ["number-base-conversion"],
     blocks: [
-      { tag: "p", text: "Unix 时间戳是从 1970-01-01 起的秒数，被几乎所有系统用来记录时间。理解它，排查时区与日志问题就轻松了。" },
-      { tag: "h2", text: "秒还是毫秒" },
-      { tag: "p", text: "很多系统用秒（10 位），而 JavaScript 的 Date.now() 返回毫秒（13 位）。差 1000 倍，混淆会导致时间显示为 1970 年。" },
-      { tag: "h2", text: "UTC 与本地时间" },
-      { tag: "ul", text: "UTC 是世界协调时，不随时区变化\n本地时间 = UTC ± 时区偏移\n存储建议统一用 UTC，展示时再转换" },
-      { tag: "h2", text: "在线转换" },
-      { tag: "p", text: "FreeToolset 时间戳工具支持秒/毫秒互转，并显示 UTC 与本地时间，方便核对。" },
-      { tag: "tip", text: "日志时间对不上时，先确认是秒还是毫秒，再看时区设置。" }
+      { tag: "p", text: "A Unix timestamp is the number of seconds since 1970-01-01, used by almost every system to record time. Understand it and time-zone and log issues become easy." },
+      { tag: "h2", text: "Seconds or milliseconds" },
+      { tag: "p", text: "Many systems use seconds (10 digits), while JavaScript's Date.now() returns milliseconds (13 digits). 1000× apart — confusing them shows the time as 1970." },
+      { tag: "h2", text: "UTC vs local time" },
+      { tag: "ul", text: "UTC is Coordinated Universal Time, independent of time zone\nLocal time = UTC ± zone offset\nStore in UTC, convert only when displaying" },
+      { tag: "h2", text: "Convert online" },
+      { tag: "p", text: "FreeToolset's timestamp tool converts seconds/milliseconds both ways and shows UTC and local time for easy checking." },
+      { tag: "tip", text: "When log times don't match, first confirm seconds vs milliseconds, then check the time-zone setting." }
     ]
   },
   {
     slug: "regex-for-beginners",
-    title: "正则表达式入门：30 分钟看懂匹配、分组与在线测试",
-    desc: "从元字符到捕获组，正则表达式是文本处理的利器。本文带你入门并推荐在线实时测试工具。",
-    keywords: "正则表达式, 正则入门, regex, 文本匹配",
+    title: "Regular Expressions for Beginners: Patterns, Groups & Online Testing in 30 Minutes",
+    desc: "From metacharacters to capture groups, regex is a powerhouse for text. This intro gets you started and recommends a live online tester.",
+    keywords: "regular expression, regex intro, regex, text matching",
     tools: ["regex-tester.html"],
     posts: ["json-formatting-tips", "url-encoding-explained"],
     blocks: [
-      { tag: "p", text: "正则表达式（Regex）是用一行「模式」完成复杂文本匹配的工具，表单校验、日志提取都离不开它。" },
-      { tag: "h2", text: "核心元字符" },
-      { tag: "ul", text: "\\d 数字，\\w 单词字符，. 任意字符\n* 0 次以上，+ 1 次以上，? 0 或 1 次\n[] 字符集合，() 捕获分组\n^ 开头，$ 结尾" },
-      { tag: "h2", text: "从例子学" },
-      { tag: "p", text: "匹配邮箱可用 ^\\S+@\\S+\\.\\S+$，提取日期可用 \\d{4}-\\d{2}-\\d{2}。先写小例子，再逐步加条件。" },
-      { tag: "h2", text: "边写边测" },
-      { tag: "p", text: "FreeToolset 正则测试器可实时高亮匹配、展示捕获组，是上手正则的最佳练习场。" },
-      { tag: "tip", text: "正则不要一次写太复杂，拆成小片段逐步验证，可读性与可维护性都更好。" }
+      { tag: "p", text: "A regular expression (Regex) is a one-line 'pattern' for complex text matching — form validation and log extraction both rely on it." },
+      { tag: "h2", text: "Core metacharacters" },
+      { tag: "ul", text: "\\d digit, \\w word char, . any char\n* 0+, + 1+, ? 0 or 1\n[] character set, () capture group\n^ start, $ end" },
+      { tag: "h2", text: "Learn from examples" },
+      { tag: "p", text: "Match email with ^\\S+@\\S+\\.\\S+$; extract a date with \\d{4}-\\d{2}-\\d{2}. Write small examples first, then add conditions step by step." },
+      { tag: "h2", text: "Write and test together" },
+      { tag: "p", text: "FreeToolset's regex tester highlights matches live and shows capture groups — the best playground to pick up regex." },
+      { tag: "tip", text: "Don't write regex too complex at once. Break it into small pieces and verify each — better readability and maintainability." }
     ]
   },
   {
     slug: "number-base-conversion",
-    title: "进制转换详解：二进制、八进制、十进制与十六进制",
-    desc: "搞懂计算机中的进制表示，掌握二/八/十/十六进制互转方法，附在线进制转换器。",
-    keywords: "进制转换, 二进制, 十六进制, 十进制",
+    title: "Number Base Conversion Explained: Binary, Octal, Decimal & Hexadecimal",
+    desc: "Grasp number bases in computing, master binary/octal/decimal/hex conversion, with an online base converter.",
+    keywords: "base conversion, binary, hexadecimal, decimal",
     tools: ["base-converter.html"],
     posts: ["unix-timestamp-guide"],
     blocks: [
-      { tag: "p", text: "计算机用二进制思考，人类用十进制，而颜色与内存地址常用十六进制。进制转换是理解底层的基础功。" },
-      { tag: "h2", text: "为什么有多种进制" },
-      { tag: "ul", text: "二进制（0/1）是电路的自然语言\n八进制/十六进制是二进制的紧凑写法\n十进制是人类习惯\n十六进制常用于颜色值（#RRGGBB）与内存地址" },
-      { tag: "h2", text: "互转思路" },
-      { tag: "p", text: "十进制转其他进制用「除基取余」，其他进制转十进制用「按权展开求和」。掌握原理后，用工具批量转换更高效。" },
-      { tag: "h2", text: "在线转换" },
-      { tag: "p", text: "FreeToolset 进制转换器支持二/八/十/十六进制实时互转。" },
-      { tag: "tip", text: "看到 #ff8800 这类颜色值时，试着拆成 RGB 三个十六进制字节，调色更直观。" }
+      { tag: "p", text: "Computers think in binary, humans in decimal, and colors and memory addresses often use hexadecimal. Base conversion is foundational to understanding the low level." },
+      { tag: "h2", text: "Why multiple bases" },
+      { tag: "ul", text: "Binary (0/1) is the circuit's native language\nOctal/hex are compact forms of binary\nDecimal is human habit\nHex is common for color values (#RRGGBB) and memory addresses" },
+      { tag: "h2", text: "Conversion thinking" },
+      { tag: "p", text: "Decimal to others uses 'divide by base, take remainder'; others to decimal uses 'expand by weight and sum.' Once you know the principles, a tool handles bulk conversion more efficiently." },
+      { tag: "h2", text: "Convert online" },
+      { tag: "p", text: "FreeToolset's base converter does real-time binary/octal/decimal/hex conversion." },
+      { tag: "tip", text: "When you see a color like #ff8800, try splitting it into three hex bytes for more intuitive color tuning." }
     ]
   },
   {
     slug: "image-compression-guide",
-    title: "图片压缩不损质：网页提速的实用方法",
-    desc: "了解有损与无损压缩，学会用浏览器内图片压缩工具减小体积、提升加载速度，兼顾画质与隐私。",
-    keywords: "图片压缩, 网页提速, 图片优化, image compressor",
+    title: "Lossless-Looking Image Compression: Practical Ways to Speed Up Pages",
+    desc: "Understand lossy vs lossless compression, learn to shrink images in-browser to boost load speed while balancing quality and privacy.",
+    keywords: "image compression, page speed, image optimization, image compressor",
     tools: ["image-compressor.html", "image-to-base64.html"],
     posts: ["qr-code-use-cases"],
     blocks: [
-      { tag: "p", text: "图片往往是网页里最大的资源。合理压缩能在肉眼难辨的前提下显著加快加载，直接影响跳出率与 SEO。" },
-      { tag: "h2", text: "有损 vs 无损" },
-      { tag: "ul", text: "有损（如 JPEG/WebP）体积更小，适合照片\n无损（如 PNG）保留细节，适合图标/截图\nWebP 通常比 JPEG/PNG 更优" },
-      { tag: "h2", text: "压缩实践" },
-      { tag: "p", text: "用 FreeToolset 图片压缩工具在浏览器内直接压缩、缩放，无需上传服务器，保护隐私且即时出图。" },
-      { tag: "h2", text: "几点建议" },
-      { tag: "ul", text: "优先使用 WebP 格式\n按显示尺寸导出，别上传原图\n质量控制在 75–85 之间通常够用" },
-      { tag: "tip", text: "把首屏图片控制在 100KB 内，移动端体验提升明显。" }
+      { tag: "p", text: "Images are often the largest resource on a page. Reasonable compression noticeably speeds up loading with barely visible difference — directly affecting bounce rate and SEO." },
+      { tag: "h2", text: "Lossy vs lossless" },
+      { tag: "ul", text: "Lossy (JPEG/WebP) is smaller — good for photos\nLossless (PNG) keeps detail — good for icons/screenshots\nWebP usually beats JPEG/PNG" },
+      { tag: "h2", text: "Compression in practice" },
+      { tag: "p", text: "Use FreeToolset's image compressor to compress and resize right in the browser — no server upload, protecting privacy with instant output." },
+      { tag: "h2", text: "A few tips" },
+      { tag: "ul", text: "Prefer WebP format\nExport at display size — don't upload originals\nQuality 75–85 is usually enough" },
+      { tag: "tip", text: "Keep above-the-fold images under 100KB for a clear mobile experience boost." }
     ]
   },
   {
     slug: "qr-code-use-cases",
-    title: "二维码生成的常见用途与最佳实践",
-    desc: "二维码能承载网址、文本、WiFi 等信息，本文梳理 8 个实用场景并推荐本地生成工具。",
-    keywords: "二维码, qr code, 二维码生成, 扫码",
+    title: "Common Uses & Best Practices for QR Code Generation",
+    desc: "QR codes can carry URLs, text, WiFi, and more. This article lays out 8 practical scenarios and a local generation tool.",
+    keywords: "qr code, qr code generation, scan",
     tools: ["qr-code-generator.html"],
     posts: ["image-compression-guide"],
     blocks: [
-      { tag: "p", text: "二维码把信息变成一图，手机一扫即可读取。它早已超出支付场景，是低成本高效的连接入口。" },
-      { tag: "h2", text: "二维码能存什么" },
-      { tag: "ul", text: "网址链接\n纯文本 / WiFi 密码\n联系方式（vCard）\n短信 / 电话动作" },
-      { tag: "h2", text: "8 个实用场景" },
-      { tag: "ul", text: "名片二维码，扫码即存联系方式\n活动海报，引导关注公众号\n产品包装，跳转使用说明\n会议物料，快速连 WiFi\n电商包裹，追踪物流\n线下广告，导流到落地页\n电子票据，扫码核销\n教学资料，扫码获取资源" },
-      { tag: "h2", text: "本地生成" },
-      { tag: "p", text: "FreeToolset 二维码工具支持自定义尺寸、本地生成即时下载，素材不外传。" },
-      { tag: "tip", text: "二维码容错率越高，越能在部分污损时仍被识别，重要场景建议提高容错。" }
+      { tag: "p", text: "A QR code turns information into one image — scan with a phone to read it. It goes far beyond payments and is a low-cost, efficient connection entry point." },
+      { tag: "h2", text: "What a QR code can hold" },
+      { tag: "ul", text: "URL links\nPlain text / WiFi password\nContact (vCard)\nSMS / phone actions" },
+      { tag: "h2", text: "8 practical scenarios" },
+      { tag: "ul", text: "Business-card QR — scan to save contact\nEvent posters — drive follows to an account\nProduct packaging — jump to instructions\nMeeting materials — quick WiFi connect\nE-commerce parcels — track logistics\nOffline ads — drive to a landing page\nE-tickets — scan to redeem\nTeaching materials — scan to get resources" },
+      { tag: "h2", text: "Generate locally" },
+      { tag: "p", text: "FreeToolset's QR tool supports custom sizes, generates locally for instant download, and keeps assets on-device." },
+      { tag: "tip", text: "Higher error correction means it survives partial damage — raise it for important scenarios." }
     ]
   },
   {
     slug: "ai-product-description-conversion",
-    title: "用 AI 写商品描述：提升详情页转化的实战方法",
-    desc: "商品描述直接影响转化。本文教你用 AI 商品描述生成器批量产出卖点文案，并给出优化要点。",
-    keywords: "ai 商品描述, 电商文案, 详情页转化, ai 写作",
+    title: "Writing Product Descriptions with AI: Practical Methods to Boost Detail-Page Conversion",
+    desc: "Product descriptions directly affect conversion. This article shows how to batch-produce selling-point copy with an AI product description generator, plus optimization tips.",
+    keywords: "ai product description, ecommerce copy, detail-page conversion, ai writing",
     tools: ["ai-product-description.html", "ai-studio.html"],
     posts: ["seo-meta-tags-guide"],
     blocks: [
-      { tag: "p", text: "电商详情页里，商品描述是转化的关键一环。好的描述讲清卖点、击中需求，而 AI 能帮你批量产出初稿。" },
-      { tag: "h2", text: "好描述长什么样" },
-      { tag: "ul", text: "开头一句话讲清是什么、解决什么问题\n用利益点（好处）而非参数罗列\n面向人群与场景清晰\n语言符合平台调性" },
-      { tag: "h2", text: "用 AI 提效" },
-      { tag: "p", text: "FreeToolset AI 商品描述生成器输入产品信息即可产出多版本文案，支持风格切换，适合淘宝、独立站与跨境店铺快速铺货。" },
-      { tag: "h2", text: "优化要点" },
-      { tag: "ul", text: "嵌入核心关键词利于搜索\n突出差异化与信任证据\n不同渠道微调语气" },
-      { tag: "tip", text: "AI 产出的是高质量初稿，务必人工核对参数与合规表述后再上架。" }
+      { tag: "p", text: "On an e-commerce detail page, the product description is a key conversion lever. Good copy clarifies the selling point and hits the need, and AI helps you batch-produce drafts." },
+      { tag: "h2", text: "What good copy looks like" },
+      { tag: "ul", text: "One opening line stating what it is and what problem it solves\nBenefits (not just parameter lists)\nClear audience and scenario\nLanguage matching the platform tone" },
+      { tag: "h2", text: "Boost efficiency with AI" },
+      { tag: "p", text: "FreeToolset's AI product description generator outputs multiple copy variants from product info, with style switching — great for Taobao, standalone sites, and cross-border stores to list fast." },
+      { tag: "h2", text: "Optimization tips" },
+      { tag: "ul", text: "Embed core keywords for search\nHighlight differentiation and trust evidence\nTune tone per channel" },
+      { tag: "tip", text: "AI output is high-quality draft — always manually verify parameters and compliance wording before listing." }
     ]
   },
   {
     slug: "seo-meta-tags-guide",
-    title: "SEO Meta 标签优化：标题与描述怎么写才被点",
-    desc: "标题与描述是搜索结果的第一印象。本文讲解长度、关键词与吸引力写法，并推荐 AI 元数据生成器。",
-    keywords: "seo meta, 标题优化, 描述优化, meta 标签",
+    title: "SEO Meta Tag Optimization: How to Write Titles & Descriptions People Click",
+    desc: "Titles and descriptions are the first impression in search results. This article covers length, keywords, and appeal, and recommends an AI metadata generator.",
+    keywords: "seo meta, title optimization, description optimization, meta tags",
     tools: ["ai-seo-meta-generator.html", "ai-studio.html"],
     posts: ["ai-product-description-conversion"],
     blocks: [
-      { tag: "p", text: "搜索结果里用户最先看到的是标题与描述。写好 Meta 标签，能直接提升点击率（CTR），进而影响排名。" },
-      { tag: "h2", text: "标题怎么写" },
-      { tag: "ul", text: "长度控制在 50–60 字符，避免被截断\n前置核心关键词\n包含品牌名增强信任\n每页唯一，不堆砌" },
-      { tag: "h2", text: "描述怎么写" },
-      { tag: "p", text: "描述虽不直接影响排名，但决定用户是否点击。用 120–155 字符概括价值主张，加上行动号召。" },
-      { tag: "h2", text: "用 AI 生成" },
-      { tag: "p", text: "FreeToolset AI SEO 元数据生成器可批量产出符合长度与关键词要求的标题与描述，省时且更规范。" },
-      { tag: "tip", text: "定期用 Search Console 看哪些页面展现高但点击低，优先重写它们的描述。" }
+      { tag: "p", text: "In search results, users see the title and description first. Good meta tags directly lift click-through rate (CTR), which in turn affects ranking." },
+      { tag: "h2", text: "How to write the title" },
+      { tag: "ul", text: "Keep 50–60 characters to avoid truncation\nFront-load the core keyword\nInclude the brand name for trust\nUnique per page, no stuffing" },
+      { tag: "h2", text: "How to write the description" },
+      { tag: "p", text: "Descriptions don't directly affect ranking but decide whether users click. Use 120–155 characters to summarize the value proposition with a call to action." },
+      { tag: "h2", text: "Generate with AI" },
+      { tag: "p", text: "FreeToolset's AI SEO metadata generator batch-produces titles and descriptions meeting length and keyword requirements — faster and more consistent." },
+      { tag: "tip", text: "Periodically use Search Console to find pages with high impressions but low clicks, and rewrite their descriptions first." }
     ]
   }
 ];
@@ -279,11 +279,11 @@ function renderPost(p) {
   };
 
   return `<!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${p.title} | FreeToolset 教程</title>
+  <title>${p.title} | FreeToolset Guides</title>
   <meta name="description" content="${p.desc}">
   <meta name="keywords" content="${p.keywords}">
   <meta property="og:title" content="${p.title}">
@@ -320,13 +320,13 @@ function renderPost(p) {
 
   <main class="main-content">
     <article class="article">
-      <p class="post-meta">FreeToolset · 实用教程</p>
+      <p class="post-meta">FreeToolset · Practical Guides</p>
       <h1>${p.title}</h1>
 ${renderBody(p.blocks)}
       <div class="related-posts">
-        <h3>🔗 相关工具</h3>
+        <h3>🔗 Related Tools</h3>
 ${toolLinks}
-        <h3>📚 相关文章</h3>
+        <h3>📚 Related Articles</h3>
 ${postLinks}
       </div>
     </article>
@@ -336,7 +336,7 @@ ${postLinks}
     <div class="footer-content">
       <div>
         <div class="footer-brand"><span class="logo-icon">⚡</span> FreeToolset</div>
-        <p class="footer-desc">免费在线工具，全部在浏览器本地运行，数据不上传。</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser — your data never leaves your device.</p>
       </div>
       <div class="footer-links">
         <a href="../index.html">Tools</a>

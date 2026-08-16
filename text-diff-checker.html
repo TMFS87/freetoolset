@@ -39,18 +39,17 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html" class="nav-link">Home</a>
       <a href="index.html#tools" class="nav-link active">Tools</a>
       <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
-      <a href="about.html" class="nav-link" data-i18n="About">About</a>
-      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+      <a href="about.html" class="nav-link">About</a>
     </div>
   </nav>
 
   <main class="main-content">
   <section class="tool-intro">
-    <h2>📌 适用场景</h2>
-    <p>文本差异对比工具逐行比较两段文字，高亮新增、删除和修改的行，适合核对文章修订、代码改动、配置变更，纯前端运行，无需上传文件。</p>
+    <h2>📌 Overview</h2>
+    <p>Compare two versions of text and instantly spot the differences line by line. Perfect for tracking edits, code changes, and document revisions without installing anything.</p>
   </section>
 
     <nav class="breadcrumb">
@@ -118,14 +117,14 @@
         </div>
 
         <div class="info-section">
-          <h2>❓ 常见问题（中文）</h2>
+          <h2>❓ More Questions</h2>
           <details class="faq-item">
-            <summary>对比是按行还是按字符？</summary>
-            <p>按行对比。只在原文出现的行标为删除，只在新文出现的标为新增，两边都存在但内容不同的标为已修改。</p>
+            <summary>Is the diff line-level or character-level?</summary>
+            <p>It compares line by line. Lines only in the original are marked removed, only in the new text added, and lines on both sides with different content are flagged as changed.</p>
           </details>
           <details class="faq-item">
-            <summary>能对比代码吗？</summary>
-            <p>可以，适合短代码或配置片段的改动核对。</p>
+            <summary>Can I compare code?</summary>
+            <p>Yes - it works well for checking changes in short code or config snippets.</p>
           </details>
         </div>
 
@@ -189,13 +188,13 @@
     </div>
 
   <section class="tool-deep">
-    <h2>📖 深入了解 Text Diff Checker</h2>
-    <h3>为什么需要文本对比</h3>
-    <p>在写作、协作和开发中，我们经常需要确认「改了哪里」。逐行对比能直观呈现新增、删除和修改，比肉眼比较可靠得多。</p>
-    <h3>背后的原理</h3>
-    <p>工具把两段文本按换行切分为行数组，用集合运算找出仅出现在左侧（删除）、仅出现在右侧（新增）的行，并对两边都有的行做内容比较标记是否变化。</p>
-    <h3>一个例子</h3>
-    <p>把旧版文案放左边、新版放右边，点击对比后，新增的卖点句显示为绿色，删掉的过时表述显示为红色，一眼就能审稿。</p>
+    <h2>📖 Deep Dive: Text Diff Checker</h2>
+    <h3>Why compare texts</h3>
+    <p>In writing, collaboration, and development we often need to confirm what changed. Line-by-line comparison clearly shows additions, deletions, and modifications - far more reliable than eyeballing it.</p>
+    <h3>How it works</h3>
+    <p>The tool splits both texts into line arrays, uses set operations to find lines only on the left (deleted) or only on the right (added), and flags lines present on both sides whose content differs.</p>
+    <h3>A quick example</h3>
+    <p>Put the old copy on the left and the new version on the right. After clicking compare, newly added selling points show in green and removed outdated phrases in red - you can review the whole thing at a glance.</p>
   </section>
   </main>
 
@@ -206,13 +205,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html" data-i18n="Tools">Tools</a>
-        <a href="about.html" data-i18n="About">About</a>
-        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
-        <a href="contact.html" data-i18n="Contact">Contact</a>
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -247,10 +246,6 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/i18n.js"></script>
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
+<script></script>
 </body>
 </html>

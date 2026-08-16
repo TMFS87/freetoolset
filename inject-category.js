@@ -40,8 +40,8 @@ for (const [cat, cfg] of Object.entries(CATS)) {
   }
 
   // 2) update H1 count
-  const oldH1 = '共 ' + cfg.oldCount + ' 个免费在线工具';
-  const newH1 = '共 ' + cfg.newCount + ' 个免费在线工具';
+  const oldH1 = cfg.oldCount + ' free online tools';
+  const newH1 = cfg.newCount + ' free online tools';
   if (html.includes(oldH1)) {
     html = html.split(oldH1).join(newH1);
   } else if (!html.includes(newH1)) {

@@ -39,18 +39,17 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html" class="nav-link">Home</a>
       <a href="index.html#tools" class="nav-link active">Tools</a>
       <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
-      <a href="about.html" class="nav-link" data-i18n="About">About</a>
-      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+      <a href="about.html" class="nav-link">About</a>
     </div>
   </nav>
 
   <main class="main-content">
   <section class="tool-intro">
-    <h2>📌 适用场景</h2>
-    <p>存钱目标计算器帮你算出：要在指定时间攒够目标金额，每月需要存多少；或者按当前存钱速度，需要多久才能达成目标。计算中已包含利息复利效果。</p>
+    <h2>📌 Overview</h2>
+    <p>Work out how much to save each month to hit a target amount by a deadline, or how long your current savings rate will take, with interest included.</p>
   </section>
 
     <nav class="breadcrumb">
@@ -134,14 +133,14 @@
         </div>
 
         <div class="info-section">
-          <h2>❓ 常见问题（中文）</h2>
+          <h2>❓ More Questions</h2>
           <details class="faq-item">
-            <summary>计算包含利息吗？</summary>
-            <p>包含。每月存入的钱会按你填写的年利率按月复利计算。如果只是放活期不计息，把利率填 0 即可。</p>
+            <summary>Does the calculation include interest?</summary>
+            <p>Yes. Money deposited each month compounds monthly at the annual rate you enter. If you just leave it in a no-interest account, set the rate to 0.</p>
           </details>
           <details class="faq-item">
-            <summary>要考虑通货膨胀吗？</summary>
-            <p>本工具按名义金额计算。若想看实际购买力，可以把「年利率 − 预期通胀率」的差值填进去，得到近似的实际收益视角。</p>
+            <summary>Should I account for inflation?</summary>
+            <p>This tool uses nominal amounts. To see real purchasing power, enter the difference between the annual rate and your expected inflation rate for an approximate real-return view.</p>
           </details>
         </div>
 
@@ -205,17 +204,17 @@
     </div>
 
   <section class="tool-deep">
-    <h2>📖 深入了解 Savings Goal Calculator</h2>
-    <h3>两种常见问题</h3>
-    <p>存钱规划通常只有两个问题：一是「我每月要存多少才能按时攒够」，二是「按现在的速度，我什么时候能攒够」。本工具两种模式都支持。</p>
-    <h3>背后的公式</h3>
-    <p>带复利的定期存入用年金终值公式：FV = PV×(1+r)^n + PMT×[((1+r)^n − 1) ÷ r]，其中 r 为月利率、n 为月数。反解 PMT 即得每月应存金额。</p>
-    <h3>一个例子</h3>
-    <p>目标 30 万元首付，现有存款 5 万元，年利率 3%，希望 5 年内达成。按公式每月需存约 3835 元；若不计利息则需约 4167 元 —— 利息帮你省下约 2 万元的本金投入。</p>
-    <h3>提高达成率的做法</h3>
-    <li>设置自动转账，发薪日当天就把储蓄划走</li>
-    <li>把奖金、退税等意外收入直接计入目标</li>
-    <li>优先偿还高息负债：还掉年化 15% 的信用卡，等于获得 15% 的无风险收益</li>
+    <h2>📖 Deep Dive: Savings Goal Calculator</h2>
+    <h3>Two common questions</h3>
+    <p>Saving plans usually come down to two questions: how much do I need to save each month to reach the goal on time, and at my current pace when will I get there. This tool supports both modes.</p>
+    <h3>The formula behind it</h3>
+    <p>Regular deposits with compounding use the future-value-of-an-annuity formula: FV = PV times (1+r)^n + PMT times (((1+r)^n - 1) divided by r), where r is the monthly rate and n is the number of months. Solving for PMT gives the monthly amount to save.</p>
+    <h3>An example</h3>
+    <p>Goal 300000 down payment, current savings 50000, annual rate 3%, want to reach it in 5 years. The formula gives about 3835 per month; without interest you would need about 4167 - interest saves you about 20000 of principal.</p>
+    <h3>Ways to improve your success rate</h3>
+    <li>Set up auto-transfer: move savings out on payday.</li>
+    <li>Put bonuses and tax refunds straight toward the goal.</li>
+    <li>Pay down high-interest debt first: clearing a 15% credit card equals a 15% risk-free return.</li>
   </section>
   </main>
 
@@ -226,13 +225,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html" data-i18n="Tools">Tools</a>
-        <a href="about.html" data-i18n="About">About</a>
-        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
-        <a href="contact.html" data-i18n="Contact">Contact</a>
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -284,10 +283,6 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/i18n.js"></script>
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
+<script></script>
 </body>
 </html>

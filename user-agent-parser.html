@@ -39,18 +39,17 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html" class="nav-link">Home</a>
       <a href="index.html#tools" class="nav-link active">Tools</a>
       <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
-      <a href="about.html" class="nav-link" data-i18n="About">About</a>
-      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+      <a href="about.html" class="nav-link">About</a>
     </div>
   </nav>
 
   <main class="main-content">
   <section class="tool-intro">
-    <h2>📌 适用场景</h2>
-    <p>User-Agent 解析器把一段 UA 字符串拆解成浏览器、操作系统、设备类型和渲染引擎。排查兼容性、做访问统计或验证爬虫时非常有用。</p>
+    <h2>📌 Overview</h2>
+    <p>Parse a User-Agent string to reveal the browser, operating system, device type and rendering engine.</p>
   </section>
 
     <nav class="breadcrumb">
@@ -112,14 +111,14 @@
         </div>
 
         <div class="info-section">
-          <h2>❓ 常见问题（中文）</h2>
+          <h2>❓ More Questions</h2>
           <details class="faq-item">
-            <summary>UA 解析可靠吗？</summary>
-            <p>它是基于已知特征串的启发式判断。现代浏览器还在做 UA 缩减（UA reduction），所以结果仅供参考，并非绝对准确。</p>
+            <summary>Is UA parsing reliable?</summary>
+            <p>It is a heuristic judgment based on known signature strings. Modern browsers are also reducing UA info (UA reduction), so results are for reference only, not absolutely accurate.</p>
           </details>
           <details class="faq-item">
-            <summary>能通过 UA 判断什么？</summary>
-            <p>大致能看出浏览器家族与版本、操作系统、设备是手机/平板/桌面，以及渲染引擎（Blink、WebKit、Gecko）。</p>
+            <summary>What can a UA tell you?</summary>
+            <p>Roughly the browser family and version, operating system, whether the device is phone/tablet/desktop, and the rendering engine (Blink, WebKit, Gecko).</p>
           </details>
         </div>
 
@@ -183,15 +182,15 @@
     </div>
 
   <section class="tool-deep">
-    <h2>📖 深入了解 User Agent Parser</h2>
-    <h3>User-Agent 是什么</h3>
-    <p>UA 是浏览器访问网站时发送的一串自我描述文本，包含浏览器、引擎、操作系统等信息。</p>
-    <h3>解析逻辑</h3>
-    <p>本工具用一组正则匹配常见特征：Chrome/Edge/Firefox/Safari、Windows/macOS/iOS/Android/Linux、Blink/WebKit/Gecko 引擎、iPhone/iPad/Android 设备。</p>
-    <h3>局限与注意</h3>
-    <li>UA 可被伪造，不可作为安全依据</li>
-    <li>浏览器正逐步缩减 UA 信息（UA reduction），未来可解析内容会更少</li>
-    <li>结果仅供参考</li>
+    <h2>📖 Deep Dive: User Agent Parser</h2>
+    <h3>What is a User-Agent</h3>
+    <p>A UA is a self-describing text string a browser sends when visiting a site, containing info about the browser, engine, and operating system.</p>
+    <h3>Parsing logic</h3>
+    <p>This tool uses a set of regular expressions to match common signatures: Chrome/Edge/Firefox/Safari, Windows/macOS/iOS/Android/Linux, Blink/WebKit/Gecko engines, and iPhone/iPad/Android devices.</p>
+    <h3>Limits and notes</h3>
+    <li>A UA can be faked and must not be used as a security basis.</li>
+    <li>Browsers are gradually reducing UA info (UA reduction), so less will be parseable in future.</li>
+    <li>Results are for reference only.</li>
   </section>
   </main>
 
@@ -202,13 +201,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html" data-i18n="Tools">Tools</a>
-        <a href="about.html" data-i18n="About">About</a>
-        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
-        <a href="contact.html" data-i18n="Contact">Contact</a>
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -243,10 +242,6 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/i18n.js"></script>
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
+<script></script>
 </body>
 </html>

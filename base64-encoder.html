@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <meta name="theme-color" content="#8b5cf6">
-  <title>Base64 编码解码器 — 在线 Base64 加密解密工具</title>
-  <meta name="description" content="免费 Base64 编码解码工具：支持文本和文件的 Base64 编码与解码。可用于图片转 Data URL、Token 解析、证书查看。即时处理，无需上传服务器，保护数据隐私。">
-  <meta name="keywords" content="base64 encoder, base64 decoder, base64 converter, encode base64, decode base64, utf-8 base64, 免费在线 Base64 编解码工具, Base64 编解码工具在线工具, Base64 编解码工具免费">
-  <meta property="og:title" content="Base64 编码解码器 — 在线 Base64 加密解密工具">
-  <meta property="og:description" content="免费 Base64 编码解码工具：支持文本和文件的 Base64 编码与解码。可用于图片转 Data URL、Token 解析、证书查看。即时处理，无需上传服务器，保护数据隐私。">
+  <title>Base64 Encoder / Decoder | FreeToolset</title>
+  <meta name="description" content="Base64 Encoder / Decoder: a free online tool that runs entirely in your browser — no sign-up required and your data never leaves your device, so your privacy is always protected.">
+  <meta name="keywords" content="base64 encoder, base64 decoder, base64 converter, encode base64, decode base64, utf-8 base64, free online Base64 Encoder / Decoder, Base64 Encoder / Decoder online, Base64 Encoder / Decoder tool">>
+  <meta property="og:title" content="Base64 Encoder / Decoder | FreeToolset">>
+  <meta property="og:description" content="Base64 Encoder / Decoder: a free online tool that runs entirely in your browser — no sign-up required and your data never leaves your device, so your privacy is always protected.">>
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.freetoolset.app/base64-encoder.html">
   <link rel="stylesheet" href="css/style.css">
@@ -33,8 +33,7 @@
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Base64 Encoder/Decoder",
-  "alternateName": "Base64编码解码器",
+  "name": "Base64 Encoder / Decoder",
   "url": "https://www.freetoolset.app/base64-encoder.html",
   "applicationCategory": "UtilityApplication",
   "operatingSystem": "Any",
@@ -43,42 +42,10 @@
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Base64编码解码器（Base64 Encoder/Decoder）免费在线工具，无需注册，本地运行保护隐私。"
+  "description": "Base64 Encoder / Decoder: a free online tool that runs entirely in your browser — no sign-up required and your data never leaves your device, so your privacy is always protected."
 }
 </script>
-  <!-- ft-faq-schema -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Base64 是加密吗？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "不是。Base64 只是一种编码方式，任何人都能解码还原，千万不要把它当加密来保护密码或敏感信息。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "处理过程会上传数据吗？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "不会。编码/解码全部在浏览器本地进行，内容不上传，适合处理含敏感信息的文本。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "中文能 Base64 编码吗？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "可以。工具会按 UTF-8 正确处理中文等非英文字符，不会出现乱码。"
-      }
-    }
-  ]
-}
-  </script>
+  
 
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HQJ9VZWMKE"></script>
@@ -89,7 +56,7 @@
   gtag('config', 'G-HQJ9VZWMKE', { send_page_view: true });
 </script>
 
-  <link rel="alternate" hreflang="zh-CN" href="https://www.freetoolset.app/base64-encoder.html" />
+  <link rel="alternate" hreflang="en" href="https://www.freetoolset.app/base64-encoder.html" />
   <link rel="alternate" hreflang="x-default" href="https://www.freetoolset.app/base64-encoder.html" />
 </head>
 <body>
@@ -101,58 +68,60 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
-      <a href="index.html#tools" class="nav-link active" data-i18n="Tools">Tools</a>
-      <a href="about.html" class="nav-link" data-i18n="About">About</a>
-      <a href="privacy-policy.html" class="nav-link" data-i18n="Privacy">Privacy</a>
-      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="privacy-policy.html" class="nav-link">Privacy</a>
     </div>
   </nav>
 
   <main class="main-content">
   <!-- ft-zh-intro -->
   <section class="tool-intro">
-    <h2>📌 适用场景</h2>
-    <p>Base64 是一种将二进制数据编码为纯文本的通用格式，广泛用于邮件附件、API 数据传输、Data URI 内联图片以及 JWT / 基础认证等场景。本工具完全在浏览器本地运行，支持 UTF-8（含中文、emoji），无需上传数据即可即时编解码，兼顾安全与速度，适合开发调试与日常文本转换。</p>
+    <h2>📌 Use Cases</h2>
+    <p>Base64 is a universal format for encoding binary data as plain text, widely used for email attachments, API data transfer, Data-URI inline images, and JWT / Basic Auth. This tool runs entirely in your browser, supports UTF-8 (including Chinese and emoji), and encodes and decodes instantly without uploading your data — balancing security and speed, ideal for development debugging and everyday text conversion.</p>
   </section>
 
+  
 
     <!-- Breadcrumb -->
       <!-- ft-deep -->
   <section class="tool-deep">
-    <h2>📖 深入了解 Base64 Encoder/Decoder — Free Online Base64 Tool</h2>
-    <h2>为什么需要它</h2>
+    <h2>📖 Learn More About base64 encoder</h2>
+    <h2>Why You Need It</h2>
     <ul>
-      <li>调试与格式转换无需安装环境</li>
-      <li>本地处理敏感数据更安全</li>
-      <li>把繁琐脚本变成一键操作</li>
+      <li>Embed binary data (images, files) directly in text formats like Data URIs, JSON, or CSS.</li>
+      <li>Send credentials or tokens safely in HTTP headers (Basic Auth, JWT).</li>
+      <li>Make debugging easier by turning opaque blobs into readable, copy-pasteable text.</li>
     </ul>
-    <h2>背后的原理</h2>
-    <p>Base64 Encoder/Decoder — Free Online Base64 Tool 面向开发调试场景，在本地完成格式转换、压缩或解码，不把令牌、代码等敏感内容传到第三方服务器。</p>
-    <h2>一个例子</h2>
-    <p>例如把一段 JWT 或 CSV 粘进 Base64 Encoder/Decoder — Free Online Base64 Tool，本地立即解析或转换，结果可直接复制使用，敏感数据全程不出浏览器。</p>
-    <h2>常见误区</h2>
+    <h2>How It Works</h2>
+    <p>Base64 encodes every 3 bytes into 4 printable characters using a 64-character alphabet (A–Z, a–z, 0–9, +, /). It is reversible and adds about 33% size overhead — it is encoding, not encryption.</p>
+    <h2>A Quick Example</h2>
+    <p>Paste a small image or any text, choose encode or decode, and copy the result instantly — all in your browser.</p>
+    <h2>Common Mistakes</h2>
     <ul>
-      <li>把 JWT 等可解码内容误当加密</li>
-      <li>压缩后未保留可读源码，出问题难排查</li>
-      <li>用了需要上传的在线工具处理密钥/令牌</li>
+      <li>Treating Base64 as encryption (anyone can decode it).</li>
+      <li>Forgetting that it grows data size by ~33%.</li>
+      <li>Mixing up encodeURI vs raw encoding when embedding in URLs.</li>
     </ul>
   
 
-    <h3 class="longtail-note">关于免费在线 Base64 编解码工具</h3>
-    <p class="longtail-note">正在寻找免费在线 Base64 编解码工具？Base64 是一种将二进制数据编码为纯文本的通用格式，广泛用于邮件附件、API 数据传输、Data URI 内联图片以及 JWT / 基础认证等场景。本工具完全在浏览器本地运行，支持 UTF-8（含中文、emoji），无需上传数据即可即时编解码，兼顾安全与速度，适合开发调试与日常文本转换。本工具完全免费、无需注册，所有计算都在你的浏览器本地完成，数据不会上传到任何服务器，打开网页即可随时使用。</p>
+    
+
+    <h3 class="longtail-note">About the free online Base64 Encoder / Decoder</h3>
+    <p class="longtail-note">Looking for a free online Base64 Encoder / Decoder? Base64 is a universal format for encoding binary data as plain text, widely used for email attachments, API data transfer, Data-URI inline images, and JWT / Basic Auth. This tool runs entirely in your browser, supports UTF-8 (including Chinese and emoji), and encodes and decodes instantly without uploading your data — balancing security and speed, ideal for development debugging and everyday text conversion. This tool is completely free and requires no registration — every operation runs locally in your browser, your data is never uploaded to any server, and you can use it anytime just by opening the page.</p>
   </section>
     <nav class="breadcrumb"><!-- breadcrumb-cat -->
-      <a href="index.html" data-i18n="Home">Home</a>
+      <a href="index.html">Home</a>
       <span class="separator">/</span>
-      <a href="developer-tools.html" data-i18n="catTitle_developer-tools">Developer Tools</a>
+      <a href="developer-tools.html">Developer Tools</a>
       <span class="separator">/</span>
-      <span class="current" data-i18n="cardTitle_base64-encoder">Base64 Encoder/Decoder</span>
+      <span class="current">Base64 Encoder/Decoder</span>
     </nav>
 
     <!-- Tool Header -->
     <div class="tool-header">
-      <h1 data-i18n="🔄 Base64 Encoder / Decoder">🔄 Base64 Encoder / Decoder</h1>
+      <h1>🔄 Base64 Encoder / Decoder</h1>
       <p>Encode text to Base64 or decode Base64 back to readable text. Supports UTF-8 characters including Chinese, Japanese, and emoji.</p>
     </div>
 
@@ -237,18 +206,9 @@
           </details>
         
           <!-- ft-zh-faq -->
-          <details class="faq-item">
-            <summary>Base64 是加密吗？</summary>
-            <p>不是。Base64 只是一种编码方式，任何人都能解码还原，千万不要把它当加密来保护密码或敏感信息。</p>
-          </details>
-          <details class="faq-item">
-            <summary>处理过程会上传数据吗？</summary>
-            <p>不会。编码/解码全部在浏览器本地进行，内容不上传，适合处理含敏感信息的文本。</p>
-          </details>
-          <details class="faq-item">
-            <summary>中文能 Base64 编码吗？</summary>
-            <p>可以。工具会按 UTF-8 正确处理中文等非英文字符，不会出现乱码。</p>
-          </details>
+          
+          
+          
 </div>
 
         <!-- Use Cases -->
@@ -315,14 +275,14 @@
 
     </div>
     <section class="further-reading">
-    <h2>📚 延伸阅读</h2>
-    <p class="fr-lead">想更深入了解相关知识？这些教程配合本工具一起看效果更好。</p>
+    <h2>📚 Further Reading</h2>
+    <p class="fr-lead">Want to go deeper? These tutorials pair well with this tool.</p>
     <div class="fr-grid">
-      <a class="fr-item" href="blog/what-is-base64.html"><span class="fr-icon">📄</span><span class="fr-text">Base64 是什么？一文讲清编码原理与常见用途</span></a>
-      <a class="fr-item" href="blog/text-tools-guide.html"><span class="fr-icon">📄</span><span class="fr-text">文本处理工具大全：清洗、转换与排版一键完成</span></a>
-      <a class="fr-item" href="blog/text-case-naming.html"><span class="fr-icon">📄</span><span class="fr-text">大小写与命名规范：camelCase 到 kebab</span></a>
+            <a class="fr-item" href="blog/what-is-base64.html"><span class="fr-icon">📄</span><span class="fr-text">What Is Base64? Encoding Principles and Common Uses Explained</span></a>
+            <a class="fr-item" href="blog/text-tools-guide.html"><span class="fr-icon">📄</span><span class="fr-text">The Text Toolkit: Clean, Convert & Format in One Click</span></a>
+            <a class="fr-item" href="blog/text-case-naming.html"><span class="fr-icon">📄</span><span class="fr-text">Case & Naming Conventions: camelCase to kebab</span></a>
     </div>
-    <a class="fr-all" href="blog/index.html">浏览全部教程 →</a>
+    <a class="fr-all" href="blog/index.html">Browse all tutorials →</a>
   </section>
 
 </main>
@@ -330,40 +290,40 @@
   <!-- Footer -->
     <!-- More Tools Section -->
     <section class="more-tools-section" aria-label="More tools">
-      <h2 class="more-tools-title" data-i18n="moreToolsTitle">🔍 Explore More Tools</h2>
-      <p class="more-tools-desc" data-i18n="moreToolsDesc">FreeToolset has 95+ free online tools. Browse more utilities to boost your productivity.</p>
+      <h2 class="more-tools-title">🔍 Explore More Tools</h2>
+      <p class="more-tools-desc">FreeToolset has 95+ free online tools. Browse more utilities to boost your productivity.</p>
       <div class="more-tools-grid">
         <a href="index.html" class="more-tool-card more-tool-home">
           <span class="mt-icon">⚡</span>
-          <span class="mt-name" data-i18n="moreToolsAll">All 95+ Tools</span>
+          <span class="mt-name">All 95+ Tools</span>
         </a>
         <a href="ai-studio.html" class="more-tool-card">
           <span class="mt-icon">✨</span>
-          <span class="mt-name" data-i18n="✨ AI Studio">✨ AI Studio</span>
+          <span class="mt-name">✨ AI Studio</span>
         </a>
         <a href="developer-tools.html" class="more-tool-card">
           <span class="mt-icon">📂</span>
-          <span class="mt-name" data-i18n="catTitle_developer-tools">Developer Tools</span>
+          <span class="mt-name">Developer Tools</span>
         </a>
         <a href="image-compressor.html" class="more-tool-card">
           <span class="mt-icon">🖼️</span>
-          <span class="mt-name" data-i18n="cardTitle_image-compressor">🖼️ Image Compressor</span>
+          <span class="mt-name">🖼️ Image Compressor</span>
         </a>
         <a href="qr-code-generator.html" class="more-tool-card">
           <span class="mt-icon">📱</span>
-          <span class="mt-name" data-i18n="cardTitle_qr-code-generator">📱 QR Code Generator</span>
+          <span class="mt-name">📱 QR Code Generator</span>
         </a>
         <a href="password-generator.html" class="more-tool-card">
           <span class="mt-icon">🔐</span>
-          <span class="mt-name" data-i18n="cardTitle_password-generator">🔐 Password Generator</span>
+          <span class="mt-name">🔐 Password Generator</span>
         </a>
         <a href="json-formatter.html" class="more-tool-card">
           <span class="mt-icon">🧩</span>
-          <span class="mt-name" data-i18n="cardTitle_json-formatter">🧩 JSON Formatter</span>
+          <span class="mt-name">🧩 JSON Formatter</span>
         </a>
         <a href="word-counter.html" class="more-tool-card">
           <span class="mt-icon">📝</span>
-          <span class="mt-name" data-i18n="cardTitle_word-counter">📝 Word Counter</span>
+          <span class="mt-name">📝 Word Counter</span>
         </a>
       </div>
     </section>
@@ -375,18 +335,18 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html" data-i18n="Tools">Tools</a>
-        <a href="about.html" data-i18n="About">About</a>
-        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
-        <a href="contact.html" data-i18n="Contact">Contact</a>
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
 
 </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 FreeToolset · 由独立站长 <a href="about.html">TMFS</a> 独立开发与维护 · 所有工具均在浏览器本地运行，不上传任何数据</p>
+      <p>© 2025 FreeToolset · independently developed and maintained by <a href="about.html">TMFS</a>  · All tools run locally in your browser; no data is uploaded.</p>
     </div>
   </footer>
 
@@ -518,10 +478,7 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/i18n.js" defer></script>
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
+
+<script></script>
 </body>
 </html>

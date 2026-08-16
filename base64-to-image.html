@@ -39,18 +39,17 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html" class="nav-link">Home</a>
       <a href="index.html#tools" class="nav-link active">Tools</a>
       <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
-      <a href="about.html" class="nav-link" data-i18n="About">About</a>
-      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+      <a href="about.html" class="nav-link">About</a>
     </div>
   </nav>
 
   <main class="main-content">
   <section class="tool-intro">
-    <h2>📌 适用场景</h2>
-    <p>Base64 转图片工具把一段 base64 字符串（带不带 data: 前缀均可）解码成图片预览，并支持下载。解码在本地完成。</p>
+    <h2>📌 Overview</h2>
+    <p>Paste a base64 string (with or without the data: prefix) and preview the image, then download it. Decoding is local.</p>
   </section>
 
     <nav class="breadcrumb">
@@ -112,14 +111,14 @@
         </div>
 
         <div class="info-section">
-          <h2>❓ 常见问题（中文）</h2>
+          <h2>❓ More Questions</h2>
           <details class="faq-item">
-            <summary>需要 data: 前缀吗？</summary>
-            <p>不需要。无论粘贴原始 base64 还是完整的 data:image/png;base64,… URI 都能识别。</p>
+            <summary>Do I need the data: prefix?</summary>
+            <p>No. It recognizes both raw base64 and a full data:image/png;base64,... URI.</p>
           </details>
           <details class="faq-item">
-            <summary>下载成什么格式？</summary>
-            <p>若 data URI 里有 mime 类型，按它定扩展名；否则默认 PNG。</p>
+            <summary>What format is the download?</summary>
+            <p>If the data URI has a mime type, the extension follows it; otherwise it defaults to PNG.</p>
           </details>
         </div>
 
@@ -183,15 +182,15 @@
     </div>
 
   <section class="tool-deep">
-    <h2>📖 深入了解 Base64 to Image</h2>
-    <h3>用途</h3>
-    <p>接口返回、CSS 内联或数据库里常出现 base64 图片。这个工具帮你把它还原成可见、可下载的图片。</p>
-    <h3>解析规则</h3>
-    <li>自动识别 data:image/...;base64, 前缀</li>
-    <li>也支持纯 base64 文本（默认按 PNG）</li>
-    <li>根据 mime 决定下载扩展名</li>
-    <h3>隐私</h3>
-    <p>解码在浏览器本地完成。</p>
+    <h2>📖 Deep Dive: Base64 to Image</h2>
+    <h3>Purpose</h3>
+    <p>Base64 images commonly appear in API responses, inline CSS, or databases. This tool turns them back into a visible, downloadable image.</p>
+    <h3>Parsing rules</h3>
+    <li>Automatically recognizes the data:image/...;base64, prefix.</li>
+    <li>Also supports plain base64 text (defaults to PNG).</li>
+    <li>The download extension follows the mime type.</li>
+    <h3>Privacy</h3>
+    <p>Decoding happens locally in your browser.</p>
   </section>
   </main>
 
@@ -202,13 +201,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html" data-i18n="Tools">Tools</a>
-        <a href="about.html" data-i18n="About">About</a>
-        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
-        <a href="contact.html" data-i18n="Contact">Contact</a>
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -237,10 +236,6 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/i18n.js"></script>
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
+<script></script>
 </body>
 </html>

@@ -39,18 +39,17 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html" class="nav-link">Home</a>
       <a href="index.html#tools" class="nav-link active">Tools</a>
       <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
-      <a href="about.html" class="nav-link" data-i18n="About">About</a>
-      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+      <a href="about.html" class="nav-link">About</a>
     </div>
   </nav>
 
   <main class="main-content">
   <section class="tool-intro">
-    <h2>📌 适用场景</h2>
-    <p>随机点名器把名单粘贴进来后随机抽选一个或多个，适合抽奖、课堂点名、公平分组，本地运行不上传。</p>
+    <h2>📌 Overview</h2>
+    <p>Drop in a list of names and pick one (or several) at random. Perfect for giveaways, classroom calls, and fair team selections.</p>
   </section>
 
     <nav class="breadcrumb">
@@ -115,14 +114,14 @@
         </div>
 
         <div class="info-section">
-          <h2>❓ 常见问题（中文）</h2>
+          <h2>❓ More Questions</h2>
           <details class="faq-item">
-            <summary>能一次抽多个吗？</summary>
-            <p>能，设置数量后一次抽取多个且本次不重复。</p>
+            <summary>Can it draw multiple at once?</summary>
+            <p>Yes - set a quantity and it draws multiple names in one go without repeats in that draw.</p>
           </details>
           <details class="faq-item">
-            <summary>名单会上传吗？</summary>
-            <p>不会，全部在浏览器本地，不上传服务器。</p>
+            <summary>Are the names uploaded?</summary>
+            <p>No - everything runs locally in the browser; nothing is sent to a server.</p>
           </details>
         </div>
 
@@ -186,13 +185,13 @@
     </div>
 
   <section class="tool-deep">
-    <h2>📖 深入了解 Random Name Picker</h2>
-    <h3>为什么需要随机点名</h3>
-    <p>抽奖、点名、选人时，人工挑容易被人情和偏见影响。随机抽选既公平又可复现过程。</p>
-    <h3>背后的原理</h3>
-    <p>工具把名单按行存入数组，用洗牌算法随机取前 N 个，并在一次抽取内避免重复。</p>
-    <h3>一个例子</h3>
-    <p>把 30 个学员名字粘进来，设抽 3 个，点一下就得到 3 名幸运者，过程透明公正。</p>
+    <h2>📖 Deep Dive: Random Name Picker</h2>
+    <h3>Why a random name picker</h3>
+    <p>For lotteries, roll-calls, and selections, manual picking is easily swayed by favoritism and bias. Random drawing is both fair and reproducible.</p>
+    <h3>How it works</h3>
+    <p>The tool stores the name list as lines in an array and uses a shuffle algorithm to pick the first N, avoiding repeats within a single draw.</p>
+    <h3>A quick example</h3>
+    <p>Paste 30 student names, set to draw 3, and one click yields 3 lucky winners - a transparent and fair process.</p>
   </section>
   </main>
 
@@ -203,13 +202,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html" data-i18n="Tools">Tools</a>
-        <a href="about.html" data-i18n="About">About</a>
-        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
-        <a href="contact.html" data-i18n="Contact">Contact</a>
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -236,10 +235,6 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/i18n.js"></script>
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
+<script></script>
 </body>
 </html>

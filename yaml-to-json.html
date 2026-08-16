@@ -39,18 +39,17 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html" class="nav-link">Home</a>
       <a href="index.html#tools" class="nav-link active">Tools</a>
       <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
-      <a href="about.html" class="nav-link" data-i18n="About">About</a>
-      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+      <a href="about.html" class="nav-link">About</a>
     </div>
   </nav>
 
   <main class="main-content">
   <section class="tool-intro">
-    <h2>📌 适用场景</h2>
-    <p>YAML 转 JSON 工具把基础 YAML（嵌套字典、列表、标量）即时转为 JSON，适合把配置文件转成接口可用的格式，浏览器本地处理。</p>
+    <h2>📌 Overview</h2>
+    <p>Convert basic YAML into JSON instantly. Supports nested maps, lists, and scalars — perfect for turning config files into API-ready JSON.</p>
   </section>
 
     <nav class="breadcrumb">
@@ -112,14 +111,14 @@
         </div>
 
         <div class="info-section">
-          <h2>❓ 常见问题（中文）</h2>
+          <h2>❓ More Questions</h2>
           <details class="faq-item">
-            <summary>支持哪些 YAML 特性？</summary>
-            <p>支持嵌套字典、列表、字符串、数字、布尔与空值；锚点、别名和复杂多行块暂不支持，输入请保持简单。</p>
+            <summary>Which YAML features are supported?</summary>
+            <p>Nested maps, lists, strings, numbers, booleans, and null. Anchors, aliases, and complex multi-line blocks are not supported yet - keep input simple.</p>
           </details>
           <details class="faq-item">
-            <summary>怎么识别列表？</summary>
-            <p>键下以「- 」开头的行视为数组项，缩进决定嵌套层级。</p>
+            <summary>How are lists recognized?</summary>
+            <p>Lines starting with dash under a key are treated as array items; indentation decides nesting depth.</p>
           </details>
         </div>
 
@@ -183,13 +182,13 @@
     </div>
 
   <section class="tool-deep">
-    <h2>📖 深入了解 YAML to JSON Converter</h2>
-    <h3>为什么需要 YAML 转 JSON</h3>
-    <p>YAML 可读性高、常用于配置；JSON 则是接口与前端的事实标准。把前者转成后者是开发与运维的日常。</p>
-    <h3>背后的原理</h3>
-    <p>工具按缩进构建层级，把「key: value」解析为对象属性，把「- 」行解析为数组，再序列化为 JSON。它覆盖常见结构，不处理锚点等高级语法。</p>
-    <h3>一个例子</h3>
-    <p>一段 docker-compose 风格的 YAML 粘进来，转成 JSON 后可直接贴进需要 JSON 配置的后台。</p>
+    <h2>📖 Deep Dive: YAML to JSON Converter</h2>
+    <h3>Why convert YAML to JSON</h3>
+    <p>YAML is highly readable and common for config; JSON is the de-facto standard for APIs and front-ends. Turning the former into the latter is a daily task for devs and ops.</p>
+    <h3>How it works</h3>
+    <p>The tool builds the hierarchy by indentation, parses key value pairs into object properties, treats dash lines as array items, and serializes to JSON. It covers common structures and does not handle anchors and other advanced syntax.</p>
+    <h3>A quick example</h3>
+    <p>Paste a docker-compose-style YAML and the converted JSON can be pasted straight into a back-end that expects JSON config.</p>
   </section>
   </main>
 
@@ -200,13 +199,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html" data-i18n="Tools">Tools</a>
-        <a href="about.html" data-i18n="About">About</a>
-        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
-        <a href="contact.html" data-i18n="Contact">Contact</a>
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -251,10 +250,6 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/i18n.js"></script>
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
+<script></script>
 </body>
 </html>

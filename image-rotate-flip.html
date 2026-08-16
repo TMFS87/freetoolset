@@ -39,18 +39,17 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html" class="nav-link">Home</a>
       <a href="index.html#tools" class="nav-link active">Tools</a>
       <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
-      <a href="about.html" class="nav-link" data-i18n="About">About</a>
-      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+      <a href="about.html" class="nav-link">About</a>
     </div>
   </nav>
 
   <main class="main-content">
   <section class="tool-intro">
-    <h2>📌 适用场景</h2>
-    <p>图片旋转翻转工具在浏览器本地用 Canvas 把图片旋转 90°/180°/270° 或水平/垂直翻转，照片不上传，适合修正手机拍歪的照片。</p>
+    <h2>📌 Overview</h2>
+    <p>Rotate an image 90°, 180°, 270° or flip it horizontally / vertically. Runs entirely in your browser.</p>
   </section>
 
     <nav class="breadcrumb">
@@ -118,14 +117,14 @@
         </div>
 
         <div class="info-section">
-          <h2>❓ 常见问题（中文）</h2>
+          <h2>❓ More Questions</h2>
           <details class="faq-item">
-            <summary>能修正在手机里拍歪的照片吗？</summary>
-            <p>可以。手动旋转到正确角度后下载。注意本工具不自动读取 EXIF 方向，需要你选择角度。</p>
+            <summary>Can it fix a photo taken at an angle on my phone?</summary>
+            <p>Yes. Rotate manually to the correct angle and download. Note this tool does not auto-read EXIF orientation; you choose the angle.</p>
           </details>
           <details class="faq-item">
-            <summary>图片会上传吗？</summary>
-            <p>不会。所有旋转都在本地 Canvas 完成。</p>
+            <summary>Are images uploaded?</summary>
+            <p>No. All rotation is done locally on the Canvas.</p>
           </details>
         </div>
 
@@ -189,13 +188,13 @@
     </div>
 
   <section class="tool-deep">
-    <h2>📖 深入了解 Image Rotate &amp; Flip</h2>
-    <h3>工作原理</h3>
-    <p>用 Canvas 的 rotate/scale 变换把图片重绘到新画布，旋转后画布尺寸相应交换（90°/270° 时宽高互换）。</p>
-    <h3>提示</h3>
-    <li>本工具不自动读 EXIF，请手动选角度</li>
-    <li>输出默认 PNG 保画质，可选 JPG</li>
-    <li>全程本地处理，不上传</li>
+    <h2>📖 Deep Dive: Image Rotate &amp; Flip</h2>
+    <h3>How it works</h3>
+    <p>Use the Canvas rotate/scale transform to redraw the image onto a new canvas; after rotation the canvas dimensions swap accordingly (width and height swap at 90 or 270 degrees).</p>
+    <h3>Tips</h3>
+    <li>This tool does not auto-read EXIF; choose the angle manually.</li>
+    <li>Output defaults to PNG to preserve quality, with JPG optional.</li>
+    <li>Fully local processing; not uploaded.</li>
   </section>
   </main>
 
@@ -206,13 +205,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html" data-i18n="Tools">Tools</a>
-        <a href="about.html" data-i18n="About">About</a>
-        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
-        <a href="contact.html" data-i18n="Contact">Contact</a>
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -243,10 +242,6 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/i18n.js"></script>
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
+<script></script>
 </body>
 </html>

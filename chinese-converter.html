@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simplified-Traditional Chinese Converter — Free Online 简繁转换工具 | FreeToolset</title>
+  <title>Simplified-Traditional Chinese Converter — Free Online Simplified-Traditional Chinese Converter | FreeToolset</title>
   <meta name="description" content="Convert text between Simplified and Traditional Chinese instantly. Useful for reaching both mainland and Taiwan/HK audiences without switching apps.">
-  <meta name="keywords" content="简繁转换, 繁简转换, chinese converter, simplified traditional, 简体转繁体">
+  <meta name="keywords" content="simplified traditional chinese converter, convert simplified to traditional, convert traditional to simplified, chinese text converter">
   <meta property="og:title" content="Simplified-Traditional Chinese Converter — FreeToolset">
   <meta property="og:description" content="Convert text between Simplified and Traditional Chinese instantly. Useful for reaching both mainland and Taiwan/HK audiences without switching apps.">
   <meta name="robots" content="index, follow">
@@ -22,10 +22,10 @@
   <meta name="twitter:title" content="Simplified-Traditional Chinese Converter — FreeToolset">
   <meta name="twitter:description" content="Convert text between Simplified and Traditional Chinese instantly. Useful for reaching both mainland and Taiwan/HK audiences without switching apps.">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Simplified-Traditional Chinese Converter — Free Online 简繁转换工具","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/chinese-converter.html","description":"Convert text between Simplified and Traditional Chinese instantly. Useful for reaching both mainland and Taiwan/HK audiences without switching apps.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Simplified-Traditional Chinese Converter — Free Online Simplified-Traditional Chinese Converter","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://www.freetoolset.app/chinese-converter.html","description":"Convert text between Simplified and Traditional Chinese instantly. Useful for reaching both mainland and Taiwan/HK audiences without switching apps.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
   </script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the conversion 100% accurate?","acceptedAnswer":{"@type":"Answer","text":"It uses a built-in common-character mapping table, so it covers the vast majority of everyday characters. A few rare or context-dependent characters may need manual correction."}},{"@type":"Question","name":"Does it handle one-to-many mappings?","acceptedAnswer":{"@type":"Answer","text":"Some Traditional characters map to multiple Simplified ones (e.g. 後/后). The table uses the most common correspondence; verify important text."}},{"@type":"Question","name":"Is it private?","acceptedAnswer":{"@type":"Answer","text":"Yes. Everything runs locally in your browser."}}]}
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the conversion 100% accurate?","acceptedAnswer":{"@type":"Answer","text":"It uses a built-in common-character mapping table, so it covers the vast majority of everyday characters. A few rare or context-dependent characters may need manual correction."}},{"@type":"Question","name":"Does it handle one-to-many mappings?","acceptedAnswer":{"@type":"Answer","text":"Some Traditional characters map to multiple Simplified ones (e.g. one Traditional character mapping to several Simplified forms). The table uses the most common correspondence; verify important text."}},{"@type":"Question","name":"Is it private?","acceptedAnswer":{"@type":"Answer","text":"Yes. Everything runs locally in your browser."}}]}
   </script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolset.app/"},{"@type":"ListItem","position":2,"name":"Text","item":"https://www.freetoolset.app/text-tools.html"},{"@type":"ListItem","position":3,"name":"Simplified-Traditional Chinese Converter","item":"https://www.freetoolset.app/chinese-converter.html"}]}
@@ -39,18 +39,17 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html" class="nav-link">Home</a>
       <a href="index.html#tools" class="nav-link active">Tools</a>
       <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
-      <a href="about.html" class="nav-link" data-i18n="About">About</a>
-      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+      <a href="about.html" class="nav-link">About</a>
     </div>
   </nav>
 
   <main class="main-content">
   <section class="tool-intro">
-    <h2>📌 适用场景</h2>
-    <p>简繁转换工具在中文字与繁体字之间互转，帮助内容同时覆盖大陆与港台读者，基于常用字对照表，浏览器本地完成。</p>
+    <h2>📌 Overview</h2>
+    <p>Convert text between Simplified and Traditional Chinese instantly. Useful for reaching both mainland and Taiwan/HK audiences without switching apps.</p>
   </section>
 
     <nav class="breadcrumb">
@@ -70,14 +69,14 @@
       <div class="tool-main">
         <div class="form-row">
           <label for="text">Chinese Text</label>
-          <textarea id="text" placeholder="粘贴中文内容..." style="min-height:200px;"></textarea>
+          <textarea id="text" placeholder="Paste Chinese text here..." style="min-height:200px;"></textarea>
         </div>
         <div class="btn-group">
-          <button class="btn btn-primary" id="toTrad">简 → 繁</button>
-          <button class="btn btn-secondary" id="toSimp">繁 → 简</button>
-          <button class="btn btn-secondary" id="copyBtn">复制</button>
+          <button class="btn btn-primary" id="toTrad">Simplified → Traditional</button>
+          <button class="btn btn-secondary" id="toSimp">Traditional → Simplified</button>
+          <button class="btn btn-secondary" id="copyBtn">Copy</button>
         </div>
-        <div class="result-box empty" id="out">输入中文后选择转换方向。</div>
+        <div class="result-box empty" id="out">Enter Chinese text and choose a direction.</div>
 
         <div class="privacy-notice">
           <span class="pn-icon">🔒</span>
@@ -90,7 +89,7 @@
           <h2>📋 How to Use</h2>
           <ol class="how-to-list">
             <li>Paste Chinese text into the box.</li>
-            <li>Click &quot;简→繁&quot; to convert to Traditional, or &quot;繁→简&quot; for Simplified.</li>
+            <li>Click &quot;Simplified to Traditional&quot; to convert to Traditional, or &quot;Traditional to Simplified&quot; for Simplified.</li>
             <li>Copy the converted text.</li>
             <li>Note: conversion is based on a common-character table.</li>
           </ol>
@@ -104,7 +103,7 @@
           </details>
           <details class="faq-item">
             <summary>Does it handle one-to-many mappings?</summary>
-            <p>Some Traditional characters map to multiple Simplified ones (e.g. 後/后). The table uses the most common correspondence; verify important text.</p>
+            <p>Some Traditional characters map to multiple Simplified ones (e.g. one Traditional character mapping to several Simplified forms). The table uses the most common correspondence; verify important text.</p>
           </details>
           <details class="faq-item">
             <summary>Is it private?</summary>
@@ -113,14 +112,18 @@
         </div>
 
         <div class="info-section">
-          <h2>❓ 常见问题（中文）</h2>
+          <h2>❓ More Questions</h2>
           <details class="faq-item">
-            <summary>转换完全准确吗？</summary>
-            <p>基于内置常用字对照表，能覆盖绝大多数日常用字，少数生僻或一词多义的字符可能需要手动校对。</p>
+            <summary>Does it handle one-to-many mappings?</summary>
+            <p>Some Traditional characters map to multiple Simplified ones (e.g. one Traditional character mapping to several Simplified forms). The table uses the most common correspondence; verify important text.</p>
           </details>
           <details class="faq-item">
-            <summary>能处理一繁对多简吗？</summary>
-            <p>部分繁体字对应多个简体（如「後/后」），表内取最常见对应，重要文本请人工核对。</p>
+            <summary>Is the conversion fully accurate?</summary>
+            <p>Based on a built-in common-character table, it covers the vast majority of everyday characters; a few rare or polysemous characters may need manual proofreading.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can it handle one Traditional-to-many-Simplified case?</summary>
+            <p>Some Traditional characters correspond to multiple Simplified ones (e.g. one Traditional character mapping to several Simplified forms). The table picks the most common match; please proofread important text manually.</p>
           </details>
         </div>
 
@@ -184,13 +187,13 @@
     </div>
 
   <section class="tool-deep">
-    <h2>📖 深入了解 Simplified-Traditional Chinese Converter</h2>
-    <h3>为什么需要简繁转换</h3>
-    <p>中文互联网分为简体与繁体两大圈层，同一内容用不同字形能覆盖更广读者。自动转换比人工重排高效得多。</p>
-    <h3>背后的原理</h3>
-    <p>工具内置一份简繁常用字对照表（约数百个高频字），对输入文本逐字查表替换。简转繁与繁转简使用同一张双向映射。</p>
-    <h3>一个例子</h3>
-    <p>把一篇简体公众号文章粘进来，点「简→繁」，几秒得到繁体版，可直接发到面向港台读者的平台。</p>
+    <h2>📖 Deep Dive: Simplified-Traditional Chinese Converter</h2>
+    <h3>Why convert between Simplified and Traditional</h3>
+    <p>The Chinese internet splits into two big circles - Simplified and Traditional. Presenting the same content in both scripts reaches a wider audience. Automatic conversion is far more efficient than manual re-typing.</p>
+    <h3>How it works</h3>
+    <p>The tool has a built-in common-character mapping table (a few hundred high-frequency characters) and replaces each input character by looking it up. Simplified to Traditional and Traditional to Simplified use the same two-way mapping.</p>
+    <h3>A quick example</h3>
+    <p>Paste a Simplified article, click convert to Traditional, and in a few seconds you get the Traditional version, ready to publish on platforms aimed at Hong Kong and Taiwan readers.</p>
   </section>
   </main>
 
@@ -201,13 +204,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html" data-i18n="Tools">Tools</a>
-        <a href="about.html" data-i18n="About">About</a>
-        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
-        <a href="contact.html" data-i18n="Contact">Contact</a>
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -221,7 +224,7 @@
     var MAP={'的':'的','一':'一','了':'了','是':'是','我':'我','不':'不','人':'人','他':'他','中':'中','大':'大','上':'上','国':'國','学':'學','生':'生','时':'時','来':'來','会':'會','发':'發','电':'電','东':'東','车':'車','图':'圖','书':'書','长':'長','门':'門','马':'馬','鸟':'鳥','鱼':'魚','飞':'飛','云':'雲','无':'無','关':'關','实':'實','进':'進','体':'體','话':'話','问':'問','间':'間','开':'開','车':'車','贝':'貝','见':'見','气':'氣','队':'隊','义':'義','艺术':'藝術','计算机':'計算機','软件':'軟體','网络':'網絡','网站':'網站','资料':'資料','系统':'系統','显示':'顯示','执行':'執行','服务':'服務','账户':'帳戶','密码':'密碼','联络':'聯絡','订阅':'訂閱','浏览':'瀏覽','资讯':'資訊','号码':'號碼','颜色':'顏色','计划':'計劃','历史':'歷史','环境':'環境','经理':'經理','经济':'經濟','东京':'東京','复':'復','干':'乾','里':'裡','台':'臺','个':'個','丰':'豐','从':'從','类':'類','总':'總','动':'動','张':'張','强':'強','属':'屬','觉':'覺','词':'詞','证':'證','运':'運','远':'遠','装':'裝','众':'眾','荐':'薦','达':'達','册':'冊','夺':'奪','尔':'爾','谷':'穀','护':'護','华':'華','画':'畫','坏':'壞','欢':'歡','环':'環','还':'還','仅':'僅','进':'進','举':'舉','剧':'劇','库':'庫','块':'塊','宽':'寬','亏':'虧','礼':'禮','历':'曆','丽':'麗','疗':'療','炼':'煉','练':'練','粮':'糧','临':'臨','乱':'亂','买':'買','卖':'賣','麦':'麥','梦':'夢','灭':'滅','宁':'寧','农':'農','亲':'親','穷':'窮','权':'權','寿':'壽','热':'熱','认':'認','伤':'傷','舍':'捨','摄':'攝','审':'審','胜':'勝','师':'師','属':'屬','双':'雙','岁':'歲','孙':'孫','条':'條','铁':'鐵','厅':'廳','听':'聽','头':'頭','图':'圖','团':'團','网':'網','务':'務','雾':'霧','习':'習','乡':'鄉','写':'寫','寻':'尋','亚':'亞','严':'嚴','页':'頁','医':'醫','亿':'億','阴':'陰','隐':'隱','犹':'猶','优':'優','邮':'郵','余':'餘','与':'與','御':'禦','远':'遠','园':'園','愿':'願','约':'約','杂':'雜','灶':'竈','斩':'斬','战':'戰','赵':'趙','阵':'陣','镇':'鎮','挣':'掙','证':'證','织':'織','职':'職','致':'緻','质':'質','钟':'鐘','肿':'腫','众':'眾','昼':'晝','朱':'硃','庄':'莊','壮':'壯','状':'狀','准':'準','浊':'濁','总':'總','钻':'鑽','尊':'尊'};
     function convert(dir){
       var s=text.value;
-      if(!s){out.className='result-box empty';out.textContent='请先输入中文。';return;}
+      if(!s){out.className='result-box empty';out.textContent='Please enter Chinese text first.';return;}
       var res='';
       for(var i=0;i<s.length;i++){
         var ch=s[i];
@@ -233,15 +236,11 @@
     }
     document.getElementById('toTrad').addEventListener('click',function(){convert('trad');});
     document.getElementById('toSimp').addEventListener('click',function(){convert('simp');});
-    copyBtn.addEventListener('click',function(){var r=document.getElementById('res');if(!r)return;r.select();document.execCommand('copy');copyBtn.textContent='✓ 已复制';setTimeout(function(){copyBtn.textContent='复制';},1500);});
+    copyBtn.addEventListener('click',function(){var r=document.getElementById('res');if(!r)return;r.select();document.execCommand('copy');copyBtn.textContent='✓ Copied';setTimeout(function(){copyBtn.textContent='Copy';},1500);});
   })();
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/i18n.js"></script>
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
+<script></script>
 </body>
 </html>

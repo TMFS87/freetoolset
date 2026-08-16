@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <meta name="theme-color" content="#8b5cf6">
-  <title>贷款与房贷计算：月供、利息一次搞懂 | FreeToolset 教程</title>
-  <meta name="description" content="了解blog\loan vs mortgage的完整指南。FreeToolset 免费提供相关在线工具和详细教程，帮助您快速掌握技巧。无需注册，即学即用。">
-  <meta name="keywords" content="贷款计算器, 房贷计算器, 月供, 等额本息">
-  <meta property="og:title" content="贷款与房贷计算：月供、利息一次搞懂">
-  <meta property="og:description" content="了解blog\loan vs mortgage的完整指南。FreeToolset 免费提供相关在线工具和详细教程，帮助您快速掌握技巧。无需注册，即学即用。">
+  <title>Loan & Mortgage Math: Monthly Payments and Interest Explained | FreeToolset Guides</title>
+  <meta name="description" content="Use equal-installment repayment to understand your monthly payment and total interest, compare loan vs mortgage calculators, and go in informed before big purchases.">
+  <meta name="keywords" content="loan calculator, mortgage calculator, monthly payment, equal installment">
+  <meta property="og:title" content="Loan & Mortgage Math: Monthly Payments and Interest Explained">
+  <meta property="og:description" content="Use equal-installment repayment to understand your monthly payment and total interest, compare loan vs mortgage calculators, and go in informed before big purchases.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://www.freetoolset.app/blog/loan-vs-mortgage.html">
   <meta property="og:site_name" content="FreeToolset">
@@ -17,57 +15,16 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="贷款与房贷计算：月供、利息一次搞懂">
-  <meta name="twitter:description" content="用等额本息搞清每月还款额与总利息，对比贷款与房贷计算器的用法，买房买车前心里有数。">
+  <meta name="twitter:title" content="Loan & Mortgage Math: Monthly Payments and Interest Explained">
+  <meta name="twitter:description" content="Use equal-installment repayment to understand your monthly payment and total interest, compare loan vs mortgage calculators, and go in informed before big purchases.">
   <meta name="twitter:image" content="https://www.freetoolset.app/og-image.png">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.freetoolset.app/blog/loan-vs-mortgage.html">
   <link rel="stylesheet" href="../css/style.css">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Article","headline":"贷款与房贷计算：月供、利息一次搞懂","description":"用等额本息搞清每月还款额与总利息，对比贷款与房贷计算器的用法，买房买车前心里有数。","url":"https://www.freetoolset.app/blog/loan-vs-mortgage.html","mainEntityOfPage":"https://www.freetoolset.app/blog/loan-vs-mortgage.html","publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
+  {"@context":"https://schema.org","@type":"Article","headline":"Loan & Mortgage Math: Monthly Payments and Interest Explained","description":"Use equal-installment repayment to understand your monthly payment and total interest, compare loan vs mortgage calculators, and go in informed before big purchases.","url":"https://www.freetoolset.app/blog/loan-vs-mortgage.html","mainEntityOfPage":"https://www.freetoolset.app/blog/loan-vs-mortgage.html","publisher":{"@type":"Organization","name":"FreeToolset","url":"https://www.freetoolset.app/"}}
   </script>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <!-- ft-faq-schema -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "这篇《贷款与房贷计算：月供、利息一次搞懂》主要讲什么？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "本文系统讲解「贷款与房贷计算：月供、利息一次搞懂」的核心方法与实操要点，并推荐配套的 FreeToolset 免费在线工具，帮助你在浏览器里快速完成，无需注册、数据本地处理。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "在哪里可以实操练习？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "文末「相关工具」列出了 FreeToolset 上对应的免费在线工具，打开即用，所有计算都在本地浏览器完成，保护隐私。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "这些工具要收费吗？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "FreeToolset 的全部工具均免费，在浏览器本地运行、不上传数据，可放心用于学习与工作。"
-      }
-    }
-  ]
-}
-  </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HQJ9VZWMKE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-HQJ9VZWMKE', { send_page_view: true });
-</script>
-    </head>
+</head>
 <body>
 
   <nav class="navbar">
@@ -83,58 +40,34 @@
 
   <main class="main-content">
     <article class="article">
-      <p class="post-meta">FreeToolset · 实用教程</p>
-      <h1>贷款与房贷计算：月供、利息一次搞懂</h1>
-    <div style="margin:18px 0 24px; padding:16px 20px; background:#eef2ff; border:1px solid #e0e7ff; border-radius:12px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px;">
-      <div>
-        <div style="font-weight:700; font-size:0.98rem; color:#3730a3; margin-bottom:2px;">✨ 用 AI 一键完成类似任务</div>
-        <div style="font-size:0.85rem; color:#4b5563;">FreeToolset AI Content Studio 免费可用，每日赠送 5 Credits，无需注册。</div>
-      </div>
-      <a href="../ai-studio.html" style="display:inline-block; padding:9px 18px; background:#4f46e5; color:#fff; border-radius:8px; text-decoration:none; font-weight:600; white-space:nowrap;">试用 AI Studio →</a>
-    </div>
-
-    <p>贷款金额、年利率、期限三个数决定你的月供。等额本息下，每月还款额固定，前期还利息多、后期还本金多。</p>
-    <h2>贷款 vs 房贷</h2>
+      <p class="post-meta">FreeToolset · Practical Guides</p>
+      <h1>Loan & Mortgage Math: Monthly Payments and Interest Explained</h1>
+    <p>Loan amount, annual rate, and term decide your monthly payment. With equal installments, the payment is fixed — more interest is paid early, more principal later.</p>
+    <h2>Loan vs Mortgage</h2>
     <ul>
-      <li>贷款计算器：输入金额、年利率、期限即出月供</li>
-      <li>房贷计算器：额外考虑首付比例与贷款年限</li>
-      <li>两者都给出利息总额，方便比价</li>
+      <li>Loan Calculator: enter amount, rate, term for instant monthly payment</li>
+      <li>Mortgage Calculator: also factors down-payment ratio and loan term</li>
+      <li>Both show total interest, making comparison easy</li>
     </ul>
-    <h2>怎么用结果做决策</h2>
-    <p>把月供和你的收入对比，通常建议不超过月收入的一半。调高首付或缩短年限都能省利息，但月供会上升。</p>
-    <div class="tip">💡 期限每缩短 5 年，总利息往往能省下好几万，先用计算器试算再签合同。</div>
-      <div class="related-posts">
-        <h3>🔗 相关工具</h3>
+    <h2>Using the result to decide</h2>
+    <p>Compare the monthly payment against your income — keeping it under half is a common rule. A bigger down payment or shorter term saves interest but raises the monthly payment.</p>
+    <div class="tip">💡 Shortening the term by 5 years often saves tens of thousands in interest — run the calculator before signing.</div>
+      <div class="related_posts">
+        <h3>🔗 Related Tools</h3>
       <a href="../loan-calculator.html">Loan Calculator</a>
       <a href="../mortgage-calculator.html">Mortgage Calculator</a>
-        <h3>📚 相关文章</h3>
-      <a href="calculators-guide.html">15 个必备在线计算器：从 BMI 到 ROI 一站搞定</a>
-      <a href="compound-interest-explained.html">复利的力量：一张表看懂利滚利</a>
+        <h3>📚 Related Articles</h3>
+      <a href="calculators-guide.html">15 Essential Online Calculators: From BMI to ROI in One Place</a>
+      <a href="compound-interest-explained.html">The Power of Compound Interest: One Table to See It Grow</a>
       </div>
-          <!-- ft-zh-faq -->
-      <section class="info-section" style="margin-top:32px">
-        <h2>❓ 常见问题</h2>
-        <details class="faq-item">
-          <summary>这篇《贷款与房贷计算：月供、利息一次搞懂》主要讲什么？</summary>
-          <p>本文系统讲解「贷款与房贷计算：月供、利息一次搞懂」的核心方法与实操要点，并推荐配套的 FreeToolset 免费在线工具，帮助你在浏览器里快速完成，无需注册、数据本地处理。</p>
-        </details>
-        <details class="faq-item">
-          <summary>在哪里可以实操练习？</summary>
-          <p>文末「相关工具」列出了 FreeToolset 上对应的免费在线工具，打开即用，所有计算都在本地浏览器完成，保护隐私。</p>
-        </details>
-        <details class="faq-item">
-          <summary>这些工具要收费吗？</summary>
-          <p>FreeToolset 的全部工具均免费，在浏览器本地运行、不上传数据，可放心用于学习与工作。</p>
-        </details>
-      </section>
-</article>
+    </article>
   </main>
 
   <footer class="footer">
     <div class="footer-content">
       <div>
         <div class="footer-brand"><span class="logo-icon">⚡</span> FreeToolset</div>
-        <p class="footer-desc">免费在线工具，全部在浏览器本地运行，数据不上传。</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser — your data never leaves your device.</p>
       </div>
       <div class="footer-links">
         <a href="../index.html">Tools</a>
@@ -143,12 +76,9 @@
         <a href="../privacy-policy.html">Privacy</a>
       </div>
     </div>
-    <div class="footer-bottom"><p>© 2025 FreeToolset · 由独立站长 <a href="../about.html">TMFS</a> 独立开发与维护 · 所有工具均在浏览器本地运行，不上传任何数据</p></div>
+    <div class="footer-bottom"><p>© 2025 FreeToolset. All tools run locally in your browser.</p></div>
   </footer>
 
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
+<script></script>
 </body>
 </html>

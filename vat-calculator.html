@@ -39,18 +39,17 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html" class="nav-link">Home</a>
       <a href="index.html#tools" class="nav-link active">Tools</a>
       <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
-      <a href="about.html" class="nav-link" data-i18n="About">About</a>
-      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+      <a href="about.html" class="nav-link">About</a>
     </div>
   </nav>
 
   <main class="main-content">
   <section class="tool-intro">
-    <h2>📌 适用场景</h2>
-    <p>增值税计算器支持双向计算：在净额上加税，或从含税价反推净额，适用于任意税率，方便报价与报账，本地运行。</p>
+    <h2>📌 Overview</h2>
+    <p>Calculate VAT or sales tax both ways: add tax to a net price, or extract the net amount from a gross (tax-inclusive) price. Supports any rate.</p>
   </section>
 
     <nav class="breadcrumb">
@@ -112,14 +111,14 @@
         </div>
 
         <div class="info-section">
-          <h2>❓ 常见问题（中文）</h2>
+          <h2>❓ More Questions</h2>
           <details class="faq-item">
-            <summary>加税和去税有什么区别？</summary>
-            <p>「加税」把净额变成含税价；「去税」从一个已含税的毛额里反推出净额。</p>
+            <summary>What is the difference between add tax and remove tax?</summary>
+            <p>Add tax turns a net amount into a tax-inclusive price; remove tax derives the net from an already tax-inclusive gross.</p>
           </details>
           <details class="faq-item">
-            <summary>能用于非增值税吗？</summary>
-            <p>能，任何百分比税种（增值税、GST、销售税）只要输入税率即可。</p>
+            <summary>Can it be used for non-VAT taxes?</summary>
+            <p>Yes - any percentage tax (VAT, GST, sales tax) works as long as you enter the rate.</p>
           </details>
         </div>
 
@@ -183,13 +182,13 @@
     </div>
 
   <section class="tool-deep">
-    <h2>📖 深入了解 VAT Calculator</h2>
-    <h3>为什么需要 VAT 计算</h3>
-    <p>涉及欧盟、英国等增值税地区时，报价常要在「含税」与「不含税」之间切换，手算容易错位。</p>
-    <h3>背后的原理</h3>
-    <p>加税：毛额 = 净额 ×(1+税率)。去税：净额 = 毛额 ÷(1+税率)，税额 = 毛额 − 净额。公式对称，方向不同。</p>
-    <h3>一个例子</h3>
-    <p>净额 100 元、税率 20%，加税后毛额 120 元；反过来毛额 120 元去税得净额 100 元、税额 20 元。</p>
+    <h2>📖 Deep Dive: VAT Calculator</h2>
+    <h3>Why a VAT calculator</h3>
+    <p>When dealing with VAT regions like the EU and UK, quotes often switch between tax-inclusive and tax-exclusive, and hand calculation easily goes wrong.</p>
+    <h3>How it works</h3>
+    <p>Add tax: gross equals net times (1 plus rate). Remove tax: net equals gross divided by (1 plus rate), tax equals gross minus net. The formulas are symmetric, just in opposite directions.</p>
+    <h3>A quick example</h3>
+    <p>Net 100, rate 20% - add tax gives gross 120. Reverse: gross 120 remove tax gives net 100, tax 20.</p>
   </section>
   </main>
 
@@ -200,13 +199,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html" data-i18n="Tools">Tools</a>
-        <a href="about.html" data-i18n="About">About</a>
-        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
-        <a href="contact.html" data-i18n="Contact">Contact</a>
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -232,10 +231,6 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/i18n.js"></script>
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
+<script></script>
 </body>
 </html>

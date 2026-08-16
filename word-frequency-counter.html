@@ -39,18 +39,17 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html" class="nav-link">Home</a>
       <a href="index.html#tools" class="nav-link active">Tools</a>
       <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
-      <a href="about.html" class="nav-link" data-i18n="About">About</a>
-      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+      <a href="about.html" class="nav-link">About</a>
     </div>
   </nav>
 
   <main class="main-content">
   <section class="tool-intro">
-    <h2>📌 适用场景</h2>
-    <p>词频统计器分析一段文本中每个词出现的次数与占比，适合检查文章关键词密度、优化 SEO 内容、做词汇丰富度分析。支持英文单词与中文单字统计，纯本地运行保护隐私。</p>
+    <h2>📌 Overview</h2>
+    <p>Analyze any text and see how often each word appears. Great for SEO keyword density, essay vocabulary checks, and content optimization. Works for English words and Chinese characters.</p>
   </section>
 
     <nav class="breadcrumb">
@@ -122,14 +121,14 @@
         </div>
 
         <div class="info-section">
-          <h2>❓ 常见问题（中文）</h2>
+          <h2>❓ More Questions</h2>
           <details class="faq-item">
-            <summary>词频统计对中文准吗？</summary>
-            <p>准。中文按单字统计频次，英文和数字是按整个词统计，混合文本也能处理。</p>
+            <summary>Is word frequency accurate for Chinese?</summary>
+            <p>Yes. Chinese is counted character by character while English and digits are counted as whole words, so mixed-language text works too.</p>
           </details>
           <details class="faq-item">
-            <summary>怎么看关键词密度？</summary>
-            <p>密度 = 某词出现次数 ÷ 总词数 × 100%。一般 2%–3% 比较健康，过高会被视为堆砌。</p>
+            <summary>How do I read keyword density?</summary>
+            <p>Density = (times a word appears divided by total tokens) times 100%. A 2-3% density for a target keyword is usually healthy; much higher risks keyword stuffing.</p>
           </details>
         </div>
 
@@ -193,17 +192,17 @@
     </div>
 
   <section class="tool-deep">
-    <h2>📖 深入了解 Word Frequency Counter</h2>
-    <h3>为什么需要词频统计</h3>
-    <p>词频统计是内容优化和语言学习的基础工具。它能快速告诉你一段文字里哪些词出现得最多，帮助你判断关键词密度是否健康、词汇是否过于单一。</p>
-    <h3>背后的原理</h3>
-    <p>工具把文本切分为「词元」（英文和数字按单词、中文按单字），用哈希表累计每个词元的出现次数，再按频次排序输出前 N 个，并算出各自占比。</p>
-    <h3>一个例子</h3>
-    <p>把一篇准备发布的博客粘进来，统计后发现目标关键词出现了 18 次、总词数 600，密度 3%，处于合理区间；同时发现某个副词重复了 40 次，可以适度替换。</p>
-    <h3>常见误区</h3>
-    <li>只看绝对次数不看占比，难以判断密度高低</li>
-    <li>中文直接按「词」切分会失败，需按字符处理</li>
-    <li>把停用词（the、的）也计入，会干扰关键词判断</li>
+    <h2>📖 Deep Dive: Word Frequency Counter</h2>
+    <h3>Why word frequency matters</h3>
+    <p>Word frequency is a basic tool for content optimization and language learning. It quickly shows which words appear most in a text, helping you judge whether your keyword density is healthy and whether your vocabulary is too repetitive.</p>
+    <h3>How it works</h3>
+    <p>The tool splits text into tokens (English and digits by word, Chinese by character) and counts each token with a hash map, then sorts the top N by frequency and shows each one's share.</p>
+    <h3>A quick example</h3>
+    <p>Paste a blog post you are about to publish and the count shows your target keyword appears 18 times out of 600 tokens - a 3% density, within the healthy range. At the same time you might notice one adverb repeated 40 times and can swap some out.</p>
+    <h3>Common pitfalls</h3>
+    <li>Looking only at raw counts and ignoring share makes density hard to judge.</li>
+    <li>Splitting Chinese by word fails; it must be handled character by character.</li>
+    <li>Counting common stop words (such as &quot;the&quot;) inflates results and distorts keyword analysis.</li>
   </section>
   </main>
 
@@ -214,13 +213,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html" data-i18n="Tools">Tools</a>
-        <a href="about.html" data-i18n="About">About</a>
-        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
-        <a href="contact.html" data-i18n="Contact">Contact</a>
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -260,10 +259,6 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/i18n.js"></script>
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
+<script></script>
 </body>
 </html>

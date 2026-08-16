@@ -25,7 +25,6 @@ T.push({
   cardDesc: 'Turn JSON into clean, indented YAML for config files.',
   keywords: 'json to yaml, json2yaml, yaml converter, json yaml converter, config converter',
   searchTerms: 'json to yaml convert kubernetes docker compose config',
-  zh: 'JSON 转 YAML 工具把 JSON 数据一键转换成层次清晰的 YAML 文本，常用于 Kubernetes、Docker Compose、GitHub Actions 等配置文件。所有转换都在浏览器本地完成，不上传你的数据。',
   howto: ['Paste your JSON into the input box.', 'Click Convert.', 'Copy the YAML result.', 'Fix any parse error shown in red.'],
   faq: [
     { q: 'Does it preserve nesting and arrays?', a: 'Yes — objects, arrays, strings, numbers, booleans and null are all converted with correct indentation and list dashes.' },
@@ -33,15 +32,15 @@ T.push({
     { q: 'Is my data uploaded?', a: 'No. Conversion runs entirely in your browser; nothing is sent to a server.' }
   ],
   zhfaq: [
-    { q: '会保留嵌套和数组吗？', a: '会。对象、数组、字符串、数字、布尔和空值都会按正确缩进和列表符号转换。' },
-    { q: '转换后的数据会上传吗？', a: '不会。转换完全在浏览器本地进行，不会发送到任何服务器。' }
+    { q: 'Are nesting and arrays preserved?', a: 'Yes. Objects, arrays, strings, numbers, booleans, and null are all converted with correct indentation and list markers.' },
+    { q: 'Are the converted data uploaded?', a: 'No. Conversion runs entirely locally in your browser and is never sent to any server.' }
   ],
   usecases: [
     { icon: '☸️', title: 'Kubernetes', text: 'Write manifests faster.' },
     { icon: '🐳', title: 'Docker Compose', text: 'Edit configs with ease.' },
     { icon: '⚙️', title: 'CI/CD', text: 'GitHub Actions YAML.' }
   ],
-  deep: '## 为什么需要 JSON → YAML\nJSON 机器友好但可读性差；YAML 用缩进表达层级，人在写配置时更舒服。Kubernetes、Docker Compose、GitHub Actions 等几乎都用 YAML。\n## 本工具能处理什么\n- 对象（键值对）→ 缩进的 key: value\n- 数组 → 以 “- ” 开头的列表\n- 字符串、数字、布尔、null 均正确表达\n- 需要加引号的字符串会自动加引号\n## 使用建议\n- 粘贴前确保 JSON 合法（可用 JSON 校验工具先检查）\n- 结果可直接复制到 .yml 文件\n## 隐私\n所有解析都在你的浏览器本地完成，数据不上传。',
+  deep: '## Why convert JSON to YAML\nJSON is machine-friendly but hard to read; YAML uses indentation to express hierarchy, which is more comfortable when writing config. Kubernetes, Docker Compose, and GitHub Actions almost all use YAML.\n## What this tool handles\n- Objects (key-value pairs) become indented key: value.\n- Arrays become lists starting with a dash.\n- Strings, numbers, booleans, and null are all expressed correctly.\n- Strings that need quotes get them automatically.\n## Usage tips\n- Make sure the JSON is valid before pasting (use a JSON validator first).\n- The result can be copied straight into a .yml file.\n## Privacy\nAll parsing happens locally in your browser; data is not uploaded.',
   body: textToolBody('{\n  "name": "freetoolset",\n  "tools": ["json", "yaml"],\n  "free": true\n}', 'Paste JSON here'),
   js: `    var input=document.getElementById('input'),out=document.getElementById('out'),btn=document.getElementById('btn'),copyBtn=document.getElementById('copyBtn'),clearBtn=document.getElementById('clearBtn');
     function isObj(v){return v&&typeof v==='object'&&!Array.isArray(v);}
@@ -86,7 +85,6 @@ T.push({
   cardDesc: 'Convert HTML markup into Markdown for docs and READMEs.',
   keywords: 'html to markdown, html2md, markdown converter, rich text to md, html markdown',
   searchTerms: 'html to markdown convert rich text md docs',
-  zh: 'HTML 转 Markdown 工具把网页片段或富文本转换成 Markdown 语法，支持标题、加粗/斜体、链接、列表、代码块、引用和图片。写文档、README 或博客时很实用。',
   howto: ['Paste the HTML you want to convert.', 'Click Convert.', 'Copy the Markdown output.', 'Tweak manually if your HTML uses unusual tags.'],
   faq: [
     { q: 'Which tags are supported?', a: 'Headings (h1–h6), paragraphs, bold/italic, links, unordered/ordered lists, inline and block code, blockquotes, horizontal rules and images.' },
@@ -94,15 +92,15 @@ T.push({
     { q: 'Is it safe for private HTML?', a: 'Yes — everything is parsed locally in your browser.' }
   ],
   zhfaq: [
-    { q: '支持哪些标签？', a: '标题（h1–h6）、段落、加粗/斜体、链接、有序/无序列表、行内与代码块、引用、分隔线和图片。' },
-    { q: '表格和 div 怎么处理？', a: '表格会被压平为文本内容；纯布局用的 div 会剥去只保留内部文字。复杂排版可能需要手动微调。' }
+    { q: 'Which tags are supported?', a: 'Headings (h1-h6), paragraphs, bold/italic, links, ordered/unordered lists, inline and code blocks, blockquotes, horizontal rules, and images.' },
+    { q: 'How are tables and divs handled?', a: 'Tables are flattened to text content; layout-only divs are stripped to keep just their inner text. Complex layouts may need manual tweaking.' }
   ],
   usecases: [
     { icon: '📝', title: 'Docs', text: 'Paste from editors.' },
     { icon: '📚', title: 'README', text: 'Build fast docs.' },
     { icon: '✉️', title: 'Email', text: 'HTML to MD drafts.' }
   ],
-  deep: '## 用途\n很多富文本编辑器、CMS 导出的都是 HTML，而文档站、GitHub、论坛常用 Markdown。这个工具帮你在两者间转换。\n## 转换规则\n- 标题按层级转为 # 数量\n- 加粗 **text**、斜体 *text*\n- 链接 [文字](url)、图片 ![alt](src)\n- 列表转为 - 或 1. 前缀\n- 代码块用 ``` 包裹\n## 局限\n纯表现层标签（div/span 的样式）会被忽略，只保留文字；复杂表格会降维为文本。\n## 隐私\n解析在浏览器本地完成。',
+  deep: '## Purpose\nMany rich-text editors and CMS exports are HTML, while docs sites, GitHub, and forums use Markdown. This tool converts between the two.\n## Conversion rules\n- Headings become the corresponding number of # marks.\n- Bold **text**, italic *text*.\n- Links [text](url), images ![alt](src).\n- Lists become - or 1. prefixes.\n- Code blocks are fenced with triple backticks.\n## Limits\nPure presentational tags (div/span styles) are ignored and only their text is kept; complex tables are reduced to text.\n## Privacy\nParsing happens locally in your browser.',
   body: textToolBody('<h2>Hello</h2>\\n<p>Visit <a href="https://example.com">our site</a>.</p>', 'Paste HTML here'),
   js: `    var input=document.getElementById('input'),out=document.getElementById('out'),btn=document.getElementById('btn'),copyBtn=document.getElementById('copyBtn'),clearBtn=document.getElementById('clearBtn');
     function inline(node){
@@ -167,7 +165,6 @@ T.push({
   cardDesc: 'Test color contrast for WCAG AA / AAA accessibility.',
   keywords: 'color contrast checker, wcag contrast, accessibility contrast, contrast ratio, color contrast tool',
   searchTerms: 'color contrast wcag accessibility ratio checker',
-  zh: '颜色对比度检查器计算前景色与背景色之间的对比度比值，并判断是否符合 WCAG AA / AAA 无障碍标准。做网页、App 或海报配色时，确保文字清晰可读非常重要。',
   howto: ['Pick or enter the foreground (text) color.', 'Pick or enter the background color.', 'Click Check.', 'Read the ratio and the AA / AAA pass/fail badges.'],
   faq: [
     { q: 'What contrast ratio is required?', a: 'WCAG AA needs 4.5:1 for normal text and 3:1 for large text (≥24px or ≥18.66px bold). AAA needs 7:1 and 4.5:1 respectively.' },
@@ -175,15 +172,15 @@ T.push({
     { q: 'Does this apply to buttons and icons?', a: 'Contrast rules mainly target text and essential UI components. Non-text contrast (e.g. button borders) has a 3:1 guideline.' }
   ],
   zhfaq: [
-    { q: '需要多少对比度？', a: 'WCAG AA 要求正文 4.5:1、大号文字（≥24px 或 ≥18.66px 粗体）3:1；AAA 要求 7:1 和 4.5:1。' },
-    { q: '比值是怎么算的？', a: '用每种颜色的相对亮度（sRGB→线性 RGB→亮度），公式 (亮色+0.05)/(暗色+0.05)。' }
+    { q: 'How much contrast do I need?', a: 'WCAG AA requires 4.5:1 for body text and 3:1 for large text (at least 24px or 18.66px bold); AAA requires 7:1 and 4.5:1.' },
+    { q: 'How is the ratio calculated?', a: 'Using each color\'s relative luminance (sRGB to linear RGB to luminance), the formula is (lighter + 0.05) / (darker + 0.05).' }
   ],
   usecases: [
     { icon: '♿', title: 'Accessibility', text: 'Meet WCAG rules.' },
     { icon: '🌐', title: 'Web design', text: 'Pick readable colors.' },
     { icon: '📱', title: 'UI', text: 'Contrast for buttons.' }
   ],
-  deep: '## 为什么对比度重要\n足够的对比度让视力不佳、强光环境下或老年用户也能看清文字，是无障碍设计的基本要求。\n## WCAG 标准\n- AA 正常文字：≥ 4.5:1\n- AA 大号文字：≥ 3:1\n- AAA 正常文字：≥ 7:1\n- AAA 大号文字：≥ 4.5:1\n## 计算方法\n先把 sRGB 转成线性值，再算相对亮度 L = 0.2126R + 0.7152G + 0.0722B，最后比值 = (L1+0.05)/(L2+0.05)。\n## 提示\n纯黑配纯白约 21:1，已远超市面需求；浅灰文字配白底常不达标。',
+  deep: '## Why contrast matters\nEnough contrast lets users with poor vision, in bright environments, or who are older read text clearly; it is a basic requirement of accessible design.\n## WCAG standards\n- AA normal text: at least 4.5:1\n- AA large text: at least 3:1\n- AAA normal text: at least 7:1\n- AAA large text: at least 4.5:1\n## How it is calculated\nFirst convert sRGB to linear values, then compute relative luminance L = 0.2126R + 0.7152G + 0.0722B, and finally the ratio = (L1 + 0.05) / (L2 + 0.05).\n## Tip\nPure black on pure white is about 21:1, far above typical needs; light-gray text on a white background often fails.',
   body: `        <div class="gen-row">
           <div class="form-row">
             <label for="fg">Text (foreground) color</label>
@@ -228,7 +225,6 @@ T.push({
   cardDesc: 'Decode browser, OS, device and engine from a UA string.',
   keywords: 'user agent parser, user-agent analyzer, ua parser, browser detector, parse useragent',
   searchTerms: 'user agent parser analyzer ua browser os detect',
-  zh: 'User-Agent 解析器把一段 UA 字符串拆解成浏览器、操作系统、设备类型和渲染引擎。排查兼容性、做访问统计或验证爬虫时非常有用。',
   howto: ['Paste a User-Agent string.', 'Click Parse.', 'Read the extracted browser, OS, device and engine.', 'Use the sample button to load an example.'],
   faq: [
     { q: 'Is UA parsing reliable?', a: 'It is heuristic — based on known tokens. Modern browsers also "lie" via UA reduction, so results are best-effort, not guaranteed.' },
@@ -236,15 +232,15 @@ T.push({
     { q: 'Should I block users by UA?', a: 'Not recommended — UAs are easily spoofed. Use feature detection or server-side capability checks instead.' }
   ],
   zhfaq: [
-    { q: 'UA 解析可靠吗？', a: '它是基于已知特征串的启发式判断。现代浏览器还在做 UA 缩减（UA reduction），所以结果仅供参考，并非绝对准确。' },
-    { q: '能通过 UA 判断什么？', a: '大致能看出浏览器家族与版本、操作系统、设备是手机/平板/桌面，以及渲染引擎（Blink、WebKit、Gecko）。' }
+    { q: 'Is UA parsing reliable?', a: 'It is a heuristic judgment based on known signature strings. Modern browsers are also reducing UA info (UA reduction), so results are for reference only, not absolutely accurate.' },
+    { q: 'What can a UA tell you?', a: 'Roughly the browser family and version, operating system, whether the device is phone/tablet/desktop, and the rendering engine (Blink, WebKit, Gecko).' }
   ],
   usecases: [
     { icon: '📊', title: 'Analytics', text: 'Understand visitors.' },
     { icon: '🐛', title: 'Debug', text: 'Reproduce issues.' },
     { icon: '🤖', title: 'Bots', text: 'Spot crawlers.' }
   ],
-  deep: '## User-Agent 是什么\nUA 是浏览器访问网站时发送的一串自我描述文本，包含浏览器、引擎、操作系统等信息。\n## 解析逻辑\n本工具用一组正则匹配常见特征：Chrome/Edge/Firefox/Safari、Windows/macOS/iOS/Android/Linux、Blink/WebKit/Gecko 引擎、iPhone/iPad/Android 设备。\n## 局限与注意\n- UA 可被伪造，不可作为安全依据\n- 浏览器正逐步缩减 UA 信息（UA reduction），未来可解析内容会更少\n- 结果仅供参考',
+  deep: '## What is a User-Agent\nA UA is a self-describing text string a browser sends when visiting a site, containing info about the browser, engine, and operating system.\n## Parsing logic\nThis tool uses a set of regular expressions to match common signatures: Chrome/Edge/Firefox/Safari, Windows/macOS/iOS/Android/Linux, Blink/WebKit/Gecko engines, and iPhone/iPad/Android devices.\n## Limits and notes\n- A UA can be faked and must not be used as a security basis.\n- Browsers are gradually reducing UA info (UA reduction), so less will be parseable in future.\n- Results are for reference only.',
   body: `        <div class="form-row">
           <label for="input">User-Agent string</label>
           <textarea id="input" rows="4" placeholder="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 ..."></textarea>
@@ -285,7 +281,6 @@ T.push({
   cardDesc: 'Create HS256 JWT tokens with HMAC-SHA256 signing in your browser.',
   keywords: 'jwt encoder, create jwt, jwt generator, hs256 sign, json web token',
   searchTerms: 'jwt encoder generator hs256 hmac sign token',
-  zh: 'JWT 编码器用 HMAC-SHA256 生成签名的 JSON Web Token（header.payload.signature）。输入 JSON 载荷和密钥即可在浏览器本地完成签名，适合调试接口鉴权。',
   howto: ['Enter a JSON payload.', 'Enter a secret key.', 'Click Generate to sign with HS256.', 'Copy the resulting token.'],
   faq: [
     { q: 'What algorithm does this use?', a: 'HMAC-SHA256 (HS256). The token is signed, not encrypted — anyone with the token can read the payload, only the secret proves it was signed by you.' },
@@ -293,15 +288,15 @@ T.push({
     { q: 'Can I verify a token here too?', a: 'This tool focuses on encoding/signing. For verification, compare the signature with your backend or a verify tool.' }
   ],
   zhfaq: [
-    { q: '用的是什么算法？', a: 'HMAC-SHA256（HS256）。Token 是被“签名”而非“加密”——任何人都能读载荷，只有密钥能证明签名出自你。' },
-    { q: '密钥会被上传吗？', a: '不会。签名全部用浏览器内置的 Web Crypto API 完成，密钥始终留在你的设备上。' }
+    { q: 'What algorithm is used?', a: 'HMAC-SHA256 (HS256). The token is signed, not encrypted - anyone can read the payload, but only the secret proves the signature came from you.' },
+    { q: 'Is the secret uploaded?', a: 'No. Signing is done entirely with the browser\'s built-in Web Crypto API, and the secret always stays on your device.' }
   ],
   usecases: [
     { icon: '🔑', title: 'Auth debug', text: 'Test API tokens.' },
     { icon: '🧪', title: ' prototyping', text: 'Mock auth flows.' },
     { icon: '📚', title: 'Learning', text: 'See JWT structure.' }
   ],
-  deep: '## JWT 结构\nJWT 由三部分用点连接：header（算法与类型）、payload（声明数据）、signature（签名）。\n## 签名过程（HS256）\n1. base64url 编码 header 与 payload\n2. 拼接 data = encHeader + "." + encPayload\n3. 用密钥对 data 做 HMAC-SHA256\n4. base64url 编码签名，得到 token = data + "." + sig\n## 重要提醒\n- JWT 是“签名”不是“加密”，payload 可被任何人解码读取\n- 不要把敏感信息放进 payload\n- 本工具仅在本地浏览器签名，密钥不上传',
+  deep: '## JWT structure\nA JWT has three parts joined by dots: header (algorithm and type), payload (claim data), and signature.\n## Signing process (HS256)\n1. base64url-encode the header and payload.\n2. Concatenate data = encHeader + "." + encPayload.\n3. Apply HMAC-SHA256 to data using the secret.\n4. base64url-encode the signature to get token = data + "." + sig.\n## Important reminders\n- A JWT is signed, not encrypted; the payload can be read by anyone.\n- Do not put sensitive information in the payload.\n- This tool signs only in your local browser; the secret is not uploaded.',
   body: `        <div class="form-row">
           <label for="payload">Payload (JSON)</label>
           <textarea id="payload" rows="6" placeholder='{"sub":"123","name":"Ada","admin":true}'>{"sub":"1234567890","name":"FreeToolset","iat":1516239022}</textarea>
@@ -345,7 +340,6 @@ T.push({
   cardDesc: 'Turn XML into JSON, keeping attributes and structure.',
   keywords: 'xml to json, xml2json, convert xml, xml parser, soap to json',
   searchTerms: 'xml to json convert parser attributes',
-  zh: 'XML 转 JSON 工具把 XML 转换成 JSON，方便在 JavaScript 等语言中处理。属性、嵌套元素和文本内容都会被保留。',
   howto: ['Paste your XML.', 'Click Convert.', 'Copy the JSON result.', 'Fix any well-formedness error shown.'],
   faq: [
     { q: 'How are attributes handled?', a: 'Attributes are placed under an "@attributes" object on the element. Repeated sibling elements with the same tag become an array.' },
@@ -353,15 +347,15 @@ T.push({
     { q: 'Does it need valid XML?', a: 'Yes — the XML must be well-formed (matched tags, quoted attributes). The browser parser will report errors otherwise.' }
   ],
   zhfaq: [
-    { q: '属性怎么处理？', a: '属性会放在该元素的 “@attributes” 对象下；同名同级元素会被合并成数组。' },
-    { q: '根元素怎么保留？', a: '输出 JSON 的最外层键会保留根标签名。' }
+    { q: 'How are attributes handled?', a: 'Attributes go under that element\'s "@attributes" object; same-name sibling elements are merged into an array.' },
+    { q: 'How is the root element kept?', a: 'The outermost key of the output JSON preserves the root tag name.' }
   ],
   usecases: [
     { icon: '📡', title: 'APIs', text: 'SOAP/XML → JSON.' },
     { icon: '🗂️', title: 'Config', text: 'Parse XML feeds.' },
     { icon: '🧩', title: 'Integration', text: 'Bridge systems.' }
   ],
-  deep: '## 为什么转换\n许多旧系统、银行接口、RSS 仍输出 XML，而现代前端更习惯 JSON。转换后更易处理。\n## 映射规则\n- 元素 → 对象键\n- 属性 → “@attributes” 子对象\n- 文本 → “#text”\n- 同名兄弟元素 → 数组\n## 注意\n- XML 必须格式良好（标签配对、属性加引号）\n- 转换在浏览器本地完成，数据不上传',
+  deep: '## Why convert\nMany legacy systems, bank interfaces, and RSS still output XML, while modern front ends prefer JSON. After conversion it is easier to process.\n## Mapping rules\n- Elements become object keys.\n- Attributes become an "@attributes" sub-object.\n- Text becomes "#text".\n- Same-name sibling elements become an array.\n## Notes\n- XML must be well-formed (matched tags, quoted attributes).\n- Conversion happens locally in your browser; data is not uploaded.',
   body: textToolBody('<note><to>Ada</to><from>Bob</from><body>Hi!</body></note>', 'Paste XML here'),
   js: `    var input=document.getElementById('input'),out=document.getElementById('out'),btn=document.getElementById('btn'),copyBtn=document.getElementById('copyBtn'),clearBtn=document.getElementById('clearBtn');
     function xml2obj(el){
@@ -398,7 +392,6 @@ T.push({
   cardDesc: 'Resize images to a target size, right in your browser.',
   keywords: 'image resizer, resize photo, image size changer, shrink image, canvas resizer',
   searchTerms: 'image resizer resize photo shrink picture',
-  zh: '图片尺寸调整工具用 Canvas 在浏览器本地把 JPG/PNG/WEBP 图片缩放到指定宽度或高度，照片不会上传到任何服务器，保护隐私。',
   howto: ['Choose an image file.', 'Set a target width (height auto) or both.', 'Click Resize.', 'Download the result.'],
   faq: [
     { q: 'Is my image uploaded?', a: 'No. The file is read and processed entirely in your browser via the Canvas API. Nothing is sent to a server.' },
@@ -406,15 +399,15 @@ T.push({
     { q: 'Will resizing reduce quality?', a: 'Downscaling generally looks good. Upscaling beyond the original size can look blurry because no new detail is invented.' }
   ],
   zhfaq: [
-    { q: '图片会被上传吗？', a: '不会。文件通过 Canvas API 在你的浏览器本地读取和处理，不会发送到服务器。' },
-    { q: '支持哪些格式？', a: '输入一般支持 JPG、PNG、WEBP；输出默认 PNG 以避免画质损失，也可选 JPG。' }
+    { q: 'Are images uploaded?', a: 'No. Files are read and processed locally in your browser via the Canvas API and are never sent to a server.' },
+    { q: 'Which formats are supported?', a: 'Inputs usually support JPG, PNG, and WEBP; output defaults to PNG to avoid quality loss, with JPG also available.' }
   ],
   usecases: [
     { icon: '📧', title: 'Email', text: 'Shrink attachments.' },
     { icon: '🌐', title: 'Web', text: 'Optimise for speed.' },
     { icon: '📱', title: 'Social', text: 'Fit upload limits.' }
   ],
-  deep: '## 工作原理\n读取图片文件 → 用 Canvas 按目标尺寸绘制 → 导出为图片。整个流程在你的浏览器内完成，隐私安全。\n## 使用建议\n- 只填宽度，高度会按比例自动计算\n- 缩小图片用于网页可明显提速\n- 放大超过原始尺寸会模糊\n## 隐私\n图片不上传，处理本地完成。',
+  deep: '## How it works\nRead the image file, draw it on a Canvas at the target size, then export as an image. The whole flow happens in your browser, so it is private.\n## Usage tips\n- Fill in only the width and the height is calculated proportionally.\n- Shrinking images for the web noticeably speeds up pages.\n- Enlarging beyond the original size gets blurry.\n## Privacy\nImages are not uploaded; processing is local.',
   body: `        <div class="form-row">
           <label for="file">Choose image</label>
           <input type="file" id="file" accept="image/*">
@@ -470,7 +463,6 @@ T.push({
   cardDesc: 'Create tints, shades and harmonies from one base color.',
   keywords: 'color palette generator, palette from color, color scheme, hex palette, design colors',
   searchTerms: 'color palette generator scheme harmony hex',
-  zh: '配色方案生成器从你选的基础色出发，自动生成同色系深浅（tint/shade）、互补色、邻近色等一组协调配色，并给出可直接复制的十六进制色值，适合设计网页和界面。',
   howto: ['Pick or enter a base color.', 'Click Generate.', 'See the palette of tints, shades and harmonies.', 'Click any swatch to copy its hex.'],
   faq: [
     { q: 'What harmonies does it produce?', a: 'It shows lighter tints and darker shades of your base, plus the complementary (opposite) color and two analogous neighbors on the color wheel.' },
@@ -478,15 +470,15 @@ T.push({
     { q: 'Can I use these in CSS?', a: 'Yes — every swatch shows a hex code you can paste straight into CSS or design tools.' }
   ],
   zhfaq: [
-    { q: '会生成哪些协调色？', a: '会显示基础色的浅色（tint）、深色（shade），以及互补色（色环对面）和两个邻近色。' },
-    { q: '这些颜色搭配可读吗？', a: '不保证。若需文字/背景组合符合无障碍标准，请配合颜色对比度检查器使用。' }
+    { q: 'Which harmonized colors are generated?', a: 'It shows the base color\'s tint (lighter) and shade (darker), plus the complement (opposite on the wheel) and two analogous colors.' },
+    { q: 'Are these pairings readable?', a: 'Not guaranteed. For text/background combos that meet accessibility standards, use the color contrast checker together.' }
   ],
   usecases: [
     { icon: '🎨', title: 'Web UI', text: 'Theme colors.' },
     { icon: '🖌️', title: 'Branding', text: 'Quick schemes.' },
     { icon: '📐', title: 'Prototypes', text: 'Mock palettes.' }
   ],
-  deep: '## 配色基础\n从基础色生成协调色，常见做法：\n- Tint：混入白色变浅\n- Shade：混入黑色变深\n- 互补色：色环 180° 对面\n- 邻近色：色环 ±30° 附近\n## HSL 的优势\n在 HSL 空间里调亮度/饱和度比直接改 RGB 更直观，本工具就用 HSL 生成阶调。\n## 用法\n点色块即可复制 hex，直接用于 CSS 或设计稿。',
+  deep: '## Color basics\nTo generate harmonized colors from a base, common approaches are:\n- Tint: mix with white to lighten.\n- Shade: mix with black to darken.\n- Complement: 180 degrees across the wheel.\n- Analogous: within about 30 degrees on the wheel.\n## Why HSL helps\nAdjusting lightness/saturation in HSL space is more intuitive than editing RGB directly, so this tool generates steps in HSL.\n## Usage\nClick a swatch to copy its hex, ready for CSS or design files.',
   body: `        <div class="gen-row">
           <div class="form-row">
             <label for="base">Base color</label>
@@ -528,7 +520,6 @@ T.push({
   cardDesc: 'Rotate and flip images with the Canvas API, locally.',
   keywords: 'image rotate, flip image, rotate photo, image orientation, canvas rotate',
   searchTerms: 'image rotate flip photo orientation canvas',
-  zh: '图片旋转翻转工具在浏览器本地用 Canvas 把图片旋转 90°/180°/270° 或水平/垂直翻转，照片不上传，适合修正手机拍歪的照片。',
   howto: ['Choose an image file.', 'Click Rotate 90° / 180° / 270°.', 'Or Flip Horizontal / Vertical.', 'Download the corrected image.'],
   faq: [
     { q: 'Will this fix phone photos that look sideways?', a: 'Yes — rotate until the orientation is correct, then download. Note this does not read EXIF orientation automatically; you choose the angle.' },
@@ -536,15 +527,15 @@ T.push({
     { q: 'What format is the output?', a: 'PNG by default to preserve quality; you can choose JPG.' }
   ],
   zhfaq: [
-    { q: '能修正在手机里拍歪的照片吗？', a: '可以。手动旋转到正确角度后下载。注意本工具不自动读取 EXIF 方向，需要你选择角度。' },
-    { q: '图片会上传吗？', a: '不会。所有旋转都在本地 Canvas 完成。' }
+    { q: 'Can it fix a photo taken at an angle on my phone?', a: 'Yes. Rotate manually to the correct angle and download. Note this tool does not auto-read EXIF orientation; you choose the angle.' },
+    { q: 'Are images uploaded?', a: 'No. All rotation is done locally on the Canvas.' }
   ],
   usecases: [
     { icon: '📷', title: 'Fix tilt', text: 'Straighten photos.' },
     { icon: '🪞', title: 'Mirror', text: 'Flip for effect.' },
     { icon: '📄', title: 'Docs', text: 'Reorient scans.' }
   ],
-  deep: '## 工作原理\n用 Canvas 的 rotate/scale 变换把图片重绘到新画布，旋转后画布尺寸相应交换（90°/270° 时宽高互换）。\n## 提示\n- 本工具不自动读 EXIF，请手动选角度\n- 输出默认 PNG 保画质，可选 JPG\n- 全程本地处理，不上传',
+  deep: '## How it works\nUse the Canvas rotate/scale transform to redraw the image onto a new canvas; after rotation the canvas dimensions swap accordingly (width and height swap at 90 or 270 degrees).\n## Tips\n- This tool does not auto-read EXIF; choose the angle manually.\n- Output defaults to PNG to preserve quality, with JPG optional.\n- Fully local processing; not uploaded.',
   body: `        <div class="form-row">
           <label for="file">Choose image</label>
           <input type="file" id="file" accept="image/*">
@@ -587,7 +578,6 @@ T.push({
   cardDesc: 'Crop images to a preset aspect ratio in your browser.',
   keywords: 'image cropper, crop photo, aspect ratio crop, picture cropper, canvas crop',
   searchTerms: 'image cropper crop photo aspect ratio',
-  zh: '图片裁剪工具在浏览器本地按预设比例（1:1、4:3、16:9 等）或自由尺寸裁剪图片，适合做头像、封面图。照片不上传。',
   howto: ['Choose an image.', 'Pick an aspect ratio (or Original).', 'Click Crop to cut the centered region.', 'Download the result.'],
   faq: [
     { q: 'Does it crop from the center?', a: 'Yes — the largest centered rectangle of the chosen ratio is used, so nothing important at the edges is lost unexpectedly.' },
@@ -595,15 +585,15 @@ T.push({
     { q: 'Is my photo uploaded?', a: 'No — cropping is done locally with Canvas.' }
   ],
   zhfaq: [
-    { q: '是从中心裁剪吗？', a: '是的。工具会取所选比例下最大的居中矩形，避免意外裁掉中心内容。' },
-    { q: '能自由拖拽裁剪吗？', a: '为保证可靠，本工具采用预设比例。如需像素级自由裁剪可选 Original（不裁剪）再用其他编辑器。' }
+    { q: 'Is it cropped from the center?', a: 'Yes. The tool takes the largest centered rectangle for the chosen ratio, avoiding accidentally cutting off the center.' },
+    { q: 'Can I drag freely to crop?', a: 'For reliability this tool uses preset ratios. For pixel-level free cropping, pick Original (no crop) and use another editor.' }
   ],
   usecases: [
     { icon: '🟣', title: 'Avatars', text: 'Square crops.' },
     { icon: '🖥️', title: 'Covers', text: '16:9 banners.' },
     { icon: '📷', title: 'Social', text: 'Perfect framing.' }
   ],
-  deep: '## 工作原理\n按目标比例计算“最大居中矩形”，用 Canvas 把该区域绘制到新画布并导出。\n## 比例说明\n- 1:1 正方形（头像）\n- 4:3 / 3:4 通用照片\n- 16:9 / 9:16 横/竖封面\n- Original 不裁剪\n## 隐私\n本地处理，图片不上传。',
+  deep: '## How it works\nCompute the largest centered rectangle for the target ratio and draw that region to a new canvas, then export.\n## Ratio guide\n- 1:1 square (avatars)\n- 4:3 / 3:4 general photos\n- 16:9 / 9:16 landscape/portrait covers\n- Original (no crop)\n## Privacy\nLocal processing; images are not uploaded.',
   body: `        <div class="form-row">
           <label for="file">Choose image</label>
           <input type="file" id="file" accept="image/*">
@@ -645,7 +635,6 @@ T.push({
   cardDesc: 'Turn CSV data into a Markdown table for docs.',
   keywords: 'csv to markdown, csv2md, markdown table, csv converter, spreadsheet to md',
   searchTerms: 'csv to markdown table convert',
-  zh: 'CSV 转 Markdown 表格工具把 CSV 文件或粘贴的文本转换成 Markdown 表格，能正确处理带引号、含逗号或换行的内容，适合把表格数据写进文档。',
   howto: ['Paste CSV text or load a file.', 'Click Convert.', 'Copy the Markdown table.', 'The first row becomes the header.'],
   faq: [
     { q: 'Does it handle quoted commas?', a: 'Yes — fields wrapped in quotes containing commas or newlines are parsed correctly.' },
@@ -653,15 +642,15 @@ T.push({
     { q: 'Is my data uploaded?', a: 'No — parsing happens in your browser.' }
   ],
   zhfaq: [
-    { q: '能处理带引号的逗号吗？', a: '能。被引号包裹、内含逗号或换行的字段会被正确解析。' },
-    { q: '表头是哪一行？', a: 'CSV 的第一行作为表头，之后的每一行作为表格的一行。' }
+    { q: 'Can it handle commas inside quotes?', a: 'Yes. Fields wrapped in quotes that contain commas or newlines are parsed correctly.' },
+    { q: 'Which row is the header?', a: 'The first row of the CSV is the header; each following row becomes a table row.' }
   ],
   usecases: [
     { icon: '📚', title: 'Docs', text: 'Paste tables fast.' },
     { icon: '📈', title: 'Reports', text: 'Spreadsheet → MD.' },
     { icon: '💬', title: 'Chat', text: 'Share as table.' }
   ],
-  deep: '## 用途\n把表格数据从 CSV 转成 Markdown 表格，便于放进文档、Wiki 或 README。\n## 解析规则\n- 逗号分隔字段\n- 双引号包裹的字段可含逗号与换行\n- 两个引号连续表示一个引号字符\n- 首行作表头\n## 隐私\n解析在浏览器本地完成。',
+  deep: '## Purpose\nConvert tabular data from CSV into a Markdown table, handy for docs, wikis, or READMEs.\n## Parsing rules\n- Fields are separated by commas.\n- Quoted fields may contain commas and newlines.\n- Two consecutive quotes represent one quote character.\n- The first row is the header.\n## Privacy\nParsing happens locally in your browser.',
   body: textToolBody('name,role,age\\nAda,Engineer,36\\n"Lin, Yu",Designer,29', 'Paste CSV here'),
   js: `    var input=document.getElementById('input'),out=document.getElementById('out'),btn=document.getElementById('btn'),copyBtn=document.getElementById('copyBtn'),clearBtn=document.getElementById('clearBtn');
     function parseCsv(txt){
@@ -705,7 +694,6 @@ T.push({
   cardDesc: 'Preview and download an image from a base64 string.',
   keywords: 'base64 to image, base64 image decoder, decode base64 image, data uri to image',
   searchTerms: 'base64 to image decode data uri',
-  zh: 'Base64 转图片工具把一段 base64 字符串（带不带 data: 前缀均可）解码成图片预览，并支持下载。解码在本地完成。',
   howto: ['Paste a base64 image string.', 'Click Decode.', 'Preview the image.', 'Download it as a file.'],
   faq: [
     { q: 'Do I need the data: prefix?', a: 'No — paste either the raw base64 or a full data:image/png;base64,… URI; the tool detects both.' },
@@ -713,15 +701,15 @@ T.push({
     { q: 'Is decoding private?', a: 'Yes — it runs entirely in your browser; nothing is uploaded.' }
   ],
   zhfaq: [
-    { q: '需要 data: 前缀吗？', a: '不需要。无论粘贴原始 base64 还是完整的 data:image/png;base64,… URI 都能识别。' },
-    { q: '下载成什么格式？', a: '若 data URI 里有 mime 类型，按它定扩展名；否则默认 PNG。' }
+    { q: 'Do I need the data: prefix?', a: 'No. It recognizes both raw base64 and a full data:image/png;base64,... URI.' },
+    { q: 'What format is the download?', a: 'If the data URI has a mime type, the extension follows it; otherwise it defaults to PNG.' }
   ],
   usecases: [
     { icon: '🔍', title: 'Inspect', text: 'View encoded img.' },
     { icon: '💾', title: 'Extract', text: 'Save from base64.' },
     { icon: '🧪', title: 'Debug', text: 'Check API output.' }
   ],
-  deep: '## 用途\n接口返回、CSS 内联或数据库里常出现 base64 图片。这个工具帮你把它还原成可见、可下载的图片。\n## 解析规则\n- 自动识别 data:image/...;base64, 前缀\n- 也支持纯 base64 文本（默认按 PNG）\n- 根据 mime 决定下载扩展名\n## 隐私\n解码在浏览器本地完成。',
+  deep: '## Purpose\nBase64 images commonly appear in API responses, inline CSS, or databases. This tool turns them back into a visible, downloadable image.\n## Parsing rules\n- Automatically recognizes the data:image/...;base64, prefix.\n- Also supports plain base64 text (defaults to PNG).\n- The download extension follows the mime type.\n## Privacy\nDecoding happens locally in your browser.',
   body: `        <div class="form-row">
           <label for="input">Base64 image string</label>
           <textarea id="input" rows="6" placeholder="data:image/png;base64,iVBORw0KGgo..."></textarea>

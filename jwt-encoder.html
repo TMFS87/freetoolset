@@ -39,18 +39,17 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html" class="nav-link">Home</a>
       <a href="index.html#tools" class="nav-link active">Tools</a>
       <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
-      <a href="about.html" class="nav-link" data-i18n="About">About</a>
-      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+      <a href="about.html" class="nav-link">About</a>
     </div>
   </nav>
 
   <main class="main-content">
   <section class="tool-intro">
-    <h2>📌 适用场景</h2>
-    <p>JWT 编码器用 HMAC-SHA256 生成签名的 JSON Web Token（header.payload.signature）。输入 JSON 载荷和密钥即可在浏览器本地完成签名，适合调试接口鉴权。</p>
+    <h2>📌 Overview</h2>
+    <p>Build a signed JWT (header.payload.signature) using HMAC-SHA256. Enter a JSON payload and a secret — signing happens in your browser.</p>
   </section>
 
     <nav class="breadcrumb">
@@ -119,14 +118,14 @@
         </div>
 
         <div class="info-section">
-          <h2>❓ 常见问题（中文）</h2>
+          <h2>❓ More Questions</h2>
           <details class="faq-item">
-            <summary>用的是什么算法？</summary>
-            <p>HMAC-SHA256（HS256）。Token 是被“签名”而非“加密”——任何人都能读载荷，只有密钥能证明签名出自你。</p>
+            <summary>What algorithm is used?</summary>
+            <p>HMAC-SHA256 (HS256). The token is signed, not encrypted - anyone can read the payload, but only the secret proves the signature came from you.</p>
           </details>
           <details class="faq-item">
-            <summary>密钥会被上传吗？</summary>
-            <p>不会。签名全部用浏览器内置的 Web Crypto API 完成，密钥始终留在你的设备上。</p>
+            <summary>Is the secret uploaded?</summary>
+            <p>No. Signing is done entirely with the browser's built-in Web Crypto API, and the secret always stays on your device.</p>
           </details>
         </div>
 
@@ -190,18 +189,18 @@
     </div>
 
   <section class="tool-deep">
-    <h2>📖 深入了解 JWT Encoder</h2>
-    <h3>JWT 结构</h3>
-    <p>JWT 由三部分用点连接：header（算法与类型）、payload（声明数据）、signature（签名）。</p>
-    <h3>签名过程（HS256）</h3>
-    <p>1. base64url 编码 header 与 payload</p>
-    <p>2. 拼接 data = encHeader + &quot;.&quot; + encPayload</p>
-    <p>3. 用密钥对 data 做 HMAC-SHA256</p>
-    <p>4. base64url 编码签名，得到 token = data + &quot;.&quot; + sig</p>
-    <h3>重要提醒</h3>
-    <li>JWT 是“签名”不是“加密”，payload 可被任何人解码读取</li>
-    <li>不要把敏感信息放进 payload</li>
-    <li>本工具仅在本地浏览器签名，密钥不上传</li>
+    <h2>📖 Deep Dive: JWT Encoder</h2>
+    <h3>JWT structure</h3>
+    <p>A JWT has three parts joined by dots: header (algorithm and type), payload (claim data), and signature.</p>
+    <h3>Signing process (HS256)</h3>
+    <p>1. base64url-encode the header and payload.</p>
+    <p>2. Concatenate data = encHeader + &quot;.&quot; + encPayload.</p>
+    <p>3. Apply HMAC-SHA256 to data using the secret.</p>
+    <p>4. base64url-encode the signature to get token = data + &quot;.&quot; + sig.</p>
+    <h3>Important reminders</h3>
+    <li>A JWT is signed, not encrypted; the payload can be read by anyone.</li>
+    <li>Do not put sensitive information in the payload.</li>
+    <li>This tool signs only in your local browser; the secret is not uploaded.</li>
   </section>
   </main>
 
@@ -212,13 +211,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html" data-i18n="Tools">Tools</a>
-        <a href="about.html" data-i18n="About">About</a>
-        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
-        <a href="contact.html" data-i18n="Contact">Contact</a>
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -249,10 +248,6 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/i18n.js"></script>
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
+<script></script>
 </body>
 </html>

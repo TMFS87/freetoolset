@@ -109,7 +109,7 @@ function breadcrumbSchema(t) {
 }
 
 function deepSection(t) {
-  let html = `  <section class="tool-deep">\n    <h2>📖 深入了解 ${esc(t.title)}</h2>\n`;
+  let html = `  <section class="tool-deep">\n    <h2>📖 Deep Dive: ${esc(t.title)}</h2>\n`;
   if (t.deep) {
     t.deep.split('\n').filter(Boolean).forEach(p => {
       if (p.startsWith('## ')) html += `    <h3>${esc(p.slice(3))}</h3>\n`;
@@ -117,8 +117,8 @@ function deepSection(t) {
       else html += `    <p>${esc(p)}</p>\n`;
     });
   } else {
-    html += `    <p>${esc(t.zh || t.desc)}</p>\n`;
-    html += `    <p>${esc(t.title)} 是一款完全在浏览器本地运行的免费工具，无需注册、不上传数据，保护你的隐私。适合日常重复性的文本与数据处理任务，帮你节省时间、减少出错。</p>\n`;
+    html += `    <p>${esc(t.desc)}</p>\n`;
+    html += `    <p>${esc(t.title)} is a free tool that runs 100% in your browser. No signup, no uploads — your data stays private. Perfect for everyday text and data tasks, saving you time and reducing mistakes.</p>\n`;
   }
   html += `  </section>`;
   return html;
@@ -128,7 +128,7 @@ function zhFaqSection(t) {
   if (!t.zhfaq || !t.zhfaq.length) return '';
   const items = t.zhfaq.map(f =>
     `          <details class="faq-item">\n            <summary>${esc(f.q)}</summary>\n            <p>${esc(f.a)}</p>\n          </details>`).join('\n');
-  return `        <div class="info-section">\n          <h2>❓ 常见问题（中文）</h2>\n${items}\n        </div>`;
+  return `        <div class="info-section">\n          <h2>❓ More Questions</h2>\n${items}\n        </div>`;
 }
 
 function template(t, all) {
@@ -188,14 +188,13 @@ ${breadcrumbSchema(t)}
       <a href="index.html#tools" class="nav-link active">Tools</a>
       <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
       <a href="about.html" class="nav-link" data-i18n="About">About</a>
-      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
     </div>
   </nav>
 
   <main class="main-content">
   <section class="tool-intro">
-    <h2>📌 适用场景</h2>
-    <p>${esc(t.zh)}</p>
+    <h2>📌 Overview</h2>
+    <p>${esc(t.desc)}</p>
   </section>
 
     <nav class="breadcrumb">
@@ -283,7 +282,6 @@ ${t.js}
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/i18n.js"></script>
 <!-- BAIDU_AUTO_PUSH -->
 <script>
 (function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();

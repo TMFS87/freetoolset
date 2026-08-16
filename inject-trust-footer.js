@@ -8,8 +8,8 @@ const path = require('path');
 
 const ROOT = __dirname;
 const OLD = '<p>© 2025 FreeToolset. All tools run locally in your browser.</p>';
-const NEW_ROOT = '<p>© 2025 FreeToolset · 由独立站长 <a href="about.html">TMFS</a> 独立开发与维护 · 所有工具均在浏览器本地运行，不上传任何数据</p>';
-const NEW_BLOG = '<p>© 2025 FreeToolset · 由独立站长 <a href="../about.html">TMFS</a> 独立开发与维护 · 所有工具均在浏览器本地运行，不上传任何数据</p>';
+const NEW_ROOT = '<p>© 2025 FreeToolset · independently developed and maintained by <a href="about.html">TMFS</a> · all tools run locally in your browser, no data uploaded</p>';
+const NEW_BLOG = '<p>© 2025 FreeToolset · independently developed and maintained by <a href="../about.html">TMFS</a> · all tools run locally in your browser, no data uploaded</p>';
 
 function walk(dir, replacement) {
   let n = 0;
@@ -38,7 +38,7 @@ if (fs.existsSync(contact)) {
   const before = html;
   html = html.replace(
     /<li><strong data-i18n="GitHub:">GitHub:<\/strong>[\s\S]*?<\/li>/,
-    '<li><strong>问题反馈：</strong> 工具报错或结果异常，请发邮件至 <a href="mailto:freetoolset.app@gmail.com">freetoolset.app@gmail.com</a>，并附上页面地址与你的输入，我会尽快修复。</li>'
+    '<li><strong>Feedback:</strong> If a tool errors or returns wrong results, email <a href="mailto:freetoolset.app@gmail.com">freetoolset.app@gmail.com</a> with the page URL and your input, and I will fix it as soon as possible.</li>'
   );
   if (html !== before) {
     fs.writeFileSync(contact, html, 'utf8');

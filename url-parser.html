@@ -39,18 +39,17 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html" class="nav-link">Home</a>
       <a href="index.html#tools" class="nav-link active">Tools</a>
       <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
-      <a href="about.html" class="nav-link" data-i18n="About">About</a>
-      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+      <a href="about.html" class="nav-link">About</a>
     </div>
   </nav>
 
   <main class="main-content">
   <section class="tool-intro">
-    <h2>📌 适用场景</h2>
-    <p>URL 解析器把任意网址拆成协议、主机、端口、路径、查询参数和锚点，方便检查和调试链接，纯前端运行。</p>
+    <h2>📌 Overview</h2>
+    <p>Break any URL into its protocol, host, port, path, query parameters and fragment. Inspect and debug links without writing code.</p>
   </section>
 
     <nav class="breadcrumb">
@@ -111,14 +110,14 @@
         </div>
 
         <div class="info-section">
-          <h2>❓ 常见问题（中文）</h2>
+          <h2>❓ More Questions</h2>
           <details class="faq-item">
-            <summary>会解码百分号编码吗？</summary>
-            <p>会，查询参数的值会自动解码，方便直接阅读。</p>
+            <summary>Does it decode percent-encoding?</summary>
+            <p>Yes - query parameter values are automatically decoded so they are easy to read.</p>
           </details>
           <details class="faq-item">
-            <summary>URL 无效怎么办？</summary>
-            <p>使用浏览器内置 URL 解析器，输入非法时会报错而非返回残缺结果。</p>
+            <summary>What if the URL is invalid?</summary>
+            <p>It uses the browser's built-in URL parser, which throws an error on invalid input rather than returning a broken result.</p>
           </details>
         </div>
 
@@ -182,13 +181,13 @@
     </div>
 
   <section class="tool-deep">
-    <h2>📖 深入了解 URL Parser</h2>
-    <h3>为什么需要 URL 解析</h3>
-    <p>调试接口、排查跳转、拼接链接时，经常要确认网址各部分是否正确。肉眼拆分长 URL 容易漏看参数。</p>
-    <h3>背后的原理</h3>
-    <p>工具调用浏览器原生的 URL 接口，把字符串拆成结构化字段（协议、主机、端口、路径、参数、锚点），并对参数做解码。</p>
-    <h3>一个例子</h3>
-    <p>把一条带追踪参数的推广链接粘进来，点解析后，你能清楚看到真实域名、路径以及被隐藏的 utm 参数。</p>
+    <h2>📖 Deep Dive: URL Parser</h2>
+    <h3>Why parse URLs</h3>
+    <p>When debugging APIs, tracing redirects, or building links, you often need to confirm each part of a URL is correct. Splitting a long URL by eye easily misses parameters.</p>
+    <h3>How it works</h3>
+    <p>The tool uses the browser's native URL interface to split the string into structured fields (protocol, host, port, path, query, hash) and decodes the query parameters.</p>
+    <h3>A quick example</h3>
+    <p>Paste a promotional link with tracking parameters, click parse, and you can clearly see the real domain, path, and the hidden utm parameters.</p>
   </section>
   </main>
 
@@ -199,13 +198,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html" data-i18n="Tools">Tools</a>
-        <a href="about.html" data-i18n="About">About</a>
-        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
-        <a href="contact.html" data-i18n="Contact">Contact</a>
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -239,10 +238,6 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/i18n.js"></script>
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
+<script></script>
 </body>
 </html>

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <meta name="theme-color" content="#8b5cf6">
-  <title>取色器 — 在线颜色选择器 | HEX/RGB/HSL/CMYK 转换</title>
-  <meta name="description" content="免费在线取色器工具：支持屏幕取色、调色板选取、HEX/RGB/HSL/CMYK 颜色格式互转。设计师和前端开发必备，一键复制颜色代码。支持渐变色生成和色彩方案推荐。">
-  <meta name="keywords" content="color picker, hex to rgb, rgb to hex, hsl converter, color converter, color palette, color shades, 免费在线在线取色器, 在线取色器在线工具, 在线取色器免费">
-  <meta property="og:title" content="取色器 — 在线颜色选择器 | HEX/RGB/HSL/CMYK 转换">
-  <meta property="og:description" content="免费在线取色器工具：支持屏幕取色、调色板选取、HEX/RGB/HSL/CMYK 颜色格式互转。设计师和前端开发必备，一键复制颜色代码。支持渐变色生成和色彩方案推荐。">
+  <title>Color Picker | FreeToolset</title>
+  <meta name="description" content="Color Picker: a free online tool that runs entirely in your browser — no sign-up required and your data never leaves your device, so your privacy is always protected.">
+  <meta name="keywords" content="color picker, hex to rgb, rgb to hex, hsl converter, color converter, color palette, color shades, free online Color Picker, Color Picker online, Color Picker tool">>
+  <meta property="og:title" content="Color Picker | FreeToolset">>
+  <meta property="og:description" content="Color Picker: a free online tool that runs entirely in your browser — no sign-up required and your data never leaves your device, so your privacy is always protected.">>
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.freetoolset.app/color-picker.html">
   <link rel="stylesheet" href="css/style.css">
@@ -34,7 +34,6 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Color Picker",
-  "alternateName": "颜色选择器",
   "url": "https://www.freetoolset.app/color-picker.html",
   "applicationCategory": "UtilityApplication",
   "operatingSystem": "Any",
@@ -43,42 +42,10 @@
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "颜色选择器（Color Picker）免费在线工具，无需注册，本地运行保护隐私。"
+  "description": "Color Picker: a free online tool that runs entirely in your browser — no sign-up required and your data never leaves your device, so your privacy is always protected."
 }
 </script>
-  <!-- ft-faq-schema -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "颜色选择器需要联网吗？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "不需要。所有处理都在你的浏览器本地完成，数据不上传服务器，离线也能用。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "颜色选择器支持大文件或批量吗？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "在浏览器性能范围内支持较大内容处理；具体上限取决于你的设备内存。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "颜色选择器是免费的吗？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "是的，完全免费，无需注册，打开即用。"
-      }
-    }
-  ]
-}
-  </script>
+  
 
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HQJ9VZWMKE"></script>
@@ -89,7 +56,7 @@
   gtag('config', 'G-HQJ9VZWMKE', { send_page_view: true });
 </script>
 
-  <link rel="alternate" hreflang="zh-CN" href="https://www.freetoolset.app/color-picker.html" />
+  <link rel="alternate" hreflang="en" href="https://www.freetoolset.app/color-picker.html" />
   <link rel="alternate" hreflang="x-default" href="https://www.freetoolset.app/color-picker.html" />
 </head>
 <body>
@@ -101,58 +68,60 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
-      <a href="index.html#tools" class="nav-link active" data-i18n="Tools">Tools</a>
-      <a href="about.html" class="nav-link" data-i18n="About">About</a>
-      <a href="privacy-policy.html" class="nav-link" data-i18n="Privacy">Privacy</a>
-      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html#tools" class="nav-link active">Tools</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="privacy-policy.html" class="nav-link">Privacy</a>
     </div>
   </nav>
 
   <main class="main-content">
   <!-- ft-zh-intro -->
   <section class="tool-intro">
-    <h2>📌 适用场景</h2>
-    <p>取色器可快速获取颜色并转换 HEX、RGB、HSL 等格式，是前端与 UI 设计必备。本工具支持点击色板取色、输入值互转、复制结果，纯本地运行，适合配色校对、CSS 变量提取与设计稿还原。</p>
+    <h2>📌 Use Cases</h2>
+    <p>A color picker quickly grabs colors and converts between HEX, RGB, HSL, and other formats — essential for front-end and UI design. This tool supports clicking a palette to pick, converting input values, and copying results, all locally — ideal for color proofing, extracting CSS variables, and recreating designs.</p>
   </section>
 
+  
 
     <!-- Breadcrumb -->
       <!-- ft-deep -->
   <section class="tool-deep">
-    <h2>📖 深入了解 Color Picker — Free Online HEX RGB HSL Color Tool</h2>
-    <h2>为什么需要它</h2>
+    <h2>📖 Learn More About color picker</h2>
+    <h2>Why You Need It</h2>
     <ul>
-      <li>轻量趣味/效率，无需安装</li>
-      <li>本地随机与计时，即开即用</li>
-      <li>保护隐私，关掉不留痕</li>
+      <li>Grab exact colors from a palette or input.</li>
+      <li>Convert between HEX, RGB, and HSL without mental math.</li>
+      <li>Extract and reuse brand or design-token colors.</li>
     </ul>
-    <h2>背后的原理</h2>
-    <p>Color Picker — Free Online HEX RGB HSL Color Tool 属于轻量趣味或效率工具，在浏览器本地生成随机结果或计时，无需安装，关掉页面不留痕。</p>
-    <h2>一个例子</h2>
-    <p>例如设定好范围或时长后一键启动 Color Picker — Free Online HEX RGB HSL Color Tool，过程全在本地完成，适合做决定、控场或放松。</p>
-    <h2>常见误区</h2>
+    <h2>How It Works</h2>
+    <p>The picker reads a color value in any supported format and converts it live to the others, so you always have a copy-ready representation.</p>
+    <h2>A Quick Example</h2>
+    <p>Type a HEX code, see its RGB and HSL equivalents, and copy whichever your CSS needs.</p>
+    <h2>Common Mistakes</h2>
     <ul>
-      <li>把伪随机当真随机用于高安全场景</li>
-      <li>后台计时被浏览器节流导致不够准</li>
-      <li>用趣味结果做严肃决策时缺乏随机性保证</li>
+      <li>Assuming HEX and RGB are different colors (they are the same value).</li>
+      <li>Mixing up HSL hue ranges.</li>
+      <li>Eyeballing contrast instead of checking ratios.</li>
     </ul>
   
 
-    <h3 class="longtail-note">关于免费在线在线取色器</h3>
-    <p class="longtail-note">正在寻找免费在线在线取色器？取色器可快速获取颜色并转换 HEX、RGB、HSL 等格式，是前端与 UI 设计必备。本工具支持点击色板取色、输入值互转、复制结果，纯本地运行，适合配色校对、CSS 变量提取与设计稿还原。本工具完全免费、无需注册，所有计算都在你的浏览器本地完成，数据不会上传到任何服务器，打开网页即可随时使用。</p>
+    
+
+    <h3 class="longtail-note">About the free online Color Picker</h3>
+    <p class="longtail-note">Looking for a free online Color Picker? A color picker quickly grabs colors and converts between HEX, RGB, HSL, and other formats — essential for front-end and UI design. This tool supports clicking a palette to pick, converting input values, and copying results, all locally — ideal for color proofing, extracting CSS variables, and recreating designs. This tool is completely free and requires no registration — every operation runs locally in your browser, your data is never uploaded to any server, and you can use it anytime just by opening the page.</p>
   </section>
     <nav class="breadcrumb"><!-- breadcrumb-cat -->
-      <a href="index.html" data-i18n="Home">Home</a>
+      <a href="index.html">Home</a>
       <span class="separator">/</span>
-      <a href="developer-tools.html" data-i18n="catTitle_developer-tools">Developer Tools</a>
+      <a href="developer-tools.html">Developer Tools</a>
       <span class="separator">/</span>
-      <span class="current" data-i18n="cardTitle_color-picker">Color Picker</span>
+      <span class="current">Color Picker</span>
     </nav>
 
     <!-- Tool Header -->
     <div class="tool-header">
-      <h1 data-i18n="🎨 Color Picker">🎨 Color Picker</h1>
+      <h1>🎨 Color Picker</h1>
       <p>Pick a color and get its HEX, RGB, and HSL values. Copy any format with one click. Includes shade variations and quick palette.</p>
     </div>
 
@@ -252,18 +221,9 @@
           </details>
         
           <!-- ft-zh-faq -->
-          <details class="faq-item">
-            <summary>颜色选择器需要联网吗？</summary>
-            <p>不需要。所有处理都在你的浏览器本地完成，数据不上传服务器，离线也能用。</p>
-          </details>
-          <details class="faq-item">
-            <summary>颜色选择器支持大文件或批量吗？</summary>
-            <p>在浏览器性能范围内支持较大内容处理；具体上限取决于你的设备内存。</p>
-          </details>
-          <details class="faq-item">
-            <summary>颜色选择器是免费的吗？</summary>
-            <p>是的，完全免费，无需注册，打开即用。</p>
-          </details>
+          
+          
+          
 </div>
 
         <!-- Use Cases -->
@@ -330,14 +290,14 @@
 
     </div>
     <section class="further-reading">
-    <h2>📚 延伸阅读</h2>
-    <p class="fr-lead">想更深入了解相关知识？这些教程配合本工具一起看效果更好。</p>
+    <h2>📚 Further Reading</h2>
+    <p class="fr-lead">Want to go deeper? These tutorials pair well with this tool.</p>
     <div class="fr-grid">
-      <a class="fr-item" href="blog/image-compression-guide.html"><span class="fr-icon">📄</span><span class="fr-text">图片压缩不损质：网页提速的实用方法</span></a>
-      <a class="fr-item" href="blog/privacy-local-tools.html"><span class="fr-icon">📄</span><span class="fr-text">免费工具如何保护隐私：本地计算的真相</span></a>
-      <a class="fr-item" href="blog/productivity-tools.html"><span class="fr-icon">📄</span><span class="fr-text">提升效率的 10 个免费在线工具</span></a>
+            <a class="fr-item" href="blog/image-compression-guide.html"><span class="fr-icon">📄</span><span class="fr-text">Lossless-Looking Image Compression: Practical Ways to Speed Up Pages</span></a>
+            <a class="fr-item" href="blog/privacy-local-tools.html"><span class="fr-icon">📄</span><span class="fr-text">How Free Tools Protect Your Privacy: The Truth About Local Computing</span></a>
+            <a class="fr-item" href="blog/productivity-tools.html"><span class="fr-icon">📄</span><span class="fr-text">10 Free Online Tools to Boost Productivity</span></a>
     </div>
-    <a class="fr-all" href="blog/index.html">浏览全部教程 →</a>
+    <a class="fr-all" href="blog/index.html">Browse all tutorials →</a>
   </section>
 
 </main>
@@ -345,40 +305,40 @@
   <!-- Footer -->
     <!-- More Tools Section -->
     <section class="more-tools-section" aria-label="More tools">
-      <h2 class="more-tools-title" data-i18n="moreToolsTitle">🔍 Explore More Tools</h2>
-      <p class="more-tools-desc" data-i18n="moreToolsDesc">FreeToolset has 95+ free online tools. Browse more utilities to boost your productivity.</p>
+      <h2 class="more-tools-title">🔍 Explore More Tools</h2>
+      <p class="more-tools-desc">FreeToolset has 95+ free online tools. Browse more utilities to boost your productivity.</p>
       <div class="more-tools-grid">
         <a href="index.html" class="more-tool-card more-tool-home">
           <span class="mt-icon">⚡</span>
-          <span class="mt-name" data-i18n="moreToolsAll">All 95+ Tools</span>
+          <span class="mt-name">All 95+ Tools</span>
         </a>
         <a href="ai-studio.html" class="more-tool-card">
           <span class="mt-icon">✨</span>
-          <span class="mt-name" data-i18n="✨ AI Studio">✨ AI Studio</span>
+          <span class="mt-name">✨ AI Studio</span>
         </a>
         <a href="developer-tools.html" class="more-tool-card">
           <span class="mt-icon">📂</span>
-          <span class="mt-name" data-i18n="catTitle_developer-tools">Developer Tools</span>
+          <span class="mt-name">Developer Tools</span>
         </a>
         <a href="image-compressor.html" class="more-tool-card">
           <span class="mt-icon">🖼️</span>
-          <span class="mt-name" data-i18n="cardTitle_image-compressor">🖼️ Image Compressor</span>
+          <span class="mt-name">🖼️ Image Compressor</span>
         </a>
         <a href="qr-code-generator.html" class="more-tool-card">
           <span class="mt-icon">📱</span>
-          <span class="mt-name" data-i18n="cardTitle_qr-code-generator">📱 QR Code Generator</span>
+          <span class="mt-name">📱 QR Code Generator</span>
         </a>
         <a href="password-generator.html" class="more-tool-card">
           <span class="mt-icon">🔐</span>
-          <span class="mt-name" data-i18n="cardTitle_password-generator">🔐 Password Generator</span>
+          <span class="mt-name">🔐 Password Generator</span>
         </a>
         <a href="json-formatter.html" class="more-tool-card">
           <span class="mt-icon">🧩</span>
-          <span class="mt-name" data-i18n="cardTitle_json-formatter">🧩 JSON Formatter</span>
+          <span class="mt-name">🧩 JSON Formatter</span>
         </a>
         <a href="word-counter.html" class="more-tool-card">
           <span class="mt-icon">📝</span>
-          <span class="mt-name" data-i18n="cardTitle_word-counter">📝 Word Counter</span>
+          <span class="mt-name">📝 Word Counter</span>
         </a>
       </div>
     </section>
@@ -390,18 +350,18 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html" data-i18n="Tools">Tools</a>
-        <a href="about.html" data-i18n="About">About</a>
-        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
-        <a href="contact.html" data-i18n="Contact">Contact</a>
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
 
 </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 FreeToolset · 由独立站长 <a href="about.html">TMFS</a> 独立开发与维护 · 所有工具均在浏览器本地运行，不上传任何数据</p>
+      <p>© 2025 FreeToolset · independently developed and maintained by <a href="about.html">TMFS</a>  · All tools run locally in your browser; no data is uploaded.</p>
     </div>
   </footer>
 
@@ -579,10 +539,7 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/i18n.js" defer></script>
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
+
+<script></script>
 </body>
 </html>

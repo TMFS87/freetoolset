@@ -39,18 +39,17 @@
       FreeToolset
     </a>
     <div class="navbar-nav">
-      <a href="index.html" class="nav-link" data-i18n="Home">Home</a>
+      <a href="index.html" class="nav-link">Home</a>
       <a href="index.html#tools" class="nav-link active">Tools</a>
       <a href="ai-studio.html" class="nav-link">✨ AI Studio</a>
-      <a href="about.html" class="nav-link" data-i18n="About">About</a>
-      <button class="nav-lang" title="切换语言" onclick="toggleLang()">🌐</button>
+      <a href="about.html" class="nav-link">About</a>
     </div>
   </nav>
 
   <main class="main-content">
   <section class="tool-intro">
-    <h2>📌 适用场景</h2>
-    <p>图片裁剪工具在浏览器本地按预设比例（1:1、4:3、16:9 等）或自由尺寸裁剪图片，适合做头像、封面图。照片不上传。</p>
+    <h2>📌 Overview</h2>
+    <p>Crop an image to a chosen aspect ratio (1:1, 4:3, 16:9 and more) or free size. All processing stays in your browser.</p>
   </section>
 
     <nav class="breadcrumb">
@@ -122,14 +121,14 @@
         </div>
 
         <div class="info-section">
-          <h2>❓ 常见问题（中文）</h2>
+          <h2>❓ More Questions</h2>
           <details class="faq-item">
-            <summary>是从中心裁剪吗？</summary>
-            <p>是的。工具会取所选比例下最大的居中矩形，避免意外裁掉中心内容。</p>
+            <summary>Is it cropped from the center?</summary>
+            <p>Yes. The tool takes the largest centered rectangle for the chosen ratio, avoiding accidentally cutting off the center.</p>
           </details>
           <details class="faq-item">
-            <summary>能自由拖拽裁剪吗？</summary>
-            <p>为保证可靠，本工具采用预设比例。如需像素级自由裁剪可选 Original（不裁剪）再用其他编辑器。</p>
+            <summary>Can I drag freely to crop?</summary>
+            <p>For reliability this tool uses preset ratios. For pixel-level free cropping, pick Original (no crop) and use another editor.</p>
           </details>
         </div>
 
@@ -193,16 +192,16 @@
     </div>
 
   <section class="tool-deep">
-    <h2>📖 深入了解 Image Cropper</h2>
-    <h3>工作原理</h3>
-    <p>按目标比例计算“最大居中矩形”，用 Canvas 把该区域绘制到新画布并导出。</p>
-    <h3>比例说明</h3>
-    <li>1:1 正方形（头像）</li>
-    <li>4:3 / 3:4 通用照片</li>
-    <li>16:9 / 9:16 横/竖封面</li>
-    <li>Original 不裁剪</li>
-    <h3>隐私</h3>
-    <p>本地处理，图片不上传。</p>
+    <h2>📖 Deep Dive: Image Cropper</h2>
+    <h3>How it works</h3>
+    <p>Compute the largest centered rectangle for the target ratio and draw that region to a new canvas, then export.</p>
+    <h3>Ratio guide</h3>
+    <li>1:1 square (avatars)</li>
+    <li>4:3 / 3:4 general photos</li>
+    <li>16:9 / 9:16 landscape/portrait covers</li>
+    <li>Original (no crop)</li>
+    <h3>Privacy</h3>
+    <p>Local processing; images are not uploaded.</p>
   </section>
   </main>
 
@@ -213,13 +212,13 @@
           <span class="logo-icon">⚡</span>
           FreeToolset
         </div>
-        <p class="footer-desc" data-i18n="footerDesc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
+        <p class="footer-desc">Free online tools that run entirely in your browser. No data is uploaded to any server.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html" data-i18n="Tools">Tools</a>
-        <a href="about.html" data-i18n="About">About</a>
-        <a href="privacy-policy.html" data-i18n="Privacy Policy">Privacy Policy</a>
-        <a href="contact.html" data-i18n="Contact">Contact</a>
+        <a href="index.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -245,10 +244,6 @@
   </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="/js/i18n.js"></script>
-<!-- BAIDU_AUTO_PUSH -->
-<script>
-(function(){var bp=document.createElement('script');var p=location.protocol.split(':')[0];bp.src=p==='https'?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();
-</script>
+<script></script>
 </body>
 </html>
