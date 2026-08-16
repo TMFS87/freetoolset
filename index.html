@@ -612,25 +612,6 @@
       </div>
     </section>
 
-<!-- Divider -->
-    <div class="section-divider">
-      <span>All Tools</span>
-    </div>
-
-    <!-- Category Filter -->
-    <div class="category-filter" id="categoryFilter">
-      <button class="category-btn active" data-category="all">All</button>
-      <button class="category-btn" data-category="ai">✨ AI</button>
-      <button class="category-btn" data-category="network">Network</button>
-      <button class="category-btn" data-category="image">Image</button>
-      <button class="category-btn" data-category="text">Text</button>
-      <button class="category-btn" data-category="developer">Developer</button>
-      <button class="category-btn" data-category="security">Security</button>
-      <button class="category-btn" data-category="calculator">🧮 Calculator</button>
-      <button class="category-btn" data-category="converter">🔄 Converter</button>
-      <button class="category-btn" data-category="fun">🎲 Fun</button>
-    </div>
-
     <!-- Tool Grid -->
     <div id="tools">
       <div class="tool-grid" id="toolGrid">
@@ -1887,25 +1868,8 @@
         }
       }
 
-      // Search & filter (existing functionality)
-      var searchInput = document.getElementById('searchInput');
-      // Note: search box removed in new layout, but keep filter working
+      // Tool cards available for future search/filter features
       var toolCards = document.querySelectorAll('.tool-card');
-      var categoryBtns = document.querySelectorAll('.category-btn');
-      var activeCategory = 'all';
-
-      categoryBtns.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          categoryBtns.forEach(function (b) { b.classList.remove('active'); });
-          this.classList.add('active');
-          activeCategory = this.getAttribute('data-category');
-
-          toolCards.forEach(function (card) {
-            var cardCategory = card.getAttribute('data-category');
-            card.style.display = (activeCategory === 'all' || cardCategory === activeCategory) ? '' : 'none';
-          });
-        });
-      });
     })();
   </script>
 
