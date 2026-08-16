@@ -599,18 +599,19 @@
       </div>
     </section>
 
-        <!-- Category Pages Nav -->
-    <section class="cat-nav-section">
-      <h2 class="cat-nav-title">Browse All Tools by Category</h2>
-      <div class="tool-grid">
-        <a class="tool-card" href="ai-tools.html"><h3>✨ AI Writing Tools</h3><p>6 free AI copy generators</p></a>
-        <a class="tool-card" href="calculators.html"><h3>🧮 Calculators</h3><p>15 free online calculators</p></a>
-        <a class="tool-card" href="converters.html"><h3>🔄 Unit Converters</h3><p>12 free conversion tools</p></a>
-        <a class="tool-card" href="text-tools.html"><h3>📝 Text Tools</h3><p>12 free text tools</p></a>
-        <a class="tool-card" href="developer-tools.html"><h3>🛠 Developer Tools</h3><p>26 free developer tools</p></a>
-        <a class="tool-card" href="fun-tools.html"><h3>🎲 Fun Tools</h3><p>4 free fun tools</p></a>
-      </div>
-    </section>
+    <!-- Category Filter (in-page) -->
+    <div class="category-filter" id="categoryFilter">
+      <button class="category-btn active" data-category="all">All</button>
+      <button class="category-btn" data-category="ai">✨ AI</button>
+      <button class="category-btn" data-category="network">Network</button>
+      <button class="category-btn" data-category="image">Image</button>
+      <button class="category-btn" data-category="text">Text</button>
+      <button class="category-btn" data-category="developer">Developer</button>
+      <button class="category-btn" data-category="security">Security</button>
+      <button class="category-btn" data-category="calculator">🧮 Calculator</button>
+      <button class="category-btn" data-category="converter">🔄 Converter</button>
+      <button class="category-btn" data-category="fun">🎲 Fun</button>
+    </div>
 
     <!-- Tool Grid -->
     <div id="tools">
@@ -1868,8 +1869,22 @@
         }
       }
 
-      // Tool cards available for future search/filter features
-      var toolCards = document.querySelectorAll('.tool-card');
+      // In-page category filter
+      var toolCards = document.querySelectorAll('#toolGrid .tool-card');
+      var categoryBtns = document.querySelectorAll('.category-btn');
+
+      categoryBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          categoryBtns.forEach(function (b) { b.classList.remove('active'); });
+          this.classList.add('active');
+          var activeCategory = this.getAttribute('data-category');
+
+          toolCards.forEach(function (card) {
+            var cardCategory = card.getAttribute('data-category');
+            card.style.display = (activeCategory === 'all' || cardCategory === activeCategory) ? '' : 'none';
+          });
+        });
+      });
     })();
   </script>
 
