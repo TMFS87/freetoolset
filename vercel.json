@@ -4,11 +4,6 @@
       "source": "/index.html",
       "destination": "/",
       "permanent": true
-    },
-    {
-      "source": "/tools/:path*",
-      "destination": "/:path*",
-      "permanent": true
     }
   ],
   "headers": [
